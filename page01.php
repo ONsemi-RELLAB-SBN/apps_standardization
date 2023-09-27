@@ -33,7 +33,7 @@ include_once "class/db.php"
                 </header>
                 <div class="container">
                 <?php
-                $get_slides = "SELECT * FROM apps_info WHERE type = 'ONSEMI'";
+                $get_slides = "SELECT * FROM apps_info WHERE type = 'ONSEMI' ORDER BY NAME ASC";
                 $run_slides = mysqli_query($con, $get_slides);
 
                 while ($row_slides = mysqli_fetch_array($run_slides)):
@@ -68,13 +68,13 @@ include_once "class/db.php"
                             <a class="navbar-brand">
                                 <span class="desk2">REL LAB APPLICATION</span>
                             </a>
-                            <a href="page02.html" class="toggle-icon"><i class='bx bx-toggle-left bx-lg' ></i></a>
+                            <a href="page02.php" class="toggle-icon"><i class='bx bx-toggle-left bx-lg' ></i></a>
                         </nav>
                     </div>
                 </header>
                 <div class="container">
                     <?php
-                    $get_slides = "SELECT * FROM apps_info WHERE type = 'RELLAB'";
+                    $get_slides = "SELECT * FROM apps_info WHERE type = 'RELLAB' ORDER BY NAME ASC";
                     $run_slides = mysqli_query($con, $get_slides);
 
                     while ($row_slides = mysqli_fetch_array($run_slides)):
