@@ -8,7 +8,7 @@
 $host = "localhost";
 $user = "ayep";
 $pass = "mysql@2023";
-$db = "apps_onsemi";
+$db = "gest";
 
 $con = mysqli_connect($host, $user, $pass, $db);
 
