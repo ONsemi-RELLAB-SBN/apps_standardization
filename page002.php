@@ -47,6 +47,7 @@ if (isset($_POST['update_parameter'])) {
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/component1.css" />
         <script src="js/modernizr-2.6.2.min.js"></script>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
         <script type="text/javascript">
             var _gaq = _gaq || [];
@@ -62,48 +63,8 @@ if (isset($_POST['update_parameter'])) {
             })();
         </script>
 
-        <script>
-            var subjectObject = {
-                "Front-end": {
-                    "HTML": ["Links", "Images", "Tables", "Lists"],
-                    "CSS": ["Borders", "Margins", "Backgrounds", "Float"],
-                    "JavaScript": ["Variables", "Operators", "Functions", "Conditions"]
-                },
-                "Back-end": {
-                    "PHP": ["Variables", "Strings", "Arrays"],
-                    "SQL": ["SELECT", "UPDATE", "DELETE"]
-                }
-            };
-            window.onload = function () {
-                var subjectSel = document.getElementById("subject");
-                var topicSel = document.getElementById("topic");
-                var chapterSel = document.getElementById("chapter");
-                for (var x in subjectObject) {
-                    subjectSel.options[subjectSel.options.length] = new Option(x, x);
-                }
-                subjectSel.onchange = function () {
-                    //empty Chapters- and Topics- dropdowns
-                    chapterSel.length = 1;
-                    topicSel.length = 1;
-                    //display correct values
-                    for (var y in subjectObject[this.value]) {
-                        topicSel.options[topicSel.options.length] = new Option(y, y);
-                    }
-                };
-                topicSel.onchange = function () {
-                        //empty Chapters dropdown
-                        chapterSel.length = 1;
-                    //display correct values
-                    var z = subjectObject[subjectSel.value][this.value];
-                    for (var i = 0; i < z.length; i++) {
-                        chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-                    }
-                };
-            };
-        </script>
-
     </head>
-    <body>
+    <body class="body2">
         <?php
         if (isset($message)) {
             foreach ($message as $message) {
@@ -116,39 +77,32 @@ if (isset($_POST['update_parameter'])) {
             <header>
                 <h1>Circular Navigation <span>Building a Circular Navigation with CSS Transforms</span></h1>	
             </header>
-            <section>
-                <p>Parameter Details</p>
-                <div class="admin-product-form-container centered">
-                    <?php
-                    $select = mysqli_query($conn, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
-                    while ($row = mysqli_fetch_assoc($select)) {
-                        ?>
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <h3 class="title">update the product</h3>
-                            <input type="text" class="box" name="parameter_name" value="<?php echo $row['name']; ?>" placeholder="Enter the parameter name">
-                            <input type="number" min="0" class="box" name="parameter_code" value="<?php echo $row['code']; ?>" placeholder="enter the parameter code">
-                            <input type="file" class="box" name="parameter_image" accept="image/png, image/jpeg, image/jpg">
-                            <input type="submit" value="Update Parameter Master" name="update_parameter" class="btn">
-                            <a href="page001.php" class="btn">Go Back!</a>
-                        </form>
-                    <?php } ?>
-                    <form name="form1" id="form1" action="/action_page.php">
-                        Subjects: <select name="subject" id="subject">
-                            <option value="" selected="selected">Select subject</option>
-                        </select>
-                        <br><br>
-                        Topics: <select name="topic" id="topic">
-                            <option value="" selected="selected">Please select subject first</option>
-                        </select>
-                        <br><br>
-                        Chapters: <select name="chapter" id="chapter">
-                            <option value="" selected="selected">Please select topic first</option>
-                        </select>
-                        <br><br>
-                        <input type="submit" value="Submit">  
-                    </form>
-                </div>
-            </section>
+            <?php if ($id == '') { ?>
+                <h1>Access denied! Please go back to <a href="page001.php" class="btn"> main page</a></h1>
+            <?php } else { ?>
+                <section>
+                    <p>Parameter Details</p>
+                    <div class="admin-product-form-container centered">
+                        <?php
+                        $select = mysqli_query($conn, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
+                        while ($row = mysqli_fetch_assoc($select)) {
+                            ?>
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <h3 class="title">update the product</h3>
+                                <input type="text" class="box" name="parameter_name" value="<?php echo $row['name']; ?>" placeholder="Enter the parameter name">
+                                <br>
+                                <input type="number" min="0" class="box" name="parameter_code" value="<?php echo $row['code']; ?>" placeholder="enter the parameter code">
+                                <br>
+                                <input type="file" class="box" name="parameter_image" accept="image/png, image/jpeg, image/jpg">
+                                <img src="uploaded_img/<?php echo $row['link_image']; ?>" height="100" alt="">
+                                <br>
+                                <a href="page001.php" class="btn">go back!</a>
+                                <input type="submit" value="Update Parameter Master" name="update_parameter" class="btn">
+                            </form>
+                        <?php }; ?>
+                    </div>
+                </section>
+            <?php } ?>
             <div class="component">
                 <!-- Start Nav Structure -->
                 <button class="cn-button" id="cn-button">+</button>

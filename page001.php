@@ -136,6 +136,7 @@ if (isset($_GET['delete'])) {
                                 <a href="update.php?id=<?php echo $row_slides['id']; ?>" class="mr-3"   title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>
                                 <a href="delete.php?id=<?php echo $row_slides['id']; ?>"                title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>-->
                                 <a href="page002.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
+                                <a href="page003.php?update=<?php echo $row_slides['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span> ADD DETAIL </a>
                                 <a href="page001.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> DELETE </a>
                             </td>
                         </tr>
