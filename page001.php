@@ -5,6 +5,19 @@
  */
 include 'class/db.php';
 
+$query1 = "SELECT MAX(id) as data FROM gest_parameter_master";
+$getData = mysqli_query($con, $query1);
+
+if ($getData->num_rows > 0) {
+    // output data of each row
+    while ($rowF = $getData->fetch_assoc()) {
+        $hehe = $rowF['data'];
+        $f_number = str_pad($hehe + 1, 3, "0", STR_PAD_LEFT);
+    }
+} else {
+    echo "0 results";
+}
+
 if (isset($_POST['add_parameter'])) {
 
     $parameter_name = $_POST['parameter_name'];
@@ -25,6 +38,10 @@ if (isset($_POST['add_parameter'])) {
         } else {
             $message[] = 'could not add the parameter';
         }
+        $last_id = $con->insert_id;
+        $s_number = str_pad($last_id, 3, "0", STR_PAD_LEFT);
+        $update = "UPDATE gest_parameter_master SET code = '$s_number' WHERE id = '$last_id'";
+        $upload = mysqli_query($con, $update);
     }
 };
 
@@ -52,17 +69,8 @@ if (isset($_GET['delete'])) {
         <link rel="stylesheet" type="text/css" href="css/component1.css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
         <script src="js/modernizr-2.6.2.min.js"></script>
-
-        <style>
-            table, th, td {
-                border: 1px solid black;
-                border-collapse: collapse;
-                padding: 1px 10px;
-                /*font-weight: 10;*/
-            }
-        </style>
-
         <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-7243260-2']);
@@ -87,64 +95,59 @@ if (isset($_GET['delete'])) {
         }
         ?>
         <div class="container">
-            <!-- Top Navigation -->
-<!--            <header>
-                <h1>Circular Navigation <span>Building a Circular Navigation with CSS Transforms</span></h1>	
-            </header>-->
-            
-                <div class="mt-5 mb-3 clearfix">
-                    <h2 class="pull-left">Parameter Details</h2>
+            <div class="mt-5 mb-3 clearfix">
+                <h2 class="pull-left">Parameter Details</h2>
+                <button onClick="window.location.href=window.location.href" class="pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
+            </div>
+            <div class="admin-product-form-container">
+                <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
+                    <!--<h3>Add New Parameter</h3>-->
+                    <label for="name"><b>Parameter Name</b></label>
+                    <input type="text" placeholder="Enter parameter name" name="parameter_name" class="box">
+
+                    <label for="code"><b>Parameter Code</b></label>
+                    <input type="text" placeholder="Enter parameter code" name="parameter_price" class="box", value='<?php echo $f_number; ?>' readonly>
+
+                    <label for="image"><b>Image</b></label>
+                    <input type="file" accept="image/png, image/jpeg, image/jpg" name="parameter_image" class="box">
+                    <hr>
+                    <input type="submit" class="btn btn-success " name="add_parameter" value="Add New Parameter">
                     <!--<a href="page02.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Parameter</a>-->
-                </div>
-                <div class="admin-product-form-container">
-                    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
-                        <h3>Add New Parameter</h3>
-                        <input type="text" placeholder="Enter parameter name" name="parameter_name" class="box">
-                        <input type="number" placeholder="Enter parameter code" name="parameter_price" class="box">
-                        <input type="file" accept="image/png, image/jpeg, image/jpg" name="parameter_image" class="box">
-                        <br>
-                        <input type="submit" class="btn btn-success " name="add_parameter" value="Add New Parameter">
-                        <!--<a href="page02.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Parameter</a>-->
-                    </form>
-                </div>
-                
-                <table style="margin-top: 25px;">
-                    <tr>
-                        <th><b>Parameter Name</b></th>
-                        <!--<th><b>Parent Code</b></th>-->
-                        <th><b>Parameter Code</b></th>
-                        <th><b>Link</b></th>
-                        <th><b>Image</b></th>
-                        <th><b>Action</b></th>
-                    </tr>
-                    <!-- PHP CODE TO FETCH DATA FROM ROWS -->
-                    <?php
-                    $get_slides = "SELECT * FROM gest_parameter_master WHERE flag = '1' ORDER BY code ASC";
-                    $run_slides = mysqli_query($con, $get_slides);
-                    // LOOP TILL END OF DATA
-                    while ($row_slides = mysqli_fetch_array($run_slides)):
-                        ?>
-                        <tr>
-                            <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
-                            <td><?php echo $row_slides['name']; ?></td>
-                            <!--<td><?php echo $row_slides['remark']; ?></td>-->
-                            <td><?php echo $row_slides['code']; ?></td>
-                            <td><?php echo $row_slides['link_image']; ?></td>
-                            <td><img src="uploaded_img/<?php echo $row_slides['link_image']; ?>" height="100" alt=""></td>
-                            <td>
-<!--                                <a href="read.php?id=<?php echo $row_slides['id']; ?>" class="mr-3"     title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>
-                                <a href="update.php?id=<?php echo $row_slides['id']; ?>" class="mr-3"   title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>
-                                <a href="delete.php?id=<?php echo $row_slides['id']; ?>"                title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>-->
-                                <a href="page002.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
-                                <a href="page003.php?update=<?php echo $row_slides['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span> ADD DETAIL </a>
-                                <a href="page001.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> DELETE </a>
-                            </td>
-                        </tr>
-                        <?php
-                    endwhile;
+                </form>
+            </div>
+
+            <table style="margin-top: 25px;">
+                <tr>
+                    <th><b>Parameter Name</b></th>
+                    <th><b>Parameter Code</b></th>
+                    <th><b>Link</b></th>
+                    <th><b>Image</b></th>
+                    <th><b>Action</b></th>
+                </tr>
+                <!-- PHP CODE TO FETCH DATA FROM ROWS -->
+                <?php
+                $get_slides = "SELECT * FROM gest_parameter_master WHERE flag = '1' ORDER BY code ASC";
+                $run_slides = mysqli_query($con, $get_slides);
+                // LOOP TILL END OF DATA
+                while ($row_slides = mysqli_fetch_array($run_slides)):
                     ?>
-                </table>
-            
+                    <tr>
+                        <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
+                        <td><?php echo $row_slides['name']; ?></td>
+                        <td><?php echo $row_slides['code']; ?></td>
+                        <td><?php echo $row_slides['link_image']; ?></td>
+                        <td><img src="uploaded_img/<?php echo $row_slides['link_image']; ?>" height="100" alt=""></td>
+                        <td>
+                            <a href="page002.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
+                            <a href="page003.php?update=<?php echo $row_slides['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span> ADD DETAIL </a>
+                            <a href="page001.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> DELETE </a>
+                        </td>
+                    </tr>
+                    <?php
+                endwhile;
+                ?>
+            </table>
+
             <div class="component">
                 <!-- Start Nav Structure -->
                 <button class="cn-button" id="cn-button">+</button>

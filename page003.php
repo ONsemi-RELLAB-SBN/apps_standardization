@@ -141,6 +141,9 @@ if (isset($_POST['update_parameter'])) {
                         <form>
                         <?php
                         $select = mysqli_query($conn, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
+                        $no = $id + 1;
+                        $s_number = str_pad($no, 4, "0", STR_PAD_LEFT );
+                        echo 'HEHEH >>> ' . $s_number;
                         while ($row = mysqli_fetch_assoc($select)) {
                             ?>
                             <div class="form-group">

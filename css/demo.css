@@ -11,7 +11,12 @@
 }
 
 body {
-    font-family: 'Lato', Arial, sans-serif;
+    /*font-family: 'Lato', Arial, sans-serif;*/
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 a, button {
@@ -20,6 +25,17 @@ a, button {
 
 a {
     text-decoration: none;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 1px 10px;
 }
 
 .container > header {
@@ -140,4 +156,14 @@ a {
         display: none;
     }
 
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
 }
