@@ -8,25 +8,30 @@ include 'config.php';
 
 $id = $_GET['update'];
 
-if (isset($_POST['update_parameter'])) {
+if (isset($_POST['update_detail'])) {
 
-    $parameter_name = $_POST['parameter_name'];
-    $parameter_code = $_POST['parameter_code'];
-    $parameter_image = $_FILES['parameter_image']['name'];
-    $parameter_image_tmp_name = $_FILES['parameter_image']['tmp_name'];
-    $parameter_image_folder = 'uploaded_img/' . $parameter_image;
+    $parameter_id = $_POST['masterId'];
+    $parameter_code = $_POST['masterCode'];
+    $parameter_name = $_POST['masterName'];
+    $detail_code = $_POST['detailsCode'];
+    $detail_name = $_POST['detailsName'];
+    $detail_remark = $_POST['remarks'];
 
-    if (empty($parameter_name) || empty($parameter_code)) {
-        $message[] = 'please fill out all!';
+    if (empty($parameter_code) || empty($parameter_name)) {
+        echo 'ASUK SINI WEA';
+        alert("ASHDASHDASHDAS");
+        $message[] = 'please fill out all required field!';
     } else {
-        $update_data = "UPDATE gest_parameter_master SET name='$parameter_name', code='$parameter_code', link_image='$parameter_image' WHERE id = '$id'";
-        $upload = mysqli_query($conn, $update_data);
+        $insert = "INSERT INTO gest_parameter_detail(master_code, code, name, remark, created_date, created_by, flag) VALUES('$parameter_code', '$detail_code', '$detail_name', '$detail_remark', NOW(), 'System', '1')";
+        $upload = mysqli_query($con, $insert);
+        echo 'NASOANSDOINAIOD (((( ((' . $insert;
+        alert("HUHUHUHU");
 
         if ($upload) {
-            move_uploaded_file($parameter_image_tmp_name, $parameter_image_folder);
-            header('location:page001.php');
+            echo 'masuk dekat sini';
+            header('location:page002.php?update=1');
         } else {
-            $$message[] = 'please fill out all!';
+            $$message[] = 'Please fill out all required field!';
         }
     }
 }
@@ -38,7 +43,7 @@ if (isset($_POST['update_parameter'])) {
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Circular Navigation - Demo 1 | Codrops</title>
+        <title>Add Parameter Detail</title>
         <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
         <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
         <meta name="author" content="Sara Soueidan for Codrops" />
@@ -62,47 +67,6 @@ if (isset($_POST['update_parameter'])) {
                 s.parentNode.insertBefore(ga, s);
             })();
         </script>
-
-        <script>
-            var subjectObject = {
-                "Front-end": {
-                    "HTML": ["Links", "Images", "Tables", "Lists"],
-                    "CSS": ["Borders", "Margins", "Backgrounds", "Float"],
-                    "JavaScript": ["Variables", "Operators", "Functions", "Conditions"]
-                },
-                "Back-end": {
-                    "PHP": ["Variables", "Strings", "Arrays"],
-                    "SQL": ["SELECT", "UPDATE", "DELETE"]
-                }
-            };
-            window.onload = function () {
-                var subjectSel = document.getElementById("subject");
-                var topicSel = document.getElementById("topic");
-                var chapterSel = document.getElementById("chapter");
-                for (var x in subjectObject) {
-                    subjectSel.options[subjectSel.options.length] = new Option(x, x);
-                }
-                subjectSel.onchange = function () {
-                        //empty Chapters- and Topics- dropdowns
-                        chapterSel.length = 1;
-                        topicSel.length = 1;
-                    //display correct values
-                    for (var y in subjectObject[this.value]) {
-                        topicSel.options[topicSel.options.length] = new Option(y, y);
-                    }
-                };
-                topicSel.onchange = function () {
-                        //empty Chapters dropdown
-                        chapterSel.length = 1;
-                    //display correct values
-                    var z = subjectObject[subjectSel.value][this.value];
-                    for (var i = 0; i < z.length; i++) {
-                        chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-                    }
-                };
-            };
-        </script>
-
     </head>
     <body>
         <?php
@@ -143,42 +107,50 @@ if (isset($_POST['update_parameter'])) {
                         $select = mysqli_query($conn, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
                         $no = $id + 1;
                         $s_number = str_pad($no, 4, "0", STR_PAD_LEFT );
-                        echo 'HEHEH >>> ' . $s_number;
+//                        echo 'HEHEH >>> ' . $s_number;
                         while ($row = mysqli_fetch_assoc($select)) {
                             ?>
-                            <div class="form-group">
-                                <label for=" masterName" class="col-lg-4 control-label">Master Name </label>
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control" id="masterName" name="masterName" placeholder="Code" value="<?php echo $row['name']; ?>" disabled>
+                            <div>
+                                <label for=" masterName">Master Name </label>
+                                <div>
+                                    <input type="text" id="masterName" name="masterName" placeholder="Code" value="<?php echo $row['name']; ?>" disabled>
                                 </div>
                             </div>
-                            <div class="form-group" hidden>
-                                <label for=" masterCode" class="col-lg-4 control-label">master Code</label>
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control" id="masterCode" name="masterCode" value="<?php echo $row['code']; ?>">
+                            <!--<div hidden>--><div>
+                                <label for=" masterCode">master Code</label>
+                                <div>
+                                    <input type="text" id="masterCode" name="masterCode" value="<?php echo $row['code']; ?>">
+                                    <input type="text" id="masterId" name="masterId" value="<?php echo $row['id']; ?>">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for=" detailsCode" class="col-lg-4 control-label">Details Code </label>
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control" id="detailsCode" name="detailsCode" placeholder="Details Code" value="<?php echo $row['code']; ?>" readonly>
+                            <div>
+                                <label for=" detailsCode">Details Code </label>
+                                <div>
+                                    <input type="text" id="detailsCode" name="detailsCode" placeholder="Details Code" value="<?php echo $row['code']; ?>" readonly>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="detailsName" class="col-lg-4 control-label">Details Name *</label>
-                                <div class="col-lg-8">
-                                    <input type="text" class="form-control" id="detailsName" name="detailsName" placeholder="Details Name" value="" >
+                            <div>
+                                <label for="detailsName">Details Name *</label>
+                                <div>
+                                    <input type="text" id="detailsName" name="detailsName" placeholder="Details Name" value="" >
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="remarks" class="col-lg-4 control-label">Remarks </label>
-                                <div class="col-lg-8">
-                                    <textarea class="form-control" rows="5" id="remarks" name="remarks"></textarea>
+                            <div>
+                                <label for="remarks">Remarks </label>
+                                <div>
+                                    <textarea rows="5" cols="100" id="remarks" name="remarks"></textarea>
                                 </div>
                             </div>
                             <br>
-                            <a href="page001.php" class="btn"><i class='bx bx-arrow-back'></i>Go Back!</a>
-                            <i class='bx bx-refresh' style='color:#ffffff' ></i><input type="submit" value="Update Parameter Master" name="update_parameter" class="btn">
+                            <!--<a href="page001.php" class="btn"><i class='bx bx-arrow-back'></i>Go Back!</a>-->
+                            <!--<i class='bx bx-refresh' style='color:#ffffff' ></i><input type="submit" value="Update Parameter Master" name="update_detail" class="btn">-->
+                            
+                            <a href="page001.php" class="button-78"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
+                            <button type="submit" value="Update Parameter Master" name="update_detail" class="button-78" >
+                                <i class='bx bx-list-plus bx-fw bx-md'></i> Add Parameter Detail
+                            </button>
+                            <a href="page003.php?update=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-edit"></i> Add details </a>
+                            <input type="submit" value="update detais" name="update_detail" class="btn">
                             <div class="clearfix"></div>
                             <br>
                         <?php } ?>

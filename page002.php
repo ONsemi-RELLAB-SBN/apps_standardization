@@ -81,23 +81,27 @@ if (isset($_POST['update_parameter'])) {
                 <h1>Access denied! Please go back to <a href="page001.php" class="btn"> main page</a></h1>
             <?php } else { ?>
                 <section>
-                    <p>Parameter Details</p>
+                    <p>Parameter Master - Edit Page</p>
                     <div class="admin-product-form-container centered">
                         <?php
                         $select = mysqli_query($conn, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
                         while ($row = mysqli_fetch_assoc($select)) {
                             ?>
                             <form action="" method="post" enctype="multipart/form-data">
-                                <h3 class="title">update the product</h3>
+                                
+                                <label for="name"><b>Parameter Name</b></label>
                                 <input type="text" class="box" name="parameter_name" value="<?php echo $row['name']; ?>" placeholder="Enter the parameter name">
-                                <br>
-                                <input type="number" min="0" class="box" name="parameter_code" value="<?php echo $row['code']; ?>" placeholder="enter the parameter code">
-                                <br>
+                                <label for="code"><b>Parameter Code</b></label>
+                                <input type="text" min="0" class="box" name="parameter_code" value="<?php echo $row['code']; ?>" placeholder="enter the parameter code">
+                                <label for="image"><b>Image</b></label>
                                 <input type="file" class="box" name="parameter_image" accept="image/png, image/jpeg, image/jpg">
                                 <img src="uploaded_img/<?php echo $row['link_image']; ?>" height="100" alt="">
                                 <br>
-                                <a href="page001.php" class="btn">go back!</a>
-                                <input type="submit" value="Update Parameter Master" name="update_parameter" class="btn">
+                                <br>
+                                <a href="page001.php" class="button-78"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
+                                <button type="submit" value="Update Parameter Master" name="update_parameter" class="button-78" >
+                                    <i class='bx bx-loader-circle bx-fw bx-fw' style='color:#ffffff' ></i>Update Parameter Master
+                                </button>
                             </form>
                         <?php }; ?>
                     </div>
