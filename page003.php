@@ -4,37 +4,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'config.php';
-
+include 'class/db.php';
 $id = $_GET['update'];
-
-if (isset($_POST['update_detail'])) {
-
-    $parameter_id = $_POST['masterId'];
-    $parameter_code = $_POST['masterCode'];
-    $parameter_name = $_POST['masterName'];
-    $detail_code = $_POST['detailsCode'];
-    $detail_name = $_POST['detailsName'];
-    $detail_remark = $_POST['remarks'];
-
-    if (empty($parameter_code) || empty($parameter_name)) {
-        echo 'ASUK SINI WEA';
-        alert("ASHDASHDASHDAS");
-        $message[] = 'please fill out all required field!';
-    } else {
-        $insert = "INSERT INTO gest_parameter_detail(master_code, code, name, remark, created_date, created_by, flag) VALUES('$parameter_code', '$detail_code', '$detail_name', '$detail_remark', NOW(), 'System', '1')";
-        $upload = mysqli_query($con, $insert);
-        echo 'NASOANSDOINAIOD (((( ((' . $insert;
-        alert("HUHUHUHU");
-
-        if ($upload) {
-            echo 'masuk dekat sini';
-            header('location:page002.php?update=1');
-        } else {
-            $$message[] = 'Please fill out all required field!';
-        }
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -51,8 +22,10 @@ if (isset($_POST['update_detail'])) {
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/component1.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
         <script src="js/modernizr-2.6.2.min.js"></script>
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
         <script type="text/javascript">
             var _gaq = _gaq || [];
@@ -67,148 +40,176 @@ if (isset($_POST['update_detail'])) {
                 s.parentNode.insertBefore(ga, s);
             })();
         </script>
-    </head>
-    <body>
-        <?php
-        if (isset($message)) {
-            foreach ($message as $message) {
-                echo '<span class="message">' . $message . '</span>';
+
+        <style>
+            .customers {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
             }
+
+            .customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            .customers tr:nth-child(even){
+                background-color: #f2f2f2;
+            }
+
+            .customers tr:hover {
+                background-color: #ddd;
+            }
+
+            .customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #04AA6D;
+                color: white;
+            }
+        </style>
+    </style>
+</head>
+<body>
+    <?php
+    if (isset($message)) {
+        foreach ($message as $message) {
+            echo '<span class="message">' . $message . '</span>';
         }
-        ?>
-        <div class="container">
-            <!-- Top Navigation -->
-            <header>
-                <h1>Circular Navigation <span>Building a Circular Navigation with CSS Transforms</span></h1>	
-            </header>
-            <?php if ($id == '') { ?>
-                <h1>Access denied! Please go back to <a href="page001.php" class="btn"> main page</a></h1>
-                <div class="component">
-                    <!-- Start Nav Structure -->
-                    <button class="cn-button" id="cn-button">+</button>
-                    <div class="cn-wrapper" id="cn-wrapper">
-                        <ul>
-                            <li><a href="page001.php#"><span class="icon-picture"></span></a></li>
-                            <li><a href="page002.php#"><span class="icon-headphones"></span></a></li>
-                            <li><a href="page003.php#"><span class="icon-home"></span></a></li>
-                            <li><a href="page004.php#"><span class="icon-facetime-video"></span></a></li>
-                            <li><a href="page005.php#"><span class="icon-envelope-alt"></span></a></li>
-                        </ul>
-                    </div>
-                    <div id="cn-overlay" class="cn-overlay"></div>
-                    <!-- End Nav Structure -->
+    }
+    ?>
+    <div class="container">
+        <!-- Top Navigation -->
+        <header>
+            <h1>Circular Navigation <span>Building a Circular Navigation with CSS Transforms</span></h1>	
+        </header>
+        <?php if ($id == '') { ?>
+            <h1>Access denied! Please go back to <a href="page001.php" class="btn"> main page</a></h1>
+            <div class="component">
+                <!-- Start Nav Structure -->
+                <button class="cn-button" id="cn-button">+</button>
+                <div class="cn-wrapper" id="cn-wrapper">
+                    <ul>
+                        <li><a href="page001.php#"><span class="icon-picture"></span></a></li>
+                        <li><a href="page002.php#"><span class="icon-headphones"></span></a></li>
+                        <li><a href="page003.php#"><span class="icon-home"></span></a></li>
+                        <li><a href="page004.php#"><span class="icon-facetime-video"></span></a></li>
+                        <li><a href="page005.php#"><span class="icon-envelope-alt"></span></a></li>
+                    </ul>
                 </div>
-            <?php } else { ?>
-                <section>
-                    <div class="main-box">
-                        <h2>Add Parameter Details</h2>
-                        <form>
+                <div id="cn-overlay" class="cn-overlay"></div>
+                <!-- End Nav Structure -->
+            </div>
+        <?php } else { ?>
+            <section>
+                <div>
+                    <h2>Add Parameter Details</h2>
+                    <form name='add_details' id='add_details' method="pot" action='page_add_detail.php'>
                         <?php
-                        $select = mysqli_query($conn, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
-                        $no = $id + 1;
-                        $s_number = str_pad($no, 4, "0", STR_PAD_LEFT );
-//                        echo 'HEHEH >>> ' . $s_number;
+                        $select = mysqli_query($con, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
+//                        $s_number = str_pad($no, 3, "0", STR_PAD_LEFT );
                         while ($row = mysqli_fetch_assoc($select)) {
                             ?>
                             <div>
-                                <label for=" masterName">Master Name </label>
                                 <div>
-                                    <input type="text" id="masterName" name="masterName" placeholder="Code" value="<?php echo $row['name']; ?>" disabled>
+                                    <label for=" masterName">Master Name </label>
+                                    <div>
+                                        <input type="text" id="paramName" name="paramName" value="<?php echo $row['name']; ?>" readonly>
+                                    </div>
                                 </div>
-                            </div>
-                            <!--<div hidden>--><div>
-                                <label for=" masterCode">master Code</label>
+                                <div hidden>
+                                    <label for=" masterCode">Master Code</label>
+                                    <div>
+                                        <input type="text" id="masterCode" name="masterCode" value="<?php echo $row['code']; ?>" readonly>
+                                        <input type="text" id="masterId" name="masterId" value="<?php echo $row['id']; ?>" readonly>
+                                    </div>
+                                </div>
                                 <div>
-                                    <input type="text" id="masterCode" name="masterCode" value="<?php echo $row['code']; ?>">
-                                    <input type="text" id="masterId" name="masterId" value="<?php echo $row['id']; ?>">
+                                    <?php
+                                    $getData = "SELECT COUNT(*) as count FROM gest_parameter_detail WHERE master_code = '" . $row['code'] . "'";
+                                    //                                echo 'query kat dalam >>> ' . $getData;
+                                    $rData = mysqli_query($con, $getData);
+                                    $rowMaklumat = mysqli_fetch_assoc($rData);
+                                    $data = $rowMaklumat['count'] + 1;
+                                    //                                echo 'HEHEHEH >>> '.$data;
+                                    $s_number = $row['code'] . str_pad($data, 3, "0", STR_PAD_LEFT);
+                                    //                                echo 'oi oi '.$s_number;
+                                    ?>
+                                    <label for=" detailsCode">Details Code </label>
+                                    <div>
+                                        <input type="text" id="detailsCode" name="detailsCode" placeholder="Details Code" value="<?php echo $s_number; ?>" readonly>
+                                    </div>
                                 </div>
+                                <div>
+                                    <label for="detailsName">Details Name *</label>
+                                    <div>
+                                        <input type="text" id="detailsName" name="detailsName" placeholder="Details Name" value="" >
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="remarks">Remarks </label>
+                                    <div>
+                                        <textarea rows="5" cols="97" id="remarks" name="remarks"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <a href="page001.php" class="button-78"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
+                                <button type="submit" value="Update Parameter Master" name="update_detail" class="button-78" >
+                                    <i class='bx bx-list-plus bx-fw bx-md'></i> Add Parameter Detail
+                                </button>
+                                <br>
+                                <br>
                             </div>
                             <div>
-                                <label for=" detailsCode">Details Code </label>
                                 <div>
-                                    <input type="text" id="detailsCode" name="detailsCode" placeholder="Details Code" value="<?php echo $row['code']; ?>" readonly>
+                                    <h2>Parameter Details List</h2>
+                                </div>
+                                <div>
+                                    <table class="customers">
+                                        <thead>
+                                            <tr>
+                                                <!--<th><span>No</span></th>-->
+                                                <th><span>Detail Code</span></th>
+                                                <th><span>Name</span></th>
+                                                <th><span>Remarks</span></th>
+                                                <th><span>Manage</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $get_slides2 = "SELECT * FROM gest_parameter_detail WHERE master_code = '" . $row['code'] . "' ORDER BY code ASC";
+                                            $run_slides2 = mysqli_query($con, $get_slides2);
+                                            // LOOP TILL END OF DATA
+                                            while ($row_slides2 = mysqli_fetch_array($run_slides2)):
+                                                ?>
+                                                <tr>
+                                                    <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
+                                                    <td><?php echo $row_slides2['name']; ?></td>
+                                                    <td><?php echo $row_slides2['code']; ?></td>
+                                                    <td><?php echo $row_slides2['remark']; ?></td>
+                                                    <td>
+                                                        <a href="page_update_detail.php?edit=<?php echo $row_slides2['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
+                                                        <!--<a href="page003.php?update=<?php echo $row_slides2['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span> ADD DETAIL </a>-->
+                                                        <a href="page_remove_detail.php?delete=<?php echo $row_slides2['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> DELETE </a>
+                                                    </td>
+                                                </tr>
+                                                <?php
+                                            endwhile;
+                                            ?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <div>
-                                <label for="detailsName">Details Name *</label>
-                                <div>
-                                    <input type="text" id="detailsName" name="detailsName" placeholder="Details Name" value="" >
-                                </div>
-                            </div>
-                            <div>
-                                <label for="remarks">Remarks </label>
-                                <div>
-                                    <textarea rows="5" cols="100" id="remarks" name="remarks"></textarea>
-                                </div>
-                            </div>
-                            <br>
-                            <!--<a href="page001.php" class="btn"><i class='bx bx-arrow-back'></i>Go Back!</a>-->
-                            <!--<i class='bx bx-refresh' style='color:#ffffff' ></i><input type="submit" value="Update Parameter Master" name="update_detail" class="btn">-->
-                            
-                            <a href="page001.php" class="button-78"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
-                            <button type="submit" value="Update Parameter Master" name="update_detail" class="button-78" >
-                                <i class='bx bx-list-plus bx-fw bx-md'></i> Add Parameter Detail
-                            </button>
-                            <a href="page003.php?update=<?php echo $row['id']; ?>" class="btn"> <i class="fas fa-edit"></i> Add details </a>
-                            <input type="submit" value="update detais" name="update_detail" class="btn">
-                            <div class="clearfix"></div>
-                            <br>
                         <?php } ?>
-                        </form>
-                    </div>
-                    <div class="col-lg-12">
-                        <!--<h1>Parameter Details</h1>-->
-                        <div class="main-box clearfix">
-                            <div class="clearfix">
-                                <h2 class="pull-left">Parameter Details List</h2>
-                            </div>
-                            <div class="table-responsive">
-                                <table id="dt_spml" class="table">
-                                    <thead>
-                                        <tr>
-                                            <th><span>No</span></th>
-                                            <th><span>Detail Code</span></th>
-                                            <th><span>Name</span></th>
-                                            <th><span>Remarks</span></th>
-                                            <th><span>Manage</span></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <c:forEach items="${parameterDetailsList}" var="parameterDetails" varStatus="parameterDetailsLoop">
-                                        <tr>
-                                            <td><c:out value="${parameterDetailsLoop.index+1}"/></td>
-                                        <td><c:out value="${parameterDetails.detailCode}"/></td>
-                                        <td id="modal_delete_info_${
-                                            parameterDetails.id
-                                        }"><c:out value="${parameterDetails.name}"/></td>
-                                        <td><c:out value="${parameterDetails.remarks}"/></td>
-                                        <td align="center">
-                                            <a href="${contextPath}/admin/parameterMaster/editDetails/${parameterDetails.id}" class="table-link" title="Edit">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                            <a modaldeleteid="${parameterDetails.id}" data-toggle="modal" href="#delete_modal" class="table-link danger group_delete" onclick="modalDelete(this);">
-                                                <span class="fa-stack">
-                                                    <i class="fa fa-square fa-stack-2x"></i>
-                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                                </span>
-                                            </a>
-                                        </td>
-                                        </tr>
-                                    </c:forEach>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            <?php } ?>
-        </div><!-- /container -->
-        <script src="js/polyfills.js"></script>
-        <script src="js/demo1.js"></script>
-        <!-- For the demo ad only -->   
-        <script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>
-    </body>
+                    </form>
+                </div>
+            </section>
+        <?php } ?>
+    </div><!-- /container -->
+    <script src="js/polyfills.js"></script>
+    <script src="js/demo1.js"></script>
+    <!-- For the demo ad only -->   
+    <script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>
+</body>
 </html>

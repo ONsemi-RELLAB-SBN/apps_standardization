@@ -110,13 +110,13 @@ if (isset($_GET['delete'])) {
 
                     <label for="image"><b>Image</b></label>
                     <input type="file" accept="image/png, image/jpeg, image/jpg" name="parameter_image" class="box">
+                    <input type="submit" class="btn btn-success pull-right" name="add_parameter" value="Add New Parameter">
                     <hr>
-                    <input type="submit" class="btn btn-success " name="add_parameter" value="Add New Parameter">
-                    <!--<a href="page02.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Parameter</a>-->
                 </form>
             </div>
-
-            <table style="margin-top: 25px;">
+            <hr>
+            <!--<table style="margin-top: 25px;">-->
+            <table class="customers">
                 <tr>
                     <th><b>Parameter Name</b></th>
                     <th><b>Parameter Code</b></th>

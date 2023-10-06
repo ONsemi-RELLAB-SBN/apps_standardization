@@ -4,7 +4,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'config.php';
+include 'class/db.php';
 
 $id = $_GET['edit'];
 
@@ -20,7 +20,7 @@ if (isset($_POST['update_parameter'])) {
         $message[] = 'please fill out all!';
     } else {
         $update_data = "UPDATE gest_parameter_master SET name='$parameter_name', code='$parameter_code', link_image='$parameter_image' WHERE id = '$id'";
-        $upload = mysqli_query($conn, $update_data);
+        $upload = mysqli_query($con, $update_data);
 
         if ($upload) {
             move_uploaded_file($parameter_image_tmp_name, $parameter_image_folder);
@@ -84,7 +84,7 @@ if (isset($_POST['update_parameter'])) {
                     <p>Parameter Master - Edit Page</p>
                     <div class="admin-product-form-container centered">
                         <?php
-                        $select = mysqli_query($conn, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
+                        $select = mysqli_query($con, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
                         while ($row = mysqli_fetch_assoc($select)) {
                             ?>
                             <form action="" method="post" enctype="multipart/form-data">

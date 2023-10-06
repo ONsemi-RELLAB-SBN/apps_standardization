@@ -1,6 +1,5 @@
 <?php
-
-/* 
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
@@ -37,20 +36,107 @@ include 'class/db.php';
             })();
         </script>
 
+        <style>
+            #main {
+                padding: 0;
+                border-right: none;
+                width:100%;
+                margin-top:88px;
+            }
+            #mypagediv2,#user-profile-bottom-wrapper {
+                height:0px;
+                overflow:hidden;
+                display:block;
+            }
+            #footer {
+                padding:0;
+            }
+            h1, h2, h3, h4, h5, h6, p {
+                font-family: 'Source Sans Pro', sans-serif;
+            }
+            .b-headings {
+                border-radius: 15%;
+                border: 2px solid white;
+                padding: 20px 35px;
+                display: inline-block;
+                font-size: 105px;
+            }
+            .colx-container {
+                display: flex;
+                width: 100%;
+            }
+            .colx {
+                flex: 1;
+                padding-top:60px;
+                padding-bottom:30px;
+                padding-left:24px;
+                padding-right:24px;
+            }
+
+            .colx.firstx {
+                border-top-left-radius:6px;
+                border-bottom-left-radius:6px;
+            }
+
+            .colx.lastx {
+                border-top-right-radius:6px;
+                border-bottom-right-radius:6px;
+            }
+
+            @media screen and (max-width: 800px) {
+                .colx-container {
+                    flex-direction:column;
+                }
+                .colx {
+                    border-radius:6px;
+                    margin-bottom:24px;
+                }
+            }
+        </style>
+
     </head>
     <body>
         <div class="container">
             <!-- Top Navigation -->
-            <header>
-                <h1>onsemi <span>Equipment Standardization Survey Data Entry</span></h1>	
-            </header>
+            <!--            <header>
+                            <h1>onsemi <span>Equipment Standardization Survey Data Entry</span></h1>	
+                        </header>-->
+            <!--            <section>
+                            <div class="vertical-menu">
+                                <a href="#" class="active">Home</a>
+                                <a href="page001.php">Parameter</a>
+                                <a href="#">Form</a>
+                                <a href="#">Link 3</a>
+                                <a href="#">Link 4</a>
+                            </div>
+                        </section>-->
             <section>
-                <div class="vertical-menu">
-                    <a href="#" class="active">Home</a>
-                    <a href="page001.php">Parameter</a>
-                    <a href="#">Form</a>
-                    <a href="#">Link 3</a>
-                    <a href="#">Link 4</a>
+                <div class="ws-black w3-center" style="padding-top:90px;padding-bottom:70px;">
+                    <div class="w3-content" style="padding-left:20px;padding-right:20px;max-width:1200px">
+                        <h1 style="font-size:67px;font-weight:700;" class="textsmallerscreens">onsemi</h1>
+                        <h3 style="margin-top:50px;margin-bottom:20px;">Equipment Standardization Survey Data Entry</h3>
+                        <br><br>
+                        <div class="colx-container">
+                            <a href="page001.php" class="w3-hover-text-light-grey">
+                            </a><div class="colx firstx" style="background-color:#846bae;color:white"><a href="page001.php" class="w3-hover-text-light-grey">
+                                    <h4 class="b-headings">PM</h4>
+                                </a><p><a href="page001.php" class="w3-hover-text-light-grey"></a><a href="page001.php" class="w3-button w3-round w3-margin-top w3-margin-bottom w3-border w3-hover-white" style="font-size:19px">View Parameter Master »</a></p>
+                                <p style="font-size:17px;">Parameter master.</p>
+                            </div>
+                            <a href="form.php" class="w3-hover-text-light-grey">
+                            </a><div class="colx" style="background-color:#5f4884;color:white"><a href="form.php" class="w3-hover-text-light-grey">
+                                    <h4 class="b-headings">FM</h4>
+                                </a><p><a href="form.php" class="w3-hover-text-light-grey"></a><a href="form.php" class="w3-button w3-round w3-margin-top w3-margin-bottom w3-border w3-hover-white" style="font-size:19px">Equipment Form »</a></p>
+                                <p style="font-size:17px;">This form is to add an equipment.</p>
+                            </div>
+                            <a href="https://www.w3schools.com/bootstrap5/index.php" class="w3-hover-text-light-grey">
+                            </a><div class="colx lastx" style="background-color:#6c3ec1;color:white"><a href="https://www.w3schools.com/bootstrap5/index.php" class="w3-hover-text-light-grey">
+                                    <h4 class="b-headings">RF</h4>
+                                </a><p><a href="https://www.w3schools.com/bootstrap5/index.php" class="w3-hover-text-light-grey"></a><a href="https://www.w3schools.com/bootstrap5/index.php" class="w3-button w3-round w3-margin-top w3-margin-bottom w3-border w3-hover-white" style="font-size:19px">Reference »</a></p>
+                                <p style="font-size:17px;">Reference Page.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <div class="component">
