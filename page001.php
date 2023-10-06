@@ -93,12 +93,6 @@ if (isset($_GET['delete'])) {
             }
         }
         ?>
-<!--        <div id="mySidenav" class="sidenav">
-            <a href="index.php#" id="about">Home</a>
-            <a href="page001.php#" id="blog">Parameter</a>
-            <a href="form.php#" id="projects">Form</a>
-            <a href="#" id="contact">Contact</a>
-        </div>-->
         <!-- Top navigation -->
         <div class="topnav">
             <!-- Centered link -->
@@ -106,7 +100,7 @@ if (isset($_GET['delete'])) {
                 <a href="index.php#home">Home</a>
             </div>
             <!-- Left-aligned links (default) -->
-            <a href="form.php#eqp">Form Equipment</a>
+            <a href="form_equipment.php#eqp">Form Equipment</a>
             <a href="form2.php#hw">Form Hardware</a>
             <!-- Right-aligned links -->
             <div class="topnav-right">

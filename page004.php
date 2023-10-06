@@ -47,7 +47,7 @@
                 <a href="index.php#home">Home</a>
             </div>
             <!-- Left-aligned links (default) -->
-            <a href="form.php#eqp">Form Equipment</a>
+            <a href="form_equipment.php#eqp">Form Equipment</a>
             <a href="form2.php#hw">Form Hardware</a>
             <!-- Right-aligned links -->
             <div class="topnav-right">
