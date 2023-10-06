@@ -14,7 +14,7 @@ $id = $_GET['update'];
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Add Parameter Detail</title>
+        <title>Circular Navigation - Demo 1 | Codrops</title>
         <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
         <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
         <meta name="author" content="Sara Soueidan for Codrops" />
@@ -79,11 +79,20 @@ $id = $_GET['update'];
         }
     }
     ?>
+    <div class="topnav">
+        <!-- Centered link -->
+        <div class="topnav-centered">
+            <a href="index.php#home">Home</a>
+        </div>
+        <!-- Left-aligned links (default) -->
+        <a href="form.php#eqp">Form Equipment</a>
+        <a href="form2.php#hw">Form Hardware</a>
+        <!-- Right-aligned links -->
+        <div class="topnav-right">
+            <a href="page001.php#parameter" class="active">Parameter</a>
+        </div>
+    </div>
     <div class="container">
-        <!-- Top Navigation -->
-        <header>
-            <h1>Circular Navigation <span>Building a Circular Navigation with CSS Transforms</span></h1>	
-        </header>
         <?php if ($id == '') { ?>
             <h1>Access denied! Please go back to <a href="page001.php" class="btn"> main page</a></h1>
             <div class="component">

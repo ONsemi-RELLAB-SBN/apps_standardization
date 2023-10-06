@@ -84,7 +84,6 @@ if (isset($_GET['delete'])) {
                 s.parentNode.insertBefore(ga, s);
             })();
         </script>
-
     </head>
     <body>
         <?php
@@ -94,10 +93,30 @@ if (isset($_GET['delete'])) {
             }
         }
         ?>
+<!--        <div id="mySidenav" class="sidenav">
+            <a href="index.php#" id="about">Home</a>
+            <a href="page001.php#" id="blog">Parameter</a>
+            <a href="form.php#" id="projects">Form</a>
+            <a href="#" id="contact">Contact</a>
+        </div>-->
+        <!-- Top navigation -->
+        <div class="topnav">
+            <!-- Centered link -->
+            <div class="topnav-centered">
+                <a href="index.php#home">Home</a>
+            </div>
+            <!-- Left-aligned links (default) -->
+            <a href="form.php#eqp">Form Equipment</a>
+            <a href="form2.php#hw">Form Hardware</a>
+            <!-- Right-aligned links -->
+            <div class="topnav-right">
+                <a href="page001.php#parameter" class="active">Parameter</a>
+            </div>
+        </div>
         <div class="container">
             <div class="mt-5 mb-3 clearfix">
                 <h2 class="pull-left">Parameter Details</h2>
-                <button onClick="window.location.href=window.location.href" class="pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
+                <button onClick="window.location.href = window.location.href" class="pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
             </div>
             <div class="admin-product-form-container">
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">

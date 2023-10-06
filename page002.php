@@ -46,8 +46,10 @@ if (isset($_POST['update_parameter'])) {
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/component1.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
         <script src="js/modernizr-2.6.2.min.js"></script>
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
         <script type="text/javascript">
             var _gaq = _gaq || [];
@@ -72,11 +74,21 @@ if (isset($_POST['update_parameter'])) {
             }
         }
         ?>
+        <!-- Top navigation -->
+        <div class="topnav">
+            <!-- Centered link -->
+            <div class="topnav-centered">
+                <a href="index.php#home">Home</a>
+            </div>
+            <!-- Left-aligned links (default) -->
+            <a href="form.php#eqp">Form Equipment</a>
+            <a href="form2.php#hw">Form Hardware</a>
+            <!-- Right-aligned links -->
+            <div class="topnav-right">
+                <a href="page001.php#parameter" class="active">Parameter</a>
+            </div>
+        </div>
         <div class="container">
-            <!-- Top Navigation -->
-            <header>
-                <h1>Circular Navigation <span>Building a Circular Navigation with CSS Transforms</span></h1>	
-            </header>
             <?php if ($id == '') { ?>
                 <h1>Access denied! Please go back to <a href="page001.php" class="btn"> main page</a></h1>
             <?php } else { ?>
@@ -93,9 +105,9 @@ if (isset($_POST['update_parameter'])) {
                                 <input type="text" class="box" name="parameter_name" value="<?php echo $row['name']; ?>" placeholder="Enter the parameter name">
                                 <label for="code"><b>Parameter Code</b></label>
                                 <input type="text" min="0" class="box" name="parameter_code" value="<?php echo $row['code']; ?>" placeholder="enter the parameter code">
-                                <label for="image"><b>Image</b></label>
+                                <label for="image"><b>Image</b></label><br>
+                                <img src="uploaded_img/<?php echo $row['link_image']; ?>" height="100" alt=""><br>
                                 <input type="file" class="box" name="parameter_image" accept="image/png, image/jpeg, image/jpg">
-                                <img src="uploaded_img/<?php echo $row['link_image']; ?>" height="100" alt="">
                                 <br>
                                 <br>
                                 <a href="page001.php" class="button-78"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>

@@ -21,6 +21,9 @@
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/component1.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
         <script src="js/modernizr-2.6.2.min.js"></script>
 
         <script type="text/javascript">
@@ -36,9 +39,21 @@
                 s.parentNode.insertBefore(ga, s);
             })();
         </script>
-
     </head>
     <body>
+        <div class="topnav">
+            <!-- Centered link -->
+            <div class="topnav-centered">
+                <a href="index.php#home">Home</a>
+            </div>
+            <!-- Left-aligned links (default) -->
+            <a href="form.php#eqp">Form Equipment</a>
+            <a href="form2.php#hw">Form Hardware</a>
+            <!-- Right-aligned links -->
+            <div class="topnav-right">
+                <a href="page001.php#parameter">Parameter</a>
+            </div>
+        </div>
         <div class="container">
             <!-- Top Navigation -->
             <header>
