@@ -4,6 +4,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
+
 include 'class/db.php';
 
 $parameter_id = $_GET['masterId'];
@@ -13,7 +14,7 @@ $detail_code = $_GET['detailsCode'];
 $detail_name = $_GET['detailsName'];
 $detail_remark = $_GET['remarks'];
 
-$insert = "INSERT INTO gest_parameter_detail(master_code, code, name, remark, created_date, created_by, flag) VALUES('$parameter_code', '$detail_code', '$detail_name', '$detail_remark', NOW(), 'System', '1')";
+$insert = "";
 $upload = mysqli_query($con, $insert);
 ?>
 <script>
