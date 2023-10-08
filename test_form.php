@@ -20,7 +20,7 @@ include 'class/db.php';
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+<!--        <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/component1.css" />
         <link rel="stylesheet" type="text/css" href="css/select2.css"/>
@@ -39,7 +39,21 @@ include 'class/db.php';
         <script src="js/css3-mediaqueries.js"></script> 
         <script src="js/scripts.js"></script>
         <script src="js/jquery.blockUI.js"></script>
-        <script src="js/sweetalert.min.js"></script>
+        <script src="js/sweetalert.min.js"></script>-->
+        
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <!--<link rel="stylesheet" type="text/css" href="css/component1.css" />-->
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <!--<link rel="stylesheet" type="text/css" href="css/elements.css">-->
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+        <link rel="stylesheet" type="text/css" href="css/readonly.css" />
+        <link rel="stylesheet" type="text/css" href="css/select2.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+        
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/select2.min.js"></script>
 
         <style>
             .select2-container-active .select2-choice,
@@ -81,6 +95,19 @@ include 'class/db.php';
             }
         </style>
         <script type="text/javascript">
+            
+//            var _gaq = _gaq || [];
+//            _gaq.push(['_setAccount', 'UA-7243260-2']);
+//            _gaq.push(['_trackPageview']);
+//            (function () {
+//                var ga = document.createElement('script');
+//                ga.type = 'text/javascript';
+//                ga.async = true;
+//                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+//                var s = document.getElementsByTagName('script')[0];
+//                s.parentNode.insertBefore(ga, s);
+//            })();
+            
             $(document).ready(function () {
 
                 $('.js-example-basic-multiple').select2({
@@ -795,8 +822,8 @@ include 'class/db.php';
                 </div>	
             </div>
         </div>
-        <div class="component">
-            <!-- Start Nav Structure -->
+<!--        <div class="component">
+             Start Nav Structure 
             <button class="cn-button" id="cn-button">+</button>
             <div class="cn-wrapper" id="cn-wrapper">
                 <ul>
@@ -808,11 +835,11 @@ include 'class/db.php';
                 </ul>
             </div>
             <div id="cn-overlay" class="cn-overlay"></div>
-            <!-- End Nav Structure -->
-        </div>
-        <script src="js/polyfills.js"></script>
-        <script src="js/demo1.js"></script>
+             End Nav Structure 
+        </div>-->
+<!--        <script src="js/polyfills.js"></script>
+        <script src="js/demo1.js"></script>-->
         <!-- For the demo ad only -->   
-        <script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>
+        <!--<script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>-->
     </body>
 </html>
