@@ -6,7 +6,6 @@
  */
 include 'class/db.php';
 ?>
-this is listing equipment yang kita da masukkan
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -53,12 +52,13 @@ this is listing equipment yang kita da masukkan
             <!--<table style="margin-top: 25px;">-->
             <table class="customers">
                 <tr>
-                    <th><b>No</b></th>
-                    <th><b>Parameter Name</b></th>
-                    <th><b>Parameter Code</b></th>
-                    <th><b>Link</b></th>
-                    <th><b>Image</b></th>
-                    <th><b>Action</b></th>
+                    <th style="text-align:center"><b>No</b></th>
+                    <th><b>Equipment</b></th>
+                    <th><b>Location</b></th>
+                    <th><b>Strategy</b></th>
+                    <th><b>Champion</b></th>
+                    <th><b>Test</b></th>
+                    <th style="text-align:center"><b>Action</b></th>
                 </tr>
                 <!-- PHP CODE TO FETCH DATA FROM ROWS -->
                 <?php
@@ -71,14 +71,15 @@ this is listing equipment yang kita da masukkan
                     ?>
                     <tr>
                         <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
-                        <td><?php echo $t; ?></td>
+                        <td style="text-align:center"><?php echo $t; ?></td>
                         <td><?php echo $row_slides['eqpt_id']; ?></td>
                         <td><?php echo $row_slides['lab_location']; ?></td>
                         <td><?php echo $row_slides['strategy']; ?></td>
                         <td><?php echo $row_slides['champion']; ?></td>
-                        <td>
-                            <a href="parameter_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
-                            <a href="parameter.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> DELETE </a>
+                        <td><?php echo $row_slides['champion']; ?></td>
+                        <td style="text-align:center">
+                            <a href="form_equipment_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
+                            <a href="form_delete_equipment.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> DELETE </a>
                         </td>
                     </tr>
                     <?php
