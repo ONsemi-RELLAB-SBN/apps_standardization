@@ -8,10 +8,9 @@ include 'class/db.php';
 
 $detail_id = $_GET['edit'];
 $master_id = $_GET['id'];
-echo '$master_id >>> ' . $master_id;
-echo '$detail_id >>> ' . $detail_id;
+//echo '$master_id >>> ' . $master_id;
+//echo '$detail_id >>> ' . $detail_id;
 ?>
-PAGE UNTUK UPDATE DETAILS
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -19,11 +18,11 @@ PAGE UNTUK UPDATE DETAILS
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link rel="shortcut icon" href="image/dribbble.ico">
         <title>Survey - Standardization</title>
+        <meta name="author" content="Ayep" />
+        <link rel="shortcut icon" href="image/dribbble.ico">
         <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
         <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
-        <meta name="author" content="Sara Soueidan for Codrops" />
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/component1.css" />
@@ -118,14 +117,12 @@ PAGE UNTUK UPDATE DETAILS
                 <!-- End Nav Structure -->
             </div>
         <?php } else { ?>
-            WOI, MASUK SINI DA
             <section>
                 <div>
                     <h2>Update Parameter Details</h2>
                     <form name='update_details' id='update_details' method="pot" action='parameter_update_detail.php'>
                         <?php
                         $select = mysqli_query($con, "SELECT * FROM gest_parameter_master WHERE id = '$master_id'");
-                        echo 'query master >> ' . $master_id;
                         while ($row = mysqli_fetch_assoc($select)) {
                             ?>
                             <div>
@@ -144,14 +141,13 @@ PAGE UNTUK UPDATE DETAILS
                                 </div>
                                 <?php
                                     $select2 = mysqli_query($con, "SELECT * FROM gest_parameter_detail WHERE id = '$detail_id'");
-                                    echo 'query details >> ' . $detail_id;
                                     while ($row2 = mysqli_fetch_assoc($select2)) {
                                         ?>
                                         <div>
                                             <label for=" detailsCode">Details Code </label>
                                             <div>
                                                 <input type="text" id="detailsCode" name="detailsCode" placeholder="Details Code" value="<?php echo $row2['code']; ?>" readonly>
-                                                <input type="text" id="detailId" name="detailId" placeholder="Details Id" value="<?php echo $detail_id; ?>" readonly>
+                                                <input type="text" id="detailId" name="detailId" placeholder="Details Id" value="<?php echo $detail_id; ?>" readonly hidden>
                                             </div>
                                         </div>
                                         <div>

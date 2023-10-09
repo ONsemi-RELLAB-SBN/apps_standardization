@@ -12,15 +12,19 @@ include 'class/db.php';
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Circular Navigation - Demo 1 | Codrops</title>
+        <title>Standardization Survey</title>
+        <meta name="author" content="Ayep" />
+        <link rel="shortcut icon" href="image/dribbble.ico">
         <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
         <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
-        <meta name="author" content="Sara Soueidan for Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico">
+        
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/component1.css" />
+        <!--<link rel="stylesheet" type="text/css" href="css/component2.css" />-->
         <script src="js/modernizr-2.6.2.min.js"></script>
+        <script src="js/polyfills.js"></script>
+        <script src="js/demo1.js"></script>
 
         <script type="text/javascript">
             var _gaq = _gaq || [];
@@ -95,30 +99,29 @@ include 'class/db.php';
         </style>
 
     </head>
-    <body>
-        <div class="container">
-            <section>
+    <body style="background-color:#ff9999">
+        <div class="container" style="background-color:#ff9999">
+            <section style="background-color:#ff9999">
                 <div class="ws-black w3-center" style="padding-top:90px;padding-bottom:70px;">
                     <div class="w3-content" style="padding-left:20px;padding-right:20px;max-width:1200px">
                         <h1 style="font-size:67px;font-weight:700;" class="textsmallerscreens">onsemi</h1>
                         <h3 style="margin-top:50px;margin-bottom:20px;">Equipment Standardization Survey Data Entry</h3>
-                        MAIN PHP FILES
                         <br><br>
                         <div class="colx-container">
                             <a href="parameter.php" class="w3-hover-text-light-grey">
-                            </a><div class="colx firstx" style="background-color:#846bae;color:white"><a href="parameter.php" class="w3-hover-text-light-grey">
+                            </a><div class="colx firstx" style="background-color:#d6cee4;color:white"><a href="parameter.php" class="w3-hover-text-light-grey">
                                     <h4 class="b-headings">PM</h4>
                                 </a><p><a href="parameter.php" class="w3-hover-text-light-grey"></a><a href="parameter.php" class="w3-button w3-round w3-margin-top w3-margin-bottom w3-border w3-hover-white" style="font-size:19px">View Parameter Master »</a></p>
                                 <p style="font-size:17px;">Parameter master.</p>
                             </div>
                             <a href="form_equipment.php" class="w3-hover-text-light-grey">
-                            </a><div class="colx" style="background-color:#5f4884;color:white"><a href="form_equipment.php" class="w3-hover-text-light-grey">
+                            </a><div class="colx" style="background-color:#bbadd2;color:white"><a href="form_equipment.php" class="w3-hover-text-light-grey">
                                     <h4 class="b-headings">FM</h4>
                                 </a><p><a href="form_equipment.php" class="w3-hover-text-light-grey"></a><a href="form_equipment.php" class="w3-button w3-round w3-margin-top w3-margin-bottom w3-border w3-hover-white" style="font-size:19px">Equipment Form »</a></p>
                                 <p style="font-size:17px;">This form is to add an equipment.</p>
                             </div>
                             <a href="https://www.w3schools.com/bootstrap5/index.php" class="w3-hover-text-light-grey">
-                            </a><div class="colx lastx" style="background-color:#6c3ec1;color:white"><a href="https://www.w3schools.com/bootstrap5/index.php" class="w3-hover-text-light-grey">
+                            </a><div class="colx lastx" style="background-color:#d3c5ec;color:white"><a href="https://www.w3schools.com/bootstrap5/index.php" class="w3-hover-text-light-grey">
                                     <h4 class="b-headings">RF</h4>
                                 </a><p><a href="https://www.w3schools.com/bootstrap5/index.php" class="w3-hover-text-light-grey"></a><a href="https://www.w3schools.com/bootstrap5/index.php" class="w3-button w3-round w3-margin-top w3-margin-bottom w3-border w3-hover-white" style="font-size:19px">Reference »</a></p>
                                 <p style="font-size:17px;">Reference Page.</p>
@@ -143,8 +146,7 @@ include 'class/db.php';
                 <!-- End Nav Structure -->
             </div>
         </div><!-- /container -->
-        <script src="js/polyfills.js"></script>
-        <script src="js/demo1.js"></script>
+       
         <!-- For the demo ad only -->   
         <script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>
     </body>
