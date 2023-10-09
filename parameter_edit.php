@@ -24,7 +24,7 @@ if (isset($_POST['update_parameter'])) {
 
         if ($upload) {
             move_uploaded_file($parameter_image_tmp_name, $parameter_image_folder);
-            header('location:page001.php');
+            header('location:parameter.php');
         } else {
             $$message[] = 'please fill out all!';
         }
@@ -78,19 +78,19 @@ if (isset($_POST['update_parameter'])) {
         <div class="topnav">
             <!-- Centered link -->
             <div class="topnav-centered">
-                <a href="index.php#home">Home</a>
+                <a href="main.php#home">Home</a>
             </div>
             <!-- Left-aligned links (default) -->
             <a href="form_equipment.php#eqp">Form Equipment</a>
-            <a href="form2.php#hw">Form Hardware</a>
+            <a href="form_hardware.php#hw">Form Hardware</a>
             <!-- Right-aligned links -->
             <div class="topnav-right">
-                <a href="page001.php#parameter" class="active">Parameter</a>
+                <a href="parameter.php#parameter" class="active">Parameter</a>
             </div>
         </div>
         <div class="container">
             <?php if ($id == '') { ?>
-                <h1>Access denied! Please go back to <a href="page001.php" class="btn"> main page</a></h1>
+                <h1>Access denied! Please go back to <a href="parameter.php" class="btn"> main page</a></h1>
             <?php } else { ?>
                 <section>
                     <p>Parameter Master - Edit Page</p>
@@ -110,7 +110,7 @@ if (isset($_POST['update_parameter'])) {
                                 <input type="file" class="box" name="parameter_image" accept="image/png, image/jpeg, image/jpg">
                                 <br>
                                 <br>
-                                <a href="page001.php" class="button-78"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
+                                <a href="parameter.php" class="button-78"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
                                 <button type="submit" value="Update Parameter Master" name="update_parameter" class="button-78" >
                                     <i class='bx bx-loader-circle bx-fw bx-fw' style='color:#ffffff' ></i>Update Parameter Master
                                 </button>
@@ -124,10 +124,10 @@ if (isset($_POST['update_parameter'])) {
                 <button class="cn-button" id="cn-button">+</button>
                 <div class="cn-wrapper" id="cn-wrapper">
                     <ul>
-                        <li><a href="page001.php#"><span class="icon-picture"></span></a></li>
-                        <li><a href="page002.php#"><span class="icon-headphones"></span></a></li>
-                        <li><a href="page003.php#"><span class="icon-home"></span></a></li>
-                        <li><a href="page004.php#"><span class="icon-facetime-video"></span></a></li>
+                        <li><a href="parameter.php#"><span class="icon-picture"></span></a></li>
+                        <li><a href="form_equipment.php#"><span class="icon-headphones"></span></a></li>
+                        <li><a href="main.php#"><span class="icon-facetime-video"></span></a></li>
+                        <li><a href="form_hardware.php#"><span class="icon-home"></span></a></li>
                         <li><a href="page005.php#"><span class="icon-envelope-alt"></span></a></li>
                     </ul>
                 </div>

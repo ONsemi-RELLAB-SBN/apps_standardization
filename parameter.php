@@ -49,7 +49,7 @@ if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
 //    mysqli_query($con, "DELETE FROM gest_parameter_master WHERE id = $id");
     mysqli_query($con, "UPDATE gest_parameter_master SET flag = 0 WHERE id = $id");
-    header('location:page001.php');
+    header('location:parameter.php');
 };
 ?>
 
@@ -97,19 +97,19 @@ if (isset($_GET['delete'])) {
         <div class="topnav">
             <!-- Centered link -->
             <div class="topnav-centered">
-                <a href="index.php#home">Home</a>
+                <a href="main.php#home">Home</a>
             </div>
             <!-- Left-aligned links (default) -->
             <a href="form_equipment.php#eqp">Form Equipment</a>
-            <a href="form2.php#hw">Form Hardware</a>
+            <a href="form_hardware.php#hw">Form Hardware</a>
             <!-- Right-aligned links -->
             <div class="topnav-right">
-                <a href="page001.php#parameter" class="active">Parameter</a>
+                <a href="parameter.php#parameter" class="active">Parameter</a>
             </div>
         </div>
         <div class="container">
             <div class="mt-5 mb-3 clearfix">
-                <h2 class="pull-left">Parameter Details</h2>
+                <h2 class="pull-left">Parameter Master Details</h2>
                 <button onClick="window.location.href = window.location.href" class="pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
             </div>
             <div class="admin-product-form-container">
@@ -151,9 +151,9 @@ if (isset($_GET['delete'])) {
                         <td><?php echo $row_slides['link_image']; ?></td>
                         <td><img src="uploaded_img/<?php echo $row_slides['link_image']; ?>" height="100" alt=""></td>
                         <td>
-                            <a href="page002.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
-                            <a href="page003.php?update=<?php echo $row_slides['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span> ADD DETAIL </a>
-                            <a href="page001.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> DELETE </a>
+                            <a href="parameter_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
+                            <a href="parameter_detail.php?update=<?php echo $row_slides['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span> ADD DETAIL </a>
+                            <a href="parameter.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> DELETE </a>
                         </td>
                     </tr>
                     <?php
@@ -166,10 +166,10 @@ if (isset($_GET['delete'])) {
                 <button class="cn-button" id="cn-button">+</button>
                 <div class="cn-wrapper" id="cn-wrapper">
                     <ul>
-                        <li><a href="page001.php#"><span class="icon-picture"></span></a></li>
-                        <li><a href="page002.php#"><span class="icon-headphones"></span></a></li>
-                        <li><a href="page003.php#"><span class="icon-home"></span></a></li>
-                        <li><a href="page004.php#"><span class="icon-facetime-video"></span></a></li>
+                        <li><a href="parameter.php#"><span class="icon-picture"></span></a></li>
+                        <li><a href="form_equipment.php#"><span class="icon-headphones"></span></a></li>
+                        <li><a href="main.php#"><span class="icon-facetime-video"></span></a></li>
+                        <li><a href="form_hardware.php#"><span class="icon-home"></span></a></li>
                         <li><a href="page005.php#"><span class="icon-envelope-alt"></span></a></li>
                     </ul>
                 </div>

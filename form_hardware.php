@@ -39,6 +39,8 @@ include 'class/db.php';
         <script src="js/scripts.js"></script>
         <script src="js/jquery.blockUI.js"></script>
         <script src="js/sweetalert.min.js"></script>
+        <script src="js/polyfills.js"></script>
+        <script src="js/demo1.js"></script>
 
         <style>
             
@@ -70,14 +72,14 @@ include 'class/db.php';
         <div class="topnav">
             <!-- Centered link -->
             <div class="topnav-centered">
-                <a href="index.php#home">Home</a>
+                <a href="main.php#home">Home</a>
             </div>
             <!-- Left-aligned links (default) -->
             <a href="form_equipment.php#eqp" class="active">Form Equipment</a>
-            <a href="form2.php#hw">Form Hardware</a>
+            <a href="form_hardware.php#hw">Form Hardware</a>
             <!-- Right-aligned links -->
             <div class="topnav-right">
-                <a href="page001.php#parameter">Parameter</a>
+                <a href="parameter.php#parameter">Parameter</a>
             </div>
         </div>
         <div class="col-lg-12">
@@ -89,18 +91,16 @@ include 'class/db.php';
             <button class="cn-button" id="cn-button">+</button>
             <div class="cn-wrapper" id="cn-wrapper">
                 <ul>
-                    <li><a href="page001.php#"><span class="icon-picture"></span></a></li>
-                    <li><a href="page002.php#"><span class="icon-headphones"></span></a></li>
-                    <li><a href="page003.php#"><span class="icon-home"></span></a></li>
-                    <li><a href="page004.php#"><span class="icon-facetime-video"></span></a></li>
+                    <li><a href="parameter.php#"><span class="icon-picture"></span></a></li>
+                    <li><a href="form_equipment.php#"><span class="icon-headphones"></span></a></li>
+                    <li><a href="main.php#"><span class="icon-facetime-video"></span></a></li>
+                    <li><a href="form_hardware.php#"><span class="icon-home"></span></a></li>
                     <li><a href="page005.php#"><span class="icon-envelope-alt"></span></a></li>
                 </ul>
             </div>
             <div id="cn-overlay" class="cn-overlay"></div>
             <!-- End Nav Structure -->
         </div>
-        <script src="js/polyfills.js"></script>
-        <script src="js/demo1.js"></script>
         <!-- For the demo ad only -->   
         <script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>
     </body>

@@ -18,6 +18,6 @@ $upload = mysqli_query($con, $insert);
 ?>
 <script>
     alert('Parameter details successfully added.');
-    window.location.href = 'page003.php?update=<?php echo $parameter_id; ?>&search=1';
+    window.location.href = 'parameter_detail.php?update=<?php echo $parameter_id; ?>&search=1';
 </script>
-<?php mysql_close($handle); ?>
+<?php mysql_close($handle);

@@ -281,14 +281,14 @@ include 'class/db.php';
         <div class="topnav">
             <!-- Centered link -->
             <div class="topnav-centered">
-                <a href="index.php#home">Home</a>
+                <a href="main.php#home">Home</a>
             </div>
             <!-- Left-aligned links (default) -->
             <a href="form_equipment.php#eqp" class="active">Form Equipment</a>
-            <a href="form2.php#hw">Form Hardware</a>
+            <a href="form_hardware.php#hw">Form Hardware</a>
             <!-- Right-aligned links -->
             <div class="topnav-right">
-                <a href="page001.php#parameter">Parameter</a>
+                <a href="parameter.php#parameter">Parameter</a>
             </div>
         </div>
 
@@ -298,7 +298,7 @@ include 'class/db.php';
                 <div class="col-lg-11">
                     <div class="main-box">
                         <h2>General</h2>
-                        <form id="add_equipment_form" class="form-horizontal" role="form" action="page_add_equipment.php" method="get">
+                        <form id="add_equipment_form" class="form-horizontal" role="form" action="parameter_add_equipment.php" method="get">
                             <div class="form-group">
                                 <label for="labLocation" class="col-lg-2 control-label">Lab Location *</label>
                                 <div class="col-lg-3">
@@ -851,7 +851,7 @@ include 'class/db.php';
                                     <input type="text" class="form-control" id="maxPsEqpt" name="maxPsEqpt" value="" > 
                                 </div> 
                             </div>
-                            <a href="index.php" class="btn btn-info pull-left"><i class="fa fa-reply"></i> Back</a>
+                            <a href="main.php" class="btn btn-info pull-left"><i class="fa fa-reply"></i> Back</a>
                             <div class="pull-right">
                                 <button type="reset" class="btn btn-secondary cancel">Reset</button>
                                 <button type="submit" id="submit" class="btn btn-primary">Send</button>

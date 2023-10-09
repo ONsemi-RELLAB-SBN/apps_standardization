@@ -14,11 +14,11 @@ $id = $_GET['update'];
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Circular Navigation - Demo 1 | Codrops</title>
+        <link rel="shortcut icon" href="image/dribbble.ico">
+        <title>Survey - Standardization</title>
         <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
         <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
         <meta name="author" content="Sara Soueidan for Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico">
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/component1.css" />
@@ -82,28 +82,28 @@ $id = $_GET['update'];
     <div class="topnav">
         <!-- Centered link -->
         <div class="topnav-centered">
-            <a href="index.php#home">Home</a>
+            <a href="main.php#home">Home</a>
         </div>
         <!-- Left-aligned links (default) -->
         <a href="form_equipment.php#eqp">Form Equipment</a>
-        <a href="form2.php#hw">Form Hardware</a>
+        <a href="form_hardware.php#hw">Form Hardware</a>
         <!-- Right-aligned links -->
         <div class="topnav-right">
-            <a href="page001.php#parameter" class="active">Parameter</a>
+            <a href="parameter.php#parameter" class="active">Parameter</a>
         </div>
     </div>
     <div class="container">
         <?php if ($id == '') { ?>
-            <h1>Access denied! Please go back to <a href="page001.php" class="btn"> main page</a></h1>
+            <h1>Access denied! Please go back to <a href="parameter.php" class="btn"> main page</a></h1>
             <div class="component">
                 <!-- Start Nav Structure -->
                 <button class="cn-button" id="cn-button">+</button>
                 <div class="cn-wrapper" id="cn-wrapper">
                     <ul>
-                        <li><a href="page001.php#"><span class="icon-picture"></span></a></li>
-                        <li><a href="page002.php#"><span class="icon-headphones"></span></a></li>
-                        <li><a href="page003.php#"><span class="icon-home"></span></a></li>
-                        <li><a href="page004.php#"><span class="icon-facetime-video"></span></a></li>
+                        <li><a href="parameter.php#"><span class="icon-picture"></span></a></li>
+                        <li><a href="form_equipment.php#"><span class="icon-headphones"></span></a></li>
+                        <li><a href="main.php#"><span class="icon-facetime-video"></span></a></li>
+                        <li><a href="form_hardware.php#"><span class="icon-home"></span></a></li>
                         <li><a href="page005.php#"><span class="icon-envelope-alt"></span></a></li>
                     </ul>
                 </div>
@@ -114,17 +114,16 @@ $id = $_GET['update'];
             <section>
                 <div>
                     <h2>Add Parameter Details</h2>
-                    <form name='add_details' id='add_details' method="pot" action='page_add_detail.php'>
+                    <form name='add_details' id='add_details' method="pot" action='parameter_add_detail.php'>
                         <?php
                         $select = mysqli_query($con, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
-//                        $s_number = str_pad($no, 3, "0", STR_PAD_LEFT );
                         while ($row = mysqli_fetch_assoc($select)) {
                             ?>
                             <div>
                                 <div>
-                                    <label for=" masterName">Master Name </label>
+                                    <label for="masterName">Master Name </label>
                                     <div>
-                                        <input type="text" id="paramName" name="paramName" value="<?php echo $row['name']; ?>" readonly>
+                                        <input type="text" id="masterName" name="masterName" value="<?php echo $row['name']; ?>" readonly>
                                     </div>
                                 </div>
                                 <div hidden>
@@ -137,13 +136,10 @@ $id = $_GET['update'];
                                 <div>
                                     <?php
                                     $getData = "SELECT COUNT(*) as count FROM gest_parameter_detail WHERE master_code = '" . $row['code'] . "'";
-                                    //                                echo 'query kat dalam >>> ' . $getData;
                                     $rData = mysqli_query($con, $getData);
                                     $rowMaklumat = mysqli_fetch_assoc($rData);
                                     $data = $rowMaklumat['count'] + 1;
-                                    //                                echo 'HEHEHEH >>> '.$data;
                                     $s_number = $row['code'] . str_pad($data, 3, "0", STR_PAD_LEFT);
-                                    //                                echo 'oi oi '.$s_number;
                                     ?>
                                     <label for=" detailsCode">Details Code </label>
                                     <div>
@@ -163,7 +159,7 @@ $id = $_GET['update'];
                                     </div>
                                 </div>
                                 <br>
-                                <a href="page001.php" class="button-78"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
+                                <a href="parameter.php" class="button-78"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
                                 <button type="submit" value="Update Parameter Master" name="update_detail" class="button-78" >
                                     <i class='bx bx-list-plus bx-fw bx-md'></i> Add Parameter Detail
                                 </button>
@@ -187,7 +183,7 @@ $id = $_GET['update'];
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $get_slides2 = "SELECT * FROM gest_parameter_detail WHERE master_code = '" . $row['code'] . "' ORDER BY code ASC";
+                                            $get_slides2 = "SELECT * FROM gest_parameter_detail WHERE master_code = '" . $row['code'] . "' AND flag = '1' ORDER BY code ASC";
                                             $run_slides2 = mysqli_query($con, $get_slides2);
                                             // LOOP TILL END OF DATA
                                             while ($row_slides2 = mysqli_fetch_array($run_slides2)):
@@ -198,9 +194,8 @@ $id = $_GET['update'];
                                                     <td><?php echo $row_slides2['code']; ?></td>
                                                     <td><?php echo $row_slides2['remark']; ?></td>
                                                     <td>
-                                                        <a href="page_update_detail.php?edit=<?php echo $row_slides2['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
-                                                        <!--<a href="page003.php?update=<?php echo $row_slides2['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span> ADD DETAIL </a>-->
-                                                        <a href="page_remove_detail.php?delete=<?php echo $row_slides2['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> DELETE </a>
+                                                        <a href="parameter_edit_detail.php?edit=<?php echo $row_slides2['id']; ?>&id=<?php echo $row['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
+                                                        <a href="parameter_delete_detail.php?delete=<?php echo $row_slides2['id']; ?>&id=<?php echo $row['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> DELETE </a>
                                                     </td>
                                                 </tr>
                                                 <?php

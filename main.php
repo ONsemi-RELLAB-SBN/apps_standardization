@@ -97,37 +97,24 @@ include 'class/db.php';
     </head>
     <body>
         <div class="container">
-            <!-- Top Navigation -->
-            <!--            <header>
-                            <h1>onsemi <span>Equipment Standardization Survey Data Entry</span></h1>	
-                        </header>-->
-            <!--            <section>
-                            <div class="vertical-menu">
-                                <a href="#" class="active">Home</a>
-                                <a href="page001.php">Parameter</a>
-                                <a href="#">Form</a>
-                                <a href="#">Link 3</a>
-                                <a href="#">Link 4</a>
-                            </div>
-                        </section>-->
             <section>
                 <div class="ws-black w3-center" style="padding-top:90px;padding-bottom:70px;">
                     <div class="w3-content" style="padding-left:20px;padding-right:20px;max-width:1200px">
                         <h1 style="font-size:67px;font-weight:700;" class="textsmallerscreens">onsemi</h1>
                         <h3 style="margin-top:50px;margin-bottom:20px;">Equipment Standardization Survey Data Entry</h3>
-                        INDEX FILES
+                        MAIN PHP FILES
                         <br><br>
                         <div class="colx-container">
-                            <a href="page001.php" class="w3-hover-text-light-grey">
-                            </a><div class="colx firstx" style="background-color:#846bae;color:white"><a href="page001.php" class="w3-hover-text-light-grey">
+                            <a href="parameter.php" class="w3-hover-text-light-grey">
+                            </a><div class="colx firstx" style="background-color:#846bae;color:white"><a href="parameter.php" class="w3-hover-text-light-grey">
                                     <h4 class="b-headings">PM</h4>
-                                </a><p><a href="page001.php" class="w3-hover-text-light-grey"></a><a href="page001.php" class="w3-button w3-round w3-margin-top w3-margin-bottom w3-border w3-hover-white" style="font-size:19px">View Parameter Master »</a></p>
+                                </a><p><a href="parameter.php" class="w3-hover-text-light-grey"></a><a href="parameter.php" class="w3-button w3-round w3-margin-top w3-margin-bottom w3-border w3-hover-white" style="font-size:19px">View Parameter Master »</a></p>
                                 <p style="font-size:17px;">Parameter master.</p>
                             </div>
-                            <a href="form.php" class="w3-hover-text-light-grey">
-                            </a><div class="colx" style="background-color:#5f4884;color:white"><a href="form.php" class="w3-hover-text-light-grey">
+                            <a href="form_equipment.php" class="w3-hover-text-light-grey">
+                            </a><div class="colx" style="background-color:#5f4884;color:white"><a href="form_equipment.php" class="w3-hover-text-light-grey">
                                     <h4 class="b-headings">FM</h4>
-                                </a><p><a href="form.php" class="w3-hover-text-light-grey"></a><a href="form.php" class="w3-button w3-round w3-margin-top w3-margin-bottom w3-border w3-hover-white" style="font-size:19px">Equipment Form »</a></p>
+                                </a><p><a href="form_equipment.php" class="w3-hover-text-light-grey"></a><a href="form_equipment.php" class="w3-button w3-round w3-margin-top w3-margin-bottom w3-border w3-hover-white" style="font-size:19px">Equipment Form »</a></p>
                                 <p style="font-size:17px;">This form is to add an equipment.</p>
                             </div>
                             <a href="https://www.w3schools.com/bootstrap5/index.php" class="w3-hover-text-light-grey">
@@ -145,10 +132,10 @@ include 'class/db.php';
                 <button class="cn-button" id="cn-button">+</button>
                 <div class="cn-wrapper" id="cn-wrapper">
                     <ul>
-                        <li><a href="page001.php#"><span class="icon-picture"></span></a></li>
-                        <li><a href="page002.php#"><span class="icon-headphones"></span></a></li>
-                        <li><a href="page003.php#"><span class="icon-home"></span></a></li>
-                        <li><a href="page004.php#"><span class="icon-facetime-video"></span></a></li>
+                        <li><a href="parameter.php#"><span class="icon-picture"></span></a></li>
+                        <li><a href="form_equipment.php#"><span class="icon-headphones"></span></a></li>
+                        <li><a href="main.php#"><span class="icon-facetime-video"></span></a></li>
+                        <li><a href="form_hardware.php#"><span class="icon-home"></span></a></li>
                         <li><a href="page005.php#"><span class="icon-envelope-alt"></span></a></li>
                     </ul>
                 </div>
