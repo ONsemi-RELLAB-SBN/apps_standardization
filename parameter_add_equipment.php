@@ -4,10 +4,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 include 'class/db.php';
-?>
-THIS IS THE PAGE TO ADD THE EQUIPMENT - IN PHP
 
-<?php
 $labLocation = $_GET['labLocation'];
 $strategy = $_GET['strategy'];
 $standardization = $_GET['standardization'];
@@ -65,62 +62,6 @@ $interfaceCurrRating = $_GET['interfaceCurrRating'];
 $noMotherboardSlot = $_GET['noMotherboardSlot'];
 $maxPsBoardSLot = $_GET['maxPsBoardSLot'];
 $maxPsEqpt = $_GET['maxPsEqpt'];
-
-echo '<br>$labLocation >>>> ' . $labLocation;
-echo '<br>$strategy >>>> ' . $strategy;
-echo '<br>$standardization >>>> ' . $standardization;
-echo '<br>$champion >>>> ' . $champion;
-echo '<br>$eqptId >>>> ' . $eqptId;
-echo '<br>$dedicated >>>> ' . $dedicated;
-
-echo '<br>$manufacturer >>>> ' . $manufacturer;
-echo '<br>$model >>>> ' . $model;
-echo '<br>$mfgDate >>>> ' . $mfgDate;
-echo '<br>$assetNo >>>> ' . $assetNo;
-echo '<br>$newTransfer >>>> ' . $newTransfer;
-echo '<br>$to >>>> ' . $to;
-echo '<br>$voltRating >>>> ' . $voltRating;
-echo '<br>$voltControl >>>> ' . $voltControl;
-echo '<br>$minTemp >>>> ' . $minTemp;
-echo '<br>$maxTemp >>>> ' . $maxTemp;
-echo '<br>$minRh >>>> ' . $minRh;
-echo '<br>$maxRh >>>> ' . $maxRh;
-echo '<br>$tempFluctuation >>>> ' . $tempFluctuation;
-echo '<br>$tempUniform >>>> ' . $dedicated;
-echo '<br>$umidFluctuation >>>> ' . $umidFluctuation;
-echo '<br>$extDimension >>>> ' . $extDimension;
-echo '<br>$intDimension >>>> ' . $intDimension;
-echo '<br>$noInterior >>>> ' . $noInterior;
-echo '<br>$rackDimension >>>> ' . $rackDimension;
-echo '<br>$boardOrientation >>>> ' . $boardOrientation;
-echo '<br>$rackMaterial >>>> ' . $rackMaterial;
-echo '<br>$rackSlotPitch >>>> ' . $rackSlotPitch;
-echo '<br>$rackSLotWidth >>>> ' . $rackSLotWidth;
-echo '<br>$eqptWeight >>>> ' . $eqptWeight;
-echo '<br>$airflow >>>> ' . $airflow;
-echo '<br>$tempProtection1 >>>> ' . $tempProtection1;
-echo '<br>$tempProtection2 >>>> ' . $tempProtection2;
-echo '<br>$smokeDetector >>>> ' . $smokeDetector;
-echo '<br>$emo >>>> ' . $emo;
-echo '<br>$voltagePhase >>>> ' . $voltagePhase;
-echo '<br>$airflowRegulator >>>> ' . $airflowRegulator;
-echo '<br>$diWater >>>> ' . $diWater;
-echo '<br>$waterTopup >>>> ' . $waterTopup;
-echo '<br>$motherboard >>>> ' . $motherboard;
-echo '<br>$driveboard >>>> ' . $driveboard;
-echo '<br>$powerSupply >>>> ' . $powerSupply;
-echo '<br>$daq >>>> ' . $daq;
-echo '<br>$noPins >>>> ' . $noPins;
-echo '<br>$pinPitch >>>> ' . $pinPitch;
-echo '<br>$connVoltRating >>>> ' . $connVoltRating;
-echo '<br>$connCurrRating >>>> ' . $connCurrRating;
-echo '<br>$connTempRating >>>> ' . $connTempRating;
-echo '<br>$interfaceVoltRating >>>> ' . $interfaceVoltRating;
-echo '<br>$interfaceCurrRating >>>> ' . $interfaceCurrRating;
-echo '<br>$noMotherboardSlot >>>> ' . $noMotherboardSlot;
-echo '<br>$maxPsBoardSLot >>>> ' . $maxPsBoardSLot;
-echo '<br>$maxPsEqpt >>>> ' . $maxPsEqpt;
-
 
 foreach ($_GET['relTest'] as $key => $value) {
     $inter = $_GET['relTest'][$key];

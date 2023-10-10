@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-include 'class/db.php';
+//include 'class/db.php';
+include 'form_template.php';
 
 $query1 = "SELECT MAX(id) as data FROM gest_parameter_master";
 $getData = mysqli_query($con, $query1);
@@ -94,19 +95,6 @@ if (isset($_GET['delete'])) {
         }
         ?>
         <!-- Top navigation -->
-        <div class="topnav">
-            <!-- Centered link -->
-            <div class="topnav-centered">
-                <a href="main.php#home">Home</a>
-            </div>
-            <!-- Left-aligned links (default) -->
-            <a href="form_equipment.php#eqp">Form Equipment</a>
-            <a href="form_hardware.php#hw">Form Hardware</a>
-            <!-- Right-aligned links -->
-            <div class="topnav-right">
-                <a href="parameter.php#parameter" class="active">Parameter</a>
-            </div>
-        </div>
         <div class="container">
             <div class="mt-5 mb-3 clearfix">
                 <h2 class="pull-left">Parameter Master Details</h2>

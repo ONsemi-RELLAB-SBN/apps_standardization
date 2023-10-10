@@ -178,7 +178,6 @@ $id = $_GET['view'];
                         <form id="view_equipment_form" class="form-horizontal" role="form" action="parameter_view_equipment.php" method="get">
                             <?php 
                             $sqlFormData = "SELECT * FROM gest_eqpt_form WHERE id = '$id'";
-                            echo 'hehehe ' . $sqlFormData;
                             $resForm = mysqli_query($con, $sqlFormData);
                             while ($rowForm = mysqli_fetch_array($resForm)): ?>
                             <div class="form-group">
