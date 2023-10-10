@@ -287,31 +287,13 @@ include 'class/db.php';
                                 </div>
                                 <label for="mfgDate" class="col-lg-2 control-label">Equipment Mfg Date *</label>
                                 <div class="col-lg-3">
-                                    <select id="mfgDate" name="mfgDate" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '011' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
+                                    <input type="date" class="form-control" id="mfgDate" name="mfgDate" value="" required> 
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="assetNo" class="col-lg-2 control-label">Equipment Asset No *</label>
                                 <div class="col-lg-3">
-                                    <select id="assetNo" name="assetNo" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '012' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
+                                    <input type="text" class="form-control" id="assetNo" name="assetNo" value="" required> 
                                 </div>
                                 <label for="newTransfer" class="col-lg-2 control-label">New/Transfer Equipment *</label>
                                 <div class="col-lg-3">
