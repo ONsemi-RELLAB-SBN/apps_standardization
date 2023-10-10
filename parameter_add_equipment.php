@@ -51,14 +51,7 @@ $diWater = $_GET['diWater'];
 $waterTopup = $_GET['waterTopup'];
 
 
-
-//$motherboard = $_GET['motherboard'];
-
-
 $motherboard = $_GET['motherboard'];
-
-
-
 $driveboard = $_GET['driveboard'];
 $powerSupply = $_GET['powerSupply'];
 $daq = $_GET['daq'];
