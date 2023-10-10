@@ -91,13 +91,13 @@ include 'class/db.php';
     <body>
         <!-- Top navigation -->
         <div class="topnav">
-<!--            <a href="form_equipment.php#eqpt" class="link">Equipment</a>
+            <a href="form_equipment.php#eqpt" class="link">Equipment</a>
             <a href="form_hardware.php#hw" class="link">Hardware</a>
             <a href="form_daq.php#daq" class="link">DAQ</a>
             <a href="form_power.php#pwr" class="link">P Supply</a>
             <a href="form_design.php#dsg" class="link">Design</a>
             <a href="form_process.php#pcs" class="link">Process</a>
-            <a href="form_test.php#elc" class="link">Elec Test</a>-->
+            <a href="form_test.php#elc" class="link">Elec Test</a>
 
             <div class="topnav-centered     ">
                 <a href="main.php#home" class="link active">Home</a>
