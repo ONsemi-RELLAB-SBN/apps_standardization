@@ -12,7 +12,7 @@ include 'class/db.php';
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Standardization Survey</title>
+        <title>FORM | Standardization Survey</title>
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribbble.ico">
 
@@ -706,10 +706,9 @@ include 'class/db.php';
                                     <input type="number" step="0.01" class="form-control" id="maxPsEqpt" name="maxPsEqpt" value="" required> 
                                 </div> 
                             </div>
-                            <!--<a href="main.php" class="btn btn-info pull-left"><i class="fa fa-reply" id="backBtn"></i> Back</a>-->
                             
                             <div class="pull-right">
-                                <button onclick="location.href='main.php'" type="button" id="backBtn">Back</button>
+                                <button onclick="location.href='form_equipment_list.php'" type="button" id="backBtn">Back</button>
                             </div>
                             <div class="pull-right">
                                 <button type="submit" id="myBtn" class="btn btn-primary">Send</button>

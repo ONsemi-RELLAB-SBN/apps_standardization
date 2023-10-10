@@ -15,7 +15,7 @@ $id = $_GET['view'];
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Standardization Survey</title>
+        <title>VIEW | Standardization Survey</title>
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribbble.ico">
 
@@ -69,6 +69,21 @@ $id = $_GET['view'];
                 padding-left:20em;
             }
 
+            #editBtn {
+                display: block;
+                position: fixed;
+                top: 160px;
+                right: 30px;
+                z-index: 99;
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background-color: gray;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 4px;
+            }
             #backBtn {
                 display: block;
                 position: fixed;
@@ -155,7 +170,7 @@ $id = $_GET['view'];
         </div>
 
         <div class="col-lg-12">
-            <h1>Equipment Survey Form</h1>
+            <h1>Equipment Survey Form | View</h1>
             <div class="row">
                 <div class="col-lg-11">
                     <div class="main-box">
@@ -491,6 +506,9 @@ $id = $_GET['view'];
                                 </div> 
                             </div>
                             
+                            <div class="pull-right">
+                                <button onclick="location.href='form_equipment_edit.php'" type="button" id="editBtn">Edit</button>
+                            </div>
                             <div class="pull-right">
                                 <button onclick="location.href='form_equipment_list.php'" type="button" id="backBtn">Back</button>
                             </div>

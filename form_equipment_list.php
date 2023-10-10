@@ -12,7 +12,7 @@ include 'class/db.php';
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Equipment Form List</title>
+        <title>LIST | Equipment Form List</title>
         <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
         <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
         <meta name="author" content="Ayep" />
@@ -37,6 +37,27 @@ include 'class/db.php';
                 s.parentNode.insertBefore(ga, s);
             })();
         </script>
+        <style>
+            #addBtn {
+                display: block;
+                position: fixed;
+                /*bottom: 20px;*/
+                /*right: 30px;*/
+                /*z-index: 99;*/
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background-color: gray;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 4px;
+            }
+
+            #addBtn:hover {
+                background-color: #17a2b8;
+            }
+        </style>
     </head>
     <body>
         <?php
@@ -50,6 +71,7 @@ include 'class/db.php';
              <div class="container">
                  <!--<table style="margin-top: 25px;">-->
             <table class="customers">
+                <hr>
                 <tr>
                     <th style="text-align:center"><b>No</b></th>
                     <th><b>Equipment</b></th>
@@ -86,12 +108,9 @@ include 'class/db.php';
                 endwhile;
                 ?>
             </table>
-
+            <hr>
+            <button onclick="location.href='form_equipment.php'" type="button" id="addBtn">Create</button>
         </div><!-- /container -->
-<!--        <script src="js/polyfills.js"></script>
-        <script src="js/demo1.js"></script>
-         For the demo ad only    
-        <script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>-->
     </body>
 </html>
 
