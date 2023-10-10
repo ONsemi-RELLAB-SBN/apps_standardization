@@ -509,7 +509,7 @@ include 'class/db.php';
                                     <select id="smokeDetector" name="smokeDetector" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '019' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
@@ -522,7 +522,7 @@ include 'class/db.php';
                                     <select id="emo" name="emo" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '019' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
@@ -544,7 +544,7 @@ include 'class/db.php';
                                     <select id="airflowRegulator" name="airflowRegulator" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '019' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
