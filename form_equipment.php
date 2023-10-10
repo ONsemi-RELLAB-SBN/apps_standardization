@@ -522,7 +522,7 @@ include 'class/db.php';
                                     <select id="emo" name="emo" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '019' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
@@ -544,7 +544,7 @@ include 'class/db.php';
                                     <select id="airflowRegulator" name="airflowRegulator" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '019' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
@@ -559,7 +559,7 @@ include 'class/db.php';
                                     <select id="diWater" name="diWater" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '023' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '029' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
@@ -589,7 +589,7 @@ include 'class/db.php';
                                     <select id="motherboard" name="motherboard" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '024' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
@@ -602,7 +602,7 @@ include 'class/db.php';
                                     <select id="driveboard" name="driveboard" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '025' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
@@ -617,7 +617,7 @@ include 'class/db.php';
                                     <select id="powerSupply" name="powerSupply" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '026' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
