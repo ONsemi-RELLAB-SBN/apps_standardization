@@ -106,7 +106,7 @@ include 'class/db.php';
                 <a href="parameter.php#parameter" class="link active">Parameter</a>
             </div>
         </div>
-        <div class="dropdown">
+<!--        <div class="dropdown">
             <button class="dropbtn">Form</button>
             <div class="dropdown-content">
                 <a href="form_equipment.php#eqpt" class="link">Equipment</a>
@@ -117,6 +117,6 @@ include 'class/db.php';
                 <a href="form_process.php#pcs" class="link">Process</a>
                 <a href="form_test.php#elc" class="link">Elec Test</a>
             </div>
-        </div>
+        </div>-->
     </body>
 </html>
