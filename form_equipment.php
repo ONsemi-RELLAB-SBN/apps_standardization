@@ -572,7 +572,7 @@ include 'class/db.php';
                                     <select id="waterTopup" name="waterTopup" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '024' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
