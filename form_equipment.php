@@ -700,7 +700,7 @@ include 'form_template.php';
                             </div>
                             
                             <div class="pull-right">
-                                <button onclick="location.href='form_equipment_list.php'" type="button" id="backBtn">Back</button>
+                                <button onclick="location.href='form_equipment_list.php'" type="button" id="backBtn">List</button>
                             </div>
                             <div class="pull-right">
                                 <button type="submit" id="myBtn" class="btn btn-primary">Send</button>

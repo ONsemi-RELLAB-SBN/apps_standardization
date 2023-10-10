@@ -17,33 +17,13 @@ include 'form_template.php';
         <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribbble.ico">
-        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/component1.css" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-        <script src="js/modernizr-2.6.2.min.js"></script>
-        <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-7243260-2']);
-            _gaq.push(['_trackPageview']);
-            (function () {
-                var ga = document.createElement('script');
-                ga.type = 'text/javascript';
-                ga.async = true;
-                ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
+        
         <style>
             #addBtn {
                 display: block;
                 position: fixed;
-                /*bottom: 20px;*/
-                /*right: 30px;*/
-                /*z-index: 99;*/
                 font-size: 18px;
                 border: none;
                 outline: none;
@@ -58,6 +38,11 @@ include 'form_template.php';
                 background-color: #17a2b8;
             }
         </style>
+        
+        <script type="text/javascript">
+            
+        </script>
+        
     </head>
     <body>
         <?php
