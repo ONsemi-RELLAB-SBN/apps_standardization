@@ -65,25 +65,11 @@ if (isset($_GET['delete'])) {
         <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribbble.ico">
-        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/component1.css" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-        <script src="js/modernizr-2.6.2.min.js"></script>
+        
         <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-7243260-2']);
-            _gaq.push(['_trackPageview']);
-            (function () {
-                var ga = document.createElement('script');
-                ga.type = 'text/javascript';
-                ga.async = true;
-                ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(ga, s);
-            })();
+            
         </script>
     </head>
     <body>
@@ -102,7 +88,6 @@ if (isset($_GET['delete'])) {
             </div>
             <div class="admin-product-form-container">
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
-                    <!--<h3>Add New Parameter</h3>-->
                     <label for="name"><b>Parameter Name</b></label>
                     <input type="text" placeholder="Enter parameter name" name="parameter_name" class="box">
 
@@ -116,7 +101,6 @@ if (isset($_GET['delete'])) {
                 </form>
             </div>
             <hr>
-            <!--<table style="margin-top: 25px;">-->
             <table class="customers">
                 <tr>
                     <th><b>Parameter Name</b></th>
@@ -125,11 +109,9 @@ if (isset($_GET['delete'])) {
                     <th><b>Image</b></th>
                     <th><b>Action</b></th>
                 </tr>
-                <!-- PHP CODE TO FETCH DATA FROM ROWS -->
                 <?php
                 $get_slides = "SELECT * FROM gest_parameter_master WHERE flag = '1' ORDER BY code ASC";
                 $run_slides = mysqli_query($con, $get_slides);
-                // LOOP TILL END OF DATA
                 while ($row_slides = mysqli_fetch_array($run_slides)):
                     ?>
                     <tr>
@@ -148,26 +130,6 @@ if (isset($_GET['delete'])) {
                 endwhile;
                 ?>
             </table>
-
-            <div class="component">
-                <!-- Start Nav Structure -->
-                <button class="cn-button" id="cn-button">+</button>
-                <div class="cn-wrapper" id="cn-wrapper">
-                    <ul>
-                        <li><a href="parameter.php#"><span class="icon-picture"></span></a></li>
-                        <li><a href="form_equipment.php#"><span class="icon-headphones"></span></a></li>
-                        <li><a href="main.php#"><span class="icon-facetime-video"></span></a></li>
-                        <li><a href="form_hardware.php#"><span class="icon-home"></span></a></li>
-                        <li><a href="page005.php#"><span class="icon-envelope-alt"></span></a></li>
-                    </ul>
-                </div>
-                <div id="cn-overlay" class="cn-overlay"></div>
-                <!-- End Nav Structure -->
-            </div>
-        </div><!-- /container -->
-        <script src="js/polyfills.js"></script>
-        <script src="js/demo1.js"></script>
-        <!-- For the demo ad only -->   
-        <script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>
+        </div>
     </body>
 </html>

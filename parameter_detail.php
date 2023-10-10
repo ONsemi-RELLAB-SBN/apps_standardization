@@ -19,26 +19,16 @@ $id = $_GET['update'];
         <link rel="shortcut icon" href="image/dribbble.ico">
         <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
         <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
-        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/component1.css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-        <script src="js/modernizr-2.6.2.min.js"></script>
+        
+        <script src="js/bootstrap.js"></script>
 
         <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-7243260-2']);
-            _gaq.push(['_trackPageview']);
-            (function () {
-                var ga = document.createElement('script');
-                ga.type = 'text/javascript';
-                ga.async = true;
-                ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(ga, s);
-            })();
+            
         </script>
 
         <style>
@@ -79,19 +69,6 @@ $id = $_GET['update'];
         }
     }
     ?>
-    <div class="topnav">
-        <!-- Centered link -->
-        <div class="topnav-centered">
-            <a href="main.php#home">Home</a>
-        </div>
-        <!-- Left-aligned links (default) -->
-        <a href="form_equipment.php#eqp">Form Equipment</a>
-        <a href="form_hardware.php#hw">Form Hardware</a>
-        <!-- Right-aligned links -->
-        <div class="topnav-right">
-            <a href="parameter.php#parameter" class="active">Parameter</a>
-        </div>
-    </div>
     <div class="container">
         <?php if ($id == '') { ?>
             <h1>Access denied! Please go back to <a href="parameter.php" class="btn"> main page</a></h1>
@@ -159,8 +136,8 @@ $id = $_GET['update'];
                                     </div>
                                 </div>
                                 <br>
-                                <a href="parameter.php" class="button-78"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
-                                <button type="submit" value="Update Parameter Master" name="update_detail" class="button-78" >
+                                <a href="parameter.php" class="btn btn-success"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
+                                <button type="submit" value="Update Parameter Master" name="update_detail" class="btn btn-success" >
                                     <i class='bx bx-list-plus bx-fw bx-md'></i> Add Parameter Detail
                                 </button>
                                 <br>
@@ -190,8 +167,8 @@ $id = $_GET['update'];
                                                 ?>
                                                 <tr>
                                                     <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
-                                                    <td><?php echo $row_slides2['name']; ?></td>
                                                     <td><?php echo $row_slides2['code']; ?></td>
+                                                    <td><?php echo $row_slides2['name']; ?></td>
                                                     <td><?php echo $row_slides2['remark']; ?></td>
                                                     <td>
                                                         <a href="parameter_edit_detail.php?edit=<?php echo $row_slides2['id']; ?>&id=<?php echo $row['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
@@ -210,10 +187,6 @@ $id = $_GET['update'];
                 </div>
             </section>
         <?php } ?>
-    </div><!-- /container -->
-    <script src="js/polyfills.js"></script>
-    <script src="js/demo1.js"></script>
-    <!-- For the demo ad only -->   
-    <script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>
+    </div>
 </body>
 </html>

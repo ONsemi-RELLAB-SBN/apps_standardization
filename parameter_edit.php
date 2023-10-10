@@ -43,26 +43,17 @@ if (isset($_POST['update_parameter'])) {
         <link rel="shortcut icon" href="image/dribbble.ico">
         <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
         <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
-        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/component1.css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-        <script src="js/modernizr-2.6.2.min.js"></script>
-
+        
+        <style>
+            
+        </style>
+        
         <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-7243260-2']);
-            _gaq.push(['_trackPageview']);
-            (function () {
-                var ga = document.createElement('script');
-                ga.type = 'text/javascript';
-                ga.async = true;
-                ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(ga, s);
-            })();
+            
         </script>
 
     </head>
@@ -74,20 +65,6 @@ if (isset($_POST['update_parameter'])) {
             }
         }
         ?>
-        <!-- Top navigation -->
-        <div class="topnav">
-            <!-- Centered link -->
-            <div class="topnav-centered">
-                <a href="main.php#home">Home</a>
-            </div>
-            <!-- Left-aligned links (default) -->
-            <a href="form_equipment.php#eqp">Form Equipment</a>
-            <a href="form_hardware.php#hw">Form Hardware</a>
-            <!-- Right-aligned links -->
-            <div class="topnav-right">
-                <a href="parameter.php#parameter" class="active">Parameter</a>
-            </div>
-        </div>
         <div class="container">
             <?php if ($id == '') { ?>
                 <h1>Access denied! Please go back to <a href="parameter.php" class="btn"> main page</a></h1>
@@ -110,8 +87,8 @@ if (isset($_POST['update_parameter'])) {
                                 <input type="file" class="box" name="parameter_image" accept="image/png, image/jpeg, image/jpg">
                                 <br>
                                 <br>
-                                <a href="parameter.php" class="button-78"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
-                                <button type="submit" value="Update Parameter Master" name="update_parameter" class="button-78" >
+                                <a href="parameter.php" class="btn btn-success"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
+                                <button type="submit" value="Update Parameter Master" name="update_parameter" class="btn btn-success" >
                                     <i class='bx bx-loader-circle bx-fw bx-fw' style='color:#ffffff' ></i>Update Parameter Master
                                 </button>
                             </form>
@@ -119,25 +96,6 @@ if (isset($_POST['update_parameter'])) {
                     </div>
                 </section>
             <?php } ?>
-            <div class="component">
-                <!-- Start Nav Structure -->
-                <button class="cn-button" id="cn-button">+</button>
-                <div class="cn-wrapper" id="cn-wrapper">
-                    <ul>
-                        <li><a href="parameter.php#"><span class="icon-picture"></span></a></li>
-                        <li><a href="form_equipment.php#"><span class="icon-headphones"></span></a></li>
-                        <li><a href="main.php#"><span class="icon-facetime-video"></span></a></li>
-                        <li><a href="form_hardware.php#"><span class="icon-home"></span></a></li>
-                        <li><a href="page005.php#"><span class="icon-envelope-alt"></span></a></li>
-                    </ul>
-                </div>
-                <div id="cn-overlay" class="cn-overlay"></div>
-                <!-- End Nav Structure -->
-            </div>
-        </div><!-- /container -->
-        <script src="js/polyfills.js"></script>
-        <script src="js/demo1.js"></script>
-        <!-- For the demo ad only -->   
-        <script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>
+        </div>
     </body>
 </html>

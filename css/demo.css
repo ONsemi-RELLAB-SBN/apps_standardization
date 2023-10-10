@@ -39,7 +39,7 @@ a {
 
 .container > header span {
     display: block;
-    font-size: 60%;
+    font-size: 100%;
     opacity: 0.7;
     padding: 0 0 0.6em 0.1em;
 }
@@ -152,11 +152,6 @@ input[type=text], input[type=password] {
     background: #f1f1f1;
 }
 
-.butang {
-    float: left;
-    border: 1px solid green;
-}
-
 /* CSS */
 .button-78 {
     align-items: center;
@@ -201,7 +196,7 @@ input[type=text], input[type=password] {
     }
 }
 
-.button-78:before,
+/*.button-78:before,
 .button-78:after {
     border-radius: 80px;
 }
@@ -266,7 +261,7 @@ input[type=text], input[type=password] {
 .button-78:disabled {
     cursor: default;
     opacity: .24;
-}
+}*/
 
 .customers {
     font-family: Arial, Helvetica, sans-serif;
@@ -299,6 +294,7 @@ input[type=text], input[type=password] {
     position: relative;
     overflow: hidden;
     background-color: #333;
+    /*background-color: #f1f1f1;*/
 }
 
 .topnav a {
@@ -346,46 +342,3 @@ input[type=text], input[type=password] {
         transform: none;
     }
 }
-
-/* THIS ONE FOR A DROPDOWN NAVIGATION MENU - START*/
-/*.dropbtn2 {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown2-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown2-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown2-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn2 {
-    background-color: #3e8e41;
-}*/
-/*THIS ONE FOR A DROPDOWN NAVIGATION MENU - END*/

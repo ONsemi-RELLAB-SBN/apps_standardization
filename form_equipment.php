@@ -100,6 +100,12 @@ include 'form_template.php';
             #myBtn:hover {
                 background-color: #17a2b8;
             }
+            
+            .dropdown {
+                position: absolute;
+                top: 0px;
+                display: inline-block;
+            }
         </style>
         <script type="text/javascript">
             $(document).ready(function () {
