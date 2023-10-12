@@ -332,7 +332,7 @@ include 'form_template.php';
                             <div class="form-group">
                                 <label for="to" class="col-lg-7 control-label">From? *</label>
                                 <div class="col-lg-3">
-                                    <select id="to" name="to" class="js-example-basic-single" style="width: 100%" required hidden>
+                                    <select id="to" name="to" class="js-example-basic-single" style="width: 100%" readonly required>
                                         <option value="" selected=""></option>
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '014' ORDER BY code ASC";
@@ -654,12 +654,19 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="voltagePhase" name="voltagePhase" value="" required> 
                                 </div> 
                                 <label for="voltagePhase" class="col-lg-1 control-label pull-left" style="text-align: left"><b>VAC</b></label>
-                                <label for="airflowRegulator" class="col-lg-2 control-label">Air Flow Regulator *</label>
+                                <label for="phase" class="col-lg-2 control-label">Phase *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="phase" name="phase" value="" required> 
+                                </div> 
+                                <label for="phase" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Phase</b></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="exhaust" class="col-lg-2 control-label">Exhaust *</label>
                                 <div class="col-lg-3">
-                                    <select id="airflowRegulator" name="airflowRegulator" class="js-example-basic-single" style="width: 100%" required>
+                                    <select id="exhaust" name="exhaust" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
@@ -667,11 +674,9 @@ include 'form_template.php';
                                         <?php endwhile; ?>
                                     </select>
                                 </div>
-                            </div>
-                            <div class="form-group">
                                 <label for="diWater" class="col-lg-2 control-label">DI Water *</label>
                                 <div class="col-lg-3">
-                                    <select id="diWater" name="diWater" class="js-example-basic-single" style="width: 100%" required>
+                                    <select id="diWater" name="diWater" class="js-example-basic-single" style="width: 100%" onchange="updateToFieldWater()" required>
                                         <option value="" selected=""></option>
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '029' ORDER BY code ASC";
@@ -682,6 +687,26 @@ include 'form_template.php';
                                         <?php endwhile; ?>
                                     </select>
                                 </div>
+                            </div>
+                            
+                            <script>
+                                function updateToFieldWater() {
+                                    var diWaterDropdown = document.getElementById('diWater');
+                                    var waterField = document.getElementById('waterTopup');
+
+                                    if (diWaterDropdown.value !== '029003') {
+                                        waterField.readOnly = true;
+                                        waterField.required = false;
+                                    } else {
+                                        waterField.readOnly = false;
+                                        waterField.required = true;
+                                    }
+                                }
+                            </script>
+                            
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label"></label>
+                                <div class="col-lg-3"></div>
                                 <label for="waterTopup" class="col-lg-2 control-label">Water Top-up System *</label>
                                 <div class="col-lg-3">
                                     <select id="waterTopup" name="waterTopup" class="js-example-basic-single" style="width: 100%" required>
