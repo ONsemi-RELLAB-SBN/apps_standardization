@@ -423,78 +423,6 @@ include 'form_template.php';
 
                             <h2>Characteristic</h2>
                             <div class="form-group">
-                                <label for="extDimension" class="col-lg-2 control-label">External Dimension *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="extDimensionW" name="extDimensionW" value="" required> 
-                                    <button class="myBtn_multi">View Sample External Dimension</button>
-                                    <div class="modal modal_multi">
-                                        <!-- Modal content -->
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="uploaded_img/Picture04.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample External Dimension Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <label for="extDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="extDimensionD" name="extDimensionD" value="" required> 
-                                </div>
-                                <label for="extDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="extDimensionH" name="extDimensionH" value="" required> 
-                                </div>
-                                <label for="extDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="intDimension" class="col-lg-2 control-label">Internal Dimension *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="intDimensionW" name="intDimensionW" value="" required> 
-                                    <button class="myBtn_multi">View Sample Internal Dimension</button>
-                                    <div class="modal modal_multi">
-                                        <!-- Modal content -->
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="uploaded_img/Picture05.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Internal Dimension Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="intDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="intDimensionD" name="intDimensionD" value="" required> 
-                                </div> 
-                                <label for="intDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="intDimensionH" name="intDimensionH" value="" required> 
-                                </div> 
-                                <label for="intDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="rackDimension" class="col-lg-2 control-label">Rack Dimension *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackDimensionW" name="rackDimensionW" value="" required> 
-                                    <button class="myBtn_multi">View Sample Rack Dimension</button>
-                                    <div  class="modal modal_multi">
-                                        <!-- Modal content -->
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="uploaded_img/Picture07.jpg" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Rack Dimension Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="rackDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackDimensionD" name="rackDimensionD" value="" required> 
-                                </div> 
-                                <label for="rackDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackDimensionH" name="rackDimensionH" value="" required> 
-                                </div> 
-                                <label for="rackDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
                                 <label for="noInterior" class="col-lg-2 control-label">No. Interior Zones (doors) *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="noInterior" name="noInterior" value="" required> 
@@ -509,6 +437,13 @@ include 'form_template.php';
                                     </div>
                                 </div>
                                 <label for="noInterior" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
+                                <label for="extDimension" class="col-lg-2 control-label">External Dimension (W) *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="extDimensionW" name="extDimensionW" value="" required> 
+                                </div>
+                                <label for="extDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            <div class="form-group">
                                 <label for="intVolume" class="col-lg-2 control-label">Internal Volume *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="intVolume" name="intVolume" value="" required> 
@@ -523,6 +458,11 @@ include 'form_template.php';
                                     </div>
                                 </div> 
                                 <label for="intVolume" class="col-lg-1 control-label pull-left" style="text-align: left"><b>L</b></label>
+                                <label for="extDimension" class="col-lg-2 control-label">(D) *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="extDimensionD" name="extDimensionD" value="" required> 
+                                </div>
+                                <label for="extDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="boardOrientation" class="col-lg-2 control-label">Board Orientation*</label>
@@ -547,6 +487,22 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div>
+                                <label for="extDimension" class="col-lg-2 control-label">(H) *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="extDimensionH" name="extDimensionH" value="" required> 
+                                    <button class="myBtn_multi">View Sample External Dimension</button>
+                                    <div class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <img id="myImg" src="uploaded_img/Picture04.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <p>Sample External Dimension Description</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label for="extDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            <div class="form-group">
                                 <label for="rackMaterial" class="col-lg-2 control-label">Rack Material *</label>
                                 <div class="col-lg-3">
                                     <select id="rackMaterial" name="rackMaterial" class="js-example-basic-single" style="width: 100%" required>
@@ -560,6 +516,11 @@ include 'form_template.php';
                                         <?php endwhile; ?>
                                     </select>
                                 </div>
+                                <label for="intDimension" class="col-lg-2 control-label">Internal Dimension (W) *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="intDimensionW" name="intDimensionW" value="" required> 
+                                </div> 
+                                <label for="intDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="rackSlotPitch" class="col-lg-2 control-label">Rack Slot-to-Slot Pitch *</label>
@@ -576,6 +537,13 @@ include 'form_template.php';
                                     </div>
                                 </div> 
                                 <label for="rackSlotPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Inch</b></label>
+                                <label for="intDimension" class="col-lg-2 control-label">(D) *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="intDimensionD" name="intDimensionD" value="" required> 
+                                </div> 
+                                <label for="intDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            <div class="form-group">
                                 <label for="rackSLotWidth" class="col-lg-2 control-label">Rack Slot Width *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="rackSLotWidth" name="rackSLotWidth" value="" required> 
@@ -590,6 +558,20 @@ include 'form_template.php';
                                     </div>
                                 </div> 
                                 <label for="rackSLotWidth" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Inch</b></label>
+                                <label for="intDimension" class="col-lg-2 control-label">(H) *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="intDimensionH" name="intDimensionH" value="" required> 
+                                    <button class="myBtn_multi">View Sample Internal Dimension</button>
+                                    <div class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <img id="myImg" src="uploaded_img/Picture05.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <p>Sample Internal Dimension Description</p>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <label for="intDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="eqptWeight" class="col-lg-2 control-label">Equipment Weight *</label>
@@ -597,6 +579,13 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="eqptWeight" name="eqptWeight" value="" required> 
                                 </div> 
                                 <label for="eqptWeight" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Kg</b></label>
+                                <label for="rackDimension" class="col-lg-2 control-label">Rack Dimension (W) *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="rackDimensionW" name="rackDimensionW" value="" required> 
+                                </div>
+                                <label for="rackDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            <div class="form-group">
                                 <label for="noMbSlot" class="col-lg-2 control-label">Number of motherboard slots *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="noMbSlot" name="noMbSlot" value="" required>
@@ -611,6 +600,11 @@ include 'form_template.php';
                                     </div>
                                 </div> 
                                 <label for="noMbSlot" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
+                                <label for="rackDimension" class="col-lg-2 control-label">(D) *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="rackDimensionD" name="rackDimensionD" value="" required> 
+                                </div> 
+                                <label for="rackDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="maxPsBs" class="col-lg-2 control-label">Max number of power supplies per board slot *</label>
@@ -627,6 +621,22 @@ include 'form_template.php';
                                     </div>
                                 </div> 
                                 <label for="maxPsBs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
+                                <label for="rackDimension" class="col-lg-2 control-label">(H) *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="rackDimensionH" name="rackDimensionH" value="" required> 
+                                    <button class="myBtn_multi">View Sample Rack Dimension</button>
+                                    <div  class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <img id="myImg" src="uploaded_img/Picture07.jpg" alt="Snow" style="width:100%;max-width:800px;">
+                                            <p>Sample Rack Dimension Description</p>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <label for="rackDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            <div class="form-group">
                                 <label for="maxPs" class="col-lg-2 control-label">Max number of power supplies for the entire Equipment *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="maxPs" name="maxPs" value="" required> 
@@ -641,6 +651,7 @@ include 'form_template.php';
                                     </div>
                                 </div> 
                                 <label for="maxPs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
+                                
                             </div>
                             <div class="form-group">
                                 <label for="airflow" class="col-lg-2 control-label">Airflow *</label>
@@ -817,7 +828,7 @@ include 'form_template.php';
                                 </div>
                             </div>
 
-                            <h2>Hardware/PS/DAQ Type</h2>
+<!--                            <h2>Hardware/PS/DAQ Type</h2>
                             <div class="form-group">
                                 <label for="motherboard" class="col-lg-2 control-label">Motherboard *</label>
                                 <div class="col-lg-3">
@@ -948,7 +959,7 @@ include 'form_template.php';
                             <div class="pull-right">
                                 <button type="submit" id="myBtn" class="btn btn-primary">Send</button>
                             </div>
-                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>-->
                         </form>
                     </div>
                 </div>	
