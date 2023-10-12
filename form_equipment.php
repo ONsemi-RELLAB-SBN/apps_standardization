@@ -138,19 +138,6 @@ include 'form_template.php';
                     $('.btn').css({background: 'transparent'})
                 }
             }
-
-            function checkCommentRequired() {
-                var checkbox = document.getElementById('checkbox');
-                var textField = document.getElementById('textField');
-
-                if (checkbox.checked) {
-                    textField.removeAttribute('required');
-                    textField.setAttribute('readonly', 'true');
-                } else {
-                    textField.setAttribute('required', '');
-                    textField.removeAttribute('readonly');
-                }
-            }
         </script>
     </head>
     <body>
@@ -688,7 +675,7 @@ include 'form_template.php';
                                     </select>
                                 </div>
                             </div>
-                            
+
                             <script>
                                 function updateToFieldWater() {
                                     var diWaterDropdown = document.getElementById('diWater');
@@ -703,7 +690,7 @@ include 'form_template.php';
                                     }
                                 }
                             </script>
-                            
+
                             <div class="form-group">
                                 <label class="col-lg-2 control-label"></label>
                                 <div class="col-lg-3"></div>
@@ -860,25 +847,6 @@ include 'form_template.php';
             </div>
         </div>
         <script>
-//            var modal = document.getElementById("myModal");
-//
-//            // Get the image and insert it inside the modal - use its "alt" text as a caption
-//            var img = document.getElementById("myImg");
-//            var modalImg = document.getElementById("img01");
-//            var captionText = document.getElementById("caption");
-//            img.onclick = function () {
-//                modal.style.display = "block";
-//                modalImg.src = this.src;
-//                captionText.innerHTML = this.alt;
-//            }
-//
-//            // Get the <span> element that closes the modal
-//            var span = document.getElementsByClassName("close")[0];
-//
-//            // When the user clicks on <span> (x), close the modal
-//            span.onclick = function () {
-//                modal.style.display = "none";
-//            }
             // Get the modal
             var modalparent = document.getElementsByClassName("modal_multi");
 
