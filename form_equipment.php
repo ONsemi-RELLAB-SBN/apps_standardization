@@ -536,7 +536,7 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="rackSlotPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Inch</b></label>
+                                <label for="rackSlotPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 <label for="intDimension" class="col-lg-2 control-label">(D) *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="intDimensionD" name="intDimensionD" value="" required> 
@@ -557,7 +557,7 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="rackSLotWidth" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Inch</b></label>
+                                <label for="rackSLotWidth" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 <label for="intDimension" class="col-lg-2 control-label">(H) *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="intDimensionH" name="intDimensionH" value="" required> 
@@ -651,7 +651,7 @@ include 'form_template.php';
                                     </div>
                                 </div> 
                                 <label for="maxPs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
-                                
+
                             </div>
                             <div class="form-group">
                                 <label for="airflow" class="col-lg-2 control-label">Airflow *</label>
@@ -828,52 +828,11 @@ include 'form_template.php';
                                 </div>
                             </div>
 
-<!--                            <h2>Hardware/PS/DAQ Type</h2>
+                            <h2>DAQ</h2>
                             <div class="form-group">
-                                <label for="motherboard" class="col-lg-2 control-label">Motherboard *</label>
+                                <label for="daq" class="col-lg-2 control-label">DAQ (Realtime Leakage Monitoring) *</label>
                                 <div class="col-lg-3">
-                                    <select id="motherboard" name="motherboard" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="driveboard" class="col-lg-2 control-label">Driverboard *</label>
-                                <div class="col-lg-3">
-                                    <select id="driveboard" name="driveboard" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="powerSupply" class="col-lg-2 control-label">Power Supply *</label>
-                                <div class="col-lg-3">
-                                    <select id="powerSupply" name="powerSupply" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="daq" class="col-lg-2 control-label">DAQ *</label>
-                                <div class="col-lg-3">
-                                    <select id="daq" name="daq" class="js-example-basic-single" style="width: 100%" required>
+                                    <select id="daq" name="daq" class="js-example-basic-single" style="width: 100%">
                                         <option value="" selected=""></option>
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
@@ -886,71 +845,261 @@ include 'form_template.php';
                                 </div>
                             </div>
 
-                            <h2>Chamber to Motherboard Interface</h2>
+                            <h2>Internal Chamber Configuration</h2>
                             <div class="form-group">
-                                <label for="noPins" class="col-lg-2 control-label">No of Pins *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="" required> 
-                                </div> 
-                                <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
-                                <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="" required> 
-                                </div> 
-                                <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Inch</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" required> 
-                                </div> 
-                                <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
-                                <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" required> 
-                                </div> 
-                                <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="" required> 
-                                </div> 
-                                <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                <label for="intConfigType" class="col-lg-2 control-label">Configuration Type *</label>
+                                <div class="col-lg-3">
+                                    <select id="intConfigType" name="intConfigType" class="js-example-basic-single" style="width: 100%">
+                                        <option value="" selected=""></option>
+                                        <?php
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '031' ORDER BY code ASC";
+                                        $resSite = mysqli_query($con, $sqlDdSite);
+                                        while ($rowSite = mysqli_fetch_array($resSite)):
+                                            ?>
+                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <?php endwhile; ?>
+                                    </select>
+                                </div>
                             </div>
 
-                            <h2>Chamber to PS Interface</h2>
+                            <script>
+//                                var dropdown = document.getElementById('intConfigType');
+//                                var bananaDiv = document.getElementById('BananaDiv');
+//                                var edgeDiv = document.getElementById('EdgeDiv');
+//                                var winDiv = document.getElementById('WinchestorDiv');
+//                                var wireDiv = document.getElementById('WireDiv');
+//                                console.log("gegegege >> " + dropdown.value);
+//                                console.log(" >> " + bananaDiv.value);
+//
+//                                dropdown.addEventListener('change', function () {
+//                                    if (dropdown.value === '031001') {
+//                                        console.log("111");
+//                                        bananaDiv.style.display = 'block';
+//                                        edgeDiv.style.display = 'none';
+//                                        winDiv.style.display = 'none';
+//                                        wireDiv.style.display = 'none';
+//                                    } else if (dropdown.value === '031002') {
+//                                        console.log("222");
+//                                        bananaDiv.style.display = 'none';
+//                                        edgeDiv.style.display = 'block';
+//                                        winDiv.style.display = 'none';
+//                                        wireDiv.style.display = 'none';
+//                                    } else if (dropdown.value === '031003') {
+//                                        console.log("333");
+//                                        bananaDiv.style.display = 'none';
+//                                        edgeDiv.style.display = 'none';
+//                                        winDiv.style.display = 'block';
+//                                        wireDiv.style.display = 'none';
+//                                    } else if (dropdown.value === '031004') {
+//                                        console.log("444");
+//                                        bananaDiv.style.display = 'none';
+//                                        edgeDiv.style.display = 'none';
+//                                        winDiv.style.display = 'none';
+//                                        wireDiv.style.display = 'block';
+//                                    }
+//                                });
+                                var dropdown = document.getElementById('intConfigType');
+                                var bananaDiv = document.getElementById('BananaDiv');
+                                var edgeDiv = document.getElementById('edgeDiv');
+                                var winDiv = document.getElementById('winDiv');
+                                var wireDiv = document.getElementById('wireDiv');
+
+                                dropdown.addEventListener('change', function () {
+                                    var selectedValue = dropdown.value;
+                                    console.log("see >>> " + selectedValue);
+
+                                    if (selectedValue === '031001') {
+                                        console.log("111");
+                                        bananaDiv.style.display = 'block';
+                                        edgeDiv.style.display = 'none';
+                                        winDiv.style.display = 'none';
+                                        wireDiv.style.display = 'none';
+                                    } else if (selectedValue === '031002') {
+                                        console.log("222");
+                                        bananaDiv.style.display = 'none';
+                                        edgeDiv.style.display = 'block';
+                                        winDiv.style.display = 'none';
+                                        wireDiv.style.display = 'none';
+                                    } else if (selectedValue === '031003') {
+                                        console.log("333");
+                                        bananaDiv.style.display = 'none';
+                                        edgeDiv.style.display = 'none';
+                                        winDiv.style.display = 'block';
+                                        wireDiv.style.display = 'none';
+                                    } else if (selectedValue === '031004') {
+                                        bananaDiv.style.display = 'none';
+                                        edgeDiv.style.display = 'none';
+                                        winDiv.style.display = 'none';
+                                        wireDiv.style.display = 'block';
+                                    } else {
+                                        console.log("000000000000");
+                                        bananaDiv.style.display = 'none';
+                                        edgeDiv.style.display = 'none';
+                                        winDiv.style.display = 'none';
+                                        wireDiv.style.display = 'none';
+                                    }
+                                });
+                            </script>
+                            <!--<hr class="hr" />-->
+                            <!--Banana-->
+                            <div class="form-group" name="BananaDiv" id="BananaDiv" style="display: none;">
+                                <div class="form-group">
+                                    <label for="bananaJackHole" class="col-lg-2 control-label">No. Banana Jack Holes *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="bananaJackHole" name="bananaJackHole" value="" > 
+                                    </div> 
+                                    <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
+
+                                    <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
+                                    </div> 
+                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
+                                    </div> 
+                                    <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+
+                                    <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="connTempRating" name="connTempRating" value="" > 
+                                    </div> 
+                                    <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                </div>
+                            </div>
+
+                            <hr class="hr hr-blurry" />
+                            <!--Edge Connector-->
+                            <div class="form-group" name="EdgeDiv" id="EdgeDiv" style="display: none;">
+                                <div class="form-group">
+                                    <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="noPins" name="noPins" value="" > 
+                                    </div> 
+                                    <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
+
+                                    <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="pinPitch" name="pinPitch" value="" > 
+                                    </div> 
+                                    <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
+                                    </div> 
+                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+
+                                    <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
+                                    </div> 
+                                    <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="connTempRating" name="connTempRating" value="" > 
+                                    </div> 
+                                    <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                </div>
+                            </div> 
+
+                            <hr class="hr hr-blurry" />
+                            <!--Winchestor-->
+                            <div class="form-group" name="WinchestorDiv" id="WinchestorDiv" style="display: none;">
+                                <div class="form-group">
+                                    <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="noPins" name="noPins" value="" > 
+                                    </div> 
+                                    <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
+
+                                    <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="pinPitch" name="pinPitch" value="" > 
+                                    </div> 
+                                    <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
+                                    </div> 
+                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+
+                                    <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
+                                    </div> 
+                                    <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="connTempRating" class="col-lg-2 control-label">No. Wires Connected to Rack *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="connTempRating" name="connTempRating" value="" > 
+                                    </div> 
+                                    <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
+                                </div>
+                            </div> 
+
+                            <hr class="hr hr-blurry" />
+                            <!--Wire-->
+                            <div class="form-group" name="WireDiv" id="WireDiv" style="display: none;">
+                                <div class="form-group">
+                                    <label for="wireVoltRating" class="col-lg-2 control-label">Wire Voltage Rating *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="wireVoltRating" name="wireVoltRating" value="" > 
+                                    </div> 
+                                    <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+
+                                    <label for="wireCurrRating" class="col-lg-2 control-label">Wire Current Rating *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="wireCurrRating" name="wireCurrRating" value="" > 
+                                    </div> 
+                                    <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="connVoltRating" class="col-lg-2 control-label">Wire Temp Rating *</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
+                                    </div> 
+                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                </div>
+                            </div> 
+
+                            <h2>External Chamber Configuration</h2>
+                            <div class="form-group">
+                                <label for="extConfigType" class="col-lg-2 control-label">Configuration Type *</label>
+                                <div class="col-lg-3">
+                                    <select id="extConfigType" name="extConfigType" class="js-example-basic-single" style="width: 100%">
+                                        <option value="" selected=""></option>
+                                        <?php
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '032' ORDER BY code ASC";
+                                        $resSite = mysqli_query($con, $sqlDdSite);
+                                        while ($rowSite = mysqli_fetch_array($resSite)):
+                                            ?>
+                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <?php endwhile; ?>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="interfaceVoltRating" class="col-lg-2 control-label">Interface Voltage Rating *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="" required> 
+                                    <input type="text" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="" > 
                                 </div> 
                                 <label for="interfaceVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+
                                 <label for="interfaceCurrRating" class="col-lg-2 control-label">Interface Current Rating *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="interfaceCurrRating" name="interfaceCurrRating" value="" required> 
+                                    <input type="text" class="form-control" id="interfaceCurrRating" name="interfaceCurrRating" value="" > 
                                 </div> 
                                 <label for="interfaceCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
-                            </div>
-
-                            <h2>Chamber to DAQ Interface</h2>
-                            <div class="form-group">
-                                <label for="noMotherboardSlot" class="col-lg-2 control-label">No of Motherboard Slot *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="noMotherboardSlot" name="noMotherboardSlot" value="" required> 
-                                </div> 
-                                <label for="noMotherboardSlot" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Slot</b></label>
-                                <label for="maxPsBoardSLot" class="col-lg-2 control-label">Max No of PS per Board Slot *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="maxPsBoardSLot" name="maxPsBoardSLot" value="" required> 
-                                </div> 
-                                <label for="maxPsBoardSLot" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="maxPsEqpt" class="col-lg-2 control-label">Max No of PS for the Entire Eqpt *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="maxPsEqpt" name="maxPsEqpt" value="" required> 
-                                </div> 
                             </div>
 
                             <div class="pull-right">
@@ -959,7 +1108,7 @@ include 'form_template.php';
                             <div class="pull-right">
                                 <button type="submit" id="myBtn" class="btn btn-primary">Send</button>
                             </div>
-                            <div class="clearfix"></div>-->
+                            <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>	
