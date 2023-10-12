@@ -832,7 +832,7 @@ include 'form_template.php';
                             <div class="form-group">
                                 <label for="daq" class="col-lg-2 control-label">DAQ (Realtime Leakage Monitoring) *</label>
                                 <div class="col-lg-3">
-                                    <select id="daq" name="daq" class="js-example-basic-single" style="width: 100%">
+                                    <select id="daq" name="daq" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
@@ -849,7 +849,7 @@ include 'form_template.php';
                             <div class="form-group">
                                 <label for="intConfigType" class="col-lg-2 control-label">Configuration Type *</label>
                                 <div class="col-lg-3">
-                                    <select id="intConfigType" name="intConfigType" class="js-example-basic-single" style="width: 100%">
+                                    <select id="intConfigType" name="intConfigType" class="js-example-basic-single" style="width: 100%" onchange="updateDiv()" required>
                                         <option value="" selected=""></option>
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '031' ORDER BY code ASC";
@@ -863,65 +863,27 @@ include 'form_template.php';
                             </div>
 
                             <script>
-//                                var dropdown = document.getElementById('intConfigType');
-//                                var bananaDiv = document.getElementById('BananaDiv');
-//                                var edgeDiv = document.getElementById('EdgeDiv');
-//                                var winDiv = document.getElementById('WinchestorDiv');
-//                                var wireDiv = document.getElementById('WireDiv');
-//                                console.log("gegegege >> " + dropdown.value);
-//                                console.log(" >> " + bananaDiv.value);
-//
-//                                dropdown.addEventListener('change', function () {
-//                                    if (dropdown.value === '031001') {
-//                                        console.log("111");
-//                                        bananaDiv.style.display = 'block';
-//                                        edgeDiv.style.display = 'none';
-//                                        winDiv.style.display = 'none';
-//                                        wireDiv.style.display = 'none';
-//                                    } else if (dropdown.value === '031002') {
-//                                        console.log("222");
-//                                        bananaDiv.style.display = 'none';
-//                                        edgeDiv.style.display = 'block';
-//                                        winDiv.style.display = 'none';
-//                                        wireDiv.style.display = 'none';
-//                                    } else if (dropdown.value === '031003') {
-//                                        console.log("333");
-//                                        bananaDiv.style.display = 'none';
-//                                        edgeDiv.style.display = 'none';
-//                                        winDiv.style.display = 'block';
-//                                        wireDiv.style.display = 'none';
-//                                    } else if (dropdown.value === '031004') {
-//                                        console.log("444");
-//                                        bananaDiv.style.display = 'none';
-//                                        edgeDiv.style.display = 'none';
-//                                        winDiv.style.display = 'none';
-//                                        wireDiv.style.display = 'block';
-//                                    }
-//                                });
-                                var dropdown = document.getElementById('intConfigType');
-                                var bananaDiv = document.getElementById('BananaDiv');
-                                var edgeDiv = document.getElementById('edgeDiv');
-                                var winDiv = document.getElementById('winDiv');
-                                var wireDiv = document.getElementById('wireDiv');
-
-                                dropdown.addEventListener('change', function () {
+                                function updateDiv() {
+                                    var dropdown = document.getElementById('intConfigType');
+                                    var bananaDiv = document.getElementById('BananaDiv');
+                                    var edgeDiv = document.getElementById('EdgeDiv');
+                                    var winDiv = document.getElementById('WinchestorDiv');
+                                    var wireDiv = document.getElementById('WireDiv');
+                                    var hehe = document.getElementById('bananaJackHole');
                                     var selectedValue = dropdown.value;
-                                    console.log("see >>> " + selectedValue);
 
                                     if (selectedValue === '031001') {
-                                        console.log("111");
                                         bananaDiv.style.display = 'block';
                                         edgeDiv.style.display = 'none';
                                         winDiv.style.display = 'none';
                                         wireDiv.style.display = 'none';
+                                        hehe.setValue(0);
                                     } else if (selectedValue === '031002') {
-                                        console.log("222");
                                         bananaDiv.style.display = 'none';
                                         edgeDiv.style.display = 'block';
                                         winDiv.style.display = 'none';
                                         wireDiv.style.display = 'none';
                                     } else if (selectedValue === '031003') {
-                                        console.log("333");
                                         bananaDiv.style.display = 'none';
                                         edgeDiv.style.display = 'none';
                                         winDiv.style.display = 'block';
@@ -932,40 +894,40 @@ include 'form_template.php';
                                         winDiv.style.display = 'none';
                                         wireDiv.style.display = 'block';
                                     } else {
-                                        console.log("000000000000");
                                         bananaDiv.style.display = 'none';
                                         edgeDiv.style.display = 'none';
                                         winDiv.style.display = 'none';
                                         wireDiv.style.display = 'none';
                                     }
-                                });
+                                }
                             </script>
+
                             <!--<hr class="hr" />-->
                             <!--Banana-->
                             <div class="form-group" name="BananaDiv" id="BananaDiv" style="display: none;">
                                 <div class="form-group">
                                     <label for="bananaJackHole" class="col-lg-2 control-label">No. Banana Jack Holes *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="bananaJackHole" name="bananaJackHole" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="bananaJackHole" name="bananaJackHole" value="" > 
                                     </div> 
-                                    <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
+                                    <label for="bananaJackHole" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
 
                                     <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
                                     </div> 
                                     <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
                                     </div> 
                                     <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
 
                                     <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="connTempRating" name="connTempRating" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="" > 
                                     </div> 
                                     <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 </div>
@@ -977,33 +939,33 @@ include 'form_template.php';
                                 <div class="form-group">
                                     <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="noPins" name="noPins" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="" > 
                                     </div> 
                                     <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
 
                                     <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="pinPitch" name="pinPitch" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="" > 
                                     </div> 
                                     <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
                                     </div> 
                                     <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
 
                                     <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
                                     </div> 
                                     <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="connTempRating" name="connTempRating" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="" > 
                                     </div> 
                                     <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 </div>
@@ -1015,35 +977,35 @@ include 'form_template.php';
                                 <div class="form-group">
                                     <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="noPins" name="noPins" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="" > 
                                     </div> 
                                     <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
 
                                     <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="pinPitch" name="pinPitch" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="" > 
                                     </div> 
                                     <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
                                     </div> 
                                     <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
 
                                     <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
                                     </div> 
                                     <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
                                 </div>
                                 <div class="form-group">
-                                    <label for="connTempRating" class="col-lg-2 control-label">No. Wires Connected to Rack *</label>
+                                    <label for="connRack" class="col-lg-2 control-label">No. Wires Connected to Rack *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="connTempRating" name="connTempRating" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="connRack" name="connRack" value="" > 
                                     </div> 
-                                    <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
+                                    <label for="connRack" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
                                 </div>
                             </div> 
 
@@ -1053,22 +1015,22 @@ include 'form_template.php';
                                 <div class="form-group">
                                     <label for="wireVoltRating" class="col-lg-2 control-label">Wire Voltage Rating *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="wireVoltRating" name="wireVoltRating" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="wireVoltRating" name="wireVoltRating" value="" > 
                                     </div> 
-                                    <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                    <label for="wireVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
 
                                     <label for="wireCurrRating" class="col-lg-2 control-label">Wire Current Rating *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="wireCurrRating" name="wireCurrRating" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="wireCurrRating" name="wireCurrRating" value="" > 
                                     </div> 
-                                    <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                    <label for="wireCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
                                 </div>
                                 <div class="form-group">
-                                    <label for="connVoltRating" class="col-lg-2 control-label">Wire Temp Rating *</label>
+                                    <label for="wireTempRating" class="col-lg-2 control-label">Wire Temp Rating *</label>
                                     <div class="col-lg-2">
-                                        <input type="text" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
+                                        <input type="number" step="0.001" class="form-control" id="wireTempRating" name="wireTempRating" value="" > 
                                     </div> 
-                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                    <label for="wireTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 </div>
                             </div> 
 
@@ -1076,7 +1038,7 @@ include 'form_template.php';
                             <div class="form-group">
                                 <label for="extConfigType" class="col-lg-2 control-label">Configuration Type *</label>
                                 <div class="col-lg-3">
-                                    <select id="extConfigType" name="extConfigType" class="js-example-basic-single" style="width: 100%">
+                                    <select id="extConfigType" name="extConfigType" class="js-example-basic-single" style="width: 100%" onchange="updateView()" required>
                                         <option value="" selected=""></option>
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '032' ORDER BY code ASC";
@@ -1088,16 +1050,31 @@ include 'form_template.php';
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            
+                            <script>
+                                function updateView() {
+                                    var dd = document.getElementById('extConfigType');
+                                    var extDiv = document.getElementById('viewExternalDiv');
+                                    var selectedValue = dd.value;
+                                    
+                                    if (selectedValue === '032003') {
+                                        extDiv.style.display = 'none';
+                                    } else  {
+                                        extDiv.style.display = 'block';
+                                    }
+                                }
+                            </script>
+                            
+                            <div class="form-group" id="viewExternalDiv">
                                 <label for="interfaceVoltRating" class="col-lg-2 control-label">Interface Voltage Rating *</label>
                                 <div class="col-lg-2">
-                                    <input type="text" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="" > 
+                                    <input type="number" step="0.001" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="" > 
                                 </div> 
                                 <label for="interfaceVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
 
                                 <label for="interfaceCurrRating" class="col-lg-2 control-label">Interface Current Rating *</label>
                                 <div class="col-lg-2">
-                                    <input type="text" class="form-control" id="interfaceCurrRating" name="interfaceCurrRating" value="" > 
+                                    <input type="number" step="0.001" class="form-control" id="interfaceCurrRating" name="interfaceCurrRating" value="" > 
                                 </div> 
                                 <label for="interfaceCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
                             </div>
