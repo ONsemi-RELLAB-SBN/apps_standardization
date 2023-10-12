@@ -425,7 +425,7 @@ include 'form_template.php';
                             <div class="form-group">
                                 <label for="extDimension" class="col-lg-2 control-label">External Dimension *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="extDimension" name="extDimension" value="" required> 
+                                    <input type="number" step="0.001" class="form-control" id="extDimensionW" name="extDimensionW" value="" required> 
                                     <button class="myBtn_multi">View Sample External Dimension</button>
                                     <div class="modal modal_multi">
                                         <!-- Modal content -->
@@ -436,10 +436,20 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div>
-                                <label for="extDimension" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="extDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="extDimensionD" name="extDimensionD" value="" required> 
+                                </div>
+                                <label for="extDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="extDimensionH" name="extDimensionH" value="" required> 
+                                </div>
+                                <label for="extDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            <div class="form-group">
                                 <label for="intDimension" class="col-lg-2 control-label">Internal Dimension *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="intDimension" name="intDimension" value="" required> 
+                                    <input type="number" step="0.001" class="form-control" id="intDimensionW" name="intDimensionW" value="" required> 
                                     <button class="myBtn_multi">View Sample Internal Dimension</button>
                                     <div class="modal modal_multi">
                                         <!-- Modal content -->
@@ -450,7 +460,39 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="intDimension" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="intDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="intDimensionD" name="intDimensionD" value="" required> 
+                                </div> 
+                                <label for="intDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="intDimensionH" name="intDimensionH" value="" required> 
+                                </div> 
+                                <label for="intDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="rackDimension" class="col-lg-2 control-label">Rack Dimension *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="rackDimensionW" name="rackDimensionW" value="" required> 
+                                    <button class="myBtn_multi">View Sample Rack Dimension</button>
+                                    <div  class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <img id="myImg" src="uploaded_img/Picture07.jpg" alt="Snow" style="width:100%;max-width:800px;">
+                                            <p>Sample Rack Dimension Description</p>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <label for="rackDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="rackDimensionD" name="rackDimensionD" value="" required> 
+                                </div> 
+                                <label for="rackDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="rackDimensionH" name="rackDimensionH" value="" required> 
+                                </div> 
+                                <label for="rackDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="noInterior" class="col-lg-2 control-label">No. Interior Zones (doors) *</label>
@@ -465,28 +507,24 @@ include 'form_template.php';
                                             <p>Sample No Interior Zone Description</p>
                                         </div>
                                     </div>
-                                </div> 
-                                <label for="rackDimension" class="col-lg-3 control-label">Rack Dimension *</label>
+                                </div>
+                                <label for="noInterior" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
+                                <label for="intVolume" class="col-lg-2 control-label">Internal Volume *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackDimension" name="rackDimension" value="" required> 
-                                    <button class="myBtn_multi">View Sample Rack Dimension</button>
+                                    <input type="number" step="0.001" class="form-control" id="intVolume" name="intVolume" value="" required> 
+                                    <button class="myBtn_multi">View Sample Internal Volume</button>
                                     <div  class="modal modal_multi">
                                         <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="uploaded_img/Picture07.jpg" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Rack Dimension Description</p>
+                                            <img id="myImg" src="uploaded_img/Picture08.jpg" alt="Snow" style="width:100%;max-width:800px;">
+                                            <p>Sample Internal Volume Description</p>
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="rackDimension" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="intVolume" class="col-lg-1 control-label pull-left" style="text-align: left"><b>L</b></label>
                             </div>
                             <div class="form-group">
-                                <label for="intVolume" class="col-lg-2 control-label">Internal Volume *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="intVolume" name="intVolume" value="" required> 
-                                </div> 
-                                <label for="intVolume" class="col-lg-1 control-label pull-left" style="text-align: left"><b>L</b></label>
                                 <label for="boardOrientation" class="col-lg-2 control-label">Board Orientation*</label>
                                 <div class="col-lg-3">
                                     <select id="boardOrientation" name="boardOrientation" class="js-example-basic-single" style="width: 100%" required>
@@ -499,9 +537,16 @@ include 'form_template.php';
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
+                                    <button class="myBtn_multi">View Sample Board Orientation</button>
+                                    <div  class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <img id="myImg" src="uploaded_img/Picture09.jpg" alt="Snow" style="width:100%;max-width:800px;">
+                                            <p>Sample Board Orientation Description</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
                                 <label for="rackMaterial" class="col-lg-2 control-label">Rack Material *</label>
                                 <div class="col-lg-3">
                                     <select id="rackMaterial" name="rackMaterial" class="js-example-basic-single" style="width: 100%" required>
@@ -515,6 +560,8 @@ include 'form_template.php';
                                         <?php endwhile; ?>
                                     </select>
                                 </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="rackSlotPitch" class="col-lg-2 control-label">Rack Slot-to-Slot Pitch *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="rackSlotPitch" name="rackSlotPitch" value="" required>
@@ -529,8 +576,6 @@ include 'form_template.php';
                                     </div>
                                 </div> 
                                 <label for="rackSlotPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Inch</b></label>
-                            </div>
-                            <div class="form-group">
                                 <label for="rackSLotWidth" class="col-lg-2 control-label">Rack Slot Width *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="rackSLotWidth" name="rackSLotWidth" value="" required> 
@@ -545,11 +590,57 @@ include 'form_template.php';
                                     </div>
                                 </div> 
                                 <label for="rackSLotWidth" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Inch</b></label>
+                            </div>
+                            <div class="form-group">
                                 <label for="eqptWeight" class="col-lg-2 control-label">Equipment Weight *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="eqptWeight" name="eqptWeight" value="" required> 
                                 </div> 
                                 <label for="eqptWeight" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Kg</b></label>
+                                <label for="noMbSlot" class="col-lg-2 control-label">Number of motherboard slots *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="noMbSlot" name="noMbSlot" value="" required>
+                                    <button class="myBtn_multi">View Sample Motherboard Slots</button>
+                                    <div  class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <img id="myImg" src="uploaded_img/Picture12.jpg" alt="Snow" style="width:100%;max-width:800px;">
+                                            <p>Sample Motherboard Slots Description</p>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <label for="noMbSlot" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="maxPsBs" class="col-lg-2 control-label">Max number of power supplies per board slot *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="maxPsBs" name="maxPsBs" value="" required> 
+                                    <button class="myBtn_multi">View Sample Power Supplies</button>
+                                    <div  class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <img id="myImg" src="uploaded_img/Picture13.jpg" alt="Snow" style="width:100%;max-width:800px;">
+                                            <p>Sample Power Supplies Description</p>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <label for="maxPsBs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
+                                <label for="maxPs" class="col-lg-2 control-label">Max number of power supplies for the entire Equipment *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="maxPs" name="maxPs" value="" required> 
+                                    <button class="myBtn_multi">View Sample Power Supplies</button>
+                                    <div  class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <img id="myImg" src="uploaded_img/Picture14.jpg" alt="Snow" style="width:100%;max-width:800px;">
+                                            <p>Sample Power Supplies Description</p>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <label for="maxPs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
                             </div>
                             <div class="form-group">
                                 <label for="airflow" class="col-lg-2 control-label">Airflow *</label>
@@ -583,7 +674,7 @@ include 'form_template.php';
                                     <select id="tempProtection1" name="tempProtection1" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '018' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
@@ -596,7 +687,7 @@ include 'form_template.php';
                                     <select id="tempProtection2" name="tempProtection2" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '019' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
@@ -606,12 +697,12 @@ include 'form_template.php';
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="smokeDetector" class="col-lg-2 control-label">Smoke Detector/Alarm *</label>
+                                <label for="tempThermostat3" class="col-lg-2 control-label">Temperature Protection / Thermostat 3 *</label>
                                 <div class="col-lg-3">
-                                    <select id="smokeDetector" name="smokeDetector" class="js-example-basic-single" style="width: 100%" required>
+                                    <select id="tempThermostat3" name="tempThermostat3" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '019' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)):
                                             ?>
@@ -619,6 +710,21 @@ include 'form_template.php';
                                         <?php endwhile; ?>
                                     </select>
                                 </div>
+                                <label for="smokeDetector" class="col-lg-2 control-label">Smoke Detector/Alarm *</label>
+                                <div class="col-lg-3">
+                                    <select id="smokeDetector" name="smokeDetector" class="js-example-basic-single" style="width: 100%" required>
+                                        <option value="" selected=""></option>
+                                        <?php
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
+                                        $resSite = mysqli_query($con, $sqlDdSite);
+                                        while ($rowSite = mysqli_fetch_array($resSite)):
+                                            ?>
+                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <?php endwhile; ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="emo" class="col-lg-2 control-label">EMO button *</label>
                                 <div class="col-lg-3">
                                     <select id="emo" name="emo" class="js-example-basic-single" style="width: 100%" required>
@@ -632,6 +738,8 @@ include 'form_template.php';
                                         <?php endwhile; ?>
                                     </select>
                                 </div>
+                                <label class="col-lg-2 control-label"></label>
+                                <div class="col-lg-3"></div>
                             </div>
 
                             <h2>Utilities</h2>
