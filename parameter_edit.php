@@ -70,7 +70,8 @@ if (isset($_POST['update_parameter'])) {
                 <h1>Access denied! Please go back to <a href="parameter.php" class="btn"> main page</a></h1>
             <?php } else { ?>
                 <section>
-                    <p>Parameter Master - Edit Page</p>
+                    <!--<p>Parameter Master - Edit Page</p>-->
+                    <h2 class="pull-left">Parameter Master - Edit Page</h2>
                     <div class="admin-product-form-container centered">
                         <?php
                         $select = mysqli_query($con, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
@@ -87,10 +88,14 @@ if (isset($_POST['update_parameter'])) {
                                 <input type="file" class="box" name="parameter_image" accept="image/png, image/jpeg, image/jpg">
                                 <br>
                                 <br>
-                                <a href="parameter.php" class="btn btn-success"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
-                                <button type="submit" value="Update Parameter Master" name="update_parameter" class="btn btn-success" >
-                                    <i class='bx bx-loader-circle bx-fw bx-fw' style='color:#ffffff' ></i>Update Parameter Master
+                                <a href="parameter.php" class="btn-3d"><i class='bx bx-arrow-back bx-fade-left-hover bx-fw' style='color:#ffffff' ></i>Go Back!</a>
+                                <!--<a href="parameter.php" class="btn-3d"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>-->
+                                <button type="submit" value="Update Parameter Master" name="update_parameter" class="btn-3d" >
+                                    <i class='bx bx-loader-circle bx-spin-hover bx-fw' style='color:#ffffff' ></i>Update Parameter Master
                                 </button>
+<!--                                <button type="submit" value="Update Parameter Master" name="update_parameter" class="btn btn-success" >
+                                    <i class='bx bx-loader-circle bx-fw bx-fw' style='color:#ffffff' ></i>Update Parameter Master
+                                </button>-->
                             </form>
                         <?php }; ?>
                     </div>

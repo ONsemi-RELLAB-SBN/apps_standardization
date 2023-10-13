@@ -67,6 +67,7 @@ if (isset($_GET['delete'])) {
         <link rel="shortcut icon" href="image/dribbble.ico">
         
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
         
         <script type="text/javascript">
             
@@ -96,8 +97,9 @@ if (isset($_GET['delete'])) {
 
                     <label for="image"><b>Image</b></label>
                     <input type="file" accept="image/png, image/jpeg, image/jpg" name="parameter_image" class="box">
-                    <input type="submit" class="btn btn-success pull-right" name="add_parameter" value="Add New Parameter">
-                    <hr>
+                    <!--<input type="submit" class="btn btn-success pull-right" name="add_parameter" value="Add New Parameter">-->
+                    <!--<input type="submit" class="btn-3d pull-right" name="add_parameter" value="Add New Parameter">-->
+                    <button name="add_parameter" class="w3-button w3-round btn-3d pull-right"><i class='bx bx-plus bx-flashing-hover bx-fw' ></i>Add New Parameter</button>
                 </form>
             </div>
             <hr>

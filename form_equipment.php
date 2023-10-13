@@ -109,7 +109,6 @@ include 'form_template.php';
         </style>
         <script type="text/javascript">
             $(document).ready(function () {
-
                 $('.js-example-basic-multiple').select2({
                     placeholder: "Multi Select",
                     allowClear: true
@@ -157,8 +156,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '002' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -170,8 +168,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '003' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -185,8 +182,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '004' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -198,8 +194,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '005' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -215,8 +210,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -228,8 +222,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -242,8 +235,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -255,8 +247,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -270,8 +261,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '010' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -313,8 +303,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '013' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -328,8 +317,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '014' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -384,7 +372,6 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="tempFluctuation" name="tempFluctuation" value="" required>
                                     <button class="myBtn_multi">View Sample Temperature Fluctuation</button>
                                     <div class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture01.png" alt="image" style="width:100%;max-width:800px;">
@@ -400,7 +387,6 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="tempUniform" name="tempUniform" value="" required> 
                                     <button class="myBtn_multi">View Sample Temperature Uniformity</button>
                                     <div class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture02.png" alt="image" style="width:100%;max-width:800px;">
@@ -414,7 +400,6 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="humidFluctuation" name="humidFluctuation" value="" required> 
                                     <button class="myBtn_multi">View Sample Humid Fluctuation</button>
                                     <div class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture03.png" alt="Snow" style="width:100%;max-width:800px;">
@@ -432,7 +417,6 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="noInterior" name="noInterior" value="" required> 
                                     <button class="myBtn_multi">View Sample No Interior Zone</button>
                                     <div class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture06.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -453,7 +437,6 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="intVolume" name="intVolume" value="" required> 
                                     <button class="myBtn_multi">View Sample Internal Volume</button>
                                     <div  class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture08.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -476,14 +459,12 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
                                     <button class="myBtn_multi">View Sample Board Orientation</button>
                                     <div  class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture09.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -496,7 +477,6 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="extDimensionH" name="extDimensionH" value="" required> 
                                     <button class="myBtn_multi">View Sample External Dimension</button>
                                     <div class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture04.png" alt="Snow" style="width:100%;max-width:800px;">
@@ -514,8 +494,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '016' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -532,7 +511,6 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="rackSlotPitch" name="rackSlotPitch" value="" required>
                                     <button class="myBtn_multi">View Sample Rack Slot-to-Slot Pitch</button>
                                     <div  class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture10.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -553,7 +531,6 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="rackSLotWidth" name="rackSLotWidth" value="" required> 
                                     <button class="myBtn_multi">View Sample Rack Slot Width</button>
                                     <div  class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture11.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -567,7 +544,6 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="intDimensionH" name="intDimensionH" value="" required> 
                                     <button class="myBtn_multi">View Sample Internal Dimension</button>
                                     <div class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture05.png" alt="Snow" style="width:100%;max-width:800px;">
@@ -595,7 +571,6 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="noMbSlot" name="noMbSlot" value="" required>
                                     <button class="myBtn_multi">View Sample Motherboard Slots</button>
                                     <div  class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture12.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -616,7 +591,6 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="maxPsBs" name="maxPsBs" value="" required> 
                                     <button class="myBtn_multi">View Sample Power Supplies</button>
                                     <div  class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture13.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -630,7 +604,6 @@ include 'form_template.php';
                                     <input type="number" step="0.001" class="form-control" id="rackDimensionH" name="rackDimensionH" value="" required> 
                                     <button class="myBtn_multi">View Sample Rack Dimension</button>
                                     <div  class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture07.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -655,7 +628,6 @@ include 'form_template.php';
                                     </div>
                                 </div> 
                                 <label for="maxPs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
-
                             </div>
                             <div class="form-group">
                                 <label for="airflow" class="col-lg-2 control-label">Airflow *</label>
@@ -665,14 +637,12 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '017' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
                                     <button class="myBtn_multi">View Sample Airflow</button>
                                     <div  class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture15.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -691,8 +661,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -704,8 +673,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -719,8 +687,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -732,8 +699,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -747,8 +713,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -778,8 +743,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -791,8 +755,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '029' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -827,8 +790,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -844,8 +806,7 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
@@ -861,14 +822,12 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '031' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
                                     <button class="myBtn_multi">View Sample Internal Chamber Configuration</button>
                                     <div  class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture16.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -886,7 +845,7 @@ include 'form_template.php';
                                     var winDiv = document.getElementById('WinchestorDiv');
                                     var wireDiv = document.getElementById('WireDiv');
                                     var selectedValue = dropdown.value;
-                                    
+
                                     $('#bananaJackHole').val("");
                                     $('#connVoltRating').val("");
                                     $('#connCurrRating').val("");
@@ -934,7 +893,6 @@ include 'form_template.php';
                                     <div class="col-lg-3">
                                         <button class="myBtn_multi">View Sample Banana Configuration</button>
                                         <div  class="modal modal_multi">
-                                            <!-- Modal content -->
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
                                                 <img id="myImg" src="uploaded_img/Picture17.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -978,7 +936,6 @@ include 'form_template.php';
                                     <div class="col-lg-3">
                                         <button class="myBtn_multi">View Sample Edge Configuration</button>
                                         <div  class="modal modal_multi">
-                                            <!-- Modal content -->
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
                                                 <img id="myImg" src="uploaded_img/Picture17.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -1031,7 +988,6 @@ include 'form_template.php';
                                     <div class="col-lg-3">
                                         <button class="myBtn_multi">View Sample Winchestor Configuration</button>
                                         <div  class="modal modal_multi">
-                                            <!-- Modal content -->
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
                                                 <img id="myImg" src="uploaded_img/Picture18.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -1048,7 +1004,6 @@ include 'form_template.php';
                                         <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="" > 
                                     </div> 
                                     <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
-
                                     <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
                                     <div class="col-lg-2">
                                         <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="" > 
@@ -1061,7 +1016,6 @@ include 'form_template.php';
                                         <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
                                     </div> 
                                     <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
-
                                     <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
                                     <div class="col-lg-2">
                                         <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
@@ -1084,7 +1038,6 @@ include 'form_template.php';
                                     <div class="col-lg-3">
                                         <button class="myBtn_multi">View Sample Wire Configuration</button>
                                         <div  class="modal modal_multi">
-                                            <!-- Modal content -->
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
                                                 <img id="myImg" src="uploaded_img/Picture19.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -1101,7 +1054,6 @@ include 'form_template.php';
                                         <input type="number" step="0.001" class="form-control" id="wireVoltRating" name="wireVoltRating" value="" > 
                                     </div> 
                                     <label for="wireVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
-
                                     <label for="wireCurrRating" class="col-lg-2 control-label">Wire Current Rating *</label>
                                     <div class="col-lg-2">
                                         <input type="number" step="0.001" class="form-control" id="wireCurrRating" name="wireCurrRating" value="" > 
@@ -1112,7 +1064,7 @@ include 'form_template.php';
                                     <label for="wireTempRating" class="col-lg-2 control-label">Wire Temp Rating *</label>
                                     <div class="col-lg-2">
                                         <input type="number" step="0.001" class="form-control" id="wireTempRating" name="wireTempRating" value="" > 
-                                    </div> 
+                                    </div>
                                     <label for="wireTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 </div>
                             </div> 
@@ -1126,14 +1078,12 @@ include 'form_template.php';
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '032' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)):
-                                            ?>
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
                                     <button class="myBtn_multi">View External Chamber Configuration Configuration</button>
                                     <div  class="modal modal_multi">
-                                        <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <img id="myImg" src="uploaded_img/Picture20.jpg" alt="Snow" style="width:100%;max-width:800px;">
@@ -1142,28 +1092,27 @@ include 'form_template.php';
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <script>
                                 function updateView() {
                                     var dd = document.getElementById('extConfigType');
                                     var extDiv = document.getElementById('viewExternalDiv');
                                     var selectedValue = dd.value;
-                                    
+
                                     if (selectedValue === '032003') {
                                         extDiv.style.display = 'none';
-                                    } else  {
+                                    } else {
                                         extDiv.style.display = 'block';
                                     }
                                 }
                             </script>
-                            
+
                             <div class="form-group" id="viewExternalDiv">
                                 <label for="interfaceVoltRating" class="col-lg-2 control-label">Interface Voltage Rating *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="" > 
                                 </div> 
                                 <label for="interfaceVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
-
                                 <label for="interfaceCurrRating" class="col-lg-2 control-label">Interface Current Rating *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="interfaceCurrRating" name="interfaceCurrRating" value="" > 

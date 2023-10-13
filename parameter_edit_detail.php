@@ -113,9 +113,9 @@ $master_id = $_GET['id'];
                                     ?>
 
                                     <br>
-                                    <a href="parameter_detail.php?update=<?php echo $master_id; ?>" class="btn btn-success"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>
-                                    <button type="submit" value="Update Parameter Master" name="update_detail" class="btn btn-success" >
-                                        <i class='bx bx-list-plus bx-fw bx-md'></i> Update Detail
+                                    <a href="parameter_detail.php?update=<?php echo $master_id; ?>" class="btn-3d"><i class='bx bx-arrow-back bx-fade-left-hover bx-fw' style='color:#ffffff' ></i>Go Back!</a>
+                                    <button type="submit" value="Update Parameter Master" name="update_detail" class="btn-3d" >
+                                        <i class='bx bx-list-plus bx-flashing-hover bx-fw bx-md'></i> Update Detail
                                     </button>
                                     <br>
                                     <br>
