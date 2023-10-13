@@ -109,7 +109,7 @@ $insert = "INSERT INTO gest_eqpt_form (eqpt_id, lab_location, strategy, standard
         . "'$assetNo', '$newTransfer', '$to', '$voltRating', '$voltControl', '$minTemp', '$maxTemp', '$minRh', '$maxRh', '$heatDiss',"
         . "'$tempFluctuation', '$tempUniform', '$umidFluctuation', '$extDimensionW', '$extDimensionD', '$extDimensionH', '$intDimensionW', '$intDimensionD', '$intDimensionH', '$noInterior', "
         . "'$rackDimensionW', '$rackDimensionD', '$rackDimensionH', '$intVolume', '$boardOrientation', '$rackMaterial', '$rackSlotPitch', '$rackSLotWidth', '$eqptWeight', '$noMotherboardSlot', "
-        . "'$maxPsBoardSLot', '$maxPsEqpt', '$airflow', '$tempProtection1', '$tempProtection2', 'y', '$smokeDetector', '$emo', '$voltagePhase', '$phase', "
+        . "'$maxPsBoardSLot', '$maxPsEqpt', '$airflow', '$tempProtection1', '$tempProtection2', '$tempProtection3', '$smokeDetector', '$emo', '$voltagePhase', '$phase', "
         . "'$exhaust', '$diWater', '$waterTopup', '$daq', '$intConfigType', '$jackHole', '$connVoltRating', '$connCurrentRating', '$connTemp_rating', '$noPin', "
         . "'$pinPitch', '$connRack', '$wireVoltRating', '$wireCurrRating', '$wireTempRating', '$extConfigType', '$intVoltRating', '$intCurrRating', 'System', NOW(), 'Active', '1')";
 

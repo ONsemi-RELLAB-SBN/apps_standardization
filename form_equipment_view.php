@@ -295,24 +295,24 @@ $id = $_GET['view'];
                             <div class="form-group">
                                 <label for="noInterior" class="col-lg-2 control-label">No. Interior Zones (doors) *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="noInterior" name="noInterior" value="<?php echo $rowForm['no_interior_zone']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="noInterior" name="noInterior" value="<?php echo $rowForm['no_interior_zone']; ?>" required readonly> 
                                 </div>
                                 <label for="noInterior" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
                                 <label for="extDimension" class="col-lg-2 control-label">External Dimension (W) *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="extDimensionW" name="extDimensionW" value="<?php echo $rowForm['ext_dimension_w']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="extDimensionW" name="extDimensionW" value="<?php echo $rowForm['ext_dimension_w']; ?>" required readonly> 
                                 </div>
                                 <label for="extDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="intVolume" class="col-lg-2 control-label">Internal Volume *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="intVolume" name="intVolume" value="<?php echo $rowForm['int_vol']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="intVolume" name="intVolume" value="<?php echo $rowForm['int_vol']; ?>" required readonly> 
                                 </div> 
                                 <label for="intVolume" class="col-lg-1 control-label pull-left" style="text-align: left"><b>L</b></label>
                                 <label for="extDimension" class="col-lg-2 control-label">(D) *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="extDimensionD" name="extDimensionD" value="<?php echo $rowForm['ext_dimension_d']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="extDimensionD" name="extDimensionD" value="<?php echo $rowForm['ext_dimension_d']; ?>" required readonly> 
                                 </div>
                                 <label for="extDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
@@ -323,7 +323,7 @@ $id = $_GET['view'];
                                 </div>
                                 <label for="extDimension" class="col-lg-2 control-label">(H) *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="extDimensionH" name="extDimensionH" value="<?php echo $rowForm['ext_dimension_h']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="extDimensionH" name="extDimensionH" value="<?php echo $rowForm['ext_dimension_h']; ?>" required readonly> 
                                 </div>
                                 <label for="extDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
@@ -334,74 +334,74 @@ $id = $_GET['view'];
                                 </div>
                                 <label for="intDimension" class="col-lg-2 control-label">Internal Dimension (W) *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="intDimensionW" name="intDimensionW" value="<?php echo $rowForm['int_dimension_w']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="intDimensionW" name="intDimensionW" value="<?php echo $rowForm['int_dimension_w']; ?>" required readonly> 
                                 </div> 
                                 <label for="intDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="rackSlotPitch" class="col-lg-2 control-label">Rack Slot-to-Slot Pitch *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackSlotPitch" name="rackSlotPitch" value="<?php echo $rowForm['rack_slot_pitch']; ?>" required>
+                                    <input type="number" step="0.001" class="form-control" id="rackSlotPitch" name="rackSlotPitch" value="<?php echo $rowForm['rack_slot_pitch']; ?>" required readonly>
                                 </div> 
                                 <label for="rackSlotPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 <label for="intDimension" class="col-lg-2 control-label">(D) *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="intDimensionD" name="intDimensionD" value="<?php echo $rowForm['int_dimension_d']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="intDimensionD" name="intDimensionD" value="<?php echo $rowForm['int_dimension_d']; ?>" required readonly> 
                                 </div> 
                                 <label for="intDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="rackSLotWidth" class="col-lg-2 control-label">Rack Slot Width *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackSLotWidth" name="rackSLotWidth" value="<?php echo $rowForm['rack_slot_width']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="rackSLotWidth" name="rackSLotWidth" value="<?php echo $rowForm['rack_slot_width']; ?>" required readonly> 
                                 </div> 
                                 <label for="rackSLotWidth" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 <label for="intDimension" class="col-lg-2 control-label">(H) *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="intDimensionH" name="intDimensionH" value="<?php echo $rowForm['int_dimension_h']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="intDimensionH" name="intDimensionH" value="<?php echo $rowForm['int_dimension_h']; ?>" required readonly> 
                                 </div> 
                                 <label for="intDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="eqptWeight" class="col-lg-2 control-label">Equipment Weight *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="eqptWeight" name="eqptWeight" value="<?php echo $rowForm['eqpt_weight']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="eqptWeight" name="eqptWeight" value="<?php echo $rowForm['eqpt_weight']; ?>" required readonly> 
                                 </div> 
                                 <label for="eqptWeight" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Kg</b></label>
                                 <label for="rackDimension" class="col-lg-2 control-label">Rack Dimension (W) *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackDimensionW" name="rackDimensionW" value="<?php echo $rowForm['rack_dimension_w']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="rackDimensionW" name="rackDimensionW" value="<?php echo $rowForm['rack_dimension_w']; ?>" required readonly> 
                                 </div>
                                 <label for="rackDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="noMbSlot" class="col-lg-2 control-label">Number of motherboard slots *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="noMbSlot" name="noMbSlot" value="<?php echo $rowForm['no_mb_slot']; ?>" required>
+                                    <input type="number" step="0.001" class="form-control" id="noMbSlot" name="noMbSlot" value="<?php echo $rowForm['no_mb_slot']; ?>" required readonly>
                                 </div> 
                                 <label for="noMbSlot" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
                                 <label for="rackDimension" class="col-lg-2 control-label">(D) *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackDimensionD" name="rackDimensionD" value="<?php echo $rowForm['rack_dimension_d']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="rackDimensionD" name="rackDimensionD" value="<?php echo $rowForm['rack_dimension_d']; ?>" required readonly> 
                                 </div> 
                                 <label for="rackDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="maxPsBs" class="col-lg-2 control-label">Max number of power supplies per board slot *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="maxPsBs" name="maxPsBs" value="<?php echo $rowForm['max_ps_slot']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="maxPsBs" name="maxPsBs" value="<?php echo $rowForm['max_ps_slot']; ?>" required readonly> 
                                 </div> 
                                 <label for="maxPsBs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
                                 <label for="rackDimension" class="col-lg-2 control-label">(H) *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackDimensionH" name="rackDimensionH" value="<?php echo $rowForm['rack_dimension_h']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="rackDimensionH" name="rackDimensionH" value="<?php echo $rowForm['rack_dimension_h']; ?>" required readonly> 
                                 </div> 
                                 <label for="rackDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="maxPs" class="col-lg-2 control-label">Max number of power supplies for the entire Equipment *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="maxPs" name="maxPs" value="<?php echo $rowForm['max_ps_eqpt']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="maxPs" name="maxPs" value="<?php echo $rowForm['max_ps_eqpt']; ?>" required readonly> 
                                 </div> 
                                 <label for="maxPs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
                             </div>
@@ -473,7 +473,7 @@ $id = $_GET['view'];
                                 <label for="voltagePhase" class="col-lg-1 control-label pull-left" style="text-align: left"><b>VAC</b></label>
                                 <label for="phase" class="col-lg-2 control-label">Phase *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="phase" name="phase" value="<?php echo $rowForm['phase']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="phase" name="phase" value="<?php echo $rowForm['phase']; ?>" required readonly> 
                                 </div> 
                                 <label for="phase" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Phase</b></label>
                             </div>
@@ -516,31 +516,31 @@ $id = $_GET['view'];
                             $dataCheck = getParameterValue($rowForm['internal_config_type']);
                             if ($dataCheck == "Banana") {
                             ?>
-                                <hr class="hr hr-blurry" />
+                                <!--<hr class="hr hr-blurry" />-->
                                 <!--Banana-->
                                 <div class="form-group" name="BananaDiv" id="BananaDiv" >
                                     <div class="form-group">
                                         <label for="bananaJackHole" class="col-lg-2 control-label">No. Banana Jack Holes *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="bananaJackHole" name="bananaJackHole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="bananaJackHole" name="bananaJackHole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" readonly> 
                                         </div> 
                                         <label for="bananaJackHole" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
                                         <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="<?php echo $rowForm['conn_volt_rating']; ?>" readonly> 
                                         </div> 
                                         <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
                                     </div>
                                     <div class="form-group">
                                         <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="<?php echo $rowForm['conn_current_rating']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="<?php echo $rowForm['conn_current_rating']; ?>" readonly> 
                                         </div> 
                                         <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
 
                                         <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="<?php echo $rowForm['conn_temp_rating']; ?>" readonly> 
                                         </div> 
                                         <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                     </div>
@@ -548,39 +548,39 @@ $id = $_GET['view'];
                             <?php
                             } else if ($dataCheck === "Edge Connector") {
                             ?>
-                                <hr class="hr hr-blurry" />
+                                <!--<hr class="hr hr-blurry" />-->
                                 <!--Edge Connector-->
                                 <div class="form-group" name="EdgeDiv" id="EdgeDiv" >
                                     <div class="form-group">
                                         <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="<?php echo $rowForm['no_pin']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="<?php echo $rowForm['no_pin']; ?>" readonly> 
                                         </div> 
                                         <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
 
                                         <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="<?php echo $rowForm['pin_pitch']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="<?php echo $rowForm['pin_pitch']; ?>" readonly> 
                                         </div> 
                                         <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                     </div>
                                     <div class="form-group">
                                         <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="<?php echo $rowForm['conn_volt_rating']; ?>" readonly> 
                                         </div> 
                                         <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
 
                                         <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="<?php echo $rowForm['conn_current_rating']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="<?php echo $rowForm['conn_current_rating']; ?>" readonly> 
                                         </div> 
                                         <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
                                     </div>
                                     <div class="form-group">
                                         <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="<?php echo $rowForm['conn_temp_rating']; ?>" readonly> 
                                         </div> 
                                         <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                     </div>
@@ -588,39 +588,39 @@ $id = $_GET['view'];
                             <?php    
                             } else if ($dataCheck === "Winchestor") {
                             ?>
-                                <hr class="hr hr-blurry" />
+                                <!--<hr class="hr hr-blurry" />-->
                                 <!--Winchestor-->
                                 <div class="form-group" name="WinchestorDiv" id="WinchestorDiv" >
                                     <div class="form-group">
                                         <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="<?php echo $rowForm['no_pin']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="<?php echo $rowForm['no_pin']; ?>" readonly> 
                                         </div> 
                                         <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
 
                                         <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="<?php echo $rowForm['pin_pitch']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="<?php echo $rowForm['pin_pitch']; ?>" readonly> 
                                         </div> 
                                         <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                     </div>
                                     <div class="form-group">
                                         <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="<?php echo $rowForm['conn_volt_rating']; ?>" readonly> 
                                         </div> 
                                         <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
 
                                         <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="<?php echo $rowForm['conn_current_rating']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="<?php echo $rowForm['conn_current_rating']; ?>" readonly> 
                                         </div> 
                                         <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
                                     </div>
                                     <div class="form-group">
                                         <label for="connRack" class="col-lg-2 control-label">No. Wires Connected to Rack *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="connRack" name="connRack" value="<?php echo $rowForm['no_wire_conn_rack']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="connRack" name="connRack" value="<?php echo $rowForm['no_wire_conn_rack']; ?>" readonly> 
                                         </div> 
                                         <label for="connRack" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
                                     </div>
@@ -628,26 +628,26 @@ $id = $_GET['view'];
                             <?php    
                             } else if ($dataCheck === "Wires") {
                             ?>
-                                <hr class="hr hr-blurry" />
+                                <!--<hr class="hr hr-blurry" />-->
                                 <!--Wire-->
                                 <div class="form-group" name="WireDiv" id="WireDiv" >
                                     <div class="form-group">
                                         <label for="wireVoltRating" class="col-lg-2 control-label">Wire Voltage Rating *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="wireVoltRating" name="wireVoltRating" value="<?php echo $rowForm['wire_volt_rating']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="wireVoltRating" name="wireVoltRating" value="<?php echo $rowForm['wire_volt_rating']; ?>" readonly> 
                                         </div> 
                                         <label for="wireVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
 
                                         <label for="wireCurrRating" class="col-lg-2 control-label">Wire Current Rating *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="wireCurrRating" name="wireCurrRating" value="<?php echo $rowForm['wire_curr_rating']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="wireCurrRating" name="wireCurrRating" value="<?php echo $rowForm['wire_curr_rating']; ?>" readonly> 
                                         </div> 
                                         <label for="wireCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
                                     </div>
                                     <div class="form-group">
                                         <label for="wireTempRating" class="col-lg-2 control-label">Wire Temp Rating *</label>
                                         <div class="col-lg-2">
-                                            <input type="number" step="0.001" class="form-control" id="wireTempRating" name="wireTempRating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > 
+                                            <input type="number" step="0.001" class="form-control" id="wireTempRating" name="wireTempRating" value="<?php echo $rowForm['conn_temp_rating']; ?>" readonly> 
                                         </div> 
                                         <label for="wireTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                     </div>
@@ -666,19 +666,19 @@ $id = $_GET['view'];
                             <div class="form-group" id="viewExternalDiv">
                                 <label for="interfaceVoltRating" class="col-lg-2 control-label">Interface Voltage Rating *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="<?php echo $rowForm['interface_volt_rating']; ?>" > 
+                                    <input type="number" step="0.001" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="<?php echo $rowForm['interface_volt_rating']; ?>" readonly> 
                                 </div> 
                                 <label for="interfaceVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
 
                                 <label for="interfaceCurrRating" class="col-lg-2 control-label">Interface Current Rating *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="interfaceCurrRating" name="interfaceCurrRating" value="<?php echo $rowForm['interface_current_rating']; ?>" > 
+                                    <input type="number" step="0.001" class="form-control" id="interfaceCurrRating" name="interfaceCurrRating" value="<?php echo $rowForm['interface_current_rating']; ?>" readonly> 
                                 </div> 
                                 <label for="interfaceCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
                             </div>
                             
                             <div class="pull-right">
-                                <button onclick="location.href='form_equipment_edit.php'" type="button" id="editBtn">Edit</button>
+                                <button onclick="location.href='form_equipment_edit.php?id=<?php echo $id;?>'" type="button" id="editBtn">Edit</button>
                             </div>
                             <div class="pull-right">
                                 <button onclick="location.href='form_equipment_list.php'" type="button" id="backBtn">Back</button>
@@ -700,24 +700,29 @@ function getParameterValue($code) {
     $username = "ayep";
     $password = "mysql@2023";
     $dbname = "gest";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $query = "SELECT name FROM gest_parameter_detail WHERE CODE = '$code'";
-    $result = $conn->query($query);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $data = $row['name'];
-        }
+    
+    if ($code == "") {
+        echo "";
+        $data = "";
     } else {
-        echo "No data found";
-    }
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
 
-    $conn->close();
+        $query = "SELECT name FROM gest_parameter_detail WHERE CODE = '$code'";
+        $result = $conn->query($query);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $data = $row['name'];
+            }
+        } else {
+            echo "No data found";
+        }
+
+        $conn->close();
+    }
     return $data;
 }
 
