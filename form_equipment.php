@@ -290,6 +290,7 @@ include 'form_template.php';
                                     if (newTransferDropdown.value === '013001') {
                                         toField.readOnly = true;
                                         toField.required = false;
+                                        $('#to').val('');
                                     } else {
                                         toField.readOnly = false;
                                         toField.required = true;
@@ -871,13 +872,28 @@ include 'form_template.php';
                                     var wireDiv = document.getElementById('WireDiv');
                                     var hehe = document.getElementById('bananaJackHole');
                                     var selectedValue = dropdown.value;
+                                    
+                                    var jackhole = document.getElementById('bananaJackHole');
+                                    
+                                    console.log("jackhole tt>> " + jackhole);
+                                    console.log("jackhole hh>> " + jackhole.value);
+                                    
+                                    $('#bananaJackHole').val("");
+                                    $('#connVoltRating').val("");
+                                    $('#connCurrRating').val("");
+                                    $('#connTempRating').val("");
+                                    $('#noPins').val("");
+                                    $('#pinPitch').val("");
+                                    $('#connRack').val("");
+                                    $('#wireVoltRating').val("");
+                                    $('#wireCurrRating').val("");
+                                    $('#wireTempRating').val("");
 
                                     if (selectedValue === '031001') {
                                         bananaDiv.style.display = 'block';
                                         edgeDiv.style.display = 'none';
                                         winDiv.style.display = 'none';
                                         wireDiv.style.display = 'none';
-                                        hehe.setValue(0);
                                     } else if (selectedValue === '031002') {
                                         bananaDiv.style.display = 'none';
                                         edgeDiv.style.display = 'block';
