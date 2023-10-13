@@ -286,14 +286,17 @@ include 'form_template.php';
                                 function updateToField() {
                                     var newTransferDropdown = document.getElementById('newTransfer');
                                     var toField = document.getElementById('to');
+                                    var transField = document.getElementById('transfer');
 
                                     if (newTransferDropdown.value === '013001') {
                                         toField.readOnly = true;
                                         toField.required = false;
                                         $('#to').val('');
+                                        transField.style.display = 'none';
                                     } else {
                                         toField.readOnly = false;
                                         toField.required = true;
+                                        transField.style.display = 'block';
                                     }
                                 }
                             </script>
@@ -301,7 +304,7 @@ include 'form_template.php';
                             <div class="form-group">
                                 <label for="assetNo" class="col-lg-2 control-label">Equipment Asset No *</label>
                                 <div class="col-lg-3">
-                                    <input type="text" class="form-control" id="assetNo" name="assetNo" value="" required> 
+                                    <input type="text" class="form-control" id="assetNo" name="assetNo" placeholder="Asset Number" value="" required> 
                                 </div>
                                 <label for="newTransfer" class="col-lg-2 control-label">New/Transfer Equipment *</label>
                                 <div class="col-lg-3">
@@ -317,7 +320,7 @@ include 'form_template.php';
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="display: none;" id="transfer">
                                 <label for="to" class="col-lg-7 control-label">From? *</label>
                                 <div class="col-lg-3">
                                     <select id="to" name="to" class="js-example-basic-single" style="width: 100%" readonly required>
@@ -800,18 +803,21 @@ include 'form_template.php';
                                 function updateToFieldWater() {
                                     var diWaterDropdown = document.getElementById('diWater');
                                     var waterField = document.getElementById('waterTopup');
+                                    var topapField = document.getElementById('topup');
 
                                     if (diWaterDropdown.value !== '029003') {
                                         waterField.readOnly = true;
                                         waterField.required = false;
+                                        topapField.style.display = 'none';
                                     } else {
                                         waterField.readOnly = false;
                                         waterField.required = true;
+                                        topapField.style.display = 'block';
                                     }
                                 }
                             </script>
 
-                            <div class="form-group">
+                            <div class="form-group" style="display: none;" id="topup">
                                 <label class="col-lg-2 control-label"></label>
                                 <div class="col-lg-3"></div>
                                 <label for="waterTopup" class="col-lg-2 control-label">Water Top-up System *</label>
@@ -860,6 +866,15 @@ include 'form_template.php';
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
+                                    <button class="myBtn_multi">View Sample Internal Chamber Configuration</button>
+                                    <div  class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <img id="myImg" src="uploaded_img/Picture16.jpg" alt="Snow" style="width:100%;max-width:800px;">
+                                            <p>Sample Internal Chamber Configuration Description</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -870,13 +885,7 @@ include 'form_template.php';
                                     var edgeDiv = document.getElementById('EdgeDiv');
                                     var winDiv = document.getElementById('WinchestorDiv');
                                     var wireDiv = document.getElementById('WireDiv');
-                                    var hehe = document.getElementById('bananaJackHole');
                                     var selectedValue = dropdown.value;
-                                    
-                                    var jackhole = document.getElementById('bananaJackHole');
-                                    
-                                    console.log("jackhole tt>> " + jackhole);
-                                    console.log("jackhole hh>> " + jackhole.value);
                                     
                                     $('#bananaJackHole').val("");
                                     $('#connVoltRating').val("");
@@ -918,16 +927,30 @@ include 'form_template.php';
                                 }
                             </script>
 
-                            <!--<hr class="hr" />-->
                             <!--Banana-->
                             <div class="form-group" name="BananaDiv" id="BananaDiv" style="display: none;">
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label"></label>
+                                    <div class="col-lg-3">
+                                        <button class="myBtn_multi">View Sample Banana Configuration</button>
+                                        <div  class="modal modal_multi">
+                                            <!-- Modal content -->
+                                            <div class="modal-content">
+                                                <span class="close close_multi">×</span>
+                                                <img id="myImg" src="uploaded_img/Picture17.jpg" alt="Snow" style="width:100%;max-width:800px;">
+                                                <p>Sample Banana Configuration Description</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label class="col-lg-2 control-label"></label>
+                                    <div class="col-lg-3"></div>
+                                </div>
                                 <div class="form-group">
                                     <label for="bananaJackHole" class="col-lg-2 control-label">No. Banana Jack Holes *</label>
                                     <div class="col-lg-2">
                                         <input type="number" step="0.001" class="form-control" id="bananaJackHole" name="bananaJackHole" value="" > 
                                     </div> 
                                     <label for="bananaJackHole" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
-
                                     <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
                                     <div class="col-lg-2">
                                         <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
@@ -940,7 +963,6 @@ include 'form_template.php';
                                         <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
                                     </div> 
                                     <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
-
                                     <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
                                     <div class="col-lg-2">
                                         <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="" > 
@@ -949,9 +971,24 @@ include 'form_template.php';
                                 </div>
                             </div>
 
-                            <hr class="hr hr-blurry" />
                             <!--Edge Connector-->
                             <div class="form-group" name="EdgeDiv" id="EdgeDiv" style="display: none;">
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label"></label>
+                                    <div class="col-lg-3">
+                                        <button class="myBtn_multi">View Sample Edge Configuration</button>
+                                        <div  class="modal modal_multi">
+                                            <!-- Modal content -->
+                                            <div class="modal-content">
+                                                <span class="close close_multi">×</span>
+                                                <img id="myImg" src="uploaded_img/Picture17.jpg" alt="Snow" style="width:100%;max-width:800px;">
+                                                <p>Sample Edge Configuration Description</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label class="col-lg-2 control-label"></label>
+                                    <div class="col-lg-3"></div>
+                                </div>
                                 <div class="form-group">
                                     <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
                                     <div class="col-lg-2">
@@ -987,9 +1024,24 @@ include 'form_template.php';
                                 </div>
                             </div> 
 
-                            <hr class="hr hr-blurry" />
                             <!--Winchestor-->
                             <div class="form-group" name="WinchestorDiv" id="WinchestorDiv" style="display: none;">
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label"></label>
+                                    <div class="col-lg-3">
+                                        <button class="myBtn_multi">View Sample Winchestor Configuration</button>
+                                        <div  class="modal modal_multi">
+                                            <!-- Modal content -->
+                                            <div class="modal-content">
+                                                <span class="close close_multi">×</span>
+                                                <img id="myImg" src="uploaded_img/Picture18.jpg" alt="Snow" style="width:100%;max-width:800px;">
+                                                <p>Sample Winchestor Configuration Description</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label class="col-lg-2 control-label"></label>
+                                    <div class="col-lg-3"></div>
+                                </div>
                                 <div class="form-group">
                                     <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
                                     <div class="col-lg-2">
@@ -1025,9 +1077,24 @@ include 'form_template.php';
                                 </div>
                             </div> 
 
-                            <hr class="hr hr-blurry" />
                             <!--Wire-->
                             <div class="form-group" name="WireDiv" id="WireDiv" style="display: none;">
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label"></label>
+                                    <div class="col-lg-3">
+                                        <button class="myBtn_multi">View Sample Wire Configuration</button>
+                                        <div  class="modal modal_multi">
+                                            <!-- Modal content -->
+                                            <div class="modal-content">
+                                                <span class="close close_multi">×</span>
+                                                <img id="myImg" src="uploaded_img/Picture19.jpg" alt="Snow" style="width:100%;max-width:800px;">
+                                                <p>Sample Wire Configuration Description</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label class="col-lg-2 control-label"></label>
+                                    <div class="col-lg-3"></div>
+                                </div>
                                 <div class="form-group">
                                     <label for="wireVoltRating" class="col-lg-2 control-label">Wire Voltage Rating *</label>
                                     <div class="col-lg-2">
@@ -1064,6 +1131,15 @@ include 'form_template.php';
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
+                                    <button class="myBtn_multi">View External Chamber Configuration Configuration</button>
+                                    <div  class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <img id="myImg" src="uploaded_img/Picture20.jpg" alt="Snow" style="width:100%;max-width:800px;">
+                                            <p>Sample External Chamber Configuration Description</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             
