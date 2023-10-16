@@ -30,6 +30,10 @@ include 'form_template.php';
         <script src="js/select2.min.js"></script>
 
         <style>
+            html{
+                font-size: 90%;
+            }
+            
             .select2-container-active .select2-choice,
             .select2-container-active .select2-choices {
                 /*border: 1px solid $input-border-focus !important;*/
@@ -106,6 +110,10 @@ include 'form_template.php';
                 top: 0px;
                 display: inline-block;
             }
+            
+            body {
+                font-size: 1em;
+            }
         </style>
         <script type="text/javascript">
             $(document).ready(function () {
@@ -170,7 +178,7 @@ include 'form_template.php';
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
+                                        <?php endwhile; ?>  
                                     </select>
                                 </div>
                             </div>
@@ -232,12 +240,12 @@ include 'form_template.php';
                                 <label for="relTest" class="col-lg-2 control-label">Rel Test (Multiselect) *</label>
                                 <div class="col-lg-3">
                                     <select id="relTest" name="relTest[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%" required>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
                                     </select>
                                 </div>
                                 <label for="manufacturer" class="col-lg-2 control-label">Equipment Manufacturer *</label>
@@ -1029,7 +1037,7 @@ include 'form_template.php';
                                     </div> 
                                     <label for="connRack" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
                                 </div>
-                            </div> 
+                            </div>  
 
                             <!--Wire-->
                             <div class="form-group" name="WireDiv" id="WireDiv" style="display: none;">

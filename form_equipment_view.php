@@ -272,18 +272,23 @@ $id = $_GET['view'];
                                 <label for="maxRh" class="col-lg-1 control-label pull-left" style="text-align: left"><b>%</b></label>
                             </div>
                             <div class="form-group">
+                                <label for="heatDissipation" class="col-lg-2 control-label">Heat Dissipation *</label>
+                                <div class="col-lg-2">
+                                    <input type="number" step="0.001" class="form-control" id="heatDissipation" name="heatDissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" required> 
+                                </div>
+                                <label for="heatDissipation" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 <label for="tempFluctuation" class="col-lg-2 control-label">Temperature Fluctuation *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.01" class="form-control" id="tempFluctuation" name="tempFluctuation" value="<?php echo $rowForm['temp_fluctuation']; ?>" required readonly> 
                                 </div> 
                                 <label for="tempFluctuation" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                            </div>
+                            <div class="form-group">
                                 <label for="tempUniform" class="col-lg-2 control-label">Temperature Uniformity *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.01" class="form-control" id="tempUniform" name="tempUniform" value="<?php echo $rowForm['temp_uniformity']; ?>" required readonly> 
                                 </div> 
                                 <label for="tempUniform" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                            </div>
-                            <div class="form-group">
                                 <label for="humidFluctuation" class="col-lg-2 control-label">Humidity Fluctuation *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.01" class="form-control" id="humidFluctuation" name="humidFluctuation" value="<?php echo $rowForm['humid_fluctuation']; ?>" required readonly> 
@@ -442,7 +447,7 @@ $id = $_GET['view'];
                                 <div class="col-lg-3"></div>
                             </div>
 
-                            <h2>Safety</h2>
+<!--                            <h2>Safety</h2>
                             <div class="form-group">
                                 <label for="tempProtection1" class="col-lg-2 control-label">Temperature Protection 1 *</label>
                                 <div class="col-lg-3">
@@ -462,7 +467,7 @@ $id = $_GET['view'];
                                 <div class="col-lg-3">
                                     <input type="text" class="form-control" id="emo" name="emo" value="<?php echo getParameterValue($rowForm['emo_btn']); ?>" required readonly>
                                 </div>
-                            </div>
+                            </div>-->
 
                             <h2>Utilities</h2>
                             <div class="form-group">
@@ -678,7 +683,7 @@ $id = $_GET['view'];
                             </div>
                             
                             <div class="pull-right">
-                                <button onclick="location.href='form_equipment_edit.php?id=<?php echo $id;?>'" type="button" id="editBtn">Edit</button>
+                                <button onclick="location.href='form_equipment_edit.php?edit=<?php echo $id;?>'" type="button" id="editBtn">Edit</button>
                             </div>
                             <div class="pull-right">
                                 <button onclick="location.href='form_equipment_list.php'" type="button" id="backBtn">Back</button>
