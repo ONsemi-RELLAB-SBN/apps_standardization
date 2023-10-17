@@ -30,9 +30,9 @@ include 'form_template.php';
         <script src="js/select2.min.js"></script>
 
         <style>
-            html{
+/*            html{
                 font-size: 90%;
-            }
+            }*/
             
             .select2-container-active .select2-choice,
             .select2-container-active .select2-choices {
@@ -110,9 +110,9 @@ include 'form_template.php';
                 top: 0px;
                 display: inline-block;
             }
-            
-            body {
-                font-size: 1em;
+
+            .control-label {
+                font-size: 1.3em;
             }
         </style>
         <script type="text/javascript">
@@ -135,14 +135,14 @@ include 'form_template.php';
             function canChangeColor() {
                 var can = true;
                 $("input[type='text'], textarea").each(function () {
-                    if ($(this).val() == '') {
+                    if ($(this).val() === '') {
                         can = false;
                     }
                 });
                 if (can) {
-                    $('.btn').css({background: 'red'})
+                    $('.btn').css({background: 'red'});
                 } else {
-                    $('.btn').css({background: 'transparent'})
+                    $('.btn').css({background: 'transparent'});
                 }
             }
         </script>
@@ -150,7 +150,7 @@ include 'form_template.php';
     <body>
         <div class="col-lg-12">
             <hr>
-            <h1>Equipment Survey Form</h1>
+            <h1>Equipment Detail</h1>
             <div class="row">
                 <div class="col-lg-11">
                     <div class="main-box">
@@ -382,7 +382,7 @@ include 'form_template.php';
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/001.png" alt="image" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/001.png" alt="image" style="width:90%;max-width:800px;">
                                             <p>Sample Temperature Fluctuation Description</p>
                                         </div>
                                     </div>
@@ -397,7 +397,7 @@ include 'form_template.php';
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/002.png" alt="image" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/002.png" alt="image" style="width:90%;max-width:800px;">
                                             <p>Sample Temperature Uniformity Description</p>
                                         </div>
                                     </div>
@@ -410,7 +410,7 @@ include 'form_template.php';
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/003.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/003.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample Humid Fluctuation Description</p>
                                         </div>
                                     </div>
@@ -427,7 +427,7 @@ include 'form_template.php';
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/006.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/006.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample No Interior Zone Description</p>
                                         </div>
                                     </div>
@@ -447,7 +447,7 @@ include 'form_template.php';
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/008.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/008.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample Internal Volume Description</p>
                                         </div>
                                     </div>
@@ -475,7 +475,7 @@ include 'form_template.php';
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/009.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/009.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample Board Orientation Description</p>
                                         </div>
                                     </div>
@@ -487,7 +487,7 @@ include 'form_template.php';
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/004.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/004.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample External Dimension Description</p>
                                         </div>
                                     </div>
@@ -521,7 +521,7 @@ include 'form_template.php';
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/010.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/010.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample Rack Slot-to-Slot Pitch Description</p>
                                         </div>
                                     </div>
@@ -541,7 +541,7 @@ include 'form_template.php';
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/011.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/011.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample Rack Slot Width Description</p>
                                         </div>
                                     </div>
@@ -554,7 +554,7 @@ include 'form_template.php';
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/005.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/005.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample Internal Dimension Description</p>
                                         </div>
                                     </div>
@@ -581,7 +581,7 @@ include 'form_template.php';
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/012.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/012.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample Motherboard Slots Description</p>
                                         </div>
                                     </div>
@@ -601,7 +601,7 @@ include 'form_template.php';
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/013.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/013.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample Power Supplies Description</p>
                                         </div>
                                     </div>
@@ -614,7 +614,7 @@ include 'form_template.php';
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/007.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/007.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample Rack Dimension Description</p>
                                         </div>
                                     </div>
@@ -630,7 +630,7 @@ include 'form_template.php';
                                         <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/014.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/014.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample Power Supplies Description</p>
                                         </div>
                                     </div>
@@ -653,7 +653,7 @@ include 'form_template.php';
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/015.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/015.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample Airflow Description</p>
                                         </div>
                                     </div>
@@ -838,7 +838,7 @@ include 'form_template.php';
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/016.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/016.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample Internal Chamber Configuration Description</p>
                                         </div>
                                     </div>
@@ -903,7 +903,7 @@ include 'form_template.php';
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
-                                                <img id="myImg" src="image/reference/017.png" alt="Snow" style="width:100%;max-width:800px;">
+                                                <img id="myImg" src="image/reference/017.png" alt="Snow" style="width:90%;max-width:800px;">
                                                 <p>Sample Banana Configuration Description</p>
                                             </div>
                                         </div>
@@ -946,7 +946,7 @@ include 'form_template.php';
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
-                                                <img id="myImg" src="image/reference//017.png" alt="Snow" style="width:100%;max-width:800px;">
+                                                <img id="myImg" src="image/reference//017.png" alt="Snow" style="width:90%;max-width:800px;">
                                                 <p>Sample Edge Configuration Description</p>
                                             </div>
                                         </div>
@@ -998,7 +998,7 @@ include 'form_template.php';
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
-                                                <img id="myImg" src="image/reference/018.png" alt="Snow" style="width:100%;max-width:800px;">
+                                                <img id="myImg" src="image/reference/018.png" alt="Snow" style="width:90%;max-width:800px;">
                                                 <p>Sample Winchestor Configuration Description</p>
                                             </div>
                                         </div>
@@ -1048,7 +1048,7 @@ include 'form_template.php';
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
-                                                <img id="myImg" src="image/reference/019.png" alt="Snow" style="width:100%;max-width:800px;">
+                                                <img id="myImg" src="image/reference/019.png" alt="Snow" style="width:90%;max-width:800px;">
                                                 <p>Sample Wire Configuration Description</p>
                                             </div>
                                         </div>
@@ -1094,7 +1094,7 @@ include 'form_template.php';
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/020.png" alt="Snow" style="width:100%;max-width:800px;">
+                                            <img id="myImg" src="image/reference/020.png" alt="Snow" style="width:90%;max-width:800px;">
                                             <p>Sample External Chamber Configuration Description</p>
                                         </div>
                                     </div>

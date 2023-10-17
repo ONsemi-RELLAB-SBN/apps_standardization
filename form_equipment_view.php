@@ -118,6 +118,10 @@ $id = $_GET['view'];
             #myBtn:hover {
                 background-color: #17a2b8;
             }
+            
+            .control-label {
+                font-size: 1.3em;
+            }
         </style>
         <script type="text/javascript">
             $(document).ready(function () {
@@ -155,7 +159,7 @@ $id = $_GET['view'];
     </head>
     <body>
         <div class="col-lg-12">
-            <h1>Equipment Survey Form | View</h1>
+            <h1>Equipment Detail | View</h1>
             <div class="row">
                 <div class="col-lg-11">
                     <div class="main-box">
@@ -227,12 +231,16 @@ $id = $_GET['view'];
                                     <input type="text" class="form-control" id="newTransfer" name="newTransfer" value="<?php echo getParameterValue($rowForm['new_transfer_eqpt']); ?>" required readonly>
                                 </div>
                             </div>
+                            <?php 
+                            $checkLocation = getParameterValue($rowForm['new_transfer_eqpt']);
+                            if ($checkLocation == "Transfer") {?>
                             <div class="form-group">
                                 <label for="to" class="col-lg-7 control-label">To? *</label>
                                 <div class="col-lg-3">
                                     <input type="text" class="form-control" id="to" name="to" value="<?php echo getParameterValue($rowForm['transfer_eqpt_location']); ?>" required readonly>
                                 </div>
                             </div>
+                            <?php } ?>
 
                             <h2>Capability</h2>
                             <div class="form-group">
@@ -492,6 +500,9 @@ $id = $_GET['view'];
                                     <input type="text" class="form-control" id="diWater" name="diWater" value="<?php echo getParameterValue($rowForm['di_water']); ?>" required readonly>
                                 </div>
                             </div>
+                            <?php 
+                            $checkWater = getParameterValue($rowForm['di_water']);
+                            if ($checkWater == "Available") { ?>
                             <div class="form-group">
                                 <label class="col-lg-2 control-label"></label>
                                 <div class="col-lg-3"></div>
@@ -500,7 +511,8 @@ $id = $_GET['view'];
                                     <input type="text" class="form-control" id="waterTopup" name="waterTopup" value="<?php echo getParameterValue($rowForm['water_topup_system']); ?>" required readonly>
                                 </div>
                             </div>
-
+                            <?php } ?>
+                            
                             <h2>DAQ</h2>
                             <div class="form-group">
                                 <label for="daq" class="col-lg-2 control-label">DAQ (Realtime Leakage Monitoring) *</label>
@@ -519,8 +531,7 @@ $id = $_GET['view'];
                             
                             <?php 
                             $dataCheck = getParameterValue($rowForm['internal_config_type']);
-                            if ($dataCheck == "Banana") {
-                            ?>
+                            if ($dataCheck == "Banana") { ?>
                                 <!--<hr class="hr hr-blurry" />-->
                                 <!--Banana-->
                                 <div class="form-group" name="BananaDiv" id="BananaDiv" >
@@ -550,9 +561,7 @@ $id = $_GET['view'];
                                         <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                     </div>
                                 </div>    
-                            <?php
-                            } else if ($dataCheck === "Edge Connector") {
-                            ?>
+                            <?php } else if ($dataCheck === "Edge Connector") { ?>
                                 <!--<hr class="hr hr-blurry" />-->
                                 <!--Edge Connector-->
                                 <div class="form-group" name="EdgeDiv" id="EdgeDiv" >
@@ -590,9 +599,7 @@ $id = $_GET['view'];
                                         <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                     </div>
                                 </div>  
-                            <?php    
-                            } else if ($dataCheck === "Winchestor") {
-                            ?>
+                            <?php } else if ($dataCheck === "Winchestor") { ?>
                                 <!--<hr class="hr hr-blurry" />-->
                                 <!--Winchestor-->
                                 <div class="form-group" name="WinchestorDiv" id="WinchestorDiv" >
@@ -630,9 +637,7 @@ $id = $_GET['view'];
                                         <label for="connRack" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
                                     </div>
                                 </div>     
-                            <?php    
-                            } else if ($dataCheck === "Wires") {
-                            ?>
+                            <?php } else if ($dataCheck === "Wires") { ?>
                                 <!--<hr class="hr hr-blurry" />-->
                                 <!--Wire-->
                                 <div class="form-group" name="WireDiv" id="WireDiv" >
@@ -657,9 +662,7 @@ $id = $_GET['view'];
                                         <label for="wireTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                     </div>
                                 </div>   
-                            <?php    
-                            }
-                            ?>
+                            <?php } ?>
 
                             <h2>External Chamber Configuration</h2>
                             <div class="form-group">

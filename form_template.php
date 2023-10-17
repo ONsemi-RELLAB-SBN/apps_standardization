@@ -19,7 +19,6 @@ include 'class/db.php';
 
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
         <script src="js/bootstrap.js"></script>
 
@@ -106,17 +105,5 @@ include 'class/db.php';
                 <a href="parameter.php#parameter" class="link active">Parameter</a>
             </div>
         </div>
-<!--        <div class="dropdown">
-            <button class="dropbtn">Form</button>
-            <div class="dropdown-content">
-                <a href="form_equipment.php#eqpt" class="link">Equipment</a>
-                <a href="form_hardware.php#hw" class="link">Hardware</a>
-                <a href="form_daq.php#daq" class="link">DAQ</a>
-                <a href="form_power.php#pwr" class="link">P Supply</a>
-                <a href="form_design.php#dsg" class="link">Design</a>
-                <a href="form_process.php#pcs" class="link">Process</a>
-                <a href="form_test.php#elc" class="link">Elec Test</a>
-            </div>
-        </div>-->
     </body>
 </html>

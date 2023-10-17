@@ -38,7 +38,7 @@ include 'form_template.php';
     <body>
         <hr>
         <div class="col-lg-12">
-            <h1>Electrical Test Survey Form</h1>
+            <h1>Electrical Test Detail</h1>
         </div>
     </body>
 </html>

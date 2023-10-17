@@ -16,7 +16,12 @@ include 'form_template.php';
         <title>Hardware | Standardization Survey</title>
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribble.ico">
-        
+
+        <link rel="stylesheet" type="text/css" href="boo" />
+        <link rel="stylesheet" type="text/css" href="css/multi-select.css" />
+        <script src="js/multi-select-min.js"></script>
+        <script src="js/multi-select.js"></script>
+
         <!--        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
                 <link rel="stylesheet" type="text/css" href="css/demo.css" />
                 <link rel="stylesheet" type="text/css" href="css/elements.css" />
@@ -31,17 +36,21 @@ include 'form_template.php';
                 <script src="js/select2.min.js"></script>-->
 
         <style>
-            
+
         </style>
         <script type="text/javascript">
+            var multiSelect = new IconicMultiSelect({
+                select: "#example"
+            });
             
+            multiSelect.init();
         </script>
 
     </head>
     <body>
         <hr>
         <div>
-            <h1>Hardware Form</h1>
+            <h1>Hardware Detail</h1>
             <div>
                 <div>
                     <form>
@@ -132,14 +141,27 @@ include 'form_template.php';
                             </div>
                         </div>
                         <div >
+                            <label></label>
+                            <div>
+                                <select id="example">
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                    ...
+                                </select>
+                            </div>
+                            <label></label>
+                            <div></div>
+                        </div>
+                        <div >
                             <label for="relTest">Rel Test (Multiselect) *</label>
                             <div>
                                 <select id="relTest" name="relTest[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%" required>
-                                <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)):
-                                    ?>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)):
+                                        ?>
                                         <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>

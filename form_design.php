@@ -38,7 +38,7 @@ include 'form_template.php';
     <body>
         <hr>
         <div class="col-lg-12">
-            <h1>Design Survey Form</h1>
+            <h1>Design Detail</h1>
         </div>
     </body>
 </html>

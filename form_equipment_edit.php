@@ -5,6 +5,7 @@
  */
 
 include 'form_template.php';
+include 'class/get_parameter.php';
 $id = $_GET['edit'];
 ?>
 
@@ -108,6 +109,10 @@ $id = $_GET['edit'];
                 top: 0px;
                 display: inline-block;
             }
+            
+            .control-label {
+                font-size: 1.3em;
+            }
         </style>
         <script type="text/javascript">
             $(document).ready(function () {
@@ -144,7 +149,7 @@ $id = $_GET['edit'];
     <body>
         <div class="col-lg-12">
             <hr>
-            <h1>Equipment Survey Form</h1>
+            <h1>Equipment Detail | Edit</h1>
             <div class="row">
                 <div class="col-lg-11">
                     <div class="main-box">
@@ -242,7 +247,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['rel_tests']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if (strpos($rowForm['rel_test'], $rowSite['code']) !== false) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                     </select>
                                 </div>
@@ -274,8 +279,7 @@ $id = $_GET['edit'];
                                 </div>
                                 <label for="mfgDate" class="col-lg-2 control-label">Equipment Mfg Date *</label>
                                 <div class="col-lg-3">
-                                    <input type="date" class="form-control" id="mfgDate" name="mfgDate" value="<?php echo $rowForm['eqpt_mfg_date']; ?>" required> 
-                                    <input type="input" class="form-control" id="mfgDate" name="mfgDate" value="<?php echo $rowForm['eqpt_mfg_date']; ?>" required> 
+                                    <input type="date" class="form-control" id="mfgDate" name="mfgDate" value="<?php echo date('Y-m-d', strtotime($rowForm['eqpt_mfg_date'])); ?>" required>
                                 </div>
                             </div>
 
@@ -787,7 +791,11 @@ $id = $_GET['edit'];
                                 }
                             </script>
 
-                            <div class="form-group" style="display: none;" id="topup">
+                            <?php 
+                            $checkWater = $rowForm['di_water'];
+                            if ($checkWater === "029003") {
+                            ?>
+                            <div class="form-group" style="display: block;" id="topup">
                                 <label class="col-lg-2 control-label"></label>
                                 <div class="col-lg-3"></div>
                                 <label for="waterTopup" class="col-lg-2 control-label">Water Top-up System *</label>
@@ -803,6 +811,7 @@ $id = $_GET['edit'];
                                     </select>
                                 </div>
                             </div>
+                            <?php } ?>
 
                             <h2>DAQ</h2>
                             <div class="form-group">
@@ -893,8 +902,11 @@ $id = $_GET['edit'];
                                 }
                             </script>
 
+                            <?php 
+                            $dataCheck = getParameterValue($rowForm['internal_config_type']);
+                            if ($dataCheck == "Banana") { ?>
                             <!--Banana-->
-                            <div class="form-group" name="BananaDiv" id="BananaDiv" style="display: none;">
+                            <div class="form-group" name="BananaDiv" id="BananaDiv" style="display: block;">
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
@@ -936,8 +948,9 @@ $id = $_GET['edit'];
                                 </div>
                             </div>
 
+                            <?php } else if ($dataCheck === "Edge Connector") { ?>
                             <!--Edge Connector-->
-                            <div class="form-group" name="EdgeDiv" id="EdgeDiv" style="display: none;">
+                            <div class="form-group" name="EdgeDiv" id="EdgeDiv" style="display: block;">
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
@@ -988,8 +1001,9 @@ $id = $_GET['edit'];
                                 </div>
                             </div> 
 
+                            <?php } else if ($dataCheck === "Winchestor") { ?>
                             <!--Winchestor-->
-                            <div class="form-group" name="WinchestorDiv" id="WinchestorDiv" style="display: none;">
+                            <div class="form-group" name="WinchestorDiv" id="WinchestorDiv" style="display: block;">
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
@@ -1038,8 +1052,9 @@ $id = $_GET['edit'];
                                 </div>
                             </div>  
 
+                            <?php } else if ($dataCheck === "Wires") { ?>
                             <!--Wire-->
-                            <div class="form-group" name="WireDiv" id="WireDiv" style="display: none;">
+                            <div class="form-group" name="WireDiv" id="WireDiv" style="display: block;">
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
@@ -1075,6 +1090,7 @@ $id = $_GET['edit'];
                                     <label for="wireTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 </div>
                             </div> 
+                            <?php } ?>
 
                             <h2>External Chamber Configuration</h2>
                             <div class="form-group">
@@ -1114,6 +1130,9 @@ $id = $_GET['edit'];
                                 }
                             </script>
 
+                            <?php 
+                            $checkExt = $rowForm['ext_config_type'];
+                            if ($checkExt !== "032003") { ?>
                             <div class="form-group" id="viewExternalDiv">
                                 <label for="interfaceVoltRating" class="col-lg-2 control-label">Interface Voltage Rating *</label>
                                 <div class="col-lg-2">
@@ -1126,6 +1145,7 @@ $id = $_GET['edit'];
                                 </div> 
                                 <label for="interfaceCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
                             </div>
+                            <?php } ?>
 
                             <div class="pull-right">
                                 <button onclick="location.href = 'form_equipment_list.php'" type="button" id="backBtn">List</button>

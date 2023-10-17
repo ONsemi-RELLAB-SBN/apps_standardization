@@ -38,7 +38,7 @@ include 'form_template.php';
     <body>
         <hr>
         <div class="col-lg-12">
-            <h1>DAQ Survey Form</h1>
+            <h1>DAQ Detail</h1>
         </div>
     </body>
 </html>
