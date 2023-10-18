@@ -66,7 +66,17 @@ if (isset($_GET['delete'])) {
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribbble.ico">
         
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+        
+        <!--<link rel="stylesheet" type="text/css" href="css/normalize.css" />-->
+        <!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
+        <!--<link rel="stylesheet" type="text/css" href="css/component1.css" />-->
+        <!--<link rel="stylesheet" type="text/css" href="css/component2.css" />-->
+        <!--<script src="js/modernizr-2.6.2.min.js"></script>-->
+        <!--<script src="js/polyfills.js"></script>-->
+        <!--<script src="js/demo1.js"></script>-->
+        <!--<script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>-->
         
         <style>
             #refreshButton {
@@ -86,7 +96,8 @@ if (isset($_GET['delete'])) {
             }
 
             #refreshButton:hover {
-                background-color: #17a2b8;
+                /*background-color: #17a2b8;*/
+                background-color: orange;
             }
         </style>
     </head>
@@ -100,6 +111,7 @@ if (isset($_GET['delete'])) {
         ?>
         <!-- Top navigation -->
         <div class="container">
+            <hr>
             <div class="mt-5 mb-3 clearfix">
                 <h2 class="pull-left">Parameter Master Details</h2>
                 <button onClick="window.location.href = window.location.href" class="pull-right" id="refreshButton"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>

@@ -32,7 +32,7 @@ include 'class/get_parameter.php';
                 color: white;
                 cursor: pointer;
                 padding: 15px;
-                border-radius: 4px;
+                border-radius: 5px;
             }
 
             #addBtn:hover {
@@ -42,7 +42,7 @@ include 'class/get_parameter.php';
             #refreshButton {
                 display: block;
                 position: absolute;
-                top: 80px;
+                top: 170px;
                 right: 30px;
                 z-index: 99;
                 font-size: 18px;
@@ -52,7 +52,7 @@ include 'class/get_parameter.php';
                 color: white;
                 cursor: pointer;
                 padding: 15px;
-                border-radius: 4px;
+                border-radius: 5px;
             }
 
             #refreshButton:hover {
@@ -74,6 +74,7 @@ include 'class/get_parameter.php';
         }
         ?>
         <div class="container">
+            <hr>
             <div class="mt-5 mb-3 clearfix">
                 <h2 class="pull-left">Equipment [Chamber] List</h2>
             </div>
@@ -106,9 +107,9 @@ include 'class/get_parameter.php';
                         <td><?php echo getParameterValue($row_slides['champion']); ?></td>
                         <td><?php echo getParameterValues($row_slides['rel_test']); ?></td>
                         <td style="text-align:center">
-                            <a href="form_equipment_view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><span class="fa fa-book"></span> <i class='bx bx-search-alt bx-fw'></i> VIEW </a>
-                            <a href="form_equipment_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
-                            <a href="form_equipment_delete.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> <i class='bx bxs-trash bx-fw' ></i> DELETE </a>
+                            <a href="form_equipment_view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><i class='bx bx-search-alt bx-fw'></i> VIEW </a>
+                            <a href="form_equipment_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
+                            <a href="form_equipment_delete.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
                         </td>
                     </tr>
                     <?php
@@ -116,7 +117,7 @@ include 'class/get_parameter.php';
                 ?>
             </table>
             <hr>
-            <button onclick="location.href='form_equipment.php'" type="button" id="addBtn">Create</button>
+            <button onclick="location.href='form_equipment.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Create</button>
             <button onClick="window.location.href = window.location.href" type="button" id="refreshButton"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
         </div><!-- /container -->
     </body>
