@@ -48,8 +48,8 @@ $rackSlotPitch = $_GET['rackSlotPitch'];
 $rackSLotWidth = $_GET['rackSLotWidth'];
 $eqptWeight = $_GET['eqptWeight'];
 $noMotherboardSlot = $_GET['noMbSlot'];
-$maxPsBoardSLot = $_GET['maxPsBoardSLot'];
-$maxPsEqpt = $_GET['maxPsEqpt'];
+$maxPsBoardSLot = $_GET['maxPsBs'];
+$maxPsEqpt = $_GET['maxPs'];
 $airflow = $_GET['airflow'];
 $tempProtection1 = $_GET['tempProtection1'];
 $tempProtection2 = $_GET['tempProtection2'];
@@ -77,7 +77,6 @@ $wireTempRating =  $_GET['wireTempRating'];
 $extConfigType =  $_GET['extConfigType'];
 $intVoltRating =  $_GET['interfaceVoltRating'];
 $intCurrRating =  $_GET['interfaceCurrRating'];
-
 
 foreach ($_GET['relTest'] as $key => $value) {
     $inter = $_GET['relTest'][$key];
