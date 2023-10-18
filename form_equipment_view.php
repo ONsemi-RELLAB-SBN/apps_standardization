@@ -164,7 +164,7 @@ $id = $_GET['view'];
                 <div class="col-lg-11">
                     <div class="main-box">
                         <h2>General</h2>
-                        <form id="view_equipment_form" class="form-horizontal" role="form" action="parameter_view_equipment.php" method="get">
+                        <form id="view_equipment_form" class="form-horizontal" role="form" action="" method="get">
                             <?php 
                             $sqlFormData = "SELECT * FROM gest_eqpt_form WHERE id = '$id'";
                             $resForm = mysqli_query($con, $sqlFormData);

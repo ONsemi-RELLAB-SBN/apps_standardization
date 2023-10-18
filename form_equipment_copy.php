@@ -1,5 +1,6 @@
 <?php
-/*
+
+/* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
@@ -15,7 +16,7 @@ $id = $_GET['edit'];
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>EDIT FORM | Standardization</title>
+        <title>COPY FORM | Standardization</title>
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribbble.ico">
 
@@ -149,7 +150,7 @@ $id = $_GET['edit'];
     <body>
         <div class="col-lg-12">
             <hr>
-            <h1>Equipment Detail | Edit</h1>
+            <h1>Equipment Detail | Copy Data</h1>
             <div class="row">
                 <div class="col-lg-11">
                     <div class="main-box">
