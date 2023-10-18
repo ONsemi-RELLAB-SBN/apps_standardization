@@ -116,11 +116,11 @@ $id = $_GET['update'];
                                         <table class="customers">
                                             <thead>
                                                 <tr>
-                                                    <!--<th><span>No</span></th>-->
+                                                    <th><span>No</span></th>
                                                     <th><span>Detail Code</span></th>
                                                     <th><span>Name</span></th>
                                                     <th><span>Remarks</span></th>
-                                                    <th><span>Manage</span></th>
+                                                    <th style="text-align: center"><span>Manage</span></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -128,14 +128,17 @@ $id = $_GET['update'];
                                                 $get_slides2 = "SELECT * FROM gest_parameter_detail WHERE master_code = '" . $row['code'] . "' AND flag = '1' ORDER BY code ASC";
                                                 $run_slides2 = mysqli_query($con, $get_slides2);
                                                 // LOOP TILL END OF DATA
+                                                $no = 0;
                                                 while ($row_slides2 = mysqli_fetch_array($run_slides2)):
+                                                    $no += 1;
                                                     ?>
                                                     <tr>
                                                         <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
+                                                        <td><?php echo $no; ?></td>
                                                         <td><?php echo $row_slides2['code']; ?></td>
                                                         <td><?php echo $row_slides2['name']; ?></td>
                                                         <td><?php echo $row_slides2['remark']; ?></td>
-                                                        <td>
+                                                        <td style="text-align: center">
                                                             <a href="parameter_edit_detail.php?edit=<?php echo $row_slides2['id']; ?>&id=<?php echo $row['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
                                                             <a href="parameter_delete_detail.php?delete=<?php echo $row_slides2['id']; ?>&id=<?php echo $row['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
                                                         </td>

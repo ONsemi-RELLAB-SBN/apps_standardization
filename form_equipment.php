@@ -378,7 +378,7 @@ include 'form_template.php';
                                 <label for="tempFluctuation" class="col-lg-2 control-label">Temperature Fluctuation *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="tempFluctuation" name="tempFluctuation" value="" required>
-                                    <button class="myBtn_multi">View Sample Temperature Fluctuation</button>
+                                    <button class="myBtn_multi btn-link">View Sample Temperature Fluctuation</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -393,7 +393,7 @@ include 'form_template.php';
                                 <label for="tempUniform" class="col-lg-2 control-label">Temperature Uniformity *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="tempUniform" name="tempUniform" value="" required> 
-                                    <button class="myBtn_multi">View Sample Temperature Uniformity</button>
+                                    <button class="myBtn_multi btn-link">View Sample Temperature Uniformity</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -406,7 +406,7 @@ include 'form_template.php';
                                 <label for="humidFluctuation" class="col-lg-2 control-label">Humidity Fluctuation *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="humidFluctuation" name="humidFluctuation" value="" required> 
-                                    <button class="myBtn_multi">View Sample Humid Fluctuation</button>
+                                    <button class="myBtn_multi btn-link">View Sample Humid Fluctuation</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -423,7 +423,7 @@ include 'form_template.php';
                                 <label for="noInterior" class="col-lg-2 control-label">No. Interior Zones (doors) *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="noInterior" name="noInterior" value="" required> 
-                                    <button class="myBtn_multi">View Sample No Interior Zone</button>
+                                    <button class="myBtn_multi btn-link">View Sample No Interior Zone</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -443,7 +443,7 @@ include 'form_template.php';
                                 <label for="intVolume" class="col-lg-2 control-label">Internal Volume *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="intVolume" name="intVolume" value="" required> 
-                                    <button class="myBtn_multi">View Sample Internal Volume</button>
+                                    <button class="myBtn_multi btn-link">View Sample Internal Volume</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -471,7 +471,7 @@ include 'form_template.php';
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
-                                    <button class="myBtn_multi">View Sample Board Orientation</button>
+                                    <button class="myBtn_multi btn-link">View Sample Board Orientation</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -483,7 +483,7 @@ include 'form_template.php';
                                 <label for="extDimension" class="col-lg-2 control-label">(H) *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="extDimensionH" name="extDimensionH" value="" required> 
-                                    <button class="myBtn_multi">View Sample External Dimension</button>
+                                    <button class="myBtn_multi btn-link">View Sample External Dimension</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -517,7 +517,7 @@ include 'form_template.php';
                                 <label for="rackSlotPitch" class="col-lg-2 control-label">Rack Slot-to-Slot Pitch *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="rackSlotPitch" name="rackSlotPitch" value="" required>
-                                    <button class="myBtn_multi">View Sample Rack Slot-to-Slot Pitch</button>
+                                    <button class="myBtn_multi btn-link">View Sample Rack Slot-to-Slot Pitch</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -537,7 +537,7 @@ include 'form_template.php';
                                 <label for="rackSLotWidth" class="col-lg-2 control-label">Rack Slot Width *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="rackSLotWidth" name="rackSLotWidth" value="" required> 
-                                    <button class="myBtn_multi">View Sample Rack Slot Width</button>
+                                    <button class="myBtn_multi btn-link">View Sample Rack Slot Width</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -550,7 +550,7 @@ include 'form_template.php';
                                 <label for="intDimension" class="col-lg-2 control-label">(H) *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="intDimensionH" name="intDimensionH" value="" required> 
-                                    <button class="myBtn_multi">View Sample Internal Dimension</button>
+                                    <button class="myBtn_multi btn-link">View Sample Internal Dimension</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -577,7 +577,7 @@ include 'form_template.php';
                                 <label for="noMbSlot" class="col-lg-2 control-label">Number of motherboard slots *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="noMbSlot" name="noMbSlot" value="" required>
-                                    <button class="myBtn_multi">View Sample Motherboard Slots</button>
+                                    <button class="myBtn_multi btn-link">View Sample Motherboard Slots</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -597,7 +597,7 @@ include 'form_template.php';
                                 <label for="maxPsBs" class="col-lg-2 control-label">Max number of power supplies per board slot *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="maxPsBs" name="maxPsBs" value="" required> 
-                                    <button class="myBtn_multi">View Sample Power Supplies</button>
+                                    <button class="myBtn_multi btn-link">View Sample Power Supplies</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -610,7 +610,7 @@ include 'form_template.php';
                                 <label for="rackDimension" class="col-lg-2 control-label">(H) *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="rackDimensionH" name="rackDimensionH" value="" required> 
-                                    <button class="myBtn_multi">View Sample Rack Dimension</button>
+                                    <button class="myBtn_multi btn-link">View Sample Rack Dimension</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -625,7 +625,7 @@ include 'form_template.php';
                                 <label for="maxPs" class="col-lg-2 control-label">Max number of power supplies for the entire Equipment *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="maxPs" name="maxPs" value="" required> 
-                                    <button class="myBtn_multi">View Sample Power Supplies</button>
+                                    <button class="myBtn_multi btn-link">View Sample Power Supplies</button>
                                     <div  class="modal modal_multi">
                                         <!-- Modal content -->
                                         <div class="modal-content">
@@ -649,7 +649,7 @@ include 'form_template.php';
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
-                                    <button class="myBtn_multi">View Sample Airflow</button>
+                                    <button class="myBtn_multi btn-link">View Sample Airflow</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -834,7 +834,7 @@ include 'form_template.php';
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
-                                    <button class="myBtn_multi">View Sample Internal Chamber Configuration</button>
+                                    <button class="myBtn_multi btn-link">View Sample Internal Chamber Configuration</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -899,7 +899,7 @@ include 'form_template.php';
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
-                                        <button class="myBtn_multi">View Sample Banana Configuration</button>
+                                        <button class="myBtn_multi btn-link">View Sample Banana Configuration</button>
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
@@ -942,7 +942,7 @@ include 'form_template.php';
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
-                                        <button class="myBtn_multi">View Sample Edge Configuration</button>
+                                        <button class="myBtn_multi btn-link">View Sample Edge Configuration</button>
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
@@ -994,7 +994,7 @@ include 'form_template.php';
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
-                                        <button class="myBtn_multi">View Sample Winchestor Configuration</button>
+                                        <button class="myBtn_multi btn-link">View Sample Winchestor Configuration</button>
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
@@ -1044,7 +1044,7 @@ include 'form_template.php';
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
-                                        <button class="myBtn_multi">View Sample Wire Configuration</button>
+                                        <button class="myBtn_multi btn-link">View Sample Wire Configuration</button>
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
@@ -1090,7 +1090,7 @@ include 'form_template.php';
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
-                                    <button class="myBtn_multi">View External Chamber Configuration Configuration</button>
+                                    <button class="myBtn_multi btn-link">View External Chamber Configuration Configuration</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
