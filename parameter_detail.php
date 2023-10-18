@@ -22,19 +22,9 @@ $id = $_GET['update'];
 
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
         <script src="js/bootstrap.js"></script>
-
-        <style>
-            
-        </style>
-        
-        <script type="text/javascript">
-
-        </script>
-
     </head>
     <body>
         <?php
@@ -146,8 +136,8 @@ $id = $_GET['update'];
                                                         <td><?php echo $row_slides2['name']; ?></td>
                                                         <td><?php echo $row_slides2['remark']; ?></td>
                                                         <td>
-                                                            <a href="parameter_edit_detail.php?edit=<?php echo $row_slides2['id']; ?>&id=<?php echo $row['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
-                                                            <a href="parameter_delete_detail.php?delete=<?php echo $row_slides2['id']; ?>&id=<?php echo $row['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> DELETE </a>
+                                                            <a href="parameter_edit_detail.php?edit=<?php echo $row_slides2['id']; ?>&id=<?php echo $row['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
+                                                            <a href="parameter_delete_detail.php?delete=<?php echo $row_slides2['id']; ?>&id=<?php echo $row['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
                                                         </td>
                                                     </tr>
                                                     <?php

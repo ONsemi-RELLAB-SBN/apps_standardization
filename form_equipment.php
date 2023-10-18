@@ -155,7 +155,7 @@ include 'form_template.php';
                 <div class="col-lg-11">
                     <div class="main-box">
                         <h2>General</h2>
-                        <form id="add_equipment_form" class="form-horizontal" role="form" action="parameter_add_equipment.php" method="get">
+                        <form id="add_equipment_form" class="form-horizontal" role="form" action="crud_add_equipment.php" method="get">
                             <div class="form-group">
                                 <label for="labLocation" class="col-lg-2 control-label">Lab Location *</label>
                                 <div class="col-lg-3">

@@ -66,12 +66,29 @@ if (isset($_GET['delete'])) {
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribbble.ico">
         
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
         
-        <script type="text/javascript">
-            
-        </script>
+        <style>
+            #refreshButton {
+                display: block;
+                position: absolute;
+                top: 80px;
+                right: 30px;
+                z-index: 99;
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background-color: gray;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 4px;
+            }
+
+            #refreshButton:hover {
+                background-color: #17a2b8;
+            }
+        </style>
     </head>
     <body>
         <?php
@@ -85,7 +102,7 @@ if (isset($_GET['delete'])) {
         <div class="container">
             <div class="mt-5 mb-3 clearfix">
                 <h2 class="pull-left">Parameter Master Details</h2>
-                <button onClick="window.location.href = window.location.href" class="pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
+                <button onClick="window.location.href = window.location.href" class="pull-right" id="refreshButton"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
             </div>
             <div class="admin-product-form-container">
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
@@ -99,7 +116,7 @@ if (isset($_GET['delete'])) {
                     <input type="file" accept="image/png, image/jpeg, image/jpg" name="parameter_image" class="box">
                     <!--<input type="submit" class="btn btn-success pull-right" name="add_parameter" value="Add New Parameter">-->
                     <!--<input type="submit" class="btn-3d pull-right" name="add_parameter" value="Add New Parameter">-->
-                    <button name="add_parameter" class="w3-button w3-round btn-3d pull-right"><i class='bx bx-plus bx-flashing-hover bx-fw' ></i>Add New Parameter</button>
+                    <button name="add_parameter" class="pull-right w3-button w3-round btn-3d"><i class='bx bx-plus bx-flashing-hover bx-fw' ></i>Add New Parameter</button>
                 </form>
             </div>
             <hr>
@@ -109,7 +126,7 @@ if (isset($_GET['delete'])) {
                     <th><b>Parameter Code</b></th>
                     <th><b>Link</b></th>
                     <th><b>Image</b></th>
-                    <th><b>Action</b></th>
+                    <th style="text-align: center"><b>Action</b></th>
                 </tr>
                 <?php
                 $get_slides = "SELECT * FROM gest_parameter_master WHERE flag = '1' ORDER BY code ASC";
@@ -122,10 +139,10 @@ if (isset($_GET['delete'])) {
                         <td><?php echo $row_slides['code']; ?></td>
                         <td><?php echo $row_slides['link_image']; ?></td>
                         <td><img src="uploaded_img/<?php echo $row_slides['link_image']; ?>" height="100" alt=""></td>
-                        <td>
-                            <a href="parameter_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
-                            <a href="parameter_detail.php?update=<?php echo $row_slides['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span> ADD DETAIL </a>
-                            <a href="parameter.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> DELETE </a>
+                        <td style="text-align: center">
+                            <a href="parameter_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
+                            <a href="parameter_detail.php?update=<?php echo $row_slides['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span><i class='bx bx-list-plus bx-fw' ></i> ADD DETAIL </a>
+                            <a href="parameter.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
                         </td>
                     </tr>
                     <?php

@@ -4,6 +4,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 include 'form_template.php';
+include 'class/get_parameter.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,18 +13,18 @@ include 'form_template.php';
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>LIST | Equipment Form List</title>
+        <title>LIST | Equipment [Chamber] List</title>
         <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
         <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribbble.ico">
         
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
         
         <style>
             #addBtn {
                 display: block;
-                position: fixed;
+                position: absolute;
                 font-size: 18px;
                 border: none;
                 outline: none;
@@ -35,6 +36,26 @@ include 'form_template.php';
             }
 
             #addBtn:hover {
+                background-color: #17a2b8;
+            }
+            
+            #refreshButton {
+                display: block;
+                position: absolute;
+                top: 80px;
+                right: 30px;
+                z-index: 99;
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background-color: gray;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 4px;
+            }
+
+            #refreshButton:hover {
                 background-color: #17a2b8;
             }
         </style>
@@ -52,9 +73,10 @@ include 'form_template.php';
             }
         }
         ?>
-        <div clE
-             <div class="container">
-                 <!--<table style="margin-top: 25px;">-->
+        <div class="container">
+            <div class="mt-5 mb-3 clearfix">
+                <h2 class="pull-left">Equipment [Chamber] List</h2>
+            </div>
             <table class="customers">
                 <hr>
                 <tr>
@@ -84,9 +106,9 @@ include 'form_template.php';
                         <td><?php echo getParameterValue($row_slides['champion']); ?></td>
                         <td><?php echo getParameterValues($row_slides['rel_test']); ?></td>
                         <td style="text-align:center">
-                            <a href="form_equipment_view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><span class="fa fa-book"></span> VIEW </a>
-                            <a href="form_equipment_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span> EDIT </a>
-                            <a href="form_equipment_delete.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> DELETE </a>
+                            <a href="form_equipment_view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><span class="fa fa-book"></span> <i class='bx bx-search-alt bx-fw'></i> VIEW </a>
+                            <a href="form_equipment_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
+                            <a href="form_equipment_delete.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span> <i class='bx bxs-trash bx-fw' ></i> DELETE </a>
                         </td>
                     </tr>
                     <?php
@@ -95,59 +117,7 @@ include 'form_template.php';
             </table>
             <hr>
             <button onclick="location.href='form_equipment.php'" type="button" id="addBtn">Create</button>
+            <button onClick="window.location.href = window.location.href" type="button" id="refreshButton"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
         </div><!-- /container -->
     </body>
 </html>
-
-<?php
-
-function getParameterValue($code) {
-    $servername = "localhost";
-    $username = "ayep";
-    $password = "mysql@2023";
-    $dbname = "gest";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $query = "SELECT name FROM gest_parameter_detail WHERE CODE = '$code'";
-    $result = $conn->query($query);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $data = $row['name'];
-        }
-    } else {
-        echo "No data found";
-    }
-
-    $conn->close();
-    return $data;
-}
-
-function getParameterValues($string) {
-    $mysqli = new mysqli('localhost', 'ayep', 'mysql@2023', 'gest');
-    if ($mysqli->connect_errno) {
-        echo 'Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error;
-        exit;
-    }
-
-    $codes = explode(',', $string);
-    $values = [];
-    foreach ($codes as $code) {
-        $query = 'SELECT name FROM gest_parameter_detail WHERE code = \'' . $code . '\'';
-        $result = $mysqli->query($query);
-        if (!$result) {
-            echo 'Failed to execute query: (' . $mysqli->errno . ') ' . $mysqli->error;
-            exit;
-        }
-
-        $row = $result->fetch_assoc();
-        $values[] = $row['name'];
-    }
-    $mysqli->close();
-
-    return implode(', ', $values);
-}
