@@ -21,7 +21,7 @@ include 'class/db.php';
             .sticky {
                 position: fixed;
                 z-index: 1;
-                font-size: 23px;
+                font-size: 13px;
                 top: 0;
                 width: 100%;
             }

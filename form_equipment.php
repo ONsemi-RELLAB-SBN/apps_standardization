@@ -16,12 +16,11 @@ include 'form_template.php';
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribbble.ico">
 
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/elements.css" />
-        <link rel="stylesheet" type="text/css" href="css/layout.css">
-        <link rel="stylesheet" type="text/css" href="css/readonly.css" />
         <link rel="stylesheet" type="text/css" href="css/select2.css"/>
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+        <link rel="stylesheet" type="text/css" href="css/elements.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/main01.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
@@ -30,50 +29,10 @@ include 'form_template.php';
         <script src="js/select2.min.js"></script>
 
         <style>
-/*            html{
-                font-size: 90%;
-            }*/
-            
-            .select2-container-active .select2-choice,
-            .select2-container-active .select2-choices {
-                /*border: 1px solid $input-border-focus !important;*/
-                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-            }
-
-            .select2-dropdown-open .select2-choice {
-                border-bottom: 0 !important;
-                background-image: none;
-                background-color: #fff;
-                filter: none;
-                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-            }
-
-            .select2-dropdown-open.select2-drop-above .select2-choice,
-            .select2-dropdown-open.select2-drop-above .select2-choices {
-                /*border: 1px solid $input-border-focus !important;*/
-                border-top: 0 !important;
-                background-image: none;
-                background-color: #fff;
-                filter: none;
-                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-            }
-
-            .no-border {
-                border: 0;
-                box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
-            }
-
-            span.tab-space {
-                padding-left:20em;
-            }
-
             #backBtn {
                 display: block;
                 position: fixed;
-                top: 80px;
+                bottom: 70px;
                 right: 30px;
                 z-index: 99;
                 font-size: 18px;
@@ -84,11 +43,19 @@ include 'form_template.php';
                 cursor: pointer;
                 padding: 15px;
                 border-radius: 4px;
+                
+                display: block;
+                min-width: 7.5rem;
+                height: 3.5rem;
+                line-height: 2.75rem;
+                padding: 0 1.25rem 0 1.45rem;
+                text-transform: uppercase;
+                letter-spacing: 0.2rem;
             }
             #myBtn {
                 display: block;
                 position: fixed;
-                bottom: 20px;
+                bottom: 25px;
                 right: 30px;
                 z-index: 99;
                 font-size: 18px;
@@ -99,20 +66,30 @@ include 'form_template.php';
                 cursor: pointer;
                 padding: 15px;
                 border-radius: 4px;
+                
+                display: block;
+                min-width: 7.5rem;
+                height: 3.5rem;
+                line-height: 2.75rem;
+                padding: 0 1.25rem 0 1.45rem;
+                text-transform: uppercase;
+                letter-spacing: 0.2rem;
             }
 
             #myBtn:hover {
                 background-color: #17a2b8;
+                background-color: orange;
+            }
+            #backBtn:hover {
+                background-color: orange;
             }
 
-            .dropdown {
-                position: absolute;
-                top: 0px;
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
                 display: inline-block;
-            }
-
-            .control-label {
-                font-size: 1.3em;
+                /*border: none;*/
             }
         </style>
         <script type="text/javascript">
@@ -150,9 +127,11 @@ include 'form_template.php';
     <body>
         <div class="col-lg-12">
             <hr>
+            <hr>
+            <hr>
             <h1>Equipment Detail</h1>
             <div class="row">
-                <div class="col-lg-11">
+                <div class="col-lg-12">
                     <div class="main-box">
                         <h2>General</h2>
                         <form id="add_equipment_form" class="form-horizontal" role="form" action="crud_add_equipment.php" method="get">
@@ -336,14 +315,14 @@ include 'form_template.php';
                             <div class="form-group">
                                 <label for="voltRating" class="col-lg-2 control-label">Voltage Rating *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" 0 class="form-control" id="voltRating" name="voltRating" value="" required> 
+                                    <input type="number" step="0.001" class="form-control" id="voltRating" name="voltRating" value="" required> 
                                 </div> 
                                 <label for="voltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
                                 <label for="voltControl" class="col-lg-2 control-label">Voltage Control Accuracy *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="voltControl" name="voltControl" value="" required> 
                                 </div> 
-                                <label for="voltControl" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mV</b></label>
+                                <label for="voltControl" class="col-lg-1 control-label pull-left" style="text-align: left"><b>%</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="minTemp" class="col-lg-2 control-label">Min. Temperature *</label>
@@ -374,7 +353,7 @@ include 'form_template.php';
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="heatDissipation" name="heatDissipation" value="" required> 
                                 </div>
-                                <label for="heatDissipation" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                <label for="heatDissipation" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Watt</b></label>
                                 <label for="tempFluctuation" class="col-lg-2 control-label">Temperature Fluctuation *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="tempFluctuation" name="tempFluctuation" value="" required>
@@ -432,7 +411,7 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div>
-                                <label for="noInterior" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
+                                <label for="noInterior" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Zone</b></label>
                                 <label for="extDimension" class="col-lg-2 control-label">External Dimension (W) *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="extDimensionW" name="extDimensionW" value="" required> 
@@ -586,7 +565,7 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="noMbSlot" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
+                                <label for="noMbSlot" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Slot</b></label>
                                 <label for="rackDimension" class="col-lg-2 control-label">(D) *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="rackDimensionD" name="rackDimensionD" value="" required> 
@@ -606,7 +585,7 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="maxPsBs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
+                                <label for="maxPsBs" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Slot</b></label>
                                 <label for="rackDimension" class="col-lg-2 control-label">(H) *</label>
                                 <div class="col-lg-2">
                                     <input type="number" step="0.001" class="form-control" id="rackDimensionH" name="rackDimensionH" value="" required> 
@@ -635,7 +614,7 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="maxPs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
+                                <label for="maxPs" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Unit</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="airflow" class="col-lg-2 control-label">Airflow *</label>
@@ -1035,7 +1014,7 @@ include 'form_template.php';
                                     <div class="col-lg-2">
                                         <input type="number" step="0.001" class="form-control" id="connRack" name="connRack" value="" > 
                                     </div> 
-                                    <label for="connRack" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
+                                    <label for="connRack" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 </div>
                             </div>  
 
@@ -1129,10 +1108,10 @@ include 'form_template.php';
                             </div>
 
                             <div class="pull-right">
-                                <button onclick="location.href = 'form_equipment_list.php'" type="button" id="backBtn">List</button>
+                                <button onclick="location.href = 'form_equipment_list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
                             </div>
                             <div class="pull-right">
-                                <button type="submit" id="myBtn" class="btn btn-primary">Send</button>
+                                <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Send</button>
                             </div>
                             <div class="clearfix"></div>
                         </form>

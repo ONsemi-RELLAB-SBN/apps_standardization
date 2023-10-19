@@ -66,8 +66,8 @@ if (isset($_GET['delete'])) {
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribbble.ico">
         
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+<!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>-->
         
         <!--<link rel="stylesheet" type="text/css" href="css/normalize.css" />-->
         <!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
@@ -78,6 +78,14 @@ if (isset($_GET['delete'])) {
         <!--<script src="js/demo1.js"></script>-->
         <!--<script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>-->
         
+        <link rel="stylesheet" type="text/css" href="css/select2.css"/>
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+        <link rel="stylesheet" type="text/css" href="css/elements.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/main01.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+        
         <style>
             #refreshButton {
                 display: block;
@@ -85,7 +93,7 @@ if (isset($_GET['delete'])) {
                 top: 80px;
                 right: 30px;
                 z-index: 99;
-                font-size: 18px;
+                font-size: 12px;
                 border: none;
                 outline: none;
                 background-color: gray;
