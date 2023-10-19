@@ -160,10 +160,12 @@ header {
 
 #header_temp nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.075);
+    color: orange;
 }
 
 #header_temp nav ul li a:active {
     background-color: rgba(255, 255, 255, 0.175);
+    color: orange;
 }
 
 #header_temp nav.use-middle:after {

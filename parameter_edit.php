@@ -4,7 +4,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'class/db.php';
+include './form_template.php';
 
 $id = $_GET['edit'];
 
@@ -41,19 +41,45 @@ if (isset($_POST['update_parameter'])) {
         <title>Parameter | Edit</title>
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribbble.ico">
-        <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
-        <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
-        
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+        <link rel="stylesheet" type="text/css" href="css/elements.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/main01.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-        
+        <script src="js/bootstrap.js"></script>
+
         <style>
-            
+            body {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+                color: orange;
+            }
+
+            #update_parameter:hover {
+                background-color: orange;
+            }
+
+            #backButton:hover {
+                background-color: orange;
+            }
+
+            .btn-default {
+                background-color: lightgray;
+                border-color: #2fb2a0;
+            }
+
+            .btn-default:hover {
+                background-color: orange;
+            }
         </style>
-        
+
         <script type="text/javascript">
-            
+
         </script>
 
     </head>
@@ -69,37 +95,40 @@ if (isset($_POST['update_parameter'])) {
             <?php if ($id == '') { ?>
                 <h1>Access denied! Please go back to <a href="parameter.php" class="btn"> main page</a></h1>
             <?php } else { ?>
-                <section>
-                    <!--<p>Parameter Master - Edit Page</p>-->
-                    <h2 class="pull-left">Parameter Master - Edit Page</h2>
-                    <div class="admin-product-form-container centered">
+                <div class="table">
+                    <br>
+                    <div class="mt-5 mb-3 clearfix">
+                        <h2 class="pull-left">Parameter Master | Edit Page</h2>
+                    </div>
+                    <div class="form-group mt-5 mb-3">
                         <?php
                         $select = mysqli_query($con, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
                         while ($row = mysqli_fetch_assoc($select)) {
                             ?>
-                            <form action="" method="post" enctype="multipart/form-data">
-                                
-                                <label for="name"><b>Parameter Name</b></label>
-                                <input type="text" class="box" name="parameter_name" value="<?php echo $row['name']; ?>" placeholder="Enter the parameter name">
-                                <label for="code"><b>Parameter Code</b></label>
-                                <input type="text" min="0" class="box" name="parameter_code" value="<?php echo $row['code']; ?>" placeholder="enter the parameter code">
-                                <label for="image"><b>Image</b></label><br>
-                                <img src="uploaded_img/<?php echo $row['link_image']; ?>" height="100" alt=""><br>
-                                <input type="file" class="box" name="parameter_image" accept="image/png, image/jpeg, image/jpg">
+                            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                <div class="form-group form-group-lg">
+                                    <label for="name" class="col-lg-3 form-label"><b>Parameter Name <font color="red">*</font></b></label>
+                                    <input type="text" class="col-lg-4 form-control-lg" placeholder="Enter parameter name" name="parameter_name" class="box" value="<?php echo $row['name']; ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="code" class="col-lg-3 form-label"><b>Parameter Code</b></label>
+                                    <input type="text" class="col-lg-4 form-control-lg" placeholder="Enter parameter code" name="parameter_price" class="box", value='<?php echo $row['code']; ?>' readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="image" class="col-lg-3 form-label"><b>Image</b></label>
+                                    <img src="uploaded_img/<?php echo $row['link_image']; ?>" height="100" alt=""><br>
+                                    <label class="col-lg-3 form-label">&nbsp;</label>
+                                    <input type="file" class="col-lg-4 form-control-lg" accept="image/png, image/jpeg, image/jpg" name="parameter_image">
+                                </div>
                                 <br>
-                                <br>
-                                <a href="parameter.php" class="btn-3d"><i class='bx bx-arrow-back bx-fade-left-hover bx-fw' style='color:#ffffff' ></i>Go Back!</a>
-                                <!--<a href="parameter.php" class="btn-3d"><i class='bx bx-arrow-back bx-fw' style='color:#ffffff' ></i>Go Back!</a>-->
-                                <button type="submit" value="Update Parameter Master" name="update_parameter" class="btn-3d" >
-                                    <i class='bx bx-loader-circle bx-spin-hover bx-fw' style='color:#ffffff' ></i>Update Parameter Master
+                                <a href="parameter.php" class="btn btn-default btn-lg" id="backButton"><i class='bx bxs-chevron-left bx-fade-left-hover bx-fw' ></i>Go Back!</a>
+                                <button type="submit" value="Update Parameter Master" name="update_parameter" id="update_parameter" class="btn btn-default btn-lg" >
+                                    <i class='bx bx-loader-circle bx-spin-hover bx-fw' ></i>Update Parameter Master
                                 </button>
-<!--                                <button type="submit" value="Update Parameter Master" name="update_parameter" class="btn btn-success" >
-                                    <i class='bx bx-loader-circle bx-fw bx-fw' style='color:#ffffff' ></i>Update Parameter Master
-                                </button>-->
                             </form>
                         <?php }; ?>
                     </div>
-                </section>
+                </div>
             <?php } ?>
         </div>
     </body>

@@ -12,7 +12,7 @@ $master_code = $_GET['masterCode'];
 $detail_code = $_GET['detailsCode'];
 $detail_name = $_GET['detailsName'];
 $remark = $_GET['remarks'];
-$updatek = $_GET['update_detail'];
+$updatek = $_GET['update_details'];
 $detail_id = $_GET['detailId'];
 
 $update = "UPDATE gest_parameter_detail SET flag = '1', name = '$detail_name', remark = '$remark' WHERE id = '$detail_id'";
