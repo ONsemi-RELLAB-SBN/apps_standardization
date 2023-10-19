@@ -14,7 +14,7 @@ include 'class/db.php';
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>STANDARD</title>
         <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/dribbble.ico">
+        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
         <link rel="stylesheet" type="text/css" href="css/main01.css">
         <style>

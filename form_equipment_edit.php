@@ -1109,7 +1109,7 @@ $id = $_GET['edit'];
                             <?php 
                             $checkExt = $rowForm['ext_config_type'];
                             if ($checkExt !== "032003") { ?>
-                            <div class="form-group" id="viewExternalDiv">
+                            <div class="form-group" id="viewExternalDiv"> 
                                 <label for="interfaceVoltRating" class="col-lg-2 control-label">Interface Voltage Rating *</label>
                                 <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="<?php echo $rowForm['interface_volt_rating']; ?>" > 
@@ -1127,7 +1127,7 @@ $id = $_GET['edit'];
                                 <button onclick="location.href = 'form_equipment_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
                             </div>
                             <div class="pull-right">
-                                <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Send</button>
+                                <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Update</button>
                             </div>
                             <div class="clearfix"></div>
                             <?php endwhile; ?>
