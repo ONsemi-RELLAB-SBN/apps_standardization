@@ -19,12 +19,11 @@ $id = $_GET['edit'];
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribbble.ico">
 
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/elements.css" />
-        <link rel="stylesheet" type="text/css" href="css/layout.css">
-        <link rel="stylesheet" type="text/css" href="css/readonly.css" />
         <link rel="stylesheet" type="text/css" href="css/select2.css"/>
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+        <link rel="stylesheet" type="text/css" href="css/elements.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/main01.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
@@ -33,46 +32,10 @@ $id = $_GET['edit'];
         <script src="js/select2.min.js"></script>
 
         <style>
-            .select2-container-active .select2-choice,
-            .select2-container-active .select2-choices {
-                /*border: 1px solid $input-border-focus !important;*/
-                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-            }
-
-            .select2-dropdown-open .select2-choice {
-                border-bottom: 0 !important;
-                background-image: none;
-                background-color: #fff;
-                filter: none;
-                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-            }
-
-            .select2-dropdown-open.select2-drop-above .select2-choice,
-            .select2-dropdown-open.select2-drop-above .select2-choices {
-                /*border: 1px solid $input-border-focus !important;*/
-                border-top: 0 !important;
-                background-image: none;
-                background-color: #fff;
-                filter: none;
-                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-            }
-
-            .no-border {
-                border: 0;
-                box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
-            }
-
-            span.tab-space {
-                padding-left:20em;
-            }
-
-            #backBtn {
+            #listBtn {
                 display: block;
                 position: fixed;
-                top: 80px;
+                bottom: 70px;
                 right: 30px;
                 z-index: 99;
                 font-size: 18px;
@@ -82,12 +45,20 @@ $id = $_GET['edit'];
                 color: white;
                 cursor: pointer;
                 padding: 15px;
-                border-radius: 4px;
+                border-radius: 5px;
+                
+                display: block;
+                min-width: 7.5rem;
+                height: 3.5rem;
+                line-height: 2.75rem;
+                padding: 0 1.25rem 0 1.45rem;
+                text-transform: uppercase;
+                letter-spacing: 0.2rem;
             }
             #myBtn {
                 display: block;
                 position: fixed;
-                bottom: 20px;
+                bottom: 25px;
                 right: 30px;
                 z-index: 99;
                 font-size: 18px;
@@ -97,21 +68,22 @@ $id = $_GET['edit'];
                 color: white;
                 cursor: pointer;
                 padding: 15px;
-                border-radius: 4px;
+                border-radius: 5px;
+                
+                display: block;
+                min-width: 7.5rem;
+                height: 3.5rem;
+                line-height: 2.75rem;
+                padding: 0 1.25rem 0 1.45rem;
+                text-transform: uppercase;
+                letter-spacing: 0.2rem;
             }
 
+            #listBtn:hover {
+                background-color: orange;
+            }
             #myBtn:hover {
-                background-color: #17a2b8;
-            }
-
-            .dropdown {
-                position: absolute;
-                top: 0px;
-                display: inline-block;
-            }
-            
-            .control-label {
-                font-size: 1.3em;
+                background-color: orange;
             }
         </style>
         <script type="text/javascript">
@@ -149,9 +121,12 @@ $id = $_GET['edit'];
     <body>
         <div class="col-lg-12">
             <hr>
+            <hr>
+            <hr>
             <h1>Equipment Detail | Edit</h1>
+            <hr>
             <div class="row">
-                <div class="col-lg-11">
+                <div class="col-lg-12">
                     <div class="main-box">
                         <h2>General</h2>
                         <form id="add_equipment_form" class="form-horizontal" role="form" action="crud_update_equipment.php" method="get">
@@ -279,7 +254,7 @@ $id = $_GET['edit'];
                                     </select>
                                 </div>
                                 <label for="mfgDate" class="col-lg-2 control-label">Equipment Mfg Date *</label>
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
                                     <input type="date" class="form-control" id="mfgDate" name="mfgDate" value="<?php echo date('Y-m-d', strtotime($rowForm['eqpt_mfg_date'])); ?>" required>
                                 </div>
                             </div>
@@ -339,50 +314,50 @@ $id = $_GET['edit'];
                             <h2>Capability</h2>
                             <div class="form-group">
                                 <label for="voltRating" class="col-lg-2 control-label">Voltage Rating *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" 0 class="form-control" id="voltRating" name="voltRating" value="<?php echo $rowForm['eqpt_volt_rating']; ?>" required> 
                                 </div> 
-                                <label for="voltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                <label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                 <label for="voltControl" class="col-lg-2 control-label">Voltage Control Accuracy *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="voltControl" name="voltControl" value="<?php echo $rowForm['volt_control_accuracy']; ?>" required> 
                                 </div> 
-                                <label for="voltControl" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mV</b></label>
+                                <label for="voltControl" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mV</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="minTemp" class="col-lg-2 control-label">Min. Temperature *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="minTemp" name="minTemp" value="<?php echo $rowForm['min_temp']; ?>" required> 
                                 </div> 
-                                <label for="minTemp" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                <label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 <label for="maxTemp" class="col-lg-2 control-label">Max. Temperature *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="maxTemp" name="maxTemp" value="<?php echo $rowForm['max_temp']; ?>" required> 
                                 </div>
-                                <label for="maxTemp" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                <label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="minRh" class="col-lg-2 control-label">Min. RH *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="minRh" name="minRh" value="<?php echo $rowForm['min_rh']; ?>" required> 
                                 </div> 
-                                <label for="minRh" class="col-lg-1 control-label pull-left" style="text-align: left"><b>%</b></label>
+                                <label for="minRh" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label>
                                 <label for="maxRh" class="col-lg-2 control-label">Max. RH *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="maxRh" name="maxRh" value="<?php echo $rowForm['max_rh']; ?>" required> 
                                 </div> 
-                                <label for="maxRh" class="col-lg-1 control-label pull-left" style="text-align: left"><b>%</b></label>
+                                <label for="maxRh" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="heatDissipation" class="col-lg-2 control-label">Heat Dissipation *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="heatDissipation" name="heatDissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" required> 
                                 </div>
-                                <label for="heatDissipation" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                <label for="heatDissipation" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 <label for="tempFluctuation" class="col-lg-2 control-label">Temperature Fluctuation *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="tempFluctuation" name="tempFluctuation" value="<?php echo $rowForm['temp_fluctuation']; ?>" required>
-                                    <button class="myBtn_multi">View Sample Temperature Fluctuation</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -391,13 +366,13 @@ $id = $_GET['edit'];
                                         </div>
                                     </div>
                                 </div>
-                                <label for="tempFluctuation" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                <label for="tempFluctuation" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="tempUniform" class="col-lg-2 control-label">Temperature Uniformity *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="tempUniform" name="tempUniform" value="<?php echo $rowForm['temp_uniformity']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Temperature Uniformity</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -406,11 +381,11 @@ $id = $_GET['edit'];
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="tempUniform" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                <label for="tempUniform" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 <label for="humidFluctuation" class="col-lg-2 control-label">Humidity Fluctuation *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="humidFluctuation" name="humidFluctuation" value="<?php echo $rowForm['humid_fluctuation']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Humid Fluctuation</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -419,15 +394,15 @@ $id = $_GET['edit'];
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="humidFluctuation" class="col-lg-1 control-label pull-left" style="text-align: left"><b>%</b></label>
+                                <label for="humidFluctuation" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label>
                             </div>
 
                             <h2>Characteristic</h2>
                             <div class="form-group">
                                 <label for="noInterior" class="col-lg-2 control-label">No. Interior Zones (doors) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="noInterior" name="noInterior" value="<?php echo $rowForm['no_interior_zone']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample No Interior Zone</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -436,18 +411,18 @@ $id = $_GET['edit'];
                                         </div>
                                     </div>
                                 </div>
-                                <label for="noInterior" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
+                                <label for="noInterior" class="col-lg-2 control-label pull-left" style="text-align: left"><b></b></label>
                                 <label for="extDimension" class="col-lg-2 control-label">External Dimension (W) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="extDimensionW" name="extDimensionW" value="<?php echo $rowForm['ext_dimension_w']; ?>" required> 
                                 </div>
-                                <label for="extDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="extDimensionW" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="intVolume" class="col-lg-2 control-label">Internal Volume *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="intVolume" name="intVolume" value="<?php echo $rowForm['int_vol']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Internal Volume</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -456,12 +431,12 @@ $id = $_GET['edit'];
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="intVolume" class="col-lg-1 control-label pull-left" style="text-align: left"><b>L</b></label>
+                                <label for="intVolume" class="col-lg-2 control-label pull-left" style="text-align: left"><b>L</b></label>
                                 <label for="extDimension" class="col-lg-2 control-label">(D) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="extDimensionD" name="extDimensionD" value="<?php echo $rowForm['ext_dimension_d']; ?>" required> 
                                 </div>
-                                <label for="extDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="extDimensionD" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="boardOrientation" class="col-lg-2 control-label">Board Orientation*</label>
@@ -475,7 +450,7 @@ $id = $_GET['edit'];
                                             <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['board_orientation']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
-                                    <button class="myBtn_multi">View Sample Board Orientation</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -485,9 +460,9 @@ $id = $_GET['edit'];
                                     </div>
                                 </div>
                                 <label for="extDimension" class="col-lg-2 control-label">(H) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="extDimensionH" name="extDimensionH" value="<?php echo $rowForm['ext_dimension_h']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample External Dimension</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -496,7 +471,7 @@ $id = $_GET['edit'];
                                         </div>
                                     </div>
                                 </div>
-                                <label for="extDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="extDimensionH" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="rackMaterial" class="col-lg-2 control-label">Rack Material *</label>
@@ -512,16 +487,16 @@ $id = $_GET['edit'];
                                     </select>
                                 </div>
                                 <label for="intDimension" class="col-lg-2 control-label">Internal Dimension (W) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="intDimensionW" name="intDimensionW" value="<?php echo $rowForm['int_dimension_w']; ?>" required> 
                                 </div> 
-                                <label for="intDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="intDimensionW" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="rackSlotPitch" class="col-lg-2 control-label">Rack Slot-to-Slot Pitch *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="rackSlotPitch" name="rackSlotPitch" value="<?php echo $rowForm['rack_slot_pitch']; ?>" required>
-                                    <button class="myBtn_multi">View Sample Rack Slot-to-Slot Pitch</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -530,18 +505,18 @@ $id = $_GET['edit'];
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="rackSlotPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="rackSlotPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 <label for="intDimension" class="col-lg-2 control-label">(D) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="intDimensionD" name="intDimensionD" value="<?php echo $rowForm['int_dimension_d']; ?>" required> 
                                 </div> 
-                                <label for="intDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="intDimensionD" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="rackSLotWidth" class="col-lg-2 control-label">Rack Slot Width *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="rackSLotWidth" name="rackSLotWidth" value="<?php echo $rowForm['rack_slot_width']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Rack Slot Width</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -550,11 +525,11 @@ $id = $_GET['edit'];
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="rackSLotWidth" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="rackSLotWidth" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 <label for="intDimension" class="col-lg-2 control-label">(H) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="intDimensionH" name="intDimensionH" value="<?php echo $rowForm['int_dimension_h']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Internal Dimension</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -563,25 +538,25 @@ $id = $_GET['edit'];
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="intDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="intDimensionH" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="eqptWeight" class="col-lg-2 control-label">Equipment Weight *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="eqptWeight" name="eqptWeight" value="<?php echo $rowForm['eqpt_weight']; ?>" required> 
                                 </div> 
-                                <label for="eqptWeight" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Kg</b></label>
+                                <label for="eqptWeight" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Kg</b></label>
                                 <label for="rackDimension" class="col-lg-2 control-label">Rack Dimension (W) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="rackDimensionW" name="rackDimensionW" value="<?php echo $rowForm['rack_dimension_w']; ?>" required> 
                                 </div>
-                                <label for="rackDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="rackDimensionW" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="noMbSlot" class="col-lg-2 control-label">Number of motherboard slots *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="noMbSlot" name="noMbSlot" value="<?php echo $rowForm['no_mb_slot']; ?>" required>
-                                    <button class="myBtn_multi">View Sample Motherboard Slots</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -590,18 +565,18 @@ $id = $_GET['edit'];
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="noMbSlot" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
+                                <label for="noMbSlot" class="col-lg-2 control-label pull-left" style="text-align: left"><b> </b></label>
                                 <label for="rackDimension" class="col-lg-2 control-label">(D) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="rackDimensionD" name="rackDimensionD" value="<?php echo $rowForm['rack_dimension_d']; ?>" required> 
                                 </div> 
-                                <label for="rackDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="rackDimensionD" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="maxPsBs" class="col-lg-2 control-label">Max number of power supplies per board slot *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="maxPsBs" name="maxPsBs" value="<?php echo $rowForm['max_ps_slot']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Power Supplies</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -610,11 +585,11 @@ $id = $_GET['edit'];
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="maxPsBs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
+                                <label for="maxPsBs" class="col-lg-2 control-label pull-left" style="text-align: left"><b> </b></label>
                                 <label for="rackDimension" class="col-lg-2 control-label">(H) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="rackDimensionH" name="rackDimensionH" value="<?php echo $rowForm['rack_dimension_h']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Rack Dimension</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -623,13 +598,13 @@ $id = $_GET['edit'];
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="rackDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="rackDimensionH" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="maxPs" class="col-lg-2 control-label">Max number of power supplies for the entire Equipment *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="maxPs" name="maxPs" value="<?php echo $rowForm['max_ps_eqpt']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Power Supplies</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <!-- Modal content -->
                                         <div class="modal-content">
@@ -639,7 +614,7 @@ $id = $_GET['edit'];
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="maxPs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
+                                <label for="maxPs" class="col-lg-2 control-label pull-left" style="text-align: left"><b> </b></label>
                             </div>
                             <div class="form-group">
                                 <label for="airflow" class="col-lg-2 control-label">Airflow *</label>
@@ -653,7 +628,7 @@ $id = $_GET['edit'];
                                             <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['airflow']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
-                                    <button class="myBtn_multi">View Sample Airflow</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -737,15 +712,15 @@ $id = $_GET['edit'];
                             <h2>Utilities</h2>
                             <div class="form-group">
                                 <label for="voltagePhase" class="col-lg-2 control-label">Voltage/Phase/Current *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="voltagePhase" name="voltagePhase" value="<?php echo $rowForm['volt_phase_current']; ?>" required> 
                                 </div> 
-                                <label for="voltagePhase" class="col-lg-1 control-label pull-left" style="text-align: left"><b>VAC</b></label>
+                                <label for="voltagePhase" class="col-lg-2 control-label pull-left" style="text-align: left"><b>VAC</b></label>
                                 <label for="phase" class="col-lg-2 control-label">Phase *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="phase" name="phase" value="<?php echo $rowForm['phase']; ?>" required> 
                                 </div> 
-                                <label for="phase" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Phase</b></label>
+                                <label for="phase" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Phase</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="exhaust" class="col-lg-2 control-label">Exhaust *</label>
@@ -843,7 +818,7 @@ $id = $_GET['edit'];
                                             <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['internal_config_type']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
-                                    <button class="myBtn_multi">View Sample Internal Chamber Configuration</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -911,7 +886,7 @@ $id = $_GET['edit'];
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
-                                        <button class="myBtn_multi">View Sample Banana Configuration</button>
+                                        <button class="myBtn_multi btn-link">View Sample</button>
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
@@ -925,27 +900,27 @@ $id = $_GET['edit'];
                                 </div>
                                 <div class="form-group">
                                     <label for="bananaJackHole" class="col-lg-2 control-label">No. Banana Jack Holes *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="bananaJackHole" name="bananaJackHole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" > 
                                     </div> 
-                                    <label for="bananaJackHole" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
+                                    <label for="bananaJackHole" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Pins</b></label>
                                     <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > 
                                     </div> 
-                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                    <label for="connVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="<?php echo $rowForm['conn_current_rating']; ?>" > 
                                     </div> 
-                                    <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                    <label for="connCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
                                     <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > 
                                     </div> 
-                                    <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                    <label for="connTempRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 </div>
                             </div>
 
@@ -955,7 +930,7 @@ $id = $_GET['edit'];
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
-                                        <button class="myBtn_multi">View Sample Edge Configuration</button>
+                                        <button class="myBtn_multi btn-link">View Sample</button>
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
@@ -969,36 +944,36 @@ $id = $_GET['edit'];
                                 </div>
                                 <div class="form-group">
                                     <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="<?php echo $rowForm['no_pin']; ?>" > 
                                     </div> 
-                                    <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
+                                    <label for="noPins" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Pins</b></label>
 
                                     <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="<?php echo $rowForm['pin_pitch']; ?>" > 
                                     </div> 
-                                    <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                    <label for="pinPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > 
                                     </div> 
-                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                    <label for="connVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
 
                                     <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="<?php echo $rowForm['conn_current_rating']; ?>" > 
                                     </div> 
-                                    <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                    <label for="connCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > 
                                     </div> 
-                                    <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                    <label for="connTempRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 </div>
                             </div> 
 
@@ -1008,7 +983,7 @@ $id = $_GET['edit'];
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
-                                        <button class="myBtn_multi">View Sample Winchestor Configuration</button>
+                                        <button class="myBtn_multi btn-link">View Sample</button>
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
@@ -1022,34 +997,34 @@ $id = $_GET['edit'];
                                 </div>
                                 <div class="form-group">
                                     <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="<?php echo $rowForm['no_pin']; ?>" > 
                                     </div> 
-                                    <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
+                                    <label for="noPins" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Pins</b></label>
                                     <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="<?php echo $rowForm['pin_pitch']; ?>" > 
                                     </div> 
-                                    <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                    <label for="pinPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > 
                                     </div> 
-                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                    <label for="connVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                     <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="<?php echo $rowForm['conn_current_rating']; ?>" > 
                                     </div> 
-                                    <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                    <label for="connCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connRack" class="col-lg-2 control-label">No. Wires Connected to Rack *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connRack" name="connRack" value="<?php echo $rowForm['no_wire_conn_rack']; ?>" > 
                                     </div> 
-                                    <label for="connRack" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
+                                    <label for="connRack" class="col-lg-2 control-label pull-left" style="text-align: left"><b></b></label>
                                 </div>
                             </div>  
 
@@ -1059,7 +1034,7 @@ $id = $_GET['edit'];
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
-                                        <button class="myBtn_multi">View Sample Wire Configuration</button>
+                                        <button class="myBtn_multi btn-link">View Sample</button>
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
@@ -1073,22 +1048,22 @@ $id = $_GET['edit'];
                                 </div>
                                 <div class="form-group">
                                     <label for="wireVoltRating" class="col-lg-2 control-label">Wire Voltage Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="wireVoltRating" name="wireVoltRating" value="<?php echo $rowForm['wire_volt_rating']; ?>" > 
                                     </div> 
-                                    <label for="wireVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                    <label for="wireVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                     <label for="wireCurrRating" class="col-lg-2 control-label">Wire Current Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="wireCurrRating" name="wireCurrRating" value="<?php echo $rowForm['wire_curr_rating']; ?>" > 
                                     </div> 
-                                    <label for="wireCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                    <label for="wireCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="wireTempRating" class="col-lg-2 control-label">Wire Temp Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="wireTempRating" name="wireTempRating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > 
                                     </div>
-                                    <label for="wireTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                    <label for="wireTempRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 </div>
                             </div> 
                             <?php } ?>
@@ -1106,7 +1081,7 @@ $id = $_GET['edit'];
                                             <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['ext_config_type']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
-                                    <button class="myBtn_multi">View External Chamber Configuration Configuration</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -1136,23 +1111,23 @@ $id = $_GET['edit'];
                             if ($checkExt !== "032003") { ?>
                             <div class="form-group" id="viewExternalDiv">
                                 <label for="interfaceVoltRating" class="col-lg-2 control-label">Interface Voltage Rating *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="<?php echo $rowForm['interface_volt_rating']; ?>" > 
                                 </div> 
-                                <label for="interfaceVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                <label for="interfaceVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                 <label for="interfaceCurrRating" class="col-lg-2 control-label">Interface Current Rating *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="interfaceCurrRating" name="interfaceCurrRating" value="<?php echo $rowForm['interface_current_rating']; ?>" > 
                                 </div> 
-                                <label for="interfaceCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                <label for="interfaceCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
                             </div>
                             <?php } ?>
 
                             <div class="pull-right">
-                                <button onclick="location.href = 'form_equipment_list.php'" type="button" id="backBtn">List</button>
+                                <button onclick="location.href = 'form_equipment_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
                             </div>
                             <div class="pull-right">
-                                <button type="submit" id="myBtn" class="btn btn-primary">Send</button>
+                                <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Send</button>
                             </div>
                             <div class="clearfix"></div>
                             <?php endwhile; ?>

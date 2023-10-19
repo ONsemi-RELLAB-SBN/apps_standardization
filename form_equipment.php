@@ -34,7 +34,7 @@ include 'form_template.php';
                 position: fixed;
                 bottom: 70px;
                 right: 30px;
-                z-index: 99;
+                /*z-index: 99;*/
                 font-size: 18px;
                 border: none;
                 outline: none;
@@ -42,7 +42,7 @@ include 'form_template.php';
                 color: white;
                 cursor: pointer;
                 padding: 15px;
-                border-radius: 4px;
+                border-radius: 5px;
                 
                 display: block;
                 min-width: 7.5rem;
@@ -57,7 +57,7 @@ include 'form_template.php';
                 position: fixed;
                 bottom: 25px;
                 right: 30px;
-                z-index: 99;
+                /*z-index: 99;*/
                 font-size: 18px;
                 border: none;
                 outline: none;
@@ -65,7 +65,7 @@ include 'form_template.php';
                 color: white;
                 cursor: pointer;
                 padding: 15px;
-                border-radius: 4px;
+                border-radius: 5px;
                 
                 display: block;
                 min-width: 7.5rem;
@@ -77,7 +77,7 @@ include 'form_template.php';
             }
 
             #myBtn:hover {
-                background-color: #17a2b8;
+                /*background-color: #17a2b8;*/
                 background-color: orange;
             }
             #backBtn:hover {
@@ -130,6 +130,7 @@ include 'form_template.php';
             <hr>
             <hr>
             <h1>Equipment Detail</h1>
+            <hr>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="main-box">
@@ -254,7 +255,7 @@ include 'form_template.php';
                                     </select>
                                 </div>
                                 <label for="mfgDate" class="col-lg-2 control-label">Equipment Mfg Date *</label>
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
                                     <input type="date" class="form-control" id="mfgDate" name="mfgDate" value="" required> 
                                 </div>
                             </div>
@@ -314,50 +315,50 @@ include 'form_template.php';
                             <h2>Capability</h2>
                             <div class="form-group">
                                 <label for="voltRating" class="col-lg-2 control-label">Voltage Rating *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="voltRating" name="voltRating" value="" required> 
+                                <div class="col-lg-1">
+                                    <input type="number" 0 class="form-control" id="voltRating" name="voltRating" value="" required> 
                                 </div> 
-                                <label for="voltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                <label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                 <label for="voltControl" class="col-lg-2 control-label">Voltage Control Accuracy *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="voltControl" name="voltControl" value="" required> 
                                 </div> 
-                                <label for="voltControl" class="col-lg-1 control-label pull-left" style="text-align: left"><b>%</b></label>
+                                <label for="voltControl" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="minTemp" class="col-lg-2 control-label">Min. Temperature *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="minTemp" name="minTemp" value="" required> 
                                 </div> 
-                                <label for="minTemp" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                <label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 <label for="maxTemp" class="col-lg-2 control-label">Max. Temperature *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="maxTemp" name="maxTemp" value="" required> 
                                 </div>
-                                <label for="maxTemp" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                <label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="minRh" class="col-lg-2 control-label">Min. RH *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="minRh" name="minRh" value="" required> 
                                 </div> 
-                                <label for="minRh" class="col-lg-1 control-label pull-left" style="text-align: left"><b>%</b></label>
+                                <label for="minRh" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label>
                                 <label for="maxRh" class="col-lg-2 control-label">Max. RH *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="maxRh" name="maxRh" value="" required> 
                                 </div> 
-                                <label for="maxRh" class="col-lg-1 control-label pull-left" style="text-align: left"><b>%</b></label>
+                                <label for="maxRh" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="heatDissipation" class="col-lg-2 control-label">Heat Dissipation *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="heatDissipation" name="heatDissipation" value="" required> 
                                 </div>
-                                <label for="heatDissipation" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Watt</b></label>
+                                <label for="heatDissipation" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Watt</b></label>
                                 <label for="tempFluctuation" class="col-lg-2 control-label">Temperature Fluctuation *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="tempFluctuation" name="tempFluctuation" value="" required>
-                                    <button class="myBtn_multi btn-link">View Sample Temperature Fluctuation</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -366,13 +367,13 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div>
-                                <label for="tempFluctuation" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                <label for="tempFluctuation" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="tempUniform" class="col-lg-2 control-label">Temperature Uniformity *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="tempUniform" name="tempUniform" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample Temperature Uniformity</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -381,11 +382,11 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="tempUniform" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                <label for="tempUniform" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 <label for="humidFluctuation" class="col-lg-2 control-label">Humidity Fluctuation *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="humidFluctuation" name="humidFluctuation" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample Humid Fluctuation</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -394,15 +395,15 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="humidFluctuation" class="col-lg-1 control-label pull-left" style="text-align: left"><b>%</b></label>
+                                <label for="humidFluctuation" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label>
                             </div>
 
                             <h2>Characteristic</h2>
                             <div class="form-group">
                                 <label for="noInterior" class="col-lg-2 control-label">No. Interior Zones (doors) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="noInterior" name="noInterior" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample No Interior Zone</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -411,18 +412,18 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div>
-                                <label for="noInterior" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Zone</b></label>
+                                <label for="noInterior" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Zone</b></label>
                                 <label for="extDimension" class="col-lg-2 control-label">External Dimension (W) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="extDimensionW" name="extDimensionW" value="" required> 
                                 </div>
-                                <label for="extDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="extDimensionW" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="intVolume" class="col-lg-2 control-label">Internal Volume *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="intVolume" name="intVolume" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample Internal Volume</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -431,12 +432,12 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="intVolume" class="col-lg-1 control-label pull-left" style="text-align: left"><b>L</b></label>
+                                <label for="intVolume" class="col-lg-2 control-label pull-left" style="text-align: left"><b>L</b></label>
                                 <label for="extDimension" class="col-lg-2 control-label">(D) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="extDimensionD" name="extDimensionD" value="" required> 
                                 </div>
-                                <label for="extDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="extDimensionD" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="boardOrientation" class="col-lg-2 control-label">Board Orientation*</label>
@@ -450,7 +451,7 @@ include 'form_template.php';
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
-                                    <button class="myBtn_multi btn-link">View Sample Board Orientation</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -460,9 +461,9 @@ include 'form_template.php';
                                     </div>
                                 </div>
                                 <label for="extDimension" class="col-lg-2 control-label">(H) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="extDimensionH" name="extDimensionH" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample External Dimension</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -471,7 +472,7 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div>
-                                <label for="extDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="extDimensionH" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="rackMaterial" class="col-lg-2 control-label">Rack Material *</label>
@@ -487,16 +488,16 @@ include 'form_template.php';
                                     </select>
                                 </div>
                                 <label for="intDimension" class="col-lg-2 control-label">Internal Dimension (W) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="intDimensionW" name="intDimensionW" value="" required> 
                                 </div> 
-                                <label for="intDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="intDimensionW" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="rackSlotPitch" class="col-lg-2 control-label">Rack Slot-to-Slot Pitch *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="rackSlotPitch" name="rackSlotPitch" value="" required>
-                                    <button class="myBtn_multi btn-link">View Sample Rack Slot-to-Slot Pitch</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -505,18 +506,18 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="rackSlotPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="rackSlotPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 <label for="intDimension" class="col-lg-2 control-label">(D) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="intDimensionD" name="intDimensionD" value="" required> 
                                 </div> 
-                                <label for="intDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="intDimensionD" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="rackSLotWidth" class="col-lg-2 control-label">Rack Slot Width *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="rackSLotWidth" name="rackSLotWidth" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample Rack Slot Width</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -525,11 +526,11 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="rackSLotWidth" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="rackSLotWidth" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 <label for="intDimension" class="col-lg-2 control-label">(H) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="intDimensionH" name="intDimensionH" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample Internal Dimension</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -538,25 +539,25 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="intDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="intDimensionH" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="eqptWeight" class="col-lg-2 control-label">Equipment Weight *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="eqptWeight" name="eqptWeight" value="" required> 
                                 </div> 
-                                <label for="eqptWeight" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Kg</b></label>
+                                <label for="eqptWeight" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Kg</b></label>
                                 <label for="rackDimension" class="col-lg-2 control-label">Rack Dimension (W) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="rackDimensionW" name="rackDimensionW" value="" required> 
                                 </div>
-                                <label for="rackDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="rackDimensionW" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="noMbSlot" class="col-lg-2 control-label">Number of motherboard slots *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="noMbSlot" name="noMbSlot" value="" required>
-                                    <button class="myBtn_multi btn-link">View Sample Motherboard Slots</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -565,18 +566,18 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="noMbSlot" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Slot</b></label>
+                                <label for="noMbSlot" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Slot</b></label>
                                 <label for="rackDimension" class="col-lg-2 control-label">(D) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="rackDimensionD" name="rackDimensionD" value="" required> 
                                 </div> 
-                                <label for="rackDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="rackDimensionD" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="maxPsBs" class="col-lg-2 control-label">Max number of power supplies per board slot *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="maxPsBs" name="maxPsBs" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample Power Supplies</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -585,11 +586,11 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="maxPsBs" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Slot</b></label>
+                                <label for="maxPsBs" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Slot</b></label>
                                 <label for="rackDimension" class="col-lg-2 control-label">(H) *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="rackDimensionH" name="rackDimensionH" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample Rack Dimension</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -598,13 +599,13 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="rackDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="rackDimensionH" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="maxPs" class="col-lg-2 control-label">Max number of power supplies for the entire Equipment *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="maxPs" name="maxPs" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample Power Supplies</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <!-- Modal content -->
                                         <div class="modal-content">
@@ -614,7 +615,7 @@ include 'form_template.php';
                                         </div>
                                     </div>
                                 </div> 
-                                <label for="maxPs" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Unit</b></label>
+                                <label for="maxPs" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Unit</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="airflow" class="col-lg-2 control-label">Airflow *</label>
@@ -628,7 +629,7 @@ include 'form_template.php';
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
-                                    <button class="myBtn_multi btn-link">View Sample Airflow</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -712,15 +713,15 @@ include 'form_template.php';
                             <h2>Utilities</h2>
                             <div class="form-group">
                                 <label for="voltagePhase" class="col-lg-2 control-label">Voltage/Phase/Current *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="voltagePhase" name="voltagePhase" value="" required> 
                                 </div> 
-                                <label for="voltagePhase" class="col-lg-1 control-label pull-left" style="text-align: left"><b>VAC</b></label>
+                                <label for="voltagePhase" class="col-lg-2 control-label pull-left" style="text-align: left"><b>VAC</b></label>
                                 <label for="phase" class="col-lg-2 control-label">Phase *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="phase" name="phase" value="" required> 
                                 </div> 
-                                <label for="phase" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Phase</b></label>
+                                <label for="phase" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Phase</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="exhaust" class="col-lg-2 control-label">Exhaust *</label>
@@ -813,7 +814,7 @@ include 'form_template.php';
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
-                                    <button class="myBtn_multi btn-link">View Sample Internal Chamber Configuration</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -878,7 +879,7 @@ include 'form_template.php';
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
-                                        <button class="myBtn_multi btn-link">View Sample Banana Configuration</button>
+                                        <button class="myBtn_multi btn-link">View Sample</button>
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
@@ -892,27 +893,27 @@ include 'form_template.php';
                                 </div>
                                 <div class="form-group">
                                     <label for="bananaJackHole" class="col-lg-2 control-label">No. Banana Jack Holes *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="bananaJackHole" name="bananaJackHole" value="" > 
                                     </div> 
-                                    <label for="bananaJackHole" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
+                                    <label for="bananaJackHole" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Pins</b></label>
                                     <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
                                     </div> 
-                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                    <label for="connVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
                                     </div> 
-                                    <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                    <label for="connCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
                                     <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="" > 
                                     </div> 
-                                    <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                    <label for="connTempRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 </div>
                             </div>
 
@@ -921,7 +922,7 @@ include 'form_template.php';
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
-                                        <button class="myBtn_multi btn-link">View Sample Edge Configuration</button>
+                                        <button class="myBtn_multi btn-link">View Sample</button>
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
@@ -935,36 +936,36 @@ include 'form_template.php';
                                 </div>
                                 <div class="form-group">
                                     <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="" > 
                                     </div> 
-                                    <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
+                                    <label for="noPins" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Pins</b></label>
 
                                     <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="" > 
                                     </div> 
-                                    <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                    <label for="pinPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
                                     </div> 
-                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                    <label for="connVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
 
                                     <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
                                     </div> 
-                                    <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                    <label for="connCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="" > 
                                     </div> 
-                                    <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                    <label for="connTempRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 </div>
                             </div> 
 
@@ -973,7 +974,7 @@ include 'form_template.php';
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
-                                        <button class="myBtn_multi btn-link">View Sample Winchestor Configuration</button>
+                                        <button class="myBtn_multi btn-link">View Sample</button>
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
@@ -987,34 +988,34 @@ include 'form_template.php';
                                 </div>
                                 <div class="form-group">
                                     <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="" > 
                                     </div> 
-                                    <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
+                                    <label for="noPins" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Pins</b></label>
                                     <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="" > 
                                     </div> 
-                                    <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                    <label for="pinPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
                                     </div> 
-                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                    <label for="connVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                     <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
                                     </div> 
-                                    <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                    <label for="connCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="connRack" class="col-lg-2 control-label">No. Wires Connected to Rack *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="connRack" name="connRack" value="" > 
                                     </div> 
-                                    <label for="connRack" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                    <label for="connRack" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 </div>
                             </div>  
 
@@ -1023,7 +1024,7 @@ include 'form_template.php';
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label"></label>
                                     <div class="col-lg-3">
-                                        <button class="myBtn_multi btn-link">View Sample Wire Configuration</button>
+                                        <button class="myBtn_multi btn-link">View Sample</button>
                                         <div  class="modal modal_multi">
                                             <div class="modal-content">
                                                 <span class="close close_multi">×</span>
@@ -1037,22 +1038,22 @@ include 'form_template.php';
                                 </div>
                                 <div class="form-group">
                                     <label for="wireVoltRating" class="col-lg-2 control-label">Wire Voltage Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="wireVoltRating" name="wireVoltRating" value="" > 
                                     </div> 
-                                    <label for="wireVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                    <label for="wireVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                     <label for="wireCurrRating" class="col-lg-2 control-label">Wire Current Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="wireCurrRating" name="wireCurrRating" value="" > 
                                     </div> 
-                                    <label for="wireCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                    <label for="wireCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
                                 </div>
                                 <div class="form-group">
                                     <label for="wireTempRating" class="col-lg-2 control-label">Wire Temp Rating *</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-1">
                                         <input type="number" step="0.001" class="form-control" id="wireTempRating" name="wireTempRating" value="" > 
                                     </div>
-                                    <label for="wireTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                    <label for="wireTempRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
                                 </div>
                             </div> 
 
@@ -1069,7 +1070,7 @@ include 'form_template.php';
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
-                                    <button class="myBtn_multi btn-link">View External Chamber Configuration Configuration</button>
+                                    <button class="myBtn_multi btn-link">View Sample</button>
                                     <div  class="modal modal_multi">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
@@ -1096,15 +1097,15 @@ include 'form_template.php';
 
                             <div class="form-group" id="viewExternalDiv">
                                 <label for="interfaceVoltRating" class="col-lg-2 control-label">Interface Voltage Rating *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="" > 
                                 </div> 
-                                <label for="interfaceVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
+                                <label for="interfaceVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                 <label for="interfaceCurrRating" class="col-lg-2 control-label">Interface Current Rating *</label>
-                                <div class="col-lg-2">
+                                <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="interfaceCurrRating" name="interfaceCurrRating" value="" > 
                                 </div> 
-                                <label for="interfaceCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                <label for="interfaceCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
                             </div>
 
                             <div class="pull-right">
