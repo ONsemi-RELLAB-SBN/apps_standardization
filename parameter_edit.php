@@ -112,7 +112,7 @@ if (isset($_POST['update_parameter'])) {
                                 </div>
                                 <div class="form-group">
                                     <label for="code" class="col-lg-3 form-label"><b>Parameter Code</b></label>
-                                    <input type="text" class="col-lg-4 form-control-lg" placeholder="Enter parameter code" name="parameter_price" class="box", value='<?php echo $row['code']; ?>' readonly>
+                                    <input type="text" class="col-lg-4 form-control-lg" placeholder="Enter parameter code" name="parameter_code" class="box", value='<?php echo $row['code']; ?>' readonly>
                                 </div>
                                 <div class="form-group">
                                     <label for="image" class="col-lg-3 form-label"><b>Image</b></label>
