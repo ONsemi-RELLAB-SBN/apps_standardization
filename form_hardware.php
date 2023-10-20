@@ -134,7 +134,7 @@ include 'form_template.php';
                 <div class="col-lg-12">
                     <div class="main-box">
                         <h2>General</h2>
-                        <form id="add_equipment_form" class="form-horizontal" role="form" action="crud_add_equipment.php" method="get">
+                        <form id="add_hardware_form" class="form-horizontal" role="form" action="crud_add_hardware.php" method="get">
                             <div class="form-group">
                                 <label for="labLocation" class="col-lg-2 control-label">Lab Location *</label>
                                 <div class="col-lg-3">
@@ -188,11 +188,11 @@ include 'form_template.php';
                                 </div>
                             </div>
 
-                            <h2>Equipment Identity</h2>
+                            <h2>Hardware Identity</h2>
                             <div class="form-group">
-                                <label for="eqptId" class="col-lg-2 control-label">Equipment ID *</label>
+                                <label for="hwType" class="col-lg-2 control-label">Hardware Type *</label>
                                 <div class="col-lg-3">
-                                    <select id="eqptId" name="eqptId" class="js-example-basic-single" style="width: 100%" required>
+                                    <select id="hwType" name="hwType" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
@@ -202,32 +202,7 @@ include 'form_template.php';
                                         <?php endwhile; ?>
                                     </select>
                                 </div>
-                                <label for="dedicated" class="col-lg-2 control-label">Dedicated/Share *</label>
-                                <div class="col-lg-3">
-                                    <select id="dedicated" name="dedicated" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="relTest" class="col-lg-2 control-label">Rel Test (Multiselect) *</label>
-                                <div class="col-lg-3">
-                                    <select id="relTest" name="relTest[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%" required>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="manufacturer" class="col-lg-2 control-label">Equipment Manufacturer *</label>
+                                <label for="manufacturer" class="col-lg-2 control-label">Manufacturer *</label>
                                 <div class="col-lg-3">
                                     <select id="manufacturer" name="manufacturer" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
@@ -241,73 +216,9 @@ include 'form_template.php';
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="model" class="col-lg-2 control-label">Equipment Model *</label>
+                                <label for="assemblyNo" class="col-lg-2 control-label">Assembly Number *</label>
                                 <div class="col-lg-3">
-                                    <select id="model" name="model" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '010' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="mfgDate" class="col-lg-2 control-label">Equipment Mfg Date *</label>
-                                <div class="col-lg-2">
-                                    <input type="date" class="form-control" id="mfgDate" name="mfgDate" value="" required> 
-                                </div>
-                            </div>
-
-                            <script>
-                                function updateToField() {
-                                    var newTransferDropdown = document.getElementById('newTransfer');
-                                    var toField = document.getElementById('to');
-                                    var transField = document.getElementById('transfer');
-
-                                    if (newTransferDropdown.value === '013001') {
-                                        toField.readOnly = true;
-                                        toField.required = false;
-                                        $('#to').val('');
-                                        transField.style.display = 'none';
-                                    } else {
-                                        toField.readOnly = false;
-                                        toField.required = true;
-                                        transField.style.display = 'block';
-                                    }
-                                }
-                            </script>
-
-                            <div class="form-group">
-                                <label for="assetNo" class="col-lg-2 control-label">Equipment Asset No *</label>
-                                <div class="col-lg-3">
-                                    <input type="text" class="form-control" id="assetNo" name="assetNo" placeholder="Asset Number" value="" required> 
-                                </div>
-                                <label for="newTransfer" class="col-lg-2 control-label">New/Transfer Equipment *</label>
-                                <div class="col-lg-3">
-                                    <select id="newTransfer" name="newTransfer" class="js-example-basic-single" style="width: 100%" onchange="updateToField()" required >
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '013' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group" style="display: none;" id="transfer">
-                                <label for="to" class="col-lg-7 control-label">From? *</label>
-                                <div class="col-lg-3">
-                                    <select id="to" name="to" class="js-example-basic-single" style="width: 100%" readonly required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '014' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
+                                    <input type="text" class="form-control" id="assemblyNo" name="assemblyNo" placeholder="Asset Number" value="" required> 
                                 </div>
                             </div>
 
@@ -318,130 +229,21 @@ include 'form_template.php';
                                     <input type="number" 0 class="form-control" id="voltRating" name="voltRating" value="" required> 
                                 </div> 
                                 <label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
-                                <label for="voltControl" class="col-lg-2 control-label">Voltage Control Accuracy *</label>
+                                <label for="currRating" class="col-lg-2 control-label">Current Rating *</label>
                                 <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="voltControl" name="voltControl" value="" required> 
+                                    <input type="number" step="0.001" class="form-control" id="currRating" name="currRating" value="" required> 
                                 </div> 
-                                <label for="voltControl" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label>
+                                <label for="currRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label>
                             </div>
                             <div class="form-group">
-                                <label for="minTemp" class="col-lg-2 control-label">Min. Temperature *</label>
+                                <label for="tempRating" class="col-lg-2 control-label">Temp Rating *</label>
                                 <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="minTemp" name="minTemp" value="" required> 
+                                    <input type="number" step="0.001" class="form-control" id="tempRating" name="tempRating" value="" required> 
                                 </div> 
-                                <label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                <label for="maxTemp" class="col-lg-2 control-label">Max. Temperature *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="maxTemp" name="maxTemp" value="" required> 
-                                </div>
-                                <label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="minRh" class="col-lg-2 control-label">Min. RH *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="minRh" name="minRh" value="" required> 
-                                </div> 
-                                <label for="minRh" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label>
-                                <label for="maxRh" class="col-lg-2 control-label">Max. RH *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="maxRh" name="maxRh" value="" required> 
-                                </div> 
-                                <label for="maxRh" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="heatDissipation" class="col-lg-2 control-label">Heat Dissipation *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="heatDissipation" name="heatDissipation" value="" required> 
-                                </div>
-                                <label for="heatDissipation" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Watt</b></label>
-                                <label for="tempFluctuation" class="col-lg-2 control-label">Temperature Fluctuation *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="tempFluctuation" name="tempFluctuation" value="" required>
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/001.png" alt="image" style="width:90%;max-width:800px;">
-                                            <p>Sample Temperature Fluctuation Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <label for="tempFluctuation" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="tempUniform" class="col-lg-2 control-label">Temperature Uniformity *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="tempUniform" name="tempUniform" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/002.png" alt="image" style="width:90%;max-width:800px;">
-                                            <p>Sample Temperature Uniformity Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="tempUniform" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                <label for="humidFluctuation" class="col-lg-2 control-label">Humidity Fluctuation *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="humidFluctuation" name="humidFluctuation" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/003.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample Humid Fluctuation Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="humidFluctuation" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label>
-                            </div>
-
-                            <h2>Characteristic</h2>
-                            <div class="form-group">
-                                <label for="noInterior" class="col-lg-2 control-label">No. Interior Zones (doors) *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="noInterior" name="noInterior" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/006.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample No Interior Zone Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <label for="noInterior" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Zone</b></label>
-                                <label for="extDimension" class="col-lg-2 control-label">External Dimension (W) *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="extDimensionW" name="extDimensionW" value="" required> 
-                                </div>
-                                <label for="extDimensionW" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="intVolume" class="col-lg-2 control-label">Internal Volume *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="intVolume" name="intVolume" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/008.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample Internal Volume Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="intVolume" class="col-lg-2 control-label pull-left" style="text-align: left"><b>L</b></label>
-                                <label for="extDimension" class="col-lg-2 control-label">(D) *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="extDimensionD" name="extDimensionD" value="" required> 
-                                </div>
-                                <label for="extDimensionD" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="boardOrientation" class="col-lg-2 control-label">Board Orientation*</label>
+                                <label for="tempRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
+                                <label for="sprtStress" class="col-lg-2 control-label">Supported Stresses *</label>
                                 <div class="col-lg-3">
-                                    <select id="boardOrientation" name="boardOrientation" class="js-example-basic-single" style="width: 100%" required>
+                                    <select id="sprtStress" name="sprtStress" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
@@ -450,665 +252,218 @@ include 'form_template.php';
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/009.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample Board Orientation Description</p>
-                                        </div>
-                                    </div>
                                 </div>
-                                <label for="extDimension" class="col-lg-2 control-label">(H) *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="extDimensionH" name="extDimensionH" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/004.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample External Dimension Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <label for="extDimensionH" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
-                                <label for="rackMaterial" class="col-lg-2 control-label">Rack Material *</label>
+                                <label for="daqCapability" class="col-lg-2 control-label">DAQ Monitoring Capability *</label>
                                 <div class="col-lg-3">
-                                    <select id="rackMaterial" name="rackMaterial" class="js-example-basic-single" style="width: 100%" required>
+                                    <select id="daqCapability" name="daqCapability" class="js-example-basic-single" style="width: 100%" required>
                                         <option value="" selected=""></option>
                                         <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '016' ORDER BY code ASC";
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
                                 </div>
-                                <label for="intDimension" class="col-lg-2 control-label">Internal Dimension (W) *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="intDimensionW" name="intDimensionW" value="" required> 
-                                </div> 
-                                <label for="intDimensionW" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
+
+                            <h2>Characteristic</h2>
                             <div class="form-group">
-                                <label for="rackSlotPitch" class="col-lg-2 control-label">Rack Slot-to-Slot Pitch *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="rackSlotPitch" name="rackSlotPitch" value="" required>
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/010.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample Rack Slot-to-Slot Pitch Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="rackSlotPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                <label for="intDimension" class="col-lg-2 control-label">(D) *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="intDimensionD" name="intDimensionD" value="" required> 
-                                </div> 
-                                <label for="intDimensionD" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="rackSLotWidth" class="col-lg-2 control-label">Rack Slot Width *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="rackSLotWidth" name="rackSLotWidth" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/011.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample Rack Slot Width Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="rackSLotWidth" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                <label for="intDimension" class="col-lg-2 control-label">(H) *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="intDimensionH" name="intDimensionH" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/005.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample Internal Dimension Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="intDimensionH" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="eqptWeight" class="col-lg-2 control-label">Equipment Weight *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="eqptWeight" name="eqptWeight" value="" required> 
-                                </div> 
-                                <label for="eqptWeight" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Kg</b></label>
-                                <label for="rackDimension" class="col-lg-2 control-label">Rack Dimension (W) *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="rackDimensionW" name="rackDimensionW" value="" required> 
+                                <label for="pcbMaterial" class="col-lg-2 control-label">PCB Material *</label>
+                                <div class="col-lg-3">
+                                    <select id="pcbMaterial" name="pcbMaterial" class="js-example-basic-single" style="width: 100%" required>
+                                        <option value="" selected=""></option>
+                                        <?php
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
+                                        $resSite = mysqli_query($con, $sqlDdSite);
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <?php endwhile; ?>
+                                    </select>
                                 </div>
-                                <label for="rackDimensionW" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="mbDimensionL" class="col-lg-2 control-label">Motherboard Dimension (L) *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="mbDimensionL" name="mbDimensionL" value="" required> 
+                                </div>
+                                <label for="mbDimensionL" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
-                                <label for="noMbSlot" class="col-lg-2 control-label">Number of motherboard slots *</label>
+                                <label for="frameMaterial" class="col-lg-2 control-label">Frame Material *</label>
+                                <div class="col-lg-3">
+                                    <select id="frameMaterial" name="frameMaterial" class="js-example-basic-single" style="width: 100%" required>
+                                        <option value="" selected=""></option>
+                                        <?php
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
+                                        $resSite = mysqli_query($con, $sqlDdSite);
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <?php endwhile; ?>
+                                    </select>
+                                </div>
+                                <label for="mbDimensionW" class="col-lg-2 control-label">(W) *</label>
                                 <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="noMbSlot" name="noMbSlot" value="" required>
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/012.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample Motherboard Slots Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="noMbSlot" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Slot</b></label>
-                                <label for="rackDimension" class="col-lg-2 control-label">(D) *</label>
-                                <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="rackDimensionD" name="rackDimensionD" value="" required> 
-                                </div> 
-                                <label for="rackDimensionD" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                    <input type="number" step="0.001" class="form-control" id="mbDimensionW" name="mbDimensionW" value="" required> 
+                                </div>
+                                <label for="mbDimensionW" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
+                            <div class="form-group">
+                                <label for="boardCoat" class="col-lg-2 control-label">Board Coating *</label>
+                                <div class="col-lg-3">
+                                    <select id="boardCoat" name="boardCoat" class="js-example-basic-single" style="width: 100%" required>
+                                        <option value="" selected=""></option>
+                                        <?php
+                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
+                                        $resSite = mysqli_query($con, $sqlDdSite);
+                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <?php endwhile; ?>
+                                    </select>
+                                </div>
+                                <label for="mbDimensionT" class="col-lg-2 control-label">(T) *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="mbDimensionT" name="mbDimensionT" value="" required> 
+                                </div>
+                                <label for="mbDimensionT" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="noLayers" class="col-lg-2 control-label">Number of Layers *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="noLayers" name="noLayers" value="" required> 
+                                </div> 
+                                <label for="noLayers" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            
+                            <h4>Motherboard to DUT interface</h4>
+                            <div class="form-group">
+                                <label for="uni" class="col-lg-2 control-label">Universal/dedicated *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="uni" name="uni" value="" required> 
+                                </div> 
+                                <label for="uni" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                                <label for="socketType" class="col-lg-2 control-label">Socket/connector type *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="socketType" name="socketType" value="" required> 
+                                </div> 
+                                <label for="socketType" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="socketQty" class="col-lg-2 control-label">Socket/connector qty *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="socketQty" name="socketQty" value="" required> 
+                                </div> 
+                                <label for="socketQty" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Kg</b></label>
+                                <label for="socketPinQty" class="col-lg-2 control-label">Socket/connector pin qty *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="socketPinQty" name="socketPinQty" value="" required> 
+                                </div>
+                                <label for="socketPinQty" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="socketPitch" class="col-lg-2 control-label">Socket/connector pin pitch *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="socketPitch" name="socketPitch" value="" required> 
+                                </div> 
+                                <label for="socketPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Kg</b></label>
+                                <label for="sptPackage" class="col-lg-2 control-label">Supported cards/packages *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="sptPackage" name="sptPackage" value="" required> 
+                                </div>
+                                <label for="sptPackage" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            
+                            <h4>Load Cards</h4>
+                            <div class="form-group">
+                                <label for="maxCardQty" class="col-lg-2 control-label">Max load card qty *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="maxCardQty" name="maxCardQty" value="" required>
+                                </div> 
+                                <label for="maxCardQty" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Slot</b></label>
+                                <label for="loadPinQty" class="col-lg-2 control-label">Load card pin qty *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="loadPinQty" name="loadPinQty" value="" required> 
+                                </div> 
+                                <label for="loadPinQty" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="loadPinPitch" class="col-lg-2 control-label">Load card pin pitch *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="loadPinPitch" name="loadPinPitch" value="" required>
+                                </div> 
+                                <label for="loadPinPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Slot</b></label>
+                            </div>
+                            
+                            <h4>Program Cards</h4>
+                            <div class="form-group">
+                                <label for="maxCard" class="col-lg-2 control-label">Max program card qty *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="maxCard" name="maxCard" value="" required>
+                                </div> 
+                                <label for="maxCard" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Slot</b></label>
+                                <label for="cardQty" class="col-lg-2 control-label">Program card pin qty *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="cardQty" name="cardQty" value="" required> 
+                                </div> 
+                                <label for="cardQty" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardPinPitch" class="col-lg-2 control-label">Program card pin pitch *</label>
+                                <div class="col-lg-1">
+                                    <input type="number" step="0.001" class="form-control" id="cardPinPitch" name="cardPinPitch" value="" required>
+                                </div> 
+                                <label for="cardPinPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Slot</b></label>
+                            </div>
+                            
+                            <h4>Motherboard to chamber interface</h4>
                             <div class="form-group">
                                 <label for="maxPsBs" class="col-lg-2 control-label">Max number of power supplies per board slot *</label>
                                 <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="maxPsBs" name="maxPsBs" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/013.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample Power Supplies Description</p>
-                                        </div>
-                                    </div>
                                 </div> 
                                 <label for="maxPsBs" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Slot</b></label>
                                 <label for="rackDimension" class="col-lg-2 control-label">(H) *</label>
                                 <div class="col-lg-1">
                                     <input type="number" step="0.001" class="form-control" id="rackDimensionH" name="rackDimensionH" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/007.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample Rack Dimension Description</p>
-                                        </div>
-                                    </div>
                                 </div> 
                                 <label for="rackDimensionH" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
                             <div class="form-group">
-                                <label for="maxPs" class="col-lg-2 control-label">Max number of power supplies for the entire Equipment *</label>
+                                <label for="connType" class="col-lg-2 control-label">Connector Type *</label>
                                 <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="maxPs" name="maxPs" value="" required> 
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div  class="modal modal_multi">
-                                        <!-- Modal content -->
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/014.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample Power Supplies Description</p>
-                                        </div>
-                                    </div>
+                                    <input type="number" step="0.001" class="form-control" id="connType" name="connType" value="" required> 
                                 </div> 
-                                <label for="maxPs" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Unit</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="airflow" class="col-lg-2 control-label">Airflow *</label>
-                                <div class="col-lg-3">
-                                    <select id="airflow" name="airflow" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '017' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/015.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample Airflow Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <h2>Safety</h2>
-                            <div class="form-group">
-                                <label for="tempProtection1" class="col-lg-2 control-label">Temperature Protection 1 *</label>
-                                <div class="col-lg-3">
-                                    <select id="tempProtection1" name="tempProtection1" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="tempProtection2" class="col-lg-2 control-label">Temperature Protection 2 *</label>
-                                <div class="col-lg-3">
-                                    <select id="tempProtection2" name="tempProtection2" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="tempThermostat3" class="col-lg-2 control-label">Temperature Protection / Thermostat 3 *</label>
-                                <div class="col-lg-3">
-                                    <select id="tempThermostat3" name="tempThermostat3" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="smokeDetector" class="col-lg-2 control-label">Smoke Detector/Alarm *</label>
-                                <div class="col-lg-3">
-                                    <select id="smokeDetector" name="smokeDetector" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="emo" class="col-lg-2 control-label">EMO button *</label>
-                                <div class="col-lg-3">
-                                    <select id="emo" name="emo" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label class="col-lg-2 control-label"></label>
-                                <div class="col-lg-3"></div>
-                            </div>
-
-                            <h2>Utilities</h2>
-                            <div class="form-group">
-                                <label for="voltagePhase" class="col-lg-2 control-label">Voltage/Phase/Current *</label>
+                                <label for="connType" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Unit</b></label>
+                                <label for="noPins" class="col-lg-2 control-label">Number of pins *</label>
                                 <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="voltagePhase" name="voltagePhase" value="" required> 
+                                    <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="" required> 
                                 </div> 
-                                <label for="voltagePhase" class="col-lg-2 control-label pull-left" style="text-align: left"><b>VAC</b></label>
-                                <label for="phase" class="col-lg-2 control-label">Phase *</label>
+                                <label for="noPins" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Unit</b></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="pinPitch" class="col-lg-2 control-label">Pin pitch *</label>
                                 <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="phase" name="phase" value="" required> 
+                                    <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="" required> 
                                 </div> 
-                                <label for="phase" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Phase</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="exhaust" class="col-lg-2 control-label">Exhaust *</label>
-                                <div class="col-lg-3">
-                                    <select id="exhaust" name="exhaust" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="diWater" class="col-lg-2 control-label">DI Water *</label>
-                                <div class="col-lg-3">
-                                    <select id="diWater" name="diWater" class="js-example-basic-single" style="width: 100%" onchange="updateToFieldWater()" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '029' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <script>
-                                function updateToFieldWater() {
-                                    var diWaterDropdown = document.getElementById('diWater');
-                                    var waterField = document.getElementById('waterTopup');
-                                    var topapField = document.getElementById('topup');
-
-                                    if (diWaterDropdown.value !== '029003') {
-                                        waterField.readOnly = true;
-                                        waterField.required = false;
-                                        topapField.style.display = 'none';
-                                    } else {
-                                        waterField.readOnly = false;
-                                        waterField.required = true;
-                                        topapField.style.display = 'block';
-                                    }
-                                }
-                            </script>
-
-                            <div class="form-group" style="display: none;" id="topup">
-                                <label class="col-lg-2 control-label"></label>
-                                <div class="col-lg-3"></div>
-                                <label for="waterTopup" class="col-lg-2 control-label">Water Top-up System *</label>
-                                <div class="col-lg-3">
-                                    <select id="waterTopup" name="waterTopup" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <h2>DAQ</h2>
-                            <div class="form-group">
-                                <label for="daq" class="col-lg-2 control-label">DAQ (Realtime Leakage Monitoring) *</label>
-                                <div class="col-lg-3">
-                                    <select id="daq" name="daq" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <h2>Internal Chamber Configuration</h2>
-                            <div class="form-group">
-                                <label for="intConfigType" class="col-lg-2 control-label">Configuration Type *</label>
-                                <div class="col-lg-3">
-                                    <select id="intConfigType" name="intConfigType" class="js-example-basic-single" style="width: 100%" onchange="updateDiv()" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '031' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/016.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample Internal Chamber Configuration Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <script>
-                                function updateDiv() {
-                                    var dropdown = document.getElementById('intConfigType');
-                                    var bananaDiv = document.getElementById('BananaDiv');
-                                    var edgeDiv = document.getElementById('EdgeDiv');
-                                    var winDiv = document.getElementById('WinchestorDiv');
-                                    var wireDiv = document.getElementById('WireDiv');
-                                    var selectedValue = dropdown.value;
-
-                                    $('#bananaJackHole').val("");
-                                    $('#connVoltRating').val("");
-                                    $('#connCurrRating').val("");
-                                    $('#connTempRating').val("");
-                                    $('#noPins').val("");
-                                    $('#pinPitch').val("");
-                                    $('#connRack').val("");
-                                    $('#wireVoltRating').val("");
-                                    $('#wireCurrRating').val("");
-                                    $('#wireTempRating').val("");
-
-                                    if (selectedValue === '031001') {
-                                        bananaDiv.style.display = 'block';
-                                        edgeDiv.style.display = 'none';
-                                        winDiv.style.display = 'none';
-                                        wireDiv.style.display = 'none';
-                                    } else if (selectedValue === '031002') {
-                                        bananaDiv.style.display = 'none';
-                                        edgeDiv.style.display = 'block';
-                                        winDiv.style.display = 'none';
-                                        wireDiv.style.display = 'none';
-                                    } else if (selectedValue === '031003') {
-                                        bananaDiv.style.display = 'none';
-                                        edgeDiv.style.display = 'none';
-                                        winDiv.style.display = 'block';
-                                        wireDiv.style.display = 'none';
-                                    } else if (selectedValue === '031004') {
-                                        bananaDiv.style.display = 'none';
-                                        edgeDiv.style.display = 'none';
-                                        winDiv.style.display = 'none';
-                                        wireDiv.style.display = 'block';
-                                    } else {
-                                        bananaDiv.style.display = 'none';
-                                        edgeDiv.style.display = 'none';
-                                        winDiv.style.display = 'none';
-                                        wireDiv.style.display = 'none';
-                                    }
-                                }
-                            </script>
-
-                            <!--Banana-->
-                            <div class="form-group" name="BananaDiv" id="BananaDiv" style="display: none;">
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3">
-                                        <button class="myBtn_multi btn-link">View Sample</button>
-                                        <div  class="modal modal_multi">
-                                            <div class="modal-content">
-                                                <span class="close close_multi">×</span>
-                                                <img id="myImg" src="image/reference/017.png" alt="Snow" style="width:90%;max-width:800px;">
-                                                <p>Sample Banana Configuration Description</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="bananaJackHole" class="col-lg-2 control-label">No. Banana Jack Holes *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="bananaJackHole" name="bananaJackHole" value="" > 
-                                    </div> 
-                                    <label for="bananaJackHole" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Pins</b></label>
-                                    <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
-                                    </div> 
-                                    <label for="connVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
-                                    </div> 
-                                    <label for="connCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
-                                    <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="" > 
-                                    </div> 
-                                    <label for="connTempRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                </div>
-                            </div>
-
-                            <!--Edge Connector-->
-                            <div class="form-group" name="EdgeDiv" id="EdgeDiv" style="display: none;">
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3">
-                                        <button class="myBtn_multi btn-link">View Sample</button>
-                                        <div  class="modal modal_multi">
-                                            <div class="modal-content">
-                                                <span class="close close_multi">×</span>
-                                                <img id="myImg" src="image/reference//017.png" alt="Snow" style="width:90%;max-width:800px;">
-                                                <p>Sample Edge Configuration Description</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="" > 
-                                    </div> 
-                                    <label for="noPins" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Pins</b></label>
-
-                                    <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="" > 
-                                    </div> 
-                                    <label for="pinPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
-                                    </div> 
-                                    <label for="connVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
-
-                                    <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
-                                    </div> 
-                                    <label for="connCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="" > 
-                                    </div> 
-                                    <label for="connTempRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                </div>
-                            </div> 
-
-                            <!--Winchestor-->
-                            <div class="form-group" name="WinchestorDiv" id="WinchestorDiv" style="display: none;">
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3">
-                                        <button class="myBtn_multi btn-link">View Sample</button>
-                                        <div  class="modal modal_multi">
-                                            <div class="modal-content">
-                                                <span class="close close_multi">×</span>
-                                                <img id="myImg" src="image/reference/018.png" alt="Snow" style="width:90%;max-width:800px;">
-                                                <p>Sample Winchestor Configuration Description</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="" > 
-                                    </div> 
-                                    <label for="noPins" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Pins</b></label>
-                                    <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="" > 
-                                    </div> 
-                                    <label for="pinPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > 
-                                    </div> 
-                                    <label for="connVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
-                                    <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > 
-                                    </div> 
-                                    <label for="connCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="connRack" class="col-lg-2 control-label">No. Wires Connected to Rack *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="connRack" name="connRack" value="" > 
-                                    </div> 
-                                    <label for="connRack" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                </div>
-                            </div>  
-
-                            <!--Wire-->
-                            <div class="form-group" name="WireDiv" id="WireDiv" style="display: none;">
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3">
-                                        <button class="myBtn_multi btn-link">View Sample</button>
-                                        <div  class="modal modal_multi">
-                                            <div class="modal-content">
-                                                <span class="close close_multi">×</span>
-                                                <img id="myImg" src="image/reference/019.png" alt="Snow" style="width:90%;max-width:800px;">
-                                                <p>Sample Wire Configuration Description</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="wireVoltRating" class="col-lg-2 control-label">Wire Voltage Rating *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="wireVoltRating" name="wireVoltRating" value="" > 
-                                    </div> 
-                                    <label for="wireVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
-                                    <label for="wireCurrRating" class="col-lg-2 control-label">Wire Current Rating *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="wireCurrRating" name="wireCurrRating" value="" > 
-                                    </div> 
-                                    <label for="wireCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="wireTempRating" class="col-lg-2 control-label">Wire Temp Rating *</label>
-                                    <div class="col-lg-1">
-                                        <input type="number" step="0.001" class="form-control" id="wireTempRating" name="wireTempRating" value="" > 
-                                    </div>
-                                    <label for="wireTempRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                </div>
-                            </div> 
-
-                            <h2>External Chamber Configuration</h2>
-                            <div class="form-group">
-                                <label for="extConfigType" class="col-lg-2 control-label">Configuration Type *</label>
-                                <div class="col-lg-3">
-                                    <select id="extConfigType" name="extConfigType" class="js-example-basic-single" style="width: 100%" onchange="updateView()" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '032' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                    <button class="myBtn_multi btn-link">View Sample</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/020.png" alt="Snow" style="width:90%;max-width:800px;">
-                                            <p>Sample External Chamber Configuration Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <script>
-                                function updateView() {
-                                    var dd = document.getElementById('extConfigType');
-                                    var extDiv = document.getElementById('viewExternalDiv');
-                                    var selectedValue = dd.value;
-
-                                    if (selectedValue === '032003') {
-                                        extDiv.style.display = 'none';
-                                    } else {
-                                        extDiv.style.display = 'block';
-                                    }
-                                }
-                            </script>
-
-                            <div class="form-group" id="viewExternalDiv">
-                                <label for="interfaceVoltRating" class="col-lg-2 control-label">Interface Voltage Rating *</label>
+                                <label for="pinPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Unit</b></label>
+                                <label for="edgeThick" class="col-lg-2 control-label">Edgefinger thickness *</label>
                                 <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="" > 
+                                    <input type="number" step="0.001" class="form-control" id="edgeThick" name="edgeThick" value="" required> 
                                 </div> 
-                                <label for="interfaceVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
-                                <label for="interfaceCurrRating" class="col-lg-2 control-label">Interface Current Rating *</label>
+                                <label for="edgeThick" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Unit</b></label>
+                            </div>
+                            
+                            <h2>Capacity</h2>
+                            <div class="form-group">
+                                <label for="maxDutMb" class="col-lg-2 control-label">Max DUT qty per motherboard *</label>
                                 <div class="col-lg-1">
-                                    <input type="number" step="0.001" class="form-control" id="interfaceCurrRating" name="interfaceCurrRating" value="" > 
+                                    <input type="number" step="0.001" class="form-control" id="maxDutMb" name="maxDutMb" value="" required> 
                                 </div> 
-                                <label for="interfaceCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label>
+                                <label for="maxDutMb" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label>
                             </div>
 
                             <div class="pull-right">
-                                <button onclick="location.href = 'form_equipment_list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+                                <button onclick="location.href = 'form_hardware_list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
                             </div>
                             <div class="pull-right">
                                 <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Send</button>
