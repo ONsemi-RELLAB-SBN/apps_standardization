@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SAMPLE STANDARD</title>
+        <meta name="description" content="">
+        <meta name="author" content="Ayep">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+
+        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/skeleton.css">
+
+        <!--<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="sample-form">
+<!--            <div class="row">
+                <div class="one-half column">
+                    <h4>Parameter Master List</h4>
+                    <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+                </div>
+            </div>-->
+            <div class="card">
+                <h4>Parameter Master</h4>
+                <label class="input">
+                    <input class="input__field" type="text" placeholder="Parameter Name" />
+                    <span class="input__label">Parameter Name</span>
+                </label>
+                <label class="input">
+                    <input class="input__field" type="text" placeholder="Parameter Code" />
+                    <span class="input__label">Parameter Code</span>
+                </label>
+                <label class="input">
+                    <input class="input__field" type="text" placeholder=" " />
+                    <span class="input__label">Image</span>
+                </label>
+                <div class="button-group">
+                    <button><i class='bx bx-plus-circle bx-fw'></i>Add Parameter</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </div>
+            <table class="u-full-width">
+                <thead>
+                    <tr>
+                        <th>Parameter Name</th>
+                        <th>Parameter Code</th>
+                        <th>Link</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dave Gamache</td>
+                        <td>26</td>
+                        <td>Male</td>
+                        <td>Male</td>
+                        <td>
+                            <a href="parameter_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
+                            <a href="parameter_detail.php?update=<?php echo $row_slides['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span><i class='bx bx-list-plus bx-fw' ></i> ADD DETAIL </a>
+                            <a href="parameter.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dwayne Johnson</td>
+                        <td>42</td>
+                        <td>Male</td>
+                        <td>Male</td>
+                        <td>
+                            <a href="parameter_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span><i class='bx bxs-pencil bx-fw'></i> EDIT </a>
+                            <a href="parameter_detail.php?update=<?php echo $row_slides['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span><i class='bx bx-list-plus bx-fw'></i> ADD DETAIL </a>
+                            <a href="parameter.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span><i class='bx bxs-trash bx-fw'></i> DELETE </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
