@@ -219,7 +219,8 @@ include 'form_template.php';
                             <div class="form-group">
                                 <label for="relTest" class="col-lg-2 control-label">Rel Test (Multiselect) *</label>
                                 <div class="col-lg-3">
-                                    <select id="relTest" name="relTest[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%" required>
+                                    <select name="relTest[]" id="relTest" multiple multiselect-search="true" multiselect-select-all="false" style="width:100%" required>
+                                    <!--<select id="relTest" name="relTest[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%" required>-->
                                     <?php
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
@@ -1162,5 +1163,6 @@ include 'form_template.php';
                 }
             };
         </script>
+        <script src="js/multiselect-dropdown.js" ></script>
     </body>
 </html>

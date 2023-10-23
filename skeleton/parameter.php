@@ -90,19 +90,19 @@ if (isset($_GET['delete'])) {
             <hr>
             <div class="card">
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
-                    <!--<h4>Parameter Master</h4>-->
-                    <h2>Parameter Master</h2>
+                    <h2 style="border-left: none">Parameter Master</h2>
                     <label class="form-row">
                         <input class="form-row-field" type="text" placeholder="Parameter Name" name="parameter_name" required/>
                         <span class="form-row-label">Parameter Name</span>
                     </label>
+                    <br>
                     <label class="form-row">
                         <input class="form-row-field" type="text" placeholder="Parameter Code" name="parameter_code" value='<?php echo $f_number; ?>' />
                         <span class="form-row-label">Parameter Code</span>
                     </label>
                     <div class="form-row">
-                        <label for="image"><b style="color:orange">Image</b></label>
-                        <input type="file" accept="image/png, image/jpeg, image/jpg" name="parameter_image">
+                        <label for="image" class="pull-left"><b style="color:orange">Image</b></label>
+                        <input type="file" accept="image/png, image/jpeg, image/jpg" name="parameter_image" class="file-upload-wrapper">
                     </div>
                     <div class="button-group">
                         <button><i class='bx bx-plus-circle bx-fw'></i>Add Parameter</button>
@@ -112,7 +112,7 @@ if (isset($_GET['delete'])) {
             </div>
             <hr>
             <table class="u-full-width">
-                <h2>Parameter Master List</h2>
+                <h2 style="border-left: none">Parameter Master List</h2>
                 <thead>
                     <tr>
                         <th><b>Parameter Name</b></th>
