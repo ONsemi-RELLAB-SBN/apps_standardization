@@ -54,8 +54,7 @@ var style = document.createElement('style');
   margin-bottom:5px;
 }
 .multiselect-dropdown-list{
-  padding:2px;
-  height: 15rem;
+  
   overflow-y:auto;
   overflow-x: hidden;
 }

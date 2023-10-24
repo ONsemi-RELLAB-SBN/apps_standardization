@@ -64,8 +64,8 @@ if (isset($_GET['delete'])) {
         <link rel="shortcut icon" href="../image/dribbble.ico">
 
         <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
         <style>
@@ -95,7 +95,7 @@ if (isset($_GET['delete'])) {
                         <input class="form-row-field" type="text" placeholder="Parameter Name" name="parameter_name" required/>
                         <span class="form-row-label">Parameter Name</span>
                     </label>
-                    <br>
+                    <!--<br>-->
                     <label class="form-row">
                         <input class="form-row-field" type="text" placeholder="Parameter Code" name="parameter_code" value='<?php echo $f_number; ?>' />
                         <span class="form-row-label">Parameter Code</span>
@@ -122,26 +122,25 @@ if (isset($_GET['delete'])) {
                         <th style="text-align: center"><b>Action</b></th>
                     </tr>
                 </thead>
-                <?php
-                $get_slides = "SELECT * FROM gest_parameter_master WHERE flag = '1' ORDER BY code ASC";
-                $run_slides = mysqli_query($con, $get_slides);
-                while ($row_slides = mysqli_fetch_array($run_slides)):
-                    ?>
-                    <tr>
-                        <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
-                        <td><?php echo $row_slides['name']; ?></td>
-                        <td><?php echo $row_slides['code']; ?></td>
-                        <td><?php echo $row_slides['link_image']; ?></td>
-                        <td><img src="uploaded_img/<?php echo $row_slides['link_image']; ?>" height="100" alt=""></td>
-                        <td style="text-align: center">
-                            <a href="parameter_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
-                            <a href="parameter_detail.php?update=<?php echo $row_slides['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span><i class='bx bx-list-plus bx-fw' ></i> ADD DETAIL </a>
-                            <a href="parameter.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
-                        </td>
-                    </tr>
+                <tbody>
                     <?php
-                endwhile;
-                ?>
+                    $get_slides = "SELECT * FROM gest_parameter_master WHERE flag = '1' ORDER BY code ASC";
+                    $run_slides = mysqli_query($con, $get_slides);
+                    while ($row_slides = mysqli_fetch_array($run_slides)): ?>
+                        <tr>
+                            <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
+                            <td><?php echo $row_slides['name']; ?></td>
+                            <td><?php echo $row_slides['code']; ?></td>
+                            <td><?php echo $row_slides['link_image']; ?></td>
+                            <td><img src="uploaded_img/<?php echo $row_slides['link_image']; ?>" height="100" alt=""></td>
+                            <td style="text-align: center">
+                                <a href="parameter_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
+                                <a href="parameter_detail.php?update=<?php echo $row_slides['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span><i class='bx bx-list-plus bx-fw' ></i> ADD DETAIL </a>
+                                <a href="parameter.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
             </table>
         </div>
     </body>

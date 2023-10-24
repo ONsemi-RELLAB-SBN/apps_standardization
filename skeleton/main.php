@@ -50,7 +50,7 @@
                 </nav>
             </header>
             <footer id="footer">
-                <p class="copyright">&copy; REL LAB Design V2.0: <a href="https://html5up.net">Ayep</a>.</p>
+                <p class="copyright">&copy; REL LAB Design V3.0: <a href="https://html5up.net">Ayep</a>.</p>
             </footer>
         </div>
         <div id="bg"></div>
