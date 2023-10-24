@@ -68,7 +68,7 @@ var style = document.createElement('style');
 }
 
 .multiselect-dropdown-list div{
-  padding: 5px;
+  
 }
 .multiselect-dropdown-list input{
   height: 1.15em;
@@ -204,8 +204,8 @@ var style = document.createElement('style');
                 }
                 });
         });
-                }
+        }
 
 window.addEventListener('load', () => {
 MultiselectDropdown(window.MultiselectDropdownOptions);
-        });
+});

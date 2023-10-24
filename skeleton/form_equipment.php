@@ -16,7 +16,8 @@ include 'form_template.php';
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/dribbble.ico">
 
-        <link rel="stylesheet" type="text/css" href="../css/select2.css"/>
+        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+<!--        <link rel="stylesheet" type="text/css" href="../css/select2.css"/>
         <link rel="stylesheet" type="text/css" href="../css/layout.css">
         <link rel="stylesheet" type="text/css" href="../css/elements.css" />
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
@@ -26,7 +27,7 @@ include 'form_template.php';
 
         <script src="../js/bootstrap.js"></script>
         <script src="../js/jquery.js"></script>
-        <script src="../js/select2.min.js"></script>
+        <script src="../js/select2.min.js"></script>-->
 
         <style>
             #backBtn {

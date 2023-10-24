@@ -252,6 +252,20 @@ include 'form_template.php';
 
             <h6>Capacity</h6>
 
+            <h6>Test Multi Select</h6>
+            <div class="row">
+                <div class="six columns">
+                    <label for="relTest">Rel Test (Multiselect) *</label>
+                    <select name="relTest[]" id="relTest" multiple multiselect-search="true" multiselect-select-all="false" style="width:100%" required>
+                        <?php
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
+                        $resSite = mysqli_query($con, $sqlDdSite);
+                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
+            </div>
 
             <div class="row">
                 <div class="two columns">Label</div>
@@ -289,6 +303,8 @@ include 'form_template.php';
                 <div class="one columns">Label</div>
                 <div class="two columns">Space</div>
             </div>
+            
+            
             <button onclick="location.href = 'form_power_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
             <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Send</button>
         </form>
