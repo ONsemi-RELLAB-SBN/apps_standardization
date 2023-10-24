@@ -63,9 +63,6 @@ if (isset($_GET['delete'])) {
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="../image/dribbble.ico">
 
-        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
         <style>

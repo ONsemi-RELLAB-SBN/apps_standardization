@@ -15,7 +15,9 @@ include 'form_template.php';
         <title>P Supply | Standardization</title>
         <meta name="author" content="Ayep" />
 
-        <link rel="stylesheet" href="css/skeleton.css" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="css/w3.css">
+        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
         <style>
             #listBtn {
@@ -74,6 +76,18 @@ include 'form_template.php';
             }
         </style>
         <script type="text/javascript">
+            $(document).ready(function () {
+                $('.js-example-basic-multiple').select2({
+                    placeholder: "Multi Select",
+                    allowClear: true
+                });
+
+                $(".js-example-basic-single").select2({
+                    placeholder: "Choose one",
+                    allowClear: true
+                });
+            });
+            
             $("input[type='text'], textarea").on("input", function () {
                 canChangeColor();
             });
@@ -94,8 +108,13 @@ include 'form_template.php';
         </script>
     </head>
     <body>
-        <hr>
-        <h5>Power Supply Details</h5>
+        <div class="col-lg-12">
+            &nbsp; he
+        </div>
+        <div class="col-lg-12">
+            &nbsp; he
+        </div>
+        <h5 style="border-left: none;">Power Supply Details</h5>
         <form id="add_power_form" action="crud_add_power.php" method="get">
             <h6>General</h6>
             <div class="row">
@@ -233,7 +252,7 @@ include 'form_template.php';
                 <div class="one columns">&nbsp;</div>
             </div>
             <div class="row">
-                <div class="two columns"><label for="model">Overvoltage protection *</label></div>
+                <div class="two columns"><label for="model">Overcurrent protection *</label></div>
                 <div class="three columns">
                     <select id="model" name="model" class="js-example-basic-single" style="width: 100%" required>
                         <option value="" selected=""></option>
@@ -249,10 +268,145 @@ include 'form_template.php';
             </div>
 
             <h6>Characteristics</h6>
+            <div class="row">
+                <div class="two columns"><label for="voltRating">Dimensions (W) *</label></div>
+                <div class="one columns"><input type="number" step="0.001" class="form-control" id="voltRating" name="voltRating" value="" required> </div>
+                <div class="one columns"><label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label></div>
+                <div class="two columns">&nbsp;</div>
+                <div class="two columns"><label for="voltControl">Weight (kg) *</label></div>
+                <div class="one columns"><input type="number" step="0.001" class="form-control" id="voltControl" name="voltControl" value="" required> </div>
+                <div class="one columns"><label for="voltControl" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label></div>
+                <div class="two columns">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="two columns"><label for="maxTemp">Dimensions (D) *</label></div>
+                <div class="one columns"><input type="number" step="0.001" class="form-control" id="maxTemp" name="maxTemp" value="" required> </div>
+                <div class="one columns"><label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                <div class="two columns">&nbsp;</div>
+                <div class="two columns"><label for="minTemp">Input voltage (facilities) *</label></div>
+                <div class="one columns"><input type="number" step="0.001" class="form-control" id="minTemp" name="minTemp" value="" required> </div>
+                <div class="one columns"><label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                <div class="two columns">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="two columns"><label for="minTemp">Dimensions (H) *</label></div>
+                <div class="one columns"><input type="number" step="0.001" class="form-control" id="minTemp" name="minTemp" value="" required> </div>
+                <div class="one columns"><label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                <div class="two columns">&nbsp;</div>
+                <div class="two columns"><label for="manufacturer">Remote operation capability *</label></div>
+                <div class="three columns">
+                    <select id="manufacturer" name="manufacturer" class="js-example-basic-single" style="width: 100%" required>
+                        <option value="" selected=""></option>
+                        <?php
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
+                        $resSite = mysqli_query($con, $sqlDdSite);
+                        while ($rowSite = mysqli_fetch_array($resSite)):
+                            ?>
+                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
+                <div class="one columns">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="two columns"><label for="relTest">Output voltage monitor *</label></div>
+                <div class="three columns">
+                    <select id="output_voltage_monitor" name="output_voltage_monitor" class="js-example-basic-single" style="width: 100%" required>
+                        <option value="" selected=""></option>
+                        <?php
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
+                        $resSite = mysqli_query($con, $sqlDdSite);
+                        while ($rowSite = mysqli_fetch_array($resSite)):
+                            ?>
+                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
+                <div class="one columns">&nbsp;</div>
+                <div class="two columns"><label for="manufacturer">Output current monitor  *</label></div>
+                <div class="three columns">
+                    <select id="manufacturer" name="manufacturer" class="js-example-basic-single" style="width: 100%" required>
+                        <option value="" selected=""></option>
+                        <?php
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
+                        $resSite = mysqli_query($con, $sqlDdSite);
+                        while ($rowSite = mysqli_fetch_array($resSite)):
+                            ?>
+                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
+                <div class="one columns">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="two columns"><label for="relTest">PS to eqpt interface *</label></div>
+                <div class="three columns">
+                    <select id="pc_to_eqpt_interface" name="pc_to_eqpt_interface" class="js-example-basic-single" style="width: 100%" required>
+                        <option value="" selected=""></option>
+                        <?php
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
+                        $resSite = mysqli_query($con, $sqlDdSite);
+                        while ($rowSite = mysqli_fetch_array($resSite)):
+                            ?>
+                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
+                <div class="one columns">&nbsp;</div>
+                <div class="two columns"><label for="lan_port">LAN Port *</label></div>
+                <div class="three columns">
+                    <select id="lan_port" name="lan_port" class="js-example-basic-single" style="width: 100%" required>
+                        <option value="" selected=""></option>
+                        <?php
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
+                        $resSite = mysqli_query($con, $sqlDdSite);
+                        while ($rowSite = mysqli_fetch_array($resSite)):
+                            ?>
+                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
+                <div class="one columns">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="two columns"><label for="gpib_interface">GPIB interface *</label></div>
+                <div class="three columns">
+                    <select id="gpib_interface" name="gpib_interface" class="js-example-basic-single" style="width: 100%" required>
+                        <option value="" selected=""></option>
+                        <?php
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
+                        $resSite = mysqli_query($con, $sqlDdSite);
+                        while ($rowSite = mysqli_fetch_array($resSite)):
+                            ?>
+                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
+                <div class="one columns">&nbsp;</div>
+                <div class="two columns"><label for="other_interface_port">Other interface ports *</label></div>
+                <div class="three columns">
+                    <select id="other_interface_port" name="other_interface_port" class="js-example-basic-single" style="width: 100%" required>
+                        <option value="" selected=""></option>
+                        <?php
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
+                        $resSite = mysqli_query($con, $sqlDdSite);
+                        while ($rowSite = mysqli_fetch_array($resSite)):
+                            ?>
+                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
+                <div class="one columns">&nbsp;</div>
+            </div>
 
             <h6>Capacity</h6>
+            <div class="row">
+                <div class="two columns"><label for="maxTemp">Number of output channels *</label></div>
+                <div class="one columns"><input type="number" step="0.001" class="form-control" id="maxTemp" name="maxTemp" value="" required> </div>
+                <div class="one columns"><label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+            </div>
 
-            <h6>Test Multi Select</h6>
+<!--            <h6>Test Multi Select</h6>
             <div class="row">
                 <div class="six columns">
                     <label for="relTest">Rel Test (Multiselect) *</label>
@@ -260,236 +414,39 @@ include 'form_template.php';
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
-                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                        while ($rowSite = mysqli_fetch_array($resSite)):
+                            ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                         <?php endwhile; ?>
                     </select>
                 </div>
+            </div>-->
+<!--
+            2 NUMBER INPUT
+            <div class="row">
+                <div class="two columns">Label</div>
+                <div class="one columns">Input</div>
+                <div class="one columns">Label</div>
+                <div class="two columns">&nbsp;</div>
+                <div class="two columns">Label</div>
+                <div class="one columns">Input</div>
+                <div class="one columns">Label</div>
+                <div class="two columns">&nbsp;</div>
             </div>
+            2 DROPDOWN
+            <div class="row">
+                <div class="two columns">Label</div>
+                <div class="three columns">Input</div>
+                <div class="one columns">&nbsp;</div>
+                <div class="two columns">Label</div>
+                <div class="three columns">Input</div>
+                <div class="one columns">&nbsp;</div>
+            </div>-->
 
-            <div class="row">
-                <div class="two columns">Label</div>
-                <div class="three columns">Input</div>
-                <div class="one columns">Space</div>
-                <div class="two columns">Label</div>
-                <div class="three columns">Input</div>
-                <div class="one columns">Space</div>
-            </div>
-            <div class="row">
-                <div class="two columns">Label</div>
-                <div class="one columns">Input</div>
-                <div class="one columns">Label</div>
-                <div class="two columns">Space</div>
-                <div class="two columns">Label</div>
-                <div class="one columns">Input</div>
-                <div class="one columns">Label</div>
-                <div class="two columns">Space</div>
-            </div>
-            <div class="row">
-                <div class="two columns">Label</div>
-                <div class="three columns">Input</div>
-                <div class="one columns">Space</div>
-                <div class="two columns">Label</div>
-                <div class="three columns">Input</div>
-                <div class="one columns">Space</div>
-            </div>
-            <div class="row">
-                <div class="two columns">Label</div>
-                <div class="one columns">Input</div>
-                <div class="one columns">Label</div>
-                <div class="two columns">Space</div>
-                <div class="two columns">Label</div>
-                <div class="one columns">Input</div>
-                <div class="one columns">Label</div>
-                <div class="two columns">Space</div>
-            </div>
-            
-            
             <button onclick="location.href = 'form_power_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
             <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Send</button>
         </form>
 
-        <!--        <div class="col-lg-12">
-                    <hr>
-                    <hr>
-                    <hr>
-                    <h1>Power Supply Detail</h1>
-                    <hr>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="main-box">
-                                <form id="add_power_form" class="form-horizontal" role="form" action="crud_add_power.php" method="get">
-                                    
-                                    
-                                    <h2>Capability</h2>
-                                    <div class="form-group">
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="newTransfer" class="col-lg-2 control-label">Overcurrent protection *</label>
-                                        <div class="col-lg-3">
-                                            <select id="newTransfer" name="newTransfer" class="js-example-basic-single" style="width: 100%" onchange="updateToField()" required >
-                                                <option value="" selected=""></option>
-        <?php
-        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '013' ORDER BY code ASC";
-        $resSite = mysqli_query($con, $sqlDdSite);
-        while ($rowSite = mysqli_fetch_array($resSite)):
-            ?>
-                                                                                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-        <?php endwhile; ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    
-                                    <h2>Characteristics</h2>
-                                    <div class="form-group">
-                                        <label for="voltRating" class="col-lg-2 control-label">Dimensions (W) *</label>
-                                        <div class="col-lg-1">
-                                            <input type="number" 0 class="form-control" id="voltRating" name="voltRating" value="" required> 
-                                        </div> 
-                                        <label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
-                                        <label for="voltControl" class="col-lg-2 control-label">Weight (kg) *</label>
-                                        <div class="col-lg-1">
-                                            <input type="number" step="0.001" class="form-control" id="voltControl" name="voltControl" value="" required> 
-                                        </div> 
-                                        <label for="voltControl" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="maxTemp" class="col-lg-2 control-label">Dimensions (D) *</label>
-                                        <div class="col-lg-1">
-                                            <input type="number" step="0.001" class="form-control" id="maxTemp" name="maxTemp" value="" required> 
-                                        </div>
-                                        <label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                        <label for="minTemp" class="col-lg-2 control-label">Input voltage (facilities) *</label>
-                                        <div class="col-lg-1">
-                                            <input type="number" step="0.001" class="form-control" id="minTemp" name="minTemp" value="" required> 
-                                        </div> 
-                                        <label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="minTemp" class="col-lg-2 control-label">Dimensions (H) *</label>
-                                        <div class="col-lg-1">
-                                            <input type="number" step="0.001" class="form-control" id="minTemp" name="minTemp" value="" required> 
-                                        </div> 
-                                        <label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                        <label for="manufacturer" class="col-lg-2 control-label">Remote operation capability *</label>
-                                        <div class="col-lg-3">
-                                            <select id="manufacturer" name="manufacturer" class="js-example-basic-single" style="width: 100%" required>
-                                                <option value="" selected=""></option>
-        <?php
-        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
-        $resSite = mysqli_query($con, $sqlDdSite);
-        while ($rowSite = mysqli_fetch_array($resSite)):
-            ?>
-                                                                                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-        <?php endwhile; ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="relTest" class="col-lg-2 control-label">Output voltage monitor *</label>
-                                        <div class="col-lg-3">
-                                            <select id="relTest" name="relTest[]" class="js-example-basic-single" style="width: 100%" required>
-        <?php
-        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
-        $resSite = mysqli_query($con, $sqlDdSite);
-        while ($rowSite = mysqli_fetch_array($resSite)):
-            ?>
-                                                                                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-        <?php endwhile; ?>
-                                            </select>
-                                        </div>
-                                        <label for="manufacturer" class="col-lg-2 control-label">Output current monitor  *</label>
-                                        <div class="col-lg-3">
-                                            <select id="manufacturer" name="manufacturer" class="js-example-basic-single" style="width: 100%" required>
-                                                <option value="" selected=""></option>
-        <?php
-        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
-        $resSite = mysqli_query($con, $sqlDdSite);
-        while ($rowSite = mysqli_fetch_array($resSite)):
-            ?>
-                                                                                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-        <?php endwhile; ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="relTest" class="col-lg-2 control-label">PS to eqpt interface *</label>
-                                        <div class="col-lg-3">
-                                            <select id="relTest" name="relTest[]" class="js-example-basic-single" style="width: 100%" required>
-        <?php
-        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
-        $resSite = mysqli_query($con, $sqlDdSite);
-        while ($rowSite = mysqli_fetch_array($resSite)):
-            ?>
-                                                                                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-        <?php endwhile; ?>
-                                            </select>
-                                        </div>
-                                        <label for="manufacturer" class="col-lg-2 control-label">LAN Port *</label>
-                                        <div class="col-lg-3">
-                                            <select id="manufacturer" name="manufacturer" class="js-example-basic-single" style="width: 100%" required>
-                                                <option value="" selected=""></option>
-        <?php
-        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
-        $resSite = mysqli_query($con, $sqlDdSite);
-        while ($rowSite = mysqli_fetch_array($resSite)):
-            ?>
-                                                                                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-        <?php endwhile; ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="relTest" class="col-lg-2 control-label">GPIB interface *</label>
-                                        <div class="col-lg-3">
-                                            <select id="relTest" name="relTest[]" class="js-example-basic-single" style="width: 100%" required>
-        <?php
-        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
-        $resSite = mysqli_query($con, $sqlDdSite);
-        while ($rowSite = mysqli_fetch_array($resSite)):
-            ?>
-                                                                                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-        <?php endwhile; ?>
-                                            </select>
-                                        </div>
-                                        <label for="manufacturer" class="col-lg-2 control-label">Other interface ports *</label>
-                                        <div class="col-lg-3">
-                                            <select id="manufacturer" name="manufacturer" class="js-example-basic-single" style="width: 100%" required>
-                                                <option value="" selected=""></option>
-        <?php
-        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
-        $resSite = mysqli_query($con, $sqlDdSite);
-        while ($rowSite = mysqli_fetch_array($resSite)):
-            ?>
-                                                                                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-        <?php endwhile; ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    
-                                    <h2>Capacity</h2>
-                                    <div class="form-group">
-                                        <label for="maxTemp" class="col-lg-2 control-label">Number of output channels *</label>
-                                        <div class="col-lg-1">
-                                            <input type="number" step="0.001" class="form-control" id="maxTemp" name="maxTemp" value="" required> 
-                                        </div>
-                                        <label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                    </div>
-                                    
-                                    <div class="pull-right">
-                                        <button onclick="location.href = 'form_power_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
-                                    </div>
-                                    <div class="pull-right">
-                                        <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Send</button>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </form>
-                            </div>
-                        </div>	
-                    </div>
-                </div>-->
         <script src="js/multiselect-dropdown.js" ></script>
     </body>
 </html>

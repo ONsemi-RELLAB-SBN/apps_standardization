@@ -15,7 +15,7 @@ var style = document.createElement('style');
 }
 .multiselect-dropdown span.optext, .multiselect-dropdown span.placeholder{
   margin-right:0.5em; 
-  margin-bottom:2px;
+  margin-bottom:0.5px;
   padding:1px 0; 
   border-radius: 4px; 
   display:inline-block;
@@ -54,7 +54,8 @@ var style = document.createElement('style');
   margin-bottom:5px;
 }
 .multiselect-dropdown-list{
-  
+  padding:2px;
+  height: 5rem;
   overflow-y:auto;
   overflow-x: hidden;
 }
@@ -75,6 +76,7 @@ var style = document.createElement('style');
   margin-right: 0.35em;  
 }
 .multiselect-dropdown-list div.checked{
+    padding: 0;
 }
 .multiselect-dropdown-list div:hover{
   background-color: #ced4da;
