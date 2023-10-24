@@ -31,11 +31,11 @@
                             for onsemi usage and utilization.</p>
                     </div>
                 </div>
-                <nav>
+<!--                <nav>
                     <ul>
                         <li><a href="parameter.php">Parameter</a></li>
                     </ul>
-                </nav>
+                </nav>-->
                 <nav>
                     <ul>
                         <li><a href="parameter.php">Parameter</a></li>
