@@ -97,18 +97,6 @@ include 'form_template.php';
             }
         </style>
         <script type="text/javascript">
-            $(document).ready(function () {
-                $('.js-example-basic-multiple').select2({
-                    placeholder: "Multi Select",
-                    allowClear: true
-                });
-
-                $(".js-example-basic-single").select2({
-                    placeholder: "Choose one",
-                    allowClear: true
-                });
-            });
-
             $("input[type='text'], textarea").on("input", function () {
                 canChangeColor();
             });
@@ -266,26 +254,6 @@ include 'form_template.php';
                     <div class="three columns"><input type="date" id="mfgDate" name="mfgDate" value="" style="width:55%" required> </div>
                     <div class="one columns">&nbsp;</div>
                 </div>
-                
-                <script>
-                    function updateToField() {
-                        var newTransferDropdown = document.getElementById('newTransfer');
-                        var toField = document.getElementById('to');
-                        var transField = document.getElementById('transfer');
-
-                        if (newTransferDropdown.value === '013001') {
-                            toField.readOnly = true;
-                            toField.required = false;
-                            $('#to').val('');
-                            transField.style.display = 'none';
-                        } else {
-                            toField.readOnly = false;
-                            toField.required = true;
-                            transField.style.display = 'block';
-                        }
-                    }
-                </script>
-                
                 <div class="row">
                     <div class="two columns"><label for="assetNo">Equipment Asset No *</label></div>
                     <div class="three columns"><input type="text" class="form-control" id="assetNo" name="assetNo" placeholder="Asset Number" value="" required> </div>
@@ -304,7 +272,7 @@ include 'form_template.php';
                     </div>
                     <div class="one columns">&nbsp;</div>
                 </div>
-                <div class="row">
+                <div class="row" id="transfer" style="display: none;">
                     <div class="two columns"><label for="to" class="col-lg-7 control-label">From? *</label></div>
                     <div class="three columns">
                         <select id="to" name="to" style="width: 100%" readonly required>
@@ -318,6 +286,25 @@ include 'form_template.php';
                         </select>
                     </div>
                 </div>
+                
+                <script>
+                    function updateToField() {
+                        var newTransferDropdown = document.getElementById('newTransfer');
+                        var toField = document.getElementById('to');
+                        var transField = document.getElementById('transfer');
+                        
+                        if (newTransferDropdown.value === '013001') {
+                            toField.readOnly = true;
+                            toField.required = false;
+                            toField.value = '';
+                            transField.style.display = 'none';
+                        } else {
+                            toField.readOnly = false;
+                            toField.required = true;
+                            transField.style.display = 'block';
+                        }
+                    }
+                </script>
                 
                 <h6>Capability</h6>
                 <div class="row">
@@ -740,6 +727,7 @@ include 'form_template.php';
                             waterField.readOnly = true;
                             waterField.required = false;
                             topapField.style.display = 'none';
+                            waterField.value = '';
                         } else {
                             waterField.readOnly = false;
                             waterField.required = true;
@@ -748,7 +736,7 @@ include 'form_template.php';
                     }
                 </script>
                 
-                <div class="row">
+                <div class="row" id="topup" style="display: none;">
                     <div class="two columns">&nbsp;</div>
                     <div class="three columns">&nbsp;</div>
                     <div class="one columns">&nbsp;</div>
@@ -816,16 +804,16 @@ include 'form_template.php';
                         var wireDiv = document.getElementById('WireDiv');
                         var selectedValue = dropdown.value;
 
-                        $('#bananaJackHole').val("");
-                        $('#connVoltRating').val("");
-                        $('#connCurrRating').val("");
-                        $('#connTempRating').val("");
-                        $('#noPins').val("");
-                        $('#pinPitch').val("");
-                        $('#connRack').val("");
-                        $('#wireVoltRating').val("");
-                        $('#wireCurrRating').val("");
-                        $('#wireTempRating').val("");
+                        document.getElementById('bananaJackHole').value = '';
+                        document.getElementById('connVoltRating').value = '';
+                        document.getElementById('connCurrRating').value = '';
+                        document.getElementById('connTempRating').value = '';
+                        document.getElementById('noPins').value = '';
+                        document.getElementById('pinPitch').value = '';
+                        document.getElementById('connRack').value = '';
+                        document.getElementById('wireVoltRating').value = '';
+                        document.getElementById('wireCurrRating').value = '';
+                        document.getElementById('wireTempRating').value = '';
 
                         if (selectedValue === '031001') {
                             bananaDiv.style.display = 'block';
@@ -856,7 +844,7 @@ include 'form_template.php';
                     }
                 </script>
                 
-                <div id="BananaDiv" name="BananaDiv">
+                <div id="BananaDiv" name="BananaDiv" style="display: none;">
                     <div class="row">
                         <div class="two columns"><label for="bananaJackHole">No. Banana Jack Holes *</label></div>
                         <div class="one columns"><input type="number" step="0.001" class="form-control" id="bananaJackHole" name="bananaJackHole" value="" > </div>
@@ -879,7 +867,7 @@ include 'form_template.php';
                     </div>
                 </div>
                 
-                <div id="EdgeDiv" name="EdgeDiv">
+                <div id="EdgeDiv" name="EdgeDiv" style="display: none;">
                     <div class="row">
                         <div class="two columns"><label for="noPins">No. of Pins *</label></div>
                         <div class="one columns"><input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="" > </div>
@@ -907,7 +895,7 @@ include 'form_template.php';
                     </div>
                 </div>
                 
-                <div id="WinchestorDiv" name="WinchestorDiv">
+                <div id="WinchestorDiv" name="WinchestorDiv" style="display: none;">
                     <div class="row">
                         <div class="two columns"><label for="noPins">No. of Pins *</label></div>
                         <div class="one columns"><input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="" > </div>
@@ -935,7 +923,7 @@ include 'form_template.php';
                     </div>
                 </div>
                 
-                <div class="row" id="WireDiv" name="WireDiv"">
+                <div class="row" id="WireDiv" name="WireDiv"" style="display: none;">
                     <div class="row">
                         <div class="two columns"><label for="wireVoltRating">Wire Voltage Rating *</label></div>
                         <div class="one columns"><input type="number" step="0.001" class="form-control" id="wireVoltRating" name="wireVoltRating" value="" > </div>
@@ -991,7 +979,7 @@ include 'form_template.php';
                     }
                 </script>
                 
-                <div class="row" id="viewExternalDiv" name="viewExternalDiv">
+                <div class="row" id="viewExternalDiv" name="viewExternalDiv" style="display: none;">
                     <div class="row">
                         <div class="two columns"><label for="interfaceVoltRating">Interface Voltage Rating *</label></div>
                         <div class="one columns"><input type="number" step="0.001" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="" > </div>
