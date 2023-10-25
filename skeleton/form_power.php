@@ -20,59 +20,24 @@ include 'form_template.php';
         <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
         <style>
-/*            #listBtn {
-                display: block;
-                position: fixed;
-                bottom: 95px;
-                right: 30px;
-                z-index: 99;
-                font-size: 18px;
-                border: none;
-                outline: none;
-                background-color: gray;
-                color: white;
-                cursor: pointer;
-                padding: 15px;
-                border-radius: 5px;
-
-                display: block;
-                min-width: 7.5rem;
-                height: 3.5rem;
-                line-height: 2.75rem;
-                padding: 0 1.25rem 0 1.45rem;
-                text-transform: uppercase;
-                letter-spacing: 0.2rem;
+            #toggle_1, #toggle_2, #toggle_3, #toggle_4{
+                visibility: hidden;
+                opacity: 0;
+                position: relative;
+                z-index: -1;
             }
 
-            #myBtn {
+            #toggle_1:checked ~ dialog {
                 display: block;
-                position: fixed;
-                bottom: 25px;
-                right: 30px;
-                z-index: 99;
-                font-size: 18px;
-                border: none;
-                outline: none;
-                background-color: gray;
-                color: white;
-                cursor: pointer;
-                padding: 15px;
-                border-radius: 5px;
-
-                display: block;
-                min-width: 7.5rem;
-                height: 3.5rem;
-                line-height: 2.75rem;
-                padding: 0 1.25rem 0 1.45rem;
-                text-transform: uppercase;
-                letter-spacing: 0.2rem;
-            }*/
-
-            #myBtn:hover {
-                background-color: orange;
             }
-            #listBtn:hover {
-                background-color: orange;
+            #toggle_2:checked ~ dialog {
+                display: block;
+            }
+            #toggle_3:checked ~ dialog {
+                display: block;
+            }
+            #toggle_4:checked ~ dialog {
+                display: block;
             }
         </style>
         <script type="text/javascript">
@@ -87,7 +52,7 @@ include 'form_template.php';
                     allowClear: true
                 });
             });
-            
+
             $("input[type='text'], textarea").on("input", function () {
                 canChangeColor();
             });
@@ -108,12 +73,8 @@ include 'form_template.php';
         </script>
     </head>
     <body>
-        <div class="col-lg-12">
-            &nbsp; he
-        </div>
-        <div class="col-lg-12">
-            &nbsp; he
-        </div>
+        <div class="twelve columns">&nbsp;</div>
+        <div class="twelve columns">&nbsp;</div>
         <h5 style="border-left: none;">Power Supply Details</h5>
         <form id="add_power_form" action="crud_add_power.php" method="get">
             <h6>General</h6>
@@ -218,23 +179,23 @@ include 'form_template.php';
                 <div class="two columns">&nbsp;</div>
                 <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
                 <div class="one columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" required> </div>
-                <div class="one columns"><b>%</b></div>
+                <div class="one columns"><b>`C</b></div>
                 <div class="two columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="max_power">Max Power *</label></div>
                 <div class="one columns"><input type="number" step="0.001" id="max_power" name="max_power" value="" required> </div>
-                <div class="one columns"><b>V</b></div>
+                <div class="one columns"><b>Watt</b></div>
                 <div class="two columns">&nbsp;</div>
                 <div class="two columns"><label for="volt_display_digit">Number of voltage display digits *</label></div>
                 <div class="one columns"><input type="number" step="0.001" id="volt_display_digit" name="volt_display_digit" value="" required> </div>
-                <div class="one columns"><b>%</b></div>
+                <div class="one columns"><b></b></div>
                 <div class="two columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="curr_display_digit">Number of current display digits *</label></div>
                 <div class="one columns"><input type="number" step="0.001" id="curr_display_digit" name="curr_display_digit" value="" required> </div>
-                <div class="one columns"><b>V</b></div>
+                <div class="one columns"><b>&nbsp;</b></div>
                 <div class="two columns">&nbsp;</div>
                 <div class="two columns"><label for="volt_protection">Overvoltage protection *</label></div>
                 <div class="three columns">
@@ -271,27 +232,27 @@ include 'form_template.php';
             <div class="row">
                 <div class="two columns"><label for="dimension_w">Dimensions (W) *</label></div>
                 <div class="one columns"><input type="number" step="0.001" class="form-control" id="dimension_w" name="dimension_w" value="" required> </div>
-                <div class="one columns"><label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label></div>
+                <div class="one columns"><label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
                 <div class="two columns">&nbsp;</div>
                 <div class="two columns"><label for="weight">Weight (kg) *</label></div>
                 <div class="one columns"><input type="number" step="0.001" class="form-control" id="weight" name="weight" value="" required> </div>
-                <div class="one columns"><label for="voltControl" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label></div>
+                <div class="one columns"><label for="voltControl" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Kg</b></label></div>
                 <div class="two columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="dimension_d">Dimensions (D) *</label></div>
                 <div class="one columns"><input type="number" step="0.001" class="form-control" id="dimension_d" name="dimension_d" value="" required> </div>
-                <div class="one columns"><label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                <div class="one columns"><label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
                 <div class="two columns">&nbsp;</div>
                 <div class="two columns"><label for="input_volt">Input voltage (facilities) *</label></div>
                 <div class="one columns"><input type="number" step="0.001" class="form-control" id="input_volt" name="input_volt" value="" required> </div>
-                <div class="one columns"><label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                <div class="one columns"><label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label></div>
                 <div class="two columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="dimension_h">Dimensions (H) *</label></div>
                 <div class="one columns"><input type="number" step="0.001" class="form-control" id="dimension_h" name="dimension_h" value="" required> </div>
-                <div class="one columns"><label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                <div class="one columns"><label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
                 <div class="two columns">&nbsp;</div>
                 <div class="two columns"><label for="remote_operation_capability">Remote operation capability *</label></div>
                 <div class="three columns">
@@ -346,8 +307,7 @@ include 'form_template.php';
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
-                        while ($rowSite = mysqli_fetch_array($resSite)):
-                            ?>
+                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                         <?php endwhile; ?>
                     </select>
@@ -360,13 +320,19 @@ include 'form_template.php';
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
-                        while ($rowSite = mysqli_fetch_array($resSite)):
-                            ?>
+                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                         <?php endwhile; ?>
                     </select>
                 </div>
-                <div class="one columns">&nbsp;</div>
+                <div class="one columns">
+                    <label for="toggle_3">View Sample</label>
+                    <input type="checkbox" id="toggle_3">
+                    <dialog>
+                        <label for="toggle_3" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
+                        <img id="myImg" src="../image/powersupply/001.png" alt="image">
+                    </dialog>
+                </div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="gpib_interface">GPIB interface *</label></div>
@@ -376,13 +342,19 @@ include 'form_template.php';
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
-                        while ($rowSite = mysqli_fetch_array($resSite)):
-                            ?>
+                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                         <?php endwhile; ?>
                     </select>
                 </div>
-                <div class="one columns">&nbsp;</div>
+                <div class="one columns">
+                    <label for="toggle_4">View Sample</label>
+                    <input type="checkbox" id="toggle_4">
+                    <dialog>
+                        <label for="toggle_4" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
+                        <img id="myImg" src="../image/powersupply/002.png" alt="image">
+                    </dialog>
+                </div>
                 <div class="two columns"><label for="other_interface_port">Other interface ports *</label></div>
                 <div class="three columns">
                     <select id="other_interface_port" name="other_interface_port" class="js-example-basic-single" style="width: 100%" required>
@@ -390,113 +362,83 @@ include 'form_template.php';
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
-                        while ($rowSite = mysqli_fetch_array($resSite)):
-                            ?>
+                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                         <?php endwhile; ?>
                     </select>
                 </div>
-                <div class="one columns">&nbsp;</div>
+                <div class="one columns">
+                    <label for="toggle_2">View Sample</label>
+                    <input type="checkbox" id="toggle_2">
+                    <dialog>
+                        <label for="toggle_2" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                        <img id="myImg" src="../image/powersupply/003.png" alt="image">
+                    </dialog>
+                </div>
             </div>
 
             <h6>Capacity</h6>
             <div class="row">
                 <div class="two columns"><label for="no_output_channel">Number of output channels *</label></div>
                 <div class="one columns"><input type="number" step="0.001" class="form-control" id="no_output_channel" name="no_output_channel" value="" required> </div>
-                <div class="one columns"><label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                <div class="one columns"><label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label></div>
+                <div class="one columns">&nbsp;</div>
+                <div class="one columns">
+                    <label for="toggle_1">View Sample</label>
+                    <input type="checkbox" id="toggle_1">
+                    <dialog>
+                        <label for="toggle_1" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                        <img id="myImg" src="../image/powersupply/004.png" alt="image">
+                    </dialog>
+                </div>
             </div>
 
-<!--            <h6>Test Multi Select</h6>
-            <div class="row">
-                <div class="six columns">
-                    <label for="relTest">Rel Test (Multiselect) *</label>
-                    <select name="relTest[]" id="relTest" multiple multiselect-search="true" multiselect-select-all="false" style="width:100%" required>
-                        <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
-                        $resSite = mysqli_query($con, $sqlDdSite);
-                        while ($rowSite = mysqli_fetch_array($resSite)):
-                            ?>
-                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                        <?php endwhile; ?>
-                    </select>
+            <!--
+                2 NUMBER INPUT
+                <div class="row">
+                    <div class="two columns">Label</div>
+                    <div class="one columns">Input</div>
+                    <div class="one columns">Label</div>
+                    <div class="two columns">&nbsp;</div>
+                    <div class="two columns">Label</div>
+                    <div class="one columns">Input</div>
+                    <div class="one columns">Label</div>
+                    <div class="two columns">&nbsp;</div>
                 </div>
-            </div>-->
-<!--
-            2 NUMBER INPUT
-            <div class="row">
-                <div class="two columns">Label</div>
-                <div class="one columns">Input</div>
-                <div class="one columns">Label</div>
-                <div class="two columns">&nbsp;</div>
-                <div class="two columns">Label</div>
-                <div class="one columns">Input</div>
-                <div class="one columns">Label</div>
-                <div class="two columns">&nbsp;</div>
-            </div>
-            2 DROPDOWN
-            <div class="row">
-                <div class="two columns">Label</div>
-                <div class="three columns">Input</div>
-                <div class="one columns">&nbsp;</div>
-                <div class="two columns">Label</div>
-                <div class="three columns">Input</div>
-                <div class="one columns">&nbsp;</div>
-            </div>
-            <div class="row">
-                <div class="two columns">Label</div>
-                <div class="three columns">Input</div>
-                <div class="one columns">&nbsp;</div>
-                <div class="two columns">Label</div>
-                <div class="one columns">Input</div>
-                <div class="one columns">Label</div>
-                <div class="two columns">&nbsp;</div>
-            </div>
--->
+                2 DROPDOWN
+                <div class="row">
+                    <div class="two columns">Label</div>
+                    <div class="three columns">Input</div>
+                    <div class="one columns">&nbsp;</div>
+                    <div class="two columns">Label</div>
+                    <div class="three columns">Input</div>
+                    <div class="one columns">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="two columns">Label</div>
+                    <div class="three columns">Input</div>
+                    <div class="one columns">&nbsp;</div>
+                    <div class="two columns">Label</div>
+                    <div class="one columns">Input</div>
+                    <div class="one columns">Label</div>
+                    <div class="two columns">&nbsp;</div>
+                </div>
+            -->
 
             <button onclick="location.href = 'form_power_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
             <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Send</button>
         </form>
         <script>
-            // Get the modal
-            var modalparent = document.getElementsByClassName("modal_multi");
+            $(".button").click(function () {
+                var buttonId = $(this).attr("id");
+                $("#modal-container").removeAttr("class").addClass(buttonId);
+                $("body").addClass("modal-active");
+            });
 
-            // Get the button that opens the modal
-            var modal_btn_multi = document.getElementsByClassName("myBtn_multi");
-
-            // Get the <span> element that closes the modal
-            var span_close_multi = document.getElementsByClassName("close_multi");
-
-            // When the user clicks the button, open the modal
-            function setDataIndex() {
-                for (i = 0; i < modal_btn_multi.length; i++) {
-                    modal_btn_multi[i].setAttribute('data-index', i);
-                    modalparent[i].setAttribute('data-index', i);
-                    span_close_multi[i].setAttribute('data-index', i);
-                }
-            }
-
-            for (i = 0; i < modal_btn_multi.length; i++) {
-                modal_btn_multi[i].onclick = function () {
-                    var ElementIndex = this.getAttribute('data-index');
-                    modalparent[ElementIndex].style.display = "block";
-                };
-
-                // When the user clicks on <span> (x), close the modal
-                span_close_multi[i].onclick = function () {
-                    var ElementIndex = this.getAttribute('data-index');
-                    modalparent[ElementIndex].style.display = "none";
-                };
-            }
-
-            window.onload = function () {
-                setDataIndex();
-            };
-
-            window.onclick = function (event) {
-                if (event.target === modalparent[event.target.getAttribute('data-index')]) {
-                    modalparent[event.target.getAttribute('data-index')].style.display = "none";
-                }
-            };
+            $("#modal-container").click(function () {
+                $(this).addClass("out");
+                $("body").removeClass("modal-active");
+            });
         </script>
         <script src="js/multiselect-dropdown.js" ></script>
     </body>
