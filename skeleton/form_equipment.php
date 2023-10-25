@@ -212,7 +212,7 @@ include 'form_template.php';
                 <div class="row">
                     <div class="two columns"><label for="relTest">Rel Test (Multiselect) *</label></div>
                     <div class="three columns">
-                        <select name="relTest[]" id="relTest" multiple multiselect-search="true" multiselect-select-all="false" style="width:100%" required>
+                        <select name="relTest[]" id="relTest" multiple multiselect-search="true" multiselect-select-all="false" style="width:100%" onchange="updateRelTest()" required>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
@@ -222,6 +222,10 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
+                    <div class="two columns" id="zone1"><label for="zone">Zone *</label></div>
+                    <div class="three columns" id="zone2"><input type="text" id="zone" name="zone" value="" required></div>
+                </div>
+                <div class="row">
                     <div class="two columns"><label for="manufacturer">Equipment Manufacturer *</label></div>
                     <div class="three columns">
                         <select id="manufacturer" name="manufacturer" style="width: 100%" required>
@@ -235,8 +239,6 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
-                </div>
-                <div class="row">
                     <div class="two columns"><label for="model">Equipment Model *</label></div>
                     <div class="three columns">
                         <select id="model" name="model" style="width: 100%" required>
@@ -250,14 +252,16 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
+                </div>
+                <div class="row">
                     <div class="two columns"><label for="mfgDate">Equipment Mfg Date *</label></div>
-                    <div class="three columns"><input type="date" id="mfgDate" name="mfgDate" value="" style="width:55%" required> </div>
+                    <div class="three columns"><input type="date" id="mfgDate" name="mfgDate" value="" style="width:55%" required></div>
+                    <div class="one columns">&nbsp;</div>
+                    <div class="two columns"><label for="assetNo">Equipment Asset No *</label></div>
+                    <div class="three columns"><input type="text" id="assetNo" name="assetNo" placeholder="Asset Number" value="" required> </div>
                     <div class="one columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="assetNo">Equipment Asset No *</label></div>
-                    <div class="three columns"><input type="text" class="form-control" id="assetNo" name="assetNo" placeholder="Asset Number" value="" required> </div>
-                    <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="newTransfer">New/Transfer Equipment *</label></div>
                     <div class="three columns">
                         <select id="newTransfer" name="newTransfer" style="width: 100%" onchange="updateToField()" required >
@@ -271,23 +275,44 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
-                </div>
-                <div class="row" id="transfer" style="display: none;">
-                    <div class="two columns"><label for="to" class="col-lg-7 control-label">From? *</label></div>
-                    <div class="three columns">
-                        <select id="to" name="to" style="width: 100%" readonly required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '014' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
-                        </select>
+                    <div class="six columns" id="transfer" style="display: none">
+                        <div class="four columns"><label for="to">From? *</label></div>
+                        <div class="two columns">
+                            <select id="to" name="to" style="width: 100%" readonly required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '014' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 
                 <script>
+                    function updateRelTest() {
+                        var newreltest = document.getElementById('relTest');
+                        var zone1 = document.getElementById('zone1');
+                        var zone2 = document.getElementById('zone2');
+                        console.log("hehe " + newreltest.value);
+                        
+                        if (newreltest.value === "008019" || newreltest.value === "008021") {
+                            zone2.readOnly = false;
+                            zone2.required = true;
+                            zone2.style.display = 'block';
+                            zone1.style.display = 'block';
+                            console.log("ada value dia");
+                        } else {
+                            console.log("takde value kat sini");
+                            zone2.readOnly = true;
+                            zone2.required = false;
+                            zone2.style.display = 'none';
+                            zone1.style.display = 'none';
+                        }
+                    }
+                    
                     function updateToField() {
                         var newTransferDropdown = document.getElementById('newTransfer');
                         var toField = document.getElementById('to');
@@ -309,42 +334,42 @@ include 'form_template.php';
                 <h6>Capability</h6>
                 <div class="row">
                     <div class="two columns"><label for="voltRating">Voltage Rating *</label></div>
-                    <div class="one columns"><input type="number" 0 class="form-control" id="voltRating" name="voltRating" value="" required> </div>
-                    <div class="one columns"><label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="voltRating" name="voltRating" value="" required> </div>
+                    <div class="one columns"><label for="voltRating" style="text-align: left"><b>V</b></label></div>
                     <div class="two columns">&nbsp;</div>
                     <div class="two columns"><label for="voltControl">Voltage Control Accuracy *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="voltControl" name="voltControl" value="" required> </div>
-                    <div class="one columns"><label for="voltControl" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="voltControl" name="voltControl" value="" required> </div>
+                    <div class="one columns"><label for="voltControl" style="text-align: left"><b>%</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="minTemp">Min. Temperature *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="minTemp" name="minTemp" value="" required> </div>
-                    <div class="one columns"><label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="minTemp" name="minTemp" value="" required> </div>
+                    <div class="one columns"><label for="minTemp" style="text-align: left"><b>`C</b></label></div>
                     <div class="two columns">&nbsp;</div>
                     <div class="two columns"><label for="maxTemp">Max. Temperature *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="maxTemp" name="maxTemp" value="" required> </div>
-                    <div class="one columns"><label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="maxTemp" name="maxTemp" value="" required> </div>
+                    <div class="one columns"><label for="maxTemp" style="text-align: left"><b>`C</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="minRh">Min. RH *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="minRh" name="minRh" value="" required> </div>
-                    <div class="one columns"><label for="minRh" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="minRh" name="minRh" value="" required> </div>
+                    <div class="one columns"><label for="minRh" style="text-align: left"><b>%</b></label></div>
                     <div class="two columns">&nbsp;</div>
                     <div class="two columns"><label for="maxRh">Max. RH *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="maxRh" name="maxRh" value="" required> </div>
-                    <div class="one columns"><label for="maxRh" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="" required> </div>
+                    <div class="one columns"><label for="maxRh" style="text-align: left"><b>%</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="heatDissipation">Heat Dissipation *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="heatDissipation" name="heatDissipation" value="" required> </div>
-                    <div class="one columns"><label for="heatDissipation" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Watt</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="heatDissipation" name="heatDissipation" value="" required> </div>
+                    <div class="one columns"><label for="heatDissipation" style="text-align: left"><b>Watt</b></label></div>
                     <div class="two columns">&nbsp;</div>
                     <div class="two columns"><label for="tempFluctuation">Temperature Fluctuation *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="tempFluctuation" name="tempFluctuation" value="" required></div>
-                    <div class="one columns"><label for="tempFluctuation" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="tempFluctuation" name="tempFluctuation" value="" required></div>
+                    <div class="one columns"><label for="tempFluctuation" style="text-align: left"><b>`C</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_01">View Sample</label>
@@ -357,8 +382,8 @@ include 'form_template.php';
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="tempUniform">Temperature Uniformity *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="tempUniform" name="tempUniform" value="" required> </div>
-                    <div class="one columns"><label for="tempUniform" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="tempUniform" name="tempUniform" value="" required> </div>
+                    <div class="one columns"><label for="tempUniform" style="text-align: left"><b>`C</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_02">View Sample</label>
@@ -369,8 +394,8 @@ include 'form_template.php';
                         </dialog>
                     </div>
                     <div class="two columns"><label for="humidFluctuation">Humidity Fluctuation *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="humidFluctuation" name="humidFluctuation" value="" required> </div>
-                    <div class="one columns"><label for="humidFluctuation" class="col-lg-2 control-label pull-left" style="text-align: left"><b>%</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="humidFluctuation" name="humidFluctuation" value="" required> </div>
+                    <div class="one columns"><label for="humidFluctuation" style="text-align: left"><b>%</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_03">View Sample</label>
@@ -385,8 +410,8 @@ include 'form_template.php';
                 <h6>Characteristic</h6>
                 <div class="row">
                     <div class="two columns"><label for="noInterior">No. Interior Zones (doors) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="noInterior" name="noInterior" value="" required> </div>
-                    <div class="one columns"><label for="noInterior" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Zone</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="noInterior" name="noInterior" value="" required> </div>
+                    <div class="one columns"><label for="noInterior" style="text-align: left"><b>Zone</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_06">View Sample</label>
@@ -397,14 +422,14 @@ include 'form_template.php';
                         </dialog>
                     </div>
                     <div class="two columns"><label for="extDimension">External Dimension (W) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="extDimensionW" name="extDimensionW" value="" required> </div>
-                    <div class="one columns"><label for="extDimensionW" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="extDimensionW" name="extDimensionW" value="" required> </div>
+                    <div class="one columns"><label for="extDimensionW" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="intVolume">Internal Volume *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="intVolume" name="intVolume" value="" required> </div>
-                    <div class="one columns"><label for="intVolume" class="col-lg-2 control-label pull-left" style="text-align: left"><b>L</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="intVolume" name="intVolume" value="" required> </div>
+                    <div class="one columns"><label for="intVolume" style="text-align: left"><b>L</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_08">View Sample</label>
@@ -415,8 +440,8 @@ include 'form_template.php';
                         </dialog>
                     </div>
                     <div class="two columns"><label for="extDimension">(D) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="extDimensionD" name="extDimensionD" value="" required> </div>
-                    <div class="one columns"><label for="extDimensionD" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="extDimensionD" name="extDimensionD" value="" required> </div>
+                    <div class="one columns"><label for="extDimensionD" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
@@ -441,8 +466,8 @@ include 'form_template.php';
                         </dialog>
                     </div>
                     <div class="two columns"><label for="extDimension">(H) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="extDimensionH" name="extDimensionH" value="" required> </div>
-                    <div class="one columns"><label for="extDimensionH" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="extDimensionH" name="extDimensionH" value="" required> </div>
+                    <div class="one columns"><label for="extDimensionH" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_04">View Sample</label>
@@ -468,14 +493,14 @@ include 'form_template.php';
                     </div>
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="intDimension">Internal Dimension (W) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="intDimensionW" name="intDimensionW" value="" required> </div>
-                    <div class="one columns"><label for="intDimensionW" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="intDimensionW" name="intDimensionW" value="" required> </div>
+                    <div class="one columns"><label for="intDimensionW" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="rackSlotPitch">Rack Slot-to-Slot Pitch *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="rackSlotPitch" name="rackSlotPitch" value="" required></div>
-                    <div class="one columns"><label for="rackSlotPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="rackSlotPitch" name="rackSlotPitch" value="" required></div>
+                    <div class="one columns"><label for="rackSlotPitch" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_10">View Sample</label>
@@ -486,14 +511,14 @@ include 'form_template.php';
                         </dialog>
                     </div>
                     <div class="two columns"><label for="intDimension">(D) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="intDimensionD" name="intDimensionD" value="" required> </div>
-                    <div class="one columns"><label for="intDimensionD" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="intDimensionD" name="intDimensionD" value="" required> </div>
+                    <div class="one columns"><label for="intDimensionD" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="rackSLotWidth">Rack Slot Width *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="rackSLotWidth" name="rackSLotWidth" value="" required> </div>
-                    <div class="one columns"><label for="rackSLotWidth" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="rackSLotWidth" name="rackSLotWidth" value="" required> </div>
+                    <div class="one columns"><label for="rackSLotWidth" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_11">View Sample</label>
@@ -504,8 +529,8 @@ include 'form_template.php';
                         </dialog>
                     </div>
                     <div class="two columns"><label for="intDimension">(H) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="intDimensionH" name="intDimensionH" value="" required> </div>
-                    <div class="one columns"><label for="intDimensionH" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="intDimensionH" name="intDimensionH" value="" required> </div>
+                    <div class="one columns"><label for="intDimensionH" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_05">View Sample</label>
@@ -518,18 +543,18 @@ include 'form_template.php';
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="eqptWeight">Equipment Weight *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="eqptWeight" name="eqptWeight" value="" required> </div>
-                    <div class="one columns"><label for="eqptWeight" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Kg</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="eqptWeight" name="eqptWeight" value="" required> </div>
+                    <div class="one columns"><label for="eqptWeight" style="text-align: left"><b>Kg</b></label></div>
                     <div class="two columns">&nbsp;</div>
                     <div class="two columns"><label for="rackDimension">Rack Dimension (W) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="rackDimensionW" name="rackDimensionW" value="" required> </div>
-                    <div class="one columns"><label for="rackDimensionW" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="rackDimensionW" name="rackDimensionW" value="" required> </div>
+                    <div class="one columns"><label for="rackDimensionW" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="noMbSlot">Number of motherboard slots *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="noMbSlot" name="noMbSlot" value="" required></div>
-                    <div class="one columns"><label for="noMbSlot" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Slot</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="noMbSlot" name="noMbSlot" value="" required></div>
+                    <div class="one columns"><label for="noMbSlot" style="text-align: left"><b>Slot</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_12">View Sample</label>
@@ -540,14 +565,14 @@ include 'form_template.php';
                         </dialog>
                     </div>
                     <div class="two columns"><label for="rackDimension">(D) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="rackDimensionD" name="rackDimensionD" value="" required> </div>
-                    <div class="one columns"><label for="rackDimensionD" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="rackDimensionD" name="rackDimensionD" value="" required> </div>
+                    <div class="one columns"><label for="rackDimensionD" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="maxPsBs">Max number of power supplies per board slot *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="maxPsBs" name="maxPsBs" value="" required> </div>
-                    <div class="one columns"><label for="maxPsBs" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Slot</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="maxPsBs" name="maxPsBs" value="" required> </div>
+                    <div class="one columns"><label for="maxPsBs" style="text-align: left"><b>Slot</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_13">View Sample</label>
@@ -558,8 +583,8 @@ include 'form_template.php';
                         </dialog>
                     </div>
                     <div class="two columns"><label for="rackDimension">(H) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="rackDimensionH" name="rackDimensionH" value="" required> </div>
-                    <div class="one columns"><label for="rackDimensionH" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="rackDimensionH" name="rackDimensionH" value="" required> </div>
+                    <div class="one columns"><label for="rackDimensionH" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_07">View Sample</label>
@@ -572,8 +597,8 @@ include 'form_template.php';
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="maxPs">Max number of power supplies for the entire Equipment *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="maxPs" name="maxPs" value="" required> </div>
-                    <div class="one columns"><label for="maxPs" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Unit</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="maxPs" name="maxPs" value="" required> </div>
+                    <div class="one columns"><label for="maxPs" style="text-align: left"><b>Unit</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_14">View Sample</label>
@@ -680,12 +705,12 @@ include 'form_template.php';
                 <h6>Utilities</h6>
                 <div class="row">
                     <div class="two columns"><label for="voltagePhase">Voltage/Phase/Current *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="voltagePhase" name="voltagePhase" value="" required> </div>
-                    <div class="one columns"><label for="voltagePhase" class="col-lg-2 control-label pull-left" style="text-align: left"><b>VAC</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="voltagePhase" name="voltagePhase" value="" required> </div>
+                    <div class="one columns"><label for="voltagePhase" style="text-align: left"><b>VAC</b></label></div>
                     <div class="two columns">&nbsp;</div>
                     <div class="two columns"><label for="phase">Phase *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" class="form-control" id="phase" name="phase" value="" required> </div>
-                    <div class="one columns"><label for="phase" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Phase</b></label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="phase" name="phase" value="" required> </div>
+                    <div class="one columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
@@ -847,22 +872,22 @@ include 'form_template.php';
                 <div id="BananaDiv" name="BananaDiv" style="display: none;">
                     <div class="row">
                         <div class="two columns"><label for="bananaJackHole">No. Banana Jack Holes *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="bananaJackHole" name="bananaJackHole" value="" > </div>
-                        <div class="one columns"><label for="bananaJackHole" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Pins</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="bananaJackHole" name="bananaJackHole" value="" > </div>
+                        <div class="one columns"><label for="bananaJackHole" style="text-align: left"><b>Pins</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="connVoltRating">Connector Voltage Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > </div>
-                        <div class="one columns"><label for="connVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="connVoltRating" name="connVoltRating" value="" > </div>
+                        <div class="one columns"><label for="connVoltRating" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="connCurrRating">Connector Current Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > </div>
-                        <div class="one columns"><label for="connCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="connCurrRating" name="connCurrRating" value="" > </div>
+                        <div class="one columns"><label for="connCurrRating" style="text-align: left"><b>A</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="connTempRating">Connector Temp Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="" > </div>
-                        <div class="one columns"><label for="connTempRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="connTempRating" name="connTempRating" value="" > </div>
+                        <div class="one columns"><label for="connTempRating" style="text-align: left"><b>`C</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                 </div>
@@ -870,74 +895,74 @@ include 'form_template.php';
                 <div id="EdgeDiv" name="EdgeDiv" style="display: none;">
                     <div class="row">
                         <div class="two columns"><label for="noPins">No. of Pins *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="" > </div>
-                        <div class="one columns"><label for="noPins" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Pins</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="noPins" name="noPins" value="" > </div>
+                        <div class="one columns"><label for="noPins" style="text-align: left"><b>Pins</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="pinPitch">Pin Pitch *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="" > </div>
-                        <div class="one columns"><label for="pinPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="pinPitch" name="pinPitch" value="" > </div>
+                        <div class="one columns"><label for="pinPitch" style="text-align: left"><b>mm</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="connVoltRating">Connector Voltage Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > </div>
-                        <div class="one columns"><label for="connVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="connVoltRating" name="connVoltRating" value="" > </div>
+                        <div class="one columns"><label for="connVoltRating" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="connCurrRating">Connector Current Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > </div>
-                        <div class="one columns"><label for="connCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="connCurrRating" name="connCurrRating" value="" > </div>
+                        <div class="one columns"><label for="connCurrRating" style="text-align: left"><b>A</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="connTempRating">Connector Temp Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="" > </div>
-                        <div class="one columns"><label for="connTempRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="connTempRating" name="connTempRating" value="" > </div>
+                        <div class="one columns"><label for="connTempRating" style="text-align: left"><b>`C</b></label></div>
                     </div>
                 </div>
                 
                 <div id="WinchestorDiv" name="WinchestorDiv" style="display: none;">
                     <div class="row">
                         <div class="two columns"><label for="noPins">No. of Pins *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="" > </div>
-                        <div class="one columns"><label for="noPins" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Pins</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="noPins" name="noPins" value="" > </div>
+                        <div class="one columns"><label for="noPins" style="text-align: left"><b>Pins</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="pinPitch">Pin Pitch *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="" > </div>
-                        <div class="one columns"><label for="pinPitch" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="pinPitch" name="pinPitch" value="" > </div>
+                        <div class="one columns"><label for="pinPitch" style="text-align: left"><b>mm</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="connVoltRating">Connector Voltage Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="" > </div>
-                        <div class="one columns"><label for="connVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="connVoltRating" name="connVoltRating" value="" > </div>
+                        <div class="one columns"><label for="connVoltRating" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="connCurrRating">Connector Current Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="" > </div>
-                        <div class="one columns"><label for="connCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="connCurrRating" name="connCurrRating" value="" > </div>
+                        <div class="one columns"><label for="connCurrRating" style="text-align: left"><b>A</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="connRack">No. Wires Connected to Rack *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="connRack" name="connRack" value="" > </div>
-                        <div class="one columns"><label for="connRack" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="connRack" name="connRack" value="" > </div>
+                        <div class="one columns"><label for="connRack" style="text-align: left"><b>`C</b></label></div>
                     </div>
                 </div>
                 
                 <div class="row" id="WireDiv" name="WireDiv"" style="display: none;">
                     <div class="row">
                         <div class="two columns"><label for="wireVoltRating">Wire Voltage Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="wireVoltRating" name="wireVoltRating" value="" > </div>
-                        <div class="one columns"><label for="wireVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="wireVoltRating" name="wireVoltRating" value="" > </div>
+                        <div class="one columns"><label for="wireVoltRating" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="wireCurrRating">Wire Current Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="wireCurrRating" name="wireCurrRating" value="" > </div>
-                        <div class="one columns"><label for="wireCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="wireCurrRating" name="wireCurrRating" value="" > </div>
+                        <div class="one columns"><label for="wireCurrRating" style="text-align: left"><b>A</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="wireTempRating">Wire Temp Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="wireTempRating" name="wireTempRating" value="" > </div>
-                        <div class="one columns"><label for="wireTempRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>`C</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="wireTempRating" name="wireTempRating" value="" > </div>
+                        <div class="one columns"><label for="wireTempRating" style="text-align: left"><b>`C</b></label></div>
                     </div>
                 </div>
                 
@@ -982,12 +1007,12 @@ include 'form_template.php';
                 <div class="row" id="viewExternalDiv" name="viewExternalDiv" style="display: none;">
                     <div class="row">
                         <div class="two columns"><label for="interfaceVoltRating">Interface Voltage Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="" > </div>
-                        <div class="one columns"><label for="interfaceVoltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="interfaceVoltRating" name="interfaceVoltRating" value="" > </div>
+                        <div class="one columns"><label for="interfaceVoltRating" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="interfaceCurrRating">Interface Current Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="interfaceCurrRating" name="interfaceCurrRating" value="" > </div>
-                        <div class="one columns"><label for="interfaceCurrRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>A</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="interfaceCurrRating" name="interfaceCurrRating" value="" > </div>
+                        <div class="one columns"><label for="interfaceCurrRating" style="text-align: left"><b>A</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                 </div>

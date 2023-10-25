@@ -81,7 +81,7 @@ include 'form_template.php';
             <div class="row">
                 <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                 <div class="three columns">
-                    <select id="lab_location" name="lab_location" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="lab_location" name="lab_location" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '002' ORDER BY code ASC";
@@ -95,7 +95,7 @@ include 'form_template.php';
                 <div class="one columns">&nbsp;</div>
                 <div class="two columns label"><label for="strategy">onsemi Strategy *</label></div>
                 <div class="three columns">
-                    <select id="strategy" name="strategy" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="strategy" name="strategy" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '003' ORDER BY code ASC";
@@ -111,7 +111,7 @@ include 'form_template.php';
             <div class="row">
                 <div class="two columns"><label for="standardization">Standardization Category *</label></div>
                 <div class="three columns">
-                    <select id="standardization" name="standardization" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="standardization" name="standardization" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '004' ORDER BY code ASC";
@@ -125,7 +125,7 @@ include 'form_template.php';
                 <div class="one columns">&nbsp;</div>
                 <div class="two columns"><label for="champion">Champion *</label></div>
                 <div class="three columns">
-                    <select id="champion" name="champion" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="champion" name="champion" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '005' ORDER BY code ASC";
@@ -143,7 +143,7 @@ include 'form_template.php';
             <div class="row">
                 <div class="two columns"><label for="manufacturer">Manufacturer *</label></div>
                 <div class="three columns">
-                    <select id="manufacturer" name="manufacturer" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="manufacturer" name="manufacturer" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
@@ -157,7 +157,7 @@ include 'form_template.php';
                 <div class="one columns">&nbsp;</div>
                 <div class="two columns"><label for="model">Model *</label></div>
                 <div class="three columns">
-                    <select id="model" name="model" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="model" name="model" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
@@ -199,7 +199,7 @@ include 'form_template.php';
                 <div class="two columns">&nbsp;</div>
                 <div class="two columns"><label for="volt_protection">Overvoltage protection *</label></div>
                 <div class="three columns">
-                    <select id="volt_protection" name="volt_protection" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="volt_protection" name="volt_protection" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
@@ -215,7 +215,7 @@ include 'form_template.php';
             <div class="row">
                 <div class="two columns"><label for="curr_protection">Overcurrent protection *</label></div>
                 <div class="three columns">
-                    <select id="curr_protection" name="curr_protection" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="curr_protection" name="curr_protection" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
@@ -231,32 +231,32 @@ include 'form_template.php';
             <h6>Characteristics</h6>
             <div class="row">
                 <div class="two columns"><label for="dimension_w">Dimensions (W) *</label></div>
-                <div class="one columns"><input type="number" step="0.001" class="form-control" id="dimension_w" name="dimension_w" value="" required> </div>
-                <div class="one columns"><label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                <div class="one columns"><input type="number" step="0.001" id="dimension_w" name="dimension_w" value="" required> </div>
+                <div class="one columns"><label for="voltRating" style="text-align: left"><b>mm</b></label></div>
                 <div class="two columns">&nbsp;</div>
                 <div class="two columns"><label for="weight">Weight (kg) *</label></div>
-                <div class="one columns"><input type="number" step="0.001" class="form-control" id="weight" name="weight" value="" required> </div>
-                <div class="one columns"><label for="voltControl" class="col-lg-2 control-label pull-left" style="text-align: left"><b>Kg</b></label></div>
+                <div class="one columns"><input type="number" step="0.001" id="weight" name="weight" value="" required> </div>
+                <div class="one columns"><label for="voltControl" style="text-align: left"><b>Kg</b></label></div>
                 <div class="two columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="dimension_d">Dimensions (D) *</label></div>
-                <div class="one columns"><input type="number" step="0.001" class="form-control" id="dimension_d" name="dimension_d" value="" required> </div>
-                <div class="one columns"><label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                <div class="one columns"><input type="number" step="0.001" id="dimension_d" name="dimension_d" value="" required> </div>
+                <div class="one columns"><label for="maxTemp" style="text-align: left"><b>mm</b></label></div>
                 <div class="two columns">&nbsp;</div>
                 <div class="two columns"><label for="input_volt">Input voltage (facilities) *</label></div>
-                <div class="one columns"><input type="number" step="0.001" class="form-control" id="input_volt" name="input_volt" value="" required> </div>
-                <div class="one columns"><label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label></div>
+                <div class="one columns"><input type="number" step="0.001" id="input_volt" name="input_volt" value="" required> </div>
+                <div class="one columns"><label for="minTemp" style="text-align: left"><b>V</b></label></div>
                 <div class="two columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="dimension_h">Dimensions (H) *</label></div>
-                <div class="one columns"><input type="number" step="0.001" class="form-control" id="dimension_h" name="dimension_h" value="" required> </div>
-                <div class="one columns"><label for="minTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>mm</b></label></div>
+                <div class="one columns"><input type="number" step="0.001" id="dimension_h" name="dimension_h" value="" required> </div>
+                <div class="one columns"><label for="minTemp" style="text-align: left"><b>mm</b></label></div>
                 <div class="two columns">&nbsp;</div>
                 <div class="two columns"><label for="remote_operation_capability">Remote operation capability *</label></div>
                 <div class="three columns">
-                    <select id="remote_operation_capability" name="remote_operation_capability" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="remote_operation_capability" name="remote_operation_capability" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
@@ -272,7 +272,7 @@ include 'form_template.php';
             <div class="row">
                 <div class="two columns"><label for="output_voltage_monitor">Output voltage monitor *</label></div>
                 <div class="three columns">
-                    <select id="output_voltage_monitor" name="output_voltage_monitor" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="output_voltage_monitor" name="output_voltage_monitor" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
@@ -286,7 +286,7 @@ include 'form_template.php';
                 <div class="one columns">&nbsp;</div>
                 <div class="two columns"><label for="output_curr_monitor">Output current monitor  *</label></div>
                 <div class="three columns">
-                    <select id="output_curr_monitor" name="output_curr_monitor" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="output_curr_monitor" name="output_curr_monitor" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
@@ -302,7 +302,7 @@ include 'form_template.php';
             <div class="row">
                 <div class="two columns"><label for="pc_to_eqpt_interface">PS to eqpt interface *</label></div>
                 <div class="three columns">
-                    <select id="pc_to_eqpt_interface" name="pc_to_eqpt_interface" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="pc_to_eqpt_interface" name="pc_to_eqpt_interface" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
@@ -315,7 +315,7 @@ include 'form_template.php';
                 <div class="one columns">&nbsp;</div>
                 <div class="two columns"><label for="lan_port">LAN Port *</label></div>
                 <div class="three columns">
-                    <select id="lan_port" name="lan_port" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="lan_port" name="lan_port" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
@@ -337,7 +337,7 @@ include 'form_template.php';
             <div class="row">
                 <div class="two columns"><label for="gpib_interface">GPIB interface *</label></div>
                 <div class="three columns">
-                    <select id="gpib_interface" name="gpib_interface" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="gpib_interface" name="gpib_interface" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
@@ -357,7 +357,7 @@ include 'form_template.php';
                 </div>
                 <div class="two columns"><label for="other_interface_port">Other interface ports *</label></div>
                 <div class="three columns">
-                    <select id="other_interface_port" name="other_interface_port" class="js-example-basic-single" style="width: 100%" required>
+                    <select id="other_interface_port" name="other_interface_port" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
@@ -380,8 +380,8 @@ include 'form_template.php';
             <h6>Capacity</h6>
             <div class="row">
                 <div class="two columns"><label for="no_output_channel">Number of output channels *</label></div>
-                <div class="one columns"><input type="number" step="0.001" class="form-control" id="no_output_channel" name="no_output_channel" value="" required> </div>
-                <div class="one columns"><label for="maxTemp" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label></div>
+                <div class="one columns"><input type="number" step="0.001" id="no_output_channel" name="no_output_channel" value="" required> </div>
+                <div class="one columns"><label for="maxTemp" style="text-align: left"><b>V</b></label></div>
                 <div class="one columns">&nbsp;</div>
                 <div class="one columns">
                     <label for="toggle_1">View Sample</label>

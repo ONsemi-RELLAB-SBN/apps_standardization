@@ -155,7 +155,7 @@ include 'form_template.php';
                                     <div class="row">
                                         <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                                         <div class="three columns">
-                                            <select id="lab_location" name="lab_location" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="lab_location" name="lab_location" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '002' ORDER BY code ASC";
@@ -169,7 +169,7 @@ include 'form_template.php';
                                         <div class="one columns">&nbsp;</div>
                                         <div class="two columns label"><label for="strategy">onsemi Strategy *</label></div>
                                         <div class="three columns">
-                                            <select id="strategy" name="strategy" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="strategy" name="strategy" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '003' ORDER BY code ASC";
@@ -185,7 +185,7 @@ include 'form_template.php';
                                     <div class="row">
                                         <div class="two columns"><label for="standardization">Standardization Category *</label></div>
                                         <div class="three columns">
-                                            <select id="standardization" name="standardization" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="standardization" name="standardization" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '004' ORDER BY code ASC";
@@ -199,7 +199,7 @@ include 'form_template.php';
                                         <div class="one columns">&nbsp;</div>
                                         <div class="two columns"><label for="champion">Champion *</label></div>
                                         <div class="three columns">
-                                            <select id="champion" name="champion" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="champion" name="champion" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '005' ORDER BY code ASC";
@@ -221,7 +221,7 @@ include 'form_template.php';
                                     <div class="row">
                                         <div class="two columns"><label for="manufacturer">Manufacturer *</label></div>
                                         <div class="three columns">
-                                            <select id="manufacturer" name="manufacturer" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="manufacturer" name="manufacturer" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
@@ -235,7 +235,7 @@ include 'form_template.php';
                                         <div class="one columns">&nbsp;</div>
                                         <div class="two columns"><label for="model">Model *</label></div>
                                         <div class="three columns">
-                                            <select id="model" name="model" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="model" name="model" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
@@ -251,7 +251,7 @@ include 'form_template.php';
                                     <div class="row">
                                         <div class="two columns"><label for="daq_id">DAQ ID *</label></div>
                                         <div class="three columns">
-                                            <select id="daq_id" name="daq_id" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="daq_id" name="daq_id" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
@@ -271,17 +271,17 @@ include 'form_template.php';
                                 <div id="setionCapacity" class="w3-hide w3-container">
                                     <div class="row">
                                         <div class="two columns"><label for="no_temp_channel">Number of temperature channels *</label></div>
-                                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="no_temp_channel" name="no_temp_channel" value="" required> </div>
+                                        <div class="one columns"><input type="number" step="0.001" id="no_temp_channel" name="no_temp_channel" value="" required> </div>
                                         <div class="one columns"><label for="no_temp_channel" style="text-align: left"><b>V</b></label></div>
                                         <div class="two columns">&nbsp;</div>
                                         <div class="two columns"><label for="no_volt_channel">Number of voltage channels *</label></div>
-                                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="no_volt_channel" name="no_volt_channel" value="" required> </div>
+                                        <div class="one columns"><input type="number" step="0.001" id="no_volt_channel" name="no_volt_channel" value="" required> </div>
                                         <div class="one columns"><label for="no_volt_channel" style="text-align: left"><b>%</b></label></div>
                                         <div class="two columns">&nbsp;</div>
                                     </div>
                                     <div class="row">
                                         <div class="two columns"><label for="no_leakage_channel">Number of leakage channels *</label></div>
-                                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="no_leakage_channel" name="no_leakage_channel" value="" required> </div>
+                                        <div class="one columns"><input type="number" step="0.001" id="no_leakage_channel" name="no_leakage_channel" value="" required> </div>
                                         <div class="one columns"><label for="no_leakage_channel" style="text-align: left"><b>`C</b></label></div>
                                         <div class="two columns">&nbsp;</div>
                                     </div>
@@ -293,22 +293,22 @@ include 'form_template.php';
                                 <div id="sectionCapability" class="w3-hide w3-container">
                                     <div class="row">
                                         <div class="two columns"><label for="volt_measure_range">Voltage measurement range *</label></div>
-                                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="volt_measure_range" name="volt_measure_range" value="" required> </div>
+                                        <div class="one columns"><input type="number" step="0.001" id="volt_measure_range" name="volt_measure_range" value="" required> </div>
                                         <div class="one columns"><label for="volt_measure_range" style="text-align: left"><b>V</b></label></div>
                                         <div class="two columns">&nbsp;</div>
                                         <div class="two columns"><label for="temp_measure_range">Temperature measurement range *</label></div>
-                                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="temp_measure_range" name="temp_measure_range" value="" required> </div>
+                                        <div class="one columns"><input type="number" step="0.001" id="temp_measure_range" name="temp_measure_range" value="" required> </div>
                                         <div class="one columns"><label for="temp_measure_range" style="text-align: left"><b>%</b></label></div>
                                         <div class="two columns">&nbsp;</div>
                                     </div>
                                     <div class="row">
                                         <div class="two columns"><label for="curr_measure_range">Leakage current measurement range *</label></div>
-                                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="curr_measure_range" name="curr_measure_range" value="" required> </div>
+                                        <div class="one columns"><input type="number" step="0.001" id="curr_measure_range" name="curr_measure_range" value="" required> </div>
                                         <div class="one columns"><label for="curr_measure_range" style="text-align: left"><b>`C</b></label></div>
                                         <div class="two columns">&nbsp;</div>
                                         <div class="two columns"><label for="display_volt_drop">Display Rdaq Voltage Drop *</label></div>
                                         <div class="three columns">
-                                            <select id="display_volt_drop" name="display_volt_drop" class="js-example-basic-single" style="width: 100%" readonly required>
+                                            <select id="display_volt_drop" name="display_volt_drop" style="width: 100%" readonly required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '014' ORDER BY code ASC";
@@ -323,7 +323,7 @@ include 'form_template.php';
                                     <div class="row">
                                         <div class="two columns"><label for="board_insert_check">Board Insert Check *</label></div>
                                         <div class="three columns">
-                                            <select id="board_insert_check" name="board_insert_check" class="js-example-basic-single" style="width: 100%" onchange="updateToField()" required >
+                                            <select id="board_insert_check" name="board_insert_check" style="width: 100%" onchange="updateToField()" required >
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '013' ORDER BY code ASC";
@@ -336,7 +336,7 @@ include 'form_template.php';
                                         <div class="one columns">&nbsp;</div>
                                         <div class="two columns"><label for="measure_prior_start_test">Rdaq Measurement prior start the test *</label></div>
                                         <div class="three columns">
-                                            <select id="measure_prior_start_test" name="measure_prior_start_test" class="js-example-basic-single" style="width: 100%" onchange="updateToField()" required >
+                                            <select id="measure_prior_start_test" name="measure_prior_start_test" style="width: 100%" onchange="updateToField()" required >
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '013' ORDER BY code ASC";
@@ -352,7 +352,7 @@ include 'form_template.php';
                                     <div class="row">
                                         <div class="two columns"><label for="monitoring_speed">Monitoring speed *</label></div>
                                         <div class="three columns">
-                                            <select id="monitoring_speed" name="monitoring_speed" class="js-example-basic-single" style="width: 100%" onchange="updateToField()" required >
+                                            <select id="monitoring_speed" name="monitoring_speed" style="width: 100%" onchange="updateToField()" required >
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '013' ORDER BY code ASC";
@@ -365,17 +365,17 @@ include 'form_template.php';
                                         </div>
                                         <div class="one columns">&nbsp;</div>
                                         <div class="two columns"><label for="leakage_measure_reso">Leakage measurement resolution *</label></div>
-                                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="leakage_measure_reso" name="leakage_measure_reso" value="" required> </div>
+                                        <div class="one columns"><input type="number" step="0.001" id="leakage_measure_reso" name="leakage_measure_reso" value="" required> </div>
                                         <div class="one columns"><label for="leakage_measure_reso" style="text-align: left"><b>V</b></label></div>
                                         <div class="two columns">&nbsp;</div>
                                     </div>
                                     <div class="row">
                                         <div class="two columns"><label for="leakage_measure_accuracy">Leakage measurement accuracy *</label></div>
-                                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="leakage_measure_accuracy" name="leakage_measure_accuracy" value="" required> </div>
+                                        <div class="one columns"><input type="number" step="0.001" id="leakage_measure_accuracy" name="leakage_measure_accuracy" value="" required> </div>
                                         <div class="one columns"><label for="leakage_measure_accuracy" style="text-align: left"><b>V</b></label></div>
                                         <div class="two columns">&nbsp;</div>
                                         <div class="two columns"><label for="volt_measure_reso">Voltage measurement resolution *</label></div>
-                                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="volt_measure_reso" name="volt_measure_reso" value="" required> </div>
+                                        <div class="one columns"><input type="number" step="0.001" id="volt_measure_reso" name="volt_measure_reso" value="" required> </div>
                                         <div class="one columns"><label for="volt_measure_reso" style="text-align: left"><b>%</b></label></div>
                                         <div class="two columns">
                                             <label for="toggle_01">View Sample</label>
@@ -389,7 +389,7 @@ include 'form_template.php';
                                     <div class="row">
                                         <div class="two columns"><label for="offline_data_plot">Offline software to review historical data and plotting with data analysis *</label></div>
                                         <div class="three columns">
-                                            <select id="offline_data_plot" name="offline_data_plot" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="offline_data_plot" name="offline_data_plot" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
@@ -410,7 +410,7 @@ include 'form_template.php';
                                         </div>
                                         <div class="two columns"><label for="measure_type_hardware">Measurement type for hardware design *</label></div>
                                         <div class="three columns">
-                                            <select id="measure_type_hardware" name="measure_type_hardware" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="measure_type_hardware" name="measure_type_hardware" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
@@ -438,7 +438,7 @@ include 'form_template.php';
                                 <div id="sectionCharacteristic" class="w3-hide w3-container">
                                     <div class="row">
                                         <div class="two columns"><label for="analog_input_single">Number of analog inputs (single ended) *</label></div>
-                                        <div class="one columns"><input type="number" 0 class="form-control" id="analog_input_single" name="analog_input_single" value="" required> </div>
+                                        <div class="one columns"><input type="number" step="0.001" id="analog_input_single" name="analog_input_single" value="" required> </div>
                                         <div class="one columns"><label for="analog_input_single" style="text-align: left"><b>V</b></label></div>
                                         <div class="two columns">
                                             <label for="toggle_040">View Sample</label>
@@ -449,7 +449,7 @@ include 'form_template.php';
                                             </dialog>
                                         </div>
                                         <div class="two columns"><label for="analog_input_diff">Number of analog inputs (differential) *</label></div>
-                                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="analog_input_diff" name="analog_input_diff" value="" required> </div>
+                                        <div class="one columns"><input type="number" step="0.001" id="analog_input_diff" name="analog_input_diff" value="" required> </div>
                                         <div class="one columns"><label for="analog_input_diff" style="text-align: left"><b>%</b></label></div>
                                         <div class="two columns">
                                             <label for="toggle_041">View Sample</label>
@@ -462,7 +462,7 @@ include 'form_template.php';
                                     </div>
                                     <div class="row">
                                         <div class="two columns"><label for="resolution">Resolution *</label></div>
-                                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="resolution" name="resolution" value="" required> </div>
+                                        <div class="one columns"><input type="number" step="0.001" id="resolution" name="resolution" value="" required> </div>
                                         <div class="one columns"><label for="resolution" style="text-align: left"><b>`C</b></label></div>
                                         <div class="two columns">
                                             <label for="toggle_042">View Sample</label>
@@ -473,7 +473,7 @@ include 'form_template.php';
                                             </dialog>
                                         </div>
                                         <div class="two columns"><label for="sampling_frequency">Sampling frequency *</label></div>
-                                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="sampling_frequency" name="sampling_frequency" value="" required> </div>
+                                        <div class="one columns"><input type="number" step="0.001" id="sampling_frequency" name="sampling_frequency" value="" required> </div>
                                         <div class="one columns"><label for="sampling_frequency" style="text-align: left"><b>`C</b></label></div>
                                         <div class="two columns">
                                             <label for="toggle_050">View Sample</label>
@@ -487,7 +487,7 @@ include 'form_template.php';
                                     <div class="row">
                                         <div class="two columns"><label for="supported_eqpt">Supported eqpt *</label></div>
                                         <div class="three columns">
-                                            <select id="supported_eqpt" name="supported_eqpt" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="supported_eqpt" name="supported_eqpt" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
@@ -508,7 +508,7 @@ include 'form_template.php';
                                         </div>
                                         <div class="two columns"><label for="hw_resistence_measure">Hardware for resistance measurement *</label></div>
                                         <div class="three columns">
-                                            <select id="hw_resistence_measure" name="hw_resistence_measure" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="hw_resistence_measure" name="hw_resistence_measure" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
@@ -531,7 +531,7 @@ include 'form_template.php';
                                     <div class="row">
                                         <div class="two columns"><label for="hw_volt_measure">Hardware for voltage measurement *</label></div>
                                         <div class="three columns">
-                                            <select id="hw_volt_measure" name="hw_volt_measure" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="hw_volt_measure" name="hw_volt_measure" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
@@ -552,7 +552,7 @@ include 'form_template.php';
                                         </div>
                                         <div class="two columns"><label for="hw_temp_measure">Hardware for temperature measurement *</label></div>
                                         <div class="three columns">
-                                            <select id="hw_temp_measure" name="hw_temp_measure" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="hw_temp_measure" name="hw_temp_measure" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
@@ -575,7 +575,7 @@ include 'form_template.php';
                                     <div class="row">
                                         <div class="two columns"><label for="daq_eqpt_interface">DAQ to Eqpt Interface *</label></div>
                                         <div class="three columns">
-                                            <select id="daq_eqpt_interface" name="daq_eqpt_interface" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="daq_eqpt_interface" name="daq_eqpt_interface" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
@@ -596,7 +596,7 @@ include 'form_template.php';
                                         </div>
                                         <div class="two columns"><label for="daq_ps_interface">DAQ to PS Interface *</label></div>
                                         <div class="three columns">
-                                            <select id="daq_ps_interface" name="daq_ps_interface" class="js-example-basic-single" style="width: 100%" required>
+                                            <select id="daq_ps_interface" name="daq_ps_interface" style="width: 100%" required>
                                                 <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
