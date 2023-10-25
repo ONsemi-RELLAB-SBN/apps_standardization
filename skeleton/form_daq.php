@@ -390,6 +390,7 @@ include 'form_template.php';
                                         <div class="two columns"><label for="offline_data_plot">Offline software to review historical data and plotting with data analysis *</label></div>
                                         <div class="three columns">
                                             <select id="offline_data_plot" name="offline_data_plot" class="js-example-basic-single" style="width: 100%" required>
+                                                <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
                                                 $resSite = mysqli_query($con, $sqlDdSite);
@@ -487,6 +488,7 @@ include 'form_template.php';
                                         <div class="two columns"><label for="supported_eqpt">Supported eqpt *</label></div>
                                         <div class="three columns">
                                             <select id="supported_eqpt" name="supported_eqpt" class="js-example-basic-single" style="width: 100%" required>
+                                                <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
                                                 $resSite = mysqli_query($con, $sqlDdSite);
@@ -530,6 +532,7 @@ include 'form_template.php';
                                         <div class="two columns"><label for="hw_volt_measure">Hardware for voltage measurement *</label></div>
                                         <div class="three columns">
                                             <select id="hw_volt_measure" name="hw_volt_measure" class="js-example-basic-single" style="width: 100%" required>
+                                                <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
                                                 $resSite = mysqli_query($con, $sqlDdSite);
@@ -573,6 +576,7 @@ include 'form_template.php';
                                         <div class="two columns"><label for="daq_eqpt_interface">DAQ to Eqpt Interface *</label></div>
                                         <div class="three columns">
                                             <select id="daq_eqpt_interface" name="daq_eqpt_interface" class="js-example-basic-single" style="width: 100%" required>
+                                                <option value="" selected=""></option>
                                                 <?php
                                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
                                                 $resSite = mysqli_query($con, $sqlDdSite);

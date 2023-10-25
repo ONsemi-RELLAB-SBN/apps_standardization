@@ -463,7 +463,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_07">
                     <dialog>
                         <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/007.png" alt="image">
+                        <img id="myImg" src="../image/hardware/008.png" alt="image">
                     </dialog>
                 </div>
                 <div class="two columns"><label for="no_pins" class="col-lg-2 control-label">Number of pins *</label></div>
@@ -475,7 +475,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_08">
                     <dialog>
                         <label for="toggle_08" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/008.png" alt="image">
+                        <img id="myImg" src="../image/hardware/009.png" alt="image">
                     </dialog>
                 </div>
             </div>
