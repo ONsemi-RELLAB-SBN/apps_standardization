@@ -74,7 +74,7 @@ $id = $_GET['update'];
                             <h2 class="pull-left" style="border-left:none">Add Parameter Details</h2>
                         </div>
                         <div class="row">
-                            <form name='add_details' id='add_details' method="post" action='parameter_add_detail.php'>
+                            <form name='add_details' id='add_details' action='parameter_add_detail.php'>
                                 <div class="row">
                                     <div class="three columns">
                                         <label for="masterName">Master Name </label>
@@ -123,7 +123,7 @@ $id = $_GET['update'];
                                 </div>
                                 <!--<a href="parameter.php" class="btn btn-default btn-lg" id="backButton"><i class='bx bx-arrow-back bx-fade-left-hover bx-fw' ></i>Go Back!</a>-->
                                 <a class="button pull-left" href="parameter.php" id="backButton"><i class='bx bxs-chevron-left bx-fade-left-hover bx-fw' ></i>Go Back!</a>
-                                <button type="submit" value="Add Parameter Detail" name="update_detail" id="update_parameter" class="btn pull-right" >
+                                <button type="submit" value="Add Parameter Detail" name="add_details" id="add_details" class="btn pull-right" >
                                     <i class='bx bx-list-plus bx-flashing-hover bx-fw' ></i> Add Parameter Detail
                                 </button>
                             </form>

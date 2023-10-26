@@ -14,6 +14,7 @@ include 'form_template.php';
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>P Supply | Standardization</title>
         <meta name="author" content="Ayep" />
+        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
         <link rel="stylesheet" type="text/css" href="css/w3.css">
         <link rel="stylesheet" type="text/css" href="css/skeleton.css">
@@ -41,18 +42,6 @@ include 'form_template.php';
             }
         </style>
         <script type="text/javascript">
-            $(document).ready(function () {
-                $('.js-example-basic-multiple').select2({
-                    placeholder: "Multi Select",
-                    allowClear: true
-                });
-
-                $(".js-example-basic-single").select2({
-                    placeholder: "Choose one",
-                    allowClear: true
-                });
-            });
-
             $("input[type='text'], textarea").on("input", function () {
                 canChangeColor();
             });
@@ -146,7 +135,7 @@ include 'form_template.php';
                     <select id="manufacturer" name="manufacturer" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)):
                             ?>
@@ -160,7 +149,7 @@ include 'form_template.php';
                     <select id="model" name="model" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)):
                             ?>
@@ -202,7 +191,7 @@ include 'form_template.php';
                     <select id="volt_protection" name="volt_protection" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)):
                             ?>
@@ -218,7 +207,7 @@ include 'form_template.php';
                     <select id="curr_protection" name="curr_protection" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)):
                             ?>
@@ -259,7 +248,7 @@ include 'form_template.php';
                     <select id="remote_operation_capability" name="remote_operation_capability" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)):
                             ?>
@@ -275,7 +264,7 @@ include 'form_template.php';
                     <select id="output_voltage_monitor" name="output_voltage_monitor" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)):
                             ?>
@@ -289,7 +278,7 @@ include 'form_template.php';
                     <select id="output_curr_monitor" name="output_curr_monitor" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)):
                             ?>
@@ -305,7 +294,7 @@ include 'form_template.php';
                     <select id="pc_to_eqpt_interface" name="pc_to_eqpt_interface" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -318,7 +307,7 @@ include 'form_template.php';
                     <select id="lan_port" name="lan_port" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -330,7 +319,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_3">
                     <dialog>
                         <label for="toggle_3" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
-                        <img id="myImg" src="../image/powersupply/001.png" alt="image">
+                        <img id="myImg" src="image/powersupply/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -340,7 +329,7 @@ include 'form_template.php';
                     <select id="gpib_interface" name="gpib_interface" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -352,7 +341,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_4">
                     <dialog>
                         <label for="toggle_4" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
-                        <img id="myImg" src="../image/powersupply/002.png" alt="image">
+                        <img id="myImg" src="image/powersupply/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="two columns"><label for="other_interface_port">Other interface ports *</label></div>
@@ -360,7 +349,7 @@ include 'form_template.php';
                     <select id="other_interface_port" name="other_interface_port" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -372,7 +361,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_2">
                     <dialog>
                         <label for="toggle_2" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/powersupply/003.png" alt="image">
+                        <img id="myImg" src="image/powersupply/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -388,42 +377,10 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_1">
                     <dialog>
                         <label for="toggle_1" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/powersupply/004.png" alt="image">
+                        <img id="myImg" src="image/powersupply/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
-
-            <!--
-                2 NUMBER INPUT
-                <div class="row">
-                    <div class="two columns">Label</div>
-                    <div class="one columns">Input</div>
-                    <div class="one columns">Label</div>
-                    <div class="two columns">&nbsp;</div>
-                    <div class="two columns">Label</div>
-                    <div class="one columns">Input</div>
-                    <div class="one columns">Label</div>
-                    <div class="two columns">&nbsp;</div>
-                </div>
-                2 DROPDOWN
-                <div class="row">
-                    <div class="two columns">Label</div>
-                    <div class="three columns">Input</div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="two columns">Label</div>
-                    <div class="three columns">Input</div>
-                    <div class="one columns">&nbsp;</div>
-                </div>
-                <div class="row">
-                    <div class="two columns">Label</div>
-                    <div class="three columns">Input</div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="two columns">Label</div>
-                    <div class="one columns">Input</div>
-                    <div class="one columns">Label</div>
-                    <div class="two columns">&nbsp;</div>
-                </div>
-            -->
 
             <button onclick="location.href = 'form_power_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
             <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Send</button>

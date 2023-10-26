@@ -14,7 +14,7 @@ include 'form_template.php';
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>FORM | Standardization Survey</title>
         <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/dribbble.ico">
+        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
         <link rel="stylesheet" type="text/css" href="css/w3.css">
         <link rel="stylesheet" type="text/css" href="css/skeleton.css">
@@ -210,22 +210,6 @@ include 'form_template.php';
                     <div class="one columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="relTest">Rel Test (Multiselect) *</label></div>
-                    <div class="three columns">
-                        <select name="relTest[]" id="relTest" multiple multiselect-search="true" multiselect-select-all="false" style="width:100%" onchange="updateRelTest()" required>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
-                        </select>
-                    </div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="two columns" id="zone1"><label for="zone">Zone *</label></div>
-                    <div class="three columns" id="zone2"><input type="text" id="zone" name="zone" value="" required></div>
-                </div>
-                <div class="row">
                     <div class="two columns"><label for="manufacturer">Equipment Manufacturer *</label></div>
                     <div class="three columns">
                         <select id="manufacturer" name="manufacturer" style="width: 100%" required>
@@ -274,10 +258,9 @@ include 'form_template.php';
                             <?php endwhile; ?>
                         </select>
                     </div>
-                    <div class="one columns">&nbsp;</div>
                     <div class="six columns" id="transfer" style="display: none">
-                        <div class="four columns"><label for="to">From? *</label></div>
-                        <div class="two columns">
+                        <div class="three columns"><label for="to">From? *</label></div>
+                        <div class="three columns">
                             <select id="to" name="to" style="width: 100%" readonly required>
                                 <option value="" selected=""></option>
                                 <?php
@@ -290,26 +273,39 @@ include 'form_template.php';
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="two columns"><label for="relTest">Rel Test (Multiselect) *</label></div>
+                    <div class="three columns">
+                        <select name="relTest[]" id="relTest" multiple multiselect-search="true" multiselect-select-all="false" style="width:100%" onchange="updateRelTest()" required>
+                            <?php
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
+                            $resSite = mysqli_query($con, $sqlDdSite);
+                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
+                    </div>
+                    <div class="six columns" id="zoneField" style="display: none">
+                        <div class="three columns"><label for="zone">Zone *</label></div>
+                        <div class="three columns"><input type="number" step="0.001" id="zone" name="zone" value="" required></div>
+                    </div>
+                </div>
                 
                 <script>
                     function updateRelTest() {
                         var newreltest = document.getElementById('relTest');
-                        var zone1 = document.getElementById('zone1');
-                        var zone2 = document.getElementById('zone2');
-                        console.log("hehe " + newreltest.value);
+                        var zoneF = document.getElementById('zoneField');
+                        var zone = document.getElementById('zone');
                         
                         if (newreltest.value === "008019" || newreltest.value === "008021") {
-                            zone2.readOnly = false;
-                            zone2.required = true;
-                            zone2.style.display = 'block';
-                            zone1.style.display = 'block';
-                            console.log("ada value dia");
+                            zone.readOnly = false;
+                            zone.required = true;
+                            zone.value = '';
+                            zoneF.style.display = 'block';
                         } else {
-                            console.log("takde value kat sini");
-                            zone2.readOnly = true;
-                            zone2.required = false;
-                            zone2.style.display = 'none';
-                            zone1.style.display = 'none';
+                            zone.readOnly = true;
+                            zone.required = false;
+                            zoneF.style.display = 'none';
                         }
                     }
                     
@@ -363,6 +359,16 @@ include 'form_template.php';
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
+                    <div class="two columns"><label for="min_pressure">Minimum Pressure *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="" required> </div>
+                    <div class="one columns"><label for="min_pressure" style="text-align: left"><b>psi</b></label></div>
+                    <div class="two columns">&nbsp;</div>
+                    <div class="two columns"><label for="max_pressure">Maximum Pressure *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="" required> </div>
+                    <div class="one columns"><label for="max_pressure" style="text-align: left"><b>psi</b></label></div>
+                    <div class="two columns">&nbsp;</div>
+                </div>
+                <div class="row">
                     <div class="two columns"><label for="heatDissipation">Heat Dissipation *</label></div>
                     <div class="one columns"><input type="number" step="0.001" id="heatDissipation" name="heatDissipation" value="" required> </div>
                     <div class="one columns"><label for="heatDissipation" style="text-align: left"><b>Watt</b></label></div>
@@ -376,7 +382,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_01">
                         <dialog>
                             <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/001.png" alt="image">
+                            <img id="myImg" src="image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                 </div>
@@ -390,7 +396,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_02">
                         <dialog>
                             <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/002.png" alt="image">
+                            <img id="myImg" src="image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="two columns"><label for="humidFluctuation">Humidity Fluctuation *</label></div>
@@ -402,7 +408,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_03">
                         <dialog>
                             <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/003.png" alt="image">
+                            <img id="myImg" src="image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                 </div>
@@ -418,7 +424,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_06">
                         <dialog>
                             <label for="toggle_06" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/006.png" alt="image">
+                            <img id="myImg" src="image/equipment/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="two columns"><label for="extDimension">External Dimension (W) *</label></div>
@@ -436,7 +442,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_08">
                         <dialog>
                             <label for="toggle_08" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/008.png" alt="image">
+                            <img id="myImg" src="image/equipment/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="two columns"><label for="extDimension">(D) *</label></div>
@@ -462,7 +468,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_09">
                         <dialog>
                             <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/009.png" alt="image">
+                            <img id="myImg" src="image/equipment/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="two columns"><label for="extDimension">(H) *</label></div>
@@ -474,7 +480,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_04">
                         <dialog>
                             <label for="toggle_04" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/004.png" alt="image">
+                            <img id="myImg" src="image/equipment/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                 </div>
@@ -507,7 +513,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_10">
                         <dialog>
                             <label for="toggle_10" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/010.png" alt="image">
+                            <img id="myImg" src="image/equipment/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="two columns"><label for="intDimension">(D) *</label></div>
@@ -525,7 +531,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_11">
                         <dialog>
                             <label for="toggle_11" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/011.png" alt="image">
+                            <img id="myImg" src="image/equipment/011.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="two columns"><label for="intDimension">(H) *</label></div>
@@ -537,7 +543,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_05">
                         <dialog>
                             <label for="toggle_05" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/005.png" alt="image">
+                            <img id="myImg" src="image/equipment/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                 </div>
@@ -561,7 +567,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_12">
                         <dialog>
                             <label for="toggle_12" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/012.png" alt="image">
+                            <img id="myImg" src="image/equipment/012.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="two columns"><label for="rackDimension">(D) *</label></div>
@@ -579,7 +585,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_13">
                         <dialog>
                             <label for="toggle_13" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/013.png" alt="image">
+                            <img id="myImg" src="image/equipment/013.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="two columns"><label for="rackDimension">(H) *</label></div>
@@ -591,7 +597,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_07">
                         <dialog>
                             <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/007.png" alt="image">
+                            <img id="myImg" src="image/equipment/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                 </div>
@@ -605,7 +611,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_14">
                         <dialog>
                             <label for="toggle_14" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/014.png" alt="image">
+                            <img id="myImg" src="image/equipment/014.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="two columns"><label for="airflow">Airflow *</label></div>
@@ -625,7 +631,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_15">
                         <dialog>
                             <label for="toggle_15" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/015.png" alt="image">
+                            <img id="myImg" src="image/equipment/015.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                 </div>
@@ -637,7 +643,7 @@ include 'form_template.php';
                         <select id="tempProtection1" name="tempProtection1" style="width: 100%" required>
                             <option value="" selected=""></option>
                             <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                 <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -650,7 +656,7 @@ include 'form_template.php';
                         <select id="tempProtection2" name="tempProtection2" style="width: 100%" required>
                             <option value="" selected=""></option>
                             <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                 <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -665,7 +671,7 @@ include 'form_template.php';
                         <select id="tempThermostat3" name="tempThermostat3" style="width: 100%" required>
                             <option value="" selected=""></option>
                             <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                 <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -678,7 +684,7 @@ include 'form_template.php';
                         <select id="smokeDetector" name="smokeDetector" style="width: 100%" required>
                             <option value="" selected=""></option>
                             <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                 <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -693,7 +699,7 @@ include 'form_template.php';
                         <select id="emo" name="emo" style="width: 100%" required>
                             <option value="" selected=""></option>
                             <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                 <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -727,12 +733,27 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
-                    <div class="two columns"><label for="diWater">DI Water *</label></div>
+                </div>
+                <div class="row">
+                    <div class="two columns"><label for="liquid_nitrogen">Liquid Nitrogen *</label></div>
                     <div class="three columns">
-                        <select id="diWater" name="diWater" style="width: 100%" onchange="updateToFieldWater()" required>
+                        <select id="liquid_nitrogen" name="liquid_nitrogen" style="width: 100%" required>
                             <option value="" selected=""></option>
                             <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '029' ORDER BY code ASC";
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                            $resSite = mysqli_query($con, $sqlDdSite);
+                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
+                    </div>
+                    <div class="one columns">&nbsp;</div>
+                    <div class="two columns"><label for="chilled_water">Chilled Water *</label></div>
+                    <div class="three columns">
+                        <select id="chilled_water" name="chilled_water" style="width: 100%" required>
+                            <option value="" selected=""></option>
+                            <?php
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                 <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -743,12 +764,60 @@ include 'form_template.php';
                 </div>
                 
                 <script>
+                    function updateGas() {
+                        var diWaterDropdown = document.getElementById('n2gas');
+                        var oxyField = document.getElementById('oxygen_level');
+                        var oxyId = document.getElementById('oxygen');
+
+                        if (diWaterDropdown.value !== '022003') {
+                            oxyField.readOnly = true;
+                            oxyField.required = false;
+                            oxyField.value = '';
+                            oxyId.style.display = 'none';
+                        } else {
+                            oxyField.readOnly = false;
+                            oxyField.required = true;
+                            oxyId.style.display = 'block';
+                        }
+                    }
+                </script>
+                
+                <div class="row">
+                    <div class="two columns"><label for="n2gas">N2 Gas *</label></div>
+                    <div class="three columns">
+                        <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()" required>
+                            <option value="" selected=""></option>
+                            <?php
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                            $resSite = mysqli_query($con, $sqlDdSite);
+                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
+                    </div>
+                    <div class="six columns" id="oxygen" style="display: none;">
+                        <div class="three columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
+                        <div class="three columns">
+                            <select id="oxygen_level" name="oxygen_level" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
                     function updateToFieldWater() {
                         var diWaterDropdown = document.getElementById('diWater');
                         var waterField = document.getElementById('waterTopup');
                         var topapField = document.getElementById('topup');
 
-                        if (diWaterDropdown.value !== '029003') {
+                        if (diWaterDropdown.value !== '022003') {
                             waterField.readOnly = true;
                             waterField.required = false;
                             topapField.style.display = 'none';
@@ -761,23 +830,33 @@ include 'form_template.php';
                     }
                 </script>
                 
-                <div class="row" id="topup" style="display: none;">
-                    <div class="two columns">&nbsp;</div>
-                    <div class="three columns">&nbsp;</div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="two columns"><label for="waterTopup">Water Top-up System *</label></div>
+                <div class="row">
+                    <div class="two columns"><label for="diWater">DI Water *</label></div>
                     <div class="three columns">
-                        <select id="waterTopup" name="waterTopup" style="width: 100%" required>
+                        <select id="diWater" name="diWater" style="width: 100%" onchange="updateToFieldWater()" required>
                             <option value="" selected=""></option>
                             <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                 <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                             <?php endwhile; ?>
                         </select>
                     </div>
-                    <div class="one columns">&nbsp;</div>
+                    <div class="six columns" id="topup" style="display: none;">
+                        <div class="three columns"><label for="waterTopup">Water Top-up System *</label></div>
+                        <div class="three columns">
+                            <select id="waterTopup" name="waterTopup" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 
                 <h6>DAQ</h6>
@@ -815,7 +894,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_16">
                         <dialog>
                             <label for="toggle_16" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/016.png" alt="image">
+                            <img id="myImg" src="image/equipment/016.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                 </div>
@@ -985,7 +1064,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_20">
                         <dialog>
                             <label for="toggle_20" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="../image/equipment/020.png" alt="image">
+                            <img id="myImg" src="image/equipment/020.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                 </div>

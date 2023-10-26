@@ -84,7 +84,7 @@ if (isset($_GET['delete'])) {
         }
         ?>
         <div class="sample-form">
-            <hr>
+            <div class="row">&nbsp;</div>
             <div class="card">
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
                     <h2 style="border-left: none">Parameter Master</h2>
@@ -108,9 +108,8 @@ if (isset($_GET['delete'])) {
                     </div>
                 </form>
             </div>
-            <hr>
             <table class="u-full-width">
-                <h2 style="border-left: none">Parameter Master List</h2>
+                <h2 style="border-left: none;margin-top:50px">Parameter Master List</h2>
                 <thead>
                     <tr>
                         <th><b>Parameter Name</b></th>

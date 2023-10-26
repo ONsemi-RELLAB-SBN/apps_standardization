@@ -14,7 +14,7 @@ include 'form_template.php';
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>FORM | Standardization Survey</title>
         <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="../image/dribbble.ico">
+        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
         <link rel="stylesheet" type="text/css" href="css/w3.css">
         <link rel="stylesheet" type="text/css" href="css/skeleton.css">
@@ -168,7 +168,7 @@ include 'form_template.php';
                     <select id="hw_type" name="hw_type" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -181,7 +181,7 @@ include 'form_template.php';
                     <select id="manufacturer" name="manufacturer" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -216,7 +216,7 @@ include 'form_template.php';
                     <select id="support_stress" name="support_stress" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -231,7 +231,7 @@ include 'form_template.php';
                     <select id="daq_capability" name="daq_capability" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -247,7 +247,7 @@ include 'form_template.php';
                     <select id="pcb_material" name="pcb_material" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -266,7 +266,7 @@ include 'form_template.php';
                     <select id="frame_material" name="frame_material" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -285,7 +285,7 @@ include 'form_template.php';
                     <select id="board_coat" name="board_coat" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -311,7 +311,7 @@ include 'form_template.php';
                     <select id="universal" name="universal" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '011' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -323,7 +323,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_01">
                     <dialog>
                         <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/001.png" alt="image">
+                        <img id="myImg" src="../image/hardware/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="two columns"><label for="socket_conn_type">Socket/connector type *</label></div>
@@ -331,7 +331,7 @@ include 'form_template.php';
                     <select id="socket_conn_type" name="socket_conn_type" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '012' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -343,7 +343,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_02">
                     <dialog>
                         <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/002.png" alt="image">
+                        <img id="myImg" src="../image/hardware/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -367,7 +367,7 @@ include 'form_template.php';
                     <select id="support_package" name="support_package" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -379,7 +379,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_03">
                     <dialog>
                         <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/003.png" alt="image">
+                        <img id="myImg" src="../image/hardware/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -399,7 +399,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_04">
                     <dialog>
                         <label for="toggle_04" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/004.png" alt="image">
+                        <img id="myImg" src="../image/hardware/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -413,7 +413,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_05">
                     <dialog>
                         <label for="toggle_05" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/005.png" alt="image">
+                        <img id="myImg" src="../image/hardware/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -433,7 +433,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_06">
                     <dialog>
                         <label for="toggle_06" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/006.png" alt="image">
+                        <img id="myImg" src="../image/hardware/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -447,7 +447,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_07">
                     <dialog>
                         <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/007.png" alt="image">
+                        <img id="myImg" src="../image/hardware/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -463,7 +463,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_07">
                     <dialog>
                         <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/008.png" alt="image">
+                        <img id="myImg" src="../image/hardware/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="two columns"><label for="no_pins">Number of pins *</label></div>
@@ -475,7 +475,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_08">
                     <dialog>
                         <label for="toggle_08" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/009.png" alt="image">
+                        <img id="myImg" src="../image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -489,7 +489,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_09">
                     <dialog>
                         <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/009.png" alt="image">
+                        <img id="myImg" src="../image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="two columns"><label for="edge_thick">Edgefinger thickness *</label></div>
@@ -501,7 +501,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_10">
                     <dialog>
                         <label for="toggle_10" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/010.png" alt="image">
+                        <img id="myImg" src="../image/hardware/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>

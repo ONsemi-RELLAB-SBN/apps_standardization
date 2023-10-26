@@ -16,13 +16,11 @@ include 'form_template.php';
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>Electrical Test | Standardization Survey</title>
         <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="../image/dribble.ico">
-        
-        <link rel="stylesheet" type="text/css" href="../css/layout.css">
-        <link rel="stylesheet" type="text/css" href="../css/elements.css" />
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
+
+        <link rel="stylesheet" type="text/css" href="css/w3.css">
         <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
         <style>
             
@@ -32,11 +30,13 @@ include 'form_template.php';
         </script>
     </head>
     <body>
-        <hr>
-        <hr>
-        <hr>
-        <div class="col-lg-12">
-            <h1>Electrical Test Detail</h1>
-        </div>
+        <div class="twelve columns">&nbsp;</div>
+        <div class="twelve columns">&nbsp;</div>
+        <h5 style="border-left: none;">Electrical Test Details</h5>
+        <form id="add_equipment_form" action="crud_add_test.php" method="get">
+            <div class="row">
+                
+            </div>
+        </form>
     </body>
 </html>
