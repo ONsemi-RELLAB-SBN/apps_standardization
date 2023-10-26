@@ -16,32 +16,22 @@ $id = $_GET['update'];
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>Standardization</title>
         <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/dribbble.ico">
+        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
-        <link rel="stylesheet" type="text/css" href="css/layout.css">
-        <link rel="stylesheet" type="text/css" href="css/elements.css" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="css/main01.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-        <script src="js/bootstrap.js"></script>
 
         <style>
             body {
-                font-size: 1.5em;
+                font-size: 1em;
             }
 
             h2 {
                 font-size: 1.5em;
             }
 
-            .btn-default {
-                background-color: lightgray;
-                border-color: #2fb2a0;
-            }
-
-            .btn-default:hover {
-                background-color: orange;
+            #backButton:hover {
+                color: orange;
+                border-color: orange;
             }
         </style>
 
@@ -54,7 +44,7 @@ $id = $_GET['update'];
             }
         }
         ?>
-        <div class="container">
+        <div class="sample-form">
             <?php if ($id == '') { ?>
                 <h1>Access denied! Please go back to <a href="parameter.php" class="btn"> main page</a></h1>
                 <div class="component">
@@ -77,17 +67,20 @@ $id = $_GET['update'];
                 $select = mysqli_query($con, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
                 while ($row = mysqli_fetch_assoc($select)) {
                     ?>
-                    <div class="table-responsive">
-                        <hr>
-                        <div class="mt-5 mb-3">
-                            <h2>Add Parameter Details</h2>
+                    <div class="row">
+                        <div class="row">&nbsp;</div>
+                        <div class="row">&nbsp;</div>
+                        <div class="row">
+                            <h2 class="pull-left" style="border-left:none">Add Parameter Details</h2>
                         </div>
-                        <div class="form-group mt-3 mb-3">
-                            <form class="form-horizontal" name='add_details' id='add_details' method="pot" action='parameter_add_detail.php'>
-                                <div class="form-group form-group-lg">
-                                    <label for="masterName" class="col-lg-3 form-label">Master Name </label>
-                                    <div>
-                                        <input type="text" class="col-lg-4 form-control-lg" id="masterName" name="masterName" value="<?php echo $row['name']; ?>" readonly>
+                        <div class="row">
+                            <form name='add_details' id='add_details' method="post" action='parameter_add_detail.php'>
+                                <div class="row">
+                                    <div class="three columns">
+                                        <label for="masterName">Master Name </label>
+                                    </div>
+                                    <div class="six columns">
+                                        <input type="text" id="masterName" name="masterName" value="<?php echo $row['name']; ?>" style="width: 100%" readonly>
                                     </div>
                                 </div>
                                 <div hidden>
@@ -97,7 +90,7 @@ $id = $_GET['update'];
                                         <input type="text" id="masterId" name="masterId" value="<?php echo $row['id']; ?>" readonly>
                                     </div>
                                 </div>
-                                <div class="form-group form-group-lg">
+                                <div class="row">
                                     <?php
                                     $getData = "SELECT COUNT(*) as count FROM gest_parameter_detail WHERE master_code = '" . $row['code'] . "'";
                                     $rData = mysqli_query($con, $getData);
@@ -105,35 +98,42 @@ $id = $_GET['update'];
                                     $data = $rowMaklumat['count'] + 1;
                                     $s_number = $row['code'] . str_pad($data, 3, "0", STR_PAD_LEFT);
                                     ?>
-                                    <label for=" detailsCode" class="col-lg-3 form-label">Details Code </label>
-                                    <div>
-                                        <input type="text" class="col-lg-4 form-control-lg" id="detailsCode" name="detailsCode" placeholder="Details Code" value="<?php echo $s_number; ?>" readonly>
+                                    <div class="three columns">
+                                        <label for="detailsCode">Details Code </label>
+                                    </div>
+                                    <div class="six columns">
+                                        <input type="text" id="detailsCode" name="detailsCode" placeholder="Details Code" value="<?php echo $s_number; ?>" style="width: 100%" readonly>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="detailsName" class="col-lg-3 form-label">Details Name *</label>
-                                    <div>
-                                        <input type="text" class="col-lg-4 form-control-lg" id="detailsName" name="detailsName" placeholder="Details Name" value="" >
+                                <div class="row">
+                                    <div class="three columns">
+                                        <label for="detailsName">Details Name *</label>
+                                    </div>
+                                    <div class="six columns">
+                                        <input type="text" id="detailsName" name="detailsName" placeholder="Details Name" value="" style="width: 100%">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="remarks" class="col-lg-3 form-label">Remarks </label>
-                                    <div>
-                                        <textarea class="col-lg-4 form-control" rows="5" id="remarks" name="remarks"></textarea>
+                                <div class="row">
+                                    <div class="three columns">
+                                        <label for="remarks">Remarks </label>
+                                    </div>
+                                    <div class="six columns">
+                                        <textarea rows="5" id="remarks" name="remarks" style="width: 100%"></textarea>
                                     </div>
                                 </div>
-                                <a href="parameter.php" class="btn btn-default btn-lg" id="backButton"><i class='bx bx-arrow-back bx-fade-left-hover bx-fw' ></i>Go Back!</a>
-                                <button type="submit" value="Add Parameter Detail" name="update_detail" id="update_parameter" class="btn btn-default btn-lg" >
-                                    <i class='bx bx-list-plus bx-flashing-hover bx-fw bx-md' ></i> Add Parameter Detail
+                                <!--<a href="parameter.php" class="btn btn-default btn-lg" id="backButton"><i class='bx bx-arrow-back bx-fade-left-hover bx-fw' ></i>Go Back!</a>-->
+                                <a class="button pull-left" href="parameter.php" id="backButton"><i class='bx bxs-chevron-left bx-fade-left-hover bx-fw' ></i>Go Back!</a>
+                                <button type="submit" value="Add Parameter Detail" name="update_detail" id="update_parameter" class="btn pull-right" >
+                                    <i class='bx bx-list-plus bx-flashing-hover bx-fw' ></i> Add Parameter Detail
                                 </button>
                             </form>
                         </div>
-                        <div class="mt-5 mb-3 clearfix">
-                            <h2 class="pull-left">Parameter Details List</h2>
+                        <div class="row">
+                            <h2 class="pull-left" style="border-left:none">Parameter Details List</h2>
                         </div>
-                        <table class="table table-hover table-striped">
+                        <table class="u-full-width">
                             <tr>
-                                <th><span>No</span></th>
+                                <th style="text-align: center"><span>No</span></th>
                                 <th><span>Detail Code</span></th>
                                 <th><span>Name</span></th>
                                 <th><span>Remarks</span></th>
@@ -144,12 +144,15 @@ $id = $_GET['update'];
                             $run_slides2 = mysqli_query($con, $get_slides2);
                             // LOOP TILL END OF DATA
                             $no = 0;
+                            if (mysqli_num_rows($run_slides2) === 0) { ?>
+                                <td colspan="5"><?php echo '&emsp; No Result'; ?></td>
+                            <?php } else {
                             while ($row_slides2 = mysqli_fetch_array($run_slides2)):
                                 $no += 1;
                                 ?>
                                 <tr>
                                     <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
-                                    <td><?php echo $no; ?></td>
+                                    <td style="text-align: center"><?php echo $no; ?></td>
                                     <td><?php echo $row_slides2['code']; ?></td>
                                     <td><?php echo $row_slides2['name']; ?></td>
                                     <td><?php echo $row_slides2['remark']; ?></td>
@@ -158,9 +161,7 @@ $id = $_GET['update'];
                                         <a href="parameter_delete_detail.php?delete=<?php echo $row_slides2['id']; ?>&id=<?php echo $row['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
                                     </td>
                                 </tr>
-                                <?php
-                            endwhile;
-                            ?>
+                            <?php endwhile; }?>
                         </table>
                     </div>
                 <?php } ?>

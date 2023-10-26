@@ -11,12 +11,12 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <title>V2 STANDARD</title>
+        <title>V3 STANDARD</title>
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
         
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <link rel="stylesheet" href="css/main.css" />
+        <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
     </head>
     <body class="is-preload">
         <div id="wrapper">
@@ -31,11 +31,6 @@
                             for onsemi usage and utilization.</p>
                     </div>
                 </div>
-<!--                <nav>
-                    <ul>
-                        <li><a href="parameter.php">Parameter</a></li>
-                    </ul>
-                </nav>-->
                 <nav>
                     <ul>
                         <li><a href="parameter.php">Parameter</a></li>
@@ -50,14 +45,14 @@
                 </nav>
             </header>
             <footer id="footer">
-                <p class="copyright">&copy; REL LAB Design V2.0: <a href="https://html5up.net">Ayep</a>.</p>
+                <p class="copyright">&copy; REL LAB Design V3.0: <a href="https://html5up.net">Ayep</a>.</p>
             </footer>
         </div>
         <div id="bg"></div>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/browser.min.js"></script>
+        <script src="js/breakpoints.min.js"></script>
+        <script src="js/util.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

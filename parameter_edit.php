@@ -40,41 +40,22 @@ if (isset($_POST['update_parameter'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>Parameter | Edit</title>
         <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/dribbble.ico">
+        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
-        <link rel="stylesheet" type="text/css" href="css/layout.css">
-        <link rel="stylesheet" type="text/css" href="css/elements.css" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="css/main01.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-        <script src="js/bootstrap.js"></script>
 
         <style>
             body {
-                font-size: 1.5em;
+                font-size: 1em;
             }
 
             h2 {
                 font-size: 1.5em;
-                color: orange;
             }
-
-            #update_parameter:hover {
-                background-color: orange;
-            }
-
+            
             #backButton:hover {
-                background-color: orange;
-            }
-
-            .btn-default {
-                background-color: lightgray;
-                border-color: #2fb2a0;
-            }
-
-            .btn-default:hover {
-                background-color: orange;
+                color: orange;
+                border-color: orange;
             }
         </style>
 
@@ -91,38 +72,50 @@ if (isset($_POST['update_parameter'])) {
             }
         }
         ?>
-        <div class="container">
+        <div class="sample-form">
             <?php if ($id == '') { ?>
                 <h1>Access denied! Please go back to <a href="parameter.php" class="btn"> main page</a></h1>
             <?php } else { ?>
                 <div class="table">
-                    <br>
-                    <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Parameter Master | Edit Page</h2>
+                    <div class="row">&nbsp;</div>
+                    <div class="row">&nbsp;</div>
+                    <div class="row">
+                        <h2 class="pull-left" style="border-left:none">Parameter Master | Edit Page</h2>
                     </div>
-                    <div class="form-group mt-5 mb-3">
+                    <div class="row">
                         <?php
                         $select = mysqli_query($con, "SELECT * FROM gest_parameter_master WHERE id = '$id'");
                         while ($row = mysqli_fetch_assoc($select)) {
                             ?>
-                            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-                                <div class="form-group form-group-lg">
-                                    <label for="name" class="col-lg-3 form-label"><b>Parameter Name <font color="red">*</font></b></label>
-                                    <input type="text" class="col-lg-4 form-control-lg" placeholder="Enter parameter name" name="parameter_name" class="box" value="<?php echo $row['name']; ?>" required>
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="three columns">
+                                        <label for="name"><b>Parameter Name <font color="red">*</font></b></label>
+                                    </div>
+                                    <div class="six columns">
+                                        <input type="text" placeholder="Enter parameter name" name="parameter_name" value="<?php echo $row['name']; ?>" style="width: 100%" required>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="code" class="col-lg-3 form-label"><b>Parameter Code</b></label>
-                                    <input type="text" class="col-lg-4 form-control-lg" placeholder="Enter parameter code" name="parameter_code" class="box", value='<?php echo $row['code']; ?>' readonly>
+                                <div class="row">
+                                    <div class="three columns">
+                                        <label for="code"><b>Parameter Code</b></label>
+                                    </div>
+                                    <div class="six columns">
+                                        <input type="text" placeholder="Enter parameter code" name="parameter_code" value='<?php echo $row['code']; ?>' style="width: 100%" readonly>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="image" class="col-lg-3 form-label"><b>Image</b></label>
-                                    <img src="uploaded_img/<?php echo $row['link_image']; ?>" height="100" alt=""><br>
-                                    <label class="col-lg-3 form-label">&nbsp;</label>
-                                    <input type="file" class="col-lg-4 form-control-lg" accept="image/png, image/jpeg, image/jpg" name="parameter_image">
+                                <div class="row">
+                                    <div class="three columns">
+                                        <label for="image"><b>Image</b></label>
+                                    </div>
+                                    <div class="six columns">
+                                        <img src="uploaded_img/<?php echo $row['link_image']; ?>" height="100" alt=""><br>
+                                        <label>&nbsp;</label>
+                                        <input type="file" class="file-upload-wrapper" accept="image/png, image/jpeg, image/jpg" name="parameter_image" style="width: 100%">
+                                    </div>
                                 </div>
-                                <br>
-                                <a href="parameter.php" class="btn btn-default btn-lg" id="backButton"><i class='bx bxs-chevron-left bx-fade-left-hover bx-fw' ></i>Go Back!</a>
-                                <button type="submit" value="Update Parameter Master" name="update_parameter" id="update_parameter" class="btn btn-default btn-lg" >
+                                <a class="button pull-left" href="parameter.php" id="backButton"><i class='bx bxs-chevron-left bx-fade-left-hover bx-fw' ></i>Go Back!</a>
+                                <button type="submit" value="Update Parameter Master" name="update_parameter" id="update_parameter" class="pull-right">
                                     <i class='bx bx-loader-circle bx-spin-hover bx-fw' ></i>Update Parameter Master
                                 </button>
                             </form>

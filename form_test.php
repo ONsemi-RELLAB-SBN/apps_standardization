@@ -16,12 +16,12 @@ include 'form_template.php';
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>Electrical Test | Standardization Survey</title>
         <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/dribble.ico">
+        <link rel="shortcut icon" href="../image/dribble.ico">
         
-        <link rel="stylesheet" type="text/css" href="css/layout.css">
-        <link rel="stylesheet" type="text/css" href="css/elements.css" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="css/main01.css">
+        <link rel="stylesheet" type="text/css" href="../css/layout.css">
+        <link rel="stylesheet" type="text/css" href="../css/elements.css" />
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
         <style>

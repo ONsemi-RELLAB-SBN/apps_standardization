@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-//include 'class/db.php';
 include 'form_template.php';
 
 $query1 = "SELECT MAX(id) as data FROM gest_parameter_master";
@@ -22,16 +21,16 @@ if ($getData->num_rows > 0) {
 if (isset($_POST['add_parameter'])) {
 
     $parameter_name = $_POST['parameter_name'];
-    $parameter_price = $_POST['parameter_price'];
+    $parameter_code = $_POST['parameter_code'];
     $parameter_image = $_FILES['parameter_image']['name'];
     $parameter_image_tmp_name = $_FILES['parameter_image']['tmp_name'];
     $parameter_image_folder = 'uploaded_img/' . $parameter_image;
 
 //    if (empty($parameter_name) || empty($parameter_price) || empty($parameter_image)) {
-    if (empty($parameter_name) || empty($parameter_price)) {
+    if (empty($parameter_name) || empty($parameter_code)) {
         $message[] = 'Please fill out this parameter name field.';
     } else {
-        $insert = "INSERT INTO gest_parameter_master(name, code, link_image, remark, created_date, created_by, flag) VALUES('$parameter_name', '$parameter_price', '$parameter_image', ' ', NOW(), 'System', '1')";
+        $insert = "INSERT INTO gest_parameter_master(name, code, link_image, remark, created_date, created_by, flag) VALUES('$parameter_name', '$parameter_code', '$parameter_image', ' ', NOW(), 'System', '1')";
         $upload = mysqli_query($con, $insert);
         if ($upload) {
             move_uploaded_file($parameter_image_tmp_name, $parameter_image_folder);
@@ -62,32 +61,13 @@ if (isset($_GET['delete'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>Parameter</title>
         <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/dribbble.ico">
+        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
-        <link rel="stylesheet" type="text/css" href="css/layout.css">
-        <link rel="stylesheet" type="text/css" href="css/elements.css" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="css/main01.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-        <script src="js/bootstrap.js"></script>
 
         <style>
-            #refreshButton:hover {
-                background-color: orange;
-            }
-
-            .btn-add-parameter {
-                background-color: lightgray;
-                border-color: #2fb2a0;
-            }
-
-            .btn-add-parameter:hover {
-                background-color: orange;
-            }
-
             body {
-                font-size: 1.5em;
+                font-size: 1em;
             }
 
             h2 {
@@ -103,34 +83,35 @@ if (isset($_GET['delete'])) {
             }
         }
         ?>
-        <div class="container">
-            <div class="table-responsive">
-                <hr>
-                <div class="mt-5 mb-3 clearfix">
-                    <h2 class="pull-left">Parameter Master Details</h2>
-                    <button onClick="window.location.href = window.location.href" class="btn btn-default btn-lg pull-right" id="refreshButton"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
-                </div>
-                <div class="form-group mt-3 mb-3">
-                    <form class="form-horizontal" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
-                        <div class="form-group form-group-lg">
-                            <label for="name" class="col-lg-3 form-label"><b>Parameter Name <font color="red">*</font></b></label>
-                            <input type="text" class="col-lg-4 form-control-lg" placeholder="Enter parameter name" name="parameter_name" class="box" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="code" class="col-lg-3 form-label"><b>Parameter Code</b></label>
-                            <input type="text" class="col-lg-4 form-control-lg" placeholder="Enter parameter code" name="parameter_price" class="box", value='<?php echo $f_number; ?>' readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="image" class="col-lg-3 form-label"><b>Image</b></label>
-                            <input type="file" class="col-lg-4 form-control-lg" accept="image/png, image/jpeg, image/jpg" name="parameter_image">
-                        </div>
-                        <br>
-                        <button name="add_parameter" class="btn btn-add-parameter btn-lg"><i class='bx bx-plus bx-flashing-hover bx-fw' ></i>Add New Parameter</button>
-                        <br>
-                    </form>
-                </div>
-                <br>
-                <table class="table table-hover table-striped">
+        <div class="sample-form">
+            <hr>
+            <div class="card">
+                <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
+                    <h2 style="border-left: none">Parameter Master</h2>
+                    <label class="form-row">
+                        <input class="form-row-field" type="text" placeholder="Parameter Name" name="parameter_name" required/>
+                        <span class="form-row-label">Parameter Name</span>
+                    </label>
+                    <!--<br>-->
+                    <label class="form-row">
+                        <input class="form-row-field" type="text" placeholder="Parameter Code" name="parameter_code" value='<?php echo $f_number; ?>' />
+                        <span class="form-row-label">Parameter Code</span>
+                    </label>
+                    <div class="form-row">
+                        <label for="image" class="pull-left"><b style="color:orange">Image</b></label>
+                        <input type="file" accept="image/png, image/jpeg, image/jpg" name="parameter_image" class="file-upload-wrapper">
+                    </div>
+                    <div class="button-group">
+                        <!--<button><i class='bx bx-plus-circle bx-fw'></i>Add Parameter</button>-->
+                        <button name="add_parameter" class="btn btn-lg"><i class='bx bx-plus bx-flashing-hover bx-fw' ></i>Add Parameter</button>
+                        <button type="reset"><i class='bx bx-refresh bx-fw'></i>Reset</button>
+                    </div>
+                </form>
+            </div>
+            <hr>
+            <table class="u-full-width">
+                <h2 style="border-left: none">Parameter Master List</h2>
+                <thead>
                     <tr>
                         <th><b>Parameter Name</b></th>
                         <th><b>Parameter Code</b></th>
@@ -138,11 +119,12 @@ if (isset($_GET['delete'])) {
                         <th><b>Image</b></th>
                         <th style="text-align: center"><b>Action</b></th>
                     </tr>
+                </thead>
+                <tbody>
                     <?php
                     $get_slides = "SELECT * FROM gest_parameter_master WHERE flag = '1' ORDER BY code ASC";
                     $run_slides = mysqli_query($con, $get_slides);
-                    while ($row_slides = mysqli_fetch_array($run_slides)):
-                        ?>
+                    while ($row_slides = mysqli_fetch_array($run_slides)): ?>
                         <tr>
                             <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
                             <td><?php echo $row_slides['name']; ?></td>
@@ -155,11 +137,9 @@ if (isset($_GET['delete'])) {
                                 <a href="parameter.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
                             </td>
                         </tr>
-                        <?php
-                    endwhile;
-                    ?>
-                </table>
-            </div>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
         </div>
     </body>
 </html>
