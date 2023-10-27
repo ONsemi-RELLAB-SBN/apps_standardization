@@ -341,7 +341,7 @@ $id = $_GET['edit'];
                             <div class="form-group">
                                 <label for="voltRating" class="col-lg-2 control-label">Voltage Rating *</label>
                                 <div class="col-lg-2">
-                                    <input type="number" 0 class="form-control" id="voltRating" name="voltRating" value="<?php echo $rowForm['eqpt_volt_rating']; ?>" required> 
+                                    <input type="number" step="0.001" class="form-control" id="voltRating" name="voltRating" value="<?php echo $rowForm['eqpt_volt_rating']; ?>" required> 
                                 </div> 
                                 <label for="voltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
                                 <label for="voltControl" class="col-lg-2 control-label">Voltage Control Accuracy *</label>

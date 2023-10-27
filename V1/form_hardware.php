@@ -92,7 +92,7 @@ include 'form_template.php';
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)):
                                         ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === "004002") { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -258,7 +258,7 @@ include 'form_template.php';
                         <div >
                             <label for="voltRating">Voltage Rating *</label>
                             <div>
-                                <input type="number" 0 id="voltRating" name="voltRating" value="" required> 
+                                <input type="number" step="0.001" id="voltRating" name="voltRating" value="" required> 
                             </div> 
                             <label for="voltRating" style="text-align: left"><b>V</b></label>
                             <label for="voltControl">Voltage Control Accuracy *</label>

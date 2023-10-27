@@ -209,7 +209,7 @@ include 'form_template.php';
                             <div class="form-group">
                                 <label for="voltRating" class="col-lg-2 control-label">Number of temperature channels *</label>
                                 <div class="col-lg-1">
-                                    <input type="number" 0 class="form-control" id="voltRating" name="voltRating" value="" required> 
+                                    <input type="number" step="0.001" class="form-control" id="voltRating" name="voltRating" value="" required> 
                                 </div> 
                                 <label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                 <label for="voltControl" class="col-lg-2 control-label">Number of voltage channels *</label>
@@ -230,7 +230,7 @@ include 'form_template.php';
                             <div class="form-group">
                                 <label for="voltRating" class="col-lg-2 control-label">Voltage measurement range *</label>
                                 <div class="col-lg-1">
-                                    <input type="number" 0 class="form-control" id="voltRating" name="voltRating" value="" required> 
+                                    <input type="number" step="0.001" class="form-control" id="voltRating" name="voltRating" value="" required> 
                                 </div> 
                                 <label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                 <label for="voltControl" class="col-lg-2 control-label">Temperature measurement range *</label>
@@ -299,14 +299,14 @@ include 'form_template.php';
                                 </div>
                                 <label for="voltRating" class="col-lg-2 control-label">Leakage measurement resolution *</label>
                                 <div class="col-lg-1">
-                                    <input type="number" 0 class="form-control" id="voltRating" name="voltRating" value="" required> 
+                                    <input type="number" step="0.001" class="form-control" id="voltRating" name="voltRating" value="" required> 
                                 </div> 
                                 <label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                             </div>
                             <div class="form-group">
                                 <label for="voltRating" class="col-lg-2 control-label">Leakage measurement accuracy *</label>
                                 <div class="col-lg-1">
-                                    <input type="number" 0 class="form-control" id="voltRating" name="voltRating" value="" required> 
+                                    <input type="number" step="0.001" class="form-control" id="voltRating" name="voltRating" value="" required> 
                                 </div> 
                                 <label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                 <label for="voltControl" class="col-lg-2 control-label">Voltage measurement resolution *</label>
@@ -345,7 +345,7 @@ include 'form_template.php';
                             <div class="form-group">
                                 <label for="voltRating" class="col-lg-2 control-label">Number of analog inputs (single ended) *</label>
                                 <div class="col-lg-1">
-                                    <input type="number" 0 class="form-control" id="voltRating" name="voltRating" value="" required> 
+                                    <input type="number" step="0.001" class="form-control" id="voltRating" name="voltRating" value="" required> 
                                 </div> 
                                 <label for="voltRating" class="col-lg-2 control-label pull-left" style="text-align: left"><b>V</b></label>
                                 <label for="voltControl" class="col-lg-2 control-label">Number of analog inputs (differential) *</label>
