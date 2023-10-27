@@ -22,34 +22,6 @@ include 'form_template.php';
         <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
         <style>
-            /*            #myBtn {
-                            display: block;
-                            position: fixed;
-                            bottom: 25px;
-                            right: 30px;
-                            z-index: 99;
-                            font-size: 18px;
-                            border: none;
-                            outline: none;
-                            background-color: gray;
-                            color: white;
-                            cursor: pointer;
-                            padding: 15px;
-                            border-radius: 5px;
-            
-                            display: block;
-                            min-width: 7.5rem;
-                            height: 3.5rem;
-                            line-height: 2.75rem;
-                            padding: 0 1.25rem 0 1.45rem;
-                            text-transform: uppercase;
-                            letter-spacing: 0.2rem;
-                        }
-            
-                        #myBtn:hover {
-                            background-color: orange;
-                        }*/
-
             input[type=text], input[type=password] {
                 width: 100%;
                 padding: 15px;
@@ -104,32 +76,18 @@ include 'form_template.php';
                 display: block;
             }
         </style>
+        
         <script type="text/javascript">
-            $("input[type='text'], textarea").on("input", function () {
-                canChangeColor();
-            });
-
-            function canChangeColor() {
-                var can = true;
-                $("input[type='text'], textarea").each(function () {
-                    if ($(this).val() === '') {
-                        can = false;
-                    }
-                });
-                if (can) {
-                    $('.btn').css({background: 'red'});
-                } else {
-                    $('.btn').css({background: 'transparent'});
-                }
-            }
+            
         </script>
+        
     </head>
     <body>
         <div class="row">&nbsp;</div>
         <div class="row">&nbsp;</div>
         <div class="row">
             <h5 style="border-left: none;">DAQ Detail</h5>
-            <form id="add_daq_form" class="form-horizontal" role="form" action="crud_add_daq.php" method="get">
+            <form id="add_daq_form" role="form" action="crud_add_daq.php" method="get">
                 <div class="w3-section" style="width:100%">
                     <button class="w3-button w3-block"> General</button>
                     <div id="sectionGeneral" class="w3-show w3-container">
@@ -173,7 +131,7 @@ include 'form_template.php';
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)):
                                         ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === "004003") { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>

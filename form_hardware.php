@@ -66,43 +66,17 @@ include 'form_template.php';
                 display: block;
             }
         </style>
+        
         <script type="text/javascript">
-            $(document).ready(function () {
-                $('.js-example-basic-multiple').select2({
-                    placeholder: "Multi Select",
-                    allowClear: true
-                });
-
-                $(".js-example-basic-single").select2({
-                    placeholder: "Choose one",
-                    allowClear: true
-                });
-            });
-
-            $("input[type='text'], textarea").on("input", function () {
-                canChangeColor();
-            });
-
-            function canChangeColor() {
-                var can = true;
-                $("input[type='text'], textarea").each(function () {
-                    if ($(this).val() === '') {
-                        can = false;
-                    }
-                });
-                if (can) {
-                    $('.btn').css({background: 'red'});
-                } else {
-                    $('.btn').css({background: 'transparent'});
-                }
-            }
+        
         </script>
+        
     </head>
     <body>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <h5 style="border-left: none;">Hardware Details</h5>
-        <form id="add_hardware_form" class="form-horizontal" role="form" action="crud_add_hardware.php" method="get">
+        <form id="add_hardware_form" role="form" action="crud_add_hardware.php" method="get">
             <h6>General</h6>
             <div class="row">
                 <div class="two columns"><label for="lab_location">Lab Location *</label></div>
@@ -141,7 +115,7 @@ include 'form_template.php';
                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '004' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === "004002") { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                         <?php endwhile; ?>
                     </select>
                 </div>
@@ -323,7 +297,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_01">
                     <dialog>
                         <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="image/hardware/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="two columns"><label for="socket_conn_type">Socket/connector type *</label></div>
@@ -343,7 +317,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_02">
                     <dialog>
                         <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="image/hardware/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -379,7 +353,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_03">
                     <dialog>
                         <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="image/hardware/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -399,7 +373,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_04">
                     <dialog>
                         <label for="toggle_04" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="image/hardware/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -413,7 +387,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_05">
                     <dialog>
                         <label for="toggle_05" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="image/hardware/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -433,7 +407,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_06">
                     <dialog>
                         <label for="toggle_06" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="image/hardware/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -447,7 +421,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_07">
                     <dialog>
                         <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="image/hardware/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -463,7 +437,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_07">
                     <dialog>
                         <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="image/hardware/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="two columns"><label for="no_pins">Number of pins *</label></div>
@@ -475,7 +449,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_08">
                     <dialog>
                         <label for="toggle_08" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>
@@ -489,7 +463,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_09">
                     <dialog>
                         <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="two columns"><label for="edge_thick">Edgefinger thickness *</label></div>
@@ -501,7 +475,7 @@ include 'form_template.php';
                     <input type="checkbox" id="toggle_10">
                     <dialog>
                         <label for="toggle_10" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="../image/hardware/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="image/hardware/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
             </div>

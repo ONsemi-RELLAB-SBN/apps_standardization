@@ -96,25 +96,11 @@ include 'form_template.php';
                 display: block;
             }
         </style>
+        
         <script type="text/javascript">
-            $("input[type='text'], textarea").on("input", function () {
-                canChangeColor();
-            });
-
-            function canChangeColor() {
-                var can = true;
-                $("input[type='text'], textarea").each(function () {
-                    if ($(this).val() === '') {
-                        can = false;
-                    }
-                });
-                if (can) {
-                    $('.btn').css({background: 'red'});
-                } else {
-                    $('.btn').css({background: 'transparent'});
-                }
-            }
+            
         </script>
+        
     </head>
     <body>
         <div class="twelve columns">&nbsp;</div>
@@ -122,11 +108,12 @@ include 'form_template.php';
         <h5 style="border-left: none;">Equipment Details</h5>
         <form id="add_equipment_form" action="crud_add_equipment.php" method="get">
             <div class="row">
+                
                 <h6>General</h6>
                 <div class="row">
-                    <div class="two columns"><label for="labLocation">Lab Location *</label></div>
+                    <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                     <div class="three columns">
-                        <select id="labLocation" name="labLocation" style="width: 100%" required>
+                        <select id="lab_location" name="lab_location" style="width: 100%" required>
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '002' ORDER BY code ASC";
@@ -160,7 +147,7 @@ include 'form_template.php';
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '004' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === "004001") { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                             <?php endwhile; ?>
                         </select>
                     </div>
@@ -182,9 +169,9 @@ include 'form_template.php';
                 
                 <h6>Equipment Identity</h6>
                 <div class="row">
-                    <div class="two columns"><label for="eqptId">Equipment ID *</label></div>
+                    <div class="two columns"><label for="eqpt_id">Equipment ID *</label></div>
                     <div class="three columns">
-                        <select id="eqptId" name="eqptId" style="width: 100%" required>
+                        <select id="eqpt_id" name="eqpt_id" style="width: 100%" required>
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
@@ -238,17 +225,17 @@ include 'form_template.php';
                     <div class="one columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="mfgDate">Equipment Mfg Date *</label></div>
-                    <div class="three columns"><input type="date" id="mfgDate" name="mfgDate" value="" style="width:55%" required></div>
+                    <div class="two columns"><label for="mfg_date">Equipment Mfg Date *</label></div>
+                    <div class="three columns"><input type="date" id="mfg_date" name="mfg_date" value="" style="width:55%" required></div>
                     <div class="one columns">&nbsp;</div>
-                    <div class="two columns"><label for="assetNo">Equipment Asset No *</label></div>
-                    <div class="three columns"><input type="text" id="assetNo" name="assetNo" placeholder="Asset Number" value="" required> </div>
+                    <div class="two columns"><label for="asset_no">Equipment Asset No *</label></div>
+                    <div class="three columns"><input type="text" id="asset_no" name="asset_no" placeholder="Asset Number" value="" required> </div>
                     <div class="one columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="newTransfer">New/Transfer Equipment *</label></div>
+                    <div class="two columns"><label for="new_transfer">New/Transfer Equipment *</label></div>
                     <div class="three columns">
-                        <select id="newTransfer" name="newTransfer" style="width: 100%" onchange="updateToField()" required >
+                        <select id="new_transfer" name="new_transfer" style="width: 100%" onchange="updateToField()" required>
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '013' ORDER BY code ASC";
@@ -259,9 +246,9 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="six columns" id="transfer" style="display: none">
-                        <div class="three columns"><label for="to">From? *</label></div>
+                        <div class="three columns"><label for="from">From? *</label></div>
                         <div class="three columns">
-                            <select id="to" name="to" style="width: 100%" readonly required>
+                            <select id="from" name="from" style="width: 100%" readonly required>
                                 <option value="" selected=""></option>
                                 <?php
                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '014' ORDER BY code ASC";
@@ -273,6 +260,26 @@ include 'form_template.php';
                         </div>
                     </div>
                 </div>
+                
+                <script>
+                    function updateToField() {
+                        var newTransferDropdown = document.getElementById('new_transfer');
+                        var toField = document.getElementById('from');
+                        var transField = document.getElementById('transfer');
+                        
+                        if (newTransferDropdown.value === '013001') {
+                            toField.readOnly = true;
+                            toField.required = false;
+                            $("#from").val('');
+                            transField.style.display = 'none';
+                        } else {
+                            toField.readOnly = false;
+                            toField.required = true;
+                            transField.style.display = 'block';
+                        }
+                    }
+                </script>
+                
                 <div class="row">
                     <div class="two columns"><label for="relTest">Rel Test (Multiselect) *</label></div>
                     <div class="three columns">
@@ -296,11 +303,12 @@ include 'form_template.php';
                         var newreltest = document.getElementById('relTest');
                         var zoneF = document.getElementById('zoneField');
                         var zone = document.getElementById('zone');
+                        var selected = [...newreltest.selectedOptions].map(option => option.value);
                         
-                        if (newreltest.value === "008019" || newreltest.value === "008021") {
+                        if (selected.includes("008019") || selected.includes("008021") ) {
                             zone.readOnly = false;
                             zone.required = true;
-                            zone.value = '';
+                            $("#zone").val('');
                             zoneF.style.display = 'block';
                         } else {
                             zone.readOnly = true;
@@ -308,44 +316,27 @@ include 'form_template.php';
                             zoneF.style.display = 'none';
                         }
                     }
-                    
-                    function updateToField() {
-                        var newTransferDropdown = document.getElementById('newTransfer');
-                        var toField = document.getElementById('to');
-                        var transField = document.getElementById('transfer');
-                        
-                        if (newTransferDropdown.value === '013001') {
-                            toField.readOnly = true;
-                            toField.required = false;
-                            toField.value = '';
-                            transField.style.display = 'none';
-                        } else {
-                            toField.readOnly = false;
-                            toField.required = true;
-                            transField.style.display = 'block';
-                        }
-                    }
                 </script>
                 
                 <h6>Capability</h6>
                 <div class="row">
-                    <div class="two columns"><label for="voltRating">Voltage Rating *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="voltRating" name="voltRating" value="" required> </div>
-                    <div class="one columns"><label for="voltRating" style="text-align: left"><b>V</b></label></div>
+                    <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" required> </div>
+                    <div class="one columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
                     <div class="two columns">&nbsp;</div>
-                    <div class="two columns"><label for="voltControl">Voltage Control Accuracy *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="voltControl" name="voltControl" value="" required> </div>
-                    <div class="one columns"><label for="voltControl" style="text-align: left"><b>%</b></label></div>
+                    <div class="two columns"><label for="volt_control">Voltage Control Accuracy *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="" required> </div>
+                    <div class="one columns"><label for="volt_control" style="text-align: left"><b>%</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="minTemp">Min. Temperature *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="minTemp" name="minTemp" value="" required> </div>
-                    <div class="one columns"><label for="minTemp" style="text-align: left"><b>`C</b></label></div>
+                    <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" required> </div>
+                    <div class="one columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
                     <div class="two columns">&nbsp;</div>
-                    <div class="two columns"><label for="maxTemp">Max. Temperature *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="maxTemp" name="maxTemp" value="" required> </div>
-                    <div class="one columns"><label for="maxTemp" style="text-align: left"><b>`C</b></label></div>
+                    <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" required> </div>
+                    <div class="one columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
@@ -369,13 +360,13 @@ include 'form_template.php';
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="heatDissipation">Heat Dissipation *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="heatDissipation" name="heatDissipation" value="" required> </div>
-                    <div class="one columns"><label for="heatDissipation" style="text-align: left"><b>Watt</b></label></div>
+                    <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="heat_dissipation" name="heat_dissipation" value="" required> </div>
+                    <div class="one columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
                     <div class="two columns">&nbsp;</div>
-                    <div class="two columns"><label for="tempFluctuation">Temperature Fluctuation *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="tempFluctuation" name="tempFluctuation" value="" required></div>
-                    <div class="one columns"><label for="tempFluctuation" style="text-align: left"><b>`C</b></label></div>
+                    <div class="two columns"><label for="temp_fluctuation">Temperature Fluctuation *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" required></div>
+                    <div class="one columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_01">View Sample</label>
@@ -387,9 +378,9 @@ include 'form_template.php';
                     </div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="tempUniform">Temperature Uniformity *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="tempUniform" name="tempUniform" value="" required> </div>
-                    <div class="one columns"><label for="tempUniform" style="text-align: left"><b>`C</b></label></div>
+                    <div class="two columns"><label for="temp_uniform">Temperature Uniformity *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" required> </div>
+                    <div class="one columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_02">View Sample</label>
@@ -399,9 +390,9 @@ include 'form_template.php';
                             <img id="myImg" src="image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="two columns"><label for="humidFluctuation">Humidity Fluctuation *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="humidFluctuation" name="humidFluctuation" value="" required> </div>
-                    <div class="one columns"><label for="humidFluctuation" style="text-align: left"><b>%</b></label></div>
+                    <div class="two columns"><label for="humid_fluctuation">Humidity Fluctuation *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="" required> </div>
+                    <div class="one columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_03">View Sample</label>
@@ -415,9 +406,9 @@ include 'form_template.php';
                 
                 <h6>Characteristic</h6>
                 <div class="row">
-                    <div class="two columns"><label for="noInterior">No. Interior Zones (doors) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="noInterior" name="noInterior" value="" required> </div>
-                    <div class="one columns"><label for="noInterior" style="text-align: left"><b>Zone</b></label></div>
+                    <div class="two columns"><label for="no_interior">No. Interior Zones (doors) *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="" required> </div>
+                    <div class="one columns"><label for="no_interior" style="text-align: left"><b>Zone</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_06">View Sample</label>
@@ -427,15 +418,15 @@ include 'form_template.php';
                             <img id="myImg" src="image/equipment/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="two columns"><label for="extDimension">External Dimension (W) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="extDimensionW" name="extDimensionW" value="" required> </div>
-                    <div class="one columns"><label for="extDimensionW" style="text-align: left"><b>mm</b></label></div>
+                    <div class="two columns"><label for="ext_dimension_w">External Dimension (W) *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="ext_dimension_w" name="ext_dimension_w" value="" required> </div>
+                    <div class="one columns"><label for="ext_dimension_w" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="intVolume">Internal Volume *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="intVolume" name="intVolume" value="" required> </div>
-                    <div class="one columns"><label for="intVolume" style="text-align: left"><b>L</b></label></div>
+                    <div class="two columns"><label for="int_volume">Internal Volume *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="" required> </div>
+                    <div class="one columns"><label for="int_volume" style="text-align: left"><b>L</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_08">View Sample</label>
@@ -445,15 +436,15 @@ include 'form_template.php';
                             <img id="myImg" src="image/equipment/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="two columns"><label for="extDimension">(D) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="extDimensionD" name="extDimensionD" value="" required> </div>
-                    <div class="one columns"><label for="extDimensionD" style="text-align: left"><b>mm</b></label></div>
+                    <div class="two columns"><label for="ext_dimension_d">(D) *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="ext_dimension_d" name="ext_dimension_d" value="" required> </div>
+                    <div class="one columns"><label for="ext_dimension_d" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="boardOrientation">Board Orientation*</label></div>
+                    <div class="two columns"><label for="board_orientation">Board Orientation*</label></div>
                     <div class="three columns">
-                        <select id="boardOrientation" name="boardOrientation" style="width: 100%" required>
+                        <select id="board_orientation" name="board_orientation" style="width: 100%" required>
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
@@ -471,9 +462,9 @@ include 'form_template.php';
                             <img id="myImg" src="image/equipment/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="two columns"><label for="extDimension">(H) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="extDimensionH" name="extDimensionH" value="" required> </div>
-                    <div class="one columns"><label for="extDimensionH" style="text-align: left"><b>mm</b></label></div>
+                    <div class="two columns"><label for="ext_dimension_h">(H) *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="ext_dimension_h" name="ext_dimension_h" value="" required> </div>
+                    <div class="one columns"><label for="ext_dimension_h" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_04">View Sample</label>
@@ -485,9 +476,9 @@ include 'form_template.php';
                     </div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="rackMaterial">Rack Material *</label></div>
+                    <div class="two columns"><label for="rack_material">Rack Material *</label></div>
                     <div class="three columns">
-                        <select id="rackMaterial" name="rackMaterial" style="width: 100%" required>
+                        <select id="rack_material" name="rack_material" style="width: 100%" required>
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '016' ORDER BY code ASC";
@@ -498,15 +489,15 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
-                    <div class="two columns"><label for="intDimension">Internal Dimension (W) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="intDimensionW" name="intDimensionW" value="" required> </div>
-                    <div class="one columns"><label for="intDimensionW" style="text-align: left"><b>mm</b></label></div>
+                    <div class="two columns"><label for="int_dimension_w">Internal Dimension (W) *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="" required> </div>
+                    <div class="one columns"><label for="int_dimension_w" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="rackSlotPitch">Rack Slot-to-Slot Pitch *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="rackSlotPitch" name="rackSlotPitch" value="" required></div>
-                    <div class="one columns"><label for="rackSlotPitch" style="text-align: left"><b>mm</b></label></div>
+                    <div class="two columns"><label for="rack_slot_pitch">Rack Slot-to-Slot Pitch *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="" required></div>
+                    <div class="one columns"><label for="rack_slot_pitch" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_10">View Sample</label>
@@ -516,15 +507,15 @@ include 'form_template.php';
                             <img id="myImg" src="image/equipment/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="two columns"><label for="intDimension">(D) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="intDimensionD" name="intDimensionD" value="" required> </div>
-                    <div class="one columns"><label for="intDimensionD" style="text-align: left"><b>mm</b></label></div>
+                    <div class="two columns"><label for="int_dimension_d">(D) *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="int_dimension_d" name="int_dimension_d" value="" required> </div>
+                    <div class="one columns"><label for="int_dimension_d" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="rackSLotWidth">Rack Slot Width *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="rackSLotWidth" name="rackSLotWidth" value="" required> </div>
-                    <div class="one columns"><label for="rackSLotWidth" style="text-align: left"><b>mm</b></label></div>
+                    <div class="two columns"><label for="rack_slot_width">Rack Slot Width *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="" required> </div>
+                    <div class="one columns"><label for="rack_slot_width" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_11">View Sample</label>
@@ -534,9 +525,9 @@ include 'form_template.php';
                             <img id="myImg" src="image/equipment/011.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="two columns"><label for="intDimension">(H) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="intDimensionH" name="intDimensionH" value="" required> </div>
-                    <div class="one columns"><label for="intDimensionH" style="text-align: left"><b>mm</b></label></div>
+                    <div class="two columns"><label for="int_dimension_h">(H) *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="int_dimension_h" name="int_dimension_h" value="" required> </div>
+                    <div class="one columns"><label for="int_dimension_h" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_05">View Sample</label>
@@ -548,19 +539,19 @@ include 'form_template.php';
                     </div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="eqptWeight">Equipment Weight *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="eqptWeight" name="eqptWeight" value="" required> </div>
-                    <div class="one columns"><label for="eqptWeight" style="text-align: left"><b>Kg</b></label></div>
+                    <div class="two columns"><label for="eqpt_weight">Equipment Weight *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="eqpt_weight" name="eqpt_weight" value="" required> </div>
+                    <div class="one columns"><label for="eqpt_weight" style="text-align: left"><b>Kg</b></label></div>
                     <div class="two columns">&nbsp;</div>
-                    <div class="two columns"><label for="rackDimension">Rack Dimension (W) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="rackDimensionW" name="rackDimensionW" value="" required> </div>
-                    <div class="one columns"><label for="rackDimensionW" style="text-align: left"><b>mm</b></label></div>
+                    <div class="two columns"><label for="rack_dimension_w">Rack Dimension (W) *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="" required> </div>
+                    <div class="one columns"><label for="rack_dimension_w" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="noMbSlot">Number of motherboard slots *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="noMbSlot" name="noMbSlot" value="" required></div>
-                    <div class="one columns"><label for="noMbSlot" style="text-align: left"><b>Slot</b></label></div>
+                    <div class="two columns"><label for="no_mb_slot">Number of motherboard slots *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="" required></div>
+                    <div class="one columns"><label for="no_mb_slot" style="text-align: left"><b>Slot</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_12">View Sample</label>
@@ -570,15 +561,15 @@ include 'form_template.php';
                             <img id="myImg" src="image/equipment/012.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="two columns"><label for="rackDimension">(D) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="rackDimensionD" name="rackDimensionD" value="" required> </div>
-                    <div class="one columns"><label for="rackDimensionD" style="text-align: left"><b>mm</b></label></div>
+                    <div class="two columns"><label for="rack_dimension_d">(D) *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="rack_dimension_d" name="rack_dimension_d" value="" required> </div>
+                    <div class="one columns"><label for="rack_dimension_d" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="maxPsBs">Max number of power supplies per board slot *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="maxPsBs" name="maxPsBs" value="" required> </div>
-                    <div class="one columns"><label for="maxPsBs" style="text-align: left"><b>Slot</b></label></div>
+                    <div class="two columns"><label for="max_ps_bs">Max number of power supplies per board slot *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="" required> </div>
+                    <div class="one columns"><label for="max_ps_bs" style="text-align: left"><b>Slot</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_13">View Sample</label>
@@ -588,9 +579,9 @@ include 'form_template.php';
                             <img id="myImg" src="image/equipment/013.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="two columns"><label for="rackDimension">(H) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="rackDimensionH" name="rackDimensionH" value="" required> </div>
-                    <div class="one columns"><label for="rackDimensionH" style="text-align: left"><b>mm</b></label></div>
+                    <div class="two columns"><label for="rack_dimension_h">(H) *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="" required> </div>
+                    <div class="one columns"><label for="rack_dimension_h" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_07">View Sample</label>
@@ -602,9 +593,9 @@ include 'form_template.php';
                     </div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="maxPs">Max number of power supplies for the entire Equipment *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="maxPs" name="maxPs" value="" required> </div>
-                    <div class="one columns"><label for="maxPs" style="text-align: left"><b>Unit</b></label></div>
+                    <div class="two columns"><label for="max_ps">Max number of power supplies for the entire Equipment *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="" required> </div>
+                    <div class="one columns"><label for="max_ps" style="text-align: left"><b>Unit</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
                         <label for="toggle_14">View Sample</label>
@@ -679,9 +670,9 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
-                    <div class="two columns"><label for="smokeDetector">Smoke Detector/Alarm *</label></div>
+                    <div class="two columns"><label for="smoke_detector">Smoke Detector/Alarm *</label></div>
                     <div class="three columns">
-                        <select id="smokeDetector" name="smokeDetector" style="width: 100%" required>
+                        <select id="smoke_detector" name="smoke_detector" style="width: 100%" required>
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
@@ -710,9 +701,9 @@ include 'form_template.php';
                 
                 <h6>Utilities</h6>
                 <div class="row">
-                    <div class="two columns"><label for="voltagePhase">Voltage/Phase/Current *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="voltagePhase" name="voltagePhase" value="" required> </div>
-                    <div class="one columns"><label for="voltagePhase" style="text-align: left"><b>VAC</b></label></div>
+                    <div class="two columns"><label for="voltage_phase">Voltage/Phase/Current *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="voltage_phase" name="voltage_phase" value="" required> </div>
+                    <div class="one columns"><label for="voltage_phase" style="text-align: left"><b>VAC</b></label></div>
                     <div class="two columns">&nbsp;</div>
                     <div class="two columns"><label for="phase">Phase *</label></div>
                     <div class="one columns"><input type="number" step="0.001" id="phase" name="phase" value="" required> </div>
@@ -772,7 +763,7 @@ include 'form_template.php';
                         if (diWaterDropdown.value !== '022003') {
                             oxyField.readOnly = true;
                             oxyField.required = false;
-                            oxyField.value = '';
+                            $("#oxygen_level").val('');
                             oxyId.style.display = 'none';
                         } else {
                             oxyField.readOnly = false;
@@ -813,15 +804,15 @@ include 'form_template.php';
                 
                 <script>
                     function updateToFieldWater() {
-                        var diWaterDropdown = document.getElementById('diWater');
-                        var waterField = document.getElementById('waterTopup');
+                        var diWaterDropdown = document.getElementById('di_water');
+                        var waterField = document.getElementById('water_topup');
                         var topapField = document.getElementById('topup');
 
                         if (diWaterDropdown.value !== '022003') {
                             waterField.readOnly = true;
                             waterField.required = false;
                             topapField.style.display = 'none';
-                            waterField.value = '';
+                            $("#water_topup").val('');
                         } else {
                             waterField.readOnly = false;
                             waterField.required = true;
@@ -831,9 +822,9 @@ include 'form_template.php';
                 </script>
                 
                 <div class="row">
-                    <div class="two columns"><label for="diWater">DI Water *</label></div>
+                    <div class="two columns"><label for="di_water">DI Water *</label></div>
                     <div class="three columns">
-                        <select id="diWater" name="diWater" style="width: 100%" onchange="updateToFieldWater()" required>
+                        <select id="di_water" name="di_water" style="width: 100%" onchange="updateToFieldWater()" required>
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
@@ -844,9 +835,9 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="six columns" id="topup" style="display: none;">
-                        <div class="three columns"><label for="waterTopup">Water Top-up System *</label></div>
+                        <div class="three columns"><label for="water_topup">Water Top-up System *</label></div>
                         <div class="three columns">
-                            <select id="waterTopup" name="waterTopup" style="width: 100%" required>
+                            <select id="water_topup" name="water_topup" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
@@ -877,9 +868,9 @@ include 'form_template.php';
                 
                 <h6>Internal Chamber Configuration</h6>
                 <div class="row">
-                    <div class="two columns"><label for="intConfigType">Configuration Type *</label></div>
+                    <div class="two columns"><label for="int_config_type">Configuration Type *</label></div>
                     <div class="three columns">
-                        <select id="intConfigType" name="intConfigType" style="width: 100%" onchange="updateDiv()" required>
+                        <select id="int_config_type" name="int_config_type" style="width: 100%" onchange="updateDiv()" required>
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '031' ORDER BY code ASC";
@@ -901,24 +892,24 @@ include 'form_template.php';
                 
                 <script>
                     function updateDiv() {
-                        var dropdown = document.getElementById('intConfigType');
+                        var dropdown = document.getElementById('int_config_type');
                         var bananaDiv = document.getElementById('BananaDiv');
                         var edgeDiv = document.getElementById('EdgeDiv');
                         var winDiv = document.getElementById('WinchestorDiv');
                         var wireDiv = document.getElementById('WireDiv');
                         var selectedValue = dropdown.value;
-
-                        document.getElementById('bananaJackHole').value = '';
-                        document.getElementById('connVoltRating').value = '';
-                        document.getElementById('connCurrRating').value = '';
-                        document.getElementById('connTempRating').value = '';
-                        document.getElementById('noPins').value = '';
-                        document.getElementById('pinPitch').value = '';
-                        document.getElementById('connRack').value = '';
-                        document.getElementById('wireVoltRating').value = '';
-                        document.getElementById('wireCurrRating').value = '';
-                        document.getElementById('wireTempRating').value = '';
-
+                        
+                        $("#banana_jack_hole").val('');
+                        $("#conn_volt_rating").val('');
+                        $("#conn_curr_rating").val('');
+                        $("#conn_temp_rating").val('');
+                        $("#no_pins").val('');
+                        $("#pin_pitch").val('');
+                        $("#conn_rack").val('');
+                        $("#wire_volt_rating").val('');
+                        $("#wire_curr_rating").val('');
+                        $("#wire_temp_rating").val('');
+                        
                         if (selectedValue === '031001') {
                             bananaDiv.style.display = 'block';
                             edgeDiv.style.display = 'none';
@@ -948,108 +939,110 @@ include 'form_template.php';
                     }
                 </script>
                 
+                <!--TODO - please reassign semua data dekat bawah, set bagi data tu satu persatu, sbb duplicate data dia tak bole reset the second value-->
+                
                 <div id="BananaDiv" name="BananaDiv" style="display: none;">
                     <div class="row">
-                        <div class="two columns"><label for="bananaJackHole">No. Banana Jack Holes *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="bananaJackHole" name="bananaJackHole" value="" > </div>
-                        <div class="one columns"><label for="bananaJackHole" style="text-align: left"><b>Pins</b></label></div>
+                        <div class="two columns"><label for="banana_jack_hole">No. Banana Jack Holes *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="" > </div>
+                        <div class="one columns"><label for="banana_jack_hole" style="text-align: left"><b>Pins</b></label></div>
                         <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="connVoltRating">Connector Voltage Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="connVoltRating" name="connVoltRating" value="" > </div>
-                        <div class="one columns"><label for="connVoltRating" style="text-align: left"><b>V</b></label></div>
+                        <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="" > </div>
+                        <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="connCurrRating">Connector Current Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="connCurrRating" name="connCurrRating" value="" > </div>
-                        <div class="one columns"><label for="connCurrRating" style="text-align: left"><b>A</b></label></div>
+                        <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="" > </div>
+                        <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
                         <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="connTempRating">Connector Temp Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="connTempRating" name="connTempRating" value="" > </div>
-                        <div class="one columns"><label for="connTempRating" style="text-align: left"><b>`C</b></label></div>
+                        <div class="two columns"><label for="conn_temp_rating">Connector Temp Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="" > </div>
+                        <div class="one columns"><label for="conn_temp_rating" style="text-align: left"><b>`C</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                 </div>
                 
                 <div id="EdgeDiv" name="EdgeDiv" style="display: none;">
                     <div class="row">
-                        <div class="two columns"><label for="noPins">No. of Pins *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="noPins" name="noPins" value="" > </div>
-                        <div class="one columns"><label for="noPins" style="text-align: left"><b>Pins</b></label></div>
+                        <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="" > </div>
+                        <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
                         <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="pinPitch">Pin Pitch *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="pinPitch" name="pinPitch" value="" > </div>
-                        <div class="one columns"><label for="pinPitch" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="connVoltRating">Connector Voltage Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="connVoltRating" name="connVoltRating" value="" > </div>
-                        <div class="one columns"><label for="connVoltRating" style="text-align: left"><b>V</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="connCurrRating">Connector Current Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="connCurrRating" name="connCurrRating" value="" > </div>
-                        <div class="one columns"><label for="connCurrRating" style="text-align: left"><b>A</b></label></div>
+                        <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="" > </div>
+                        <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="connTempRating">Connector Temp Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="connTempRating" name="connTempRating" value="" > </div>
-                        <div class="one columns"><label for="connTempRating" style="text-align: left"><b>`C</b></label></div>
+                        <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="" > </div>
+                        <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="" > </div>
+                        <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="conn_temp_rating">Connector Temp Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="" > </div>
+                        <div class="one columns"><label for="conn_temp_rating" style="text-align: left"><b>`C</b></label></div>
                     </div>
                 </div>
                 
                 <div id="WinchestorDiv" name="WinchestorDiv" style="display: none;">
                     <div class="row">
-                        <div class="two columns"><label for="noPins">No. of Pins *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="noPins" name="noPins" value="" > </div>
-                        <div class="one columns"><label for="noPins" style="text-align: left"><b>Pins</b></label></div>
+                        <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="" > </div>
+                        <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
                         <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="pinPitch">Pin Pitch *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="pinPitch" name="pinPitch" value="" > </div>
-                        <div class="one columns"><label for="pinPitch" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="connVoltRating">Connector Voltage Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="connVoltRating" name="connVoltRating" value="" > </div>
-                        <div class="one columns"><label for="connVoltRating" style="text-align: left"><b>V</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="connCurrRating">Connector Current Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="connCurrRating" name="connCurrRating" value="" > </div>
-                        <div class="one columns"><label for="connCurrRating" style="text-align: left"><b>A</b></label></div>
+                        <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="" > </div>
+                        <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="connRack">No. Wires Connected to Rack *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="connRack" name="connRack" value="" > </div>
-                        <div class="one columns"><label for="connRack" style="text-align: left"><b>`C</b></label></div>
+                        <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="" > </div>
+                        <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="" > </div>
+                        <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="conn_rack">No. Wires Connected to Rack *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="conn_rack" name="conn_rack" value="" > </div>
+                        <div class="one columns"><label for="conn_rack" style="text-align: left"><b>`C</b></label></div>
                     </div>
                 </div>
                 
                 <div class="row" id="WireDiv" name="WireDiv"" style="display: none;">
                     <div class="row">
-                        <div class="two columns"><label for="wireVoltRating">Wire Voltage Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="wireVoltRating" name="wireVoltRating" value="" > </div>
-                        <div class="one columns"><label for="wireVoltRating" style="text-align: left"><b>V</b></label></div>
+                        <div class="two columns"><label for="wire_volt_rating">Wire Voltage Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="wire_volt_rating" name="wire_volt_rating" value="" > </div>
+                        <div class="one columns"><label for="wire_volt_rating" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="wireCurrRating">Wire Current Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="wireCurrRating" name="wireCurrRating" value="" > </div>
-                        <div class="one columns"><label for="wireCurrRating" style="text-align: left"><b>A</b></label></div>
+                        <div class="two columns"><label for="wire_curr_rating">Wire Current Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="wire_curr_rating" name="wire_curr_rating" value="" > </div>
+                        <div class="one columns"><label for="wire_curr_rating" style="text-align: left"><b>A</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="wireTempRating">Wire Temp Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="wireTempRating" name="wireTempRating" value="" > </div>
-                        <div class="one columns"><label for="wireTempRating" style="text-align: left"><b>`C</b></label></div>
+                        <div class="two columns"><label for="wire_temp_rating">Wire Temp Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value="" > </div>
+                        <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>`C</b></label></div>
                     </div>
                 </div>
                 
                 <h6>External Chamber Configuration</h6>
                 <div class="row">
-                    <div class="two columns"><label for="extConfigType">Configuration Type *</label></div>
+                    <div class="two columns"><label for="ext_config_type">Configuration Type *</label></div>
                     <div class="three columns">
-                        <select id="extConfigType" name="extConfigType" style="width: 100%" onchange="updateView()" required>
+                        <select id="ext_config_type" name="ext_config_type" style="width: 100%" onchange="updateView()" required>
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '032' ORDER BY code ASC";
@@ -1071,9 +1064,12 @@ include 'form_template.php';
                 
                 <script>
                     function updateView() {
-                        var dd = document.getElementById('extConfigType');
+                        var dd = document.getElementById('ext_config_type');
                         var extDiv = document.getElementById('viewExternalDiv');
                         var selectedValue = dd.value;
+                        
+                        $("#interface_volt_rating").val('');
+                        $("#interface_curr_rating").val('');
 
                         if (selectedValue === '032003') {
                             extDiv.style.display = 'none';
@@ -1085,13 +1081,13 @@ include 'form_template.php';
                 
                 <div class="row" id="viewExternalDiv" name="viewExternalDiv" style="display: none;">
                     <div class="row">
-                        <div class="two columns"><label for="interfaceVoltRating">Interface Voltage Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="interfaceVoltRating" name="interfaceVoltRating" value="" > </div>
-                        <div class="one columns"><label for="interfaceVoltRating" style="text-align: left"><b>V</b></label></div>
+                        <div class="two columns"><label for="interface_volt_rating">Interface Voltage Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="interface_volt_rating" name="interface_volt_rating" value="" > </div>
+                        <div class="one columns"><label for="interface_volt_rating" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="interfaceCurrRating">Interface Current Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="interfaceCurrRating" name="interfaceCurrRating" value="" > </div>
-                        <div class="one columns"><label for="interfaceCurrRating" style="text-align: left"><b>A</b></label></div>
+                        <div class="two columns"><label for="interface_curr_rating">Interface Current Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="interface_curr_rating" name="interface_curr_rating" value="" > </div>
+                        <div class="one columns"><label for="interface_curr_rating" style="text-align: left"><b>A</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                 </div>
@@ -1113,5 +1109,6 @@ include 'form_template.php';
             });
         </script>
         <script src="js/multiselect-dropdown.js" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </body>
 </html>

@@ -41,25 +41,11 @@ include 'form_template.php';
                 display: block;
             }
         </style>
+        
         <script type="text/javascript">
-            $("input[type='text'], textarea").on("input", function () {
-                canChangeColor();
-            });
 
-            function canChangeColor() {
-                var can = true;
-                $("input[type='text'], textarea").each(function () {
-                    if ($(this).val() === '') {
-                        can = false;
-                    }
-                });
-                if (can) {
-                    $('.btn').css({background: 'red'});
-                } else {
-                    $('.btn').css({background: 'transparent'});
-                }
-            }
         </script>
+        
     </head>
     <body>
         <div class="twelve columns">&nbsp;</div>
@@ -107,7 +93,7 @@ include 'form_template.php';
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)):
                             ?>
-                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === "004004") { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                         <?php endwhile; ?>
                     </select>
                 </div>

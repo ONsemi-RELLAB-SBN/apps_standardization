@@ -65,7 +65,7 @@ include 'class/get_parameter.php';
                 </thead>
                 <!-- PHP CODE TO FETCH DATA FROM ROWS -->
                 <?php
-                $get_slides = "SELECT * FROM gest_eqpt_form WHERE flag = '1' ORDER BY id ASC";
+                $get_slides = "SELECT * FROM gest_form_eqpt WHERE flag = '1' ORDER BY id ASC";
                 $run_slides = mysqli_query($con, $get_slides);
                 // LOOP TILL END OF DATA
                 $t = 0;
