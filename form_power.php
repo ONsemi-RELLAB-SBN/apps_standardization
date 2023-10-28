@@ -301,7 +301,7 @@ include 'form_template.php';
                     </select>
                 </div>
                 <div class="one columns">
-                    <label for="toggle_3">View Sample</label>
+                    <label for="toggle_3" class="view-image">Image</label>
                     <input type="checkbox" id="toggle_3">
                     <dialog>
                         <label for="toggle_3" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
@@ -323,7 +323,7 @@ include 'form_template.php';
                     </select>
                 </div>
                 <div class="one columns">
-                    <label for="toggle_4">View Sample</label>
+                    <label for="toggle_4" class="view-image">Image</label>
                     <input type="checkbox" id="toggle_4">
                     <dialog>
                         <label for="toggle_4" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
@@ -343,7 +343,7 @@ include 'form_template.php';
                     </select>
                 </div>
                 <div class="one columns">
-                    <label for="toggle_2">View Sample</label>
+                    <label for="toggle_2" class="view-image">Image</label>
                     <input type="checkbox" id="toggle_2">
                     <dialog>
                         <label for="toggle_2" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -359,7 +359,7 @@ include 'form_template.php';
                 <div class="one columns"><label for="maxTemp" style="text-align: left"><b>V</b></label></div>
                 <div class="one columns">&nbsp;</div>
                 <div class="one columns">
-                    <label for="toggle_1">View Sample</label>
+                    <label for="toggle_1" class="view-image">Image</label>
                     <input type="checkbox" id="toggle_1">
                     <dialog>
                         <label for="toggle_1" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>

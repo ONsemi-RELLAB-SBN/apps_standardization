@@ -369,7 +369,7 @@ include 'form_template.php';
                     <div class="one columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
-                        <label for="toggle_01">View Sample</label>
+                        <label for="toggle_01" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_01">
                         <dialog>
                             <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -383,7 +383,7 @@ include 'form_template.php';
                     <div class="one columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
-                        <label for="toggle_02">View Sample</label>
+                        <label for="toggle_02" class="view-image" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_02">
                         <dialog>
                             <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -395,7 +395,7 @@ include 'form_template.php';
                     <div class="one columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
-                        <label for="toggle_03">View Sample</label>
+                        <label for="toggle_03" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_03">
                         <dialog>
                             <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -411,7 +411,7 @@ include 'form_template.php';
                     <div class="one columns"><label for="no_interior" style="text-align: left"><b>Zone</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
-                        <label for="toggle_06">View Sample</label>
+                        <label for="toggle_06" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_06">
                         <dialog>
                             <label for="toggle_06" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -429,7 +429,7 @@ include 'form_template.php';
                     <div class="one columns"><label for="int_volume" style="text-align: left"><b>L</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
-                        <label for="toggle_08">View Sample</label>
+                        <label for="toggle_08" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_08">
                         <dialog>
                             <label for="toggle_08" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -455,7 +455,7 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">
-                        <label for="toggle_09">View Sample</label>
+                        <label for="toggle_09" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_09">
                         <dialog>
                             <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -467,7 +467,7 @@ include 'form_template.php';
                     <div class="one columns"><label for="ext_dimension_h" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
-                        <label for="toggle_04">View Sample</label>
+                        <label for="toggle_04" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_04">
                         <dialog>
                             <label for="toggle_04" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -500,7 +500,7 @@ include 'form_template.php';
                     <div class="one columns"><label for="rack_slot_pitch" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
-                        <label for="toggle_10">View Sample</label>
+                        <label for="toggle_10" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_10">
                         <dialog>
                             <label for="toggle_10" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -518,7 +518,7 @@ include 'form_template.php';
                     <div class="one columns"><label for="rack_slot_width" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
-                        <label for="toggle_11">View Sample</label>
+                        <label for="toggle_11" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_11">
                         <dialog>
                             <label for="toggle_11" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -530,7 +530,7 @@ include 'form_template.php';
                     <div class="one columns"><label for="int_dimension_h" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
-                        <label for="toggle_05">View Sample</label>
+                        <label for="toggle_05" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_05">
                         <dialog>
                             <label for="toggle_05" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -554,7 +554,7 @@ include 'form_template.php';
                     <div class="one columns"><label for="no_mb_slot" style="text-align: left"><b>Slot</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
-                        <label for="toggle_12">View Sample</label>
+                        <label for="toggle_12" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_12">
                         <dialog>
                             <label for="toggle_12" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -572,7 +572,7 @@ include 'form_template.php';
                     <div class="one columns"><label for="max_ps_bs" style="text-align: left"><b>Slot</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
-                        <label for="toggle_13">View Sample</label>
+                        <label for="toggle_13" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_13">
                         <dialog>
                             <label for="toggle_13" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -584,7 +584,7 @@ include 'form_template.php';
                     <div class="one columns"><label for="rack_dimension_h" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
-                        <label for="toggle_07">View Sample</label>
+                        <label for="toggle_07" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_07">
                         <dialog>
                             <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -598,7 +598,7 @@ include 'form_template.php';
                     <div class="one columns"><label for="max_ps" style="text-align: left"><b>Unit</b></label></div>
                     <div class="one columns">&nbsp;</div>
                     <div class="one columns">
-                        <label for="toggle_14">View Sample</label>
+                        <label for="toggle_14" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_14">
                         <dialog>
                             <label for="toggle_14" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -618,7 +618,7 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">
-                        <label for="toggle_15">View Sample</label>
+                        <label for="toggle_15" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_15">
                         <dialog>
                             <label for="toggle_15" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -881,7 +881,7 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">
-                        <label for="toggle_16">View Sample</label>
+                        <label for="toggle_16" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_16">
                         <dialog>
                             <label for="toggle_16" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -1053,7 +1053,7 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">
-                        <label for="toggle_20">View Sample</label>
+                        <label for="toggle_20" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_20">
                         <dialog>
                             <label for="toggle_20" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>

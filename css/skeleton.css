@@ -987,5 +987,12 @@ label {
 dialog{
     animation: appear 500ms ease-in 1;
     max-width: 1280px;
+    border-color: orange;
+    border-style: dashed;
+    border-radius: 25px;
 }
 /*MODAL END*/
+
+.view-image {
+    color: lightskyblue     ;
+}

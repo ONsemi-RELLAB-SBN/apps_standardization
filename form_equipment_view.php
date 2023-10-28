@@ -128,7 +128,6 @@ $id = $_GET['view'];
                         </div>
                         <?php
                         $checkZone = getParameterValues($rowForm['rel_test']);
-                        echo 'oi oi >>> ', $checkZone , '<br>';
                         $data01 = "TC";
                         $data02 = "THS";
                         if (strpos($checkZone, $data02) === false && strpos($checkZone, $data01) === false) {
@@ -137,7 +136,7 @@ $id = $_GET['view'];
                             ?>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="zone">Zone *</label></div>
-                            <div class="three columns"><input type="number" step="0.001" id="zone" name="zone" value="" required></div>
+                            <div class="three columns"><input type="number" step="0.001" id="zone" name="zone" value="<?php echo $rowForm['zone']; ?>" required readonly></div>
                         <?php } ?>
                     </div>
 

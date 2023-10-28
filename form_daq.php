@@ -317,7 +317,7 @@ include 'form_template.php';
                             <div class="one columns"><input type="number" step="0.001" id="volt_measure_reso" name="volt_measure_reso" value="" required> </div>
                             <div class="one columns"><label for="volt_measure_reso" style="text-align: left"><b>&nbsp;</b></label></div>
                             <div class="two columns">
-                                <label for="toggle_01">View Sample</label>
+                                <label for="toggle_01" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_01">
                                 <dialog>
                                     <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
@@ -340,7 +340,7 @@ include 'form_template.php';
                                 </select>
                             </div>
                             <div class="one columns">
-                                <label for="toggle_02">View Sample</label>
+                                <label for="toggle_02" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_02">
                                 <dialog>
                                     <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
@@ -361,7 +361,7 @@ include 'form_template.php';
                                 </select>
                             </div>
                             <div class="one columns">
-                                <label for="toggle_03">View Sample</label>
+                                <label for="toggle_03" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_03">
                                 <dialog>
                                     <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
@@ -380,7 +380,7 @@ include 'form_template.php';
                             <div class="one columns"><input type="number" step="0.001" id="analog_input_single" name="analog_input_single" value="" required> </div>
                             <div class="one columns"><label for="analog_input_single" style="text-align: left"><b>V</b></label></div>
                             <div class="two columns">
-                                <label for="toggle_040">View Sample</label>
+                                <label for="toggle_040" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_040">
                                 <dialog>
                                     <label for="toggle_040" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
@@ -391,7 +391,7 @@ include 'form_template.php';
                             <div class="one columns"><input type="number" step="0.001" id="analog_input_diff" name="analog_input_diff" value="" required> </div>
                             <div class="one columns"><label for="analog_input_diff" style="text-align: left"><b>V</b></label></div>
                             <div class="two columns">
-                                <label for="toggle_041">View Sample</label>
+                                <label for="toggle_041" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_041">
                                 <dialog>
                                     <label for="toggle_041" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
@@ -404,7 +404,7 @@ include 'form_template.php';
                             <div class="one columns"><input type="number" step="0.001" id="resolution" name="resolution" value="" required> </div>
                             <div class="one columns"><label for="resolution" style="text-align: left"><b>&nbsp;</b></label></div>
                             <div class="two columns">
-                                <label for="toggle_042">View Sample</label>
+                                <label for="toggle_042" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_042">
                                 <dialog>
                                     <label for="toggle_042" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
@@ -415,7 +415,7 @@ include 'form_template.php';
                             <div class="one columns"><input type="number" step="0.001" id="sampling_frequency" name="sampling_frequency" value="" required> </div>
                             <div class="one columns"><label for="sampling_frequency" style="text-align: left"><b>s</b></label></div>
                             <div class="two columns">
-                                <label for="toggle_050">View Sample</label>
+                                <label for="toggle_050" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_050">
                                 <dialog>
                                     <label for="toggle_050" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
@@ -438,7 +438,7 @@ include 'form_template.php';
                                 </select>
                             </div>
                             <div class="one columns">
-                                <label for="toggle_051">View Sample</label>
+                                <label for="toggle_051" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_051">
                                 <dialog>
                                     <label for="toggle_051" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
@@ -459,7 +459,7 @@ include 'form_template.php';
                                 </select>
                             </div>
                             <div class="one columns">
-                                <label for="toggle_052">View Sample</label>
+                                <label for="toggle_052" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_052">
                                 <dialog>
                                     <label for="toggle_052" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
@@ -482,7 +482,7 @@ include 'form_template.php';
                                 </select>
                             </div>
                             <div class="one columns">
-                                <label for="toggle_06">View Sample</label>
+                                <label for="toggle_06" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_06">
                                 <dialog>
                                     <label for="toggle_06" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
@@ -503,7 +503,7 @@ include 'form_template.php';
                                 </select>
                             </div>
                             <div class="one columns">
-                                <label for="toggle_070">View Sample</label>
+                                <label for="toggle_070" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_070">
                                 <dialog>
                                     <label for="toggle_070" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
@@ -526,7 +526,7 @@ include 'form_template.php';
                                 </select>
                             </div>
                             <div class="one columns">
-                                <label for="toggle_071">View Sample</label>
+                                <label for="toggle_071" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_071">
                                 <dialog>
                                     <label for="toggle_071" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
@@ -547,7 +547,7 @@ include 'form_template.php';
                                 </select>
                             </div>
                             <div class="one columns">
-                                <label for="toggle_072">View Sample</label>
+                                <label for="toggle_072" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_072">
                                 <dialog>
                                     <label for="toggle_072" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
