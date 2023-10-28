@@ -1,6 +1,5 @@
 <?php
-
-/* 
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
@@ -18,1191 +17,1114 @@ $id = $_GET['edit'];
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>COPY FORM | Standardization</title>
         <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/dribbble.ico">
+        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/elements.css" />
-        <link rel="stylesheet" type="text/css" href="css/layout.css">
-        <link rel="stylesheet" type="text/css" href="css/readonly.css" />
-        <link rel="stylesheet" type="text/css" href="css/select2.css"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-
-        <script src="js/bootstrap.js"></script>
-        <script src="js/jquery.js"></script>
-        <script src="js/select2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/w3.css">
+        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
         <style>
-            .select2-container-active .select2-choice,
-            .select2-container-active .select2-choices {
-                /*border: 1px solid $input-border-focus !important;*/
-                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-            }
-
-            .select2-dropdown-open .select2-choice {
-                border-bottom: 0 !important;
-                background-image: none;
-                background-color: #fff;
-                filter: none;
-                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-            }
-
-            .select2-dropdown-open.select2-drop-above .select2-choice,
-            .select2-dropdown-open.select2-drop-above .select2-choices {
-                /*border: 1px solid $input-border-focus !important;*/
-                border-top: 0 !important;
-                background-image: none;
-                background-color: #fff;
-                filter: none;
-                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #009d9b !important;
-            }
-
-            .no-border {
-                border: 0;
-                box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
-            }
-
-            span.tab-space {
-                padding-left:20em;
-            }
-
-            #backBtn {
-                display: block;
-                position: fixed;
-                top: 80px;
-                right: 30px;
-                z-index: 99;
-                font-size: 18px;
-                border: none;
-                outline: none;
-                background-color: gray;
-                color: white;
-                cursor: pointer;
+            input[type=text], input[type=password] {
+                width: 100%;
                 padding: 15px;
-                border-radius: 4px;
-            }
-            #myBtn {
-                display: block;
-                position: fixed;
-                bottom: 20px;
-                right: 30px;
-                z-index: 99;
-                font-size: 18px;
-                border: none;
-                outline: none;
-                background-color: gray;
-                color: white;
-                cursor: pointer;
-                padding: 15px;
-                border-radius: 4px;
-            }
-
-            #myBtn:hover {
-                background-color: #17a2b8;
-            }
-
-            .dropdown {
-                position: absolute;
-                top: 0px;
+                margin: 5px 0 22px 0;
                 display: inline-block;
             }
-            
-            .control-label {
-                font-size: 1.3em;
+
+            #toggle_01, #toggle_02, #toggle_03, #toggle_04, #toggle_05, #toggle_06, #toggle_07, #toggle_08, #toggle_09, #toggle_10, #toggle_11, #toggle_12, #toggle_13, #toggle_14, #toggle_15, #toggle_16, #toggle_17, #toggle_18, #toggle_19, #toggle_20 {
+                visibility: hidden;
+                opacity: 0;
+                position: relative;
+                z-index: -1;
+            }
+
+            #toggle_01:checked ~ dialog {
+                display: block;
+            }
+            #toggle_02:checked ~ dialog {
+                display: block;
+            }
+            #toggle_03:checked ~ dialog {
+                display: block;
+            }
+            #toggle_04:checked ~ dialog {
+                display: block;
+            }
+            #toggle_05:checked ~ dialog {
+                display: block;
+            }
+            #toggle_06:checked ~ dialog {
+                display: block;
+            }
+            #toggle_07:checked ~ dialog {
+                display: block;
+            }
+            #toggle_08:checked ~ dialog {
+                display: block;
+            }
+            #toggle_09:checked ~ dialog {
+                display: block;
+            }
+            #toggle_10:checked ~ dialog {
+                display: block;
+            }
+            #toggle_11:checked ~ dialog {
+                display: block;
+            }
+            #toggle_12:checked ~ dialog {
+                display: block;
+            }
+            #toggle_13:checked ~ dialog {
+                display: block;
+            }
+            #toggle_14:checked ~ dialog {
+                display: block;
+            }
+            #toggle_15:checked ~ dialog {
+                display: block;
+            }
+            #toggle_16:checked ~ dialog {
+                display: block;
+            }
+            #toggle_17:checked ~ dialog {
+                display: block;
+            }
+            #toggle_18:checked ~ dialog {
+                display: block;
+            }
+            #toggle_19:checked ~ dialog {
+                display: block;
+            }
+            #toggle_20:checked ~ dialog {
+                display: block;
             }
         </style>
+
         <script type="text/javascript">
-            $(document).ready(function () {
-                $('.js-example-basic-multiple').select2({
-                    placeholder: "Multi Select",
-                    allowClear: true
-                });
 
-                $(".js-example-basic-single").select2({
-                    placeholder: "Choose one",
-                    allowClear: true
-                });
-            });
-
-            $("input[type='text'], textarea").on("input", function () {
-                canChangeColor();
-            });
-
-            function canChangeColor() {
-                var can = true;
-                $("input[type='text'], textarea").each(function () {
-                    if ($(this).val() == '') {
-                        can = false;
-                    }
-                });
-                if (can) {
-                    $('.btn').css({background: 'red'})
-                } else {
-                    $('.btn').css({background: 'transparent'})
-                }
-            }
         </script>
+
     </head>
     <body>
-        <div class="col-lg-12">
-            <hr>
-            <h1>Equipment Detail | Copy Data</h1>
+        <div class="twelve columns">&nbsp;</div>
+        <div class="twelve columns">&nbsp;</div>
+        <h5 style="border-left: none;">Equipment Details</h5>
+        <form id="replicate_equipment_form" action="crud_add_equipment.php" method="get">
             <div class="row">
-                <div class="col-lg-11">
-                    <div class="main-box">
-                        <h2>General</h2>
-                        <form id="add_equipment_form" class="form-horizontal" role="form" action="crud_update_equipment.php" method="get">
-                            <?php 
-                            $sqlFormData = "SELECT * FROM gest_form_eqpt WHERE id = '$id'";
-                            $resForm = mysqli_query($con, $sqlFormData);
-                            while ($rowForm = mysqli_fetch_array($resForm)): ?>
-                            <div class="form-group">
-                                <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
-                                <label for="labLocation" class="col-lg-2 control-label">Lab Location *</label>
-                                <div class="col-lg-3">
-                                    <select id="labLocation" name="labLocation" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '002' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['lab_location']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="strategy" class="col-lg-2 control-label">onsemi Strategy *</label>
-                                <div class="col-lg-3">
-                                    <select id="strategy" name="strategy" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '003' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['strategy']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>  
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="standardization" class="col-lg-2 control-label">Standardization Category *</label>
-                                <div class="col-lg-3">
-                                    <select id="standardization" name="standardization" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '004' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['standard_category']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="champion" class="col-lg-2 control-label">Champion *</label>
-                                <div class="col-lg-3">
-                                    <select id="champion" name="champion" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '005' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['champion']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
+                <?php
+                $sqlFormData = "SELECT * FROM gest_form_eqpt WHERE id = '$id'";
+                $resForm = mysqli_query($con, $sqlFormData);
+                while ($rowForm = mysqli_fetch_array($resForm)): ?>
 
-                            <h2>Equipment Identity</h2>
-                            <div class="form-group">
-                                <label for="eqptId" class="col-lg-2 control-label">Equipment ID *</label>
-                                <div class="col-lg-3">
-                                    <select id="eqptId" name="eqptId" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['eqpt_id']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="dedicated" class="col-lg-2 control-label">Dedicated/Share *</label>
-                                <div class="col-lg-3">
-                                    <select id="dedicated" name="dedicated" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['dedicate_usage']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="relTest" class="col-lg-2 control-label">Rel Test (Multiselect) *</label>
-                                <div class="col-lg-3">
-                                    <select id="relTest" name="relTest[]" class="js-example-basic-multiple" multiple="multiple" style="width: 100%" required>
+                    <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
+                    <h6>General</h6>
+                    <div class="row">
+                        <div class="two columns"><label for="lab_location">Lab Location *</label></div>
+                        <div class="three columns">
+                            <select id="lab_location" name="lab_location" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '002' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['lab_location']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="strategy">onsemi Strategy *</label></div>
+                        <div class="three columns">
+                            <select id="strategy" name="strategy" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '003' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['strategy']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>  
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="standardization">Standardization Category *</label></div>
+                        <div class="three columns">
+                            <select id="standardization" name="standardization" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '004' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === "004001") { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="champion">Champion *</label></div>
+                        <div class="three columns">
+                            <select id="champion" name="champion" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '005' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['champion']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+
+                    <h6>Equipment Identity</h6>
+                    <div class="row">
+                        <div class="two columns"><label for="eqpt_id">Equipment ID *</label></div>
+                        <div class="three columns">
+                            <select id="eqpt_id" name="eqpt_id" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['eqpt_id']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="dedicated">Dedicated/Share *</label></div>
+                        <div class="three columns">
+                            <select id="dedicated" name="dedicated" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['dedicate_usage']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="manufacturer">Equipment Manufacturer *</label></div>
+                        <div class="three columns">
+                            <select id="manufacturer" name="manufacturer" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['eqpt_manufacturer']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="model">Equipment Model *</label></div>
+                        <div class="three columns">
+                            <select id="model" name="model" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '010' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['eqpt_model']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="mfg_date">Equipment Mfg Date *</label></div>
+                        <div class="three columns"><input type="date" class="form-control" id="mfg_date" name="mfg_date" value="<?php echo date('Y-m-d', strtotime($rowForm['eqpt_mfg_date'])); ?>" required></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="asset_no">Equipment Asset No *</label></div>
+                        <div class="three columns"><input type="text" class="form-control" id="asset_no" name="asset_no" placeholder="Asset Number" value="<?php echo $rowForm['eqpt_asset_no']; ?>" required> </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="new_transfer">New/Transfer Equipment *</label></div>
+                        <div class="three columns">
+                            <select id="new_transfer" name="new_transfer" style="width: 100%" onchange="updateToField()" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '013' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['new_transfer_eqpt']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <?php
+                        $checkLocation = getParameterValue($rowForm['new_transfer_eqpt']);
+                        if ($checkLocation == "Transfer") {
+                            ?>
+                            <div class="one columns">&nbsp;</div>
+                            <div class="two columns"><label for="from">From? *</label></div>
+                            <div class="three columns">
+                                <select id="from" name="from" style="width: 100%" readonly required>
+                                    <option value="" selected=""></option>
                                     <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '014' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" <?php if (strpos($rowForm['rel_test'], $rowSite['code']) !== false) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['transfer_eqpt_location']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="manufacturer" class="col-lg-2 control-label">Equipment Manufacturer *</label>
-                                <div class="col-lg-3">
-                                    <select id="manufacturer" name="manufacturer" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['eqpt_manufacturer']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
+                                </select>
                             </div>
-                            <div class="form-group">
-                                <label for="model" class="col-lg-2 control-label">Equipment Model *</label>
-                                <div class="col-lg-3">
-                                    <select id="model" name="model" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '010' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['eqpt_model']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="mfgDate" class="col-lg-2 control-label">Equipment Mfg Date *</label>
-                                <div class="col-lg-3">
-                                    <input type="date" class="form-control" id="mfgDate" name="mfgDate" value="<?php echo date('Y-m-d', strtotime($rowForm['eqpt_mfg_date'])); ?>" required>
-                                </div>
-                            </div>
-
-                            <script>
-                                function updateToField() {
-                                    var newTransferDropdown = document.getElementById('newTransfer');
-                                    var toField = document.getElementById('to');
-                                    var transField = document.getElementById('transfer');
-
-                                    if (newTransferDropdown.value === '013001') {
-                                        toField.readOnly = true;
-                                        toField.required = false;
-                                        $('#to').val('');
-                                        transField.style.display = 'none';
-                                    } else {
-                                        toField.readOnly = false;
-                                        toField.required = true;
-                                        transField.style.display = 'block';
-                                    }
-                                }
-                            </script>
-
-                            <div class="form-group">
-                                <label for="assetNo" class="col-lg-2 control-label">Equipment Asset No *</label>
-                                <div class="col-lg-3">
-                                    <input type="text" class="form-control" id="assetNo" name="assetNo" placeholder="Asset Number" value="<?php echo $rowForm['eqpt_asset_no']; ?>" required> 
-                                </div>
-                                <label for="newTransfer" class="col-lg-2 control-label">New/Transfer Equipment *</label>
-                                <div class="col-lg-3">
-                                    <select id="newTransfer" name="newTransfer" class="js-example-basic-single" style="width: 100%" onchange="updateToField()" required >
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '013' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['new_transfer_eqpt']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group" style="display: none;" id="transfer">
-                                <label for="to" class="col-lg-7 control-label">From? *</label>
-                                <div class="col-lg-3">
-                                    <select id="to" name="to" class="js-example-basic-single" style="width: 100%" readonly required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '014' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['transfer_eqpt_location']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <h2>Capability</h2>
-                            <div class="form-group">
-                                <label for="voltRating" class="col-lg-2 control-label">Voltage Rating *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="voltRating" name="voltRating" value="<?php echo $rowForm['eqpt_volt_rating']; ?>" required> 
-                                </div> 
-                                <label for="voltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
-                                <label for="voltControl" class="col-lg-2 control-label">Voltage Control Accuracy *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="voltControl" name="voltControl" value="<?php echo $rowForm['volt_control_accuracy']; ?>" required> 
-                                </div> 
-                                <label for="voltControl" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mV</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="minTemp" class="col-lg-2 control-label">Min. Temperature *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="minTemp" name="minTemp" value="<?php echo $rowForm['min_temp']; ?>" required> 
-                                </div> 
-                                <label for="minTemp" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                <label for="maxTemp" class="col-lg-2 control-label">Max. Temperature *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="maxTemp" name="maxTemp" value="<?php echo $rowForm['max_temp']; ?>" required> 
-                                </div>
-                                <label for="maxTemp" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="minRh" class="col-lg-2 control-label">Min. RH *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="minRh" name="minRh" value="<?php echo $rowForm['min_rh']; ?>" required> 
-                                </div> 
-                                <label for="minRh" class="col-lg-1 control-label pull-left" style="text-align: left"><b>%</b></label>
-                                <label for="maxRh" class="col-lg-2 control-label">Max. RH *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="maxRh" name="maxRh" value="<?php echo $rowForm['max_rh']; ?>" required> 
-                                </div> 
-                                <label for="maxRh" class="col-lg-1 control-label pull-left" style="text-align: left"><b>%</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="heatDissipation" class="col-lg-2 control-label">Heat Dissipation *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="heatDissipation" name="heatDissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" required> 
-                                </div>
-                                <label for="heatDissipation" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                <label for="tempFluctuation" class="col-lg-2 control-label">Temperature Fluctuation *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="tempFluctuation" name="tempFluctuation" value="<?php echo $rowForm['temp_fluctuation']; ?>" required>
-                                    <button class="myBtn_multi">View Sample Temperature Fluctuation</button>
-                                    <div class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/001.png" alt="image" style="width:100%;max-width:800px;">
-                                            <p>Sample Temperature Fluctuation Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <label for="tempFluctuation" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="tempUniform" class="col-lg-2 control-label">Temperature Uniformity *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="tempUniform" name="tempUniform" value="<?php echo $rowForm['temp_uniformity']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Temperature Uniformity</button>
-                                    <div class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/002.png" alt="image" style="width:100%;max-width:800px;">
-                                            <p>Sample Temperature Uniformity Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="tempUniform" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                <label for="humidFluctuation" class="col-lg-2 control-label">Humidity Fluctuation *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="humidFluctuation" name="humidFluctuation" value="<?php echo $rowForm['humid_fluctuation']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Humid Fluctuation</button>
-                                    <div class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/003.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Humid Fluctuation Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="humidFluctuation" class="col-lg-1 control-label pull-left" style="text-align: left"><b>%</b></label>
-                            </div>
-
-                            <h2>Characteristic</h2>
-                            <div class="form-group">
-                                <label for="noInterior" class="col-lg-2 control-label">No. Interior Zones (doors) *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="noInterior" name="noInterior" value="<?php echo $rowForm['no_interior_zone']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample No Interior Zone</button>
-                                    <div class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/006.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample No Interior Zone Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <label for="noInterior" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
-                                <label for="extDimension" class="col-lg-2 control-label">External Dimension (W) *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="extDimensionW" name="extDimensionW" value="<?php echo $rowForm['ext_dimension_w']; ?>" required> 
-                                </div>
-                                <label for="extDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="intVolume" class="col-lg-2 control-label">Internal Volume *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="intVolume" name="intVolume" value="<?php echo $rowForm['int_vol']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Internal Volume</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/008.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Internal Volume Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="intVolume" class="col-lg-1 control-label pull-left" style="text-align: left"><b>L</b></label>
-                                <label for="extDimension" class="col-lg-2 control-label">(D) *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="extDimensionD" name="extDimensionD" value="<?php echo $rowForm['ext_dimension_d']; ?>" required> 
-                                </div>
-                                <label for="extDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="boardOrientation" class="col-lg-2 control-label">Board Orientation*</label>
-                                <div class="col-lg-3">
-                                    <select id="boardOrientation" name="boardOrientation" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['board_orientation']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                    <button class="myBtn_multi">View Sample Board Orientation</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/009.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Board Orientation Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <label for="extDimension" class="col-lg-2 control-label">(H) *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="extDimensionH" name="extDimensionH" value="<?php echo $rowForm['ext_dimension_h']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample External Dimension</button>
-                                    <div class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/004.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample External Dimension Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <label for="extDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="rackMaterial" class="col-lg-2 control-label">Rack Material *</label>
-                                <div class="col-lg-3">
-                                    <select id="rackMaterial" name="rackMaterial" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '016' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['rack_material']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="intDimension" class="col-lg-2 control-label">Internal Dimension (W) *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="intDimensionW" name="intDimensionW" value="<?php echo $rowForm['int_dimension_w']; ?>" required> 
-                                </div> 
-                                <label for="intDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="rackSlotPitch" class="col-lg-2 control-label">Rack Slot-to-Slot Pitch *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackSlotPitch" name="rackSlotPitch" value="<?php echo $rowForm['rack_slot_pitch']; ?>" required>
-                                    <button class="myBtn_multi">View Sample Rack Slot-to-Slot Pitch</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/010.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Rack Slot-to-Slot Pitch Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="rackSlotPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                <label for="intDimension" class="col-lg-2 control-label">(D) *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="intDimensionD" name="intDimensionD" value="<?php echo $rowForm['int_dimension_d']; ?>" required> 
-                                </div> 
-                                <label for="intDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="rackSLotWidth" class="col-lg-2 control-label">Rack Slot Width *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackSLotWidth" name="rackSLotWidth" value="<?php echo $rowForm['rack_slot_width']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Rack Slot Width</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/011.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Rack Slot Width Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="rackSLotWidth" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                <label for="intDimension" class="col-lg-2 control-label">(H) *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="intDimensionH" name="intDimensionH" value="<?php echo $rowForm['int_dimension_h']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Internal Dimension</button>
-                                    <div class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/005.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Internal Dimension Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="intDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="eqptWeight" class="col-lg-2 control-label">Equipment Weight *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="eqptWeight" name="eqptWeight" value="<?php echo $rowForm['eqpt_weight']; ?>" required> 
-                                </div> 
-                                <label for="eqptWeight" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Kg</b></label>
-                                <label for="rackDimension" class="col-lg-2 control-label">Rack Dimension (W) *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackDimensionW" name="rackDimensionW" value="<?php echo $rowForm['rack_dimension_w']; ?>" required> 
-                                </div>
-                                <label for="rackDimensionW" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="noMbSlot" class="col-lg-2 control-label">Number of motherboard slots *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="noMbSlot" name="noMbSlot" value="<?php echo $rowForm['no_mb_slot']; ?>" required>
-                                    <button class="myBtn_multi">View Sample Motherboard Slots</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/012.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Motherboard Slots Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="noMbSlot" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
-                                <label for="rackDimension" class="col-lg-2 control-label">(D) *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackDimensionD" name="rackDimensionD" value="<?php echo $rowForm['rack_dimension_d']; ?>" required> 
-                                </div> 
-                                <label for="rackDimensionD" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="maxPsBs" class="col-lg-2 control-label">Max number of power supplies per board slot *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="maxPsBs" name="maxPsBs" value="<?php echo $rowForm['max_ps_slot']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Power Supplies</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/013.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Power Supplies Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="maxPsBs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
-                                <label for="rackDimension" class="col-lg-2 control-label">(H) *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="rackDimensionH" name="rackDimensionH" value="<?php echo $rowForm['rack_dimension_h']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Rack Dimension</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/007.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Rack Dimension Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="rackDimensionH" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="maxPs" class="col-lg-2 control-label">Max number of power supplies for the entire Equipment *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="maxPs" name="maxPs" value="<?php echo $rowForm['max_ps_eqpt']; ?>" required> 
-                                    <button class="myBtn_multi">View Sample Power Supplies</button>
-                                    <div  class="modal modal_multi">
-                                        <!-- Modal content -->
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/014.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Power Supplies Description</p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <label for="maxPs" class="col-lg-1 control-label pull-left" style="text-align: left"><b> </b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="airflow" class="col-lg-2 control-label">Airflow *</label>
-                                <div class="col-lg-3">
-                                    <select id="airflow" name="airflow" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '017' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['airflow']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                    <button class="myBtn_multi">View Sample Airflow</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/015.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Airflow Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <h2>Safety</h2>
-                            <div class="form-group">
-                                <label for="tempProtection1" class="col-lg-2 control-label">Temperature Protection 1 *</label>
-                                <div class="col-lg-3">
-                                    <select id="tempProtection1" name="tempProtection1" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['temp_protection_1']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="tempProtection2" class="col-lg-2 control-label">Temperature Protection 2 *</label>
-                                <div class="col-lg-3">
-                                    <select id="tempProtection2" name="tempProtection2" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['temp_protection_2']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="tempThermostat3" class="col-lg-2 control-label">Temperature Protection / Thermostat 3 *</label>
-                                <div class="col-lg-3">
-                                    <select id="tempThermostat3" name="tempThermostat3" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['temp_protection_3']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="smokeDetector" class="col-lg-2 control-label">Smoke Detector/Alarm *</label>
-                                <div class="col-lg-3">
-                                    <select id="smokeDetector" name="smokeDetector" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['smoke_alarm']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="emo" class="col-lg-2 control-label">EMO button *</label>
-                                <div class="col-lg-3">
-                                    <select id="emo" name="emo" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['emo_btn']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label class="col-lg-2 control-label"></label>
-                                <div class="col-lg-3"></div>
-                            </div>
-
-                            <h2>Utilities</h2>
-                            <div class="form-group">
-                                <label for="voltagePhase" class="col-lg-2 control-label">Voltage/Phase/Current *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="voltagePhase" name="voltagePhase" value="<?php echo $rowForm['volt_phase_current']; ?>" required> 
-                                </div> 
-                                <label for="voltagePhase" class="col-lg-1 control-label pull-left" style="text-align: left"><b>VAC</b></label>
-                                <label for="phase" class="col-lg-2 control-label">Phase *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="phase" name="phase" value="<?php echo $rowForm['phase']; ?>" required> 
-                                </div> 
-                                <label for="phase" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Phase</b></label>
-                            </div>
-                            <div class="form-group">
-                                <label for="exhaust" class="col-lg-2 control-label">Exhaust *</label>
-                                <div class="col-lg-3">
-                                    <select id="exhaust" name="exhaust" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['exhaust']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <label for="diWater" class="col-lg-2 control-label">DI Water *</label>
-                                <div class="col-lg-3">
-                                    <select id="diWater" name="diWater" class="js-example-basic-single" style="width: 100%" onchange="updateToFieldWater()" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '029' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['di_water']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <script>
-                                function updateToFieldWater() {
-                                    var diWaterDropdown = document.getElementById('diWater');
-                                    var waterField = document.getElementById('waterTopup');
-                                    var topapField = document.getElementById('topup');
-
-                                    if (diWaterDropdown.value !== '029003') {
-                                        waterField.readOnly = true;
-                                        waterField.required = false;
-                                        topapField.style.display = 'none';
-                                    } else {
-                                        waterField.readOnly = false;
-                                        waterField.required = true;
-                                        topapField.style.display = 'block';
-                                    }
-                                }
-                            </script>
-
-                            <?php 
-                            $checkWater = $rowForm['di_water'];
-                            if ($checkWater === "029003") {
-                            ?>
-                            <div class="form-group" style="display: block;" id="topup">
-                                <label class="col-lg-2 control-label"></label>
-                                <div class="col-lg-3"></div>
-                                <label for="waterTopup" class="col-lg-2 control-label">Water Top-up System *</label>
-                                <div class="col-lg-3">
-                                    <select id="waterTopup" name="waterTopup" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['water_topup_system']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <?php } ?>
-
-                            <h2>DAQ</h2>
-                            <div class="form-group">
-                                <label for="daq" class="col-lg-2 control-label">DAQ (Realtime Leakage Monitoring) *</label>
-                                <div class="col-lg-3">
-                                    <select id="daq" name="daq" class="js-example-basic-single" style="width: 100%" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['daq']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <h2>Internal Chamber Configuration</h2>
-                            <div class="form-group">
-                                <label for="intConfigType" class="col-lg-2 control-label">Configuration Type *</label>
-                                <div class="col-lg-3">
-                                    <select id="intConfigType" name="intConfigType" class="js-example-basic-single" style="width: 100%" onchange="updateDiv()" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '031' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['internal_config_type']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                    <button class="myBtn_multi">View Sample Internal Chamber Configuration</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/016.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample Internal Chamber Configuration Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <script>
-                                function updateDiv() {
-                                    var dropdown = document.getElementById('intConfigType');
-                                    var bananaDiv = document.getElementById('BananaDiv');
-                                    var edgeDiv = document.getElementById('EdgeDiv');
-                                    var winDiv = document.getElementById('WinchestorDiv');
-                                    var wireDiv = document.getElementById('WireDiv');
-                                    var selectedValue = dropdown.value;
-
-                                    $('#bananaJackHole').val("");
-                                    $('#connVoltRating').val("");
-                                    $('#connCurrRating').val("");
-                                    $('#connTempRating').val("");
-                                    $('#noPins').val("");
-                                    $('#pinPitch').val("");
-                                    $('#connRack').val("");
-                                    $('#wireVoltRating').val("");
-                                    $('#wireCurrRating').val("");
-                                    $('#wireTempRating').val("");
-
-                                    if (selectedValue === '031001') {
-                                        bananaDiv.style.display = 'block';
-                                        edgeDiv.style.display = 'none';
-                                        winDiv.style.display = 'none';
-                                        wireDiv.style.display = 'none';
-                                    } else if (selectedValue === '031002') {
-                                        bananaDiv.style.display = 'none';
-                                        edgeDiv.style.display = 'block';
-                                        winDiv.style.display = 'none';
-                                        wireDiv.style.display = 'none';
-                                    } else if (selectedValue === '031003') {
-                                        bananaDiv.style.display = 'none';
-                                        edgeDiv.style.display = 'none';
-                                        winDiv.style.display = 'block';
-                                        wireDiv.style.display = 'none';
-                                    } else if (selectedValue === '031004') {
-                                        bananaDiv.style.display = 'none';
-                                        edgeDiv.style.display = 'none';
-                                        winDiv.style.display = 'none';
-                                        wireDiv.style.display = 'block';
-                                    } else {
-                                        bananaDiv.style.display = 'none';
-                                        edgeDiv.style.display = 'none';
-                                        winDiv.style.display = 'none';
-                                        wireDiv.style.display = 'none';
-                                    }
-                                }
-                            </script>
-
-                            <?php 
-                            $dataCheck = getParameterValue($rowForm['internal_config_type']);
-                            if ($dataCheck == "Banana") { ?>
-                            <!--Banana-->
-                            <div class="form-group" name="BananaDiv" id="BananaDiv" style="display: block;">
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3">
-                                        <button class="myBtn_multi">View Sample Banana Configuration</button>
-                                        <div  class="modal modal_multi">
-                                            <div class="modal-content">
-                                                <span class="close close_multi">×</span>
-                                                <img id="myImg" src="image/reference/017.png" alt="Snow" style="width:100%;max-width:800px;">
-                                                <p>Sample Banana Configuration Description</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="bananaJackHole" class="col-lg-2 control-label">No. Banana Jack Holes *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="bananaJackHole" name="bananaJackHole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" > 
-                                    </div> 
-                                    <label for="bananaJackHole" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
-                                    <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > 
-                                    </div> 
-                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="<?php echo $rowForm['conn_current_rating']; ?>" > 
-                                    </div> 
-                                    <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
-                                    <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > 
-                                    </div> 
-                                    <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                </div>
-                            </div>
-
-                            <?php } else if ($dataCheck === "Edge Connector") { ?>
-                            <!--Edge Connector-->
-                            <div class="form-group" name="EdgeDiv" id="EdgeDiv" style="display: block;">
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3">
-                                        <button class="myBtn_multi">View Sample Edge Configuration</button>
-                                        <div  class="modal modal_multi">
-                                            <div class="modal-content">
-                                                <span class="close close_multi">×</span>
-                                                <img id="myImg" src="image/reference//017.png" alt="Snow" style="width:100%;max-width:800px;">
-                                                <p>Sample Edge Configuration Description</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="<?php echo $rowForm['no_pin']; ?>" > 
-                                    </div> 
-                                    <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
-
-                                    <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="<?php echo $rowForm['pin_pitch']; ?>" > 
-                                    </div> 
-                                    <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > 
-                                    </div> 
-                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
-
-                                    <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="<?php echo $rowForm['conn_current_rating']; ?>" > 
-                                    </div> 
-                                    <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="connTempRating" class="col-lg-2 control-label">Connector Temp Rating *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="connTempRating" name="connTempRating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > 
-                                    </div> 
-                                    <label for="connTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                </div>
-                            </div> 
-
-                            <?php } else if ($dataCheck === "Winchestor") { ?>
-                            <!--Winchestor-->
-                            <div class="form-group" name="WinchestorDiv" id="WinchestorDiv" style="display: block;">
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3">
-                                        <button class="myBtn_multi">View Sample Winchestor Configuration</button>
-                                        <div  class="modal modal_multi">
-                                            <div class="modal-content">
-                                                <span class="close close_multi">×</span>
-                                                <img id="myImg" src="image/reference/018.png" alt="Snow" style="width:100%;max-width:800px;">
-                                                <p>Sample Winchestor Configuration Description</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="noPins" class="col-lg-2 control-label">No. of Pins *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="noPins" name="noPins" value="<?php echo $rowForm['no_pin']; ?>" > 
-                                    </div> 
-                                    <label for="noPins" class="col-lg-1 control-label pull-left" style="text-align: left"><b>Pins</b></label>
-                                    <label for="pinPitch" class="col-lg-2 control-label">Pin Pitch *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="pinPitch" name="pinPitch" value="<?php echo $rowForm['pin_pitch']; ?>" > 
-                                    </div> 
-                                    <label for="pinPitch" class="col-lg-1 control-label pull-left" style="text-align: left"><b>mm</b></label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="connVoltRating" class="col-lg-2 control-label">Connector Voltage Rating *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="connVoltRating" name="connVoltRating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > 
-                                    </div> 
-                                    <label for="connVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
-                                    <label for="connCurrRating" class="col-lg-2 control-label">Connector Current Rating *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="connCurrRating" name="connCurrRating" value="<?php echo $rowForm['conn_current_rating']; ?>" > 
-                                    </div> 
-                                    <label for="connCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="connRack" class="col-lg-2 control-label">No. Wires Connected to Rack *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="connRack" name="connRack" value="<?php echo $rowForm['no_wire_conn_rack']; ?>" > 
-                                    </div> 
-                                    <label for="connRack" class="col-lg-1 control-label pull-left" style="text-align: left"><b></b></label>
-                                </div>
-                            </div>  
-
-                            <?php } else if ($dataCheck === "Wires") { ?>
-                            <!--Wire-->
-                            <div class="form-group" name="WireDiv" id="WireDiv" style="display: block;">
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3">
-                                        <button class="myBtn_multi">View Sample Wire Configuration</button>
-                                        <div  class="modal modal_multi">
-                                            <div class="modal-content">
-                                                <span class="close close_multi">×</span>
-                                                <img id="myImg" src="image/reference/019.png" alt="Snow" style="width:100%;max-width:800px;">
-                                                <p>Sample Wire Configuration Description</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="col-lg-2 control-label"></label>
-                                    <div class="col-lg-3"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="wireVoltRating" class="col-lg-2 control-label">Wire Voltage Rating *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="wireVoltRating" name="wireVoltRating" value="<?php echo $rowForm['wire_volt_rating']; ?>" > 
-                                    </div> 
-                                    <label for="wireVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
-                                    <label for="wireCurrRating" class="col-lg-2 control-label">Wire Current Rating *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="wireCurrRating" name="wireCurrRating" value="<?php echo $rowForm['wire_curr_rating']; ?>" > 
-                                    </div> 
-                                    <label for="wireCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="wireTempRating" class="col-lg-2 control-label">Wire Temp Rating *</label>
-                                    <div class="col-lg-2">
-                                        <input type="number" step="0.001" class="form-control" id="wireTempRating" name="wireTempRating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > 
-                                    </div>
-                                    <label for="wireTempRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>`C</b></label>
-                                </div>
-                            </div> 
-                            <?php } ?>
-
-                            <h2>External Chamber Configuration</h2>
-                            <div class="form-group">
-                                <label for="extConfigType" class="col-lg-2 control-label">Configuration Type *</label>
-                                <div class="col-lg-3">
-                                    <select id="extConfigType" name="extConfigType" class="js-example-basic-single" style="width: 100%" onchange="updateView()" required>
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '032' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['ext_config_type']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                    <button class="myBtn_multi">View External Chamber Configuration Configuration</button>
-                                    <div  class="modal modal_multi">
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <img id="myImg" src="image/reference/020.png" alt="Snow" style="width:100%;max-width:800px;">
-                                            <p>Sample External Chamber Configuration Description</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <script>
-                                function updateView() {
-                                    var dd = document.getElementById('extConfigType');
-                                    var extDiv = document.getElementById('viewExternalDiv');
-                                    var selectedValue = dd.value;
-
-                                    if (selectedValue === '032003') {
-                                        extDiv.style.display = 'none';
-                                    } else {
-                                        extDiv.style.display = 'block';
-                                    }
-                                }
-                            </script>
-
-                            <?php 
-                            $checkExt = $rowForm['ext_config_type'];
-                            if ($checkExt !== "032003") { ?>
-                            <div class="form-group" id="viewExternalDiv">
-                                <label for="interfaceVoltRating" class="col-lg-2 control-label">Interface Voltage Rating *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="interfaceVoltRating" name="interfaceVoltRating" value="<?php echo $rowForm['interface_volt_rating']; ?>" > 
-                                </div> 
-                                <label for="interfaceVoltRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>V</b></label>
-                                <label for="interfaceCurrRating" class="col-lg-2 control-label">Interface Current Rating *</label>
-                                <div class="col-lg-2">
-                                    <input type="number" step="0.001" class="form-control" id="interfaceCurrRating" name="interfaceCurrRating" value="<?php echo $rowForm['interface_current_rating']; ?>" > 
-                                </div> 
-                                <label for="interfaceCurrRating" class="col-lg-1 control-label pull-left" style="text-align: left"><b>A</b></label>
-                            </div>
-                            <?php } ?>
-
-                            <div class="pull-right">
-                                <button onclick="location.href = 'form_equipment_list.php'" type="button" id="backBtn">List</button>
-                            </div>
-                            <div class="pull-right">
-                                <button type="submit" id="myBtn" class="btn btn-primary">Send</button>
-                            </div>
-                            <div class="clearfix"></div>
-                            <?php endwhile; ?>
-                        </form>
+                        <?php } ?>
                     </div>
-                </div>	
+
+                    <script>
+                        function updateToField() {
+                            var newTransferDropdown = document.getElementById('new_transfer');
+                            var toField = document.getElementById('from');
+                            var transField = document.getElementById('transfer');
+
+                            if (newTransferDropdown.value === '013001') {
+                                toField.readOnly = true;
+                                toField.required = false;
+                                $("#from").val('');
+                                transField.style.display = 'none';
+                            } else {
+                                toField.readOnly = false;
+                                toField.required = true;
+                                transField.style.display = 'block';
+                            }
+                        }
+                    </script>
+
+                    <div class="row">
+                        <div class="two columns"><label for="relTest">Rel Test (Multiselect) *</label></div>
+                        <div class="three columns">
+                            <select name="relTest[]" id="relTest" multiple multiselect-search="true" multiselect-select-all="false" style="width:100%" onchange="updateRelTest()" required>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if (strpos($rowForm['rel_test'], $rowSite['code']) !== false) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <?php
+                        $checkZone = getParameterValues($rowForm['rel_test']);
+                        $data01 = "TC,THS";
+                        $data02 = "THS";
+                        if (strpos($checkZone, $data02) === false && strpos($checkZone, $data01) === false) {
+
+                        } else { ?>
+                            <div class="three columns"><label for="zone">Zone *</label></div>
+                            <div class="three columns"><input type="number" step="0.001" id="zon" name="zon" value="<?php echo $rowForm['zone']; ?>" required></div>
+                        <?php } ?>
+                    </div>
+
+                    <script>
+                        function updateRelTest() {
+                            var newreltest = document.getElementById('relTest');
+                            var zone = document.getElementById('zone');
+                            var selected = [...newreltest.selectedOptions].map(option => option.value);
+
+                            if (selected.includes("008019") || selected.includes("008021")) {
+                                zone.readOnly = false;
+                                zone.required = true;
+                                $("#zone").val('');
+                            } else {
+                                zone.readOnly = true;
+                                zone.required = false;
+                            }
+                        }
+                    </script>
+
+                    <h6>Capability</h6>
+                    <div class="row">
+                        <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="volt_rating" name="volt_rating" value="<?php echo $rowForm['eqpt_volt_rating']; ?>" required> </div>
+                        <div class="one columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="volt_control">Voltage Control Accuracy *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="volt_control" name="volt_control" value="<?php echo $rowForm['volt_control_accuracy']; ?>" required> </div>
+                        <div class="one columns"><label for="volt_control" style="text-align: left"><b>%</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="min_temp" name="min_temp" value="<?php echo $rowForm['min_temp']; ?>" required> </div>
+                        <div class="one columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="max_temp" name="max_temp" value="<?php echo $rowForm['max_temp']; ?>" required> </div>
+                        <div class="one columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="minRh">Min. RH *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="minRh" name="minRh" value="<?php echo $rowForm['min_rh']; ?>" required> </div>
+                        <div class="one columns"><label for="minRh" style="text-align: left"><b>%</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="maxRh">Max. RH *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="maxRh" name="maxRh" value="<?php echo $rowForm['max_rh']; ?>" required> </div>
+                        <div class="one columns"><label for="maxRh" style="text-align: left"><b>%</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="min_pressure">Minimum Pressure *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="<?php echo $rowForm['min_pressure']; ?>" required> </div>
+                        <div class="one columns"><label for="min_pressure" style="text-align: left"><b>psi</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="max_pressure">Maximum Pressure *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="<?php echo $rowForm['max_pressure']; ?>" required></div>
+                        <div class="one columns"><label for="max_pressure" style="text-align: left"><b>psi</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="heat_dissipation" name="heat_dissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" required> </div>
+                        <div class="one columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="temp_fluctuation">Temperature Fluctuation *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="<?php echo $rowForm['temp_fluctuation']; ?>" required></div>
+                        <div class="one columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns">
+                            <label for="toggle_01">View Sample</label>
+                            <input type="checkbox" id="toggle_01">
+                            <dialog>
+                                <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="temp_uniform">Temperature Uniformity *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="<?php echo $rowForm['temp_uniformity']; ?>" required> </div>
+                        <div class="one columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns">
+                            <label for="toggle_02">View Sample</label>
+                            <input type="checkbox" id="toggle_02">
+                            <dialog>
+                                <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                        <div class="two columns"><label for="humid_fluctuation">Humidity Fluctuation *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="<?php echo $rowForm['humid_fluctuation']; ?>" required> </div>
+                        <div class="one columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns">
+                            <label for="toggle_03">View Sample</label>
+                            <input type="checkbox" id="toggle_03">
+                            <dialog>
+                                <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                    </div>
+
+                    <h6>Characteristic</h6>
+                    <div class="row">
+                        <div class="two columns"><label for="no_interior">No. Interior Zones (doors) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="<?php echo $rowForm['no_interior_zone']; ?>" required> </div>
+                        <div class="one columns"><label for="no_interior" style="text-align: left"><b>Zone</b></label></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns">
+                            <label for="toggle_06">View Sample</label>
+                            <input type="checkbox" id="toggle_06">
+                            <dialog>
+                                <label for="toggle_06" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                        <div class="two columns"><label for="ext_dimension_w">External Dimension (W) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="ext_dimension_w" name="ext_dimension_w" value="<?php echo $rowForm['ext_dimension_w']; ?>" required> </div>
+                        <div class="one columns"><label for="ext_dimension_w" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="int_volume">Internal Volume *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="<?php echo $rowForm['int_vol']; ?>" required> </div>
+                        <div class="one columns"><label for="int_volume" style="text-align: left"><b>L</b></label></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns">
+                            <label for="toggle_08">View Sample</label>
+                            <input type="checkbox" id="toggle_08">
+                            <dialog>
+                                <label for="toggle_08" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                        <div class="two columns"><label for="ext_dimension_d">(D) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="ext_dimension_d" name="ext_dimension_d" value="<?php echo $rowForm['ext_dimension_d']; ?>" required> </div>
+                        <div class="one columns"><label for="ext_dimension_d" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="board_orientation">Board Orientation*</label></div>
+                        <div class="three columns">
+                            <select id="board_orientation" name="board_orientation" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['board_orientation']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">
+                            <label for="toggle_09">View Sample</label>
+                            <input type="checkbox" id="toggle_09">
+                            <dialog>
+                                <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                        <div class="two columns"><label for="ext_dimension_h">(H) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="ext_dimension_h" name="ext_dimension_h" value="<?php echo $rowForm['ext_dimension_h']; ?>" required> </div>
+                        <div class="one columns"><label for="ext_dimension_h" style="text-align: left"><b>mm</b></label></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns">
+                            <label for="toggle_04">View Sample</label>
+                            <input type="checkbox" id="toggle_04">
+                            <dialog>
+                                <label for="toggle_04" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="rack_material">Rack Material *</label></div>
+                        <div class="three columns">
+                            <select id="rack_material" name="rack_material" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '016' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['rack_material']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="int_dimension_w">Internal Dimension (W) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="<?php echo $rowForm['int_dimension_w']; ?>" required> </div>
+                        <div class="one columns"><label for="int_dimension_w" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="rack_slot_pitch">Rack Slot-to-Slot Pitch *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="<?php echo $rowForm['rack_slot_pitch']; ?>" required></div>
+                        <div class="one columns"><label for="rack_slot_pitch" style="text-align: left"><b>mm</b></label></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns">
+                            <label for="toggle_10">View Sample</label>
+                            <input type="checkbox" id="toggle_10">
+                            <dialog>
+                                <label for="toggle_10" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                        <div class="two columns"><label for="int_dimension_d">(D) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="int_dimension_d" name="int_dimension_d" value="<?php echo $rowForm['int_dimension_d']; ?>" required> </div>
+                        <div class="one columns"><label for="int_dimension_d" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="rack_slot_width">Rack Slot Width *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="<?php echo $rowForm['rack_slot_width']; ?>" required> </div>
+                        <div class="one columns"><label for="rack_slot_width" style="text-align: left"><b>mm</b></label></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns">
+                            <label for="toggle_11">View Sample</label>
+                            <input type="checkbox" id="toggle_11">
+                            <dialog>
+                                <label for="toggle_11" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/011.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                        <div class="two columns"><label for="int_dimension_h">(H) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="int_dimension_h" name="int_dimension_h" value="<?php echo $rowForm['int_dimension_h']; ?>" required> </div>
+                        <div class="one columns"><label for="int_dimension_h" style="text-align: left"><b>mm</b></label></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns">
+                            <label for="toggle_05">View Sample</label>
+                            <input type="checkbox" id="toggle_05">
+                            <dialog>
+                                <label for="toggle_05" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="eqpt_weight">Equipment Weight *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="eqpt_weight" name="eqpt_weight" value="<?php echo $rowForm['eqpt_weight']; ?>" required> </div>
+                        <div class="one columns"><label for="eqpt_weight" style="text-align: left"><b>Kg</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="rack_dimension_w">Rack Dimension (W) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="<?php echo $rowForm['rack_dimension_w']; ?>" required> </div>
+                        <div class="one columns"><label for="rack_dimension_w" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="no_mb_slot">Number of motherboard slots *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="<?php echo $rowForm['no_mb_slot']; ?>" required></div>
+                        <div class="one columns"><label for="no_mb_slot" style="text-align: left"><b>Slot</b></label></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns">
+                            <label for="toggle_12">View Sample</label>
+                            <input type="checkbox" id="toggle_12">
+                            <dialog>
+                                <label for="toggle_12" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/012.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                        <div class="two columns"><label for="rack_dimension_d">(D) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="rack_dimension_d" name="rack_dimension_d" value="<?php echo $rowForm['rack_dimension_d']; ?>" required> </div>
+                        <div class="one columns"><label for="rack_dimension_d" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="max_ps_bs">Max number of power supplies per board slot *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="<?php echo $rowForm['max_ps_slot']; ?>" required> </div>
+                        <div class="one columns"><label for="max_ps_bs" style="text-align: left"><b>Slot</b></label></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns">
+                            <label for="toggle_13">View Sample</label>
+                            <input type="checkbox" id="toggle_13">
+                            <dialog>
+                                <label for="toggle_13" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/013.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                        <div class="two columns"><label for="rack_dimension_h">(H) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="<?php echo $rowForm['rack_dimension_h']; ?>" required> </div>
+                        <div class="one columns"><label for="rack_dimension_h" style="text-align: left"><b>mm</b></label></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns">
+                            <label for="toggle_07">View Sample</label>
+                            <input type="checkbox" id="toggle_07">
+                            <dialog>
+                                <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="max_ps">Max number of power supplies for the entire Equipment *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="<?php echo $rowForm['max_ps_eqpt']; ?>" required> </div>
+                        <div class="one columns"><label for="max_ps" style="text-align: left"><b>Unit</b></label></div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns">
+                            <label for="toggle_14">View Sample</label>
+                            <input type="checkbox" id="toggle_14">
+                            <dialog>
+                                <label for="toggle_14" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/014.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                        <div class="two columns"><label for="airflow">Airflow *</label></div>
+                        <div class="three columns">
+                            <select id="airflow" name="airflow" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '017' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['airflow']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">
+                            <label for="toggle_15">View Sample</label>
+                            <input type="checkbox" id="toggle_15">
+                            <dialog>
+                                <label for="toggle_15" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/015.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                    </div>
+
+                    <h6>Safety</h6>
+                    <div class="row">
+                        <div class="two columns"><label for="tempProtection1">Temperature Protection 1 *</label></div>
+                        <div class="three columns">
+                            <select id="tempProtection1" name="tempProtection1" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['temp_protection_1']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="tempProtection2">Temperature Protection 2 *</label></div>
+                        <div class="three columns">
+                            <select id="tempProtection2" name="tempProtection2" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['temp_protection_2']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="tempThermostat3">Temperature Protection / Thermostat 3 *</label></div>
+                        <div class="three columns">
+                            <select id="tempThermostat3" name="tempThermostat3" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['temp_protection_3']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="smoke_detector">Smoke Detector/Alarm *</label></div>
+                        <div class="three columns">
+                            <select id="smoke_detector" name="smoke_detector" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['smoke_alarm']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="emo">EMO button *</label></div>
+                        <div class="three columns">
+                            <select id="emo" name="emo" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['emo_btn']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h6>Utilities</h6>
+                    <div class="row">
+                        <div class="two columns"><label for="voltage_phase">Voltage/Phase/Current *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="voltage_phase" name="voltage_phase" value="<?php echo $rowForm['volt_phase_current']; ?>" required> </div>
+                        <div class="one columns"><label for="voltage_phase" style="text-align: left"><b>VAC</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="phase">Phase *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="phase" name="phase" value="<?php echo $rowForm['phase']; ?>" required> </div>
+                        <div class="one columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="exhaust">Exhaust *</label></div>
+                        <div class="three columns">
+                            <select id="exhaust" name="exhaust" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['exhaust']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="liquid_nitrogen">Liquid Nitrogen *</label></div>
+                        <div class="three columns">
+                            <select id="liquid_nitrogen" name="liquid_nitrogen" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['liquid_nitrogen']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="chilled_water">Chilled Water *</label></div>
+                        <div class="three columns">
+                            <select id="chilled_water" name="chilled_water" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['chilled_water']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+
+                    <script>
+                        function updateGas() {
+                            var diWaterDropdown = document.getElementById('n2gas');
+                            var oxyField = document.getElementById('oxygen_level');
+                            var oxyId = document.getElementById('oxygen');
+
+                            if (diWaterDropdown.value !== '022003') {
+                                oxyField.readOnly = true;
+                                oxyField.required = false;
+                                $("#oxygen_level").val('');
+                                oxyId.style.display = 'none';
+                            } else {
+                                oxyField.readOnly = false;
+                                oxyField.required = true;
+                                oxyId.style.display = 'block';
+                            }
+                        }
+                    </script>
+
+                    <div class="row">
+                        <div class="two columns"><label for="n2gas">N2 Gas *</label></div>
+                        <div class="three columns">
+                            <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['n2_gas']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <?php
+                        $checkWater = $rowForm['n2_gas'];
+                        if ($checkWater === "022003") { ?>
+                            <div class="three columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
+                            <div class="three columns">
+                                <select id="oxygen_level" name="oxygen_level" style="width: 100%" required>
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['oxygen_level_detector']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+                    <script>
+                        function updateToFieldWater() {
+                            var diWaterDropdown = document.getElementById('di_water');
+                            var waterField = document.getElementById('water_topup');
+                            var topapField = document.getElementById('topup');
+
+                            if (diWaterDropdown.value !== '022003') {
+                                waterField.readOnly = true;
+                                waterField.required = false;
+                                topapField.style.display = 'none';
+                                $("#water_topup").val('');
+                            } else {
+                                waterField.readOnly = false;
+                                waterField.required = true;
+                                topapField.style.display = 'block';
+                            }
+                        }
+                    </script>
+
+                    <div class="row">
+                        <div class="two columns"><label for="di_water">DI Water *</label></div>
+                        <div class="three columns">
+                            <select id="di_water" name="di_water" style="width: 100%" onchange="updateToFieldWater()" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['di_water']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <?php
+                        $checkWater = $rowForm['di_water'];
+                        if ($checkWater === "029003") {
+                            ?>
+                            <div class="three columns"><label for="water_topup">Water Top-up System *</label></div>
+                            <div class="three columns">
+                                <select id="water_topup" name="water_topup" style="width: 100%" required>
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['water_topup_system']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+                    <h6>DAQ</h6>
+                    <div class="row">
+                        <div class="two columns"><label for="daq">DAQ (Realtime Leakage Monitoring) *</label></div>
+                        <div class="three columns">
+                            <select id="daq" name="daq" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['daq']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h6>Internal Chamber Configuration</h6>
+                    <div class="row">
+                        <div class="two columns"><label for="int_config_type">Configuration Type *</label></div>
+                        <div class="three columns">
+                            <select id="int_config_type" name="int_config_type" style="width: 100%" onchange="updateDiv()" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '031' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['internal_config_type']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">
+                            <label for="toggle_16">View Sample</label>
+                            <input type="checkbox" id="toggle_16">
+                            <dialog>
+                                <label for="toggle_16" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/016.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                    </div>
+
+                    <script>
+                        function updateDiv() {
+                            var dropdown = document.getElementById('int_config_type');
+                            var bananaDiv = document.getElementById('BananaDiv');
+                            var edgeDiv = document.getElementById('EdgeDiv');
+                            var winDiv = document.getElementById('WinchestorDiv');
+                            var wireDiv = document.getElementById('WireDiv');
+                            var selectedValue = dropdown.value;
+
+                            $("#banana_jack_hole").val('');
+                            $("#conn_volt_rating").val('');
+                            $("#conn_curr_rating").val('');
+                            $("#conn_temp_rating").val('');
+                            $("#no_pins").val('');
+                            $("#pin_pitch").val('');
+                            $("#conn_rack").val('');
+                            $("#wire_volt_rating").val('');
+                            $("#wire_curr_rating").val('');
+                            $("#wire_temp_rating").val('');
+
+                            if (selectedValue === '031001') {
+                                bananaDiv.style.display = 'block';
+                                edgeDiv.style.display = 'none';
+                                winDiv.style.display = 'none';
+                                wireDiv.style.display = 'none';
+                            } else if (selectedValue === '031002') {
+                                bananaDiv.style.display = 'none';
+                                edgeDiv.style.display = 'block';
+                                winDiv.style.display = 'none';
+                                wireDiv.style.display = 'none';
+                            } else if (selectedValue === '031003') {
+                                bananaDiv.style.display = 'none';
+                                edgeDiv.style.display = 'none';
+                                winDiv.style.display = 'block';
+                                wireDiv.style.display = 'none';
+                            } else if (selectedValue === '031004') {
+                                bananaDiv.style.display = 'none';
+                                edgeDiv.style.display = 'none';
+                                winDiv.style.display = 'none';
+                                wireDiv.style.display = 'block';
+                            } else {
+                                bananaDiv.style.display = 'none';
+                                edgeDiv.style.display = 'none';
+                                winDiv.style.display = 'none';
+                                wireDiv.style.display = 'none';
+                            }
+                        }
+                    </script>
+
+                    <?php
+                    $dataCheck = getParameterValue($rowForm['internal_config_type']);
+                    if ($dataCheck == "Banana") { ?>
+                        <div class="row">
+                            <div class="two columns"><label for="banana_jack_hole">No. Banana Jack Holes *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" > </div>
+                            <div class="one columns"><label for="banana_jack_hole" style="text-align: left"><b>Pins</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
+                            <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
+                            <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><label for="conn_temp_rating">Connector Temp Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > </div>
+                            <div class="one columns"><label for="conn_temp_rating" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                        </div>
+                    <?php } else if ($dataCheck === "Edge Connector") { ?>
+                        <div class="row">
+                            <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
+                            <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
+                            <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
+                            <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
+                            <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="conn_temp_rating">Connector Temp Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > </div>
+                            <div class="one columns"><label for="conn_temp_rating" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                    <?php } else if ($dataCheck === "Winchestor") { ?>
+                        <div class="row">
+                            <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
+                            <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
+                            <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
+                            <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
+                            <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="conn_rack">No. Wires Connected to Rack *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_rack" name="conn_rack" value="<?php echo $rowForm['no_wire_conn_rack']; ?>" > </div>
+                            <div class="one columns"><label for="conn_rack" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                    <?php } else if ($dataCheck === "Wires") { ?>
+                        <div class="row">
+                            <div class="two columns"><label for="wire_volt_rating">Wire Voltage Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="wire_volt_rating" name="wire_volt_rating" value="<?php echo $rowForm['wire_volt_rating']; ?>" > </div>
+                            <div class="one columns"><label for="wire_volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><label for="wire_curr_rating">Wire Current Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="wire_curr_rating" name="wire_curr_rating" value="<?php echo $rowForm['wire_curr_rating']; ?>" > </div>
+                            <div class="one columns"><label for="wire_curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="wire_temp_rating">Wire Temp Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value="<?php echo $rowForm['wire_temp_rating']; ?>" > </div>
+                            <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                    <?php } ?>
+
+                    <h6>External Chamber Configuration</h6>
+                    <div class="row">
+                        <div class="two columns"><label for="ext_config_type">Configuration Type *</label></div>
+                        <div class="three columns">
+                            <select id="ext_config_type" name="ext_config_type" style="width: 100%" onchange="updateView()" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '032' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['ext_config_type']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">
+                            <label for="toggle_20">View Sample</label>
+                            <input type="checkbox" id="toggle_20">
+                            <dialog>
+                                <label for="toggle_20" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/020.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                    </div>
+
+                    <script>
+                        function updateView() {
+                            var dd = document.getElementById('ext_config_type');
+                            var extDiv = document.getElementById('viewExternalDiv');
+                            var selectedValue = dd.value;
+
+                            $("#interface_volt_rating").val('');
+                            $("#interface_curr_rating").val('');
+
+                            if (selectedValue === '032003') {
+                                extDiv.style.display = 'none';
+                            } else {
+                                extDiv.style.display = 'block';
+                            }
+                        }
+                    </script>
+
+                    <?php
+                    $checkExt = $rowForm['ext_config_type'];
+                    if ($checkExt !== "032003") { ?>
+                        <div class="row">
+                            <div class="two columns"><label for="interface_volt_rating">Interface Voltage Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="interface_volt_rating" name="interface_volt_rating" value="<?php echo $rowForm['interface_volt_rating']; ?>" > </div>
+                            <div class="one columns"><label for="interface_volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><label for="interface_curr_rating">Interface Current Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="interface_curr_rating" name="interface_curr_rating" value="<?php echo $rowForm['interface_current_rating']; ?>" > </div>
+                            <div class="one columns"><label for="interface_curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                        </div>
+                        <button onclick="location.href = 'form_equipment_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+                        <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> SAVE</button>
+                    <?php } 
+                endwhile; ?>
             </div>
-        </div>
+        </form>
         <script>
-            // Get the modal
-            var modalparent = document.getElementsByClassName("modal_multi");
+            $(".button").click(function () {
+                var buttonId = $(this).attr("id");
+                $("#modal-container").removeAttr("class").addClass(buttonId);
+                $("body").addClass("modal-active");
+            });
 
-            // Get the button that opens the modal
-            var modal_btn_multi = document.getElementsByClassName("myBtn_multi");
-
-            // Get the <span> element that closes the modal
-            var span_close_multi = document.getElementsByClassName("close_multi");
-
-            // When the user clicks the button, open the modal
-            function setDataIndex() {
-                for (i = 0; i < modal_btn_multi.length; i++) {
-                    modal_btn_multi[i].setAttribute('data-index', i);
-                    modalparent[i].setAttribute('data-index', i);
-                    span_close_multi[i].setAttribute('data-index', i);
-                }
-            }
-
-            for (i = 0; i < modal_btn_multi.length; i++) {
-                modal_btn_multi[i].onclick = function () {
-                    var ElementIndex = this.getAttribute('data-index');
-                    modalparent[ElementIndex].style.display = "block";
-                };
-
-                // When the user clicks on <span> (x), close the modal
-                span_close_multi[i].onclick = function () {
-                    var ElementIndex = this.getAttribute('data-index');
-                    modalparent[ElementIndex].style.display = "none";
-                };
-            }
-
-            window.onload = function () {
-                setDataIndex();
-            };
-
-            window.onclick = function (event) {
-                if (event.target === modalparent[event.target.getAttribute('data-index')]) {
-                    modalparent[event.target.getAttribute('data-index')].style.display = "none";
-                }
-            };
+            $("#modal-container").click(function () {
+                $(this).addClass("out");
+                $("body").removeClass("modal-active");
+            });
         </script>
+        <script src="js/multiselect-dropdown.js" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </body>
 </html>
