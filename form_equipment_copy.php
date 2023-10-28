@@ -157,7 +157,7 @@ $id = $_GET['edit'];
                         <h2>General</h2>
                         <form id="add_equipment_form" class="form-horizontal" role="form" action="crud_update_equipment.php" method="get">
                             <?php 
-                            $sqlFormData = "SELECT * FROM gest_eqpt_form WHERE id = '$id'";
+                            $sqlFormData = "SELECT * FROM gest_form_eqpt WHERE id = '$id'";
                             $resForm = mysqli_query($con, $sqlFormData);
                             while ($rowForm = mysqli_fetch_array($resForm)): ?>
                             <div class="form-group">

@@ -387,6 +387,9 @@ select {
     box-shadow: none;
     box-sizing: border-box;
 }
+input[type="text"] {
+    width:100%;
+}
 /* Removes awkward default styles on some inputs for iOS */
 input[type="email"],
 input[type="number"],

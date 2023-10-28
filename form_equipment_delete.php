@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 }
 
 // sql to delete a record
-$sql = "UPDATE gest_eqpt_form SET flag = '0' WHERE id = '$id'";
+$sql = "UPDATE gest_form_eqpt SET flag = '0' WHERE id = '$id'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
@@ -29,10 +29,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-
-//$delete = "UPDATE gest_eqpt_form SET flag = '0' WHERE id = '$id'";
-//$update = mysqli_query($con, $delete);
-//?>
+?>
 <script>
     alert('Record deleted successfully');
     window.location.href = 'form_equipment_list.php';

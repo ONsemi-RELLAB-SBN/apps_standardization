@@ -127,14 +127,14 @@ $id = $_GET['view'];
                             <input type="text" id="relTest" name="relTest" value="<?php echo getParameterValues($rowForm['rel_test']); ?>" required readonly>
                         </div>
                         <?php
-                        $checkZone = getParameterValue($rowForm['rel_test']);
+                        $checkZone = getParameterValues($rowForm['rel_test']);
+                        echo 'oi oi >>> ', $checkZone , '<br>';
                         $data01 = "TC";
                         $data02 = "THS";
-                        if (strpos($checkZone, $data01) !== true) {
-                            
-                        } else if (strpos($checkZone, $data01) !== true) {
-                            
-                        } else { ?>
+                        if (strpos($checkZone, $data02) === false && strpos($checkZone, $data01) === false) {
+
+                            } else {
+                            ?>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="zone">Zone *</label></div>
                             <div class="three columns"><input type="number" step="0.001" id="zone" name="zone" value="" required></div>
@@ -174,11 +174,11 @@ $id = $_GET['view'];
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="min_pressure">Minimum Pressure *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="min_pressure" name="min_pressure" value="<?php // echo $rowForm['min_pressure'];   ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.01" id="min_pressure" name="min_pressure" value="<?php echo $rowForm['min_pressure']; ?>" required readonly> </div>
                         <div class="one columns"><label for="min_pressure" style="text-align: left"><b>psi</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="max_pressure">Maximum Pressure *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="max_pressure" name="max_pressure" value="<?php // echo $rowForm['max_pressure'];   ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.01" id="max_pressure" name="max_pressure" value="<?php echo $rowForm['max_pressure']; ?>" required readonly> </div>
                         <div class="one columns"><label for="max_pressure" style="text-align: left"><b>psi</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
@@ -416,123 +416,123 @@ $id = $_GET['view'];
 
                     <?php
                     $dataCheck = getParameterValue($rowForm['internal_config_type']);
-                    if ($dataCheck == "Banana") {
-                        ?>
+                    if ($dataCheck == "Banana") { ?>
                         <div class="row">
                             <div class="two columns"><label for="banana_jack_hole">No. Banana Jack Holes *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="<?php echo getParameterValue($rowForm['no_banana_jack_hole']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" > </div>
                             <div class="one columns"><label for="banana_jack_hole" style="text-align: left"><b>Pins</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo getParameterValue($rowForm['conn_volt_rating']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo getParameterValue($rowForm['conn_current_rating']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="conn_temp_rating">Connector Temp Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo getParameterValue($rowForm['conn_temp_rating']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_temp_rating" style="text-align: left"><b>`C</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                     <?php } else if ($dataCheck === "Edge Connector") { ?>
                         <div class="row">
                             <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo getParameterValue($rowForm['no_pin']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
                             <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo getParameterValue($rowForm['pin_pitch']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
                             <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo getParameterValue($rowForm['conn_volt_rating']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo getParameterValue($rowForm['conn_current_rating']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="conn_temp_rating">Connector Temp Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo getParameterValue($rowForm['conn_temp_rating']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_temp_rating" style="text-align: left"><b>`C</b></label></div>
                         </div>
                     <?php } else if ($dataCheck === "Winchestor") { ?>
                         <div class="row">
                             <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo getParameterValue($rowForm['no_pin']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
                             <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value=<?php echo getParameterValue($rowForm['pin_pitch']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value=<?php echo $rowForm['pin_pitch']; ?>" > </div>
                                                             <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo getParameterValue($rowForm['conn_volt_rating']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo getParameterValue($rowForm['conn_current_rating']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="conn_rack">No. Wires Connected to Rack *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_rack" name="conn_rack" value="<?php echo getParameterValue($rowForm['no_wire_conn_rack']); ?>" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_rack" name="conn_rack" value="<?php echo $rowForm['no_wire_conn_rack']; ?>" > </div>
                             <div class="one columns"><label for="conn_rack" style="text-align: left"><b>`C</b></label></div>
                         </div>
-                    </div>
                     <?php } else if ($dataCheck === "Wires") { ?>
-                    <div class="row">
-                        <div class="two columns"><label for="wire_volt_rating">Wire Voltage Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="wire_volt_rating" name="wire_volt_rating" value="<?php echo getParameterValue($rowForm['wire_volt_rating']); ?>" > </div>
-                        <div class="one columns"><label for="wire_volt_rating" style="text-align: left"><b>V</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="wire_curr_rating">Wire Current Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="wire_curr_rating" name="wire_curr_rating" value="<?php echo getParameterValue($rowForm['wire_curr_rating']); ?>" > </div>
-                        <div class="one columns"><label for="wire_curr_rating" style="text-align: left"><b>A</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="wire_temp_rating">Wire Temp Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value="<?php echo getParameterValue($rowForm['wire_temp_rating']); ?>" > </div>
-                        <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>`C</b></label></div>
-                    </div>
-                <?php } ?>
-
-                <h6>External Chamber Configuration</h6>
-                <div class="row">
-                    <div class="two columns"><label for="ext_config_type">Configuration Type *</label></div>
-                    <div class="three columns">
-                        <input type="text" id="ext_config_type" name="ext_config_type" value="<?php echo getParameterValue($rowForm['ext_config_type']); ?>" required readonly>
-                    </div>
-                </div>
-                <?php
-                $dataCheckExt = getParameterValue($rowForm['ext_config_type']);
-                if ($dataCheckExt !== "NA") { ?>
-                    <div class="row">
                         <div class="row">
-                            <div class="two columns"><label for="interface_volt_rating">Interface Voltage Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="interface_volt_rating" name="interface_volt_rating" value="<?php echo getParameterValue($rowForm['internal_config_type']); ?>" > </div>
-                            <div class="one columns"><label for="interface_volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="wire_volt_rating">Wire Voltage Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="wire_volt_rating" name="wire_volt_rating" value="<?php echo $rowForm['wire_volt_rating']; ?>" > </div>
+                            <div class="one columns"><label for="wire_volt_rating" style="text-align: left"><b>V</b></label></div>
                             <div class="two columns">&nbsp;</div>
-                            <div class="two columns"><label for="interface_curr_rating">Interface Current Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="interface_curr_rating" name="interface_curr_rating" value="<?php echo getParameterValue($rowForm['internal_config_type']); ?>" > </div>
-                            <div class="one columns"><label for="interface_curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns"><label for="wire_curr_rating">Wire Current Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="wire_curr_rating" name="wire_curr_rating" value="<?php echo $rowForm['wire_curr_rating']; ?>" > </div>
+                            <div class="one columns"><label for="wire_curr_rating" style="text-align: left"><b>A</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
+                        <div class="row">
+                            <div class="two columns"><label for="wire_temp_rating">Wire Temp Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value="<?php echo $rowForm['wire_temp_rating']; ?>" > </div>
+                            <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                    <?php } ?>
+
+                    <h6>External Chamber Configuration</h6>
+                    <div class="row">
+                        <div class="two columns"><label for="ext_config_type">Configuration Type *</label></div>
+                        <div class="three columns">
+                            <input type="text" id="ext_config_type" name="ext_config_type" value="<?php echo getParameterValue($rowForm['ext_config_type']); ?>" required readonly>
+                        </div>
                     </div>
-                <?php } endwhile; ?>
-        </div>
-    </form>
-</body>
+                    <?php
+                    $dataCheckExt = getParameterValue($rowForm['ext_config_type']);
+                    if ($dataCheckExt !== "NA") {
+                        ?>
+                        <div class="row">
+                            <div class="row">
+                                <div class="two columns"><label for="interface_volt_rating">Interface Voltage Rating *</label></div>
+                                <div class="one columns"><input type="number" step="0.001" id="interface_volt_rating" name="interface_volt_rating" value="<?php echo $rowForm['interface_volt_rating']; ?>" > </div>
+                                <div class="one columns"><label for="interface_volt_rating" style="text-align: left"><b>V</b></label></div>
+                                <div class="two columns">&nbsp;</div>
+                                <div class="one columns"><input type="number" step="0.001" id="interface_curr_rating" name="interface_curr_rating" value="<?php echo $rowForm['interface_current_rating']; ?>" > </div>
+                                <div class="one columns"><label for="interface_curr_rating" style="text-align: left"><b>A</b></label></div>
+                                <div class="two columns">&nbsp;</div>
+                            </div>
+                        </div>
+                    <?php } endwhile; ?>
+                <button onclick="location.href = 'form_equipment_list.php'" type="button" id="backBtn"><i class='bx bxs-chevron-left bx-fw' ></i> Back</button>
+                <button onclick="location.href = 'form_equipment_edit.php?edit=<?php echo $id; ?>'" type="button" id="editBtn"><i class='bx bxs-pencil bx-fw' ></i> Edit</button>
+            </div>
+        </form>
+    </body>
 </html>
