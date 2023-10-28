@@ -23,10 +23,6 @@ $id = $_GET['edit'];
         <link rel="stylesheet" type="text/css" href="css/skeleton.css">
         <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
-        <script src="js/bootstrap.js"></script>
-        <script src="js/jquery.js"></script>
-        <script src="js/select2.min.js"></script>
-
         <style>
             input[type=text], input[type=password] {
                 width: 100%;

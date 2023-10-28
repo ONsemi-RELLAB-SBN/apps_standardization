@@ -63,6 +63,7 @@ if (isset($_GET['delete'])) {
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
+        <!--<link href="css/skeleton.cse" type="text/css" rel="stylesheet">-->
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
         <style>
@@ -74,6 +75,11 @@ if (isset($_GET['delete'])) {
                 font-size: 1.5em;
             }
         </style>
+
+        <script>
+
+        </script>
+
     </head>
     <body>
         <?php
@@ -83,26 +89,25 @@ if (isset($_GET['delete'])) {
             }
         }
         ?>
+        <div class="row">&nbsp;</div>
         <div class="sample-form">
             <div class="row">&nbsp;</div>
-            <div class="card">
+            <div>
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
                     <h2 style="border-left: none">Parameter Master</h2>
                     <label class="form-row">
                         <input class="form-row-field" type="text" placeholder="Parameter Name" name="parameter_name" required/>
                         <span class="form-row-label">Parameter Name</span>
                     </label>
-                    <!--<br>-->
                     <label class="form-row">
                         <input class="form-row-field" type="text" placeholder="Parameter Code" name="parameter_code" value='<?php echo $f_number; ?>' />
                         <span class="form-row-label">Parameter Code</span>
                     </label>
-                    <div class="form-row">
+                    <div class="form-row" id="drop-area">
                         <label for="image" class="pull-left"><b style="color:orange">Image</b></label>
                         <input type="file" accept="image/png, image/jpeg, image/jpg" name="parameter_image" class="file-upload-wrapper">
                     </div>
                     <div class="button-group">
-                        <!--<button><i class='bx bx-plus-circle bx-fw'></i>Add Parameter</button>-->
                         <button name="add_parameter" class="btn btn-lg"><i class='bx bx-plus bx-flashing-hover bx-fw' ></i>Add Parameter</button>
                         <button type="reset"><i class='bx bx-refresh bx-fw'></i>Reset</button>
                     </div>
@@ -123,7 +128,8 @@ if (isset($_GET['delete'])) {
                     <?php
                     $get_slides = "SELECT * FROM gest_parameter_master WHERE flag = '1' ORDER BY code ASC";
                     $run_slides = mysqli_query($con, $get_slides);
-                    while ($row_slides = mysqli_fetch_array($run_slides)): ?>
+                    while ($row_slides = mysqli_fetch_array($run_slides)):
+                        ?>
                         <tr>
                             <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
                             <td><?php echo $row_slides['name']; ?></td>
