@@ -79,9 +79,9 @@ include 'class/get_parameter.php';
                         <td style="text-align:center"><?php echo $t; ?></td>
                         <td><?php echo getParameterValue($row_slides['hw_type']); ?></td>
                         <td><?php echo getParameterValue($row_slides['lab_location']); ?></td>
-                        <td><?php echo getParameterValue($row_slides['eqpt_manufacturer']); ?></td>
+                        <td><?php echo getParameterValue($row_slides['manufacturer']); ?></td>
                         <td><?php echo getParameterValue($row_slides['champion']); ?></td>
-                        <td><?php echo getParameterValue($row_slides['assembly_no']); ?></td>
+                        <td><?php echo $row_slides['assembly_no']; ?></td>
                         <td style="text-align:center">
                             <a href="form_hardware_view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><i class='bx bx-search-alt bx-fw'></i> VIEW </a>
                             <a href="form_hardware_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>

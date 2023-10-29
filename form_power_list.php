@@ -77,7 +77,7 @@ include 'class/get_parameter.php';
                         <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
                         <td style="text-align:center"><?php echo $t; ?></td>
                         <td><?php echo getParameterValue($row_slides['lab_location']); ?></td>
-                        <td><?php echo getParameterValue($row_slides['eqpt_manufacturer']); ?></td>
+                        <td><?php echo getParameterValue($row_slides['manufacturer']); ?></td>
                         <td><?php echo getParameterValue($row_slides['champion']); ?></td>
                         <td><?php echo getParameterValues($row_slides['model']); ?></td>
                         <td style="text-align:center">
