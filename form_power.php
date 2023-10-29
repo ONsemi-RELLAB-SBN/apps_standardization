@@ -207,11 +207,11 @@ include 'form_template.php';
             <div class="row">
                 <div class="two columns"><label for="dimension_w">Dimensions (W) *</label></div>
                 <div class="one columns"><input type="number" step="0.001" id="dimension_w" name="dimension_w" value="" required> </div>
-                <div class="one columns"><label for="voltRating" style="text-align: left"><b>mm</b></label></div>
+                <div class="one columns"><label for="dimension_w" style="text-align: left"><b>mm</b></label></div>
                 <div class="two columns">&nbsp;</div>
                 <div class="two columns"><label for="weight">Weight (kg) *</label></div>
                 <div class="one columns"><input type="number" step="0.001" id="weight" name="weight" value="" required> </div>
-                <div class="one columns"><label for="voltControl" style="text-align: left"><b>Kg</b></label></div>
+                <div class="one columns"><label for="weight" style="text-align: left"><b>Kg</b></label></div>
                 <div class="two columns">&nbsp;</div>
             </div>
             <div class="row">
@@ -356,7 +356,7 @@ include 'form_template.php';
             <div class="row">
                 <div class="two columns"><label for="no_output_channel">Number of output channels *</label></div>
                 <div class="one columns"><input type="number" step="0.001" id="no_output_channel" name="no_output_channel" value="" required> </div>
-                <div class="one columns"><label for="maxTemp" style="text-align: left"><b>V</b></label></div>
+                <div class="one columns"><label for="no_output_channel" style="text-align: left"><b>V</b></label></div>
                 <div class="one columns">&nbsp;</div>
                 <div class="one columns">
                     <label for="toggle_1" class="view-image">Image</label>
