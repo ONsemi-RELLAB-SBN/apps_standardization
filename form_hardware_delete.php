@@ -1,9 +1,10 @@
 <?php
 
-/*
+/* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
+
 include 'class/db.php';
 
 $id = $_GET['delete'];
@@ -20,7 +21,7 @@ if ($conn->connect_error) {
 }
 
 // sql to delete a record
-$sql = "UPDATE gest_form_eqpt SET flag = '0' WHERE id = '$id'";
+$sql = "UPDATE gest_form_hw SET flag = '0' WHERE id = '$id'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
@@ -31,6 +32,6 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 ?>
 <script>
-    alert('Record Equipment deleted successfully');
-    window.location.href = 'form_equipment_list.php';
+    alert('Record Hardware deleted successfully');
+    window.location.href = 'form_hardware_list.php';
 </script>
