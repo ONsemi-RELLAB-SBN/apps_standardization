@@ -174,7 +174,6 @@ $update = "UPDATE gest_form_eqpt SET "
         . "created_by = 'System', "
         . "status = 'Active' "
         . "WHERE id = '$id'";
-echo ' -- ',$update;
 $uprun = mysqli_query($con, $update);
 ?>
 <script>
