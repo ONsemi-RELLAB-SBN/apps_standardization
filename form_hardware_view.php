@@ -341,9 +341,9 @@ $id = $_GET['view'];
                 <div class="one columns"><label for="max_dut_mb" style="text-align: left"><b>DUTs</b></label></div>
             </div>
 
+            <?php endwhile; ?>
             <button onclick="location.href = 'form_hardware_list.php'" type="button" id="backBtn"><i class='bx bxs-chevron-left bx-fw' ></i> Back</button>
             <button onclick="location.href = 'form_hardware_edit.php?edit=<?php echo $id; ?>'" type="button" id="editBtn"><i class='bx bxs-pencil bx-fw' ></i> Edit</button>
-            <?php endwhile; ?>
         </form>
     </body>
 </html>
