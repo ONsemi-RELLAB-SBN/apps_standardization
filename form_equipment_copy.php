@@ -1106,10 +1106,10 @@ $id = $_GET['edit'];
                             <div class="one columns"><label for="interface_curr_rating" style="text-align: left"><b>A</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
-                        <button onclick="location.href = 'form_equipment_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
-                        <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> SAVE</button>
                     <?php } 
                 endwhile; ?>
+                <button onclick="location.href = 'form_equipment_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+                <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> COPY</button>
             </div>
         </form>
         <script>
