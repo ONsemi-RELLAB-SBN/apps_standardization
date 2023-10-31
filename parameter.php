@@ -63,7 +63,6 @@ if (isset($_GET['delete'])) {
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
-        <!--<link href="css/skeleton.cse" type="text/css" rel="stylesheet">-->
         <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
         <style>

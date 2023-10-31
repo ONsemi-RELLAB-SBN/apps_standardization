@@ -48,6 +48,7 @@ include 'class/get_parameter.php';
             }
         }
         ?>
+        <div class="row">&nbsp;</div>
         <div class="sample-form">
             <div class="row">&nbsp;</div>
             <div class="row">&nbsp;</div>
@@ -57,43 +58,42 @@ include 'class/get_parameter.php';
             </div>
             <table class="u-full-width">
                 <thead>
-                    <th style="text-align:center"><b>No</b></th>
-                    <th><b>DAQ</b></th>
-                    <th><b>Location</b></th>
-                    <th><b>Manufacturer</b></th>
-                    <th><b>Champion</b></th>
-                    <th><b>Manufacturer</b></th>
-                    <th><b>Model</b></th>
-                    <th style="text-align:center"><b>Action</b></th>
+                    <tr>
+                        <th style="text-align:center"><b>No</b></th>
+                        <th><b>DAQ</b></th>
+                        <th><b>Location</b></th>
+                        <th><b>Manufacturer</b></th>
+                        <th><b>Champion</b></th>
+                        <th><b>Manufacturer</b></th>
+                        <th><b>Model</b></th>
+                        <th style="text-align:center"><b>Action</b></th>
+                    </tr>
                 </thead>
-                <!-- PHP CODE TO FETCH DATA FROM ROWS -->
-                <?php
-                $get_slides = "SELECT * FROM gest_form_daq WHERE flag = '1' ORDER BY id ASC";
-                $run_slides = mysqli_query($con, $get_slides);
-                // LOOP TILL END OF DATA
-                $t = 0;
-                while ($row_slides = mysqli_fetch_array($run_slides)):
-                    $t += 1;
-                    ?>
-                    <tbody>
-                        <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
-                        <td style="text-align:center"><?php echo $t; ?></td>
-                        <td><?php echo getParameterValue($row_slides['daq_id']); ?></td>
-                        <td><?php echo getParameterValue($row_slides['lab_location']); ?></td>
-                        <td><?php echo getParameterValue($row_slides['manufacturer']); ?></td>
-                        <td><?php echo getParameterValue($row_slides['champion']); ?></td>
-                        <td><?php echo getParameterValues($row_slides['manufacturer']); ?></td>
-                        <td><?php echo getParameterValues($row_slides['model']); ?></td>
-                        <td style="text-align:center">
-                            <a href="form_daq_view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><i class='bx bx-search-alt bx-fw'></i> VIEW </a>
-                            <a href="form_daq_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
-                            <a href="form_daq_delete.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
-                            <a href="form_daq_copy.php?edit=<?php echo $row_slides['id']; ?>" title="Replicate Record" data-toggle="tooltip"><i class='bx bx-repeat bx-fw'></i></i> COPY </a>
-                        </td>
-                    </tbody>
+                <tbody>
                     <?php
-                endwhile;
-                ?>
+                    $get_slides = "SELECT * FROM gest_form_daq WHERE flag = '1' ORDER BY id ASC";
+                    $run_slides = mysqli_query($con, $get_slides);
+                    $t = 0;
+                    while ($row_slides = mysqli_fetch_array($run_slides)):
+                        $t += 1; ?>
+                        <tr>
+                            <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
+                            <td style="text-align:center"><?php echo $t; ?></td>
+                            <td><?php echo getParameterValue($row_slides['daq_id']); ?></td>
+                            <td><?php echo getParameterValue($row_slides['lab_location']); ?></td>
+                            <td><?php echo getParameterValue($row_slides['manufacturer']); ?></td>
+                            <td><?php echo getParameterValue($row_slides['champion']); ?></td>
+                            <td><?php echo getParameterValues($row_slides['manufacturer']); ?></td>
+                            <td><?php echo getParameterValues($row_slides['model']); ?></td>
+                            <td style="text-align:center">
+                                <a href="form_daq_view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><i class='bx bx-search-alt bx-fw'></i> VIEW </a>
+                                <a href="form_daq_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
+                                <a href="form_daq_delete.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
+                                <a href="form_daq_copy.php?edit=<?php echo $row_slides['id']; ?>" title="Replicate Record" data-toggle="tooltip"><i class='bx bx-copy bx-fw'></i></i> COPY </a>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
             </table>
             <button onclick="location.href = 'form_daq.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Equipment</button>
         </div>
