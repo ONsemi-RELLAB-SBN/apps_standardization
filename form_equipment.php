@@ -893,7 +893,7 @@ include 'form_template.php';
                         </select>
                     </div>
                 </div>
-
+                
                 <script>
                     function updateDiv() {
                         var dropdown = document.getElementById('int_config_type');

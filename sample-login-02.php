@@ -5,9 +5,11 @@
  */
 
 // LDAP server settings
-$ldapServer = "ldap://ldap.example.com"; // Your LDAP server URL
+//ldap.url=ldap://ldap.onsemi.com:389/o=ondex
+//ldap.userDnPatterns=cn={0},ou=seremban,ou=onsemi
+$ldapServer = "ldap://ldap.onsemi.com:389/o=ondex"; // Your LDAP server URL
 $ldapBaseDN = "dc=example,dc=com"; // Your LDAP base DN
-$ldapAdminUser = "cn=admin,dc=example,dc=com"; // LDAP admin username
+$ldapAdminUser = "cn={0},ou=seremban,ou=onsemi"; // LDAP admin username
 $ldapAdminPassword = "admin_password"; // LDAP admin password
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

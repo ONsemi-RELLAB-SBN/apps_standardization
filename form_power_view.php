@@ -190,11 +190,8 @@ $id = $_GET['view'];
                         <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['eqpt_interface']); ?>" required readonly />
                     </div>
                     <div class="one columns">&nbsp;</div>
-                    <div class="two columns"><label for="lan_port">LAN Port *</label></div>
-                    <div class="three columns">
-                        <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['lan_port']); ?>" required readonly />
-                    </div>
-                    <div class="one columns">
+                    <div class="two columns">
+                        <label for="lan_port">LAN Port *</label>
                         <label for="toggle_3" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_3">
                         <dialog>
@@ -202,13 +199,13 @@ $id = $_GET['view'];
                             <img id="myImg" src="image/powersupply/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
+                    <div class="three columns">
+                        <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['lan_port']); ?>" required readonly />
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="gpib_interface">GPIB interface *</label></div>
-                    <div class="three columns">
-                        <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['gpib_interface']); ?>" required readonly />
-                    </div>
-                    <div class="one columns">
+                    <div class="two columns">
+                        <label for="gpib_interface">GPIB interface *</label>
                         <label for="toggle_4" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_4">
                         <dialog>
@@ -216,11 +213,12 @@ $id = $_GET['view'];
                             <img id="myImg" src="image/powersupply/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="two columns"><label for="other_interface_port">Other interface ports *</label></div>
                     <div class="three columns">
-                        <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['other_interface']); ?>" required readonly />
+                        <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['gpib_interface']); ?>" required readonly />
                     </div>
-                    <div class="one columns">
+                    <div class="one columns">&nbsp;</div>
+                    <div class="two columns">
+                        <label for="other_interface_port">Other interface ports *</label>
                         <label for="toggle_2" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_2">
                         <dialog>
@@ -228,15 +226,16 @@ $id = $_GET['view'];
                             <img id="myImg" src="image/powersupply/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
+                    <div class="three columns">
+                        <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['other_interface']); ?>" required readonly />
+                    </div>
+                    <div class="one columns">&nbsp;</div>
                 </div>
 
                 <h6>Capacity</h6>
                 <div class="row">
-                    <div class="two columns"><label for="no_output_channel">Number of output channels *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="no_output_channel" name="no_output_channel" value="<?php echo $rowForm['no_output']; ?>" required readonly> </div>
-                    <div class="one columns"><label for="no_output_channel" style="text-align: left"><b>V</b></label></div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="one columns">
+                    <div class="two columns">
+                        <label for="no_output_channel">Number of output channels *</label>
                         <label for="toggle_1" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_1">
                         <dialog>
@@ -244,6 +243,9 @@ $id = $_GET['view'];
                             <img id="myImg" src="image/powersupply/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
+                    <div class="one columns"><input type="number" step="0.001" id="no_output_channel" name="no_output_channel" value="<?php echo $rowForm['no_output']; ?>" required readonly> </div>
+                    <div class="one columns"><label for="no_output_channel" style="text-align: left"><b>V</b></label></div>
+                    <div class="two columns">&nbsp;</div>
                 </div>
             <?php endwhile; ?>
             <button onclick="location.href = 'form_power_list.php'" type="button" id="backBtn"><i class='bx bxs-chevron-left bx-fw' ></i> Back</button>

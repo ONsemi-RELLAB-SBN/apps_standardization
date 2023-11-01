@@ -288,7 +288,15 @@ $id = $_GET['edit'];
 
                 <h7 style="color:orange">Motherboard to DUT interface</h7>
                 <div class="row">
-                    <div class="two columns"><label for="universal">Universal/dedicated *</label></div>
+                    <div class="two columns">
+                        <label for="universal">Universal/dedicated *</label>
+                        <label for="toggle_01" class="view-image">Image</label>
+                        <input type="checkbox" id="toggle_01">
+                        <dialog>
+                            <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                            <img id="myImg" src="image/hardware/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        </dialog>
+                    </div>
                     <div class="three columns">
                         <select id="universal" name="universal" style="width: 100%" required>
                             <option value="" selected=""></option>
@@ -300,15 +308,16 @@ $id = $_GET['edit'];
                             <?php endwhile; ?>
                         </select>
                     </div>
-                    <div class="one columns">
-                        <label for="toggle_01" class="view-image">Image</label>
-                        <input type="checkbox" id="toggle_01">
+                    <div class="one columns">&nbsp;</div>
+                    <div class="two columns">
+                        <label for="socket_conn_type">Socket/connector type *</label>
+                        <label for="toggle_02" class="view-image">Image</label>
+                        <input type="checkbox" id="toggle_02">
                         <dialog>
-                            <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                            <img id="myImg" src="image/hardware/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="two columns"><label for="socket_conn_type">Socket/connector type *</label></div>
                     <div class="three columns">
                         <select id="socket_conn_type" name="socket_conn_type" style="width: 100%" required>
                             <option value="" selected=""></option>
@@ -319,14 +328,6 @@ $id = $_GET['edit'];
                                 <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['mb_socket_type']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                             <?php endwhile; ?>
                         </select>
-                    </div>
-                    <div class="one columns">
-                        <label for="toggle_02" class="view-image">Image</label>
-                        <input type="checkbox" id="toggle_02">
-                        <dialog>
-                            <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                        </dialog>
                     </div>
                 </div>
                 <div class="row">
@@ -344,7 +345,15 @@ $id = $_GET['edit'];
                     <div class="one columns"><input type="number" step="0.001" id="socket_con_pin_pitch" name="socket_con_pin_pitch" value="<?php echo $rowForm['mb_socket_pin_pitch']; ?>" required> </div>
                     <div class="one columns"><label for="socket_con_pin_pitch" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
-                    <div class="two columns"><label for="support_package">Supported cards/packages *</label></div>
+                    <div class="two columns">
+                        <label for="support_package">Supported cards/packages *</label>
+                        <label for="toggle_03" class="view-image">Image</label>
+                        <input type="checkbox" id="toggle_03">
+                        <dialog>
+                            <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                            <img id="myImg" src="image/hardware/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        </dialog>
+                    </div>
                     <div class="three columns">
                         <select id="support_package" name="support_package" style="width: 100%" required>
                             <option value="" selected=""></option>
@@ -356,14 +365,6 @@ $id = $_GET['edit'];
                             <?php endwhile; ?>
                         </select>
                     </div>
-                    <div class="one columns">
-                        <label for="toggle_03" class="view-image">Image</label>
-                        <input type="checkbox" id="toggle_03">
-                        <dialog>
-                            <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                        </dialog>
-                    </div>
                 </div>
 
                 <h7 style="color:orange">Load Cards</h7>
@@ -372,11 +373,8 @@ $id = $_GET['edit'];
                     <div class="one columns"><input type="number" step="0.001" id="max_load_card_qty" name="max_load_card_qty" value="<?php echo $rowForm['lc_max_qty']; ?>" required></div>
                     <div class="one columns"><label for="max_load_card_qty" style="text-align: left"><b>pcs</b></label></div>
                     <div class="two columns">&nbsp;</div>
-                    <div class="two columns"><label for="load_card_pin_qty">Load card pin qty *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="load_card_pin_qty" name="load_card_pin_qty" value="<?php echo $rowForm['lc_pin_qty']; ?>" required> </div>
-                    <div class="one columns"><label for="load_card_pin_qty" style="text-align: left"><b>pins</b></label></div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="one columns">
+                    <div class="two columns">
+                        <label for="load_card_pin_qty">Load card pin qty *</label>
                         <label for="toggle_04" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_04">
                         <dialog>
@@ -384,13 +382,13 @@ $id = $_GET['edit'];
                             <img id="myImg" src="image/hardware/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
+                    <div class="one columns"><input type="number" step="0.001" id="load_card_pin_qty" name="load_card_pin_qty" value="<?php echo $rowForm['lc_pin_qty']; ?>" required> </div>
+                    <div class="one columns"><label for="load_card_pin_qty" style="text-align: left"><b>pins</b></label></div>
+                    <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="load_card_pin_pitch">Load card pin pitch *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="load_card_pin_pitch" name="load_card_pin_pitch" value="<?php echo $rowForm['lc_pin_pitch']; ?>" required></div>
-                    <div class="one columns"><label for="load_card_pin_pitch" style="text-align: left"><b>mm</b></label></div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="one columns">
+                    <div class="two columns">
+                        <label for="load_card_pin_pitch">Load card pin pitch *</label>
                         <label for="toggle_05" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_05">
                         <dialog>
@@ -398,6 +396,8 @@ $id = $_GET['edit'];
                             <img id="myImg" src="image/hardware/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
+                    <div class="one columns"><input type="number" step="0.001" id="load_card_pin_pitch" name="load_card_pin_pitch" value="<?php echo $rowForm['lc_pin_pitch']; ?>" required></div>
+                    <div class="one columns"><label for="load_card_pin_pitch" style="text-align: left"><b>mm</b></label></div>
                 </div>
 
                 <h7 style="color:orange">Program Cards</h7>
@@ -406,11 +406,8 @@ $id = $_GET['edit'];
                     <div class="one columns"><input type="number" step="0.001" id="max_prog_card_qty" name="max_prog_card_qty" value="<?php echo $rowForm['pc_max_qty']; ?>" required></div>
                     <div class="one columns"><label for="max_prog_card_qty" style="text-align: left"><b>pcs</b></label></div>
                     <div class="two columns">&nbsp;</div>
-                    <div class="two columns"><label for="prog_card_pin_qty">Program card pin qty *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="prog_card_pin_qty" name="prog_card_pin_qty" value="<?php echo $rowForm['pc_pin_qty']; ?>" required> </div>
-                    <div class="one columns"><label for="prog_card_pin_qty" style="text-align: left"><b>pins</b></label></div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="one columns">
+                    <div class="two columns">
+                        <label for="prog_card_pin_qty">Program card pin qty *</label>
                         <label for="toggle_06" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_06">
                         <dialog>
@@ -418,13 +415,12 @@ $id = $_GET['edit'];
                             <img id="myImg" src="image/hardware/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
+                    <div class="one columns"><input type="number" step="0.001" id="prog_card_pin_qty" name="prog_card_pin_qty" value="<?php echo $rowForm['pc_pin_qty']; ?>" required> </div>
+                    <div class="one columns"><label for="prog_card_pin_qty" style="text-align: left"><b>pins</b></label></div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="prog_card_pin_pitch">Program card pin pitch *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="prog_card_pin_pitch" name="prog_card_pin_pitch" value="<?php echo $rowForm['pc_pin_pitch']; ?>" required></div>
-                    <div class="one columns"><label for="prog_card_pin_pitch" style="text-align: left"><b>mm</b></label></div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="one columns">
+                    <div class="two columns">
+                        <label for="prog_card_pin_pitch">Program card pin pitch *</label>
                         <label for="toggle_07" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_07">
                         <dialog>
@@ -432,15 +428,14 @@ $id = $_GET['edit'];
                             <img id="myImg" src="image/hardware/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
+                    <div class="one columns"><input type="number" step="0.001" id="prog_card_pin_pitch" name="prog_card_pin_pitch" value="<?php echo $rowForm['pc_pin_pitch']; ?>" required></div>
+                    <div class="one columns"><label for="prog_card_pin_pitch" style="text-align: left"><b>mm</b></label></div>
                 </div>
 
                 <h7 style="color:orange">Motherboard to chamber interface</h7>
                 <div class="row">
-                    <div class="two columns"><label for="conn_type">Connector Type *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="conn_type" name="conn_type" value="<?php echo $rowForm['connector_type']; ?>" required> </div>
-                    <div class="one columns"><label for="conn_type" style="text-align: left"><b>&nbsp;</b></label></div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="one columns">
+                    <div class="two columns">
+                        <label for="conn_type">Connector Type *</label>
                         <label for="toggle_07" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_07">
                         <dialog>
@@ -448,11 +443,11 @@ $id = $_GET['edit'];
                             <img id="myImg" src="image/hardware/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="two columns"><label for="no_pins">Number of pins *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" required> </div>
-                    <div class="one columns"><label for="no_pins" style="text-align: left"><b>pins</b></label></div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="one columns">
+                    <div class="one columns"><input type="number" step="0.001" id="conn_type" name="conn_type" value="<?php echo $rowForm['connector_type']; ?>" required> </div>
+                    <div class="one columns"><label for="conn_type" style="text-align: left"><b>&nbsp;</b></label></div>
+                    <div class="two columns">&nbsp;</div>
+                    <div class="two columns">
+                        <label for="no_pins">Number of pins *</label>
                         <label for="toggle_08" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_08">
                         <dialog>
@@ -460,13 +455,12 @@ $id = $_GET['edit'];
                             <img id="myImg" src="image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
+                    <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" required> </div>
+                    <div class="one columns"><label for="no_pins" style="text-align: left"><b>pins</b></label></div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="pin_pitch">Pin pitch *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" required> </div>
-                    <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="one columns">
+                    <div class="two columns">
+                        <label for="pin_pitch">Pin pitch *</label>
                         <label for="toggle_09" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_09">
                         <dialog>
@@ -474,11 +468,11 @@ $id = $_GET['edit'];
                             <img id="myImg" src="image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="two columns"><label for="edge_thick">Edgefinger thickness *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="edge_thick" name="edge_thick" value="<?php echo $rowForm['edgefinger_thickness']; ?>" required> </div>
-                    <div class="one columns"><label for="edge_thick" style="text-align: left"><b>mm</b></label></div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="one columns">
+                    <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" required> </div>
+                    <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
+                    <div class="two columns">&nbsp;</div>
+                    <div class="two columns">
+                        <label for="edge_thick">Edgefinger thickness *</label>
                         <label for="toggle_10" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_10">
                         <dialog>
@@ -486,6 +480,8 @@ $id = $_GET['edit'];
                             <img id="myImg" src="image/hardware/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
+                    <div class="one columns"><input type="number" step="0.001" id="edge_thick" name="edge_thick" value="<?php echo $rowForm['edgefinger_thickness']; ?>" required> </div>
+                    <div class="one columns"><label for="edge_thick" style="text-align: left"><b>mm</b></label></div>
                 </div>
 
                 <h6>Capacity</h6>
