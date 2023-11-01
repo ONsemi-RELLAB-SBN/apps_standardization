@@ -68,7 +68,7 @@ $id = $_GET['view'];
                         <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['lab_location']); ?>" required readonly />
                     </div>
                     <div class="one columns">&nbsp;</div>
-                    <div class="two columns label"><label for="strategy">onsemi Strategy *</label></div>
+                    <div class="two columns label"><label for="strategy">Product Group *</label></div>
                     <div class="three columns">
                         <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['strategy']); ?>" required readonly />
                     </div>
@@ -80,7 +80,7 @@ $id = $_GET['view'];
                         <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['standard_category']); ?>" required readonly />
                     </div>
                     <div class="one columns">&nbsp;</div>
-                    <div class="two columns"><label for="champion">Champion *</label></div>
+                    <div class="two columns"><label for="champion">Lab Manager *</label></div>
                     <div class="three columns">
                         <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['champion']); ?>" required readonly />
                     </div>

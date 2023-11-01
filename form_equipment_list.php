@@ -61,7 +61,7 @@ include 'class/get_parameter.php';
                         <th><b>Equipment</b></th>
                         <th><b>Location</b></th>
                         <th><b>Manufacturer</b></th>
-                        <th><b>Champion</b></th>
+                        <th><b>Lab Manager</b></th>
                         <th><b>Rel Test</b></th>
                         <th style="text-align:center"><b>Action</b></th>
                     </tr>

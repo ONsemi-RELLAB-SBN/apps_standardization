@@ -4,57 +4,55 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-/*
-  // LDAP server settings
-  $ldapServer = "ldap://ldap.example.com"; // Your LDAP server URL
-  $ldapBaseDN = "dc=example,dc=com"; // Your LDAP base DN
-  $ldapAdminUser = "cn=admin,dc=example,dc=com"; // LDAP admin username
-  $ldapAdminPassword = "admin_password"; // LDAP admin password
-  // Check if the form is submitted
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $username = $_POST["username"];
-  $password = $_POST["password"];
+// LDAP server settings
+$ldapServer = "ldap://ldap.example.com"; // Your LDAP server URL
+$ldapBaseDN = "dc=example,dc=com"; // Your LDAP base DN
+$ldapAdminUser = "cn=admin,dc=example,dc=com"; // LDAP admin username
+$ldapAdminPassword = "admin_password"; // LDAP admin password
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-  // Connect to the LDAP server
-  $ldapConn = ldap_connect($ldapServer);
+    // Connect to the LDAP server
+    $ldapConn = ldap_connect($ldapServer);
 
-  if ($ldapConn) {
-  // Binding to LDAP server
-  $bind = ldap_bind($ldapConn, $ldapAdminUser, $ldapAdminPassword);
+    if ($ldapConn) {
+        // Binding to LDAP server
+        $bind = ldap_bind($ldapConn, $ldapAdminUser, $ldapAdminPassword);
 
-  if ($bind) {
-  // Search for the user in LDAP
-  $filter = "(uid=" . $username . ")";
-  $result = ldap_search($ldapConn, $ldapBaseDN, $filter);
-  $entries = ldap_get_entries($ldapConn, $result);
+        if ($bind) {
+            // Search for the user in LDAP
+            $filter = "(uid=" . $username . ")";
+            $result = ldap_search($ldapConn, $ldapBaseDN, $filter);
+            $entries = ldap_get_entries($ldapConn, $result);
 
-  if ($entries["count"] > 0) {
-  // Try to authenticate the user
-  $userDN = $entries[0]["dn"];
-  if (ldap_bind($ldapConn, $userDN, $password)) {
-  // Authentication successful
-  echo "Login successful. Welcome, " . $username;
-  } else {
-  // Authentication failed
-  echo "Invalid credentials. Please try again.";
-  }
-  } else {
-  // User not found
-  echo "User not found in LDAP directory.";
-  }
-  } else {
-  // LDAP bind failed
-  echo "LDAP bind failed. Check your admin credentials.";
-  }
+            if ($entries["count"] > 0) {
+                // Try to authenticate the user
+                $userDN = $entries[0]["dn"];
+                if (ldap_bind($ldapConn, $userDN, $password)) {
+                    // Authentication successful
+                    echo "Login successful. Welcome, " . $username;
+                } else {
+                    // Authentication failed
+                    echo "Invalid credentials. Please try again.";
+                }
+            } else {
+                // User not found
+                echo "User not found in LDAP directory.";
+            }
+        } else {
+            // LDAP bind failed
+            echo "LDAP bind failed. Check your admin credentials.";
+        }
 
-  // Close LDAP connection
-  ldap_close($ldapConn);
-  } else {
-  // LDAP connection failed
-  echo "LDAP connection failed. Check your server settings.";
-  }
-  }
- */
+        // Close LDAP connection
+        ldap_close($ldapConn);
+    } else {
+        // LDAP connection failed
+        echo "LDAP connection failed. Check your server settings.";
+    }
+}
 ?>
 
 <!DOCTYPE html>

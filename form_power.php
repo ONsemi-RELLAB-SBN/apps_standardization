@@ -68,7 +68,7 @@ include 'form_template.php';
                     </select>
                 </div>
                 <div class="one columns">&nbsp;</div>
-                <div class="two columns label"><label for="strategy">onsemi Strategy *</label></div>
+                <div class="two columns label"><label for="strategy">Product Group *</label></div>
                 <div class="three columns">
                     <select id="strategy" name="strategy" style="width: 100%" required>
                         <option value="" selected=""></option>
@@ -98,7 +98,7 @@ include 'form_template.php';
                     </select>
                 </div>
                 <div class="one columns">&nbsp;</div>
-                <div class="two columns"><label for="champion">Champion *</label></div>
+                <div class="two columns"><label for="champion">Lab Manager *</label></div>
                 <div class="three columns">
                     <select id="champion" name="champion" style="width: 100%" required>
                         <option value="" selected=""></option>
