@@ -4,55 +4,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-// LDAP server settings
-//ldap.url=ldap://ldap.onsemi.com:389/o=ondex
-//ldap.userDnPatterns=cn={0},ou=seremban,ou=onsemi
-$ldapServer = "ldap://ldap.onsemi.com:389/o=ondex"; // Your LDAP server URL
-$ldapBaseDN = "dc=example,dc=com"; // Your LDAP base DN
-$ldapAdminUser = "cn={0},ou=seremban,ou=onsemi"; // LDAP admin username
-$ldapAdminPassword = "admin_password"; // LDAP admin password
-// Check if the form is submitted
+$error_msg = " ";
+$ldapServer = "ldap://ldap.onsemi.com:389/o=ONDex"; // Your LDAP server URL
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
-
-    // Connect to the LDAP server
-    $ldapConn = ldap_connect($ldapServer);
+    $user = "cn=" . $username . ",ou=ONSemi";
+    $ldapConn = ldap_connect($ldapServer) or die("That LDAP-URI was not parseable");
 
     if ($ldapConn) {
-        // Binding to LDAP server
-        $bind = ldap_bind($ldapConn, $ldapAdminUser, $ldapAdminPassword);
-
-        if ($bind) {
-            // Search for the user in LDAP
-            $filter = "(uid=" . $username . ")";
-            $result = ldap_search($ldapConn, $ldapBaseDN, $filter);
-            $entries = ldap_get_entries($ldapConn, $result);
-
-            if ($entries["count"] > 0) {
-                // Try to authenticate the user
-                $userDN = $entries[0]["dn"];
-                if (ldap_bind($ldapConn, $userDN, $password)) {
-                    // Authentication successful
-                    echo "Login successful. Welcome, " . $username;
-                } else {
-                    // Authentication failed
-                    echo "Invalid credentials. Please try again.";
-                }
-            } else {
-                // User not found
-                echo "User not found in LDAP directory.";
-            }
+        // binding anonymously
+        $ldapbind = ldap_bind($ldapConn, $user, $password);
+        
+        if ($ldapbind) {
+            echo "LDAP bind successful...";
+            header('location:main.php');
         } else {
-            // LDAP bind failed
-            echo "LDAP bind failed. Check your admin credentials.";
+            $error_msg = ldap_error($ldapConn);
         }
-
-        // Close LDAP connection
-        ldap_close($ldapConn);
-    } else {
-        // LDAP connection failed
-        echo "LDAP connection failed. Check your server settings.";
     }
 }
 ?>
@@ -69,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
-        <link rel="stylesheet" type="text/css" href="sample/sample02.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
 
         <style>
             .button-login {
@@ -125,21 +94,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </head>
     <body>
-        <div class="container" onclick="onclick">
-            <div class="top"></div>
-            <div class="bottom"></div>
-            <div class="center">
-                <h2 style="color:orange">Please Sign In</h2>
-                <input class="w3-input w3-border w3-animate-input" type="text" placeholder="Username"/>
-                <br>
-                <input class="w3-input w3-border" type="password" placeholder="Password"/>
-                <br>
-                <!--<h2>&nbsp;</h2>-->
-                <div>
-                    <input type="submit" value="Login" class="button-login">
-                    <a href="login.php" class="button-login">MASUK</a>
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
+            <div class="container" onclick="onclick">
+                <div class="top"></div>
+                <div class="bottom"></div>
+                <div class="center">
+                    <h2 style="color:orange">Please Sign In</h2>
+                    <input class="w3-input w3-border w3-animate-input" type="text" placeholder="Username" name="username"/>
+                    <br>
+                    <input class="w3-input w3-border" type="password" placeholder="Password" name="password"/>
+                    <br>
+                    <div>
+                        <input type="submit" value="Login" class="button-login" name="login">
+                    </div>
+                    <?php echo $error_msg?>
                 </div>
             </div>
-        </div>
+        </form>
     </body>
 </html>
