@@ -31,53 +31,6 @@ $id = $_GET['view'];
                 margin: 5px 0 22px 0;
                 display: inline-block;
             }
-
-            #toggle_01, #toggle_02, #toggle_03, #toggle_040, #toggle_041, #toggle_042, #toggle_050, #toggle_051, #toggle_052, #toggle_06, #toggle_070, #toggle_071, #toggle_072 {
-                visibility: hidden;
-                opacity: 0;
-                position: relative;
-                z-index: -1;
-            }
-
-            #toggle_01:checked ~ dialog {
-                display: block;
-            }
-            #toggle_02:checked ~ dialog {
-                display: block;
-            }
-            #toggle_03:checked ~ dialog {
-                display: block;
-            }
-            #toggle_040:checked ~ dialog {
-                display: block;
-            }
-            #toggle_041:checked ~ dialog {
-                display: block;
-            }
-            #toggle_042:checked ~ dialog {
-                display: block;
-            }
-            #toggle_050:checked ~ dialog {
-                display: block;
-            }
-            #toggle_051:checked ~ dialog {
-                display: block;
-            }
-            #toggle_052:checked ~ dialog {
-                display: block;
-            }
-            #toggle_06:checked ~ dialog {
-                display: block;
-            }
-            #toggle_070:checked ~ dialog {
-                display: block;
-            }
-            #toggle_071:checked ~ dialog {
-                display: block;
-            }
-            #toggle_072:checked ~ dialog {
-                display: block;
-            }
         </style>
         
         <script type="text/javascript">
@@ -214,40 +167,19 @@ $id = $_GET['view'];
                         <div class="two columns"><label for="volt_measure_reso">Voltage measurement resolution *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="volt_measure_reso" name="volt_measure_reso" value="<?php echo $rowForm['voltage_measure_resolution']; ?>" required> </div>
                         <div class="one columns"><label for="volt_measure_reso" style="text-align: left"><b>&nbsp;</b></label></div>
-                        <div class="two columns">
-                            <label for="toggle_01" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_01">
-                            <dialog>
-                                <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="offline_data_plot">Offline software to review historical data and plotting with data analysis *</label></div>
                         <div class="three columns">
                             <input type="text" id="offline_data_plot" name="offline_data_plot" value="<?php echo getParameterValue($rowForm['offline_software']); ?>" required readonly />
                         </div>
-                        <div class="one columns">
-                            <label for="toggle_02" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_02">
-                            <dialog>
-                                <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="measure_type_hardware">Measurement type for hardware design *</label></div>
                         <div class="three columns">
                             <input type="text" id="measure_type_hardware" name="measure_type_hardware" value="<?php echo getParameterValue($rowForm['measure_type_hw_design']); ?>" required readonly />
                         </div>
-                        <div class="one columns">
-                            <label for="toggle_03" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_03">
-                            <dialog>
-                                <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
 
                     <h6>Characteristics</h6>
@@ -255,127 +187,57 @@ $id = $_GET['view'];
                         <div class="two columns"><label for="analog_input_single">Number of analog inputs (single ended) *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="analog_input_single" name="analog_input_single" value="<?php echo $rowForm['no_analog_input_single']; ?>" required> </div>
                         <div class="one columns"><label for="analog_input_single" style="text-align: left"><b>V</b></label></div>
-                        <div class="two columns">
-                            <label for="toggle_040" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_040">
-                            <dialog>
-                                <label for="toggle_040" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/004_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="analog_input_diff">Number of analog inputs (differential) *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="analog_input_diff" name="analog_input_diff" value="<?php echo $rowForm['no_analog_input_diff']; ?>" required> </div>
                         <div class="one columns"><label for="analog_input_diff" style="text-align: left"><b>V</b></label></div>
-                        <div class="two columns">
-                            <label for="toggle_041" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_041">
-                            <dialog>
-                                <label for="toggle_041" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/004_1.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="resolution">Resolution *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="resolution" name="resolution" value="<?php echo $rowForm['resolution']; ?>" required> </div>
                         <div class="one columns"><label for="resolution" style="text-align: left"><b>&nbsp;</b></label></div>
-                        <div class="two columns">
-                            <label for="toggle_042" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_042">
-                            <dialog>
-                                <label for="toggle_042" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/004_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="sampling_frequency">Sampling frequency *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="sampling_frequency" name="sampling_frequency" value="<?php echo $rowForm['sampling_freq']; ?>" required> </div>
                         <div class="one columns"><label for="sampling_frequency" style="text-align: left"><b>s</b></label></div>
-                        <div class="two columns">
-                            <label for="toggle_050" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_050">
-                            <dialog>
-                                <label for="toggle_050" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/005_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="supported_eqpt">Supported eqpt *</label></div>
                         <div class="three columns">
                             <input type="text" id="supported_eqpt" name="supported_eqpt" value="<?php echo getParameterValue($rowForm['supported_eqpt']); ?>" required readonly />
                         </div>
-                        <div class="one columns">
-                            <label for="toggle_051" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_051">
-                            <dialog>
-                                <label for="toggle_051" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/005_1.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="hw_resistence_measure">Hardware for resistance measurement *</label></div>
                         <div class="three columns">
                             <input type="text" id="hw_resistence_measure" name="hw_resistence_measure" value="<?php echo getParameterValue($rowForm['hw_resistance_measure']); ?>" required readonly />
                         </div>
-                        <div class="one columns">
-                            <label for="toggle_052" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_052">
-                            <dialog>
-                                <label for="toggle_052" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/005_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="hw_volt_measure">Hardware for voltage measurement *</label></div>
                         <div class="three columns">
                             <input type="text" id="hw_volt_measure" name="hw_volt_measure" value="<?php echo getParameterValue($rowForm['hw_voltage_measure']); ?>" required readonly />
                         </div>
-                        <div class="one columns">
-                            <label for="toggle_06" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_06">
-                            <dialog>
-                                <label for="toggle_06" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="hw_temp_measure">Hardware for temperature measurement *</label></div>
                         <div class="three columns">
                             <input type="text" id="hw_temp_measure" name="hw_temp_measure" value="<?php echo getParameterValue($rowForm['hw_temp_measure']); ?>" required readonly />
                         </div>
-                        <div class="one columns">
-                            <label for="toggle_070" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_070">
-                            <dialog>
-                                <label for="toggle_070" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/007_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="daq_eqpt_interface">DAQ to Eqpt Interface *</label></div>
                         <div class="three columns">
                             <input type="text" id="daq_eqpt_interface" name="daq_eqpt_interface" value="<?php echo getParameterValue($rowForm['daq_eqpt_interface']); ?>" required readonly />
                         </div>
-                        <div class="one columns">
-                            <label for="toggle_071" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_071">
-                            <dialog>
-                                <label for="toggle_071" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/007_1.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="daq_ps_interface">DAQ to PS Interface *</label></div>
                         <div class="three columns">
                             <input type="text" id="daq_ps_interface" name="daq_ps_interface" value="<?php echo getParameterValue($rowForm['daq_ps_interface']); ?>" required readonly />
                         </div>
-                        <div class="one columns">
-                            <label for="toggle_072" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_072">
-                            <dialog>
-                                <label for="toggle_072" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/007_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
                 <?php endwhile; ?>
                 <button onclick="location.href = 'form_daq_list.php'" type="button" id="backBtn"><i class='bx bxs-chevron-left bx-fw' ></i> Back</button>

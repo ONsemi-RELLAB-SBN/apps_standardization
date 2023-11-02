@@ -288,7 +288,15 @@ $id = $_GET['edit'];
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
-                    <div class="two columns"><label for="lan_port">LAN Port *</label></div>
+                    <div class="two columns">
+                        <label for="lan_port">LAN Port *</label>
+                        <label for="toggle_3" class="view-image">Image</label>
+                        <input type="checkbox" id="toggle_3">
+                        <dialog>
+                            <label for="toggle_3" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
+                            <img id="myImg" src="image/powersupply/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        </dialog>
+                    </div>
                     <div class="three columns">
                         <select id="lan_port" name="lan_port" style="width: 100%" required>
                             <option value="" selected=""></option>
@@ -300,17 +308,18 @@ $id = $_GET['edit'];
                             <?php endwhile; ?>
                         </select>
                     </div>
-                    <div class="one columns">
-                        <label for="toggle_3" class="view-image">Image</label>
-                        <input type="checkbox" id="toggle_3">
-                        <dialog>
-                            <label for="toggle_3" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
-                            <img id="myImg" src="image/powersupply/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                        </dialog>
-                    </div>
+                    <div class="one columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="gpib_interface">GPIB interface *</label></div>
+                    <div class="two columns">
+                        <label for="gpib_interface">GPIB interface *</label>
+                        <label for="toggle_4" class="view-image">Image</label>
+                        <input type="checkbox" id="toggle_4">
+                        <dialog>
+                            <label for="toggle_4" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
+                            <img id="myImg" src="image/powersupply/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        </dialog>
+                    </div>
                     <div class="three columns">
                         <select id="gpib_interface" name="gpib_interface" style="width: 100%" required>
                             <option value="" selected=""></option>
@@ -322,15 +331,16 @@ $id = $_GET['edit'];
                             <?php endwhile; ?>
                         </select>
                     </div>
-                    <div class="one columns">
-                        <label for="toggle_4" class="view-image">Image</label>
-                        <input type="checkbox" id="toggle_4">
+                    <div class="one columns">&nbsp;</div>
+                    <div class="two columns">
+                        <label for="other_interface_port">Other interface ports *</label>
+                        <label for="toggle_2" class="view-image">Image</label>
+                        <input type="checkbox" id="toggle_2">
                         <dialog>
-                            <label for="toggle_4" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
-                            <img id="myImg" src="image/powersupply/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <label for="toggle_2" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                            <img id="myImg" src="image/powersupply/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="two columns"><label for="other_interface_port">Other interface ports *</label></div>
                     <div class="three columns">
                         <select id="other_interface_port" name="other_interface_port" style="width: 100%" required>
                             <option value="" selected=""></option>
@@ -342,23 +352,13 @@ $id = $_GET['edit'];
                             <?php endwhile; ?>
                         </select>
                     </div>
-                    <div class="one columns">
-                        <label for="toggle_2" class="view-image">Image</label>
-                        <input type="checkbox" id="toggle_2">
-                        <dialog>
-                            <label for="toggle_2" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/powersupply/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                        </dialog>
-                    </div>
+                    <div class="one columns">&nbsp;</div>
                 </div>
 
                 <h6>Capacity</h6>
                 <div class="row">
-                    <div class="two columns"><label for="no_output_channel">Number of output channels *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="no_output_channel" name="no_output_channel" value="<?php echo $rowForm['no_output']; ?>" required> </div>
-                    <div class="one columns"><label for="no_output_channel" style="text-align: left"><b>V</b></label></div>
-                    <div class="one columns">&nbsp;</div>
-                    <div class="one columns">
+                    <div class="two columns">
+                        <label for="no_output_channel">Number of output channels *</label>
                         <label for="toggle_1" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_1">
                         <dialog>
@@ -366,6 +366,9 @@ $id = $_GET['edit'];
                             <img id="myImg" src="image/powersupply/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
+                    <div class="one columns"><input type="number" step="0.001" id="no_output_channel" name="no_output_channel" value="<?php echo $rowForm['no_output']; ?>" required> </div>
+                    <div class="one columns"><label for="no_output_channel" style="text-align: left"><b>V</b></label></div>
+                    <div class="two columns">&nbsp;</div>
                 </div>
             <?php endwhile; ?>
             <button onclick="location.href = 'form_power_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>

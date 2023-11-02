@@ -379,85 +379,101 @@ $id = $_GET['edit'];
                         <div class="one columns"><input type="number" step="0.001" class="form-control" id="heat_dissipation" name="heat_dissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" required> </div>
                         <div class="one columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
                         <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="temp_fluctuation">Temperature Fluctuation *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="<?php echo $rowForm['temp_fluctuation']; ?>" required></div>
-                        <div class="one columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="one columns">
-                            <label for="toggle_01">View Sample</label>
+                        <div class="two columns">
+                            <label for="temp_fluctuation">Temperature Fluctuation *</label>
+                            <label for="toggle_01" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_01">
                             <dialog>
                                 <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
                                 <img id="myImg" src="image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
+                        <div class="one columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="<?php echo $rowForm['temp_fluctuation']; ?>" required></div>
+                        <div class="one columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="temp_uniform">Temperature Uniformity *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="<?php echo $rowForm['temp_uniformity']; ?>" required> </div>
-                        <div class="one columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="one columns">
-                            <label for="toggle_02">View Sample</label>
+                        <div class="two columns">
+                            <label for="temp_uniform">Temperature Uniformity *</label>
+                            <label for="toggle_02" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_02">
                             <dialog>
                                 <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
                                 <img id="myImg" src="image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="two columns"><label for="humid_fluctuation">Humidity Fluctuation *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="<?php echo $rowForm['humid_fluctuation']; ?>" required> </div>
-                        <div class="one columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="one columns">
-                            <label for="toggle_03">View Sample</label>
+                        <div class="one columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="<?php echo $rowForm['temp_uniformity']; ?>" required> </div>
+                        <div class="one columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns">
+                            <label for="humid_fluctuation">Humidity Fluctuation *</label>
+                            <label for="toggle_03" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_03">
                             <dialog>
                                 <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
                                 <img id="myImg" src="image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
+                        <div class="one columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="<?php echo $rowForm['humid_fluctuation']; ?>" required> </div>
+                        <div class="one columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                     </div>
 
                     <h6>Characteristic</h6>
                     <div class="row">
-                        <div class="two columns"><label for="no_interior">No. Interior Zones (doors) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="<?php echo $rowForm['no_interior_zone']; ?>" required> </div>
-                        <div class="one columns"><label for="no_interior" style="text-align: left"><b>Zone</b></label></div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="one columns">
-                            <label for="toggle_06">View Sample</label>
+                        <div class="two columns">
+                            <label for="no_interior">No. Interior Zones (doors) *</label>
+                            <label for="toggle_06" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_06">
                             <dialog>
                                 <label for="toggle_06" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
                                 <img id="myImg" src="image/equipment/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="two columns"><label for="ext_dimension_w">External Dimension (W) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="<?php echo $rowForm['no_interior_zone']; ?>" required> </div>
+                        <div class="one columns"><label for="no_interior" style="text-align: left"><b>Zone</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns">
+                            <label for="ext_dimension_w">External Dimension (W) *</label>
+                            <label for="toggle_04" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_04">
+                            <dialog>
+                                <label for="toggle_04" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
                         <div class="one columns"><input type="number" step="0.001" id="ext_dimension_w" name="ext_dimension_w" value="<?php echo $rowForm['ext_dimension_w']; ?>" required> </div>
                         <div class="one columns"><label for="ext_dimension_w" style="text-align: left"><b>mm</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="int_volume">Internal Volume *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="<?php echo $rowForm['int_vol']; ?>" required> </div>
-                        <div class="one columns"><label for="int_volume" style="text-align: left"><b>L</b></label></div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="one columns">
-                            <label for="toggle_08">View Sample</label>
+                        <div class="two columns">
+                            <label for="int_volume">Internal Volume *</label>
+                            <label for="toggle_08" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_08">
                             <dialog>
                                 <label for="toggle_08" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
                                 <img id="myImg" src="image/equipment/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
+                        <div class="one columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="<?php echo $rowForm['int_vol']; ?>" required> </div>
+                        <div class="one columns"><label for="int_volume" style="text-align: left"><b>L</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="ext_dimension_d">(D) *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="ext_dimension_d" name="ext_dimension_d" value="<?php echo $rowForm['ext_dimension_d']; ?>" required> </div>
                         <div class="one columns"><label for="ext_dimension_d" style="text-align: left"><b>mm</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="board_orientation">Board Orientation*</label></div>
+                        <div class="two columns">
+                            <label for="board_orientation">Board Orientation*</label>
+                            <label for="toggle_09" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_09">
+                            <dialog>
+                                <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
                         <div class="three columns">
                             <select id="board_orientation" name="board_orientation" style="width: 100%" required>
                                 <option value="" selected=""></option>
@@ -469,26 +485,11 @@ $id = $_GET['edit'];
                                 <?php endwhile; ?>
                             </select>
                         </div>
-                        <div class="one columns">
-                            <label for="toggle_09">View Sample</label>
-                            <input type="checkbox" id="toggle_09">
-                            <dialog>
-                                <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="ext_dimension_h">(H) *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="ext_dimension_h" name="ext_dimension_h" value="<?php echo $rowForm['ext_dimension_h']; ?>" required> </div>
                         <div class="one columns"><label for="ext_dimension_h" style="text-align: left"><b>mm</b></label></div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="one columns">
-                            <label for="toggle_04">View Sample</label>
-                            <input type="checkbox" id="toggle_04">
-                            <dialog>
-                                <label for="toggle_04" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="rack_material">Rack Material *</label></div>
@@ -504,123 +505,131 @@ $id = $_GET['edit'];
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="int_dimension_w">Internal Dimension (W) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="<?php echo $rowForm['int_dimension_w']; ?>" required> </div>
-                        <div class="one columns"><label for="int_dimension_w" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="rack_slot_pitch">Rack Slot-to-Slot Pitch *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="<?php echo $rowForm['rack_slot_pitch']; ?>" required></div>
-                        <div class="one columns"><label for="rack_slot_pitch" style="text-align: left"><b>mm</b></label></div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="one columns">
-                            <label for="toggle_10">View Sample</label>
-                            <input type="checkbox" id="toggle_10">
-                            <dialog>
-                                <label for="toggle_10" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
-                        <div class="two columns"><label for="int_dimension_d">(D) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="int_dimension_d" name="int_dimension_d" value="<?php echo $rowForm['int_dimension_d']; ?>" required> </div>
-                        <div class="one columns"><label for="int_dimension_d" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="rack_slot_width">Rack Slot Width *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="<?php echo $rowForm['rack_slot_width']; ?>" required> </div>
-                        <div class="one columns"><label for="rack_slot_width" style="text-align: left"><b>mm</b></label></div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="one columns">
-                            <label for="toggle_11">View Sample</label>
-                            <input type="checkbox" id="toggle_11">
-                            <dialog>
-                                <label for="toggle_11" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/011.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
-                        <div class="two columns"><label for="int_dimension_h">(H) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="int_dimension_h" name="int_dimension_h" value="<?php echo $rowForm['int_dimension_h']; ?>" required> </div>
-                        <div class="one columns"><label for="int_dimension_h" style="text-align: left"><b>mm</b></label></div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="one columns">
-                            <label for="toggle_05">View Sample</label>
+                        <div class="two columns">
+                            <label for="int_dimension_w">Internal Dimension (W) *</label>
+                            <label for="toggle_05" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_05">
                             <dialog>
                                 <label for="toggle_05" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
                                 <img id="myImg" src="image/equipment/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
+                        <div class="one columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="<?php echo $rowForm['int_dimension_w']; ?>" required> </div>
+                        <div class="one columns"><label for="int_dimension_w" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns">
+                            <label for="rack_slot_pitch">Rack Slot-to-Slot Pitch *</label>
+                            <label for="toggle_10" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_10">
+                            <dialog>
+                                <label for="toggle_10" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                        <div class="one columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="<?php echo $rowForm['rack_slot_pitch']; ?>" required></div>
+                        <div class="one columns"><label for="rack_slot_pitch" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="int_dimension_d">(D) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="int_dimension_d" name="int_dimension_d" value="<?php echo $rowForm['int_dimension_d']; ?>" required> </div>
+                        <div class="one columns"><label for="int_dimension_d" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns">
+                            <label for="rack_slot_width">Rack Slot Width *</label>
+                            <label for="toggle_11" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_11">
+                            <dialog>
+                                <label for="toggle_11" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/011.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                        <div class="one columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="<?php echo $rowForm['rack_slot_width']; ?>" required> </div>
+                        <div class="one columns"><label for="rack_slot_width" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="int_dimension_h">(H) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="int_dimension_h" name="int_dimension_h" value="<?php echo $rowForm['int_dimension_h']; ?>" required> </div>
+                        <div class="one columns"><label for="int_dimension_h" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="eqpt_weight">Equipment Weight *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="eqpt_weight" name="eqpt_weight" value="<?php echo $rowForm['eqpt_weight']; ?>" required> </div>
                         <div class="one columns"><label for="eqpt_weight" style="text-align: left"><b>Kg</b></label></div>
                         <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="rack_dimension_w">Rack Dimension (W) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="<?php echo $rowForm['rack_dimension_w']; ?>" required> </div>
-                        <div class="one columns"><label for="rack_dimension_w" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="no_mb_slot">Number of motherboard slots *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="<?php echo $rowForm['no_mb_slot']; ?>" required></div>
-                        <div class="one columns"><label for="no_mb_slot" style="text-align: left"><b>Slot</b></label></div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="one columns">
-                            <label for="toggle_12">View Sample</label>
-                            <input type="checkbox" id="toggle_12">
-                            <dialog>
-                                <label for="toggle_12" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/012.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
-                        <div class="two columns"><label for="rack_dimension_d">(D) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="rack_dimension_d" name="rack_dimension_d" value="<?php echo $rowForm['rack_dimension_d']; ?>" required> </div>
-                        <div class="one columns"><label for="rack_dimension_d" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="max_ps_bs">Max number of power supplies per board slot *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="<?php echo $rowForm['max_ps_slot']; ?>" required> </div>
-                        <div class="one columns"><label for="max_ps_bs" style="text-align: left"><b>Slot</b></label></div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="one columns">
-                            <label for="toggle_13">View Sample</label>
-                            <input type="checkbox" id="toggle_13">
-                            <dialog>
-                                <label for="toggle_13" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/013.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
-                        <div class="two columns"><label for="rack_dimension_h">(H) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="<?php echo $rowForm['rack_dimension_h']; ?>" required> </div>
-                        <div class="one columns"><label for="rack_dimension_h" style="text-align: left"><b>mm</b></label></div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="one columns">
-                            <label for="toggle_07">View Sample</label>
+                        <div class="two columns">
+                            <label for="rack_dimension_w">Rack Dimension (W) *</label>
+                            <label for="toggle_07" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_07">
                             <dialog>
                                 <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
                                 <img id="myImg" src="image/equipment/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
+                        <div class="one columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="<?php echo $rowForm['rack_dimension_w']; ?>" required> </div>
+                        <div class="one columns"><label for="rack_dimension_w" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="max_ps">Max number of power supplies for the entire Equipment *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="<?php echo $rowForm['max_ps_eqpt']; ?>" required> </div>
-                        <div class="one columns"><label for="max_ps" style="text-align: left"><b>Unit</b></label></div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="one columns">
-                            <label for="toggle_14">View Sample</label>
+                        <div class="two columns">
+                            <label for="no_mb_slot">Number of motherboard slots *</label>
+                            <label for="toggle_12" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_12">
+                            <dialog>
+                                <label for="toggle_12" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/012.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                        <div class="one columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="<?php echo $rowForm['no_mb_slot']; ?>" required></div>
+                        <div class="one columns"><label for="no_mb_slot" style="text-align: left"><b>Slot</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="rack_dimension_d">(D) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="rack_dimension_d" name="rack_dimension_d" value="<?php echo $rowForm['rack_dimension_d']; ?>" required> </div>
+                        <div class="one columns"><label for="rack_dimension_d" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns">
+                            <label for="max_ps_bs">Max number of power supplies per board slot *</label>
+                            <label for="toggle_13" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_13">
+                            <dialog>
+                                <label for="toggle_13" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/013.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
+                        <div class="one columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="<?php echo $rowForm['max_ps_slot']; ?>" required> </div>
+                        <div class="one columns"><label for="max_ps_bs" style="text-align: left"><b>Slot</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="rack_dimension_h">(H) *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="<?php echo $rowForm['rack_dimension_h']; ?>" required> </div>
+                        <div class="one columns"><label for="rack_dimension_h" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns">
+                            <label for="max_ps">Max number of power supplies for the entire Equipment *</label>
+                            <label for="toggle_14" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_14">
                             <dialog>
                                 <label for="toggle_14" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
                                 <img id="myImg" src="image/equipment/014.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="two columns"><label for="airflow">Airflow *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="<?php echo $rowForm['max_ps_eqpt']; ?>" required> </div>
+                        <div class="one columns"><label for="max_ps" style="text-align: left"><b>Unit</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns">
+                            <label for="airflow">Airflow *</label>
+                            <label for="toggle_15" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_15">
+                            <dialog>
+                                <label for="toggle_15" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/015.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
                         <div class="three columns">
                             <select id="airflow" name="airflow" style="width: 100%" required>
                                 <option value="" selected=""></option>
@@ -631,14 +640,6 @@ $id = $_GET['edit'];
                                     <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['airflow']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                 <?php endwhile; ?>
                             </select>
-                        </div>
-                        <div class="one columns">
-                            <label for="toggle_15">View Sample</label>
-                            <input type="checkbox" id="toggle_15">
-                            <dialog>
-                                <label for="toggle_15" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/015.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
                         </div>
                     </div>
 
@@ -888,7 +889,15 @@ $id = $_GET['edit'];
 
                     <h6>Internal Chamber Configuration</h6>
                     <div class="row">
-                        <div class="two columns"><label for="int_config_type">Configuration Type *</label></div>
+                        <div class="two columns">
+                            <label for="int_config_type">Configuration Type *</label>
+                            <label for="toggle_16" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_16">
+                            <dialog>
+                                <label for="toggle_16" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/016.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
                         <div class="three columns">
                             <select id="int_config_type" name="int_config_type" style="width: 100%" onchange="updateDiv()" required>
                                 <option value="" selected=""></option>
@@ -899,14 +908,6 @@ $id = $_GET['edit'];
                                     <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['internal_config_type']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                 <?php endwhile; ?>
                             </select>
-                        </div>
-                        <div class="one columns">
-                            <label for="toggle_16">View Sample</label>
-                            <input type="checkbox" id="toggle_16">
-                            <dialog>
-                                <label for="toggle_16" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/016.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
                         </div>
                     </div>
 
@@ -966,7 +967,14 @@ $id = $_GET['edit'];
                             <div class="two columns"><label for="banana_jack_hole">No. Banana Jack Holes *</label></div>
                             <div class="one columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" > </div>
                             <div class="one columns"><label for="banana_jack_hole" style="text-align: left"><b>Pins</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns">
+                                <label for="toggle_17" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_17">
+                                <dialog>
+                                    <label for="toggle_17" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="image/equipment/017.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
                             <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
                             <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
@@ -987,7 +995,14 @@ $id = $_GET['edit'];
                             <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
                             <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
                             <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns">
+                                <label for="toggle_18" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_18">
+                                <dialog>
+                                    <label for="toggle_18" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="image/equipment/018.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
                             <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
                             <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
                             <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
@@ -1013,7 +1028,14 @@ $id = $_GET['edit'];
                             <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
                             <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
                             <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns">
+                                <label for="toggle_19" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_19">
+                                <dialog>
+                                    <label for="toggle_19" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="image/equipment/019.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
                             <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
                             <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
                             <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
@@ -1054,7 +1076,15 @@ $id = $_GET['edit'];
 
                     <h6>External Chamber Configuration</h6>
                     <div class="row">
-                        <div class="two columns"><label for="ext_config_type">Configuration Type *</label></div>
+                        <div class="two columns">
+                            <label for="ext_config_type">Configuration Type *</label>
+                            <label for="toggle_20" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_20">
+                            <dialog>
+                                <label for="toggle_20" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/020.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
                         <div class="three columns">
                             <select id="ext_config_type" name="ext_config_type" style="width: 100%" onchange="updateView()" required>
                                 <option value="" selected=""></option>
@@ -1065,14 +1095,6 @@ $id = $_GET['edit'];
                                     <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['ext_config_type']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                 <?php endwhile; ?>
                             </select>
-                        </div>
-                        <div class="one columns">
-                            <label for="toggle_20">View Sample</label>
-                            <input type="checkbox" id="toggle_20">
-                            <dialog>
-                                <label for="toggle_20" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/020.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
                         </div>
                     </div>
 

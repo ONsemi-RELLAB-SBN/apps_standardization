@@ -25,25 +25,7 @@ $id = $_GET['view'];
         <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
         <style>
-            #toggle_1, #toggle_2, #toggle_3, #toggle_4{
-                visibility: hidden;
-                opacity: 0;
-                position: relative;
-                z-index: -1;
-            }
 
-            #toggle_1:checked ~ dialog {
-                display: block;
-            }
-            #toggle_2:checked ~ dialog {
-                display: block;
-            }
-            #toggle_3:checked ~ dialog {
-                display: block;
-            }
-            #toggle_4:checked ~ dialog {
-                display: block;
-            }
         </style>
         
         <script type="text/javascript">
@@ -192,12 +174,6 @@ $id = $_GET['view'];
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns">
                         <label for="lan_port">LAN Port *</label>
-                        <label for="toggle_3" class="view-image">Image</label>
-                        <input type="checkbox" id="toggle_3">
-                        <dialog>
-                            <label for="toggle_3" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
-                            <img id="myImg" src="image/powersupply/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                        </dialog>
                     </div>
                     <div class="three columns">
                         <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['lan_port']); ?>" required readonly />
@@ -206,12 +182,6 @@ $id = $_GET['view'];
                 <div class="row">
                     <div class="two columns">
                         <label for="gpib_interface">GPIB interface *</label>
-                        <label for="toggle_4" class="view-image">Image</label>
-                        <input type="checkbox" id="toggle_4">
-                        <dialog>
-                            <label for="toggle_4" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
-                            <img id="myImg" src="image/powersupply/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                        </dialog>
                     </div>
                     <div class="three columns">
                         <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['gpib_interface']); ?>" required readonly />
@@ -219,12 +189,6 @@ $id = $_GET['view'];
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns">
                         <label for="other_interface_port">Other interface ports *</label>
-                        <label for="toggle_2" class="view-image">Image</label>
-                        <input type="checkbox" id="toggle_2">
-                        <dialog>
-                            <label for="toggle_2" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/powersupply/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                        </dialog>
                     </div>
                     <div class="three columns">
                         <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['other_interface']); ?>" required readonly />
@@ -236,12 +200,6 @@ $id = $_GET['view'];
                 <div class="row">
                     <div class="two columns">
                         <label for="no_output_channel">Number of output channels *</label>
-                        <label for="toggle_1" class="view-image">Image</label>
-                        <input type="checkbox" id="toggle_1">
-                        <dialog>
-                            <label for="toggle_1" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/powersupply/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                        </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="no_output_channel" name="no_output_channel" value="<?php echo $rowForm['no_output']; ?>" required readonly> </div>
                     <div class="one columns"><label for="no_output_channel" style="text-align: left"><b>V</b></label></div>

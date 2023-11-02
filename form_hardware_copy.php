@@ -439,10 +439,10 @@ $id = $_GET['edit'];
                 <div class="row">
                     <div class="two columns">
                         <label for="conn_type">Connector Type *</label>
-                        <label for="toggle_07" class="view-image">Image</label>
-                        <input type="checkbox" id="toggle_07">
+                        <label for="toggle_08" class="view-image">Image</label>
+                        <input type="checkbox" id="toggle_08">
                         <dialog>
-                            <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                            <label for="toggle_08" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
                             <img id="myImg" src="image/hardware/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
@@ -451,10 +451,10 @@ $id = $_GET['edit'];
                     <div class="two columns">&nbsp;</div>
                     <div class="two columns">
                         <label for="no_pins">Number of pins *</label>
-                        <label for="toggle_08" class="view-image">Image</label>
-                        <input type="checkbox" id="toggle_08">
+                        <label for="toggle_09" class="view-image">Image</label>
+                        <input type="checkbox" id="toggle_09">
                         <dialog>
-                            <label for="toggle_08" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                            <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
                             <img id="myImg" src="image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>

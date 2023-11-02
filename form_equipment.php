@@ -383,7 +383,7 @@ include 'form_template.php';
                 <div class="row">
                     <div class="two columns">
                         <label for="temp_uniform">Temperature Uniformity *</label>
-                        <label for="toggle_02" class="view-image" class="view-image">Image</label>
+                        <label for="toggle_02" class="view-image">Image</label>
                         <input type="checkbox" id="toggle_02">
                         <dialog>
                             <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
@@ -547,7 +547,15 @@ include 'form_template.php';
                     <div class="one columns"><input type="number" step="0.001" id="eqpt_weight" name="eqpt_weight" value="" required> </div>
                     <div class="one columns"><label for="eqpt_weight" style="text-align: left"><b>Kg</b></label></div>
                     <div class="two columns">&nbsp;</div>
-                    <div class="two columns"><label for="rack_dimension_w">Rack Dimension (W) *</label></div>
+                    <div class="two columns">
+                        <label for="rack_dimension_w">Rack Dimension (W) *</label>
+                        <label for="toggle_07" class="view-image">Image</label>
+                        <input type="checkbox" id="toggle_07">
+                        <dialog>
+                            <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                            <img id="myImg" src="image/equipment/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        </dialog>
+                    </div>
                     <div class="one columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="" required> </div>
                     <div class="one columns"><label for="rack_dimension_w" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
@@ -583,15 +591,7 @@ include 'form_template.php';
                     <div class="one columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="" required> </div>
                     <div class="one columns"><label for="max_ps_bs" style="text-align: left"><b>Slot</b></label></div>
                     <div class="two columns">&nbsp;</div>
-                    <div class="two columns">
-                        <label for="rack_dimension_h">(H) *</label>
-                        <label for="toggle_07" class="view-image">Image</label>
-                        <input type="checkbox" id="toggle_07">
-                        <dialog>
-                            <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                        </dialog>
-                    </div>
+                    <div class="two columns"><label for="rack_dimension_h">(H) *</label></div>
                     <div class="one columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="" required> </div>
                     <div class="one columns"><label for="rack_dimension_h" style="text-align: left"><b>mm</b></label></div>
                     <div class="two columns">&nbsp;</div>
@@ -950,7 +950,14 @@ include 'form_template.php';
                         <div class="two columns"><label for="banana_jack_hole">No. Banana Jack Holes *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="" > </div>
                         <div class="one columns"><label for="banana_jack_hole" style="text-align: left"><b>Pins</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns">
+                            <label for="toggle_17" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_17">
+                            <dialog>
+                                <label for="toggle_17" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/017.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
                         <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="" > </div>
                         <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
@@ -973,7 +980,14 @@ include 'form_template.php';
                         <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="" > </div>
                         <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns">
+                            <label for="toggle_18" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_18">
+                            <dialog>
+                                <label for="toggle_18" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/018.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
                         <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="" > </div>
                         <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
@@ -1001,7 +1015,14 @@ include 'form_template.php';
                         <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="" > </div>
                         <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns">
+                            <label for="toggle_19" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_19">
+                            <dialog>
+                                <label for="toggle_19" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                <img id="myImg" src="image/equipment/019.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
                         <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="" > </div>
                         <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>

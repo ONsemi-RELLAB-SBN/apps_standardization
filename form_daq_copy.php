@@ -309,10 +309,8 @@ $id = $_GET['edit'];
                         <div class="one columns"><input type="number" step="0.001" id="leakage_measure_accuracy" name="leakage_measure_accuracy" value="<?php echo $rowForm['leakage_measure_accuracy']; ?>" required> </div>
                         <div class="one columns"><label for="leakage_measure_accuracy" style="text-align: left"><b>&nbsp;</b></label></div>
                         <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="volt_measure_reso">Voltage measurement resolution *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="volt_measure_reso" name="volt_measure_reso" value="<?php echo $rowForm['voltage_measure_resolution']; ?>" required> </div>
-                        <div class="one columns"><label for="volt_measure_reso" style="text-align: left"><b>&nbsp;</b></label></div>
                         <div class="two columns">
+                            <label for="volt_measure_reso">Voltage measurement resolution *</label>
                             <label for="toggle_01" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_01">
                             <dialog>
@@ -320,9 +318,20 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="image/daq/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
+                        <div class="one columns"><input type="number" step="0.001" id="volt_measure_reso" name="volt_measure_reso" value="<?php echo $rowForm['voltage_measure_resolution']; ?>" required> </div>
+                        <div class="one columns"><label for="volt_measure_reso" style="text-align: left"><b>&nbsp;</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="offline_data_plot">Offline software to review historical data and plotting with data analysis *</label></div>
+                        <div class="two columns">
+                            <label for="offline_data_plot">Offline software to review historical data and plotting with data analysis *</label>
+                            <label for="toggle_02" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_02">
+                            <dialog>
+                                <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
+                                <img id="myImg" src="image/daq/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
                         <div class="three columns">
                             <select id="offline_data_plot" name="offline_data_plot" style="width: 100%" required>
                                 <option value="" selected=""></option>
@@ -335,15 +344,16 @@ $id = $_GET['edit'];
                                 <?php endwhile; ?>
                             </select>
                         </div>
-                        <div class="one columns">
-                            <label for="toggle_02" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_02">
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns">
+                            <label for="measure_type_hardware">Measurement type for hardware design *</label>
+                            <label for="toggle_03" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_03">
                             <dialog>
-                                <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
+                                <img id="myImg" src="image/daq/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="two columns"><label for="measure_type_hardware">Measurement type for hardware design *</label></div>
                         <div class="three columns">
                             <select id="measure_type_hardware" name="measure_type_hardware" style="width: 100%" required>
                                 <option value="" selected=""></option>
@@ -356,22 +366,13 @@ $id = $_GET['edit'];
                                 <?php endwhile; ?>
                             </select>
                         </div>
-                        <div class="one columns">
-                            <label for="toggle_03" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_03">
-                            <dialog>
-                                <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
 
                     <h6>Characteristics</h6>
                     <div class="row">
-                        <div class="two columns"><label for="analog_input_single">Number of analog inputs (single ended) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="analog_input_single" name="analog_input_single" value="<?php echo $rowForm['no_analog_input_single']; ?>" required> </div>
-                        <div class="one columns"><label for="analog_input_single" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">
+                            <label for="analog_input_single">Number of analog inputs (single ended) *</label>
                             <label for="toggle_040" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_040">
                             <dialog>
@@ -379,10 +380,11 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="image/daq/004_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="two columns"><label for="analog_input_diff">Number of analog inputs (differential) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="analog_input_diff" name="analog_input_diff" value="<?php echo $rowForm['no_analog_input_diff']; ?>" required> </div>
-                        <div class="one columns"><label for="analog_input_diff" style="text-align: left"><b>V</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="analog_input_single" name="analog_input_single" value="<?php echo $rowForm['no_analog_input_single']; ?>" required> </div>
+                        <div class="one columns"><label for="analog_input_single" style="text-align: left"><b>V</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                         <div class="two columns">
+                            <label for="analog_input_diff">Number of analog inputs (differential) *</label>
                             <label for="toggle_041" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_041">
                             <dialog>
@@ -390,12 +392,13 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="image/daq/004_1.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
+                        <div class="one columns"><input type="number" step="0.001" id="analog_input_diff" name="analog_input_diff" value="<?php echo $rowForm['no_analog_input_diff']; ?>" required> </div>
+                        <div class="one columns"><label for="analog_input_diff" style="text-align: left"><b>V</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="resolution">Resolution *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="resolution" name="resolution" value="<?php echo $rowForm['resolution']; ?>" required> </div>
-                        <div class="one columns"><label for="resolution" style="text-align: left"><b>&nbsp;</b></label></div>
                         <div class="two columns">
+                            <label for="resolution">Resolution *</label>
                             <label for="toggle_042" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_042">
                             <dialog>
@@ -403,10 +406,11 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="image/daq/004_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="two columns"><label for="sampling_frequency">Sampling frequency *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="sampling_frequency" name="sampling_frequency" value="<?php echo $rowForm['sampling_freq']; ?>" required> </div>
-                        <div class="one columns"><label for="sampling_frequency" style="text-align: left"><b>s</b></label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="resolution" name="resolution" value="<?php echo $rowForm['resolution']; ?>" required> </div>
+                        <div class="one columns"><label for="resolution" style="text-align: left"><b>&nbsp;</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                         <div class="two columns">
+                            <label for="sampling_frequency">Sampling frequency *</label>
                             <label for="toggle_050" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_050">
                             <dialog>
@@ -414,22 +418,13 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="image/daq/005_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
+                        <div class="one columns"><input type="number" step="0.001" id="sampling_frequency" name="sampling_frequency" value="<?php echo $rowForm['sampling_freq']; ?>" required> </div>
+                        <div class="one columns"><label for="sampling_frequency" style="text-align: left"><b>s</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="supported_eqpt">Supported eqpt *</label></div>
-                        <div class="three columns">
-                            <select id="supported_eqpt" name="supported_eqpt" style="width: 100%" required>
-                                <option value="" selected=""></option>
-                                <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)):
-                                    ?>
-                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['supported_eqpt']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
-                            </select>
-                        </div>
-                        <div class="one columns">
+                        <div class="two columns">
+                            <label for="supported_eqpt">Supported eqpt *</label>
                             <label for="toggle_051" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_051">
                             <dialog>
@@ -437,20 +432,20 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="image/daq/005_1.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="two columns"><label for="hw_resistence_measure">Hardware for resistance measurement *</label></div>
                         <div class="three columns">
-                            <select id="hw_resistence_measure" name="hw_resistence_measure" style="width: 100%" required>
+                            <select id="supported_eqpt" name="supported_eqpt" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)):
-                                    ?>
-                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['hw_resistance_measure']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['supported_eqpt']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                 <?php endwhile; ?>
                             </select>
                         </div>
-                        <div class="one columns">
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns">
+                            <label for="hw_resistence_measure">Hardware for resistance measurement *</label>
                             <label for="toggle_052" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_052">
                             <dialog>
@@ -458,22 +453,22 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="image/daq/005_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="hw_volt_measure">Hardware for voltage measurement *</label></div>
                         <div class="three columns">
-                            <select id="hw_volt_measure" name="hw_volt_measure" style="width: 100%" required>
+                            <select id="hw_resistence_measure" name="hw_resistence_measure" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)):
-                                    ?>
-                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['hw_voltage_measure']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['hw_resistance_measure']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                 <?php endwhile; ?>
                             </select>
                         </div>
-                        <div class="one columns">
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns">
+                            <label for="hw_volt_measure">Hardware for voltage measurement *</label>
                             <label for="toggle_06" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_06">
                             <dialog>
@@ -481,20 +476,20 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="image/daq/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="two columns"><label for="hw_temp_measure">Hardware for temperature measurement *</label></div>
                         <div class="three columns">
-                            <select id="hw_temp_measure" name="hw_temp_measure" style="width: 100%" required>
+                            <select id="hw_volt_measure" name="hw_volt_measure" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)):
-                                    ?>
-                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['hw_temp_measure']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['hw_voltage_measure']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                 <?php endwhile; ?>
                             </select>
                         </div>
-                        <div class="one columns">
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns">
+                            <label for="hw_temp_measure">Hardware for temperature measurement *</label>
                             <label for="toggle_070" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_070">
                             <dialog>
@@ -502,22 +497,22 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="image/daq/007_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="daq_eqpt_interface">DAQ to Eqpt Interface *</label></div>
                         <div class="three columns">
-                            <select id="daq_eqpt_interface" name="daq_eqpt_interface" style="width: 100%" required>
+                            <select id="hw_temp_measure" name="hw_temp_measure" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)):
-                                    ?>
-                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['daq_eqpt_interface']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['hw_temp_measure']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                 <?php endwhile; ?>
                             </select>
                         </div>
-                        <div class="one columns">
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns">
+                            <label for="daq_eqpt_interface">DAQ to Eqpt Interface *</label>
                             <label for="toggle_071" class="view-image">Image</label>
                             <input type="checkbox" id="toggle_071">
                             <dialog>
@@ -525,7 +520,27 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="image/daq/007_1.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="two columns"><label for="daq_ps_interface">DAQ to PS Interface *</label></div>
+                        <div class="three columns">
+                            <select id="daq_eqpt_interface" name="daq_eqpt_interface" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['daq_eqpt_interface']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns">
+                            <label for="daq_ps_interface">DAQ to PS Interface *</label>
+                            <label for="toggle_072" class="view-image">Image</label>
+                            <input type="checkbox" id="toggle_072">
+                            <dialog>
+                                <label for="toggle_072" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
+                                <img id="myImg" src="image/daq/007_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            </dialog>
+                        </div>
                         <div class="three columns">
                             <select id="daq_ps_interface" name="daq_ps_interface" style="width: 100%" required>
                                 <option value="" selected=""></option>
@@ -538,14 +553,7 @@ $id = $_GET['edit'];
                                 <?php endwhile; ?>
                             </select>
                         </div>
-                        <div class="one columns">
-                            <label for="toggle_072" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_072">
-                            <dialog>
-                                <label for="toggle_072" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/007_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
-                        </div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
                 <?php endwhile; ?>
                 <button onclick="location.href = 'form_daq_list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
