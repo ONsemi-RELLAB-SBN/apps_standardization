@@ -1001,7 +1001,11 @@ dialog{
 /*MODAL END*/
 
 .view-image {
-    color: lightskyblue     ;
+    color: lightskyblue;
+}
+.view-image:hover {
+    color: orange;
+    text-decoration: underline;
 }
 
 
