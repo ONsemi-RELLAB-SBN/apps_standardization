@@ -83,7 +83,7 @@ $update = "UPDATE gest_form_daq SET "
 $uprun = mysqli_query($con, $update);
 ?>
 <script>
-    alert('Hardware Updated Successfully');
-    window.location.href = 'form_hardware_view.php?view=<?php echo $id; ?>';
+    alert('DAQ Updated Successfully');
+    window.location.href = 'form_daq_view.php?view=<?php echo $id; ?>';
 </script>
 <?php mysql_close($handle);

@@ -3,8 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-
+ob_start();
+session_start();
 $error_msg = " ";
+$error_msg2 = " ";
 $ldapServer = "ldap://ldap.onsemi.com:389/o=ONDex"; // Your LDAP server URL
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
@@ -13,14 +15,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ldapConn = ldap_connect($ldapServer) or die("That LDAP-URI was not parseable");
 
     if ($ldapConn) {
-        // binding anonymously
-        $ldapbind = ldap_bind($ldapConn, $user, $password);
-        
-        if ($ldapbind) {
-            echo "LDAP bind successful...";
-            header('location:main.php');
-        } else {
-            $error_msg = ldap_error($ldapConn);
+        try {
+            $ldapbind = ldap_bind($ldapConn, $user, $password);
+            if ($ldapbind) {
+                echo "LDAP bind successful...";
+                header('location:main.php');
+                $_SESSION['user']= $username;
+                $_SESSION['pass']= $password;
+            } else {
+                $error_msg = ldap_error($ldapConn);
+//                $error_msg2 = ldap_error($ldapbind);
+            }
+        } catch (Exception $ex) {
+            echo "Error :" . $ex->getMessage();
         }
     }
 }
@@ -107,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div>
                         <input type="submit" value="Login" class="button-login" name="login">
                     </div>
-                    <?php echo $error_msg?>
+                    <?php echo "<br><span style=\"color:red;\">",$error_msg, " ", $error_msg2,"</span>" ?>
                 </div>
             </div>
         </form>
