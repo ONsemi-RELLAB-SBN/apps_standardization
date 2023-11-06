@@ -379,7 +379,6 @@ $user = $_SESSION["user"];
                         </div>
                     <div class="one columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
                     <div class="two columns">&nbsp;</div>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="two columns">
