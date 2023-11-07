@@ -45,7 +45,7 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
                 </div>
                 <div class="content">
                     <div class="inner">
-                        <h1>RELIABILITY EQUIPMENT PLATFORM DEVELOPMENT & STANDARDIZATION</h1>
+                        <h1>REL EQUIPMENT PLATFORM DEVELOPMENT & STANDARDIZATION</h1>
                         <p>released by 2023.</p>
                     </div>
                 </div>
