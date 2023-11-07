@@ -106,7 +106,7 @@ if (isset($_GET['delete'])) {
                         <span class="form-row-label">Parameter Code</span>
                     </label>
                     <div class="form-row" id="drop-area">
-                        <label for="image" class="pull-left"><b style="color:orange">Image</b></label>
+                        <label for="image" class="u-pull-left"><b style="color:orange">Image</b></label>
                         <input type="file" accept="image/png, image/jpeg, image/jpg" name="parameter_image" class="file-upload-wrapper">
                     </div>
                     <div class="button-group">

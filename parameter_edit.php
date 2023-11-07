@@ -114,8 +114,8 @@ if (isset($_POST['update_parameter'])) {
                                         <input type="file" class="file-upload-wrapper" accept="image/png, image/jpeg, image/jpg" name="parameter_image" style="width: 100%">
                                     </div>
                                 </div>
-                                <a class="button pull-left" href="parameter.php" id="backButton"><i class='bx bxs-chevron-left bx-fade-left-hover bx-fw' ></i>Go Back!</a>
-                                <button type="submit" value="Update Parameter Master" name="update_parameter" id="update_parameter" class="pull-right">
+                                <a class="button u-pull-left" href="parameter.php" id="backButton"><i class='bx bxs-chevron-left bx-fade-left-hover bx-fw' ></i>Go Back!</a>
+                                <button type="submit" value="Update Parameter Master" name="update_parameter" id="update_parameter" class="u-pull-right">
                                     <i class='bx bx-loader-circle bx-spin-hover bx-fw' ></i>Update Parameter Master
                                 </button>
                             </form>

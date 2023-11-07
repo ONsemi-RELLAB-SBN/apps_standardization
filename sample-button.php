@@ -9,6 +9,7 @@
     <head>
         <link rel="stylesheet" href="css/sample-button.css"/>
         <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+        <link rel="stylesheet" href="css/sample-button-02.css"/>
     </head>
     <body>
         <h1>
@@ -45,6 +46,22 @@
             <i class='bx bxl-telegram bx-fw bx-md' style='color:#71041c' id="dub-arrow"></i>
             <a href="#">Submit!</a>
         </div>
+
+        <div id="container">
+            <button class="learn-more">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Learn More</span>
+            </button>
+        </div>
+        
+        <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Learn More</span>
+        </button>
 
         <script src="js/sample-button.js"></script>
     </body>

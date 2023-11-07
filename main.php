@@ -45,9 +45,8 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
                 </div>
                 <div class="content">
                     <div class="inner">
-                        <h1>STANDARDIZATION</h1>
-                        <p>A project standardization designed by <a href="https://html5up.net">SBN REL LAB Team</a> and released<br />
-                            for onsemi usage and utilization.</p>
+                        <h1>RELIABILITY EQUIPMENT PLATFORM DEVELOPMENT & STANDARDIZATION</h1>
+                        <p>released by 2023.</p>
                     </div>
                 </div>
                 <nav>
@@ -64,7 +63,7 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
                 </nav>
             </header>
             <footer id="footer">
-                <p class="copyright">&copy; REL LAB Design V3.0: <a href="https://html5up.net">Ayep</a>.</p>
+                <p class="copyright">&copy; REL LAB Design By : <a href="https://html5up.net">M Farhan / M Arif</a>.</p>
             </footer>
         </div>
         <div id="bg"></div>
