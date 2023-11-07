@@ -10,9 +10,8 @@ if (!empty($_SESSION['user'])) {
 } else {
     header('location:logout.php');
 }
-
 // Set the inactivity time of 15 minutes (900 seconds)
-$inactivity_time = 30*60;
+$inactivity_time = 30 * 60;
 if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp']) > $inactivity_time) {
     session_unset();
     session_destroy();
@@ -30,7 +29,7 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <title>V3 STANDARD</title>
+        <title>STANDARDIZATION FORM</title>
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
@@ -51,14 +50,14 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="parameter.php">Parameter</a></li>
-                        <li><a href="form_equipment.php">Equipment</a></li>
-                        <li><a href="form_hardware.php">Hardware</a></li>
-                        <li><a href="form_daq.php">DAQ</a></li>
-                        <li><a href="form_power.php">Power Supply</a></li>
-                        <li><a href="form_design.php">Design</a></li>
-                        <li><a href="form_process.php">Process</a></li>
-                        <li><a href="form_test.php">Elec Test</a></li>
+                        <li style="background-color: blueviolet" title="Parameter"><a href="parameter.php">Parameter</a></li>
+                        <li style="background-color: green"><a href="form_equipment.php">Equipment</a></li>
+                        <li style="background-color: green"><a href="form_hardware.php">Hardware</a></li>
+                        <li style="background-color: green"><a href="form_daq.php">DAQ</a></li>
+                        <li style="background-color: green"><a href="form_power.php">Power Supply</a></li>
+                        <li style="background-color: orange" title="Under Development" id="try1" > <a href="#">Design</a></li>
+                        <li style="background-color: orange" title="Under Development" id="try2" > <a href="#">Process</a></li>
+                        <li style="background-color: orange" title="Under Development" id="try3" > <a href="#">Elec Test</a></li>
                     </ul>
                 </nav>
             </header>
@@ -72,5 +71,19 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
         <script src="js/breakpoints.min.js"></script>
         <script src="js/util.js"></script>
         <script src="js/main.js"></script>
+        <script>
+            document.getElementById("try1").onclick = function (e) {
+                e.preventDefault(); //Prevent the default behavior 
+                alert('DESIGN FORM UNDER DEVELOPMENT!');
+            }
+            document.getElementById("try2").onclick = function (e) {
+                e.preventDefault(); //Prevent the default behavior 
+                alert('PROCESS FORM UNDER DEVELOPMENT!');
+            }
+            document.getElementById("try3").onclick = function (e) {
+                e.preventDefault(); //Prevent the default behavior 
+                alert('ELECTRICAL TEST FORM UNDER DEVELOPMENT!');
+            }
+        </script>
     </body>
 </html>

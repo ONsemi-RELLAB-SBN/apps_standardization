@@ -3,8 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-include 'form_template.php';
-$user = $_SESSION["user"];
+include './class/db.php';
+include './form_template.php';
+$id = 2;
 ?>
 
 <!DOCTYPE html>
@@ -13,14 +14,13 @@ $user = $_SESSION["user"];
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>FORM | Standardization Survey</title>
+        <title>SAMPLE TAB</title>
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+        <link rel="stylesheet" href="css/skeleton.css"/>
         <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-
+        
         <style>
             input[type=text], input[type=password] {
                 width: 100%;
@@ -97,19 +97,14 @@ $user = $_SESSION["user"];
                 display: block;
             }
         </style>
-
-        <script type="text/javascript">
-
-        </script>
-
     </head>
-    <body>
-        <div class="twelve columns">&nbsp;</div>
-        <div class="twelve columns">&nbsp;</div>
-        <h5 style="border-left: none;">Equipment Details</h5>
+    <body style="padding-top:50px">
         <form id="add_equipment_form" action="crud_add_equipment.php" method="get">
-            <div class="row">
-
+            <button onclick="location.href = 'form_equipment_list.php'" type="button" id="listBtn" class="u-pull-right"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+        <button type="submit" id="myBtn" class="btn btn-primary u-pull-right"><i class='bx bx-send bx-fw' ></i> CREATE</button>
+        <div class="tabutama">
+            <input type="radio" name="name" checked="checked" class="tabsub"/>
+            <div class="contenttab" style="padding-left:30px">
                 <h6>General</h6>
                 <div class="row">
                     <div class="two columns"><label for="lab_location">Lab Location *</label></div>
@@ -318,7 +313,9 @@ $user = $_SESSION["user"];
                         }
                     }
                 </script>
-
+            </div>
+            <input type="radio" name="name" class="tabsub"/>
+            <div class="contenttab" style="padding-left:30px">
                 <h6>Capability</h6>
                 <div class="row">
                     <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
@@ -406,7 +403,9 @@ $user = $_SESSION["user"];
                     <div class="one columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
-
+            </div>
+            <input type="radio" name="name" class="tabsub"/>
+            <div class="contenttab" style="padding-left:30px">
                 <h6>Characteristic</h6>
                 <div class="row">
                     <div class="two columns">
@@ -630,7 +629,9 @@ $user = $_SESSION["user"];
                         </select>
                     </div>
                 </div>
-
+            </div>
+            <input type="radio" name="name" class="tabsub"/>
+            <div class="contenttab" style="padding-left:30px">
                 <h6>Safety</h6>
                 <div class="row">
                     <div class="two columns"><label for="tempProtection1">Temperature Protection 1 *</label></div>
@@ -702,7 +703,9 @@ $user = $_SESSION["user"];
                         </select>
                     </div>
                 </div>
-
+            </div>
+            <input type="radio" name="name" class="tabsub"/>
+            <div class="contenttab" style="padding-left:30px">
                 <h6>Utilities</h6>
                 <div class="row">
                     <div class="two columns"><label for="voltage_phase">Voltage/Phase/Current *</label></div>
@@ -869,7 +872,9 @@ $user = $_SESSION["user"];
                         </select>
                     </div>
                 </div>
-
+            </div>
+            <input type="radio" name="name" class="tabsub"/>
+            <div class="contenttab" style="padding-left:30px">
                 <h6>Internal Chamber Configuration</h6>
                 <div class="row">
                     <div class="two columns">
@@ -1062,7 +1067,9 @@ $user = $_SESSION["user"];
                         <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>`C</b></label></div>
                     </div>
                 </div>
-
+            </div>
+            <input type="radio" name="name" class="tabsub"/>
+            <div class="contenttab" style="padding-left:30px">
                 <h6>External Chamber Configuration</h6>
                 <div class="row">
                     <div class="two columns">
@@ -1116,10 +1123,8 @@ $user = $_SESSION["user"];
                         <div class="two columns">&nbsp;</div>
                     </div>
                 </div>
-
-                <button onclick="location.href = 'form_equipment_list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
-                <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> SAVE</button>
             </div>
+        </div>
         </form>
         <script>
             $(".button").click(function () {

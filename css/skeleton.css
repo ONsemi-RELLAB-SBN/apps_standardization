@@ -1519,3 +1519,100 @@ dialog{
     }
 }
 /*ACCORDIAN END*/
+
+/*SUB TAB UNTUK FORM START*/
+.tabutama {
+    height: 98vh;
+    /*height: 100%;*/
+    position: relative;
+    overflow: hidden;
+}
+
+.tabsub {
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 25%;
+    outline: 12px solid;
+    outline-offset: -12px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+.tabsub:nth-of-type(1) {
+    outline-color: #f06868;
+    top: 0%;
+}
+.tabsub:nth-of-type(2) {
+    outline-color: #fab57a;
+    top: 12.5%;
+}
+.tabsub:nth-of-type(3) {
+    outline-color: #edf798;
+    top: 25%;
+}
+.tabsub:nth-of-type(4) {
+    outline-color: #80d6ff;
+    top: 37.5%;
+}
+.tabsub:nth-of-type(5) {
+    outline-color: #f06868;
+    top: 50%;
+}
+.tabsub:nth-of-type(6) {
+    outline-color: #fab57a;
+    top: 62.5%;
+}
+.tabsub:nth-of-type(7) {
+    outline-color: #edf798;
+    top: 75%;
+}
+.tabsub:nth-of-type(8) {
+    outline-color: #80d6ff;
+    top: 87.5%;
+}
+.tabsub:checked + .contenttab {
+    transform: translateX(0%);
+    transition: transform 0.4s ease 0.4s;
+}
+
+.contenttab {
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease;
+    transform: translateX(-100%);
+}
+/*.content:nth-of-type(1) {
+    background-color: #f06868;
+    background-color: gray;
+}
+.content:nth-of-type(2) {
+    background-color: #fab57a;
+    background-color: gray;
+}
+.content:nth-of-type(3) {
+    background-color: #edf798;
+    background-color: gray;
+}
+.content:nth-of-type(4) {
+    background-color: #80d6ff;
+    background-color: gray;
+}*/
+
+.tabtitle {
+    font-size: 2rem;
+    font-weight: bold;
+    /*color: #fff;*/
+}
+/*SUB TAB UNTUK FORM END*/
