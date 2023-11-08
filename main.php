@@ -75,15 +75,15 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
             document.getElementById("try1").onclick = function (e) {
                 e.preventDefault(); //Prevent the default behavior 
                 alert('DESIGN FORM UNDER DEVELOPMENT!');
-            }
+            };
             document.getElementById("try2").onclick = function (e) {
                 e.preventDefault(); //Prevent the default behavior 
                 alert('PROCESS FORM UNDER DEVELOPMENT!');
-            }
+            };
             document.getElementById("try3").onclick = function (e) {
                 e.preventDefault(); //Prevent the default behavior 
                 alert('ELECTRICAL TEST FORM UNDER DEVELOPMENT!');
-            }
+            };
         </script>
     </body>
 </html>
