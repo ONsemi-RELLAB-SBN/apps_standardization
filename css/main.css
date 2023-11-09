@@ -37,6 +37,7 @@ body {
 
 ol, ul {
     list-style: none;
+    border-radius: 10px;
 }
 
 blockquote, q {
@@ -81,15 +82,14 @@ input, select, textarea {
 }
 
 @media screen and (max-width: 480px) {
-
     html, body {
         min-width: 320px;
     }
-
 }
 
 html {
     box-sizing: border-box;
+    font-size: 16pt;
 }
 
 *, *:before, *:after {
@@ -112,33 +112,22 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 }
 
 /* Type */
-
-html {
-    font-size: 16pt;
-}
-
 @media screen and (max-width: 1680px) {
-
     html {
         font-size: 12pt;
     }
-
 }
 
 @media screen and (max-width: 736px) {
-
     html {
         font-size: 11pt;
     }
-
 }
 
 @media screen and (max-width: 360px) {
-
     html {
         font-size: 10pt;
     }
-
 }
 
 body, input, select, textarea {
@@ -229,17 +218,14 @@ h6 {
 }
 
 @media screen and (max-width: 736px) {
-
     h1 {
         font-size: 1.75rem;
         line-height: 1.4;
     }
-
     h2 {
         font-size: 1.25em;
         line-height: 1.5;
     }
-
 }
 
 sub {
@@ -752,6 +738,7 @@ ul.alt {
 ul.alt li {
     border-top: solid 1px #ffffff;
     padding: 0.5em 0;
+    border-radius: 50px;
 }
 
 ul.alt li:first-child {
