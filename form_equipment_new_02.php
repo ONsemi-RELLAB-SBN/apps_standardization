@@ -1,11 +1,12 @@
 <?php
-/*
+
+/* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-include './class/db.php';
-include './form_template.php';
-$id = 2;
+
+include 'form_template.php';
+$user = $_SESSION["user"];
 ?>
 
 <!DOCTYPE html>
@@ -14,13 +15,14 @@ $id = 2;
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>SAMPLE TAB</title>
+        <title>FORM | Standardization Survey</title>
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
-        <link rel="stylesheet" href="css/skeleton.css"/>
+        <link rel="stylesheet" type="text/css" href="css/w3.css">
+        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
         <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-        
+
         <style>
             input[type=text], input[type=password] {
                 width: 100%;
@@ -97,15 +99,46 @@ $id = 2;
                 display: block;
             }
         </style>
+
+        <script type="text/javascript">
+
+        </script>
+
     </head>
-    <body style="padding-top:50px">
+    <body>
+<!--        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <h5 style="border-left: none; padding-left: 100px;">Equipment Details</h5>
+                    <a href="#" class="nav__logo"><h5 style="border-left: none;">Equipment Details</h5></a>
+                </div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#general"        class="nav__link">General</a></li>
+                        <li class="nav__item"><a href="#identity"       class="nav__link">Identity</a></li>
+                        <li class="nav__item"><a href="#capability"     class="nav__link">Capability</a></li>
+                        <li class="nav__item"><a href="#characteristic" class="nav__link">Characteristic</a></li>
+                        <li class="nav__item"><a href="#safety"         class="nav__link">Safety</a></li>
+                        <li class="nav__item"><a href="#utilities"      class="nav__link">Utilities</a></li>
+                        <li class="nav__item"><a href="#daqt"           class="nav__link">DAQ</a></li>
+                        <li class="nav__item"><a href="#inconfig"       class="nav__link">Internal</a></li>
+                        <li class="nav__item"><a href="#extconfig"      class="nav__link">External</a></li>
+                    </ul>
+                </div>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>-->
+        <?php include './equipment_navigation.php';?>
+        <div class="twelve columns">&nbsp;</div>
+        <div class="twelve columns">&nbsp;</div>
+        <div class="twelve columns">&nbsp;</div>
+        <!--<h5 style="border-left: none;">Equipment Details</h5>-->
         <form id="add_equipment_form" action="crud_add_equipment.php" method="get">
-        <button onclick="location.href = 'form_equipment_list.php'" type="button" id="listBtn" class="u-pull-right"><i class='bx bx-list-ol bx-fw' ></i> List</button>
-        <button type="submit" id="myBtn" class="btn btn-primary u-pull-right"><i class='bx bx-send bx-fw' ></i> CREATE</button>
-        <div class="tabutama">
-            <input type="radio" name="name" checked="checked" class="tabsub"/>
-            <div class="contenttab" style="padding-left:30px">
-                <h6>General</h6>
+            <div class="row">
+
+                <h6 id="general">General</h6>
                 <div class="row">
                     <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                     <div class="three columns">
@@ -163,7 +196,7 @@ $id = 2;
                     <div class="one columns">&nbsp;</div>
                 </div>
 
-                <h6>Equipment Identity</h6>
+                <h6 id="identity">Equipment Identity</h6>
                 <div class="row">
                     <div class="two columns"><label for="eqpt_id">Equipment ID *</label></div>
                     <div class="three columns">
@@ -313,10 +346,8 @@ $id = 2;
                         }
                     }
                 </script>
-            </div>
-            <input type="radio" name="name" class="tabsub"/>
-            <div class="contenttab" style="padding-left:30px">
-                <h6>Capability</h6>
+
+                <h6 id="capability">Capability</h6>
                 <div class="row">
                     <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
                     <div class="one columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" > </div>
@@ -403,10 +434,8 @@ $id = 2;
                     <div class="one columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
-            </div>
-            <input type="radio" name="name" class="tabsub"/>
-            <div class="contenttab" style="padding-left:30px">
-                <h6>Characteristic</h6>
+
+                <h6 id="characteristic">Characteristic</h6>
                 <div class="row">
                     <div class="two columns">
                         <label for="no_interior">No. Interior Zones (doors) *</label>
@@ -629,10 +658,8 @@ $id = 2;
                         </select>
                     </div>
                 </div>
-            </div>
-            <input type="radio" name="name" class="tabsub"/>
-            <div class="contenttab" style="padding-left:30px">
-                <h6>Safety</h6>
+
+                <h6 id="safety">Safety</h6>
                 <div class="row">
                     <div class="two columns"><label for="tempProtection1">Temperature Protection 1 *</label></div>
                     <div class="three columns">
@@ -703,10 +730,8 @@ $id = 2;
                         </select>
                     </div>
                 </div>
-            </div>
-            <input type="radio" name="name" class="tabsub"/>
-            <div class="contenttab" style="padding-left:30px">
-                <h6>Utilities</h6>
+
+                <h6 id="utilities">Utilities</h6>
                 <div class="row">
                     <div class="two columns"><label for="voltage_phase">Voltage/Phase/Current *</label></div>
                     <div class="one columns"><input type="number" step="0.001" id="voltage_phase" name="voltage_phase" value="" > </div>
@@ -857,7 +882,7 @@ $id = 2;
                     </div>
                 </div>
 
-                <h6>DAQ</h6>
+                <h6 id="daqt">DAQ</h6>
                 <div class="row">
                     <div class="two columns"><label for="daq">DAQ (Realtime Leakage Monitoring) *</label></div>
                     <div class="three columns">
@@ -872,10 +897,8 @@ $id = 2;
                         </select>
                     </div>
                 </div>
-            </div>
-            <input type="radio" name="name" class="tabsub"/>
-            <div class="contenttab" style="padding-left:30px">
-                <h6>Internal Chamber Configuration</h6>
+
+                <h6 id="intconfig">Internal Chamber Configuration</h6>
                 <div class="row">
                     <div class="two columns">
                         <label for="int_config_type">Configuration Type *</label>
@@ -1067,10 +1090,8 @@ $id = 2;
                         <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>`C</b></label></div>
                     </div>
                 </div>
-            </div>
-            <input type="radio" name="name" class="tabsub"/>
-            <div class="contenttab" style="padding-left:30px">
-                <h6>External Chamber Configuration</h6>
+
+                <h6 id="extconfig">External Chamber Configuration</h6>
                 <div class="row">
                     <div class="two columns">
                         <label for="ext_config_type">Configuration Type *</label>
@@ -1123,8 +1144,10 @@ $id = 2;
                         <div class="two columns">&nbsp;</div>
                     </div>
                 </div>
+
+                <button onclick="location.href = 'form_equipment_list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+                <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> SAVE</button>
             </div>
-        </div>
         </form>
         <script>
             $(".button").click(function () {
@@ -1138,6 +1161,8 @@ $id = 2;
                 $("body").removeClass("modal-active");
             });
         </script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="assets/js/main.js"></script>
         <script src="js/multiselect-dropdown.js" ></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </body>

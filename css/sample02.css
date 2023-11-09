@@ -38,17 +38,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 /* Visual Styles */
-*, *:after, *:before {
+/**, *:after, *:before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-}
+}*/
 
-body {
+/*body {
     -webkit-font-smoothing: antialiased;
     background: #ecf0f1;
     font-family: "Raleway";
-}
+}*/
 
 h1 {
     text-align: center;
@@ -90,9 +90,9 @@ h1 {
     clear: both;
 }
 .pc-tab section div {
-    padding: 20px;
+    padding: 5px;
     width: 100%;
-    border: 1px solid #ddd;
+    /*border: 1px solid #ddd;*/
     background: #fff;
     line-height: 1.5em;
     letter-spacing: 0.3px;
@@ -101,7 +101,7 @@ h1 {
 .pc-tab section div h2 {
     margin: 0;
     font-family: "Raleway";
-    letter-spacing: 1px;
+    /*letter-spacing: 1px;*/
     color: #34495e;
 }
 

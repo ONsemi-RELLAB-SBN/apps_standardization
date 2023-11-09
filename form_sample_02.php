@@ -70,7 +70,7 @@ include './class/db.php';
             <input id="tab8" type="radio" name="pct" />
             <nav>
                 <ul>
-                    <li class="tab1"><label for="tab1">PARAMETER</label></li>
+                    <li class="tab1"><label for="tab1">GENERAL</label></li>
                     <li class="tab2"><label for="tab2">EQUIPMENT</label></li>
                     <li class="tab3"><label for="tab3">HARDWARE</label></li>
                     <li class="tab4"><label for="tab4">DAQ</label></li>
@@ -290,33 +290,35 @@ include './class/db.php';
                     </script>
                 </div>
                 <div class="tab2">
-                    <h2>Second</h2>
+                    <h6>Second</h6>
                     <p>Lorem ipsum 22dolor sit amet, consectetur adipisicing elit. Laborum nesciunt ipsum dolore error repellendus officiis aliquid a, vitae reprehenderit, accusantium vero, ad. Obcaecati numquam sapiente cupiditate. Praesentium eaque, quae error!</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, maiores.</p>
                     <!--<div w3-include-html="form_equipment.php"></div>--> 
                 </div>
                 <div class="tab3">
-                    <h2>Third</h2>
+                    <h6>Third</h6>
                     <p>Lorem ipsum 33dolor sit amet, consectetur adipisicing elit. Optio, nobis culpa rem, vitae earum aliqui s dfabdif nsif asdfbpias dfpiasbdpfib aspid fbapsid fiasdfp iasdfpiasb pdfi baspidfbapwuie baif d.</p>
+                    <div w3-include-html="form_equipment_01.php"></div> 
                 </div>
                 <div class="tab4">
-                    <h2>Fourth</h2>
+                    <h6>Fourth</h6>
                     <p>Lorem ipsum 44dolor sit amet, consectetur adipisicing elit. Optio, nobis culpa rem, vitae earum aliqui s dfabdif nsif asdfbpias dfpiasbdpfib aspid fbapsid fiasdfp iasdfpiasb pdfi baspidfbapwuie baif d.</p>
+                    <div w3-include-html="form_equipment_02.php"></div> 
                 </div>
                 <div class="tab5">
-                    <h2>Fifth</h2>
+                    <h6>Fifth</h6>
                     <p>Lorem ipsum 55dolor sit amet, consectetur adipisicing elit. Optio, nobis culpa rem, vitae earum aliqui s dfabdif nsif asdfbpias dfpiasbdpfib aspid fbapsid fiasdfp iasdfpiasb pdfi baspidfbapwuie baif d.</p>
                 </div>
                 <div class="tab6">
-                    <h2>Sixth</h2>
+                    <h6>Sixth</h6>
                     <p>Lorem ipsum66 dolor sit amet, consectetur adipisicing elit. Optio, nobis culpa rem, vitae earum aliqui s dfabdif nsif asdfbpias dfpiasbdpfib aspid fbapsid fiasdfp iasdfpiasb pdfi baspidfbapwuie baif d.</p>
                 </div>
                 <div class="tab7">
-                    <h2>Seventh</h2>
+                    <h6>Seventh</h6>
                     <p>Lorem ipsum  77dolor sit amet, consectetur adipisicing elit. Optio, nobis culpa rem, vitae earum aliqui s dfabdif nsif asdfbpias dfpiasbdpfib aspid fbapsid fiasdfp iasdfpiasb pdfi baspidfbapwuie baif d.</p>
                 </div>
                 <div class="tab8">
-                    <h2>Eight</h2>
+                    <h6>Eight</h6>
                     <p>Lorem ipsum 88 dolor sit amet, consectetur adipisicing elit. Optio, nobis culpa rem, vitae earum aliqui s dfabdif nsif asdfbpias dfpiasbdpfib aspid fbapsid fiasdfp iasdfpiasb pdfi baspidfbapwuie baif d.</p>
                 </div>
             </section>
