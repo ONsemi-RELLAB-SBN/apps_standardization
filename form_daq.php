@@ -159,8 +159,7 @@ include 'form_template.php';
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)):
-                                ?>
+                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                 <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                             <?php endwhile; ?>
                         </select>
@@ -173,8 +172,7 @@ include 'form_template.php';
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)):
-                                ?>
+                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                 <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                             <?php endwhile; ?>
                         </select>
@@ -189,8 +187,7 @@ include 'form_template.php';
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)):
-                                ?>
+                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                 <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                             <?php endwhile; ?>
                         </select>

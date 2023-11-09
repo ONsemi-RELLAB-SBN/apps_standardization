@@ -5,11 +5,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-//ob_start();
-//session_start();
+ob_start();
+session_start();
 
-if (!empty($_SESSION['user'])) {
-    $user = $_SESSION['user'];
+if (!empty($_SESSION['username']) && !empty($_SESSION['password'])) {
+    $username = $_SESSION['username'];
+    $password = $_SESSION['password'];
 } else {
     header('location:logout.php');
 }

@@ -5,8 +5,9 @@
  */
 ob_start();
 session_start();
-if (!empty($_SESSION['user'])) {
-    $user = $_SESSION['user'];
+if (!empty($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+    $password = $_SESSION['password'];
 } else {
     header('location:logout.php');
 }
@@ -35,11 +36,20 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
 
         <link rel="stylesheet" href="css/main.css" />
         <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+
+        <style>
+            .shape {
+                height: 130px;
+                width: 300px;
+                background-color: white;
+                border-radius: 25px;
+            }
+        </style>
     </head>
     <body class="is-preload">
         <div id="wrapper">
             <header id="header">
-                <div>
+                <div class="shape">
                     <img src="image/logo/onsemi_logo.png" alt="alt"/>
                 </div>
                 <div class="content">

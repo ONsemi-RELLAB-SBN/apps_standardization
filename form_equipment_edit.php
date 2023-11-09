@@ -106,9 +106,11 @@ $id = $_GET['edit'];
 
     </head>
     <body>
+        <?php include './navigation_equipment.php';?>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
-        <h5 style="border-left: none;">Equipment Details</h5>
+        <div class="twelve columns">&nbsp;</div>
+        <!--<h5 style="border-left: none;">Equipment Details</h5>-->
         <form id="update_equipment_form" action="crud_update_equipment.php" method="get">
             <div class="row">
                 <?php
@@ -117,7 +119,7 @@ $id = $_GET['edit'];
                 while ($rowForm = mysqli_fetch_array($resForm)): ?>
 
                     <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
-                    <h6>General</h6>
+                    <h6 id="general">General</h6>
                     <div class="row">
                         <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                         <div class="three columns">
@@ -175,7 +177,7 @@ $id = $_GET['edit'];
                         <div class="one columns">&nbsp;</div>
                     </div>
 
-                    <h6>Equipment Identity</h6>
+                    <h6 id="identity">Equipment Identity</h6>
                     <div class="row">
                         <div class="two columns"><label for="eqpt_id">Equipment ID *</label></div>
                         <div class="three columns">
@@ -333,7 +335,7 @@ $id = $_GET['edit'];
                         }
                     </script>
 
-                    <h6>Capability</h6>
+                    <h6 id="capability">Capability</h6>
                     <div class="row">
                         <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
                         <div class="one columns"><input type="number" step="0.001" class="form-control" id="volt_rating" name="volt_rating" value="<?php echo $rowForm['eqpt_volt_rating']; ?>" required> </div>
@@ -419,7 +421,7 @@ $id = $_GET['edit'];
                         <div class="two columns">&nbsp;</div>
                     </div>
 
-                    <h6>Characteristic</h6>
+                    <h6 id="characteristic">Characteristic</h6>
                     <div class="row">
                         <div class="two columns">
                             <label for="no_interior">No. Interior Zones (doors) *</label>
@@ -643,7 +645,7 @@ $id = $_GET['edit'];
                         </div>
                     </div>
 
-                    <h6>Safety</h6>
+                    <h6 id="safety">Safety</h6>
                     <div class="row">
                         <div class="two columns"><label for="tempProtection1">Temperature Protection 1 *</label></div>
                         <div class="three columns">
@@ -715,7 +717,7 @@ $id = $_GET['edit'];
                         </div>
                     </div>
 
-                    <h6>Utilities</h6>
+                    <h6 id="utilities">Utilities</h6>
                     <div class="row">
                         <div class="two columns"><label for="voltage_phase">Voltage/Phase/Current *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="voltage_phase" name="voltage_phase" value="<?php echo $rowForm['volt_phase_current']; ?>" required> </div>
@@ -871,7 +873,7 @@ $id = $_GET['edit'];
                         <?php } ?>
                     </div>
 
-                    <h6>DAQ</h6>
+                    <h6 id="daqt">DAQ</h6>
                     <div class="row">
                         <div class="two columns"><label for="daq">DAQ (Realtime Leakage Monitoring) *</label></div>
                         <div class="three columns">
@@ -887,7 +889,7 @@ $id = $_GET['edit'];
                         </div>
                     </div>
 
-                    <h6>Internal Chamber Configuration</h6>
+                    <h6 id="intconfig">Internal Chamber Configuration</h6>
                     <div class="row">
                         <div class="two columns">
                             <label for="int_config_type">Configuration Type *</label>
@@ -1074,7 +1076,7 @@ $id = $_GET['edit'];
                         </div>
                     <?php } ?>
 
-                    <h6>External Chamber Configuration</h6>
+                    <h6 id="extconfig">External Chamber Configuration</h6>
                     <div class="row">
                         <div class="two columns">
                             <label for="ext_config_type">Configuration Type *</label>

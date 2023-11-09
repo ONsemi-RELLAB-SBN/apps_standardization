@@ -62,6 +62,7 @@ include 'class/get_parameter.php';
                         <th><b>Location</b></th>
                         <th><b>Manufacturer</b></th>
                         <th><b>Lab Manager</b></th>
+                        <th><b>Asset No</b></th>
                         <th><b>Rel Test</b></th>
                         <th style="text-align:center"><b>Action</b></th>
                     </tr>
@@ -80,8 +81,9 @@ include 'class/get_parameter.php';
                             <td><?php echo getParameterValue($row_slides['lab_location']); ?></td>
                             <td><?php echo getParameterValue($row_slides['eqpt_manufacturer']); ?></td>
                             <td><?php echo getParameterValue($row_slides['champion']); ?></td>
+                            <td><?php echo $row_slides['eqpt_asset_no']; ?></td>
                             <td><?php echo getParameterValues($row_slides['rel_test']); ?></td>
-                            <td style="text-align:center">
+                            <td style="text-align:center;width: 400px;">
                                 <a href="form_equipment_view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><i class='bx bx-search-alt bx-fw'></i> VIEW </a>
                                 <a href="form_equipment_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
                                 <a href="form_equipment_delete.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><i class='bx bxs-trash bx-fw' ></i> DELETE </a>

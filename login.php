@@ -11,24 +11,35 @@ $ldapServer = "ldap://ldap.onsemi.com:389/o=ONDex"; // Your LDAP server URL
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
-    $user = "cn=" . $username . ",ou=ONSemi";
-    $ldapConn = ldap_connect($ldapServer) or die("That LDAP-URI was not parseable");
+    
+    if (!empty($username)) {
+        if (!empty($password)) {
+            $userldap = "cn=" . $username . ",ou=ONSemi";
+            $ldapConn = ldap_connect($ldapServer) or die("That LDAP-URI was not parseable");
 
-    if ($ldapConn) {
-        try {
-            $ldapbind = ldap_bind($ldapConn, $user, $password);
-            if ($ldapbind) {
-                echo "LDAP bind successful...";
-                header('location:main.php');
-                $_SESSION['user']= $username;
-                $_SESSION['pass']= $password;
-            } else {
-                $error_msg = ldap_error($ldapConn);
-//                $error_msg2 = ldap_error($ldapbind);
+            if ($ldapConn) {
+                try {
+                    $ldapbind = ldap_bind($ldapConn, $userldap, $password);
+                    echo ' '.$username;
+                    echo ' ',$password;
+                    echo ' ',$userldap;
+                    if ($ldapbind) {
+                        echo "LDAP bind successful...";
+                        header('location:main.php');
+                        $_SESSION['username']= $username;
+                        $_SESSION['password']= $password;
+                    } else {
+                        $error_msg = ldap_error($ldapConn);
+                    }
+                } catch (Exception $ex) {
+                    echo "Error :" . $ex->getMessage();
+                }
             }
-        } catch (Exception $ex) {
-            echo "Error :" . $ex->getMessage();
+        } else {
+            $error_msg = "PLEASE KEY IN VALID PASSWORD";
         }
+    } else {
+        $error_msg = "PLEASE KEY IN USERNAME";
     }
 }
 ?>
