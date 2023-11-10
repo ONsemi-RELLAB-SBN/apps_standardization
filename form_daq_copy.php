@@ -164,7 +164,7 @@ $id = $_GET['edit'];
                             <select id="manufacturer" name="manufacturer" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '025' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)):
                                     ?>
@@ -178,7 +178,7 @@ $id = $_GET['edit'];
                             <select id="model" name="model" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '026' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)):
                                     ?>
@@ -194,7 +194,7 @@ $id = $_GET['edit'];
                             <select id="daq_id" name="daq_id" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '024' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)):
                                     ?>
@@ -244,7 +244,7 @@ $id = $_GET['edit'];
                             <select id="display_volt_drop" name="display_volt_drop" style="width: 100%" readonly required>
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)):
                                     ?>
@@ -260,7 +260,7 @@ $id = $_GET['edit'];
                             <select id="board_insert_check" name="board_insert_check" style="width: 100%" onchange="updateToField()" required >
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)):
                                     ?>
@@ -274,7 +274,7 @@ $id = $_GET['edit'];
                             <select id="measure_prior_start_test" name="measure_prior_start_test" style="width: 100%" onchange="updateToField()" required >
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '020' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)):
                                     ?>
@@ -286,19 +286,9 @@ $id = $_GET['edit'];
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="monitoring_speed">Monitoring speed *</label></div>
-                        <div class="three columns">
-                            <select id="monitoring_speed" name="monitoring_speed" style="width: 100%" onchange="updateToField()" required >
-                                <option value="" selected=""></option>
-                                <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)):
-                                    ?>
-                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['monitoring_speed']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
-                            </select>
-                        </div>
-                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns"><input type="number" step="0.001" id="monitoring_speed" name="monitoring_speed" value="<?php echo $rowForm['monitoring_speed'] ?>" required> </div>
+                        <div class="one columns"><label for="monitoring_speed" style="text-align: left"><b>s</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="leakage_measure_reso">Leakage measurement resolution *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="leakage_measure_reso" name="leakage_measure_reso" value="<?php echo $rowForm['leakage_measure_resolution']; ?>" required> </div>
                         <div class="one columns"><label for="leakage_measure_reso" style="text-align: left"><b>A</b></label></div>
@@ -358,7 +348,7 @@ $id = $_GET['edit'];
                             <select id="measure_type_hardware" name="measure_type_hardware" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '033' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)):
                                     ?>
@@ -436,7 +426,7 @@ $id = $_GET['edit'];
                             <select id="supported_eqpt" name="supported_eqpt" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '034' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                     <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['supported_eqpt']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
@@ -457,7 +447,7 @@ $id = $_GET['edit'];
                             <select id="hw_resistence_measure" name="hw_resistence_measure" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '035' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                     <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['hw_resistance_measure']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
@@ -480,7 +470,7 @@ $id = $_GET['edit'];
                             <select id="hw_volt_measure" name="hw_volt_measure" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '036' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                     <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['hw_voltage_measure']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
@@ -501,7 +491,7 @@ $id = $_GET['edit'];
                             <select id="hw_temp_measure" name="hw_temp_measure" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '037' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                     <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['hw_temp_measure']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
@@ -524,7 +514,7 @@ $id = $_GET['edit'];
                             <select id="daq_eqpt_interface" name="daq_eqpt_interface" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '038' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                     <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['daq_eqpt_interface']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
@@ -545,7 +535,7 @@ $id = $_GET['edit'];
                             <select id="daq_ps_interface" name="daq_ps_interface" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '038' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)):
                                     ?>

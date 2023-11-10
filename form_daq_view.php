@@ -150,10 +150,9 @@ $id = $_GET['view'];
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="monitoring_speed">Monitoring speed *</label></div>
-                        <div class="three columns">
-                            <input type="text" id="monitoring_speed" name="monitoring_speed" value="<?php echo getParameterValue($rowForm['monitoring_speed']); ?>" required readonly />
-                        </div>
-                        <div class="one columns">&nbsp;</div>
+                        <div class="one columns"><input type="number" step="0.001" id="monitoring_speed" name="monitoring_speed" value="<?php echo $rowForm['monitoring_speed'] ?>" required> </div>
+                        <div class="one columns"><label for="monitoring_speed" style="text-align: left"><b>s</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="leakage_measure_reso">Leakage measurement resolution *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="leakage_measure_reso" name="leakage_measure_reso" value="<?php echo $rowForm['leakage_measure_resolution']; ?>" required> </div>
                         <div class="one columns"><label for="leakage_measure_reso" style="text-align: left"><b>A</b></label></div>
