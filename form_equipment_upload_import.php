@@ -16,36 +16,41 @@ if (isset($_FILES['file'])) {
         echo 'Invalid file type. Only Excel and XLSX files are allowed.';
         exit;
     }
-    
+
 //    $inputFileType = 'Xls';
 //    $inputFileName = './sampleData/example1.xls';
-
-    /**  Create a new Reader of the type defined in $inputFileType  **/
-    $reader = PhpSpreadsheet\IOFactory::createReader($fileType);
-    /**  Advise the Reader that we only want to load cell data  **/
-    $reader->setReadDataOnly(true);
-    /**  Load $inputFileName to a Spreadsheet Object  **/
-    $spreadsheet = $reader->load($fileName);
-    
-
-//    move_uploaded_file($tmpFileName, 'uploaded_img/' . $fileName);
 //
+//    /**  Create a new Reader of the type defined in $inputFileType  **/
+//    $reader = PhpSpreadsheet\IOFactory::createReader($fileType);
+//    /**  Advise the Reader that we only want to load cell data  **/
+//    $reader->setReadDataOnly(true);
+//    /**  Load $inputFileName to a Spreadsheet Object  **/
+//    $spreadsheet = $reader->load($fileName);
+
+
+    move_uploaded_file($tmpFileName, 'uploaded_img/' . $fileName);
+
 //    require_once 'PHPExcel.php';
 //
 //    $objPHPExcel = PHPExcel_IOFactory::load('uploaded_img/' . $fileName);
 //    $activeSheet = $objPHPExcel->getSheet(0);
 //    $highestRow = $activeSheet->getHighestRow();
 //    $highestColumn = $activeSheet->getHighestColumn();
+//    
+//    echo '<br>$highestRow >>> ' , $highestRow;
+//    echo '<br>$highestColumn >>> ' , $highestColumn;
 //
 //    echo '<table style="width: 100%;">';
 //    echo '<tr>';
 //    for ($column = 'A'; $column <= $highestColumn; $column++) {
+//        echo '<br> $column : ' , $column;
 //        $cellValue = $activeSheet->getCell($column . 1)->getValue();
 //        echo '<th>' . $cellValue . '</th>';
 //    }
 //    echo '</tr>';
 //
 //    for ($row = 2; $row <= $highestRow; $row++) {
+//        echo '<br> row ::: ',$row;
 //        echo '<tr>';
 //        for ($column = 'A'; $column <= $highestColumn; $column++) {
 //            $cellValue = $activeSheet->getCell($column . $row)->getValue();
@@ -53,8 +58,16 @@ if (isset($_FILES['file'])) {
 //        }
 //        echo '</tr>';
 //    }
-//
-//    echo '</table>';
+
+    require_once 'SimpleXLSX.php';
+
+    if ($xlsx = SimpleXLSX::parse('uploaded_img/' . $fileName)) {
+        print_r($xlsx->rows());
+    } else {
+        echo SimpleXLSX::parseError();
+    }
+
+    echo '</table>';
 } else {
     echo 'No file uploaded.';
 }
