@@ -53,7 +53,7 @@ include 'class/get_parameter.php';
             <div class="row">&nbsp;</div>
             <div class="row">&nbsp;</div>
             <div class="row">
-                <h2 class="pull-left" style="border-left:none">DAQ List</h2>
+                <h2 class="pull-left" style="border-left:none">Design List</h2>
                 <button onClick="window.location.href = window.location.href" type="button" class="btn btn-default btn-lg pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
             </div>
             <table class="u-full-width">
@@ -95,7 +95,7 @@ include 'class/get_parameter.php';
                     <?php endwhile; ?>
                 </tbody>
             </table>
-            <button onclick="location.href = 'form_design.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Equipment</button>
+            <button onclick="location.href = 'form_design.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Design</button>
         </div>
     </body>
 </html>

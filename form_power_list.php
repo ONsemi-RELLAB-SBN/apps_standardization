@@ -91,7 +91,7 @@ include 'class/get_parameter.php';
                     <?php endwhile; ?>
                 </tbody>
             </table>
-            <button onclick="location.href = 'form_power.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Equipment</button>
+            <button onclick="location.href = 'form_power.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Power Supply</button>
         </div>
     </body>
 </html>
