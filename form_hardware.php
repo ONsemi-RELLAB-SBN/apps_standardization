@@ -143,7 +143,7 @@ include 'form_template.php';
                     <select id="hw_type" name="hw_type" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '019' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -156,7 +156,7 @@ include 'form_template.php';
                     <select id="manufacturer" name="manufacturer" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '018' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -222,7 +222,7 @@ include 'form_template.php';
                     <select id="pcb_material" name="pcb_material" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '042' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -241,7 +241,7 @@ include 'form_template.php';
                     <select id="frame_material" name="frame_material" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '043' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -260,7 +260,7 @@ include 'form_template.php';
                     <select id="board_coat" name="board_coat" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '044' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -294,7 +294,7 @@ include 'form_template.php';
                     <select id="universal" name="universal" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '011' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '045' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -315,7 +315,7 @@ include 'form_template.php';
                     <select id="socket_conn_type" name="socket_conn_type" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '012' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '046' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
@@ -351,7 +351,7 @@ include 'form_template.php';
                     <select id="support_package" name="support_package" style="width: 100%" required>
                         <option value="" selected=""></option>
                         <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '047' ORDER BY code ASC";
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>

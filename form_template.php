@@ -40,7 +40,7 @@ include 'class/ldap.php';
                 <h7 class="h11"><li><a href="form_design.php">  <i class='bx bxl-blender bx-fw' style='color:#ffffff'></i>Design</a></li></h7>
                 <h7 class="h11"><li><a href="form_process.php"> <i class='bx bx-git-compare bx-fw' style='color:#ffffff'></i>Process</a></li></h7>
                 <h7 class="h11"><li><a href="form_test.php">    <i class='bx bxl-messenger bx-fw' style='color:#ffffff'></i>Elec Test</a></li></h7>
-                <h7 class="h11"><li><a href="logout.php">       <i class='bx bx-log-out bx-fw' style='color:#ffffff' ></i>LOGOUT</a></li></h7>
+                <h7 class="h11"><li><a href="logout_click.php"> <i class='bx bx-log-out bx-fw' style='color:#ffffff' ></i>LOGOUT</a></li></h7>
             </ul>
         </nav>
     </body>

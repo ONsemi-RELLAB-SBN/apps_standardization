@@ -870,6 +870,7 @@ there.
     transition: transform 120ms ease-in;
     font-weight: bold;
     line-height: 1.2;
+    color: lightgray;
 }
 .form-row-field {
     box-sizing: border-box;
