@@ -52,9 +52,11 @@ $id = $_GET['edit'];
         
     </head>
     <body>
+        <?php include './navigation_power_supply.php';?>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
-        <h5 style="border-left: none;">Power Supply Details</h5>
+        <div class="twelve columns">&nbsp;</div>
+        <!--<h5 style="border-left: none;">Power Supply Details</h5>-->
         <form id="copy_power_form" action="crud_add_power.php" method="get">
             <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
             <?php
@@ -62,7 +64,7 @@ $id = $_GET['edit'];
             $resForm = mysqli_query($con, $sqlFormData);
             while ($rowForm = mysqli_fetch_array($resForm)): ?>
             
-                <h6>General</h6>
+                <h6 id="general">General</h6>
                 <div class="row">
                     <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                     <div class="three columns">
@@ -120,7 +122,7 @@ $id = $_GET['edit'];
                     <div class="one columns">&nbsp;</div>
                 </div>
 
-                <h6>Power Supply Identity</h6>
+                <h6 id="identity">Power Supply Identity</h6>
                 <div class="row">
                     <div class="two columns"><label for="manufacturer">Manufacturer *</label></div>
                     <div class="three columns">
@@ -150,7 +152,7 @@ $id = $_GET['edit'];
                     <div class="one columns">&nbsp;</div>
                 </div>
 
-                <h6>Capability</h6>
+                <h6 id="capability">Capability</h6>
                 <div class="row">
                     <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
                     <div class="one columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="<?php echo $rowForm['voltage_rating']; ?>" required> </div>
@@ -205,7 +207,7 @@ $id = $_GET['edit'];
                     </div>
                 </div>
 
-                <h6>Characteristics</h6>
+                <h6 id="characteristic">Characteristics</h6>
                 <div class="row">
                     <div class="two columns"><label for="dimension_w">Dimensions (W) *</label></div>
                     <div class="one columns"><input type="number" step="0.001" id="dimension_w" name="dimension_w" value="<?php echo $rowForm['ps_dimension_w']; ?>" required> </div>
@@ -355,7 +357,7 @@ $id = $_GET['edit'];
                     <div class="one columns">&nbsp;</div>
                 </div>
 
-                <h6>Capacity</h6>
+                <h6 id="capacity">Capacity</h6>
                 <div class="row">
                     <div class="two columns">
                         <label for="no_output_channel">Number of output channels *</label>

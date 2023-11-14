@@ -33,17 +33,18 @@ $id = $_GET['view'];
         
     </head>
     <body>
+        <?php include './navigation_hardware.php';?>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
-        <h5 style="border-left: none;">Hardware Details</h5>
+        <div class="twelve columns">&nbsp;</div>
+        <!--<h5 style="border-left: none;">Hardware Details</h5>-->
         <form id="view_hardware_form" role="form" action="" method="get">
             <?php
             $sqlFormData = "SELECT * FROM gest_form_hw WHERE id = '$id'";
             $resForm = mysqli_query($con, $sqlFormData);
-            while ($rowForm = mysqli_fetch_array($resForm)):
-                ?>
+            while ($rowForm = mysqli_fetch_array($resForm)): ?>
             
-            <h6>General</h6>
+            <h6 id="general">General</h6>
             <div class="row">
                 <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                 <div class="three columns">
@@ -69,7 +70,7 @@ $id = $_GET['view'];
                 <div class="one columns">&nbsp;</div>
             </div>
 
-            <h6>Hardware Identity</h6>
+            <h6 id="identity">Hardware Identity</h6>
             <div class="row">
                 <div class="two columns"><label for="hw_type">Hardware Type *</label></div>
                 <div class="three columns">
@@ -87,7 +88,7 @@ $id = $_GET['view'];
                 <div class="three columns"><input type="text" id="assembly_no" name="assembly_no" value="<?php echo $rowForm['assembly_no']; ?>" required readonly></div>
             </div>
 
-            <h6>Capability</h6>
+            <h6 id="capability">Capability</h6>
             <div class="row">
                 <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
                 <div class="one columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="<?php echo $rowForm['voltage_rating']; ?>" required> </div>
@@ -116,7 +117,7 @@ $id = $_GET['view'];
                 </div>
             </div>
 
-            <h6>Characteristic</h6>
+            <h6 id="characteristic">Characteristic</h6>
             <div class="row">
                 <div class="two columns"><label for="pcb_material">PCB Material *</label></div>
                 <div class="three columns">
@@ -249,7 +250,7 @@ $id = $_GET['view'];
                 <div class="two columns">&nbsp;</div>
             </div>
 
-            <h6>Capacity</h6>
+            <h6 id="capacity">Capacity</h6>
             <div class="row">
                 <div class="two columns"><label for="max_dut_mb">Max DUT qty per motherboard *</label></div>
                 <div class="one columns"><input type="number" step="0.001" id="max_dut_mb" name="max_dut_mb" value="<?php echo $rowForm['max_dut_qty_mb']; ?>" required> </div>

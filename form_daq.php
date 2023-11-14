@@ -83,12 +83,14 @@ include 'form_template.php';
         
     </head>
     <body>
+        <?php include './navigation_daq.php';?>
+        <div class="row">&nbsp;</div>
         <div class="row">&nbsp;</div>
         <div class="row">&nbsp;</div>
         <div class="row">
-            <h5 style="border-left: none;">DAQ Detail</h5>
+            <!--<h5 style="border-left: none;">DAQ Detail</h5>-->
             <form id="add_daq_form" role="form" action="crud_add_daq.php" method="get">
-                <h6>General</h6>
+                <h6 id="general">General</h6>
                 <div class="row">
                     <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                     <div class="three columns">
@@ -150,7 +152,7 @@ include 'form_template.php';
                     <div class="one columns">&nbsp;</div>
                 </div>
                 
-                <h6>DAQ Identity</h6>
+                <h6 id="identity">DAQ Identity</h6>
                 <div class="row">
                     <div class="two columns"><label for="manufacturer">Manufacturer *</label></div>
                     <div class="three columns">
@@ -195,7 +197,7 @@ include 'form_template.php';
                     <div class="one columns">&nbsp;</div>
                 </div>
 
-                <h6>Capacity</h6>
+                <h6 id="capacity">Capacity</h6>
                 <div class="row">
                     <div class="two columns"><label for="no_temp_channel">Number of temperature channels *</label></div>
                     <div class="one columns"><input type="number" step="0.001" id="no_temp_channel" name="no_temp_channel" value="" required> </div>
@@ -213,7 +215,7 @@ include 'form_template.php';
                     <div class="two columns">&nbsp;</div>
                 </div>
                 
-                <h6>Capability</h6>
+                <h6 id="capability">Capability</h6>
                 <div class="row">
                     <div class="two columns"><label for="volt_measure_range">Voltage measurement range *</label></div>
                     <div class="one columns"><input type="number" step="0.001" id="volt_measure_range" name="volt_measure_range" value="" required> </div>
@@ -349,7 +351,7 @@ include 'form_template.php';
                     <div class="one columns">&nbsp;</div>
                 </div>
 
-                <h6>Characteristics</h6>
+                <h6 id="characteristic">Characteristics</h6>
                 <div class="row">
                     <div class="two columns">
                         <label for="analog_input_single">Number of analog inputs (single ended) *</label>
