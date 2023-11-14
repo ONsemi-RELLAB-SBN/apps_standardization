@@ -11,7 +11,7 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', true);
 
 require_once __DIR__.'\SimpleXLSX.php';
-
+$data = '';
 echo '<h1>EQUIPMENT FORM - MASS UPLOAD</h1>';
 
 if (isset($_FILES['file'])) {
@@ -29,6 +29,7 @@ if (isset($_FILES['file'])) {
             echo '<tr>';
             for ($i = 0; $i < $cols; $i ++) {
                 echo '<td>' . ( isset($r[ $i ]) ? $r[ $i ] : '&nbsp;' ) . '</td>';
+                $data[$i] .= $r[$i];
             }
             echo '</tr>';
         }
@@ -36,8 +37,11 @@ if (isset($_FILES['file'])) {
     } else {
         echo SimpleXLSX::parseError();
     }
+    
 }
 echo '<h2>Upload equipment form excel below</h2>
 <form method="post" enctype="multipart/form-data">
 *.XLSX <input type="file" name="file"  />&nbsp;&nbsp;<input type="submit" value="Parse" />
 </form>';
+
+echo 'DATA RAW KITA >> ' . $data;
