@@ -60,14 +60,14 @@ if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp'])
                 </div>
                 <nav>
                     <ul>
-                        <li style="background-color: blueviolet" title="Parameter"><a href="parameter.php">Parameter</a></li>
                         <li style="background-color: green"><a href="form_equipment.php">Equipment</a></li>
                         <li style="background-color: green"><a href="form_hardware.php">Hardware</a></li>
                         <li style="background-color: green"><a href="form_daq.php">DAQ</a></li>
                         <li style="background-color: green"><a href="form_power.php">Power Supply</a></li>
-                        <li style="background-color: orange" title="Under Development" id="try1" > <a href="#">Design</a></li>
-                        <li style="background-color: orange" title="Under Development" id="try2" > <a href="#">Process</a></li>
-                        <li style="background-color: orange" title="Under Development" id="try3" > <a href="#">Elec Test</a></li>
+                        <li style="background-color: gray" title="Under Development" id="try1" > <a href="#">Design</a></li>
+                        <li style="background-color: gray" title="Under Development" id="try2" > <a href="#">Process</a></li>
+                        <li style="background-color: gray" title="Under Development" id="try3" > <a href="#">Elec Test</a></li>
+                        <li style="background-color: blueviolet" title="Parameter"><a href="parameter.php">Parameter</a></li>
                     </ul>
                 </nav>
             </header>
