@@ -54,7 +54,7 @@ include 'class/get_parameter.php';
             <div class="row">&nbsp;</div>
             <div class="row">
                 <h2 class="pull-left" style="border-left:none">Process List</h2>
-                <button onClick="window.location.href = window.location.href" type="button" class="btn btn-default btn-lg pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
+                <button onClick="window.location.href = window.location.href" type="button" class="btn btn-default btn-lg u-pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
             </div>
             <table class="u-full-width">
                 <thead>
@@ -94,6 +94,7 @@ include 'class/get_parameter.php';
                             </td>
                         </tr>
                     <?php endwhile; ?>
+                    <a href="crud_export_process.php" title="Download" data-toggle="tooltip"><i class='bx bx-cloud-download bx-fw'></i></i> DOWNLOAD </a>
                 </tbody>
             </table>
             <button onclick="location.href = 'form_process.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Process</button>
