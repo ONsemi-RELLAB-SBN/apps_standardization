@@ -6,6 +6,7 @@
  */
 
 include 'class/db.php';
+include './class/ldap.php';
 
 $labLocation        = $_GET['lab_location'];
 $strategy           = $_GET['strategy'];
@@ -43,7 +44,7 @@ $newinsert = "INSERT INTO gest_form_ps (lab_location, strategy, standard_categor
         . "eqpt_interface, lan_port, gpib_interface, other_interface, input_voltage, no_output, created_by, created_date, status, flag) "
         . "VALUES ('$labLocation', '$strategy', '$standardization', '$champion', '$manufacturer', '$model', '$voltRate', '$currRate', '$maxPower', '$voltDigit', "
         . "'$currDigit', '$voltProtek', '$currProtek', '$dimensionw', '$dimensiond', '$dimensionh', '$weight', '$remote', '$vmonitor', '$cmonitor', "
-        . "'$interface', '$lamPort', '$qpib', '$other', '$inputVolt', '$output', 'System', NOW(), 'Active', '1')";
+        . "'$interface', '$lamPort', '$qpib', '$other', '$inputVolt', '$output', '$username', NOW(), 'Active', '1')";
 $upload = mysqli_query($con, $newinsert);
 
 ?>

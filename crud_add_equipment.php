@@ -4,6 +4,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 include 'class/db.php';
+include './class/ldap.php';
 
 $labLocation        = $_GET['lab_location'];
 $strategy           = $_GET['strategy'];
@@ -107,7 +108,7 @@ $newinsert = "INSERT INTO gest_form_eqpt (eqpt_id, lab_location, strategy, stand
         . "'$maxPsBoardSLot', '$maxPsEqpt', '$airflow', '$tempProtection1', '$tempProtection2', '$tempProtection3', '$smokeDetector', '$emo', '$voltagePhase', '$phase', "
         . "'$exhaust', '$n2gas', '$oxyLevel', '$liquid', '$chillWater', '$diWater', '$waterTopup', '$daq', '$intConfigType', '$jackHole', "
         . "'$connVoltRating', '$connCurrentRating', '$connTemp_rating', '$noPin', '$pinPitch', '$connRack', '$wireVoltRating', '$wireCurrRating', '$wireTempRating', '$extConfigType', "
-        . "'$intVoltRating', '$intCurrRating', 'System', NOW(), 'Active', '1')";
+        . "'$intVoltRating', '$intCurrRating', '$username', NOW(), 'Active', '1')";
 
 $upload = mysqli_query($con, $newinsert);
 

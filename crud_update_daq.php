@@ -6,6 +6,7 @@
  */
 
 include 'class/db.php';
+include 'class/ldap.php';
 
 $id                 = $_GET['id'];
 $labLocation        = $_GET['lab_location'];
@@ -77,6 +78,8 @@ $update = "UPDATE gest_form_daq SET "
         . "hw_voltage_measure = '$hwMeasureV', "
         . "hw_temp_measure = '$hwMeasureT', "
         . "daq_eqpt_interface = '$eqptInt', "
+        . "updated_by = '$username', "
+        . "update_date = NOW(), "
         . "daq_ps_interface = '$psInt' "
         . "WHERE id = '$id' "
         . "AND status='Active' AND flag=1 LIMIT 1;";

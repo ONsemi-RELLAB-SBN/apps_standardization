@@ -6,6 +6,7 @@
  */
 
 include 'class/db.php';
+include 'class/ldap.php';
 
 $id         = $_GET['id'];
 $labLctn    = $_GET['lab_location'];
@@ -89,6 +90,8 @@ $update = "UPDATE gest_form_hw SET "
         . "no_pin = '$noPins', "
         . "pin_pitch = '$pinPitch', "
         . "edgefinger_thickness = '$edge', "
+        . "updated_by = '$username', "
+        . "update_date = NOW(), "
         . "max_dut_qty_mb = '$maxDut' "
         . "WHERE id = '$id' "
         . "AND status='Active' AND flag=1 LIMIT 1;";

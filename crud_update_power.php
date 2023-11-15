@@ -6,6 +6,7 @@
  */
 
 include 'class/db.php';
+include 'class/ldap.php';
 
 $id                 = $_GET['id'];
 $labLocation        = $_GET['lab_location'];
@@ -65,6 +66,8 @@ $update = "UPDATE gest_form_ps SET "
         . "lan_port = '$lamPort', "
         . "gpib_interface = '$qpib', "
         . "other_interface = '$other', "
+        . "updated_by = '$username', "
+        . "update_date = NOW(), "
         . "no_output = '$output' "
         . "WHERE id = '$id' "
         . "AND status='Active' AND flag=1 LIMIT 1;";

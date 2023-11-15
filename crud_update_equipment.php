@@ -6,6 +6,7 @@
  */
 
 include 'class/db.php';
+include 'class/ldap.php';
 
 $id                 = $_GET['id'];
 $labLocation        = $_GET['lab_location'];
@@ -171,7 +172,8 @@ $update = "UPDATE gest_form_eqpt SET "
         . "chilled_water = '$chillWater', "
         . "n2_gas = '$n2gas', "
         . "oxygen_level_detector = '$oxyLevel', "
-        . "created_by = 'System', "
+        . "updated_by = '$username', "
+        . "update_date = NOW(), "
         . "status = 'Active' "
         . "WHERE id = '$id'";
 $uprun = mysqli_query($con, $update);
