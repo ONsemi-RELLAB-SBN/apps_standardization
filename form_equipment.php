@@ -4,7 +4,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 include 'form_template.php';
-$user = $_SESSION["user"];
+include 'class/check_user.php';
+checkUser($username, 'form_equipment_list.php');
 ?>
 
 <!DOCTYPE html>
