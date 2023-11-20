@@ -80,7 +80,7 @@ include 'class/get_parameter.php';
                             <td style="text-align:center"><?php echo $t; ?></td>
                             <td><?php echo getParameterValue($row_slides['eqpt_id']); ?></td>
                             <td><?php echo getParameterValue($row_slides['lab_location']); ?></td>
-                            <td><?php echo getParameterValue($row_slides['eqpt_manufacturer']); ?></td>
+                            <td><?php echo getParameterValue($row_slides['manufacturer']); ?></td>
                             <td><?php echo getParameterValue($row_slides['champion']); ?></td>
                             <td><?php echo $row_slides['eqpt_asset_no']; ?></td>
                             <td><?php echo getParameterValues($row_slides['rel_test']); ?></td>

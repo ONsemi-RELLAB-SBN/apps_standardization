@@ -93,10 +93,11 @@ include 'class/get_parameter.php';
                             </td>
                         </tr>
                     <?php endwhile; ?>
-                    <a href="crud_export_test.php" title="Download" data-toggle="tooltip"><i class='bx bx-cloud-download bx-fw'></i></i> DOWNLOAD </a>
+                    <!--<a href="crud_export_test.php" title="Download" data-toggle="tooltip"><i class='bx bx-cloud-download bx-fw'></i></i>  </a>-->
                 </tbody>
             </table>
             <button onclick="location.href = 'form_test.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Electrical Test</button>
+            <button onclick="location.href = 'crud_export_test.php'" type="button" id="dlBtn"><i class='bx bx-cloud-download bx-fw'></i> Download</button>
         </div>
     </body>
 </html>

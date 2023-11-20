@@ -21,45 +21,7 @@ echo '<h2>Upload Standardization Form files below</h2>
 
 if (isset($_FILES['file'])) {
     if ($xlsx = SimpleXLSX::parse($_FILES['file']['tmp_name'])) {
-//        echo '<pre>' . print_r($xlsx->sheetNames(), true) . '</pre>';
-
-        echo '<table cellpadding="10">
-            <tr><td valign="top">';
-
-        // output worksheet 1 (index = 0)
-
-        $dim = $xlsx->dimension();
-        $num_cols = $dim[0];
-        $num_rows = $dim[1];
-
-        echo '<h2>' . $xlsx->sheetName(0) . '</h2>';
-        echo '<table border=1 border-collapse=collapse>';
-        foreach ($xlsx->rows() as $k => $r) {
-            // SKIP first 3 column for the labelling
-            if ($k == 0)
-                continue;
-            if ($k == 1)
-                continue;
-            if ($k == 2)
-                continue;
-            for ($j = 0; $j < $num_cols; $j++) {
-                if ($j == 1) {
-                    if ($r[$j] == '') {
-                        if ($k == 4) {
-                            echo '<tr><td colspan=' . $num_cols . '>No Data</td></tr>';
-                        }
-                    } else {
-                        echo '<tr>';
-                        for ($i = 0; $i < $num_cols; $i++) {
-                            echo '<td>' . (!empty($r[$i]) ? $r[$i] : '&nbsp;' ) . '</td>';
-                        }
-                        echo '</tr>';
-                    }
-                }
-            }
-        }
-        echo '</table>';
-        echo '</td></tr></table>';
+        echo '<pre>' . print_r($xlsx->sheetNames(), true) . '</pre>';
 
         // START TABLE HARDWARE
         echo '<table cellpadding="10">
@@ -95,6 +57,7 @@ if (isset($_FILES['file'])) {
         echo '</table>';
         echo '</td></tr></table>';
         // END TABLE HARDWARE
+
         // START TABLE DAQ
         echo '<table cellpadding="10">
             <tr><td valign="top">';
@@ -105,15 +68,15 @@ if (isset($_FILES['file'])) {
 
         echo '<h2>' . $xlsx->sheetName(2) . '</h2>';
         echo '<table border=1>';
-        foreach ($xlsx->rows(1) as $k => $r) {
+        foreach ($xlsx->rows(2) as $k => $r) {
             if ($k == 0)
                 continue;
-            if ($k == 1)
-                continue;
+//            if ($k == 1)
+//                continue;
             for ($j = 0; $j < $num_cols; $j++) {
                 if ($j == 1) {
                     if ($r[$j] == '') {
-                        if ($k == 3) {
+                        if ($k == 2) {
                             echo '<tr><td colspan=' . $num_cols . '>No Data</td></tr>';
                         }
                     } else {
@@ -139,16 +102,16 @@ if (isset($_FILES['file'])) {
 
         echo '<h2>' . $xlsx->sheetName(3) . '</h2>';
         echo '<table border=1>';
-        foreach ($xlsx->rows(1) as $k => $r) {
+        foreach ($xlsx->rows(3) as $k => $r) {
             // SKIP first 3 column for the labelling
             if ($k == 0)
                 continue;
-            if ($k == 1)
-                continue;
+//            if ($k == 1)
+//                continue;
             for ($j = 0; $j < $num_cols; $j++) {
                 if ($j == 1) {
                     if ($r[$j] == '') {
-                        if ($k == 3) {
+                        if ($k == 2) {
                             echo '<tr><td colspan=' . $num_cols . '>No Data</td></tr>';
                         }
                     } else {
@@ -174,15 +137,15 @@ if (isset($_FILES['file'])) {
 
         echo '<h2>' . $xlsx->sheetName(4) . '</h2>';
         echo '<table border=1>';
-        foreach ($xlsx->rows(1) as $k => $r) {
+        foreach ($xlsx->rows(4) as $k => $r) {
             if ($k == 0)
                 continue;
-            if ($k == 1)
-                continue;
+//            if ($k == 1)
+//                continue;
             for ($j = 0; $j < $num_cols; $j++) {
                 if ($j == 1) {
                     if ($r[$j] == '') {
-                        if ($k == 3) {
+                        if ($k == 2) {
                             echo '<tr><td colspan=' . $num_cols . '>No Data</td></tr>';
                         }
                     } else {
@@ -208,15 +171,15 @@ if (isset($_FILES['file'])) {
 
         echo '<h2>' . $xlsx->sheetName(5) . '</h2>';
         echo '<table border=1>';
-        foreach ($xlsx->rows(1) as $k => $r) {
+        foreach ($xlsx->rows(5) as $k => $r) {
             if ($k == 0)
                 continue;
-            if ($k == 1)
-                continue;
+//            if ($k == 1)
+//                continue;
             for ($j = 0; $j < $num_cols; $j++) {
                 if ($j == 1) {
                     if ($r[$j] == '') {
-                        if ($k == 3) {
+                        if ($k == 2) {
                             echo '<tr><td colspan=' . $num_cols . '>No Data</td></tr>';
                         }
                     } else {
@@ -242,15 +205,15 @@ if (isset($_FILES['file'])) {
 
         echo '<h2>' . $xlsx->sheetName(6) . '</h2>';
         echo '<table border=1>';
-        foreach ($xlsx->rows(1) as $k => $r) {
+        foreach ($xlsx->rows(6) as $k => $r) {
             if ($k == 0)
                 continue;
-            if ($k == 1)
-                continue;
+//            if ($k == 1)
+//                continue;
             for ($j = 0; $j < $num_cols; $j++) {
                 if ($j == 1) {
                     if ($r[$j] == '') {
-                        if ($k == 3) {
+                        if ($k == 2) {
                             echo '<tr><td colspan=' . $num_cols . '>No Data</td></tr>';
                         }
                     } else {
@@ -269,4 +232,42 @@ if (isset($_FILES['file'])) {
     } else {
         echo SimpleXLSX::parseError();
     }
+}
+
+function readEquipment() {
+    echo '<table cellpadding="10">
+        <tr><td valign="top">';
+
+    $dim = $xlsx->dimension();
+    $num_cols = $dim[0];
+    $num_rows = $dim[1];
+
+    echo '<h2>' . $xlsx->sheetName(0) . '</h2>';
+    echo '<table border=1 border-collapse=collapse>';
+    foreach ($xlsx->rows() as $k => $r) {
+        // SKIP first 3 column for the labelling
+        if ($k == 0)
+            continue;
+        if ($k == 1)
+            continue;
+        if ($k == 3)
+            continue;
+        for ($j = 0; $j < $num_cols; $j++) {
+            if ($j == 1) {
+                if ($r[$j] == '') {
+                    if ($k == 4) {
+                        echo '<tr><td colspan=' . $num_cols . '>No Data</td></tr>';
+                    }
+                } else {
+                    echo '<tr>';
+                    for ($i = 0; $i < $num_cols; $i++) {
+                        echo '<td>' . (!empty($r[$i]) ? $r[$i] : '&nbsp;' ) . '</td>';
+                    }
+                    echo '</tr>';
+                }
+            }
+        }
+    }
+    echo '</table>';
+    echo '</td></tr></table>';
 }

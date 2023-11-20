@@ -215,7 +215,7 @@ $id = $_GET['edit'];
                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['eqpt_manufacturer']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['manufacturer']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                 <?php endwhile; ?>
                             </select>
                         </div>

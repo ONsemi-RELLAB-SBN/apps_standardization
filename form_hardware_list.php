@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
@@ -74,7 +73,8 @@ include 'class/get_parameter.php';
                     $run_slides = mysqli_query($con, $get_slides);
                     $t = 0;
                     while ($row_slides = mysqli_fetch_array($run_slides)):
-                        $t += 1; ?>
+                        $t += 1;
+                        ?>
                         <tr>
                             <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
                             <td style="text-align:center"><?php echo $t; ?></td>
@@ -91,10 +91,11 @@ include 'class/get_parameter.php';
                             </td>
                         </tr>
                     <?php endwhile; ?>
-                    <a href="crud_export_hardware.php" title="Download" data-toggle="tooltip"><i class='bx bx-cloud-download bx-fw'></i></i> DOWNLOAD </a>
+                <!--<a href="crud_export_hardware.php" title="Download" data-toggle="tooltip"><i class='bx bx-cloud-download bx-fw'></i></i> DOWNLOAD </a>-->
                 </tbody>
             </table>
             <button onclick="location.href = 'form_hardware.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Hardware</button>
-            </div>
+            <button onclick="location.href = 'crud_export_hardware.php'" type="button" id="dlBtn"><i class='bx bx-cloud-download bx-fw'></i> Download</button>
+        </div>
     </body>
 </html>

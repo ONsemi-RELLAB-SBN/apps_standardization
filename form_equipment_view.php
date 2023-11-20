@@ -79,7 +79,7 @@ $id = $_GET['view'];
                     <div class="row">
                         <div class="two columns"><label for="manufacturer">Equipment Manufacturer *</label></div>
                         <div class="three columns">
-                            <input type="text" id="manufacturer" name="manufacturer" value="<?php echo getParameterValue($rowForm['eqpt_manufacturer']); ?>" required readonly>
+                            <input type="text" id="manufacturer" name="manufacturer" value="<?php echo getParameterValue($rowForm['manufacturer']); ?>" required readonly>
                         </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="model">Equipment Model *</label></div>

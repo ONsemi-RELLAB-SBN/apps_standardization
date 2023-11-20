@@ -79,7 +79,7 @@ include 'class/get_parameter.php';
                             <td style="text-align:center"><?php echo $t; ?></td>
                             <td><?php echo getParameterValue($row_slides['eqpt_id']); ?></td>
                             <td><?php echo getParameterValue($row_slides['lab_location']); ?></td>
-                            <td><?php echo getParameterValue($row_slides['eqpt_manufacturer']); ?></td>
+                            <td><?php echo getParameterValue($row_slides['manufacturer']); ?></td>
                             <td><?php echo getParameterValue($row_slides['champion']); ?></td>
                             <td><?php echo $row_slides['eqpt_asset_no']; ?></td>
                             <td><?php echo getParameterValues($row_slides['rel_test']); ?></td>
@@ -91,10 +91,11 @@ include 'class/get_parameter.php';
                             </td>
                         </tr>
                     <?php endwhile; ?>
-                    <a href="crud_export_equipment.php" title="Download" data-toggle="tooltip"><i class='bx bx-cloud-download bx-fw'></i></i> DOWNLOAD </a>
+                    <!--<a href="crud_export_equipment.php" title="Download" data-toggle="tooltip"><i class='bx bx-cloud-download bx-fw'></i></i> DOWNLOAD </a>-->
                 </tbody>
             </table>
             <button onclick="location.href = 'form_equipment.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Equipment</button>
+            <button onclick="location.href = 'crud_export_equipment.php'" type="button" id="dlBtn"><i class='bx bx-cloud-download bx-fw'></i> Download List</button>
         </div>
     </body>
 </html>
