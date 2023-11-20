@@ -75,6 +75,8 @@ $n2gas              = $_GET['n2gas'];
 $oxyLevel           = $_GET['oxygen_level'];
 $diWater            = $_GET['di_water'];
 $waterTopup         = $_GET['water_topup'];
+$cda                = $_GET['cda'];
+$lan                = $_GET['lan'];
 $daq                = $_GET['daq'];
 
 $intConfigType      = $_GET['int_config_type'];
@@ -92,6 +94,10 @@ $extConfigType      = $_GET['ext_config_type'];
 $intVoltRating      = $_GET['interface_volt_rating'];
 $intCurrRating      = $_GET['interface_curr_rating'];
 
+if ($username == '') {
+    $username = 'System';
+}
+
 foreach ($_GET['relTest'] as $key => $value) {
     $inter = $_GET['relTest'][$key];
     $dataRel = $dataRel . $inter . ",";
@@ -107,21 +113,13 @@ $newinsert = "INSERT INTO gest_form_eqpt (eqpt_id, lab_location, strategy, stand
             conn_volt_rating, conn_current_rating, conn_temp_rating, no_pin, pin_pitch, no_wire_conn_rack, wire_volt_rating, wire_curr_rating, wire_temp_rating, ext_config_type, 
             interface_volt_rating, interface_current_rating, created_by, created_date, status, flag) "
         . "VALUES ('$eqptId', '$labLocation', '$strategy', '$standardization', '$champion', '$dedicated', '$dataRel', '$zone', '$manufacturer', '$model', "
-        . "'$mfgDate', '$assetNo', '$newTransfer', '$from', '$voltRating', '$voltControl', '$curre', '', '', '$minTemp', '$maxTemp', '$minRh', '$maxRh', '$heatDiss', '$minPressure', '$maxPressure', "
+        . "'$mfgDate', '$assetNo', '$newTransfer', '$from', '$voltRating', '$voltControl', '$currRating', '$minTime', '$maxTime', '$minTemp', '$maxTemp', '$minRh', '$maxRh', '$heatDiss', '$minPressure', '$maxPressure', "
         . "'$tempFluctuation', '$tempUniform', '$umidFluctuation', '$extDimensionW', '$extDimensionD', '$extDimensionH', '$intDimensionW', '$intDimensionD', '$intDimensionH', '$noInterior', "
         . "'$rackDimensionW', '$rackDimensionD', '$rackDimensionH', '$intVolume', '$boardOrientation', '$rackMaterial', '$rackSlotPitch', '$rackSLotWidth', '$eqptWeight', '$noMotherboardSlot', "
         . "'$maxPsBoardSLot', '$maxPsEqpt', '$airflow', '$tempProtection1', '$tempProtection2', '$tempProtection3', '$smokeDetector', '$emo', '$voltage', '$current', '$phase', "
-        . "'$exhaust', '$n2gas', '$oxyLevel', '$liquid', '$chillWater', '$diWater', '$waterTopup', '$daq', '$intConfigType', '$jackHole', "
+        . "'$exhaust', '$n2gas', '$oxyLevel', '$liquid', '$chillWater', '$diWater', '$waterTopup', '$cda', '$lan', '$daq', '$intConfigType', '$jackHole', "
         . "'$connVoltRating', '$connCurrentRating', '$connTemp_rating', '$noPin', '$pinPitch', '$connRack', '$wireVoltRating', '$wireCurrRating', '$wireTempRating', '$extConfigType', "
         . "'$intVoltRating', '$intCurrRating', '$username', NOW(), 'Active', '1')";
-$newinert = "INSERT INTO gest_form_eqpt (eqpt_id, lab_location, strategy, standard_category, champion, dedicate_usage, rel_test, zone, manufacturer, eqpt_model, 
-            eqpt_mfg_date, eqpt_asset_no, new_transfer_eqpt, transfer_eqpt_location, eqpt_volt_rating, volt_control_accuracy, current_rating, min_time_setting, max_time_setting, min_temp, max_temp, min_rh, max_rh, heat_dissipation, min_pressure, max_pressure, 
-            temp_fluctuation, temp_uniformity, humid_fluctuation, ext_dimension_w, ext_dimension_d, ext_dimension_h, int_dimension_w, int_dimension_d, int_dimension_h, no_interior_zone, 
-            rack_dimension_w, rack_dimension_d, rack_dimension_h, int_vol, board_orientation, rack_material, rack_slot_pitch, rack_slot_width, eqpt_weight, no_mb_slot, 
-            max_ps_slot, max_ps_eqpt, airflow, temp_protection_1, temp_protection_2, temp_protection_3, smoke_alarm, emo_btn, voltage, current, phase, 
-            exhaust, n2_gas, oxygen_level_detector, liquid_nitrogen, chilled_water, di_water, water_topup_system, cda, lan, daq, internal_config_type, no_banana_jack_hole, 
-            conn_volt_rating, conn_current_rating, conn_temp_rating, no_pin, pin_pitch, no_wire_conn_rack, wire_volt_rating, wire_curr_rating, wire_temp_rating, ext_config_type, 
-            interface_volt_rating, interface_current_rating, created_by, created_date, status, flag)";
 $upload = mysqli_query($con, $newinsert);
 
 //$newinsert = "INSERT INTO gest_form_eqpt (eqpt_id, lab_location, strategy, standard_category, champion, dedicate_usage, rel_test, zone, manufacturer, eqpt_model, "

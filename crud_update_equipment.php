@@ -27,6 +27,9 @@ $zone               = $_GET['zon'];
 
 $voltRating         = $_GET['volt_rating'];
 $voltControl        = $_GET['volt_control'];
+$currRating         = $_GET['curr_rating'];
+$minTime            = $_GET['min_time'];
+$maxTime            = $_GET['max_time'];
 $minTemp            = $_GET['min_temp'];
 $maxTemp            = $_GET['max_temp'];
 $minRh              = $_GET['minRh'];
@@ -64,7 +67,9 @@ $tempProtection3    = $_GET['tempThermostat3'];
 $smokeDetector      = $_GET['smoke_detector'];
 $emo                = $_GET['emo'];
 
-$voltagePhase       = $_GET['voltage_phase'];
+//$voltagePhase       = $_GET['voltage_phase'];
+$voltage            = $_GET['voltage'];
+$current            = $_GET['current'];
 $phase              = $_GET['phase'];
 $exhaust            = $_GET['exhaust'];
 $liquid             = $_GET['liquid_nitrogen'];
@@ -73,6 +78,8 @@ $n2gas              = $_GET['n2gas'];
 $oxyLevel           = $_GET['oxygen_level'];
 $diWater            = $_GET['di_water'];
 $waterTopup         = $_GET['water_topup'];
+$cda                = $_GET['cda'];
+$lan                = $_GET['lan'];
 $daq                = $_GET['daq'];
 
 $intConfigType      = $_GET['int_config_type'];
@@ -89,6 +96,10 @@ $wireTempRating     = $_GET['wire_temp_rating'];
 $extConfigType      = $_GET['ext_config_type'];
 $intVoltRating      = $_GET['interface_volt_rating'];
 $intCurrRating      = $_GET['interface_curr_rating'];
+
+if ($username == '') {
+    $username = 'System';
+}
 
 foreach ($_GET['relTest'] as $key => $value) {
     $inter = $_GET['relTest'][$key];
@@ -112,6 +123,9 @@ $update = "UPDATE gest_form_eqpt SET "
         . "transfer_eqpt_location = '$to', "
         . "eqpt_volt_rating = '$voltRating', "
         . "volt_control_accuracy = '$voltControl', "
+        . "current_rating = '$currRating', "
+        . "min_time_setting = '$minTime', "
+        . "max_time_setting = '$maxTime', "
         . "min_temp = '$minTemp', "
         . "max_temp = '$maxTemp', "
         . "min_rh = '$minRh', "
@@ -145,11 +159,14 @@ $update = "UPDATE gest_form_eqpt SET "
         . "temp_protection_3 = '$tempProtection3', "
         . "smoke_alarm = '$smokeDetector', "
         . "emo_btn = '$emo', "
-        . "volt_phase_current = '$voltagePhase', "
+        . "voltage = '$voltage', "
+        . "current = '$current', "
         . "phase = '$phase', "
         . "exhaust = '$exhaust', "
         . "di_water = '$diWater', "
         . "water_topup_system = '$waterTopup', "
+        . "cda = '$cda', "
+        . "lan = '$lan', "
         . "daq = '$daq', "
         . "internal_config_type = '$intConfigType', "
         . "no_banana_jack_hole = '$jackHole', "

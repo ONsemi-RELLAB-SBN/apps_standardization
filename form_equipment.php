@@ -4,8 +4,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 include 'form_template.php';
-include 'class/check_user.php';
-checkUser($username, 'form_equipment_list.php');
+//include 'class/check_user.php';
+//checkUser($username, 'form_equipment_list.php');
 ?>
 
 <!DOCTYPE html>
@@ -331,6 +331,21 @@ checkUser($username, 'form_equipment_list.php');
                     <div class="two columns"><label for="volt_control">Voltage Control Accuracy *</label></div>
                     <div class="one columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="" > </div>
                     <div class="one columns"><label for="volt_control" style="text-align: left"><b>%</b></label></div>
+                    <div class="two columns">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" > </div>
+                    <div class="one columns"><label for="curr_rating" style="text-align: left"><b>A</b></label></div>
+                </div>
+                <div class="row">
+                    <div class="two columns"><label for="min_time">Min. Timer Setting *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="min_time" name="min_time" value="" > </div>
+                    <div class="one columns"><label for="min_time" style="text-align: left"><b>s</b></label></div>
+                    <div class="two columns">&nbsp;</div>
+                    <div class="two columns"><label for="max_time">Max. Timer Setting *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="max_time" name="max_time" value="" > </div>
+                    <div class="one columns"><label for="max_time" style="text-align: left"><b>s</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
@@ -708,16 +723,20 @@ checkUser($username, 'form_equipment_list.php');
 
                 <h6 id="utilities">Utilities</h6>
                 <div class="row">
-                    <div class="two columns"><label for="voltage_phase">Voltage/Phase/Current *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="voltage_phase" name="voltage_phase" value="" > </div>
-                    <div class="one columns"><label for="voltage_phase" style="text-align: left"><b>VAC</b></label></div>
+                    <div class="two columns"><label for="voltage">Voltage *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="voltage" name="voltage" value="" > </div>
+                    <div class="one columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
                     <div class="two columns">&nbsp;</div>
+                    <div class="two columns"><label for="current">Current *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="current" name="current" value="" > </div>
+                    <div class="one columns"><label for="current" style="text-align: left"><b>A</b></label></div>
+                    <div class="two columns">&nbsp;</div>
+                </div>
+                <div class="row">
                     <div class="two columns"><label for="phase">Phase *</label></div>
                     <div class="one columns"><input type="number" step="0.001" id="phase" name="phase" value="" > </div>
                     <div class="one columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
                     <div class="two columns">&nbsp;</div>
-                </div>
-                <div class="row">
                     <div class="two columns"><label for="exhaust">Exhaust *</label></div>
                     <div class="three columns">
                         <select id="exhaust" name="exhaust" style="width: 100%" >

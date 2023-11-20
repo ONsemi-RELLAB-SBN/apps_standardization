@@ -347,6 +347,21 @@ $id = $_GET['edit'];
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
+                        <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="curr_rating" name="curr_rating" value="<?php echo $rowForm['current_rating']; ?>" required> </div>
+                        <div class="one columns"><label for="curr_rating" style="text-align: left"><b>V</b></label></div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="min_time">Min. Timer Setting *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="min_time" name="min_time" value="<?php echo $rowForm['min_time_setting']; ?>" required> </div>
+                        <div class="one columns"><label for="min_time" style="text-align: left"><b>`C</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="max_time">Max. *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="max_time" name="max_time" value="<?php echo $rowForm['max_time_setting']; ?>" required> </div>
+                        <div class="one columns"><label for="max_time" style="text-align: left"><b>`C</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
                         <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
                         <div class="one columns"><input type="number" step="0.001" class="form-control" id="min_temp" name="min_temp" value="<?php echo $rowForm['min_temp']; ?>" required> </div>
                         <div class="one columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
@@ -719,9 +734,9 @@ $id = $_GET['edit'];
 
                     <h6 id="utilities">Utilities</h6>
                     <div class="row">
-                        <div class="two columns"><label for="voltage_phase">Voltage/Phase/Current *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="voltage_phase" name="voltage_phase" value="<?php echo $rowForm['volt_phase_current']; ?>" required> </div>
-                        <div class="one columns"><label for="voltage_phase" style="text-align: left"><b>VAC</b></label></div>
+                        <div class="two columns"><label for="voltage">Voltage *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="voltage" name="voltage" value="<?php echo $rowForm['voltage']; ?>" required> </div>
+                        <div class="one columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="phase">Phase *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="phase" name="phase" value="<?php echo $rowForm['phase']; ?>" required> </div>
@@ -729,6 +744,10 @@ $id = $_GET['edit'];
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
+                        <div class="two columns"><label for="current">Phase *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="current" name="current" value="<?php echo $rowForm['current']; ?>" required> </div>
+                        <div class="one columns"><label for="current" style="text-align: left"><b>A</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="exhaust">Exhaust *</label></div>
                         <div class="three columns">
                             <select id="exhaust" name="exhaust" style="width: 100%" required>
@@ -880,7 +899,7 @@ $id = $_GET['edit'];
                             <select id="daq" name="daq" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                     <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['daq']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
