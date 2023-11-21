@@ -245,7 +245,7 @@ $id = $_GET['edit'];
                     <div class="row">
                         <div class="two columns"><label for="new_transfer">New/Transfer Equipment *</label></div>
                         <div class="three columns">
-                            <select id="new_transfer" name="new_transfer" style="width: 100%" onchange="updateToField()" required>
+                            <select id="new_transfer" name="new_transfer" style="width: 100%" onchange="updateTransfer()" required>
                                 <option value="" selected=""></option>
                                 <?php
                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '013' ORDER BY code ASC";
@@ -257,8 +257,11 @@ $id = $_GET['edit'];
                         </div>
                         <?php
                         $checkLocation = getParameterValue($rowForm['new_transfer_eqpt']);
-                        if ($checkLocation == "Transfer") {
-                            ?>
+                        if ($checkLocation == "Transfer") { ?>
+                            <div class="six columns" id="transfer"><?php
+                        } else { ?>
+                            <div class="six columns" id="transfer" style="display: none">
+                        <?php } ?>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="from">From? *</label></div>
                             <div class="three columns">
@@ -272,27 +275,9 @@ $id = $_GET['edit'];
                                     <?php endwhile; ?>
                                 </select>
                             </div>
-                        <?php } ?>
+                        <?php // } ?>
+                        </div>
                     </div>
-
-                    <script>
-                        function updateToField() {
-                            var newTransferDropdown = document.getElementById('new_transfer');
-                            var toField = document.getElementById('from');
-                            var transField = document.getElementById('transfer');
-
-                            if (newTransferDropdown.value === '013001') {
-                                toField.readOnly = true;
-                                toField.required = false;
-                                $("#from").val('');
-                                transField.style.display = 'none';
-                            } else {
-                                toField.readOnly = false;
-                                toField.required = true;
-                                transField.style.display = 'block';
-                            }
-                        }
-                    </script>
 
                     <div class="row">
                         <div class="two columns"><label for="relTest">Rel Test (Multiselect) *</label></div>
@@ -1152,6 +1137,26 @@ $id = $_GET['edit'];
                     <?php } endwhile; ?>
                 <button onclick="location.href = 'form_equipment_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
                 <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Update</button>
+                
+                <script>
+                    function updateTransfer() {
+                        var newTransferDropdown = document.getElementById('new_transfer');
+                        var toField = document.getElementById('from');
+                        var transField = document.getElementById('transfer');
+
+                        if (newTransferDropdown.value === '013001') {
+                            toField.readOnly = true;
+                            toField.required = false;
+                            $("#from").val('');
+                            transField.style.display = 'none';
+                        } else {
+                            toField.readOnly = false;
+                            toField.required = true;
+                            transField.style.display = 'block';
+                        }
+                    }
+                </script>
+                
             </div>
         </form>
         <script>
