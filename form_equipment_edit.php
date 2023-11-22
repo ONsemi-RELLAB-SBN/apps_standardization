@@ -258,8 +258,8 @@ $id = $_GET['edit'];
                         <?php
                         $checkLocation = getParameterValue($rowForm['new_transfer_eqpt']);
                         if ($checkLocation == "Transfer") { ?>
-                            <div class="six columns" id="transfer"><?php
-                        } else { ?>
+                            <div class="six columns" id="transfer">
+                        <?php } else { ?>
                             <div class="six columns" id="transfer" style="display: none">
                         <?php } ?>
                             <div class="one columns">&nbsp;</div>
@@ -295,10 +295,11 @@ $id = $_GET['edit'];
                         $checkZone = getParameterValues($rowForm['rel_test']);
                         $data01 = "TC,THS";
                         $data02 = "THS";
-                        if (strpos($checkZone, $data02) === false && strpos($checkZone, $data01) === false) {
+                        $data03 = "TC";
+                        if (strpos($checkZone, $data02) === false && strpos($checkZone, $data01) === false && strpos($checkZone, $data03) === false) {
 
                         } else { ?>
-                            <div class="three columns"><label for="zone">Zone *</label></div>
+                            <div class="three columns"><label for="zon">Zone *</label></div>
                             <div class="three columns"><input type="number" step="0.001" id="zon" name="zon" value="<?php echo $rowForm['zone']; ?>" required></div>
                         <?php } ?>
                     </div>
@@ -378,9 +379,8 @@ $id = $_GET['edit'];
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="heat_dissipation" name="heat_dissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" required> </div>
-                        <div class="one columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="text" class="form-control" id="heat_dissipation" name="heat_dissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" required> </div>
+                        <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
                         <div class="two columns">
                             <label for="temp_fluctuation">Temperature Fluctuation *</label>
                             <label for="toggle_01" class="view-image">Image</label>
@@ -775,6 +775,34 @@ $id = $_GET['edit'];
                         </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
+                    
+                    <div class="row">
+                    <div class="two columns"><label for="cda">CDA *</label></div>
+                    <div class="three columns">
+                        <select id="cda" name="cda" style="width: 100%" >
+                            <option value="" selected=""></option>
+                            <?php
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                            $resSite = mysqli_query($con, $sqlDdSite);
+                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['cda']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
+                    </div>
+                    <div class="one columns" >&nbsp;</div>
+                    <div class="two columns"><label for="lan">LAN *</label></div>
+                    <div class="three columns">
+                        <select id="lan" name="lan" style="width: 100%">
+                            <option value="" selected=""></option>
+                            <?php
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                            $resSite = mysqli_query($con, $sqlDdSite);
+                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['lan']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
+                    </div>
+                </div>
 
                     <script>
                         function updateGas() {
@@ -811,6 +839,10 @@ $id = $_GET['edit'];
                         <?php
                         $checkWater = $rowForm['n2_gas'];
                         if ($checkWater === "022003") { ?>
+                            <div class="six columns" id="topap">
+                        <?php } else { ?>
+                            <div class="six columns" id="topap" style="display: none">    
+                        <?php } ?>
                             <div class="three columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
                             <div class="three columns">
                                 <select id="oxygen_level" name="oxygen_level" style="width: 100%" required>
@@ -823,7 +855,7 @@ $id = $_GET['edit'];
                                     <?php endwhile; ?>
                                 </select>
                             </div>
-                        <?php } ?>
+                        </div>
                     </div>
 
                     <script>
@@ -859,9 +891,12 @@ $id = $_GET['edit'];
                             </select>
                         </div>
                         <?php
-                        $checkWater = $rowForm['di_water'];
-                        if ($checkWater === "029003") {
-                            ?>
+                        $checkWater = $rowForm['di_water']; 
+                        if ($checkWater === "022003") { ?>
+                            <div class="six columns" id="diwater">
+                        <?php } else { ?>
+                            <div class="six columns" id="diwater" style="display: none">    
+                        <?php } ?>
                             <div class="three columns"><label for="water_topup">Water Top-up System *</label></div>
                             <div class="three columns">
                                 <select id="water_topup" name="water_topup" style="width: 100%" required>
@@ -874,7 +909,7 @@ $id = $_GET['edit'];
                                     <?php endwhile; ?>
                                 </select>
                             </div>
-                        <?php } ?>
+                        </div>
                     </div>
 
                     <h6 id="daqt">DAQ</h6>

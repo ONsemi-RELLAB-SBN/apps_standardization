@@ -24,6 +24,11 @@ include 'class/get_parameter.php';
         <link rel="stylesheet" type="text/css" href="css/w3.css">
         <link rel="stylesheet" type="text/css" href="css/skeleton.css">
         <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+        
+        <link rel='stylesheet' type="text/css" href='https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css'>
+        
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 
         <style>
             body {
@@ -36,7 +41,9 @@ include 'class/get_parameter.php';
         </style>
 
         <script type="text/javascript">
-            
+            jQuery(document).ready(function($) {
+                $('#myTable').DataTable();
+            });
         </script>
 
     </head>
@@ -56,7 +63,7 @@ include 'class/get_parameter.php';
                 <h2 class="pull-left" style="border-left:none">DAQ List</h2>
                 <button onClick="window.location.href = window.location.href" type="button" class="btn btn-default btn-lg u-pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
             </div>
-            <table class="u-full-width">
+            <table class="u-full-width" id='myTable'>
                 <thead>
                     <tr>
                         <th style="text-align:center"><b>No</b></th>

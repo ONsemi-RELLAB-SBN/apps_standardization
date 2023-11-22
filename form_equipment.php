@@ -380,9 +380,9 @@ include 'form_template.php';
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="heat_dissipation" name="heat_dissipation" value="" > </div>
-                    <div class="one columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
-                    <div class="two columns">&nbsp;</div>
+                    <div class="two columns"><input type="text" id="heat_dissipation" name="heat_dissipation" value="" > </div>
+                    <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
+                    <!--<div class="two columns">&nbsp;</div>-->
                     <div class="two columns">
                         <label for="temp_fluctuation">Temperature Fluctuation *</label>
                         <label for="toggle_01" class="view-image">Image</label>
@@ -767,7 +767,7 @@ include 'form_template.php';
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="chilled_water">Chilled Water *</label></div>
                     <div class="three columns">
-                        <select id="chilled_water" name="chilled_water" style="width: 100%" .tabsub>
+                        <select id="chilled_water" name="chilled_water" style="width: 100%">
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
@@ -778,6 +778,34 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
+                </div>
+                
+                <div class="row">
+                    <div class="two columns"><label for="cda">CDA *</label></div>
+                    <div class="three columns">
+                        <select id="cda" name="cda" style="width: 100%" >
+                            <option value="" selected=""></option>
+                            <?php
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                            $resSite = mysqli_query($con, $sqlDdSite);
+                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
+                    </div>
+                    <div class="one columns" >&nbsp;</div>
+                    <div class="two columns"><label for="lan">LAN *</label></div>
+                    <div class="three columns">
+                        <select id="lan" name="lan" style="width: 100%">
+                            <option value="" selected=""></option>
+                            <?php
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                            $resSite = mysqli_query($con, $sqlDdSite);
+                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
+                    </div>
                 </div>
 
                 <script>
@@ -802,7 +830,7 @@ include 'form_template.php';
                 <div class="row">
                     <div class="two columns"><label for="n2gas">N2 Gas *</label></div>
                     <div class="three columns">
-                        <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()" .tabsub>
+                        <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()">
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
@@ -815,7 +843,7 @@ include 'form_template.php';
                     <div class="six columns" id="oxygen" style="display: none;">
                         <div class="three columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
                         <div class="three columns">
-                            <select id="oxygen_level" name="oxygen_level" style="width: 100%" .tabsub>
+                            <select id="oxygen_level" name="oxygen_level" style="width: 100%">
                                 <option value="" selected=""></option>
                                 <?php
                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
@@ -850,7 +878,7 @@ include 'form_template.php';
                 <div class="row">
                     <div class="two columns"><label for="di_water">DI Water *</label></div>
                     <div class="three columns">
-                        <select id="di_water" name="di_water" style="width: 100%" onchange="updateToFieldWater()" .tabsub>
+                        <select id="di_water" name="di_water" style="width: 100%" onchange="updateToFieldWater()">
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
@@ -863,7 +891,7 @@ include 'form_template.php';
                     <div class="six columns" id="topup" style="display: none;">
                         <div class="three columns"><label for="water_topup">Water Top-up System *</label></div>
                         <div class="three columns">
-                            <select id="water_topup" name="water_topup" style="width: 100%" .tabsub>
+                            <select id="water_topup" name="water_topup" style="width: 100%">
                                 <option value="" selected=""></option>
                                 <?php
                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
@@ -880,7 +908,7 @@ include 'form_template.php';
                 <div class="row">
                     <div class="two columns"><label for="daq">DAQ (Realtime Leakage Monitoring) *</label></div>
                     <div class="three columns">
-                        <select id="daq" name="daq" style="width: 100%" .tabsub>
+                        <select id="daq" name="daq" style="width: 100%">
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
@@ -904,7 +932,7 @@ include 'form_template.php';
                         </dialog>
                     </div>
                     <div class="three columns">
-                        <select id="int_config_type" name="int_config_type" style="width: 100%" onchange="updateDiv()" .tabsub>
+                        <select id="int_config_type" name="int_config_type" style="width: 100%" onchange="updateDiv()">
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '031' ORDER BY code ASC";
@@ -1097,7 +1125,7 @@ include 'form_template.php';
                         </dialog>
                     </div>
                     <div class="three columns">
-                        <select id="ext_config_type" name="ext_config_type" style="width: 100%" onchange="updateView()" .tabsub>
+                        <select id="ext_config_type" name="ext_config_type" style="width: 100%" onchange="updateView()">
                             <option value="" selected=""></option>
                             <?php
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '032' ORDER BY code ASC";

@@ -68,7 +68,7 @@ var style = document.createElement('style');
 }
 
 .multiselect-dropdown-list div{
-  
+  display:flex;
 }
 .multiselect-dropdown-list input{
   height: 1.15em;

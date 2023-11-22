@@ -34,8 +34,7 @@ $id = $_GET['view'];
                 <?php
                 $sqlFormData = "SELECT * FROM gest_form_eqpt WHERE id = '$id'";
                 $resForm = mysqli_query($con, $sqlFormData);
-                while ($rowForm = mysqli_fetch_array($resForm)):
-                    ?>
+                while ($rowForm = mysqli_fetch_array($resForm)): ?>
 
                     <h6 id="general">General</h6>
                     <div class="row">
@@ -191,9 +190,9 @@ $id = $_GET['view'];
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="heatDissipation" name="heatDissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" required readonly> </div>
-                        <div class="one columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="text" id="heatDissipation" name="heatDissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" required readonly> </div>
+                        <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
+                        <!--<div class="two columns">&nbsp;</div>-->
                         <div class="two columns"><label for="temp_fluctuation">Temperature Fluctuation *</label></div>
                         <div class="one columns"><input type="number" step="0.01" id="tempFluctuation" name="tempFluctuation" value="<?php echo $rowForm['temp_fluctuation']; ?>" required readonly> </div>
                         <div class="one columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
@@ -393,6 +392,18 @@ $id = $_GET['view'];
                         </div>
                     </div>
                     <div class="row">
+                        <div class="two columns"><label for="cda">CDA *</label></div>
+                        <div class="three columns">
+                            <input type="text" id="cda" name="cda" value="<?php echo getParameterValue($rowForm['cda']); ?>" required readonly>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="lan">LAN *</label></div>
+                        <div class="three columns">
+                            <input type="text" id="lan" name="lan" value="<?php echo getParameterValue($rowForm['lan']); ?>" required readonly>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
                         <div class="two columns"><label for="di_water">DI Water *</label></div>
                         <div class="three columns">
                             <input type="text" id="diWater" name="diWater" value="<?php echo getParameterValue($rowForm['di_water']); ?>" required readonly>
@@ -481,8 +492,8 @@ $id = $_GET['view'];
                             <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value=<?php echo $rowForm['pin_pitch']; ?>" > </div>
-                                                            <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
+                            <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
