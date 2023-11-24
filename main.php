@@ -42,8 +42,8 @@ checkUser($username, 'main_view.php');
 
         <style>
             .shape {
-                height: 130px;
-                width: 300px;
+                height: 40px;
+                width: 170px;
                 background-color: white;
                 border-radius: 25px;
             }
@@ -53,13 +53,7 @@ checkUser($username, 'main_view.php');
         <div id="wrapper">
             <header id="header">
                 <div class="shape">
-                    <img src="image/logo/onsemi_logo.png" alt="alt"/>
-                </div>
-                <div class="content">
-                    <div class="inner">
-                        <h1>REL EQUIPMENT PLATFORM DEVELOPMENT<br>&<br>STANDARDIZATION</h1>
-                        <p>released by 2023.</p>
-                    </div>
+                    <img src="image/logo/onsemi_logo_small.png" alt="alt"/>
                 </div>
                 <nav>
                     <ul>
@@ -73,9 +67,15 @@ checkUser($username, 'main_view.php');
                         <li style="background-color: blueviolet" title="Parameter"><a href="parameter.php">Parameter</a></li>
                     </ul>
                 </nav>
+                <div class="content">
+                    <div class="inner">
+                        <h2>REL EQUIPMENT PLATFORM DEVELOPMENT<br>&<br>STANDARDIZATION</h2>
+                        <p>released by 2023.</p>
+                    </div>
+                </div>
             </header>
             <footer id="footer">
-                <p class="copyright">&copy; REL LAB Design By : <a href="https://html5up.net">M Farhan / M Arif</a>.</p>
+                <p class="copyright">&copy; REL LAB Design By : <a href="https://html5up.net">M Arif / M Farhan</a>.</p>
             </footer>
         </div>
         <div id="bg"></div>
