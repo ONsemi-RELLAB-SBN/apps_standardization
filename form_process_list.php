@@ -5,8 +5,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'form_template.php';
+include 'template/form.php';
 include 'class/get_parameter.php';
+include 'template/list.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,15 +22,6 @@ include 'class/get_parameter.php';
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
 
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-        
-        <link rel='stylesheet' type="text/css" href='https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css'>
-        
-        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-
         <style>
             body {
                 font-size: 1em;
@@ -42,7 +34,40 @@ include 'class/get_parameter.php';
 
         <script type="text/javascript">
             jQuery(document).ready(function($) {
-                $('#myTable').DataTable();
+//                $('#myTable').DataTable();
+                
+                var table = $('#myTable').DataTable( {
+                    dom: 'Blfrtip',
+                    buttons: [
+                        {
+                            extend: 'copyHtml5',
+                            exportOptions: {
+                                columns: ':visible'
+//                                columns: [ 0, 1, 2, 3, 4, 5, 6]
+                            }
+                        },
+                        {
+                            extend: 'excelHtml5',
+                            exportOptions: {
+                                columns: [ 0, 1, 2, 3, 4, 5, 6]
+                            }
+                        },
+                        {
+                            extend: 'csvHtml5',
+                            exportOptions: {
+                                columns: [ 0, 1, 2, 3, 4, 5, 6]
+                            }
+                        },
+                        {
+                            extend: 'pdfHtml5',
+                            exportOptions: {
+                                columns: [ 0, 1, 2, 3, 4, 5, 6]
+                            }
+                        },
+                        'colvis'
+                    ]
+                } );
+                
             });
         </script>
 
