@@ -121,8 +121,8 @@ if (isset($_GET['delete'])) {
                     <tr>
                         <th><b>Parameter Name</b></th>
                         <th><b>Parameter Code</b></th>
-                        <th><b>Link</b></th>
-                        <th><b>Image</b></th>
+<!--                        <th><b>Link</b></th>
+                        <th><b>Image</b></th>-->
                         <th style="text-align: center"><b>Action</b></th>
                     </tr>
                 </thead>
@@ -136,8 +136,8 @@ if (isset($_GET['delete'])) {
                             <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
                             <td><?php echo $row_slides['name']; ?></td>
                             <td><?php echo $row_slides['code']; ?></td>
-                            <td><?php echo $row_slides['link_image']; ?></td>
-                            <td><img src="uploaded_img/<?php echo $row_slides['link_image']; ?>" height="100" alt=""></td>
+                            <!--<td><?php // echo $row_slides['link_image']; ?></td>-->
+                            <!--<td><img src="uploaded_img/<?php echo $row_slides['link_image']; ?>" height="100" alt=""></td>-->
                             <td style="text-align: center">
                                 <a href="parameter_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
                                 <a href="parameter_detail.php?update=<?php echo $row_slides['id']; ?>" title="Add Details" data-toggle="tooltip"><span class="fa fa-plus"></span><i class='bx bx-list-plus bx-fw' ></i> DETAIL </a>
