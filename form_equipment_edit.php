@@ -336,6 +336,11 @@ $id = $_GET['edit'];
                         <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
                         <div class="one columns"><input type="number" step="0.001" class="form-control" id="curr_rating" name="curr_rating" value="<?php echo $rowForm['current_rating']; ?>" required> </div>
                         <div class="one columns"><label for="curr_rating" style="text-align: left"><b>V</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="power_rating">Power Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" class="form-control" id="power_rating" name="power_rating" value="<?php echo $rowForm['power_rating']; ?>" required> </div>
+                        <div class="one columns"><label for="power_rating" style="text-align: left"><b>%</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="min_time">Min. Timer Setting *</label></div>
@@ -623,6 +628,12 @@ $id = $_GET['edit'];
                         <div class="one columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="<?php echo $rowForm['max_ps_eqpt']; ?>" required> </div>
                         <div class="one columns"><label for="max_ps" style="text-align: left"><b>Unit</b></label></div>
                         <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="diameter">Diameter *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="diameter" name="diameter" value="<?php echo $rowForm['diameter']; ?>" required> </div>
+                        <div class="one columns"><label for="diameter" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
                         <div class="two columns">
                             <label for="airflow">Airflow *</label>
                             <label for="toggle_15" class="view-image">Image</label>
@@ -697,6 +708,34 @@ $id = $_GET['edit'];
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                     <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['smoke_alarm']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="press_switch">Pressure Switch *</label></div>
+                        <div class="three columns">
+                            <select id="press_switch" name="press_switch" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['pressure_switch']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="safety_valve">Smoke Detector/Alarm *</label></div>
+                        <div class="three columns">
+                            <select id="safety_valve" name="safety_valve" style="width: 100%" required>
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['safety_valve']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                 <?php endwhile; ?>
                             </select>
                         </div>

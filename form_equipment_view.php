@@ -135,56 +135,61 @@ $id = $_GET['view'];
                     <h6 id="capability">Capability</h6>
                     <div class="row">
                         <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="voltRating" name="voltRating" value="<?php echo $rowForm['eqpt_volt_rating']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="voltRating" name="voltRating" value="<?php echo $rowForm['eqpt_volt_rating']; ?>" required readonly> </div>
                         <div class="one columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="volt_control">Voltage Control Accuracy *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="voltControl" name="voltControl" value="<?php echo $rowForm['volt_control_accuracy']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="voltControl" name="voltControl" value="<?php echo $rowForm['volt_control_accuracy']; ?>" required readonly> </div>
                         <div class="one columns"><label for="volt_control" style="text-align: left"><b>%</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="curr_rating" name="curr_rating" value="<?php echo $rowForm['current_rating']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="<?php echo $rowForm['current_rating']; ?>" required readonly> </div>
                         <div class="one columns"><label for="curr_rating" style="text-align: left"><b>A</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="power_rating">Power Rating *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="<?php echo $rowForm['power_rating']; ?>" required readonly> </div>
+                        <div class="one columns"><label for="power_rating" style="text-align: left"><b>%</b></label></div>
+                        <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="min_time">Min. Timer Setting *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="min_time" name="min_time" value="<?php echo $rowForm['min_time_setting']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="min_time" name="min_time" value="<?php echo $rowForm['min_time_setting']; ?>" required readonly> </div>
                         <div class="one columns"><label for="min_time" style="text-align: left"><b>s</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="max_time">Max. Timer Setting *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="max_time" name="max_time" value="<?php echo $rowForm['max_time_setting']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="max_time" name="max_time" value="<?php echo $rowForm['max_time_setting']; ?>" required readonly> </div>
                         <div class="one columns"><label for="max_time" style="text-align: left"><b>s</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="minTemp" name="minTemp" value="<?php echo $rowForm['min_temp']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="minTemp" name="minTemp" value="<?php echo $rowForm['min_temp']; ?>" required readonly> </div>
                         <div class="one columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="maxTemp" name="maxTemp" value="<?php echo $rowForm['max_temp']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="maxTemp" name="maxTemp" value="<?php echo $rowForm['max_temp']; ?>" required readonly> </div>
                         <div class="one columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="minRh">Min. RH *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="minRh" name="minRh" value="<?php echo $rowForm['min_rh']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="minRh" name="minRh" value="<?php echo $rowForm['min_rh']; ?>" required readonly> </div>
                         <div class="one columns"><label for="minRh" style="text-align: left"><b>%</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="maxRh">Max. RH *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="maxRh" name="maxRh" value="<?php echo $rowForm['max_rh']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="<?php echo $rowForm['max_rh']; ?>" required readonly> </div>
                         <div class="one columns"><label for="maxRh" style="text-align: left"><b>%</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="min_pressure">Minimum Pressure *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="min_pressure" name="min_pressure" value="<?php echo $rowForm['min_pressure']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="<?php echo $rowForm['min_pressure']; ?>" required readonly> </div>
                         <div class="one columns"><label for="min_pressure" style="text-align: left"><b>psi</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="max_pressure">Maximum Pressure *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="max_pressure" name="max_pressure" value="<?php echo $rowForm['max_pressure']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="<?php echo $rowForm['max_pressure']; ?>" required readonly> </div>
                         <div class="one columns"><label for="max_pressure" style="text-align: left"><b>psi</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
@@ -194,17 +199,17 @@ $id = $_GET['view'];
                         <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
                         <!--<div class="two columns">&nbsp;</div>-->
                         <div class="two columns"><label for="temp_fluctuation">Temperature Fluctuation *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="tempFluctuation" name="tempFluctuation" value="<?php echo $rowForm['temp_fluctuation']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="tempFluctuation" name="tempFluctuation" value="<?php echo $rowForm['temp_fluctuation']; ?>" required readonly> </div>
                         <div class="one columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="temp_uniform">Temperature Uniformity *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="tempUniform" name="tempUniform" value="<?php echo $rowForm['temp_uniformity']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="tempUniform" name="tempUniform" value="<?php echo $rowForm['temp_uniformity']; ?>" required readonly> </div>
                         <div class="one columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="humid_fluctuation">Humidity Fluctuation *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="humidFluctuation" name="humidFluctuation" value="<?php echo $rowForm['humid_fluctuation']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="humidFluctuation" name="humidFluctuation" value="<?php echo $rowForm['humid_fluctuation']; ?>" required readonly> </div>
                         <div class="one columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
@@ -307,6 +312,12 @@ $id = $_GET['view'];
                         <div class="one columns"><input type="number" step="0.001" id="maxPs" name="maxPs" value="<?php echo $rowForm['max_ps_eqpt']; ?>" required readonly> </div>
                         <div class="one columns"><label for="max_ps" style="text-align: left"><b>Unit</b></label></div>
                         <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="diameter">Diameter *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="diameter" name="diameter" value="<?php echo $rowForm['diameter']; ?>" required readonly> </div>
+                        <div class="one columns"><label for="diameter" style="text-align: left"><b>mm</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
                         <div class="two columns"><label for="airflow">Airflow *</label></div>
                         <div class="three columns">
                             <input type="text" id="airflow" name="airflow" value="<?php echo getParameterValue($rowForm['airflow']); ?>" required readonly>
@@ -339,6 +350,18 @@ $id = $_GET['view'];
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
+                        <div class="two columns"><label for="press_switch">Pressure Switch *</label></div>
+                        <div class="three columns">
+                            <input type="text" id="press_switch" name="press_switch" value="<?php echo getParameterValue($rowForm['pressure_switch']); ?>" required readonly>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="safety_valve">Safety Valve *</label></div>
+                        <div class="three columns">
+                            <input type="text" id="safety_valve" name="safety_valve" value="<?php echo getParameterValue($rowForm['safety_valve']); ?>" required readonly>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
                         <div class="two columns"><label for="emo">EMO button *</label></div>
                         <div class="three columns">
                             <input type="text" id="emo" name="emo" value="<?php echo getParameterValue($rowForm['emo_btn']); ?>" required readonly>
@@ -348,7 +371,7 @@ $id = $_GET['view'];
                     <h6 id="utilities">Utilities</h6>
                     <div class="row">
                         <div class="two columns"><label for="voltage">Voltage *</label></div>
-                        <div class="one columns"><input type="number" step="0.01" id="voltage" name="voltage" value="<?php echo $rowForm['voltage']; ?>" required readonly> </div>
+                        <div class="one columns"><input type="number" step="0.001" id="voltage" name="voltage" value="<?php echo $rowForm['voltage']; ?>" required readonly> </div>
                         <div class="one columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="phase">Phase *</label></div>
@@ -380,18 +403,6 @@ $id = $_GET['view'];
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="n2gas">N2 Gas *</label></div>
-                        <div class="three columns">
-                            <input type="text" id="n2gas" name="n2gas" value="<?php echo getParameterValue($rowForm['n2_gas']); ?>" required readonly>
-                        </div>
-                        <div class="six columns" id="oxygen" style="display: none;">
-                            <div class="three columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
-                            <div class="three columns">
-                                <input type="text" id="oxygen_level" name="oxygen_level" value="<?php echo getParameterValue($rowForm['oxygen_level_detector']); ?>" required readonly>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="two columns"><label for="cda">CDA *</label></div>
                         <div class="three columns">
                             <input type="text" id="cda" name="cda" value="<?php echo getParameterValue($rowForm['cda']); ?>" required readonly>
@@ -402,6 +413,18 @@ $id = $_GET['view'];
                             <input type="text" id="lan" name="lan" value="<?php echo getParameterValue($rowForm['lan']); ?>" required readonly>
                         </div>
                         <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="n2gas">N2 Gas *</label></div>
+                        <div class="three columns">
+                            <input type="text" id="n2gas" name="n2gas" value="<?php echo getParameterValue($rowForm['n2_gas']); ?>" required readonly>
+                        </div>
+                        <div class="six columns" id="oxygen" style="display: none;">
+                            <div class="three columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
+                            <div class="three columns">
+                                <input type="text" id="oxygen_level" name="oxygen_level" value="<?php echo getParameterValue($rowForm['oxygen_level_detector']); ?>" required readonly>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="di_water">DI Water *</label></div>

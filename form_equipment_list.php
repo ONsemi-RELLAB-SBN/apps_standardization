@@ -24,9 +24,18 @@ include 'class/get_parameter.php';
         <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
         
         <link rel='stylesheet' type="text/css" href='https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css'>
+        <link rel='stylesheet' type="text/css" href='https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css'>
         
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+        
+        <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+        
+        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
         
         <style>
             body {
@@ -40,7 +49,56 @@ include 'class/get_parameter.php';
 
         <script type="text/javascript">
             jQuery(document).ready(function($) {
-                $('#myTable').DataTable();
+//                $('#myTable').DataTable();
+
+                /*
+                 * USE COLUMN VISIBLE, TO PRINT / COPY ALL THOSE SET TO VISIBLE ONLY
+                 * 
+                 */*/
+                
+                var table = $('#myTable').DataTable( {
+                    dom: 'Blfrtip',
+//                    buttons: [
+//                        'copyHtml5',
+//                        'excelHtml5',
+//                        'csvHtml5',
+//                        'pdfHtml5'
+//                    ],
+                    buttons: [
+                        {
+                            extend: 'copyHtml5',
+                            exportOptions: {
+                                columns: ':visible'
+//                                columns: [ 0, 1, 2, 3, 4, 5, 6]
+                            }
+                        },
+                        {
+                            extend: 'excelHtml5',
+                            exportOptions: {
+                                columns: [ 0, 1, 2, 3, 4, 5, 6]
+                            }
+                        },
+                        {
+                            extend: 'csvHtml5',
+                            exportOptions: {
+                                columns: [ 0, 1, 2, 3, 4, 5, 6]
+                            }
+                        },
+                        {
+                            extend: 'pdfHtml5',
+                            exportOptions: {
+                                columns: [ 0, 1, 2, 3, 4, 5, 6]
+                            }
+                        },
+                        'colvis'
+                    ]
+                } );
+                
+                /* USE CODE ABOVE TO CONTROL WHICH COLUMN WILL BE DOWNLOADED*/
+                /* use below code to hide the column
+                 * DEFINE ALL COLUMN IN DATABASE INTO THIS FIELD
+                 * */
+//                table.columns( [1,2] ).visible( false );
             });
         </script>
 
