@@ -21,6 +21,8 @@ include 'class/ldap.php';
         <link rel="stylesheet" href="css/menu.css"/>
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+        <link rel="stylesheet" type="text/css" href="css/w3.css">
+        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
     </head>
     <body>
         <input type="checkbox" id="nav-control" class="nav-control" >
