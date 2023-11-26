@@ -4,7 +4,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include './form_template.php';
+include '../template/form.php';
 
 $id = $_GET['edit'];
 

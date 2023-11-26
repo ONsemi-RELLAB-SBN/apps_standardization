@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-include 'form_template.php';
+include '../template/form.php';
 
 $query1 = "SELECT MAX(id) as data FROM gest_parameter_master";
 $getData = mysqli_query($con, $query1);

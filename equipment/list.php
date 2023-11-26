@@ -4,23 +4,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'template/form.php';
-include 'class/get_parameter.php';
-include 'template/list.php';
+include '../template/form.php';
+include '../template/list.php';
+include '../class/get_parameter.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>LIST | Equipment [Chamber] List</title>
-        <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
-        <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
         <style>
             body {
                 font-size: 1em;
@@ -33,8 +24,6 @@ include 'template/list.php';
 
         <script type="text/javascript">
             jQuery(document).ready(function($) {
-//                $('#myTable').DataTable();
-
                 
                 var table = $('#myTable').DataTable( {
                     dom: 'Blfrtip',
@@ -67,12 +56,6 @@ include 'template/list.php';
                         'colvis'
                     ]
                 } );
-                
-            /* USE CODE ABOVE TO CONTROL WHICH COLUMN WILL BE DOWNLOADED*/
-            /* use below code to hide the column
-             * DEFINE ALL COLUMN IN DATABASE INTO THIS FIELD
-             * */
-//            table.columns( [1,2] ).visible( false );
             });
         </script>
 
@@ -124,17 +107,17 @@ include 'template/list.php';
                             <td><?php echo $row_slides['eqpt_asset_no']; ?></td>
                             <td><?php echo getParameterValues($row_slides['rel_test']); ?></td>
                             <td style="text-align:center;width: 400px;">
-                                <a href="form_equipment_view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><i class='bx bx-search-alt bx-fw'></i> VIEW </a>
-                                <a href="form_equipment_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
-                                <a href="form_equipment_delete.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
-                                <a href="form_equipment_copy.php?edit=<?php echo $row_slides['id']; ?>" title="Replicate Record" data-toggle="tooltip"><i class='bx bx-copy bx-fw'></i></i> COPY </a>
+                                <a href="view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><i class='bx bx-search-alt bx-fw'></i> VIEW </a>
+                                <a href="edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
+                                <a href="delete.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
+                                <a href="copy.php?edit=<?php echo $row_slides['id']; ?>" title="Replicate Record" data-toggle="tooltip"><i class='bx bx-copy bx-fw'></i></i> COPY </a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
                 </tbody>
             </table>
-            <button onclick="location.href = 'form_equipment.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Equipment</button>
-            <button onclick="location.href = 'crud_export_equipment.php'" type="button" id="dlBtn"><i class='bx bx-cloud-download bx-fw'></i> Download List</button>
+            <button onclick="location.href = '../equipment/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Equipment</button>
+            <button onclick="location.href = '../crud/crud_export_equipment.php'" type="button" id="dlBtn"><i class='bx bx-cloud-download bx-fw'></i> Download List</button>
         </div>
     </body>
 </html>

@@ -3,25 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-include 'form_template.php';
-//include 'class/check_user.php';
-//checkUser($username, 'form_equipment_list.php');
+include '../template/form.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>FORM | Standardization Survey</title>
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-
         <style>
             input[type=text], input[type=password] {
                 width: 100%;
@@ -98,41 +85,41 @@ include 'form_template.php';
                 display: block;
             }
         </style>
-
+        
         <script type="text/javascript">
-
+            
         </script>
 
     </head>
     <body>
-        <?php include './navigation_equipment.php';?>
+        <?php include '../navigation/equipment.php';?>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <!--<h5 style="border-left: none;">Equipment Details</h5>-->
-        <form id="add_equipment_form" action="crud_add_equipment.php" method="get">
+        <form id="add_equipment_form" action="../crud/crud_add_equipment.php" method="get">
             <div class="row">
 
                 <h6 id="general">General</h6>
                 <div class="row">
                     <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                     <div class="three columns">
-                        <select id="lab_location" name="lab_location" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
+                        <input type="text" list="lab_location_list" autocomplete="off" id="lab_location">
+                        <datalist id="lab_location_list">
+                            <?php 
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '002' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
-                        </select>
+                            $result = mysqli_query($con, $sqlDdSite);
+                            while($row = mysqli_fetch_array($result)) { ?>
+                                <option value="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></option>
+                            <?php } ?>
+                        </datalist>
                     </div>
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="strategy">Product Group *</label></div>
                     <div class="three columns">
                         <select id="strategy" name="strategy" style="width: 100%" required>
                             <option value="" selected=""></option>
-                            <?php
+                            <?php 
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '003' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)): ?>
@@ -158,15 +145,15 @@ include 'form_template.php';
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="champion">Lab Manager *</label></div>
                     <div class="three columns">
-                        <select id="champion" name="champion" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
+                        <input type="text" list="champion_list" autocomplete="off" id="champion">
+                        <datalist id="champion_list">
+                            <?php 
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '005' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
-                        </select>
+                            $result = mysqli_query($con, $sqlDdSite);
+                            while($row = mysqli_fetch_array($result)) { ?>
+                                <option value="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></option>
+                            <?php } ?>
+                        </datalist>
                     </div>
                     <div class="one columns">&nbsp;</div>
                 </div>
@@ -175,22 +162,22 @@ include 'form_template.php';
                 <div class="row">
                     <div class="two columns"><label for="eqpt_id">Equipment ID *</label></div>
                     <div class="three columns">
-                        <select id="eqpt_id" name="eqpt_id" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
+                        <input type="text" list="eqpt_id_list" autocomplete="off" id="eqpt_id">
+                        <datalist id="eqpt_id_list">
+                            <?php 
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
-                        </select>
+                            $result = mysqli_query($con, $sqlDdSite);
+                            while($row = mysqli_fetch_array($result)) { ?>
+                                <option value="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></option>
+                            <?php } ?>
+                        </datalist>
                     </div>
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="dedicated">Dedicated/Share *</label></div>
                     <div class="three columns">
                         <select id="dedicated" name="dedicated" style="width: 100%" required>
                             <option value="" selected=""></option>
-                            <?php
+                            <?php 
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)): ?>
@@ -203,28 +190,28 @@ include 'form_template.php';
                 <div class="row">
                     <div class="two columns"><label for="manufacturer">Equipment Manufacturer *</label></div>
                     <div class="three columns">
-                        <select id="manufacturer" name="manufacturer" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
+                        <input type="text" list="manufacturer_list" autocomplete="off" id="manufacturer">
+                        <datalist id="manufacturer_list">
+                            <?php 
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
-                        </select>
+                            $result = mysqli_query($con, $sqlDdSite);
+                            while($row = mysqli_fetch_array($result)) { ?>
+                                <option value="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></option>
+                            <?php } ?>
+                        </datalist>
                     </div>
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="model">Equipment Model *</label></div>
                     <div class="three columns">
-                        <select id="model" name="model" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
+                        <input type="text" list="model_list" autocomplete="off" id="model">
+                        <datalist id="model_list">
+                            <?php 
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '010' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
-                        </select>
+                            $result = mysqli_query($con, $sqlDdSite);
+                            while($row = mysqli_fetch_array($result)) { ?>
+                                <option value="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></option>
+                            <?php } ?>
+                        </datalist>
                     </div>
                     <div class="one columns">&nbsp;</div>
                 </div>
@@ -321,7 +308,7 @@ include 'form_template.php';
                         }
                     }
                 </script>
-
+                
                 <h6 id="capability">Capability</h6>
                 <div class="row">
                     <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
@@ -394,7 +381,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_01">
                         <dialog>
                             <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns">
@@ -410,7 +397,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_02">
                         <dialog>
                             <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
@@ -422,7 +409,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_03">
                         <dialog>
                             <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="" > </div>
@@ -438,7 +425,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_06">
                         <dialog>
                             <label for="toggle_06" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="" > </div>
@@ -450,7 +437,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_04">
                         <dialog>
                             <label for="toggle_04" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="ext_dimension_w" name="ext_dimension_w" value="" > </div>
@@ -464,7 +451,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_08">
                         <dialog>
                             <label for="toggle_08" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="" > </div>
@@ -482,7 +469,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_09">
                         <dialog>
                             <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="three columns">
@@ -522,7 +509,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_05">
                         <dialog>
                             <label for="toggle_05" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="" > </div>
@@ -536,7 +523,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_10">
                         <dialog>
                             <label for="toggle_10" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="" ></div>
@@ -554,7 +541,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_11">
                         <dialog>
                             <label for="toggle_11" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/011.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/011.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="" > </div>
@@ -576,7 +563,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_07">
                         <dialog>
                             <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="" > </div>
@@ -590,7 +577,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_12">
                         <dialog>
                             <label for="toggle_12" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/012.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/012.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="" ></div>
@@ -608,7 +595,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_13">
                         <dialog>
                             <label for="toggle_13" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/013.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/013.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="" > </div>
@@ -626,7 +613,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_14">
                         <dialog>
                             <label for="toggle_14" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/014.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/014.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="" > </div>
@@ -644,7 +631,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_15">
                         <dialog>
                             <label for="toggle_15" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/015.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/015.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="three columns">
@@ -967,7 +954,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_16">
                         <dialog>
                             <label for="toggle_16" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/016.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/016.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="three columns">
@@ -1044,7 +1031,7 @@ include 'form_template.php';
                             <input type="checkbox" id="toggle_17">
                             <dialog>
                                 <label for="toggle_17" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/017.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/017.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
@@ -1074,7 +1061,7 @@ include 'form_template.php';
                             <input type="checkbox" id="toggle_18">
                             <dialog>
                                 <label for="toggle_18" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/018.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/018.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
@@ -1109,7 +1096,7 @@ include 'form_template.php';
                             <input type="checkbox" id="toggle_19">
                             <dialog>
                                 <label for="toggle_19" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/019.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/019.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
@@ -1160,7 +1147,7 @@ include 'form_template.php';
                         <input type="checkbox" id="toggle_20">
                         <dialog>
                             <label for="toggle_20" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/equipment/020.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/equipment/020.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="three columns">
@@ -1206,10 +1193,13 @@ include 'form_template.php';
                     </div>
                 </div>
 
-                <button onclick="location.href = 'form_equipment_list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+                <button onclick="location.href = '../equipment/list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
                 <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> SAVE</button>
             </div>
         </form>
+        <script src="../js/jquery-3.7.0.js"></script>
+        <script src="../js/multiselect-dropdown.js" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>
             $(".button").click(function () {
                 var buttonId = $(this).attr("id");
@@ -1222,7 +1212,5 @@ include 'form_template.php';
                 $("body").removeClass("modal-active");
             });
         </script>
-        <script src="js/multiselect-dropdown.js" ></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </body>
 </html>

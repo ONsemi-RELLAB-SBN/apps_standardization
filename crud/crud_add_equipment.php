@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-include 'class/db.php';
-include './class/ldap.php';
+include '../class/db.php';
+include '../class/ldap.php';
 
 $labLocation        = $_GET['lab_location'];
 $strategy           = $_GET['strategy'];
@@ -142,6 +142,6 @@ $upload = mysqli_query($con, $newinsert);
 ?>
 <script>
     alert('New Equipment Added Successfully');
-    window.location.href = 'form_equipment_list.php';
+    window.location.href = '../equipment/list.php';
 </script>
 <?php mysql_close($handle);

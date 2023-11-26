@@ -4,8 +4,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'form_template.php';
-include 'class/get_parameter.php';
+include '../template/form.php';
+include '../class/get_parameter.php';
 $id = $_GET['edit'];
 ?>
 
@@ -18,10 +18,6 @@ $id = $_GET['edit'];
         <title>EDIT FORM | Standardization</title>
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
         <style>
             input[type=text], input[type=password] {
@@ -106,12 +102,12 @@ $id = $_GET['edit'];
 
     </head>
     <body>
-        <?php include './navigation_equipment.php';?>
+        <?php include '../navigation/equipment.php';?>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <!--<h5 style="border-left: none;">Equipment Details</h5>-->
-        <form id="update_equipment_form" action="crud_update_equipment.php" method="get">
+        <form id="update_equipment_form" action="../crud/crud_update_equipment.php" method="get">
             <div class="row">
                 <?php
                 $sqlFormData = "SELECT * FROM gest_form_eqpt WHERE id = '$id'";
@@ -123,7 +119,16 @@ $id = $_GET['edit'];
                     <div class="row">
                         <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                         <div class="three columns">
-                            <select id="lab_location" name="lab_location" style="width: 100%" required>
+                            <input type="text" list="lab_location_list" autocomplete="off" id="lab_location" value="<?php echo $rowForm['lab_location']; ?>">
+                            <datalist id="lab_location_list">
+                                <?php 
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '002' ORDER BY code ASC";
+                                $result = mysqli_query($con, $sqlDdSite);
+                                while($rowSite = mysqli_fetch_array($result)) { ?>
+                                    <option value="<?php echo $rowSite['name']; ?>"><?php echo $rowSite['name']; ?></option>
+                                <?php } ?>
+                            </datalist>
+<!--                            <select id="lab_location" name="lab_location" style="width: 100%" required>
                                 <option value="" selected=""></option>
                                 <?php
                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '002' ORDER BY code ASC";
@@ -131,7 +136,7 @@ $id = $_GET['edit'];
                                 while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                     <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['lab_location']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                 <?php endwhile; ?>
-                            </select>
+                            </select>-->
                         </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="strategy">Product Group *</label></div>
@@ -1209,7 +1214,7 @@ $id = $_GET['edit'];
                             <div class="two columns">&nbsp;</div>
                         </div>
                     <?php } endwhile; ?>
-                <button onclick="location.href = 'form_equipment_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+                <button onclick="location.href = '../equipment/list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
                 <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Update</button>
                 
                 <script>
@@ -1233,6 +1238,8 @@ $id = $_GET['edit'];
                 
             </div>
         </form>
+        <script src="js/multiselect-dropdown.js" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>
             $(".button").click(function () {
                 var buttonId = $(this).attr("id");
@@ -1245,7 +1252,5 @@ $id = $_GET['edit'];
                 $("body").removeClass("modal-active");
             });
         </script>
-        <script src="js/multiselect-dropdown.js" ></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </body>
 </html>

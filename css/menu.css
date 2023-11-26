@@ -33,7 +33,7 @@ body {
     left: -100%;
     overflow: hidden;
     transition: left 0.3s;
-    width: 15%;
+    width: 20%;
     z-index: 100;
     margin-top: 80px;
     padding-top: 25px;
@@ -169,4 +169,29 @@ body {
 .nav-control:checked ~ .toggle-button .wolverine .claws:after {
     -webkit-transform: rotate3d(0, 0, 1, -45deg);
     transform: rotate3d(0, 0, 1, -45deg);
+}
+
+@media only screen and (max-width: 1200px) {
+    .navigation {
+        width: 22%;
+    }
+    .navigation .h11 a {
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .navigation {
+        width: 25%;
+    }
+    .navigation .h11 a {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .navigation {
+        width: 30%;
+    }
+    .navigation .h11 a {
+        font-size: 14px;
+    }
 }

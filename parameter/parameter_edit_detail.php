@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-include './form_template.php';
+include '../template/form.php';
 
 $detail_id = $_GET['edit'];
 $master_id = $_GET['id'];
@@ -129,16 +129,15 @@ $master_id = $_GET['id'];
                                     <?php
                                 }
                                 ?>
-                                <!--<a href="parameter_detail.php?update=<?php echo $master_id; ?>" class="btn btn-default btn-lg" id="backButton"><i class='bx bx-arrow-back bx-fade-left-hover bx-fw' ></i>Go Back!</a>-->
                                 <a class="button pull-left" href="parameter_detail.php?update=<?php echo $master_id; ?>" id="backButton"><i class='bx bxs-chevron-left bx-fade-left-hover bx-fw' ></i>Go Back!</a>
                                 <button type="submit" value="Update Parameter Detail" name="update_details" id="update_details" class="btn pull-right" >
                                     <i class='bx bx-list-plus bx-flashing-hover bx-fw'></i> Update Parameter Detail
                                 </button>
                             </form>
-    <?php }; ?>
+                        <?php }; ?>
                     </div>
                 </div>
-<?php } ?>
+            <?php } ?>
         </div>
     </body>
 </html>

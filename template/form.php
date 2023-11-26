@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-include 'class/db.php';
-include 'class/ldap.php';
+include '../class/db.php';
+include '../class/ldap.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,13 +15,13 @@ include 'class/ldap.php';
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>STANDARDIZATION FORM</title>
         <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
+        <link rel="shortcut icon" href="../image/logo/onsemi_logo.ico">
 
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="css/menu.css"/>
-        <link rel="stylesheet" type="text/css" href="css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
+        <link rel="stylesheet" href="../css/menu.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../css/skeleton.css">
+        <link rel="stylesheet" type="text/css" href="../css/w3.css">
         <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
     </head>
     <body>
@@ -33,11 +33,11 @@ include 'class/ldap.php';
         </label>
         <nav class="navigation">
             <ul>
-                <h7 class="h11"><li><a href="main.php">         <i class='bx bxs-home-alt-2 bx-fw' style='color:#ffffff' ></i> HOME</a></li></h7>
-                <h7 class="h11"><li><a href="parameter.php">    <i class='bx bxs-cog bx-fw' style='color:#ffffff' ></i>Parameter</a></li></h7>
-                <h7 class="h11"><li><a href="form_equipment.php"><i class='bx bx-wrench bx-fw' style='color:#ffffff' ></i>Equipment</a></li></h7>
-                <h7 class="h11"><li><a href="form_hardware.php"><i class='bx bxl-steam bx-fw' style='color:#ffffff' ></i>Hardware</a></li></h7>
-                <h7 class="h11"><li><a href="form_daq.php">     <i class='bx bx-desktop bx-fw' style='color:#ffffff' ></i>DAQ</a></li></h7>
+                <h7 class="h11"><li><a href="../main.php">         <i class='bx bxs-home-alt-2 bx-fw' style='color:#ffffff' ></i> HOME</a></li></h7>
+                <h7 class="h11"><li><a href="../parameter/parameter.php">    <i class='bx bxs-cog bx-fw' style='color:#ffffff' ></i>Parameter</a></li></h7>
+                <h7 class="h11"><li><a href="../equipment/add.php"><i class='bx bx-wrench bx-fw' style='color:#ffffff' ></i>Equipment</a></li></h7>
+                <h7 class="h11"><li><a href="../hardware/add.php"><i class='bx bxl-steam bx-fw' style='color:#ffffff' ></i>Hardware</a></li></h7>
+                <h7 class="h11"><li><a href="../daq/add.php">     <i class='bx bx-desktop bx-fw' style='color:#ffffff' ></i>DAQ</a></li></h7>
                 <h7 class="h11"><li><a href="form_power.php">   <i class='bx bxs-battery-charging bx-fw' style='color:#ffffff'></i>Power Supply</a></li></h7>
                 <h7 class="h11"><li><a href="form_design.php">  <i class='bx bxl-blender bx-fw' style='color:#ffffff'></i>Design</a></li></h7>
                 <h7 class="h11"><li><a href="form_process.php"> <i class='bx bx-git-compare bx-fw' style='color:#ffffff'></i>Process</a></li></h7>

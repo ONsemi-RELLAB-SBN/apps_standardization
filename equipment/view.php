@@ -4,8 +4,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'form_template.php';
-include './class/get_parameter.php';
+include '../template/form.php';
+include '../class/get_parameter.php';
 $id = $_GET['view'];
 ?>
 
@@ -24,7 +24,7 @@ $id = $_GET['view'];
         <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
     </head>
     <body>
-        <?php include './navigation_equipment.php';?>
+        <?php include '../navigation/equipment.php';?>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
@@ -575,8 +575,8 @@ $id = $_GET['view'];
                             </div>
                         </div>
                     <?php } endwhile; ?>
-                <button onclick="location.href = 'form_equipment_list.php'" type="button" id="backBtn"><i class='bx bxs-chevron-left bx-fw' ></i> Back</button>
-                <button onclick="location.href = 'form_equipment_edit.php?edit=<?php echo $id; ?>'" type="button" id="editBtn"><i class='bx bxs-pencil bx-fw' ></i> Edit</button>
+                <button onclick="location.href = 'list.php'" type="button" id="backBtn"><i class='bx bxs-chevron-left bx-fw' ></i> Back</button>
+                <button onclick="location.href = 'edit.php?edit=<?php echo $id; ?>'" type="button" id="editBtn"><i class='bx bxs-pencil bx-fw' ></i> Edit</button>
             </div>
         </form>
     </body>
