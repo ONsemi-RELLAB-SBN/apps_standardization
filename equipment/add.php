@@ -104,15 +104,15 @@ include '../template/form.php';
                 <div class="row">
                     <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                     <div class="three columns">
-                        <input type="text" list="lab_location_list" autocomplete="off" id="lab_location">
-                        <datalist id="lab_location_list">
+                        <select id="lab_location" name="lab_location" style="width: 100%" required>
+                            <option value="" selected=""></option>
                             <?php 
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '002' ORDER BY code ASC";
-                            $result = mysqli_query($con, $sqlDdSite);
-                            while($row = mysqli_fetch_array($result)) { ?>
-                                <option value="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></option>
-                            <?php } ?>
-                        </datalist>
+                            $resSite = mysqli_query($con, $sqlDdSite);
+                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="strategy">Product Group *</label></div>
@@ -145,15 +145,15 @@ include '../template/form.php';
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="champion">Lab Manager *</label></div>
                     <div class="three columns">
-                        <input type="text" list="champion_list" autocomplete="off" id="champion">
-                        <datalist id="champion_list">
+                        <select id="champion" name="champion" style="width: 100%" required>
+                            <option value="" selected=""></option>
                             <?php 
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '005' ORDER BY code ASC";
-                            $result = mysqli_query($con, $sqlDdSite);
-                            while($row = mysqli_fetch_array($result)) { ?>
-                                <option value="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></option>
-                            <?php } ?>
-                        </datalist>
+                            $resSite = mysqli_query($con, $sqlDdSite);
+                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
                 </div>
@@ -162,7 +162,7 @@ include '../template/form.php';
                 <div class="row">
                     <div class="two columns"><label for="eqpt_id">Equipment ID *</label></div>
                     <div class="three columns">
-                        <input type="text" list="eqpt_id_list" autocomplete="off" id="eqpt_id">
+                        <input type="text" list="eqpt_id_list" autocomplete="off" id="eqpt_id" name="eqpt_id">
                         <datalist id="eqpt_id_list">
                             <?php 
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
@@ -190,7 +190,7 @@ include '../template/form.php';
                 <div class="row">
                     <div class="two columns"><label for="manufacturer">Equipment Manufacturer *</label></div>
                     <div class="three columns">
-                        <input type="text" list="manufacturer_list" autocomplete="off" id="manufacturer">
+                        <input type="text" list="manufacturer_list" autocomplete="off" id="manufacturer" name="manufacturer">
                         <datalist id="manufacturer_list">
                             <?php 
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
@@ -203,7 +203,7 @@ include '../template/form.php';
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="model">Equipment Model *</label></div>
                     <div class="three columns">
-                        <input type="text" list="model_list" autocomplete="off" id="model">
+                        <input type="text" list="model_list" autocomplete="off" id="model" name="model">
                         <datalist id="model_list">
                             <?php 
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '010' ORDER BY code ASC";

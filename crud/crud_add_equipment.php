@@ -22,6 +22,20 @@ $newTransfer        = $_GET['new_transfer'];
 $from               = $_GET['from'];
 $zone               = $_GET['zone'];
 
+echo '<br>$labLocation :: ' . $labLocation;
+echo '<br>$strategy :: ' . $strategy;
+echo '<br>$standardization :: ' . $standardization;
+echo '<br>$champion :: ' . $champion;
+echo '<br>$eqptId :: ' . $eqptId;
+echo '<br>$manufacturer :: ' . $manufacturer;
+echo '<br>$model :: ' . $model;
+echo '<br>$mfgDate :: ' . $mfgDate;
+echo '<br>$assetNo :: ' . $assetNo;
+echo '<br>$newTransfer :: ' . $newTransfer;
+echo '<br>$from :: ' . $from;
+echo '<br>$zone :: ' . $zone;
+echo '--------------------------------';
+
 $voltRating         = $_GET['volt_rating'];
 $voltControl        = $_GET['volt_control'];
 $currRating         = $_GET['curr_rating'];
@@ -103,6 +117,8 @@ foreach ($_GET['relTest'] as $key => $value) {
     $dataRel = $dataRel . $inter . ",";
 }
 $dataRel = rtrim($dataRel, ", ");
+
+alert("");
 
 $newinsert = "INSERT INTO gest_form_eqpt (eqpt_id, lab_location, strategy, standard_category, champion, dedicate_usage, rel_test, zone, manufacturer, eqpt_model, 
             eqpt_mfg_date, eqpt_asset_no, new_transfer_eqpt, transfer_eqpt_location, eqpt_volt_rating, volt_control_accuracy, current_rating, min_time_setting, max_time_setting, min_temp, max_temp, min_rh, max_rh, heat_dissipation, min_pressure, max_pressure, 

@@ -110,7 +110,7 @@ $id = $_GET['update'];
                                         <label for="detailsName">Details Name *</label>
                                     </div>
                                     <div class="six columns">
-                                        <input type="text" id="detailsName" name="detailsName" placeholder="Details Name" value="" style="width: 100%">
+                                        <input type="text" id="detailsName" name="detailsName" placeholder="Details Name" value="" style="width: 100%" required>
                                     </div>
                                 </div>
                                 <div class="row">

@@ -75,6 +75,7 @@ include '../class/get_parameter.php';
             <div class="row">
                 <h2 class="u-pull-left" style="border-left:none">Equipment [Chamber] List</h2>
                 <button onClick="window.location.href = window.location.href" type="button" class="btn btn-default btn-lg u-pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
+                <button onclick="location.href = '../template/template_equipment.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Template</button>
             </div>
             
             <table id="myTable" class="u-full-width" style="width:100%">

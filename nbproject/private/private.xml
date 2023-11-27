@@ -3,16 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Source%20Code/Tutorial/htdocs/apps04/css/main01.css</file>
-            <file>file:/D:/Source%20Code/Tutorial/htdocs/apps04/skeleton/form_daq.php</file>
-            <file>file:/D:/Source%20Code/Tutorial/htdocs/apps04/skeleton/form_power.php</file>
-            <file>file:/D:/Source%20Code/Tutorial/htdocs/apps04/skeleton/css/skeleton.css</file>
-            <file>file:/D:/Source%20Code/Tutorial/htdocs/apps04/skeleton/demo.html</file>
-            <file>file:/D:/Source%20Code/Tutorial/htdocs/apps04/skeleton/sample.php</file>
-            <file>file:/D:/Source%20Code/Tutorial/htdocs/apps04/skeleton/parameter.php</file>
-            <file>file:/D:/Source%20Code/Tutorial/htdocs/apps04/skeleton/js/multiselect-dropdown.js</file>
-            <file>file:/D:/Source%20Code/Tutorial/htdocs/apps04/skeleton/sample.html</file>
-            <file>file:/D:/Source%20Code/Tutorial/htdocs/apps04/skeleton/form_equipment.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/form_mass_upload.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/crud/crud_add_equipment.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/parameter/parameter_detail.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/xlsm/upload_design.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/css/main.css</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/xlsm/upload_electricaltest.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/template/list.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/xlsm/upload_process.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/login.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/class/db.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/class/check_user.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/xlsm/upload_daq.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/class/ldap.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/xlsm/upload_equipment.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/xlsm/upload_hardware.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/template/form.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/equipment/list.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/xlsm/upload_powersupply.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/main.php</file>
+            <file>file:/D:/Source%20Code/onsemi-rellab/htdocs/apps04/equipment/add.php</file>
         </group>
     </open-files>
 </project-private>

@@ -10,7 +10,7 @@ use ayep\SimpleXLSX;
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', true);
 
-require_once __DIR__ . '\SimpleXLSX.php';
+require_once __DIR__ . '\template\SimpleXLSX.php';
 
 echo '<h2>Upload Standardization Form files below</h2>
 <form method="post" enctype="multipart/form-data">
