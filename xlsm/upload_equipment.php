@@ -5,10 +5,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-//ob_start();
-//session_start();
+ob_start();
+session_start();
 include '../class/ldap.php';
-
 if (!empty($_SESSION['username']) && !empty($_SESSION['password'])) {
     $username = $_SESSION['username'];
     $password = $_SESSION['password'];
@@ -191,9 +190,11 @@ if (isset($_FILES['file'])) {
                                         break;
                                     case 9:
                                         $manufacturer = $r[$i];
+                                        $manufacturer = getCode($manufacturer, '009', $username);
                                         break;
                                     case 10:
                                         $model = $r[$i];
+                                        $model = getCode($model, '010', $username);
                                         break;
                                     case 11:
                                         $mfgdate = $r[$i];
@@ -203,9 +204,11 @@ if (isset($_FILES['file'])) {
                                         break;
                                     case 13:
                                         $transfer = $r[$i];
+                                        $transfer = getCode($transfer, '013', $username);
                                         break;
                                     case 14:
                                         $from = $r[$i];
+                                        $from = getCode($from, '014', $username);
                                         break;
                                     case 15:
                                         $voltrate = $r[$i];
@@ -293,9 +296,11 @@ if (isset($_FILES['file'])) {
                                         break;
                                     case 43:
                                         $board = $r[$i];
+                                        $board = getCode($board, '015', $username);
                                         break;
                                     case 44:
                                         $rackmaterial = $r[$i];
+                                        $rackmaterial = getCode($rackmaterial, '016', $username);
                                         break;
                                     case 45:
                                         $rackslotpitch = $r[$i];
@@ -317,27 +322,35 @@ if (isset($_FILES['file'])) {
                                         break;
                                     case 51:
                                         $airflow = $r[$i];
+                                        $airflow = getCode($airflow, '017', $username);
                                         break;
                                     case 52:
                                         $temp01 = $r[$i];
+                                        $temp01 = getCode($temp01, '022', $username);
                                         break;
                                     case 53:
                                         $temp02 = $r[$i];
+                                        $temp02 = getCode($temp02, '022', $username);
                                         break;
                                     case 54:
                                         $temp03 = $r[$i];
+                                        $temp03 = getCode($temp03, '022', $username);
                                         break;
                                     case 55:
                                         $presswitch = $r[$i];
+                                        $presswitch = getCode($presswitch, '022', $username);
                                         break;
                                     case 56:
                                         $safevalve = $r[$i];
+                                        $safevalve = getCode($safevalve, '022', $username);
                                         break;
                                     case 57:
                                         $smoke = $r[$i];
+                                        $smoke = getCode($smoke, '022', $username);
                                         break;
                                     case 58:
                                         $emo = $r[$i];
+                                        $emo = getCode($emo, '022', $username);
                                         break;
                                     case 59:
                                         $voltage = $r[$i];
@@ -350,36 +363,47 @@ if (isset($_FILES['file'])) {
                                         break;
                                     case 62:
                                         $exhaust = $r[$i];
+                                        $exhaust = getCode($exhaust, '0278', $username);
                                         break;
                                     case 63:
                                         $n2gas = $r[$i];
+                                        $n2gas = getCode($n2gas, '022', $username);
                                         break;
                                     case 64:
                                         $oxygen = $r[$i];
+                                        $oxygen = getCode($oxygen, '022', $username);
                                         break;
                                     case 65:
                                         $liquid = $r[$i];
+                                        $liquid = getCode($liquid, '022', $username);
                                         break;
                                     case 66:
                                         $chilled = $r[$i];
+                                        $chilled = getCode($chilled, '022', $username);
                                         break;
                                     case 67:
                                         $diwater = $r[$i];
+                                        $diwater = getCode($diwater, '022', $username);
                                         break;
                                     case 68:
                                         $topap = $r[$i];
+                                        $topap = getCode($topap, '030', $username);
                                         break;
                                     case 69:
                                         $cda = $r[$i];
+                                        $cda = getCode($cda, '021', $username);
                                         break;
                                     case 70:
                                         $lan = $r[$i];
+                                        $lan = getCode($lan, '021', $username);
                                         break;
                                     case 71:
                                         $daq = $r[$i];
+                                        $daq = getCode($daq, '021', $username);
                                         break;
                                     case 72:
                                         $inttype = $r[$i];
+                                        $inttype = getCode($inttype, '031', $username);
                                         break;
                                     case 73:
                                         $jack = $r[$i];
@@ -434,6 +458,7 @@ if (isset($_FILES['file'])) {
                                         break;
                                     case 90:
                                         $exttype = $r[$i];
+                                        $exttype = getCode($exttype, '032', $username);
                                         break;
                                     case 91:
                                         $intvoltrate = $r[$i];
@@ -471,85 +496,73 @@ if (isset($_FILES['file'])) {
 }
 
 function inserttodatabase($k, $username,
-        $lablocation, $productgroup, $category, $labmanager, $eqptId, $usage, $reltest, $zone, $manufacturer, $model,
-        $mfgdate, $assetno, $transfer, $from, $voltrate, $voltacc, $currrate, $powerrate, $mintimer, $maxtimer,
-        $mintemp, $maxtemp, $minrh, $maxrh, $minpress, $maxpress, $heatdiss, $tempfluc, $uniform, $humid,
-        $extdimw, $extdimd, $extdimh, $intdimw, $intdimd, $intdimh, $diameter, $nozone, $rackw, $rackd,
-        $rackh, $intvolume, $board, $rackmaterial, $rackslotpitch, $rackslotwidth, $rackweight, $nombslot, $maxpsslot, $maxpseqpt,
-        $airflow, $temp01, $temp02, $temp03, $presswitch, $safevalve, $smoke, $emo, $voltage, $current,
-        $phase, $exhaust, $n2gas, $oxygen, $liquid, $chilled, $diwater, $topap, $cda, $lan,
-        $daq, $inttype, $jack, $convoltrate, $concurrrate, $contemprate, $nopin, $nopitch,
-        $connrack, $wirevoltrate, $wirecurrrate, $wiretemprate, $exttype, $intvoltrate, $intcurrrate) {
+                            $lablocation, $productgroup, $category, $labmanager, $eqptId, $usage, $reltest, $zone, $manufacturer, $model,
+                            $mfgdate, $assetno, $transfer, $from, $voltrate, $voltacc, $currrate, $powerrate, $mintimer, $maxtimer,
+                            $mintemp, $maxtemp, $minrh, $maxrh, $minpress, $maxpress, $heatdiss, $tempfluc, $uniform, $humid,
+                            $extdimw, $extdimd, $extdimh, $intdimw, $intdimd, $intdimh, $diameter, $nozone, $rackw, $rackd,
+                            $rackh, $intvolume, $board, $rackmaterial, $rackslotpitch, $rackslotwidth, $rackweight, $nombslot, $maxpsslot, $maxpseqpt,
+                            $airflow, $temp01, $temp02, $temp03, $presswitch, $safevalve, $smoke, $emo, $voltage, $current,
+                            $phase, $exhaust, $n2gas, $oxygen, $liquid, $chilled, $diwater, $topap, $cda, $lan,
+                            $daq, $inttype, $jack, $convoltrate, $concurrrate, $contemprate, $nopin, $nopitch,
+                            $connrack, $wirevoltrate, $wirecurrrate, $wiretemprate, $exttype, $intvoltrate, $intcurrrate) {
     if ($k == 1) {
-//        echo 'KITA SKIP INSERT FOR HEADERS <br><br>';
+        
     } else {
-        echo $eqptId . "New records created successfully";
-        /*
-          $con = mysqli_connect($host, $user, $pass, $db);
-
-          if (!$con) {
-          echo "Error: Unable to connect to MySQL." . PHP_EOL;
-          echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-          echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-          exit;
-          }
-
-          $newinsert = "INSERT INTO gest_form_eqpt (eqpt_id, lab_location, strategy, standard_category, champion, dedicate_usage, rel_test, zone, manufacturer, eqpt_model,
-          eqpt_mfg_date, eqpt_asset_no, new_transfer_eqpt, transfer_eqpt_location, eqpt_volt_rating, volt_control_accuracy, current_rating, power_rating, min_time_setting, max_time_setting, min_temp, max_temp, min_rh, max_rh, heat_dissipation, min_pressure, max_pressure,
-          temp_fluctuation, temp_uniformity, humid_fluctuation, ext_dimension_w, ext_dimension_d, ext_dimension_h, int_dimension_w, int_dimension_d, int_dimension_h, diameter, no_interior_zone,
-          rack_dimension_w, rack_dimension_d, rack_dimension_h, int_vol, board_orientation, rack_material, rack_slot_pitch, rack_slot_width, eqpt_weight, no_mb_slot,
-          max_ps_slot, max_ps_eqpt, airflow, temp_protection_1, temp_protection_2, temp_protection_3, pressure_switch, safety_valve, smoke_alarm, emo_btn, voltage, current, phase,
-          exhaust, n2_gas, oxygen_level_detector, liquid_nitrogen, chilled_water, di_water, water_topup_system, cda, lan, daq, internal_config_type, no_banana_jack_hole,
-          conn_volt_rating, conn_current_rating, conn_temp_rating, no_pin, pin_pitch, no_wire_conn_rack, wire_volt_rating, wire_curr_rating, wire_temp_rating, ext_config_type,
-          interface_volt_rating, interface_current_rating, created_by, created_date, status, flag) "
-          . "VALUES ('$eqptId', '$lablocation', '$productgroup', '$category', '$labmanager', '$usage', '$reltest', '$zone', '$manufacturer', '$model', "
-          . "'$mfgdate', '$assetno', '$transfer', '$from', '$voltrate', '$voltacc', '$currrate', '$powerrate', '$mintimer', '$maxtimer', '$mintemp', '$maxtemp', '$minrh', '$maxrh', '$heatdiss', '$minpress', '$maxpress', "
-          . "'$tempfluc', '$uniform', '$humid', '$extdimw', '$extdimd', '$extdimh', '$intdimw', '$intdimd', '$intdimh', '$diameter', '$nozone', "
-          . "'$rackw', '$rackd', '$rackh', '$intvolume', '$board', '$rackmaterial', '$rackslotpitch', '$rackslotwidth', '$rackweight', '$nombslot', "
-          . "'$maxpsslot', '$maxpseqpt', '$airflow', '$temp01', '$temp02', '$temp03', '$presswitch', '$safevalve', '$smoke', '$emo', '$voltage', '$current', '$phase', "
-          . "'$exhaust', '$n2gas', '$oxygen', '$liquid', '$chilled', '$diwater', '$topap', '$cda', '$lan', '$daq', '$inttype', '$jack', "
-          . "'$convoltrate', '$concurrrate', '$contemprate', '$nopin', '$nopitch', '$connrack', '$wirevoltrate', '$wirecurrrate', '$wiretemprate', '$exttype', "
-          . "'$intvoltrate', '$intcurrrate', '$username', NOW(), 'Active', '1');";
-          if ($con->multi_query($newinsert) === TRUE) {
-
-          } else {
-          echo "Error: " . $newinsert . "<br>" . $con->error;
-          }
-
-          $con->close();
-         */
+        include '../class/db.php';
+        $insert = "INSERT INTO gest_form_eqpt (eqpt_id, lab_location, strategy, standard_category, champion, dedicate_usage, rel_test, zone, manufacturer, eqpt_model,
+                    eqpt_mfg_date, eqpt_asset_no, new_transfer_eqpt, transfer_eqpt_location, eqpt_volt_rating, volt_control_accuracy, current_rating, power_rating, min_time_setting, max_time_setting, min_temp, max_temp, min_rh, max_rh, heat_dissipation, min_pressure, max_pressure,
+                    temp_fluctuation, temp_uniformity, humid_fluctuation, ext_dimension_w, ext_dimension_d, ext_dimension_h, int_dimension_w, int_dimension_d, int_dimension_h, diameter, no_interior_zone,
+                    rack_dimension_w, rack_dimension_d, rack_dimension_h, int_vol, board_orientation, rack_material, rack_slot_pitch, rack_slot_width, eqpt_weight, no_mb_slot,
+                    max_ps_slot, max_ps_eqpt, airflow, temp_protection_1, temp_protection_2, temp_protection_3, pressure_switch, safety_valve, smoke_alarm, emo_btn, voltage, current, phase,
+                    exhaust, n2_gas, oxygen_level_detector, liquid_nitrogen, chilled_water, di_water, water_topup_system, cda, lan, daq, internal_config_type, no_banana_jack_hole,
+                    conn_volt_rating, conn_current_rating, conn_temp_rating, no_pin, pin_pitch, no_wire_conn_rack, wire_volt_rating, wire_curr_rating, wire_temp_rating, ext_config_type,
+                    interface_volt_rating, interface_current_rating, created_by, created_date, status, flag) "
+                    . "VALUES ('$eqptId', '$lablocation', '$productgroup', '$category', '$labmanager', '$usage', '$reltest', '$zone', '$manufacturer', '$model', "
+                    . "'$mfgdate', '$assetno', '$transfer', '$from', '$voltrate', '$voltacc', '$currrate', '$powerrate', '$mintimer', '$maxtimer', '$mintemp', '$maxtemp', '$minrh', '$maxrh', '$heatdiss', '$minpress', '$maxpress', "
+                    . "'$tempfluc', '$uniform', '$humid', '$extdimw', '$extdimd', '$extdimh', '$intdimw', '$intdimd', '$intdimh', '$diameter', '$nozone', "
+                    . "'$rackw', '$rackd', '$rackh', '$intvolume', '$board', '$rackmaterial', '$rackslotpitch', '$rackslotwidth', '$rackweight', '$nombslot', "
+                    . "'$maxpsslot', '$maxpseqpt', '$airflow', '$temp01', '$temp02', '$temp03', '$presswitch', '$safevalve', '$smoke', '$emo', '$voltage', '$current', '$phase', "
+                    . "'$exhaust', '$n2gas', '$oxygen', '$liquid', '$chilled', '$diwater', '$topap', '$cda', '$lan', '$daq', '$inttype', '$jack', "
+                    . "'$convoltrate', '$concurrrate', '$contemprate', '$nopin', '$nopitch', '$connrack', '$wirevoltrate', '$wirecurrrate', '$wiretemprate', '$exttype', "
+                    . "'$intvoltrate', '$intcurrrate', '$username', NOW(), 'Active', '1');";
+        if ($con->multi_query($insert) === TRUE) {
+            
+        } else {
+            echo "Error: " . $newinsert . "<br>" . $con->error;
+        }
+        $con->close();
     }
 }
 
 function getCode($value, $code, $username) {
-    include '../class/db.php';
-
-    $qry = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' AND name = '$value'";
-    $result = $con->query($qry);
-    $latestCode = '';
-
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while ($row = $result->fetch_assoc()) {
-            $code = $row['code'];
-        }
-        echo ' ------- jumpa dlm db, so, baca ja <br>';
+    
+    if ($value == '') {
+        $code = '';
     } else {
-        echo "0 results";
-        $slt = "SELECT LPAD(MAX(CODE)+1, 6, 0) as data FROM gest_parameter_detail WHERE master_code = '$code'";
-        $result = $con->query($slt);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $latestCode = $row['data'];
-            }
-        }
-        echo '$latestCode >>> ' . $latestCode;
+        include '../class/db.php';
 
-        $qeyAdd = "INSERT INTO gest_parameter_detail (master_code, code, name, remark, created_date, created_by, flag) VALUES ('$code', '$latestCode', '$value', NULL, NOW(), '$username', 1)";
-        echo '  SINI CREATE BARU' . $qeyAdd . '<br><br>';
-        $upload = mysqli_query($con, $qeyAdd);
+        $qry = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' AND name = '$value'";
+        $result = $con->query($qry);
+        $latestCode = '';
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while ($row = $result->fetch_assoc()) {
+                $code = $row['code'];
+            }
+        } else {
+            $slt = "SELECT LPAD(MAX(CODE)+1, 6, 0) as data FROM gest_parameter_detail WHERE master_code = '$code'";
+            $result = $con->query($slt);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $latestCode = $row['data'];
+                }
+            }
+            $qeyAdd = "INSERT INTO gest_parameter_detail (master_code, code, name, remark, created_date, created_by, flag) VALUES ('$code', '$latestCode', '$value', NULL, NOW(), '$username', 1)";
+            $upload = mysqli_query($con, $qeyAdd);
+        }
+        $con->close();
     }
-    $con->close();
     return $code;
 }
 
@@ -558,10 +571,8 @@ function getMultipleCode($value, $code, $username) {
     $combinecode = '';
     $array = explode('/', $value);
     foreach ($array as $values) {
-        echo 'data masuk satu2 :::: ' . $values;
-        $combinecode .= getCode($values, $code, $username);
-        echo ' <<< aik >>> ' . $combinecode;
+        $combinecode .= getCode($values, $code, $username) . ",";
     }
-    echo 'AKHIRNYA ::: ' . $combinecode . '<br>';
+    $combinecode = rtrim($combinecode, ', ');
     return $combinecode;
 }

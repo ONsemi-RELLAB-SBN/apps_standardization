@@ -10,5 +10,5 @@ unset($_SESSION["username"]);
 unset($_SESSION["password"]);
 
 echo 'Your session has reached the idle time limit and has been automatically terminated.';
-header('Refresh: 1; URL = login.php');
+header('Refresh: 1; URL = /../login.php');
 ?>
