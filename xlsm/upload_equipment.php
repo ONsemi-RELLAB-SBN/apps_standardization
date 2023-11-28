@@ -5,14 +5,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-ob_start();
-session_start();
-
-$host = "localhost";
-$user = "ayep";
-$pass = "mysql@2023";
-$db = "gest";
-$allquery = '';
+//ob_start();
+//session_start();
+include '../class/ldap.php';
 
 if (!empty($_SESSION['username']) && !empty($_SESSION['password'])) {
     $username = $_SESSION['username'];
@@ -165,27 +160,31 @@ if (isset($_FILES['file'])) {
                                         break;
                                     case 1:
                                         $lablocation = $r[$i];
-                                        echo '$lablocation >>> ' . $lablocation;
-                                        $lablocation = getCode($lablocation, '002');
-                                        echo '$lablocation >>> ' . $lablocation;
+                                        $lablocation = getCode($lablocation, '002', $username);
                                         break;
                                     case 2:
                                         $productgroup = $r[$i];
+                                        $productgroup = getCode($productgroup, '003', $username);
                                         break;
                                     case 3:
                                         $category = $r[$i];
+                                        $category = getCode($category, '004', $username);
                                         break;
                                     case 4:
                                         $labmanager = $r[$i];
+                                        $labmanager = getCode($labmanager, '005', $username);
                                         break;
                                     case 5:
                                         $eqptId = $r[$i];
+                                        $eqptId = getCode($eqptId, '006', $username);
                                         break;
                                     case 6:
                                         $usage = $r[$i];
+                                        $usage = getCode($usage, '007', $username);
                                         break;
                                     case 7:
                                         $reltest = $r[$i];
+                                        $reltest = getMultipleCode($reltest, '008', $username);
                                         break;
                                     case 8:
                                         $zone = $r[$i];
@@ -445,16 +444,16 @@ if (isset($_FILES['file'])) {
                                 }
                             }
                             echo '</tr>';
-                            inserttodatabase($k, $username, $host, $user, $pass, $db,
-                                                $lablocation, $productgroup, $category, $labmanager, $eqptId, $usage, $reltest, $zone, $manufacturer, $model,
-                                                $mfgdate, $assetno, $transfer, $from, $voltrate, $voltacc, $currrate, $powerrate, $mintimer, $maxtimer,
-                                                $mintemp, $maxtemp, $minrh, $maxrh, $minpress, $maxpress, $heatdiss, $tempfluc, $uniform, $humid,
-                                                $extdimw, $extdimd, $extdimh, $intdimw, $intdimd, $intdimh, $diameter, $nozone, $rackw, $rackd,
-                                                $rackh, $intvolume, $board, $rackmaterial, $rackslotpitch, $rackslotwidth, $rackweight, $nombslot, $maxpsslot, $maxpseqpt,
-                                                $airflow, $temp01, $temp02, $temp03, $presswitch, $safevalve, $smoke, $emo, $voltage, $current,
-                                                $phase, $exhaust, $n2gas, $oxygen, $liquid, $chilled, $diwater, $topap, $cda, $lan,
-                                                $daq, $inttype, $jack, $convoltrate, $concurrrate, $contemprate, $nopin, $nopitch,
-                                                $connrack, $wirevoltrate, $wirecurrrate, $wiretemprate, $exttype, $intvoltrate, $intcurrrate);
+                            inserttodatabase($k, $username,
+                                    $lablocation, $productgroup, $category, $labmanager, $eqptId, $usage, $reltest, $zone, $manufacturer, $model,
+                                    $mfgdate, $assetno, $transfer, $from, $voltrate, $voltacc, $currrate, $powerrate, $mintimer, $maxtimer,
+                                    $mintemp, $maxtemp, $minrh, $maxrh, $minpress, $maxpress, $heatdiss, $tempfluc, $uniform, $humid,
+                                    $extdimw, $extdimd, $extdimh, $intdimw, $intdimd, $intdimh, $diameter, $nozone, $rackw, $rackd,
+                                    $rackh, $intvolume, $board, $rackmaterial, $rackslotpitch, $rackslotwidth, $rackweight, $nombslot, $maxpsslot, $maxpseqpt,
+                                    $airflow, $temp01, $temp02, $temp03, $presswitch, $safevalve, $smoke, $emo, $voltage, $current,
+                                    $phase, $exhaust, $n2gas, $oxygen, $liquid, $chilled, $diwater, $topap, $cda, $lan,
+                                    $daq, $inttype, $jack, $convoltrate, $concurrrate, $contemprate, $nopin, $nopitch,
+                                    $connrack, $wirevoltrate, $wirecurrrate, $wiretemprate, $exttype, $intvoltrate, $intcurrrate);
                         }
                     }
                 }
@@ -471,68 +470,98 @@ if (isset($_FILES['file'])) {
     }
 }
 
-function inserttodatabase($k, $username, $host, $user, $pass, $db,
-                            $lablocation, $productgroup, $category, $labmanager, $eqptId, $usage, $reltest, $zone, $manufacturer, $model,
-                            $mfgdate, $assetno, $transfer, $from, $voltrate, $voltacc, $currrate, $powerrate, $mintimer, $maxtimer,
-                            $mintemp, $maxtemp, $minrh, $maxrh, $minpress, $maxpress, $heatdiss, $tempfluc, $uniform, $humid,
-                            $extdimw, $extdimd, $extdimh, $intdimw, $intdimd, $intdimh, $diameter, $nozone, $rackw, $rackd,
-                            $rackh, $intvolume, $board, $rackmaterial, $rackslotpitch, $rackslotwidth, $rackweight, $nombslot, $maxpsslot, $maxpseqpt,
-                            $airflow, $temp01, $temp02, $temp03, $presswitch, $safevalve, $smoke, $emo, $voltage, $current,
-                            $phase, $exhaust, $n2gas, $oxygen, $liquid, $chilled, $diwater, $topap, $cda, $lan,
-                            $daq, $inttype, $jack, $convoltrate, $concurrrate, $contemprate, $nopin, $nopitch,
-                            $connrack, $wirevoltrate, $wirecurrrate, $wiretemprate, $exttype, $intvoltrate, $intcurrrate) {
+function inserttodatabase($k, $username,
+        $lablocation, $productgroup, $category, $labmanager, $eqptId, $usage, $reltest, $zone, $manufacturer, $model,
+        $mfgdate, $assetno, $transfer, $from, $voltrate, $voltacc, $currrate, $powerrate, $mintimer, $maxtimer,
+        $mintemp, $maxtemp, $minrh, $maxrh, $minpress, $maxpress, $heatdiss, $tempfluc, $uniform, $humid,
+        $extdimw, $extdimd, $extdimh, $intdimw, $intdimd, $intdimh, $diameter, $nozone, $rackw, $rackd,
+        $rackh, $intvolume, $board, $rackmaterial, $rackslotpitch, $rackslotwidth, $rackweight, $nombslot, $maxpsslot, $maxpseqpt,
+        $airflow, $temp01, $temp02, $temp03, $presswitch, $safevalve, $smoke, $emo, $voltage, $current,
+        $phase, $exhaust, $n2gas, $oxygen, $liquid, $chilled, $diwater, $topap, $cda, $lan,
+        $daq, $inttype, $jack, $convoltrate, $concurrrate, $contemprate, $nopin, $nopitch,
+        $connrack, $wirevoltrate, $wirecurrrate, $wiretemprate, $exttype, $intvoltrate, $intcurrrate) {
     if ($k == 1) {
 //        echo 'KITA SKIP INSERT FOR HEADERS <br><br>';
     } else {
         echo $eqptId . "New records created successfully";
         /*
-        $con = mysqli_connect($host, $user, $pass, $db);
+          $con = mysqli_connect($host, $user, $pass, $db);
 
-        if (!$con) {
-            echo "Error: Unable to connect to MySQL." . PHP_EOL;
-            echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-            echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-            exit;
-        }
+          if (!$con) {
+          echo "Error: Unable to connect to MySQL." . PHP_EOL;
+          echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+          echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+          exit;
+          }
 
-        $newinsert = "INSERT INTO gest_form_eqpt (eqpt_id, lab_location, strategy, standard_category, champion, dedicate_usage, rel_test, zone, manufacturer, eqpt_model, 
-            eqpt_mfg_date, eqpt_asset_no, new_transfer_eqpt, transfer_eqpt_location, eqpt_volt_rating, volt_control_accuracy, current_rating, power_rating, min_time_setting, max_time_setting, min_temp, max_temp, min_rh, max_rh, heat_dissipation, min_pressure, max_pressure, 
-            temp_fluctuation, temp_uniformity, humid_fluctuation, ext_dimension_w, ext_dimension_d, ext_dimension_h, int_dimension_w, int_dimension_d, int_dimension_h, diameter, no_interior_zone, 
-            rack_dimension_w, rack_dimension_d, rack_dimension_h, int_vol, board_orientation, rack_material, rack_slot_pitch, rack_slot_width, eqpt_weight, no_mb_slot, 
-            max_ps_slot, max_ps_eqpt, airflow, temp_protection_1, temp_protection_2, temp_protection_3, pressure_switch, safety_valve, smoke_alarm, emo_btn, voltage, current, phase, 
-            exhaust, n2_gas, oxygen_level_detector, liquid_nitrogen, chilled_water, di_water, water_topup_system, cda, lan, daq, internal_config_type, no_banana_jack_hole, 
-            conn_volt_rating, conn_current_rating, conn_temp_rating, no_pin, pin_pitch, no_wire_conn_rack, wire_volt_rating, wire_curr_rating, wire_temp_rating, ext_config_type, 
-            interface_volt_rating, interface_current_rating, created_by, created_date, status, flag) "
-                . "VALUES ('$eqptId', '$lablocation', '$productgroup', '$category', '$labmanager', '$usage', '$reltest', '$zone', '$manufacturer', '$model', "
-                . "'$mfgdate', '$assetno', '$transfer', '$from', '$voltrate', '$voltacc', '$currrate', '$powerrate', '$mintimer', '$maxtimer', '$mintemp', '$maxtemp', '$minrh', '$maxrh', '$heatdiss', '$minpress', '$maxpress', "
-                . "'$tempfluc', '$uniform', '$humid', '$extdimw', '$extdimd', '$extdimh', '$intdimw', '$intdimd', '$intdimh', '$diameter', '$nozone', "
-                . "'$rackw', '$rackd', '$rackh', '$intvolume', '$board', '$rackmaterial', '$rackslotpitch', '$rackslotwidth', '$rackweight', '$nombslot', "
-                . "'$maxpsslot', '$maxpseqpt', '$airflow', '$temp01', '$temp02', '$temp03', '$presswitch', '$safevalve', '$smoke', '$emo', '$voltage', '$current', '$phase', "
-                . "'$exhaust', '$n2gas', '$oxygen', '$liquid', '$chilled', '$diwater', '$topap', '$cda', '$lan', '$daq', '$inttype', '$jack', "
-                . "'$convoltrate', '$concurrrate', '$contemprate', '$nopin', '$nopitch', '$connrack', '$wirevoltrate', '$wirecurrrate', '$wiretemprate', '$exttype', "
-                . "'$intvoltrate', '$intcurrrate', '$username', NOW(), 'Active', '1');";
-        if ($con->multi_query($newinsert) === TRUE) {
-            
-        } else {
-            echo "Error: " . $newinsert . "<br>" . $con->error;
-        }
+          $newinsert = "INSERT INTO gest_form_eqpt (eqpt_id, lab_location, strategy, standard_category, champion, dedicate_usage, rel_test, zone, manufacturer, eqpt_model,
+          eqpt_mfg_date, eqpt_asset_no, new_transfer_eqpt, transfer_eqpt_location, eqpt_volt_rating, volt_control_accuracy, current_rating, power_rating, min_time_setting, max_time_setting, min_temp, max_temp, min_rh, max_rh, heat_dissipation, min_pressure, max_pressure,
+          temp_fluctuation, temp_uniformity, humid_fluctuation, ext_dimension_w, ext_dimension_d, ext_dimension_h, int_dimension_w, int_dimension_d, int_dimension_h, diameter, no_interior_zone,
+          rack_dimension_w, rack_dimension_d, rack_dimension_h, int_vol, board_orientation, rack_material, rack_slot_pitch, rack_slot_width, eqpt_weight, no_mb_slot,
+          max_ps_slot, max_ps_eqpt, airflow, temp_protection_1, temp_protection_2, temp_protection_3, pressure_switch, safety_valve, smoke_alarm, emo_btn, voltage, current, phase,
+          exhaust, n2_gas, oxygen_level_detector, liquid_nitrogen, chilled_water, di_water, water_topup_system, cda, lan, daq, internal_config_type, no_banana_jack_hole,
+          conn_volt_rating, conn_current_rating, conn_temp_rating, no_pin, pin_pitch, no_wire_conn_rack, wire_volt_rating, wire_curr_rating, wire_temp_rating, ext_config_type,
+          interface_volt_rating, interface_current_rating, created_by, created_date, status, flag) "
+          . "VALUES ('$eqptId', '$lablocation', '$productgroup', '$category', '$labmanager', '$usage', '$reltest', '$zone', '$manufacturer', '$model', "
+          . "'$mfgdate', '$assetno', '$transfer', '$from', '$voltrate', '$voltacc', '$currrate', '$powerrate', '$mintimer', '$maxtimer', '$mintemp', '$maxtemp', '$minrh', '$maxrh', '$heatdiss', '$minpress', '$maxpress', "
+          . "'$tempfluc', '$uniform', '$humid', '$extdimw', '$extdimd', '$extdimh', '$intdimw', '$intdimd', '$intdimh', '$diameter', '$nozone', "
+          . "'$rackw', '$rackd', '$rackh', '$intvolume', '$board', '$rackmaterial', '$rackslotpitch', '$rackslotwidth', '$rackweight', '$nombslot', "
+          . "'$maxpsslot', '$maxpseqpt', '$airflow', '$temp01', '$temp02', '$temp03', '$presswitch', '$safevalve', '$smoke', '$emo', '$voltage', '$current', '$phase', "
+          . "'$exhaust', '$n2gas', '$oxygen', '$liquid', '$chilled', '$diwater', '$topap', '$cda', '$lan', '$daq', '$inttype', '$jack', "
+          . "'$convoltrate', '$concurrrate', '$contemprate', '$nopin', '$nopitch', '$connrack', '$wirevoltrate', '$wirecurrrate', '$wiretemprate', '$exttype', "
+          . "'$intvoltrate', '$intcurrrate', '$username', NOW(), 'Active', '1');";
+          if ($con->multi_query($newinsert) === TRUE) {
 
-        $con->close();
-        */
+          } else {
+          echo "Error: " . $newinsert . "<br>" . $con->error;
+          }
+
+          $con->close();
+         */
     }
 }
 
-function getCode($value, $code) {
+function getCode($value, $code, $username) {
+    include '../class/db.php';
+
     $qry = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' AND name = '$value'";
-    $result = $conn->query($qry);
+    $result = $con->query($qry);
+    $latestCode = '';
 
     if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
             $code = $row['code'];
         }
+        echo ' ------- jumpa dlm db, so, baca ja <br>';
     } else {
         echo "0 results";
+        $slt = "SELECT LPAD(MAX(CODE)+1, 6, 0) as data FROM gest_parameter_detail WHERE master_code = '$code'";
+        $result = $con->query($slt);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $latestCode = $row['data'];
+            }
+        }
+        echo '$latestCode >>> ' . $latestCode;
+
+        $qeyAdd = "INSERT INTO gest_parameter_detail (master_code, code, name, remark, created_date, created_by, flag) VALUES ('$code', '$latestCode', '$value', NULL, NOW(), '$username', 1)";
+        echo '  SINI CREATE BARU' . $qeyAdd . '<br><br>';
+        $upload = mysqli_query($con, $qeyAdd);
     }
+    $con->close();
     return $code;
+}
+
+function getMultipleCode($value, $code, $username) {
+    include '../class/db.php';
+    $combinecode = '';
+    $array = explode('/', $value);
+    foreach ($array as $values) {
+        echo 'data masuk satu2 :::: ' . $values;
+        $combinecode .= getCode($values, $code, $username);
+        echo ' <<< aik >>> ' . $combinecode;
+    }
+    echo 'AKHIRNYA ::: ' . $combinecode . '<br>';
+    return $combinecode;
 }

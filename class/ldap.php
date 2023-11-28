@@ -20,7 +20,7 @@ $inactivity_time = 45 * 60;
 if (isset($_SESSION['last_timestamp']) && (time() - $_SESSION['last_timestamp']) > $inactivity_time) {
     session_unset();
     session_destroy();
-    header("Location: logout.php");
+    header("location:logout.php");
     exit();
 } else {
     session_regenerate_id(true);

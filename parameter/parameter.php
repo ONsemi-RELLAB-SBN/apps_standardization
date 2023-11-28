@@ -30,7 +30,7 @@ if (isset($_POST['add_parameter'])) {
     if (empty($parameter_name) || empty($parameter_code)) {
         $message[] = 'Please fill out this parameter name field.';
     } else {
-        $insert = "INSERT INTO gest_parameter_master(name, code, link_image, remark, created_date, created_by, flag) VALUES('$parameter_name', '$parameter_code', '$parameter_image', ' ', NOW(), 'System', '1')";
+        $insert = "INSERT INTO gest_parameter_master(name, code, link_image, remark, created_date, created_by, flag) VALUES('$parameter_name', '$parameter_code', '$parameter_image', ' ', NOW(), '$username', '1')";
         $upload = mysqli_query($con, $insert);
         if ($upload) {
             move_uploaded_file($parameter_image_tmp_name, $parameter_image_folder);
