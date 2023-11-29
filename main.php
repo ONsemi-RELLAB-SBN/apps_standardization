@@ -56,24 +56,24 @@ checkUser($username, 'main_view.php');
                 <div class="shape">
                     <img src="image/logo/onsemi_logo_small.png" alt="alt"/>
                 </div>
-                <nav>
-                    <ul>
-                        <li style="background-color: green"><a href="equipment/add.php">Equipment</a></li>
-                        <li style="background-color: green"><a href="form_hardware.php">Hardware</a></li>
-                        <li style="background-color: green"><a href="form_daq.php">DAQ</a></li>
-                        <li style="background-color: green"><a href="form_power.php">Power Supply</a></li>
-                        <li style="background-color: gray" title="Under Development" id="try1" > <a href="#">Design</a></li>
-                        <li style="background-color: gray" title="Under Development" id="try2" > <a href="#">Process</a></li>
-                        <li style="background-color: gray" title="Under Development" id="try3" > <a href="#">Elec Test</a></li>
-                        <li style="background-color: blueviolet" title="Parameter"><a href="parameter/parameter.php">Parameter</a></li>
-                    </ul>
-                </nav>
                 <div class="content">
                     <div class="inner">
                         <h2>REL EQUIPMENT PLATFORM DEVELOPMENT<br>&<br>STANDARDIZATION</h2>
                         <p>released by 2023.</p>
                     </div>
                 </div>
+                <nav>
+                    <ul>
+                        <li style="background-color: green"><a href="equipment/add.php">Equipment</a></li>
+                        <li style="background-color: green"><a href="hardware/add.php.php">Hardware</a></li>
+                        <li style="background-color: green"><a href="daq/add.php">DAQ</a></li>
+                        <li style="background-color: green"><a href="power/add.php">Power Supply</a></li>
+                        <li style="background-color: gray" title="Under Development" id="try1" > <a href="#">Design</a></li>
+                        <li style="background-color: gray" title="Under Development" id="try2" > <a href="#">Process</a></li>
+                        <li style="background-color: gray" title="Under Development" id="try3" > <a href="#">Elec Test</a></li>
+                        <li style="background-color: blueviolet" title="Parameter"><a href="parameter/parameter.php">Parameter</a></li>
+                    </ul>
+                </nav>
             </header>
             <footer id="footer">
                 <p class="copyright">&copy; REL LAB Design By : <a href="https://html5up.net">M Arif / M Farhan</a>.</p>

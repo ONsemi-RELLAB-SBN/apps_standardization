@@ -22,10 +22,11 @@ include 'class/ldap.php';
 
         <style>
             .shape {
-                height: 130px;
-                width: 300px;
+                padding-top: 7px;
+                height: 40px;
+                width: 170px;
                 background-color: white;
-                border-radius: 25px;
+                border-radius: 15px;
             }
         </style>
     </head>
@@ -33,7 +34,7 @@ include 'class/ldap.php';
         <div id="wrapper">
             <header id="header">
                 <div class="shape">
-                    <img src="image/logo/onsemi_logo.png" alt="alt"/>
+                    <img src="image/logo/onsemi_logo_small.png" alt="alt"/>
                 </div>
                 <div class="content">
                     <div class="inner">
@@ -54,7 +55,7 @@ include 'class/ldap.php';
                 </nav>
             </header>
             <footer id="footer">
-                <p class="copyright">&copy; REL LAB Design By : <a href="https://html5up.net">M Farhan / M Arif</a>.</p>
+                <p class="copyright">&copy; REL LAB Design By : <a href="https://html5up.net">M Arif / M Farhan</a>.</p>
             </footer>
         </div>
         <div id="bg"></div>
