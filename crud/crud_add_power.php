@@ -41,8 +41,12 @@ $other      = $_GET['other_interface_port'];
 $inputVolt  = '';
 $output     = $_GET['no_output_channel'];
 
+if ($username == '') {
+    $username = 'System';
+}
+
 $newinsert = "INSERT INTO gest_form_ps (lab_location, strategy, standard_category, champion, manufacturer, model, voltage_rating, current_rating, max_power, no_voltage_display, "
-        . "no_current_display, ovp, ocp, ps_dimension_w, ps_dimension_d, ps_dimension_h, weight, remote_operation_cap, output_voltage_mon, output_current_mon, min_voltage, max_voltage, "
+        . "no_current_display, ovp, ocp, ps_dimension_w, ps_dimension_d, ps_dimension_h, weight, remote_operation, voltage_monitor, current_monitor, min_voltage, max_voltage, "
         . "eqpt_interface, lan_port, gpib_interface, other_interface, input_voltage, no_output, created_by, created_date, status, flag) "
         . "VALUES ('$labLocation', '$strategy', '$standardization', '$champion', '$manufacturer', '$model', '$voltRate', '$currRate', '$maxPower', '$voltDigit', "
         . "'$currDigit', '$voltProtek', '$currProtek', '$dimensionw', '$dimensiond', '$dimensionh', '$weight', '$remote', '$vmonitor', '$cmonitor', '$minvolt', '$maxvolt', "
@@ -52,6 +56,6 @@ $upload = mysqli_query($con, $newinsert);
 ?>
 <script>
     alert('New Power Supply Added Successfully');
-    window.location.href = 'form_power_list.php';
+    window.location.href = '../power/list.php';
 </script>
 <?php mysql_close($handle);

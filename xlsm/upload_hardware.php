@@ -138,7 +138,7 @@ if (isset($_FILES['file'])) {
                                         break;
                                     case 11:
                                         $stress = $r[$i];
-                                        $stress = getCode($stress, '022', $username);
+                                        $stress = getCode($stress, '041', $username);
                                         break;
                                     case 12:
                                         $daq = $r[$i];
@@ -191,7 +191,6 @@ if (isset($_FILES['file'])) {
                                         break;
                                     case 26:
                                         $loadmax = $r[$i];
-                                        $loadmax = getCode($loadmax, '005', $username);
                                         break;
                                     case 27:
                                         $loadqty = $r[$i];

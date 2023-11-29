@@ -14,7 +14,7 @@ include '../class/get_parameter.php';
     <head>
         <style>
             body {
-                font-size: 1em;
+                font-size: .85em;
             }
 
             h2 {

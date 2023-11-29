@@ -188,7 +188,7 @@ $id = $_GET['edit'];
                         <select id="support_stress" name="support_stress" style="width: 100%" required>
                             <option value="" selected=""></option>
                             <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '041' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)): ?>
                                 <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['support_stress']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>

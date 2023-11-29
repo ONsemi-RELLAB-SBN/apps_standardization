@@ -5,25 +5,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'form_template.php';
-include 'class/get_parameter.php';
+include '../template/form.php';
+include '../class/get_parameter.php';
 $id = $_GET['edit'];
 ?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>P Supply | Standardization</title>
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-
         <style>
             #toggle_1, #toggle_2, #toggle_3, #toggle_4{
                 visibility: hidden;
@@ -49,15 +38,15 @@ $id = $_GET['edit'];
         <script type="text/javascript">
 
         </script>
-        
     </head>
+        
     <body>
-        <?php include './navigation_power_supply.php';?>
+        <?php include '../navigation/power_supply.php';?>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <!--<h5 style="border-left: none;">Power Supply Details</h5>-->
-        <form id="copy_power_form" action="crud_add_power.php" method="get">
+        <form id="copy_power_form" action="../crud/crud_add_power.php" method="get">
             <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
             <?php
             $sqlFormData = "SELECT * FROM gest_form_ps WHERE id = '$id'";
@@ -241,7 +230,7 @@ $id = $_GET['edit'];
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['remote_operation_cap']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['remote_operation']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                             <?php endwhile; ?>
                         </select>
                     </div>
@@ -257,7 +246,7 @@ $id = $_GET['edit'];
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)):
                                 ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['output_voltage_mon']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['voltage_monitor']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                             <?php endwhile; ?>
                         </select>
                     </div>
@@ -270,7 +259,7 @@ $id = $_GET['edit'];
                             $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                             $resSite = mysqli_query($con, $sqlDdSite);
                             while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['output_current_mon']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['current_monitor']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                             <?php endwhile; ?>
                         </select>
                     </div>
@@ -373,7 +362,7 @@ $id = $_GET['edit'];
                     <div class="two columns">&nbsp;</div>
                 </div>
             <?php endwhile; ?>
-            <button onclick="location.href = 'form_power_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+            <button onclick="location.href = 'list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
             <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> COPY</button>
         </form>
         <script>
