@@ -5,22 +5,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-ob_start();
-session_start();
-include '../class/ldap.php';
-if (!empty($_SESSION['username']) && !empty($_SESSION['password'])) {
-    $username = $_SESSION['username'];
-    $password = $_SESSION['password'];
-} else {
-    header('location:../logout.php');
-}
-
 use ayep\SimpleXLSX;
+include '../class/ldap.php';
 
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', true);
 
 require_once __DIR__ . '/../\template\SimpleXLSX.php';
+
+echo '<h2>Test Drop</h2><FileDropzone name="files" />';
 
 echo '<h2>Upload Equipment</h2>
 <form method="post" enctype="multipart/form-data">
@@ -536,6 +529,7 @@ function inserttodatabase($k, $username,
 
 function getCode($value, $code, $username) {
     
+    $latestCode = '';
     if ($value == '') {
         $code = '';
     } else {
@@ -543,12 +537,11 @@ function getCode($value, $code, $username) {
 
         $qry = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' AND name = '$value'";
         $result = $con->query($qry);
-        $latestCode = '';
 
         if ($result->num_rows > 0) {
             // output data of each row
             while ($row = $result->fetch_assoc()) {
-                $code = $row['code'];
+                $latestCode = $row['code'];
             }
         } else {
             $slt = "SELECT LPAD(MAX(CODE)+1, 6, 0) as data FROM gest_parameter_detail WHERE master_code = '$code'";
@@ -563,7 +556,7 @@ function getCode($value, $code, $username) {
         }
         $con->close();
     }
-    return $code;
+    return $latestCode;
 }
 
 function getMultipleCode($value, $code, $username) {

@@ -5,17 +5,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-ob_start();
-session_start();
-include '../class/ldap.php';
-if (!empty($_SESSION['username']) && !empty($_SESSION['password'])) {
-    $username = $_SESSION['username'];
-    $password = $_SESSION['password'];
-} else {
-    header('location:../logout.php');
-}
-
 use ayep\SimpleXLSX;
+include '../class/ldap.php';
 
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', true);
