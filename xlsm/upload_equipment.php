@@ -6,16 +6,15 @@
  */
 
 use ayep\SimpleXLSX;
-include '../class/ldap.php';
+include '../template/form.php';
 
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', true);
 
 require_once __DIR__ . '/../\template\SimpleXLSX.php';
 
-echo '<h2>Test Drop</h2><FileDropzone name="files" />';
-
-echo '<h2>Upload Equipment</h2>
+echo '<div class="twelve columns">&nbsp;</div><div class="twelve columns">&nbsp;</div>
+    <h4 style="border-left: none;">Upload Equipment</h4>
 <form method="post" enctype="multipart/form-data">
 *.XLSM <input type="file" name="file"  />&nbsp;&nbsp;<input type="submit" value="Load" />
 </form>';
@@ -560,7 +559,6 @@ function getCode($value, $code, $username) {
 }
 
 function getMultipleCode($value, $code, $username) {
-    include '../class/db.php';
     $combinecode = '';
     $array = explode('/', $value);
     foreach ($array as $values) {

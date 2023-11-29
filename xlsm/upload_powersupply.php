@@ -5,24 +5,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-ob_start();
-session_start();
-include '../class/ldap.php';
-if (!empty($_SESSION['username']) && !empty($_SESSION['password'])) {
-    $username = $_SESSION['username'];
-    $password = $_SESSION['password'];
-} else {
-    header('location:../logout.php');
-}
-
 use ayep\SimpleXLSX;
+include '../template/form.php';
 
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', true);
 
 require_once __DIR__ . '/../\template\SimpleXLSX.php';
 
-echo '<h2>Upload Power Supply</h2>
+echo '<div class="twelve columns">&nbsp;</div><div class="twelve columns">&nbsp;</div>
+    <h4 style="border-left: none;">Upload Power Supply</h4>
 <form method="post" enctype="multipart/form-data">
 *.XLSM <input type="file" name="file"  />&nbsp;&nbsp;<input type="submit" value="Load" />
 </form>';
@@ -32,6 +24,34 @@ echo '<h2>Upload Power Supply</h2>
 if ($username == '') {
     $username = 'System';
 }
+
+$lablocation = '';
+$productgroup = '';
+$category = '';
+$labmanager = '';
+$manufacturer = '';
+$model = '';
+$voltrate = '';
+$currate = '';
+$maxpower = '';
+$voltdisplay = '';
+$currdisplay = '';
+$overvoltage = '';
+$overcurrent = '';
+$dimensionw = '';
+$dimensiond = '';
+$dimensionh = '';
+$weight = '';
+$minvoltage = '';
+$maxvoltage = '';
+$remote = '';
+$voltmonitor = '';
+$currmonitor = '';
+$pstoeqpt = '';
+$lanport = '';
+$gpib = '';
+$other = '';
+$output = '';
 
 if (isset($_FILES['file'])) {
     if ($xlsx = SimpleXLSX::parse($_FILES['file']['tmp_name'])) {
@@ -87,11 +107,93 @@ if (isset($_FILES['file'])) {
                                         $labmanager = $r[$i];
                                         $labmanager = getCode($labmanager, '005', $username);
                                         break;
+                                    case 5:
+                                        $manufacturer = $r[$i];
+                                        $manufacturer = getCode($manufacturer, '039', $username);
+                                        break;
+                                    case 6:
+                                        $model = $r[$i];
+                                        $model = getCode($model, '040', $username);
+                                        break;
+                                    case 7:
+                                        $voltrate = $r[$i];
+                                        break;
+                                    case 8:
+                                        $currate = $r[$i];
+                                        break;
+                                    case 9:
+                                        $maxpower = $r[$i];
+                                        break;
+                                    case 10:
+                                        $voltdisplay = $r[$i];
+                                        break;
+                                    case 11:
+                                        $currdisplay = $r[$i];
+                                        break;
+                                    case 12:
+                                        $overvoltage = $r[$i];
+                                        $overvoltage = getCode($overvoltage, '022', $username);
+                                        break;
+                                    case 13:
+                                        $overcurrent = $r[$i];
+                                        $overcurrent = getCode($overcurrent, '022', $username);
+                                        break;
+                                    case 14:
+                                        $dimensionw = $r[$i];
+                                        break;
+                                    case 15:
+                                        $dimensiond = $r[$i];
+                                        break;
+                                    case 16:
+                                        $dimensionh = $r[$i];
+                                        break;
+                                    case 17:
+                                        $weight = $r[$i];
+                                        break;
+                                    case 18:
+                                        $minvoltage = $r[$i];
+                                        break;
+                                    case 19:
+                                        $maxvoltage = $r[$i];
+                                        break;
+                                    case 20:
+                                        $remote = $r[$i];
+                                        $remote = getCode($remote, '022', $username);
+                                        break;
+                                    case 21:
+                                        $voltmonitor = $r[$i];
+                                        $voltmonitor = getCode($voltmonitor, '022', $username);
+                                        break;
+                                    case 22:
+                                        $currmonitor = $r[$i];
+                                        $currmonitor = getCode($currmonitor, '022', $username);
+                                        break;
+                                    case 23:
+                                        $pstoeqpt = $r[$i];
+                                        $pstoeqpt = getCode($pstoeqpt, '027', $username);
+                                        break;
+                                    case 24:
+                                        $lanport = $r[$i];
+                                        $lanport = getCode($lanport, '022', $username);
+                                        break;
+                                    case 25:
+                                        $gpib = $r[$i];
+                                        $gpib = getCode($gpib, '022', $username);
+                                        break;
+                                    case 26:
+                                        $other = $r[$i];
+                                        $other = getCode($other, '029', $username);
+                                        break;
+                                    case 27:
+                                        $output = $r[$i];
+                                        break;
                                 }
                             }
                             echo '</tr>';
-                            inserttodatabase($k, $username,
-                                                $lablocation, $productgroup, $category, $labmanager);
+                            inserttodatabase($k, $username, 
+                                                $lablocation, $productgroup, $category, $labmanager, $manufacturer, $model, $voltrate, $currate, $maxpower, $voltdisplay,
+                                                $currdisplay, $overvoltage, $overcurrent, $dimensionw, $dimensiond, $dimensionh, $weight, $minvoltage, $maxvoltage, $remote,
+                                                $voltmonitor, $currmonitor, $pstoeqpt, $lanport, $gpib, $other, $output);
                         }
                     }
                 }
@@ -108,20 +210,21 @@ if (isset($_FILES['file'])) {
     }
 }
 
-function inserttodatabase($k, $username, $lablocation, $productgroup, $category, $labmanager) {
+function inserttodatabase($k, $username, 
+                            $lablocation, $productgroup, $category, $labmanager, $manufacturer, $model, $voltrate, $currate, $maxpower, $voltdisplay,
+                            $currdisplay, $overvoltage, $overcurrent, $dimensionw, $dimensiond, $dimensionh, $weight, $minvoltage, $maxvoltage, $remote,
+                            $voltmonitor, $currmonitor, $pstoeqpt, $lanport, $gpib, $other, $output) {
     if ($k == 1) {
         
     } else {
         include '../class/db.php';
-        $insert = "INSERT INTO gest_form_hw (lab_location, strategy, standard_category, champion, hw_type, manufacturer, assembly_no, voltage_rating, current_rating, "
-                . "temp_rating, support_stress, daq_monitoring, pcb_material, mb_dimension_l, mb_dimension_w, mb_dimension_t, no_layer, frame_material, board_coating, "
-                . "mb_universal_dedicated, mb_socket_type, mb_socket_qty, mb_socket_pin_qty, mb_socket_pin_pitch, mb_support_card, lc_max_qty, lc_pin_qty, lc_pin_pitch, pc_max_qty, "
-                . "pc_pin_qty, pc_pin_pitch, connector_type, no_pin, pin_pitch, edgefinger_thickness, max_dut_qty_mb, created_by, created_date, status, flag) "
-                . "VALUES ('$labLctn', '$strategy', '$category', '$champion', '$hwType', '$mnfctr', '$assembly', '$voltRate', '$currRate', "
-                . "'$tempRate', '$stress', '$daq', '$pcb', '$mb_l', '$mb_w', '$mb_t', '$layer', '$frame', '$board', "
-                . "'$universal', '$socType', '$socQty', '$socPin', '$socPitch', '$package', '$load_max', '$load_qty', '$load_pitch', '$proMax', "
-                . "'$progQty', '$progPitch', '$connType', '$noPins', '$pinPitch', '$edge', '$maxDut', '$username', NOW(), 'Active', '1')";
-        if ($con->multi_query($newinsert) === TRUE) {
+        $insert = "INSERT INTO gest_form_ps (lab_location, strategy, standard_category, champion, manufacturer, model, voltage_rating, current_rating, max_power, no_voltage_display, "
+                . "no_current_display, ovp, ocp, ps_dimension_w, ps_dimension_d, ps_dimension_h, weight, min_voltage, max_voltage, remote_operation, "
+                . "voltage_monitor, current_monitor, eqpt_interface, lan_port, gpib_interface, other_interface, input_voltage, no_output, created_by, created_date, status, flag) "
+                . "VALUES ('$lablocation', '$productgroup', '$category', '$labmanager', '$manufacturer', '$model', '$voltrate', '$currate', '$maxpower', '$voltdisplay', "
+                . "'$currdisplay', '$overvoltage', '$overcurrent', '$dimensionw', '$dimensiond', '$dimensionh', '$weight', '$minvoltage', '$maxvoltage', '$remote', "
+                . "'$voltmonitor', '$currmonitor', '$pstoeqpt', '$lanport', '$gpib', '$other', '', '$output', '$username', NOW(), 'Active', 1)";
+        if ($con->multi_query($insert) === TRUE) {
             
         } else {
             echo "Error: " . $newinsert . "<br>" . $con->error;
@@ -132,6 +235,7 @@ function inserttodatabase($k, $username, $lablocation, $productgroup, $category,
 
 function getCode($value, $code, $username) {
     
+    $latestCode = '';
     if ($value == '') {
         $code = '';
     } else {
@@ -139,12 +243,11 @@ function getCode($value, $code, $username) {
 
         $qry = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' AND name = '$value'";
         $result = $con->query($qry);
-        $latestCode = '';
 
         if ($result->num_rows > 0) {
             // output data of each row
             while ($row = $result->fetch_assoc()) {
-                $code = $row['code'];
+                $latestCode = $row['code'];
             }
         } else {
             $slt = "SELECT LPAD(MAX(CODE)+1, 6, 0) as data FROM gest_parameter_detail WHERE master_code = '$code'";
@@ -159,11 +262,10 @@ function getCode($value, $code, $username) {
         }
         $con->close();
     }
-    return $code;
+    return $latestCode;
 }
 
 function getMultipleCode($value, $code, $username) {
-    include '../class/db.php';
     $combinecode = '';
     $array = explode('/', $value);
     foreach ($array as $values) {

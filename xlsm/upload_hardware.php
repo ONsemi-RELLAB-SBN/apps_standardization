@@ -6,14 +6,15 @@
  */
 
 use ayep\SimpleXLSX;
-include '../class/ldap.php';
+include '../template/form.php';
 
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', true);
 
 require_once __DIR__ . '/../\template\SimpleXLSX.php';
 
-echo '<h2>Upload Hardware</h2>
+echo '<div class="twelve columns">&nbsp;</div><div class="twelve columns">&nbsp;</div>
+    <h4 style="border-left: none;">Upload Hardware</h4>
 <form method="post" enctype="multipart/form-data">
 *.XLSM <input type="file" name="file"  />&nbsp;&nbsp;<input type="submit" value="Load" />
 </form>';
@@ -23,6 +24,43 @@ echo '<h2>Upload Hardware</h2>
 if ($username == '') {
     $username = 'System';
 }
+
+$lablocation = '';
+$productgroup = '';
+$category = '';
+$labmanager = '';
+$hwtype = '';
+$manufacturer = '';
+$assembly = '';
+$voltrate = '';
+$currrate = '';
+$temprate = '';
+$stress = '';
+$daq = '';
+$pcb = '';
+$mbl = '';
+$mbw = '';
+$mbt = '';
+$layer = '';
+$frame = '';
+$board = '';
+$universal = '';
+$soctype = '';
+$socqty = '';
+$socpin = '';
+$socpitch = '';
+$package = '';
+$loadmax = '';
+$loadqty = '';
+$loadpitch = '';
+$promax = '';
+$progqty = '';
+$progpitch = '';
+$conntype = '';
+$nopins = '';
+$pinpitch = '';
+$edge = '';
+$maxdut = '';
 
 if (isset($_FILES['file'])) {
     if ($xlsx = SimpleXLSX::parse($_FILES['file']['tmp_name'])) {
@@ -35,7 +73,7 @@ if (isset($_FILES['file'])) {
             $dim = $xlsx->dimension();
             $num_cols = $dim[0];
             $num_rows = $dim[1];
-
+            
             echo '<h2>' . $xlsx->sheetName(0) . '</h2>';
             echo '<table border=1 border-collapse=collapse>';
             foreach ($xlsx->rows() as $k => $r) {
@@ -78,11 +116,122 @@ if (isset($_FILES['file'])) {
                                         $labmanager = $r[$i];
                                         $labmanager = getCode($labmanager, '005', $username);
                                         break;
+                                    case 5:
+                                        $hwtype = $r[$i];
+                                        $hwtype = getCode($hwtype, '019', $username);
+                                        break;
+                                    case 6:
+                                        $manufacturer = $r[$i];
+                                        $manufacturer = getCode($manufacturer, '018', $username);
+                                        break;
+                                    case 7:
+                                        $assembly = $r[$i];
+                                        break;
+                                    case 8:
+                                        $voltrate = $r[$i];
+                                        break;
+                                    case 9:
+                                        $currrate = $r[$i];
+                                        break;
+                                    case 10:
+                                        $temprate = $r[$i];
+                                        break;
+                                    case 11:
+                                        $stress = $r[$i];
+                                        $stress = getCode($stress, '022', $username);
+                                        break;
+                                    case 12:
+                                        $daq = $r[$i];
+                                        $daq = getCode($daq, '022', $username);
+                                        break;
+                                    case 13:
+                                        $mbl = $r[$i];
+                                        break;
+                                    case 14:
+                                        $mbw = $r[$i];
+                                        break;
+                                    case 15:
+                                        $mbt = $r[$i];
+                                        break;
+                                    case 16:
+                                        $pcb = $r[$i];
+                                        $pcb = getCode($pcb, '042', $username);
+                                        break;
+                                    case 17:
+                                        $frame = $r[$i];
+                                        $frame = getCode($frame, '043', $username);
+                                        break;
+                                    case 18:
+                                        $board = $r[$i];
+                                        $board = getCode($board, '044', $username);
+                                        break;
+                                    case 19:
+                                        $layer = $r[$i];
+                                        break;
+                                    case 20:
+                                        $universal = $r[$i];
+                                        $universal = getCode($universal, '045', $username);
+                                        break;
+                                    case 21:
+                                        $soctype = $r[$i];
+                                        $soctype = getCode($soctype, '046', $username);
+                                        break;
+                                    case 22:
+                                        $socqty = $r[$i];
+                                        break;
+                                    case 23:
+                                        $socpin = $r[$i];
+                                        break;
+                                    case 24:
+                                        $socpitch = $r[$i];
+                                        break;
+                                    case 25:
+                                        $package = $r[$i];
+                                        $package = getCode($package, '047', $username);
+                                        break;
+                                    case 26:
+                                        $loadmax = $r[$i];
+                                        $loadmax = getCode($loadmax, '005', $username);
+                                        break;
+                                    case 27:
+                                        $loadqty = $r[$i];
+                                        break;
+                                    case 28:
+                                        $loadpitch = $r[$i];
+                                        break;
+                                    case 29:
+                                        $promax = $r[$i];
+                                        break;
+                                    case 30:
+                                        $progqty = $r[$i];
+                                        break;
+                                    case 31:
+                                        $progpitch = $r[$i];
+                                        break;
+                                    case 32:
+                                        $conntype = $r[$i];
+                                        $conntype = getCode($conntype, '046', $username);
+                                        break;
+                                    case 33:
+                                        $nopins = $r[$i];
+                                        break;
+                                    case 34:
+                                        $pinpitch = $r[$i];
+                                        break;
+                                    case 35:
+                                        $edge = $r[$i];
+                                        break;
+                                    case 36:
+                                        $maxdut = $r[$i];
+                                        break;
                                 }
                             }
                             echo '</tr>';
                             inserttodatabase($k, $username,
-                                                $lablocation, $productgroup, $category, $labmanager);
+                                                $lablocation, $productgroup, $category, $labmanager, $hwtype, $manufacturer, $assembly, $voltrate, $currrate, $temprate,
+                                                $stress, $daq, $pcb, $mbl, $mbw, $mbt, $layer, $frame, $board, $universal,
+                                                $soctype, $socqty, $socpin, $socpitch, $package, $loadmax, $loadqty, $loadpitch, $promax, $progqty,
+                                                $progpitch, $conntype, $nopins, $pinpitch, $edge, $maxdut);
                         }
                     }
                 }
@@ -99,7 +248,10 @@ if (isset($_FILES['file'])) {
     }
 }
 
-function inserttodatabase($k, $username, $lablocation, $productgroup, $category, $labmanager) {
+function inserttodatabase($k, $username, $lablocation, $productgroup, $category, $labmanager, $hwtype, $manufacturer, $assembly, $voltrate, $currrate, $temprate,
+                            $stress, $daq, $pcb, $mbl, $mbw, $mbt, $layer, $frame, $board, $universal,
+                            $soctype, $socqty, $socpin, $socpitch, $package, $loadmax, $loadqty, $loadpitch, $promax, $progqty,
+                            $progpitch, $conntype, $nopins, $pinpitch, $edge, $maxdut) {
     if ($k == 1) {
         
     } else {
@@ -108,11 +260,11 @@ function inserttodatabase($k, $username, $lablocation, $productgroup, $category,
                 . "temp_rating, support_stress, daq_monitoring, pcb_material, mb_dimension_l, mb_dimension_w, mb_dimension_t, no_layer, frame_material, board_coating, "
                 . "mb_universal_dedicated, mb_socket_type, mb_socket_qty, mb_socket_pin_qty, mb_socket_pin_pitch, mb_support_card, lc_max_qty, lc_pin_qty, lc_pin_pitch, pc_max_qty, "
                 . "pc_pin_qty, pc_pin_pitch, connector_type, no_pin, pin_pitch, edgefinger_thickness, max_dut_qty_mb, created_by, created_date, status, flag) "
-                . "VALUES ('$labLctn', '$strategy', '$category', '$champion', '$hwType', '$mnfctr', '$assembly', '$voltRate', '$currRate', "
-                . "'$tempRate', '$stress', '$daq', '$pcb', '$mb_l', '$mb_w', '$mb_t', '$layer', '$frame', '$board', "
-                . "'$universal', '$socType', '$socQty', '$socPin', '$socPitch', '$package', '$load_max', '$load_qty', '$load_pitch', '$proMax', "
-                . "'$progQty', '$progPitch', '$connType', '$noPins', '$pinPitch', '$edge', '$maxDut', '$username', NOW(), 'Active', '1')";
-        if ($con->multi_query($newinsert) === TRUE) {
+                . "VALUES ('$lablocation', '$productgroup', '$category', '$labmanager', '$hwtype', '$manufacturer', '$assembly', '$voltrate', '$currrate', "
+                . "'$temprate', '$stress', '$daq', '$pcb', '$mbl', '$mbw', '$mbt', '$layer', '$frame', '$board', "
+                . "'$universal', '$soctype', '$socqty', '$socpin', '$socpitch', '$package', '$loadmax', '$loadqty', '$loadpitch', '$promax', "
+                . "'$progqty', '$progpitch', '$conntype', '$nopins', '$pinpitch', '$edge', '$maxdut', '$username', NOW(), 'Active', '1')";
+        if ($con->multi_query($insert) === TRUE) {
             
         } else {
             echo "Error: " . $newinsert . "<br>" . $con->error;
@@ -135,7 +287,7 @@ function getCode($value, $code, $username) {
         if ($result->num_rows > 0) {
             // output data of each row
             while ($row = $result->fetch_assoc()) {
-                $code = $row['code'];
+                $latestCode = $row['code'];
             }
         } else {
             $slt = "SELECT LPAD(MAX(CODE)+1, 6, 0) as data FROM gest_parameter_detail WHERE master_code = '$code'";
@@ -150,11 +302,10 @@ function getCode($value, $code, $username) {
         }
         $con->close();
     }
-    return $code;
+    return $latestCode;
 }
 
 function getMultipleCode($value, $code, $username) {
-    include '../class/db.php';
     $combinecode = '';
     $array = explode('/', $value);
     foreach ($array as $values) {
