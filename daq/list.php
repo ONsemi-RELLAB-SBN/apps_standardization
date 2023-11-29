@@ -5,9 +5,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'template/form.php';
-include 'class/get_parameter.php';
-include 'template/list.php';
+include '../template/form.php';
+include '../template/list.php';
+include '../class/get_parameter.php';
 ?>
 
 <!DOCTYPE html>
@@ -109,17 +109,18 @@ include 'template/list.php';
                             <td><?php echo getParameterValues($row_slides['manufacturer']); ?></td>
                             <td><?php echo getParameterValues($row_slides['model']); ?></td>
                             <td style="text-align:center">
-                                <a href="form_daq_view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><i class='bx bx-search-alt bx-fw'></i> VIEW </a>
-                                <a href="form_daq_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
-                                <a href="form_daq_delete.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
-                                <a href="form_daq_copy.php?edit=<?php echo $row_slides['id']; ?>" title="Replicate Record" data-toggle="tooltip"><i class='bx bx-copy bx-fw'></i></i> COPY </a>
+                                <a href="view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><i class='bx bx-search-alt bx-fw'></i> VIEW </a>
+                                <a href="edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
+                                <a href="delete.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
+                                <a href="copy.php?edit=<?php echo $row_slides['id']; ?>" title="Replicate Record" data-toggle="tooltip"><i class='bx bx-copy bx-fw'></i></i> COPY </a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
                     <!--<a href=".php" title="Download" data-toggle="tooltip"><i class='bx bx- bx-fw'></i></i> DOWNLOAD </a>-->
                 </tbody>
             </table>
-            <button onclick="location.href = 'form_daq.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New DAQ</button>
+            <button onclick="location.href = 'add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New DAQ</button>
+            <button onclick="location.href = '../xlsm/upload_daq.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
             <button onclick="location.href = 'crud_export_daq.php'" type="button" id="dlBtn"><i class='bx bx-cloud-download bx-fw'></i> Download</button>
         </div>
     </body>

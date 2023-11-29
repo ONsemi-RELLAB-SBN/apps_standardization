@@ -3,23 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-include 'form_template.php';
+include '../template/form.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>P Supply | Standardization</title>
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-
         <style>
             #toggle_1, #toggle_2, #toggle_3, #toggle_4{
                 visibility: hidden;
@@ -45,15 +34,15 @@ include 'form_template.php';
         <script type="text/javascript">
 
         </script>
-        
     </head>
+        
     <body>
-        <?php include './navigation_power_supply.php';?>
+        <?php include '../navigation/power_supply.php';?>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <!--<h5 style="border-left: none;">Power Supply Details</h5>-->
-        <form id="add_power_form" action="crud_add_power.php" method="get">
+        <form id="add_power_form" action="../crud/crud_add_power.php" method="get">
             <h6 id="general">General</h6>
             <div class="row">
                 <div class="two columns"><label for="lab_location">Lab Location *</label></div>
@@ -219,18 +208,24 @@ include 'form_template.php';
             <div class="row">
                 <div class="two columns"><label for="dimension_d">Dimensions (D) *</label></div>
                 <div class="one columns"><input type="number" step="0.001" id="dimension_d" name="dimension_d" value="" required> </div>
-                <div class="one columns"><label for="maxTemp" style="text-align: left"><b>mm</b></label></div>
+                <div class="one columns"><label for="dimension_d" style="text-align: left"><b>mm</b></label></div>
                 <div class="two columns">&nbsp;</div>
-                <div class="two columns"><label for="input_volt">Input voltage (facilities) *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="input_volt" name="input_volt" value="" required> </div>
-                <div class="one columns"><label for="minTemp" style="text-align: left"><b>V</b></label></div>
+                <div class="two columns"><label for="min_volt">Min Input Voltage (Facilities) *</label></div>
+                <div class="one columns"><input type="number" step="0.001" id="min_volt" name="min_volt" value="" required> </div>
+                <div class="one columns"><label for="min_volt" style="text-align: left"><b>V</b></label></div>
                 <div class="two columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="dimension_h">Dimensions (H) *</label></div>
                 <div class="one columns"><input type="number" step="0.001" id="dimension_h" name="dimension_h" value="" required> </div>
-                <div class="one columns"><label for="minTemp" style="text-align: left"><b>mm</b></label></div>
+                <div class="one columns"><label for="dimension_h" style="text-align: left"><b>mm</b></label></div>
                 <div class="two columns">&nbsp;</div>
+                <div class="two columns"><label for="max_volt">Max Input Voltage (Alternative) *</label></div>
+                <div class="one columns"><input type="number" step="0.001" id="max_volt" name="max_volt" value="" required> </div>
+                <div class="one columns"><label for="max_volt" style="text-align: left"><b>mm</b></label></div>
+                <div class="two columns">&nbsp;</div>
+            </div>
+            <div class="row">
                 <div class="two columns"><label for="remote_operation_capability">Remote operation capability *</label></div>
                 <div class="three columns">
                     <select id="remote_operation_capability" name="remote_operation_capability" style="width: 100%" required>
@@ -240,6 +235,19 @@ include 'form_template.php';
                         $resSite = mysqli_query($con, $sqlDdSite);
                         while ($rowSite = mysqli_fetch_array($resSite)):
                             ?>
+                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
+                <div class="one columns">&nbsp;</div>
+                <div class="two columns"><label for="pc_to_eqpt_interface">PS to eqpt interface *</label></div>
+                <div class="three columns">
+                    <select id="pc_to_eqpt_interface" name="pc_to_eqpt_interface" style="width: 100%" required>
+                        <option value="" selected=""></option>
+                        <?php
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
+                        $resSite = mysqli_query($con, $sqlDdSite);
+                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
                             <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
                         <?php endwhile; ?>
                     </select>
@@ -277,19 +285,6 @@ include 'form_template.php';
                 <div class="one columns">&nbsp;</div>
             </div>
             <div class="row">
-                <div class="two columns"><label for="pc_to_eqpt_interface">PS to eqpt interface *</label></div>
-                <div class="three columns">
-                    <select id="pc_to_eqpt_interface" name="pc_to_eqpt_interface" style="width: 100%" required>
-                        <option value="" selected=""></option>
-                        <?php
-                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
-                        $resSite = mysqli_query($con, $sqlDdSite);
-                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                        <?php endwhile; ?>
-                    </select>
-                </div>
-                <div class="one columns">&nbsp;</div>
                 <div class="two columns">
                     <label for="lan_port">LAN Port *</label>
                     <label for="toggle_3" class="view-image">Image</label>
@@ -310,8 +305,6 @@ include 'form_template.php';
                         <?php endwhile; ?>
                     </select>
                 </div>
-            </div>
-            <div class="row">
                 <div class="two columns">
                     <label for="gpib_interface">GPIB interface *</label>
                     <label for="toggle_4" class="view-image">Image</label>
@@ -333,6 +326,8 @@ include 'form_template.php';
                     </select>
                 </div>
                 <div class="one columns">&nbsp;</div>
+            </div>
+            <div class="row">
                 <div class="two columns">
                     <label for="other_interface_port">Other interface ports *</label>
                     <label for="toggle_2" class="view-image">Image</label>
@@ -370,7 +365,7 @@ include 'form_template.php';
                 <div class="one columns"><label for="no_output_channel" style="text-align: left"><b>V</b></label></div>
             </div>
 
-            <button onclick="location.href = 'form_power_list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+            <button onclick="location.href = 'list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
             <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> SAVE</button>
         </form>
         <script>

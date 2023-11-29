@@ -5,88 +5,94 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'class/db.php';
-include 'class/ldap.php';
+include '../class/db.php';
+include '../class/ldap.php';
 
 $id                 = $_GET['id'];
-$labLocation        = $_GET['lab_location'];
-$strategy           = $_GET['strategy'];
-$standardization    = $_GET['standardization'];
-$champion           = $_GET['champion'];
+$lablocation    = $_GET['lab_location'];
+$productgroup   = $_GET['strategy'];
+$category       = $_GET['standardization'];
+$labmanager     = $_GET['champion'];
 
 $manufacturer   = $_GET['manufacturer'];
 $model          = $_GET['model'];
 $daq            = $_GET['daq_id'];
 
-$tempChannel    = $_GET['no_temp_channel'];
-$voltChannel    = $_GET['no_volt_channel'];
-$leakageChannel = $_GET['no_leakage_channel'];
+$tempchannel    = $_GET['no_temp_channel'];
+$voltchannel    = $_GET['no_volt_channel'];
+$leakchannel    = $_GET['no_leakage_channel'];
 
-$voltMeasure    = $_GET['volt_measure_range'];
-$tempMeasure    = $_GET['temp_measure_range'];
-$currMeasure    = $_GET['curr_measure_range'];
-$voltDrop       = $_GET['display_volt_drop'];
-$boardCheck     = $_GET['board_insert_check'];
-$startTest      = $_GET['measure_prior_start_test'];
-$speed          = $_GET['monitoring_speed'];
-$leakReso       = $_GET['leakage_measure_reso'];
-$leakAccuracy   = $_GET['leakage_measure_accuracy'];
-$voltReso       = $_GET['volt_measure_reso'];
-$dataPlot       = $_GET['offline_data_plot'];
-$typeHardware   = $_GET['measure_type_hardware'];
+$maxvoltmeasure = $_GET['max_voltage'];
+$minvoltmeasure = $_GET['min_voltage'];
+$maxleakmeasure = $_GET['max_leakage'];
+$minleakmeasure = $_GET['min_leakage'];
+$maxtempmeasure = $_GET['max_temp'];
+$mintempmeasure = $_GET['min_temp'];
+$voltdrop       = $_GET['display_volt_drop'];
+$boardcheck     = $_GET['board_insert_check'];
+$starttest      = $_GET['measure_prior_start_test'];
+$scantime       = $_GET['scan_time'];
+$leakreso       = $_GET['leakage_measure_reso'];
+$leakaccuracy   = $_GET['leakage_measure_accuracy'];
+$voltreso       = $_GET['volt_measure_reso'];
+$dataplot       = $_GET['offline_data_plot'];
+$typehardware   = $_GET['measure_type_hardware'];
 
-$anaSingle  = $_GET['analog_input_single'];
-$anaDiff    = $_GET['analog_input_diff'];
-$reso       = $_GET['resolution'];
-$frequency  = $_GET['sampling_frequency'];
-$support    = $_GET['supported_eqpt'];
-$hwMeasureR = $_GET['hw_resistence_measure'];
-$hwMeasureV = $_GET['hw_volt_measure'];
-$hwMeasureT = $_GET['hw_temp_measure'];
-$eqptInt    = $_GET['daq_eqpt_interface'];
-$psInt      = $_GET['daq_ps_interface'];
+$analogsingle   = $_GET['analog_input_single'];
+$analogdiff     = $_GET['analog_input_diff'];
+$reso           = $_GET['resolution'];
+$frequency      = $_GET['sampling_frequency'];
+$support        = $_GET['supported_eqpt'];
+$hwmeasureR     = $_GET['hw_resistence_measure'];
+$hwmeasureV     = $_GET['hw_volt_measure'];
+$hwmeasureT     = $_GET['hw_temp_measure'];
+$eqptint        = $_GET['daq_eqpt_interface'];
+$psint          = $_GET['daq_ps_interface'];
 
 $update = "UPDATE gest_form_daq SET "
-        . "lab_location = '$labLocation', "
-        . "strategy = '$strategy', "
-        . "standard_category = '$standardization', "
-        . "champion = '$champion', "
+        . "lab_location = '$lablocation', "
+        . "strategy = '$productgroup', "
+        . "standard_category = '$category', "
+        . "champion = '$labmanager', "
         . "manufacturer = '$manufacturer', "
         . "model = '$model', "
         . "daq_id = '$daq', "
-        . "no_temp_channel = '$tempChannel', "
-        . "no_voltage_channel = '$voltChannel', "
-        . "no_leakage_channel = '$leakageChannel', "
-        . "voltage_measure_range = '$voltMeasure', "
-        . "temp_measure_range = '$tempMeasure', "
-        . "leakage_current_range = '$currMeasure', "
-        . "rdaq_voltage_drop = '$voltDrop', "
-        . "board_insert_check = '$boardCheck', "
-        . "rdaq_measure_start = '$startTest', "
-        . "monitoring_speed = '$speed', "
-        . "leakage_measure_resolution = '$leakReso', "
-        . "leakage_measure_accuracy = '$leakAccuracy', "
-        . "voltage_measure_resolution = '$voltReso', "
-        . "offline_software = '$dataPlot', "
-        . "measure_type_hw_design = '$typeHardware', "
-        . "no_analog_input_single = '$anaSingle', "
-        . "no_analog_input_diff = '$anaDiff', "
+        . "no_temp_channel = '$tempchannel', "
+        . "no_voltage_channel = '$voltchannel', "
+        . "no_leakage_channel = '$leakchannel', "
+        . "max_voltage_measure = '$maxvoltmeasure', "
+        . "min_voltage_measure = '$minvoltmeasure', "
+        . "max_leakage_measure = '$maxleakmeasure', "
+        . "min_leakage_measure = '$minleakmeasure', "
+        . "max_temp_measure = '$maxtempmeasure', "
+        . "min_temp_measure = '$mintempmeasure', "
+        . "rdaq_voltage_drop = '$voltdrop', "
+        . "board_insert_check = '$boardcheck', "
+        . "rdaq_measure_start = '$starttest', "
+        . "scan_time = '$scantime', "
+        . "leakage_measure_resolution = '$leakreso', "
+        . "leakage_measure_accuracy = '$leakaccuracy', "
+        . "voltage_measure_resolution = '$voltreso', "
+        . "data_plot = '$dataplot', "
+        . "hw_design = '$typehardware', "
+        . "no_analog_input_single = '$analogsingle', "
+        . "no_analog_input_diff = '$analogdiff', "
         . "resolution = '$reso', "
         . "sampling_freq = '$frequency', "
         . "supported_eqpt = '$support', "
-        . "hw_resistance_measure = '$hwMeasureR', "
-        . "hw_voltage_measure = '$hwMeasureV', "
-        . "hw_temp_measure = '$hwMeasureT', "
-        . "daq_eqpt_interface = '$eqptInt', "
+        . "hw_resistance_measure = '$hwmeasureR', "
+        . "hw_voltage_measure = '$hwmeasureV', "
+        . "hw_temp_measure = '$hwmeasureT', "
+        . "daq_eqpt_interface = '$eqptint', "
+        . "daq_ps_interface = '$psint', "
         . "updated_by = '$username', "
-        . "update_date = NOW(), "
-        . "daq_ps_interface = '$psInt' "
+        . "update_date = NOW() "
         . "WHERE id = '$id' "
         . "AND status='Active' AND flag=1 LIMIT 1;";
 $uprun = mysqli_query($con, $update);
 ?>
 <script>
     alert('DAQ Updated Successfully');
-    window.location.href = 'form_daq_view.php?view=<?php echo $id; ?>';
+    window.location.href = '../daq/view.php?view=<?php echo $id; ?>';
 </script>
 <?php mysql_close($handle);

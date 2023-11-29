@@ -4,23 +4,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'form_template.php';
+include '../template/form.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>DAQ | Standardization</title>
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-
         <style>
             input[type=text], input[type=password] {
                 width: 100%;
@@ -80,16 +69,16 @@ include 'form_template.php';
         <script type="text/javascript">
             
         </script>
-        
     </head>
+    
     <body>
-        <?php include './navigation_daq.php';?>
+        <?php include '../navigation/daq.php';?>
         <div class="row">&nbsp;</div>
         <div class="row">&nbsp;</div>
         <div class="row">&nbsp;</div>
         <div class="row">
             <!--<h5 style="border-left: none;">DAQ Detail</h5>-->
-            <form id="add_daq_form" role="form" action="crud_add_daq.php" method="get">
+            <form id="add_daq_form" role="form" action="../crud/crud_add_daq.php" method="get">
                 <h6 id="general">General</h6>
                 <div class="row">
                     <div class="two columns"><label for="lab_location">Lab Location *</label></div>
@@ -217,20 +206,36 @@ include 'form_template.php';
                 
                 <h6 id="capability">Capability</h6>
                 <div class="row">
-                    <div class="two columns"><label for="volt_measure_range">Voltage measurement range *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="volt_measure_range" name="volt_measure_range" value="" required> </div>
-                    <div class="one columns"><label for="volt_measure_range" style="text-align: left"><b>V</b></label></div>
+                    <div class="two columns"><label for="max_voltage">Max voltage measurement capability *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="max_voltage" name="max_voltage" value="" required> </div>
+                    <div class="one columns"><label for="max_voltage" style="text-align: left"><b>V</b></label></div>
                     <div class="two columns">&nbsp;</div>
-                    <div class="two columns"><label for="temp_measure_range">Temperature measurement range *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="temp_measure_range" name="temp_measure_range" value="" required> </div>
-                    <div class="one columns"><label for="temp_measure_range" style="text-align: left"><b>`C</b></label></div>
+                    <div class="two columns"><label for="min_voltage">Min voltage measurement capability *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="min_voltage" name="min_voltage" value="" required> </div>
+                    <div class="one columns"><label for="min_voltage" style="text-align: left"><b>mV</b></label></div>
                     <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="curr_measure_range">Leakage current measurement range *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="curr_measure_range" name="curr_measure_range" value="" required> </div>
-                    <div class="one columns"><label for="curr_measure_range" style="text-align: left"><b>A</b></label></div>
+                    <div class="two columns"><label for="max_leakage">Max leakage current measurement range *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="max_leakage" name="max_leakage" value="" required> </div>
+                    <div class="one columns"><label for="max_leakage" style="text-align: left"><b>A</b></label></div>
                     <div class="two columns">&nbsp;</div>
+                    <div class="two columns"><label for="min_leakage">Min leakage current measurement range *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="min_leakage" name="min_leakage" value="" required> </div>
+                    <div class="one columns"><label for="min_leakage" style="text-align: left"><b>&#181A</b></label></div>
+                    <div class="two columns">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="two columns"><label for="max_temp">Max temperature measurement capability *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" required> </div>
+                    <div class="one columns"><label for="max_temp" style="text-align: left"><b>&#8451;</b></label></div>
+                    <div class="two columns">&nbsp;</div>
+                    <div class="two columns"><label for="min_temp">Min temperature measurement capability *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" required> </div>
+                    <div class="one columns"><label for="min_temp" style="text-align: left"><b>&#8451;</b></label></div>
+                    <div class="two columns">&nbsp;</div>
+                </div>
+                <div class="row">
                     <div class="two columns"><label for="display_volt_drop">Display Rdaq Voltage Drop *</label></div>
                     <div class="three columns">
                         <select id="display_volt_drop" name="display_volt_drop" style="width: 100%" readonly required>
@@ -245,8 +250,6 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
-                </div>
-                <div class="row">
                     <div class="two columns"><label for="board_insert_check">Board Insert Check *</label></div>
                     <div class="three columns">
                         <select id="board_insert_check" name="board_insert_check" style="width: 100%" onchange="updateToField()" required >
@@ -261,6 +264,8 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
+                </div>
+                <div class="row">
                     <div class="two columns"><label for="measure_prior_start_test">Rdaq Measurement prior start the test *</label></div>
                     <div class="three columns">
                         <select id="measure_prior_start_test" name="measure_prior_start_test" style="width: 100%" onchange="updateToField()" required >
@@ -275,22 +280,22 @@ include 'form_template.php';
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
+                    <div class="two columns"><label for="scan_time">Scan Time *</label></div>
+                    <div class="one columns"><input type="number" step="0.001" id="scan_time" name="scan_time" value="" required> </div>
+                    <div class="one columns"><label for="scan_time" style="text-align: left"><b>s</b></label></div>
+                    <div class="two columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="monitoring_speed">Monitoring speed *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="monitoring_speed" name="monitoring_speed" value="" required> </div>
-                    <div class="one columns"><label for="monitoring_speed" style="text-align: left"><b>s</b></label></div>
-                    <div class="two columns">&nbsp;</div>
                     <div class="two columns"><label for="leakage_measure_reso">Leakage measurement resolution *</label></div>
                     <div class="one columns"><input type="number" step="0.001" id="leakage_measure_reso" name="leakage_measure_reso" value="" required> </div>
                     <div class="one columns"><label for="leakage_measure_reso" style="text-align: left"><b>A</b></label></div>
                     <div class="two columns">&nbsp;</div>
-                </div>
-                <div class="row">
                     <div class="two columns"><label for="leakage_measure_accuracy">Leakage measurement accuracy *</label></div>
                     <div class="one columns"><input type="number" step="0.001" id="leakage_measure_accuracy" name="leakage_measure_accuracy" value="" required> </div>
                     <div class="one columns"><label for="leakage_measure_accuracy" style="text-align: left"><b>&nbsp;</b></label></div>
                     <div class="two columns">&nbsp;</div>
+                </div>
+                <div class="row">
                     <div class="two columns">
                         <label for="volt_measure_reso">Voltage measurement resolution *</label>
                         <label for="toggle_01" class="view-image">Image</label>
@@ -543,7 +548,7 @@ include 'form_template.php';
                     <div class="one columns">&nbsp;</div>
                 </div>
 
-                <button onclick="location.href = 'form_daq_list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+                <button onclick="location.href = 'list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
                 <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> SAVE</button>
             </form>
         </div>

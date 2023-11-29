@@ -5,25 +5,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'form_template.php';
-include 'class/get_parameter.php';
+include '../template/form.php';
+include '../class/get_parameter.php';
 $id = $_GET['edit'];
 ?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>DAQ | Standardization</title>
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-
         <style>
             input[type=text], input[type=password] {
                 width: 100%;
@@ -83,16 +72,16 @@ $id = $_GET['edit'];
         <script type="text/javascript">
             
         </script>
-        
     </head>
+        
     <body>
-        <?php include './navigation_daq.php';?>
+        <?php include '../navigation/daq.php';?>
         <div class="row">&nbsp;</div>
         <div class="row">&nbsp;</div>
         <div class="row">&nbsp;</div>
         <div class="row">
             <!--<h5 style="border-left: none;">DAQ Detail</h5>-->
-            <form id="copy_daq_form" role="form" action="crud_add_daq.php" method="get">
+            <form id="copy_daq_form" role="form" action="../crud/crud_add_daq.php" method="get">
                 <?php
                 $sqlFormData = "SELECT * FROM gest_form_daq WHERE id = '$id'";
                 $resForm = mysqli_query($con, $sqlFormData);
@@ -227,20 +216,36 @@ $id = $_GET['edit'];
 
                     <h6 id="capability">Capability</h6>
                     <div class="row">
-                        <div class="two columns"><label for="volt_measure_range">Voltage measurement range *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="volt_measure_range" name="volt_measure_range" value="<?php echo $rowForm['voltage_measure_range']; ?>" required> </div>
-                        <div class="one columns"><label for="volt_measure_range" style="text-align: left"><b>V</b></label></div>
+                        <div class="two columns"><label for="max_voltage">Max voltage measurement capability *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="max_voltage" name="max_voltage" value="<?php echo $rowForm['max_voltage_measure']; ?>" required> </div>
+                        <div class="one columns"><label for="max_voltage" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="temp_measure_range">Temperature measurement range *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="temp_measure_range" name="temp_measure_range" value="<?php echo $rowForm['temp_measure_range']; ?>" required> </div>
-                        <div class="one columns"><label for="temp_measure_range" style="text-align: left"><b>`C</b></label></div>
+                        <div class="two columns"><label for="min_voltage">Min voltage measurement capability *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="min_voltage" name="min_voltage" value="<?php echo $rowForm['min_voltage_measure']; ?>" required> </div>
+                        <div class="one columns"><label for="min_voltage" style="text-align: left"><b>mV</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="curr_measure_range">Leakage current measurement range *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="curr_measure_range" name="curr_measure_range" value="<?php echo $rowForm['leakage_current_range']; ?>" required> </div>
-                        <div class="one columns"><label for="curr_measure_range" style="text-align: left"><b>A</b></label></div>
+                        <div class="two columns"><label for="max_leakage">Max leakage current measurement range *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="max_leakage" name="max_leakage" value="<?php echo $rowForm['max_leakage_measure']; ?>" required> </div>
+                        <div class="one columns"><label for="max_leakage" style="text-align: left"><b>A</b></label></div>
                         <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="min_leakage">Min leakage current measurement range *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="min_leakage" name="min_leakage" value="<?php echo $rowForm['min_leakage_measure']; ?>" required> </div>
+                        <div class="one columns"><label for="min_leakage" style="text-align: left"><b>&#181A</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="max_temp">Max temperature measurement capability *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="<?php echo $rowForm['max_temp_measure']; ?>" required> </div>
+                        <div class="one columns"><label for="max_temp" style="text-align: left"><b>&#8451;</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="min_temp">Min temperature measurement capability *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="<?php echo $rowForm['min_temp_measure']; ?>" required> </div>
+                        <div class="one columns"><label for="min_temp" style="text-align: left"><b>&#8451;</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
                         <div class="two columns"><label for="display_volt_drop">Display Rdaq Voltage Drop *</label></div>
                         <div class="three columns">
                             <select id="display_volt_drop" name="display_volt_drop" style="width: 100%" readonly required>
@@ -287,9 +292,9 @@ $id = $_GET['edit'];
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="monitoring_speed">Monitoring speed *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="monitoring_speed" name="monitoring_speed" value="<?php echo $rowForm['monitoring_speed'] ?>" required> </div>
-                        <div class="one columns"><label for="monitoring_speed" style="text-align: left"><b>s</b></label></div>
+                        <div class="two columns"><label for="scan_time">Scan Time *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="scan_time" name="scan_time" value="<?php echo $rowForm['scan_time'] ?>" required> </div>
+                        <div class="one columns"><label for="scan_time" style="text-align: left"><b>s</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="leakage_measure_reso">Leakage measurement resolution *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="leakage_measure_reso" name="leakage_measure_reso" value="<?php echo $rowForm['leakage_measure_resolution']; ?>" required> </div>
@@ -312,7 +317,6 @@ $id = $_GET['edit'];
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="volt_measure_reso" name="volt_measure_reso" value="<?php echo $rowForm['voltage_measure_resolution']; ?>" required> </div>
                         <div class="one columns"><label for="volt_measure_reso" style="text-align: left"><b>&nbsp;</b></label></div>
-                        <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns">
@@ -332,7 +336,7 @@ $id = $_GET['edit'];
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)):
                                     ?>
-                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['offline_software']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['data_plot']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                 <?php endwhile; ?>
                             </select>
                         </div>
@@ -354,11 +358,10 @@ $id = $_GET['edit'];
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)):
                                     ?>
-                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['measure_type_hw_design']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['hw_design']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                 <?php endwhile; ?>
                             </select>
                         </div>
-                        <div class="one columns">&nbsp;</div>
                     </div>
 
                     <h6 id="characteristic">Characteristics</h6>
@@ -548,7 +551,7 @@ $id = $_GET['edit'];
                         <div class="one columns">&nbsp;</div>
                     </div>
                 <?php endwhile; ?>
-                <button onclick="location.href = 'form_daq_list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+                <button onclick="location.href = 'list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
                 <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> COPY</button>
             </form>
         </div>

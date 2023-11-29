@@ -5,25 +5,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'form_template.php';
-include 'class/get_parameter.php';
+include '../template/form.php';
+include '../class/get_parameter.php';
 $id = $_GET['view'];
 ?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>DAQ | Standardization</title>
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-
         <style>
             input[type=text], input[type=password] {
                 width: 100%;
@@ -36,10 +25,10 @@ $id = $_GET['view'];
         <script type="text/javascript">
             
         </script>
-        
     </head>
+        
     <body>
-        <?php include './navigation_daq.php';?>
+        <?php include '../navigation/daq.php';?>
         <div class="row">&nbsp;</div>
         <div class="row">&nbsp;</div>
         <div class="row">&nbsp;</div>
@@ -118,20 +107,36 @@ $id = $_GET['view'];
 
                     <h6 id="capability">Capability</h6>
                     <div class="row">
-                        <div class="two columns"><label for="volt_measure_range">Voltage measurement range *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="volt_measure_range" name="volt_measure_range" value="<?php echo $rowForm['voltage_measure_range']; ?>" required> </div>
-                        <div class="one columns"><label for="volt_measure_range" style="text-align: left"><b>V</b></label></div>
+                        <div class="two columns"><label for="max_voltage">Max voltage measurement capability *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="max_voltage" name="max_voltage" value="<?php echo $rowForm['max_voltage_measure']; ?>" required> </div>
+                        <div class="one columns"><label for="max_voltage" style="text-align: left"><b>V</b></label></div>
                         <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="temp_measure_range">Temperature measurement range *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="temp_measure_range" name="temp_measure_range" value="<?php echo $rowForm['temp_measure_range']; ?>" required> </div>
-                        <div class="one columns"><label for="temp_measure_range" style="text-align: left"><b>`C</b></label></div>
+                        <div class="two columns"><label for="min_voltage">Min voltage measurement capability *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="min_voltage" name="min_voltage" value="<?php echo $rowForm['min_voltage_measure']; ?>" required> </div>
+                        <div class="one columns"><label for="min_voltage" style="text-align: left"><b>mV</b></label></div>
                         <div class="two columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="curr_measure_range">Leakage current measurement range *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="curr_measure_range" name="curr_measure_range" value="<?php echo $rowForm['leakage_current_range']; ?>" required> </div>
-                        <div class="one columns"><label for="curr_measure_range" style="text-align: left"><b>A</b></label></div>
+                        <div class="two columns"><label for="max_leakage">Max leakage current measurement range *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="max_leakage" name="max_leakage" value="<?php echo $rowForm['max_leakage_measure']; ?>" required> </div>
+                        <div class="one columns"><label for="max_leakage" style="text-align: left"><b>A</b></label></div>
                         <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="min_leakage">Min leakage current measurement range *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="min_leakage" name="min_leakage" value="<?php echo $rowForm['min_leakage_measure']; ?>" required> </div>
+                        <div class="one columns"><label for="min_leakage" style="text-align: left"><b>&#181A</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="max_temp">Max temperature measurement capability *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="<?php echo $rowForm['max_temp_measure']; ?>" required> </div>
+                        <div class="one columns"><label for="max_temp" style="text-align: left"><b>&#8451;</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><label for="min_temp">Min temperature measurement capability *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="<?php echo $rowForm['min_temp_measure']; ?>" required> </div>
+                        <div class="one columns"><label for="min_temp" style="text-align: left"><b>&#8451;</b></label></div>
+                        <div class="two columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
                         <div class="two columns"><label for="display_volt_drop">Display Rdaq Voltage Drop *</label></div>
                         <div class="three columns">
                             <input type="text" id="display_volt_drop" name="display_volt_drop" value="<?php echo getParameterValue($rowForm['rdaq_voltage_drop']); ?>" required readonly />
@@ -151,9 +156,9 @@ $id = $_GET['view'];
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="monitoring_speed">Monitoring speed *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="monitoring_speed" name="monitoring_speed" value="<?php echo $rowForm['monitoring_speed'] ?>" required> </div>
-                        <div class="one columns"><label for="monitoring_speed" style="text-align: left"><b>s</b></label></div>
+                        <div class="two columns"><label for="scan_time">Monitoring speed *</label></div>
+                        <div class="one columns"><input type="number" step="0.001" id="scan_time" name="scan_time" value="<?php echo $rowForm['scan_time'] ?>" required> </div>
+                        <div class="one columns"><label for="scan_time" style="text-align: left"><b>s</b></label></div>
                         <div class="two columns">&nbsp;</div>
                         <div class="two columns"><label for="leakage_measure_reso">Leakage measurement resolution *</label></div>
                         <div class="one columns"><input type="number" step="0.001" id="leakage_measure_reso" name="leakage_measure_reso" value="<?php echo $rowForm['leakage_measure_resolution']; ?>" required> </div>
@@ -173,12 +178,12 @@ $id = $_GET['view'];
                     <div class="row">
                         <div class="two columns"><label for="offline_data_plot">Offline software to review historical data and plotting with data analysis *</label></div>
                         <div class="three columns">
-                            <input type="text" id="offline_data_plot" name="offline_data_plot" value="<?php echo getParameterValue($rowForm['offline_software']); ?>" required readonly />
+                            <input type="text" id="offline_data_plot" name="offline_data_plot" value="<?php echo getParameterValue($rowForm['data_plot']); ?>" required readonly />
                         </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="measure_type_hardware">Measurement type for hardware design *</label></div>
                         <div class="three columns">
-                            <input type="text" id="measure_type_hardware" name="measure_type_hardware" value="<?php echo getParameterValue($rowForm['measure_type_hw_design']); ?>" required readonly />
+                            <input type="text" id="measure_type_hardware" name="measure_type_hardware" value="<?php echo getParameterValue($rowForm['hw_design']); ?>" required readonly />
                         </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
@@ -241,8 +246,8 @@ $id = $_GET['view'];
                         <div class="one columns">&nbsp;</div>
                     </div>
                 <?php endwhile; ?>
-                <button onclick="location.href = 'form_daq_list.php'" type="button" id="backBtn"><i class='bx bxs-chevron-left bx-fw' ></i> Back</button>
-                <button onclick="location.href = 'form_daq_edit.php?edit=<?php echo $id; ?>'" type="button" id="editBtn"><i class='bx bxs-pencil bx-fw' ></i> Edit</button>
+                <button onclick="location.href = 'list.php'" type="button" id="backBtn"><i class='bx bxs-chevron-left bx-fw' ></i> Back</button>
+                <button onclick="location.href = 'edit.php?edit=<?php echo $id; ?>'" type="button" id="editBtn"><i class='bx bxs-pencil bx-fw' ></i> Edit</button>
             </form>
         </div>
     </body>

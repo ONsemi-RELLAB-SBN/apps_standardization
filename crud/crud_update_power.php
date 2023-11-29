@@ -5,8 +5,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'class/db.php';
-include 'class/ldap.php';
+include '../class/db.php';
+include '../class/ldap.php';
 
 $id                 = $_GET['id'];
 $labLocation        = $_GET['lab_location'];
@@ -29,7 +29,8 @@ $dimensionw = $_GET['dimension_w'];
 $dimensiond = $_GET['dimension_d'];
 $dimensionh = $_GET['dimension_h'];
 $weight     = $_GET['weight'];
-$inputVolt  = $_GET['input_volt'];
+$minvolt    = $_GET['min_volt'];
+$maxvolt    = $_GET['max_volt'];
 $remote     = $_GET['remote_operation_capability'];
 $vmonitor   = $_GET['output_voltage_monitor'];
 $cmonitor   = $_GET['output_curr_monitor'];
@@ -58,7 +59,8 @@ $update = "UPDATE gest_form_ps SET "
         . "ps_dimension_d = '$dimensiond', "
         . "ps_dimension_h = '$dimensionh', "
         . "weight = '$weight', "
-        . "input_voltage = '$inputVolt', "
+        . "min_voltage = '$minvolt', "
+        . "max_voltage = '$maxvolt', "
         . "remote_operation_cap = '$remote', "
         . "output_voltage_mon = '$vmonitor', "
         . "output_current_mon = '$cmonitor', "
@@ -75,6 +77,6 @@ $uprun = mysqli_query($con, $update);
 ?>
 <script>
     alert('Power Supply Updated Successfully');
-    window.location.href = 'form_power_view.php?view=<?php echo $id; ?>';
+    window.location.href = '../power/view.php?view=<?php echo $id; ?>';
 </script>
 <?php mysql_close($handle);

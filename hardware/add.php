@@ -440,9 +440,20 @@ include '../template/form.php';
                         <img id="myImg" src="image/hardware/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
-                <div class="one columns"><input type="number" step="0.001" id="conn_type" name="conn_type" value="" required> </div>
-                <div class="one columns"><label for="conn_type" style="text-align: left"><b>&nbsp;</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="three columns">
+                    <select id="socket_conn_type" name="socket_conn_type" style="width: 100%" required>
+                        <option value="" selected=""></option>
+                        <?php
+                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '046' ORDER BY code ASC";
+                        $resSite = mysqli_query($con, $sqlDdSite);
+                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
+<!--                <div class="one columns"><input type="number" step="0.001" id="conn_type" name="conn_type" value="" required> </div>
+                <div class="one columns"><label for="conn_type" style="text-align: left"><b>&nbsp;</b></label></div>-->
+                <div class="one columns">&nbsp;</div>
                 <div class="two columns">
                     <label for="no_pins">Number of pins *</label>
                     <label for="toggle_09" class="view-image">Image</label>
