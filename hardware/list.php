@@ -4,23 +4,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'template/form.php';
-include 'class/get_parameter.php';
-include 'template/list.php';
+include '../template/form.php';
+include '../template/list.php';
+include '../class/get_parameter.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>LIST | Hardware List</title>
-        <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
-        <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
         <style>
             body {
                 font-size: 1em;
@@ -86,6 +77,7 @@ include 'template/list.php';
             <div class="row">
                 <h2 class="pull-left" style="border-left:none">Hardware List</h2>
                 <button onClick="window.location.href = window.location.href" type="button" class="btn btn-default btn-lg u-pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
+                <button onclick="location.href = '../template/template_hardware.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Template</button>
             </div>
             <table class="u-full-width" id='myTable'>
                 <thead>
@@ -116,17 +108,18 @@ include 'template/list.php';
                             <td><?php echo getParameterValue($row_slides['champion']); ?></td>
                             <td><?php echo $row_slides['assembly_no']; ?></td>
                             <td style="text-align:center">
-                                <a href="form_hardware_view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><i class='bx bx-search-alt bx-fw'></i> VIEW </a>
-                                <a href="form_hardware_edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
-                                <a href="form_hardware_delete.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
-                                <a href="form_hardware_copy.php?edit=<?php echo $row_slides['id']; ?>" title="Replicate Record" data-toggle="tooltip"><i class='bx bx-copy bx-fw'></i></i> COPY </a>
+                                <a href="view.php?view=<?php echo $row_slides['id']; ?>" title="View Record" data-toggle="tooltip"><i class='bx bx-search-alt bx-fw'></i> VIEW </a>
+                                <a href="edit.php?edit=<?php echo $row_slides['id']; ?>" title="Update Record" data-toggle="tooltip"><i class='bx bxs-pencil bx-fw' ></i> EDIT </a>
+                                <a href="delete.php?delete=<?php echo $row_slides['id']; ?>" title="Delete Record" data-toggle="tooltip"><i class='bx bxs-trash bx-fw' ></i> DELETE </a>
+                                <a href="copy.php?edit=<?php echo $row_slides['id']; ?>" title="Replicate Record" data-toggle="tooltip"><i class='bx bx-copy bx-fw'></i></i> COPY </a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
                 <!--<a href="crud_export_hardware.php" title="Download" data-toggle="tooltip"><i class='bx bx-cloud-download bx-fw'></i></i> DOWNLOAD </a>-->
                 </tbody>
             </table>
-            <button onclick="location.href = 'form_hardware.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Hardware</button>
+            <button onclick="location.href = 'add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Hardware</button>
+            <button onclick="location.href = '../xlsm/upload_hardware.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
             <button onclick="location.href = 'crud_export_hardware.php'" type="button" id="dlBtn"><i class='bx bx-cloud-download bx-fw'></i> Download</button>
         </div>
     </body>

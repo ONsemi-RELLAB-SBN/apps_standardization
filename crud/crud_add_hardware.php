@@ -5,8 +5,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'class/db.php';
-include './class/ldap.php';
+include '../class/db.php';
+include '../class/ldap.php';
 
 $labLctn    = $_GET['lab_location'];
 $strategy   = $_GET['strategy'];
@@ -66,6 +66,6 @@ $upload = mysqli_query($con, $insert);
 ?>
 <script>
     alert('New Hardware Added Successfully');
-    window.location.href = 'form_hardware_list.php';
+    window.location.href = '../hardware/list.php';
 </script>
 <?php mysql_close($handle);

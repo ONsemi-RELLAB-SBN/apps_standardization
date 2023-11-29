@@ -4,7 +4,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'form_template.php';
+include '../template/form.php';
 ?>
 
 <!DOCTYPE html>
@@ -74,12 +74,12 @@ include 'form_template.php';
         
     </head>
     <body>
-        <?php include './navigation_hardware.php';?>
+        <?php include '../navigation/hardware.php';?>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <!--<h5 style="border-left: none;">Hardware Details</h5>-->
-        <form id="add_hardware_form" role="form" action="crud_add_hardware.php" method="get">
+        <form id="add_hardware_form" role="form" action="../crud/crud_add_hardware.php" method="get">
             <h6 id="general">General</h6>
             <div class="row">
                 <div class="two columns"><label for="lab_location">Lab Location *</label></div>
@@ -490,7 +490,7 @@ include 'form_template.php';
                 <div class="one columns"><label for="max_dut_mb" style="text-align: left"><b>DUTs</b></label></div>
             </div>
 
-            <button onclick="location.href = 'form_hardware_list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+            <button onclick="location.href = '../hardware/list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
             <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> SAVE</button>
         </form>
         <script>
