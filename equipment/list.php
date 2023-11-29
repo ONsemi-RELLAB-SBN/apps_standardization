@@ -118,6 +118,7 @@ include '../class/get_parameter.php';
                 </tbody>
             </table>
             <button onclick="location.href = '../equipment/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Equipment</button>
+            <button onclick="location.href = '../xlsm/upload_equipment.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
             <button onclick="location.href = '../crud/crud_export_equipment.php'" type="button" id="dlBtn"><i class='bx bx-cloud-download bx-fw'></i> Download List</button>
         </div>
     </body>

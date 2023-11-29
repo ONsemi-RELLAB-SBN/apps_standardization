@@ -12,16 +12,7 @@ $id = $_GET['view'];
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>VIEW | Standardization Survey</title>
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+        
     </head>
     <body>
         <?php include '../navigation/equipment.php';?>

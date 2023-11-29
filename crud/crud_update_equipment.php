@@ -5,8 +5,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'class/db.php';
-include 'class/ldap.php';
+include '../class/db.php';
+include '../class/ldap.php';
 
 $id                 = $_GET['id'];
 $labLocation        = $_GET['lab_location'];
@@ -28,6 +28,7 @@ $zone               = $_GET['zon'];
 $voltRating         = $_GET['volt_rating'];
 $voltControl        = $_GET['volt_control'];
 $currRating         = $_GET['curr_rating'];
+$powerRate          = $_GET['power_rating'];
 $minTime            = $_GET['min_time'];
 $maxTime            = $_GET['max_time'];
 $minTemp            = $_GET['min_temp'];
@@ -47,6 +48,7 @@ $extDimensionH      = $_GET['ext_dimension_h'];
 $intDimensionW      = $_GET['int_dimension_w'];
 $intDimensionD      = $_GET['int_dimension_d'];
 $intDimensionH      = $_GET['int_dimension_h'];
+$diameter           = $_GET['diameter'];
 $rackDimensionW     = $_GET['rack_dimension_w'];
 $rackDimensionD     = $_GET['rack_dimension_d'];
 $rackDimensionH     = $_GET['rack_dimension_h'];
@@ -64,6 +66,8 @@ $airflow            = $_GET['airflow'];
 $tempProtection1    = $_GET['tempProtection1'];
 $tempProtection2    = $_GET['tempProtection2'];
 $tempProtection3    = $_GET['tempThermostat3'];
+$switch             = $_GET['press_switch'];
+$safety             = $_GET['safety_valve'];
 $smokeDetector      = $_GET['smoke_detector'];
 $emo                = $_GET['emo'];
 
@@ -125,6 +129,7 @@ $update = "UPDATE gest_form_eqpt SET "
         . "eqpt_volt_rating = '$voltRating', "
         . "volt_control_accuracy = '$voltControl', "
         . "current_rating = '$currRating', "
+        . "power_rating = '$powerRate', "
         . "min_time_setting = '$minTime', "
         . "max_time_setting = '$maxTime', "
         . "min_temp = '$minTemp', "
@@ -143,6 +148,7 @@ $update = "UPDATE gest_form_eqpt SET "
         . "int_dimension_w = '$intDimensionW', "
         . "int_dimension_d = '$intDimensionD', "
         . "int_dimension_h = '$intDimensionH', "
+        . "diameter = '$diameter', "
         . "no_interior_zone = '$noInterior', "
         . "rack_dimension_w = '$rackDimensionW', "
         . "rack_dimension_d = '$rackDimensionD', "
@@ -160,6 +166,8 @@ $update = "UPDATE gest_form_eqpt SET "
         . "temp_protection_1 = '$tempProtection1', "
         . "temp_protection_2 = '$tempProtection2', "
         . "temp_protection_3 = '$tempProtection3', "
+        . "pressure_switch = '$switch', "
+        . "safety_valve = '$safety', "
         . "smoke_alarm = '$smokeDetector', "
         . "emo_btn = '$emo', "
         . "voltage = '$voltage', "
@@ -197,6 +205,6 @@ $uprun = mysqli_query($con, $update);
 ?>
 <script>
     alert('Equipment Updated Successfully');
-    window.location.href = 'form_equipment_view.php?view=<?php echo $id; ?>';
+    window.location.href = '../equipment/view.php?view=<?php echo $id; ?>';
 </script>
 <?php mysql_close($handle);

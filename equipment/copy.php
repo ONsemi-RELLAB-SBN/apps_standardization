@@ -12,17 +12,6 @@ $id = $_GET['edit'];
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>COPY FORM | Standardization</title>
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-
         <style>
             input[type=text], input[type=password] {
                 width: 100%;
@@ -103,15 +92,15 @@ $id = $_GET['edit'];
         <script type="text/javascript">
 
         </script>
-
     </head>
+    
     <body>
-        <?php include './navigation_equipment.php';?>
+        <?php include '../navigation/equipment.php';?>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>
         <!--<h5 style="border-left: none;">Equipment Details</h5>-->
-        <form id="replicate_equipment_form" action="crud_add_equipment.php" method="get">
+        <form id="replicate_equipment_form" action="../crud/crud_add_equipment.php" method="get">
             <div class="row">
                 <?php
                 $sqlFormData = "SELECT * FROM gest_form_eqpt WHERE id = '$id'";
@@ -310,12 +299,15 @@ $id = $_GET['edit'];
                         $checkZone = getParameterValues($rowForm['rel_test']);
                         $data01 = "TC,THS";
                         $data02 = "THS";
-                        if (strpos($checkZone, $data02) === false && strpos($checkZone, $data01) === false) {
-
-                        } else { ?>
-                            <div class="three columns"><label for="zone">Zone *</label></div>
-                            <div class="three columns"><input type="number" step="0.001" id="zon" name="zon" value="<?php echo $rowForm['zone']; ?>" required></div>
+                        $data03 = "TC";
+                        if (strpos($checkZone, $data02) === false && strpos($checkZone, $data01) === false && strpos($checkZone, $data03) === false) { ?>
+                            <div class="six columns" id="zone">
+                        <?php } else { ?>
+                            <div class="six columns" id="zone" style="display: none">
                         <?php } ?>
+                            <div class="three columns"><label for="zone">Zone *</label></div>
+                            <div class="three columns"><input type="number" step="0.001" id="zone" name="zone" value="<?php echo $rowForm['zone']; ?>"></div>
+                        </div>
                     </div>
 
                     <script>
@@ -829,6 +821,34 @@ $id = $_GET['edit'];
                         </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
+                    
+                    <div class="row">
+                        <div class="two columns"><label for="cda">CDA *</label></div>
+                        <div class="three columns">
+                            <select id="cda" name="cda" style="width: 100%" >
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['cda']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns" >&nbsp;</div>
+                        <div class="two columns"><label for="lan">LAN *</label></div>
+                        <div class="three columns">
+                            <select id="lan" name="lan" style="width: 100%">
+                                <option value="" selected=""></option>
+                                <?php
+                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                $resSite = mysqli_query($con, $sqlDdSite);
+                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['lan']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                <?php endwhile; ?>
+                            </select>
+                        </div>
+                    </div>
 
                     <script>
                         function updateGas() {
@@ -914,11 +934,14 @@ $id = $_GET['edit'];
                         </div>
                         <?php
                         $checkWater = $rowForm['di_water'];
-                        if ($checkWater === "029003") {
-                            ?>
+                        if ($checkWater === "022003") { ?>
+                            <div class="six columns" id="topup">
+                        <?php } else { ?>
+                            <div class="six columns" id="topup" style="display: none">    
+                        <?php } ?>
                             <div class="three columns"><label for="water_topup">Water Top-up System *</label></div>
                             <div class="three columns">
-                                <select id="water_topup" name="water_topup" style="width: 100%" required>
+                                <select id="water_topup" name="water_topup" style="width: 100%">
                                     <option value="" selected=""></option>
                                     <?php
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
@@ -928,7 +951,7 @@ $id = $_GET['edit'];
                                     <?php endwhile; ?>
                                 </select>
                             </div>
-                        <?php } ?>
+                        </div>
                     </div>
 
                     <h6 id="daqt">DAQ</h6>
@@ -1194,6 +1217,8 @@ $id = $_GET['edit'];
                 <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> COPY</button>
             </div>
         </form>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="../js/multiselect-dropdown.js" ></script>
         <script>
             $(".button").click(function () {
                 var buttonId = $(this).attr("id");
@@ -1206,7 +1231,5 @@ $id = $_GET['edit'];
                 $("body").removeClass("modal-active");
             });
         </script>
-        <script src="js/multiselect-dropdown.js" ></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </body>
 </html>
