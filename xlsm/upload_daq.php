@@ -72,6 +72,8 @@ if (isset($_FILES['file'])) {
             $dim = $xlsx->dimension();
             $num_cols = $dim[0];
             $num_rows = $dim[1];
+            
+            if ($num_cols == '36') {
 
             echo '<h2>' . $xlsx->sheetName(0) . '</h2>';
             echo '<table border=1 border-collapse=collapse>';
@@ -236,6 +238,11 @@ if (isset($_FILES['file'])) {
             }
             echo '</table>';
             echo '</td></tr></table>';
+            } else {
+                echo 'You have uploaded an incorrect template. <br>This template is the old one [Check the columns]. <br>Please check the files before uploading.
+                    <br><br>Severity: High
+                    <br>Action: Please upload the correct template [DAQ].';
+            }
         } else {
             echo 'You have uploaded an incorrect template. <br>The uploaded template is a ' . $xlsx->sheetName(0) . ' template, but the required template is an DAQ template. <br>Please check the files before uploading.
                     <br><br>Severity: Medium
