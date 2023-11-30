@@ -14,7 +14,7 @@ include '../class/get_parameter.php';
     <head>
         <style>
             body {
-                font-size: 1em;
+                font-size: .85em;
             }
 
             h2 {
@@ -24,7 +24,6 @@ include '../class/get_parameter.php';
 
         <script type="text/javascript">
             jQuery(document).ready(function($) {
-//                $('#myTable').DataTable();
                 
                 var table = $('#myTable').DataTable( {
                     dom: 'Blfrtip',
@@ -77,7 +76,6 @@ include '../class/get_parameter.php';
             <div class="row">
                 <h2 class="pull-left" style="border-left:none">Hardware List</h2>
                 <button onClick="window.location.href = window.location.href" type="button" class="btn btn-default btn-lg u-pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
-                <button onclick="location.href = '../template/template_hardware.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Template</button>
             </div>
             <table class="u-full-width" id='myTable'>
                 <thead>
@@ -118,9 +116,9 @@ include '../class/get_parameter.php';
                 <!--<a href="crud_export_hardware.php" title="Download" data-toggle="tooltip"><i class='bx bx-cloud-download bx-fw'></i></i> DOWNLOAD </a>-->
                 </tbody>
             </table>
-            <button onclick="location.href = 'add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Hardware</button>
+            <button onclick="location.href = '../hardware/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Hardware</button>
             <button onclick="location.href = '../xlsm/upload_hardware.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
-            <button onclick="location.href = 'crud_export_hardware.php'" type="button" id="dlBtn"><i class='bx bx-cloud-download bx-fw'></i> Download</button>
+            <button onclick="location.href = '../template/template_hardware.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
         </div>
     </body>
 </html>

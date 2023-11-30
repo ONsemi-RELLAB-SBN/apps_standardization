@@ -1,30 +1,20 @@
 <?php
-
 /* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'template/form.php';
-include 'class/get_parameter.php';
-include 'template/list.php';
+include '../template/form.php';
+include '../template/list.php';
+include '../class/get_parameter.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>LIST | Design List</title>
-        <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
-        <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
         <style>
             body {
-                font-size: 1em;
+                font-size: .85em;
             }
 
             h2 {
@@ -34,7 +24,6 @@ include 'template/list.php';
 
         <script type="text/javascript">
             jQuery(document).ready(function($) {
-//                $('#myTable').DataTable();
                 
                 var table = $('#myTable').DataTable( {
                     dom: 'Blfrtip',
@@ -128,8 +117,9 @@ include 'template/list.php';
                     <!--<a href="crud_export_design.php" title="Download" data-toggle="tooltip"><i class='bx bx-cloud-download bx-fw'></i></i> DOWNLOAD </a>-->
                 </tbody>
             </table>
-            <button onclick="location.href = 'form_design.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Design</button>
-            <button onclick="location.href = 'crud_export_design.php'" type="button" id="dlBtn"><i class='bx bx-cloud-download bx-fw'></i> Download</button>
+            <button onclick="location.href = '../design/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Design</button>
+            <button onclick="location.href = '../xlsm/upload_design.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
+            <button onclick="location.href = '../template/template_design.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
         </div>
     </body>
 </html>

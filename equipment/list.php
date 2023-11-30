@@ -75,7 +75,6 @@ include '../class/get_parameter.php';
             <div class="row">
                 <h2 class="u-pull-left" style="border-left:none">Equipment [Chamber] List</h2>
                 <button onClick="window.location.href = window.location.href" type="button" class="btn btn-default btn-lg u-pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
-                <button onclick="location.href = '../template/template_equipment.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Template</button>
             </div>
             
             <table id="myTable" class="u-full-width" style="width:100%">
@@ -119,7 +118,7 @@ include '../class/get_parameter.php';
             </table>
             <button onclick="location.href = '../equipment/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Equipment</button>
             <button onclick="location.href = '../xlsm/upload_equipment.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
-            <button onclick="location.href = '../crud/crud_export_equipment.php'" type="button" id="dlBtn"><i class='bx bx-cloud-download bx-fw'></i> Download List</button>
+            <button onclick="location.href = '../template/template_equipment.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
         </div>
     </body>
 </html>
