@@ -312,7 +312,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_01">
                             <dialog>
                                 <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/daq/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="volt_measure_reso" name="volt_measure_reso" value="<?php echo $rowForm['voltage_measure_resolution']; ?>" required> </div>
@@ -325,7 +325,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_02">
                             <dialog>
                                 <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/daq/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="three columns">
@@ -347,7 +347,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_03">
                             <dialog>
                                 <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/daq/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="three columns">
@@ -372,7 +372,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_040">
                             <dialog>
                                 <label for="toggle_040" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/004_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/daq/004_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="analog_input_single" name="analog_input_single" value="<?php echo $rowForm['no_analog_input_single']; ?>" required> </div>
@@ -384,7 +384,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_041">
                             <dialog>
                                 <label for="toggle_041" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/004_1.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/daq/004_1.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="analog_input_diff" name="analog_input_diff" value="<?php echo $rowForm['no_analog_input_diff']; ?>" required> </div>
@@ -398,7 +398,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_042">
                             <dialog>
                                 <label for="toggle_042" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/004_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/daq/004_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="resolution" name="resolution" value="<?php echo $rowForm['resolution']; ?>" required> </div>
@@ -410,7 +410,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_050">
                             <dialog>
                                 <label for="toggle_050" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/005_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/daq/005_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="sampling_frequency" name="sampling_frequency" value="<?php echo $rowForm['sampling_freq']; ?>" required> </div>
@@ -424,7 +424,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_051">
                             <dialog>
                                 <label for="toggle_051" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/005_1.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/daq/005_1.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="three columns">
@@ -445,7 +445,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_052">
                             <dialog>
                                 <label for="toggle_052" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/005_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/daq/005_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="three columns">
@@ -468,7 +468,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_06">
                             <dialog>
                                 <label for="toggle_06" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/daq/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="three columns">
@@ -489,7 +489,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_070">
                             <dialog>
                                 <label for="toggle_070" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/007_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/daq/007_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="three columns">
@@ -512,7 +512,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_071">
                             <dialog>
                                 <label for="toggle_071" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/007_1.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/daq/007_1.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="three columns">
@@ -533,7 +533,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_072">
                             <dialog>
                                 <label for="toggle_072" style="color:red"><i class='bx bx-x bx-fw'></i> close</label>
-                                <img id="myImg" src="image/daq/007_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/daq/007_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="three columns">

@@ -65,7 +65,7 @@ checkUser($username, 'main_view.php');
                 <nav>
                     <ul>
                         <li style="background-color: green"><a href="equipment/add.php">Equipment</a></li>
-                        <li style="background-color: green"><a href="hardware/add.php.php">Hardware</a></li>
+                        <li style="background-color: green"><a href="hardware/add.php">Hardware</a></li>
                         <li style="background-color: green"><a href="daq/add.php">DAQ</a></li>
                         <li style="background-color: green"><a href="power/add.php">Power Supply</a></li>
                         <li style="background-color: gray" title="Under Development" id="try1" > <a href="#">Design</a></li>

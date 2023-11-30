@@ -285,7 +285,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_3">
                         <dialog>
                             <label for="toggle_3" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
-                            <img id="myImg" src="image/powersupply/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/powersupply/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="three columns">
@@ -307,7 +307,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_4">
                         <dialog>
                             <label for="toggle_4" style="color:orange"><i class='bx bx-x bx-fw'></i> close</label>
-                            <img id="myImg" src="image/powersupply/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/powersupply/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="three columns">
@@ -328,7 +328,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_2">
                         <dialog>
                             <label for="toggle_2" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/powersupply/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/powersupply/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="three columns">
@@ -352,7 +352,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_1">
                         <dialog>
                             <label for="toggle_1" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/powersupply/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/powersupply/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="no_output_channel" name="no_output_channel" value="<?php echo $rowForm['no_output']; ?>" required> </div>

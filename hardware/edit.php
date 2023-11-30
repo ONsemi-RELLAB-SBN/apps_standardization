@@ -284,7 +284,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_01">
                         <dialog>
                             <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/hardware/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="three columns">
@@ -305,7 +305,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_02">
                         <dialog>
                             <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/hardware/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="three columns">
@@ -341,7 +341,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_03">
                         <dialog>
                             <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/hardware/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="three columns">
@@ -369,7 +369,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_04">
                         <dialog>
                             <label for="toggle_04" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/hardware/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="load_card_pin_qty" name="load_card_pin_qty" value="<?php echo $rowForm['lc_pin_qty']; ?>" required> </div>
@@ -383,7 +383,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_05">
                         <dialog>
                             <label for="toggle_05" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/hardware/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="load_card_pin_pitch" name="load_card_pin_pitch" value="<?php echo $rowForm['lc_pin_pitch']; ?>" required></div>
@@ -402,7 +402,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_06">
                         <dialog>
                             <label for="toggle_06" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/hardware/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="prog_card_pin_qty" name="prog_card_pin_qty" value="<?php echo $rowForm['pc_pin_qty']; ?>" required> </div>
@@ -415,7 +415,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_07">
                         <dialog>
                             <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/hardware/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="prog_card_pin_pitch" name="prog_card_pin_pitch" value="<?php echo $rowForm['pc_pin_pitch']; ?>" required></div>
@@ -430,7 +430,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_08">
                         <dialog>
                             <label for="toggle_08" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/hardware/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="conn_type" name="conn_type" value="<?php echo $rowForm['connector_type']; ?>" required> </div>
@@ -442,7 +442,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_09">
                         <dialog>
                             <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" required> </div>
@@ -455,7 +455,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_09">
                         <dialog>
                             <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" required> </div>
@@ -467,7 +467,7 @@ $id = $_GET['edit'];
                         <input type="checkbox" id="toggle_10">
                         <dialog>
                             <label for="toggle_10" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                            <img id="myImg" src="image/hardware/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                            <img id="myImg" src="../image/hardware/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
                     <div class="one columns"><input type="number" step="0.001" id="edge_thick" name="edge_thick" value="<?php echo $rowForm['edgefinger_thickness']; ?>" required> </div>

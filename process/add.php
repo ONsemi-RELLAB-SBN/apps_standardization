@@ -11,17 +11,6 @@ include 'form_template.php';
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Process | Standardization Survey</title>
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-
         <style>
             
         </style>
@@ -29,8 +18,8 @@ include 'form_template.php';
         <script type="text/javascript">
 
         </script>
-        
     </head>
+        
     <body>
         <div class="twelve columns">&nbsp;</div>
         <div class="twelve columns">&nbsp;</div>

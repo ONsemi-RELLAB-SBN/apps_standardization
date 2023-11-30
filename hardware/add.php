@@ -10,17 +10,6 @@ include '../template/form.php';
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>HW FORM | Standardization Survey</title>
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-
         <style>
             input[type=text], input[type=password] {
                 width: 100%;
@@ -71,8 +60,8 @@ include '../template/form.php';
         <script type="text/javascript">
         
         </script>
-        
     </head>
+        
     <body>
         <?php include '../navigation/hardware.php';?>
         <div class="twelve columns">&nbsp;</div>
@@ -289,7 +278,7 @@ include '../template/form.php';
                     <input type="checkbox" id="toggle_01">
                     <dialog>
                         <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="image/hardware/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="../image/hardware/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="three columns">
@@ -310,7 +299,7 @@ include '../template/form.php';
                     <input type="checkbox" id="toggle_02">
                     <dialog>
                         <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="image/hardware/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="../image/hardware/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="three columns">
@@ -346,7 +335,7 @@ include '../template/form.php';
                     <input type="checkbox" id="toggle_03">
                     <dialog>
                         <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="image/hardware/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="../image/hardware/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="three columns">
@@ -374,7 +363,7 @@ include '../template/form.php';
                     <input type="checkbox" id="toggle_04">
                     <dialog>
                         <label for="toggle_04" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="image/hardware/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="../image/hardware/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="one columns"><input type="number" step="0.001" id="load_card_pin_qty" name="load_card_pin_qty" value="" required> </div>
@@ -388,7 +377,7 @@ include '../template/form.php';
                     <input type="checkbox" id="toggle_05">
                     <dialog>
                         <label for="toggle_05" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="image/hardware/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="../image/hardware/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="one columns"><input type="number" step="0.001" id="load_card_pin_pitch" name="load_card_pin_pitch" value="" required></div>
@@ -408,7 +397,7 @@ include '../template/form.php';
                     <input type="checkbox" id="toggle_06">
                     <dialog>
                         <label for="toggle_06" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="image/hardware/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="../image/hardware/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="one columns"><input type="number" step="0.001" id="prog_card_pin_qty" name="prog_card_pin_qty" value="" required> </div>
@@ -422,7 +411,7 @@ include '../template/form.php';
                     <input type="checkbox" id="toggle_07">
                     <dialog>
                         <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="image/hardware/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="../image/hardware/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="one columns"><input type="number" step="0.001" id="prog_card_pin_pitch" name="prog_card_pin_pitch" value="" required></div>
@@ -437,7 +426,7 @@ include '../template/form.php';
                     <input type="checkbox" id="toggle_08">
                     <dialog>
                         <label for="toggle_08" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="image/hardware/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="../image/hardware/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="three columns">
@@ -460,7 +449,7 @@ include '../template/form.php';
                     <input type="checkbox" id="toggle_09">
                     <dialog>
                         <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="../image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="" required> </div>
@@ -474,7 +463,7 @@ include '../template/form.php';
                     <input type="checkbox" id="toggle_09">
                     <dialog>
                         <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="../image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="" required> </div>
@@ -486,7 +475,7 @@ include '../template/form.php';
                     <input type="checkbox" id="toggle_10">
                     <dialog>
                         <label for="toggle_10" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                        <img id="myImg" src="image/hardware/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                        <img id="myImg" src="../image/hardware/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
                 <div class="one columns"><input type="number" step="0.001" id="edge_thick" name="edge_thick" value="" required> </div>

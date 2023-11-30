@@ -399,7 +399,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_01">
                             <dialog>
                                 <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="<?php echo $rowForm['temp_fluctuation']; ?>" required></div>
@@ -413,7 +413,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_02">
                             <dialog>
                                 <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="<?php echo $rowForm['temp_uniformity']; ?>" required> </div>
@@ -425,7 +425,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_03">
                             <dialog>
                                 <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="<?php echo $rowForm['humid_fluctuation']; ?>" required> </div>
@@ -441,7 +441,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_06">
                             <dialog>
                                 <label for="toggle_06" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="<?php echo $rowForm['no_interior_zone']; ?>" required> </div>
@@ -453,7 +453,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_04">
                             <dialog>
                                 <label for="toggle_04" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="ext_dimension_w" name="ext_dimension_w" value="<?php echo $rowForm['ext_dimension_w']; ?>" required> </div>
@@ -467,7 +467,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_08">
                             <dialog>
                                 <label for="toggle_08" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="<?php echo $rowForm['int_vol']; ?>" required> </div>
@@ -485,7 +485,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_09">
                             <dialog>
                                 <label for="toggle_09" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="three columns">
@@ -525,7 +525,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_05">
                             <dialog>
                                 <label for="toggle_05" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="<?php echo $rowForm['int_dimension_w']; ?>" required> </div>
@@ -539,7 +539,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_10">
                             <dialog>
                                 <label for="toggle_10" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="<?php echo $rowForm['rack_slot_pitch']; ?>" required></div>
@@ -557,7 +557,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_11">
                             <dialog>
                                 <label for="toggle_11" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/011.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/011.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="<?php echo $rowForm['rack_slot_width']; ?>" required> </div>
@@ -579,7 +579,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_07">
                             <dialog>
                                 <label for="toggle_07" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="<?php echo $rowForm['rack_dimension_w']; ?>" required> </div>
@@ -593,7 +593,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_12">
                             <dialog>
                                 <label for="toggle_12" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/012.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/012.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="<?php echo $rowForm['no_mb_slot']; ?>" required></div>
@@ -611,7 +611,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_13">
                             <dialog>
                                 <label for="toggle_13" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/013.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/013.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="<?php echo $rowForm['max_ps_slot']; ?>" required> </div>
@@ -629,7 +629,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_14">
                             <dialog>
                                 <label for="toggle_14" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/014.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/014.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="one columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="<?php echo $rowForm['max_ps_eqpt']; ?>" required> </div>
@@ -647,7 +647,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_15">
                             <dialog>
                                 <label for="toggle_15" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/015.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/015.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="three columns">
@@ -978,7 +978,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_16">
                             <dialog>
                                 <label for="toggle_16" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/016.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/016.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="three columns">
@@ -1055,7 +1055,7 @@ $id = $_GET['edit'];
                                 <input type="checkbox" id="toggle_17">
                                 <dialog>
                                     <label for="toggle_17" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                    <img id="myImg" src="image/equipment/017.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                    <img id="myImg" src="../image/equipment/017.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
                             <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
@@ -1083,7 +1083,7 @@ $id = $_GET['edit'];
                                 <input type="checkbox" id="toggle_18">
                                 <dialog>
                                     <label for="toggle_18" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                    <img id="myImg" src="image/equipment/018.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                    <img id="myImg" src="../image/equipment/018.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
                             <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
@@ -1116,7 +1116,7 @@ $id = $_GET['edit'];
                                 <input type="checkbox" id="toggle_19">
                                 <dialog>
                                     <label for="toggle_19" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                    <img id="myImg" src="image/equipment/019.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                    <img id="myImg" src="../image/equipment/019.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
                             <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
@@ -1165,7 +1165,7 @@ $id = $_GET['edit'];
                             <input type="checkbox" id="toggle_20">
                             <dialog>
                                 <label for="toggle_20" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="image/equipment/020.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                <img id="myImg" src="../image/equipment/020.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
                         <div class="three columns">
