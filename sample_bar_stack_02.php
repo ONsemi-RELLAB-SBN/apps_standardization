@@ -131,119 +131,12 @@
                         }
                     ]
                 };
-
                 $("#chartContainer").CanvasJSChart(options);
-                
-                var secondoption = {
-                    animationEnabled: true,
-                    theme: "light2",
-                    title: {
-                        text: "Standardization Platform"
-                    },
-                    axisY2: {
-                        prefix: "",
-                        lineThickness: 0
-                    },
-                    toolTip: {
-                        shared: true
-                    },
-                    legend: {
-                        verticalAlign: "top",
-                        horizontalAlign: "center"
-                    },
-                    data: [
-                        {
-                            type: "stackedBar",
-                            showInLegend: true,
-                            name: "SBN",
-                            axisYType: "secondary",
-                            color: "orange",
-                            dataPoints: [
-                                {label: "Equipment", y: 8},
-                                {label: "Hardware", y: 2},
-                                {label: "DAQ", y: 3},
-                                {label: "Power Supply", y: 3},
-                                {label: "Design", y: 0},
-                                {label: "Process", y: 0},
-                                {label: "Electrical Test", y: 0}
-                            ]
-                        },
-                        {
-                            type: "stackedBar",
-                            showInLegend: true,
-                            name: "CEBU",
-                            axisYType: "secondary",
-                            color: "purple",
-                            dataPoints: [
-                                {label: "Equipment", y: 92},
-                                {label: "Hardware", y: 0},
-                                {label: "DAQ", y: 0},
-                                {label: "Power Supply", y: 0},
-                                {label: "Design", y: 0},
-                                {label: "Process", y: 0},
-                                {label: "Electrical Test", y: 0}
-                            ]
-                        },
-                        {
-                            type: "stackedBar",
-                            showInLegend: true,
-                            name: "OSPI",
-                            axisYType: "secondary",
-                            color: "yellow",
-                            dataPoints: [
-                                {label: "Equipment", y: 63},
-                                {label: "Hardware", y: 0},
-                                {label: "DAQ", y: 0},
-                                {label: "Power Supply", y: 0},
-                                {label: "Design", y: 0},
-                                {label: "Process", y: 0},
-                                {label: "Electrical Test", y: 0}
-                            ]
-                        },
-                        {
-                            type: "stackedBar",
-                            showInLegend: true,
-                            name: "SUZHOU",
-                            axisYType: "secondary",
-                            color: "blue",
-                            dataPoints: [
-                                {label: "Equipment", y: 22},
-                                {label: "Hardware", y: 0},
-                                {label: "DAQ", y: 0},
-                                {label: "Power Supply", y: 4},
-                                {label: "Design", y: 0},
-                                {label: "Process", y: 0},
-                                {label: "Electrical Test", y: 0}
-                            ]
-                        },
-                        {
-                            type: "stackedBar",
-                            showInLegend: true,
-                            name: "OSV",
-                            axisYType: "secondary",
-                            color: "red",
-                            dataPoints: [
-                                {label: "Equipment", y: 1},
-                                {label: "Hardware", y: 0},
-                                {label: "DAQ", y: 0},
-                                {label: "Power Supply", y: 0},
-                                {label: "Design", y: 0},
-                                {label: "Process", y: 0},
-                                {label: "Electrical Test", y: 0}
-                            ]
-                        }
-                    ]
-                };
-
-                $("#chartContainer2").CanvasJSChart(secondoption);
             };
         </script>
     </head>
     <body>
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-        <br>
-        <br>
-        <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
         <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"></script>
     </body>

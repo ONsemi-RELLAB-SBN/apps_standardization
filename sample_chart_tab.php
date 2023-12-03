@@ -28,19 +28,19 @@
                         labelFontSize: 14
                     },
                     data: [{
-                            type: "spline", //change it to line, area, bar, pie, etc
-                            dataPoints: [
-                                {y: 10},
-                                {y: 6},
-                                {y: 14},
-                                {y: 12},
-                                {y: 19},
-                                {y: 14},
-                                {y: 26},
-                                {y: 10},
-                                {y: 22}
-                            ]
-                        }]
+                        type: "spline", //change it to line, area, bar, pie, etc
+                        dataPoints: [
+                            {y: 10},
+                            {y: 6},
+                            {y: 14},
+                            {y: 12},
+                            {y: 19},
+                            {y: 14},
+                            {y: 26},
+                            {y: 10},
+                            {y: 22}
+                        ]
+                    }]
                 };
 
                 var options2 = {
@@ -54,23 +54,23 @@
                         labelFontSize: 14
                     },
                     data: [{
-                            type: "splineArea", //change it to line, area, bar, pie, etc
-                            dataPoints: [
-                                {y: 10},
-                                {y: 6},
-                                {y: 14},
-                                {y: 12},
-                                {y: 19},
-                                {y: 14},
-                                {y: 26},
-                                {y: 10},
-                                {y: 22}
-                            ]
-                        }]
+                        type: "splineArea", //change it to line, area, bar, pie, etc
+                        dataPoints: [
+                            {y: 10},
+                            {y: 6},
+                            {y: 14},
+                            {y: 12},
+                            {y: 19},
+                            {y: 14},
+                            {y: 26},
+                            {y: 10},
+                            {y: 22}
+                        ]
+                    }]
                 };
                 
                 
-                /* BAR STACK START */
+                /* BAR STACK START 03 */
                 var chartStack = new CanvasJS.Chart("chartContainer3", {
                     animationEnabled: true,
                     title: {
@@ -89,96 +89,96 @@
                         content: toolTipFormatter
                     },
                     data: [{
-                            type: "bar",
-                            showInLegend: true,
-                            name: "Equipment",
-                            color: "#E7823A",
-                            dataPoints: [
-                                {y: 8, label: "SBN"},
-                                {y: 92, label: "CEBU"},
-                                {y: 63, label: "OSPI"},
-                                {y: 22, label: "SUZHOU"},
-                                {y: 1, label: "OSV"}
-                            ]
-                        },
-                        {
-                            type: "bar",
-                            showInLegend: true,
-                            name: "Hardware",
-                            color: "purple",
-                            dataPoints: [
-                                {y: 2, label: "SBN"},
-                                {y: 0, label: "CEBU"},
-                                {y: 0, label: "OSPI"},
-                                {y: 0, label: "SUZHOU"},
-                                {y: 0, label: "OSV"}
-                            ]
-                        },
-                        {
-                            type: "bar",
-                            showInLegend: true,
-                            name: "DAQ",
-                            color: "blue",
-                            dataPoints: [
-                                {y: 3, label: "SBN"},
-                                {y: 0, label: "CEBU"},
-                                {y: 0, label: "OSPI"},
-                                {y: 0, label: "SUZHOU"},
-                                {y: 0, label: "OSV"}
-                            ]
-                        },
-                        {
-                            type: "bar",
-                            showInLegend: true,
-                            name: "Power Supply",
-                            color: "green",
-                            dataPoints: [
-                                {y: 4, label: "SBN"},
-                                {y: 0, label: "CEBU"},
-                                {y: 0, label: "OSPI"},
-                                {y: 3, label: "SUZHOU"},
-                                {y: 0, label: "OSV"}
-                            ]
-                        },
-                        {
-                            type: "bar",
-                            showInLegend: true,
-                            name: "Design",
-                            color: "$ff1a1a",
-                            dataPoints: [
-                                {y: 0, label: "SBN"},
-                                {y: 0, label: "CEBU"},
-                                {y: 0, label: "OSPI"},
-                                {y: 0, label: "SUZHOU"},
-                                {y: 0, label: "OSV"}
-                            ]
-                        },
-                        {
-                            type: "bar",
-                            showInLegend: true,
-                            name: "Process",
-                            color: "orange",
-                            dataPoints: [
-                                {y: 2, label: "SBN"},
-                                {y: 0, label: "CEBU"},
-                                {y: 0, label: "OSPI"},
-                                {y: 0, label: "SUZHOU"},
-                                {y: 0, label: "OSV"}
-                            ]
-                        },
-                        {
-                            type: "bar",
-                            showInLegend: true,
-                            name: "Electrical Test",
-                            color: "#A57164",
-                            dataPoints: [
-                                {y: 2, label: "SBN"},
-                                {y: 0, label: "CEBU"},
-                                {y: 0, label: "OSPI"},
-                                {y: 0, label: "SUZHOU"},
-                                {y: 0, label: "OSV"}
-                            ]
-                        }]
+                        type: "bar",
+                        showInLegend: true,
+                        name: "Equipment",
+                        color: "#E7823A",
+                        dataPoints: [
+                            {y: 8, label: "SBN"},
+                            {y: 92, label: "CEBU"},
+                            {y: 63, label: "OSPI"},
+                            {y: 22, label: "SUZHOU"},
+                            {y: 1, label: "OSV"}
+                        ]
+                    },
+                    {
+                        type: "bar",
+                        showInLegend: true,
+                        name: "Hardware",
+                        color: "purple",
+                        dataPoints: [
+                            {y: 2, label: "SBN"},
+                            {y: 0, label: "CEBU"},
+                            {y: 0, label: "OSPI"},
+                            {y: 0, label: "SUZHOU"},
+                            {y: 0, label: "OSV"}
+                        ]
+                    },
+                    {
+                        type: "bar",
+                        showInLegend: true,
+                        name: "DAQ",
+                        color: "blue",
+                        dataPoints: [
+                            {y: 3, label: "SBN"},
+                            {y: 0, label: "CEBU"},
+                            {y: 0, label: "OSPI"},
+                            {y: 0, label: "SUZHOU"},
+                            {y: 0, label: "OSV"}
+                        ]
+                    },
+                    {
+                        type: "bar",
+                        showInLegend: true,
+                        name: "Power Supply",
+                        color: "green",
+                        dataPoints: [
+                            {y: 4, label: "SBN"},
+                            {y: 0, label: "CEBU"},
+                            {y: 0, label: "OSPI"},
+                            {y: 3, label: "SUZHOU"},
+                            {y: 0, label: "OSV"}
+                        ]
+                    },
+                    {
+                        type: "bar",
+                        showInLegend: true,
+                        name: "Design",
+                        color: "$ff1a1a",
+                        dataPoints: [
+                            {y: 0, label: "SBN"},
+                            {y: 0, label: "CEBU"},
+                            {y: 0, label: "OSPI"},
+                            {y: 0, label: "SUZHOU"},
+                            {y: 0, label: "OSV"}
+                        ]
+                    },
+                    {
+                        type: "bar",
+                        showInLegend: true,
+                        name: "Process",
+                        color: "orange",
+                        dataPoints: [
+                            {y: 2, label: "SBN"},
+                            {y: 0, label: "CEBU"},
+                            {y: 0, label: "OSPI"},
+                            {y: 0, label: "SUZHOU"},
+                            {y: 0, label: "OSV"}
+                        ]
+                    },
+                    {
+                        type: "bar",
+                        showInLegend: true,
+                        name: "Electrical Test",
+                        color: "#A57164",
+                        dataPoints: [
+                            {y: 2, label: "SBN"},
+                            {y: 0, label: "CEBU"},
+                            {y: 0, label: "OSPI"},
+                            {y: 0, label: "SUZHOU"},
+                            {y: 0, label: "OSV"}
+                        ]
+                    }]
                 });
                 chartStack.render();
 
@@ -207,7 +207,7 @@
                 }
                 /* BAR STACK END */
                 
-                /* BAR STACK HORIZONTAL START */
+                /* BAR STACK HORIZONTAL START 04 */
                 var chart02 = new CanvasJS.Chart("chartContainer4", {
                     animationEnabled: true,
                     title: {
@@ -344,8 +344,8 @@
                 }
                 /* BAR STACK HORIZONTAL END */
                 
-                /* BAR STACK VERTICAL START */
-                var chartStack = new CanvasJS.Chart("chartContainer5", {
+                /* BAR STACK VERTICAL START 05 */
+                var chartStack05 = new CanvasJS.Chart("chartContainer5", {
                     animationEnabled: true,
                     theme: "light2", //"light1", "dark1", "dark2"
                     title: {
@@ -434,17 +434,17 @@
                             ]
                         }]
                 });
-                chartStack.render();
+                chartStack05.render();
                 /* BAR STACK VERTICAL END */
 
                 $("#tabs").tabs({
                     create: function (event, ui) {
                         //Render Charts after tabs have been created.
-                        $("#chartContainer1").CanvasJSChart(options1);
-                        $("#chartContainer2").CanvasJSChart(options2);
+//                        $("#chartContainer1").CanvasJSChart(options1);
+//                        $("#chartContainer2").CanvasJSChart(options2);
                         $("#chartContainer3").CanvasJSChart(chartStack);
                         $("#chartContainer4").CanvasJSChart(chart02);
-                        $("#chartContainer5").CanvasJSChart(chartStack);
+                        $("#chartContainer5").CanvasJSChart(chartStack05);
                     },
                     activate: function (event, ui) {
                         //Updates the chart to its container size if it has changed.
@@ -456,28 +456,33 @@
         </script>
     </head>
     <body>
-        <div id="tabs" style="height: 900px">
+        <div id="tabs" style="height: 850px">
             <ul>
-                <li ><a href="#tabs-1" style="font-size: 12px">Spline</a></li>
-                <li ><a href="#tabs-2"  style="font-size: 12px">Spline Area</a></li>
-                <li ><a href="#tabs-3"  style="font-size: 12px">Sample Mew</a></li>
+<!--                <li ><a href="#tabs01" style="font-size: 12px">Spline</a></li>
+                <li ><a href="#tabs02"  style="font-size: 12px">Spline Area</a></li>-->
+                <li ><a href="#tabs03"  style="font-size: 12px">Sample Mew</a></li>
+                <li ><a href="#tabs04"  style="font-size: 12px">Horizontal</a></li>
+                <li ><a href="#tabs05"  style="font-size: 12px">Bar Stack</a></li>
             </ul>
-            <div id="tabs-1" style="height: 900px">
-                <div id="chartContainer1" style="height: 900px; width: 100%;"></div>
+<!--            <div id="tabs01" style="height: 850px">
+                <div id="chartContainer1" style="height: 800px; width: 100%;"></div>
             </div>
-            <div id="tabs-2" style="height: 900px">
-                <div id="chartContainer2" style="height: 900px; width: 100%;"></div>
+            <div id="tabs02" style="height: 850px">
+                <div id="chartContainer2" style="height: 800px; width: 100%;"></div>
+            </div>-->
+            <div id="tabs03" style="height: 850px">
+                <div id="chartContainer3" style="height: 800px; width: 100%;"></div>
             </div>
-            <div id="tabs-3" style="height: 900px">
-                <div id="chartContainer3" style="height: 900px; width: 100%;"></div>
+            <div id="tabs04" style="height: 850px">
+                <div id="chartContainer4" style="height: 800px; width: 100%;"></div>
             </div>
-            <div id="tabs-4" style="height: 900px">
-                <div id="chartContainer4" style="height: 900px; width: 100%;"></div>
+            <div id="tabs05" style="height: 850px">
+                <div id="chartContainer5" style="height: 800px; width: 100%;"></div>
             </div>
         </div>
-        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-        <script src="https://canvasjs.com/assets/script/jquery-ui.1.11.2.min.js"></script>
-        <script src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"></script>
-        <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+        <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-ui.1.11.2.min.js"></script>
+        <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+        <script type="text/javascript" src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"></script>
     </body>
 </html>
