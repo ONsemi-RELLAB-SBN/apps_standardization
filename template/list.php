@@ -16,7 +16,7 @@
         <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
         <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
         <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
+        <link rel="shortcut icon" href="../image/logo/onsemi_logo.ico">
 
         <link rel="stylesheet" type="text/css" href="../css/w3.css">
         <link rel="stylesheet" type="text/css" href="../css/skeleton.css">

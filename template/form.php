@@ -39,11 +39,31 @@ include '../class/ldap.php';
                 <h7 class="h11"><li><a href="../hardware/add.php">          <i class='bx bxl-steam bx-fw' style='color:#ffffff' ></i>Hardware</a></li></h7>
                 <h7 class="h11"><li><a href="../daq/add.php">               <i class='bx bx-desktop bx-fw' style='color:#ffffff' ></i>DAQ</a></li></h7>
                 <h7 class="h11"><li><a href="../power/add.php">             <i class='bx bxs-battery-charging bx-fw' style='color:#ffffff'></i>Power Supply</a></li></h7>
-                <h7 class="h11"><li><a href="../design/add.php">            <i class='bx bxl-blender bx-fw' style='color:#ffffff'></i>Design</a></li></h7>
-                <h7 class="h11"><li><a href="../process/add.php">           <i class='bx bx-git-compare bx-fw' style='color:#ffffff'></i>Process</a></li></h7>
-                <h7 class="h11"><li><a href="../test/add.php">              <i class='bx bxl-messenger bx-fw' style='color:#ffffff'></i>Elec Test</a></li></h7>
+                <h7 class="h11"><li id="try1"><a href="../design/add.php">  <i class='bx bxl-blender bx-fw' style='color:#ffffff'></i>Design</a></li></h7>
+                <h7 class="h11"><li id="try2"><a href="../process/add.php"> <i class='bx bx-git-compare bx-fw' style='color:#ffffff'></i>Process</a></li></h7>
+                <h7 class="h11"><li id="try3"><a href="../test/add.php">    <i class='bx bxl-messenger bx-fw' style='color:#ffffff'></i>Elec Test</a></li></h7>
+                <h7 class="h11"><li id="try4"><a href="../query.php">       <i class='bx bx-search-alt bx-fw' style='color:#ffffff'></i></i>Query</a></li></h7>
+                <h7 class="h11"><li><a href="../dashboard/list_graph.php">  <i class='bx bxs-bar-chart-alt-2 bx-fw' style='color:#ffffff'></i>Dashboard</a></li></h7>
                 <h7 class="h11"><li><a href="../logout_click.php">          <i class='bx bx-log-out bx-fw' style='color:#ffffff' ></i>LOGOUT</a></li></h7>
             </ul>
         </nav>
+        <script>
+            document.getElementById("try1").onclick = function (e) {
+                e.preventDefault(); //Prevent the default behavior 
+                alert('DESIGN PAGE FORM UNDER DEVELOPMENT!');
+            };
+            document.getElementById("try2").onclick = function (e) {
+                e.preventDefault(); //Prevent the default behavior 
+                alert('PROCESS FORM UNDER DEVELOPMENT!');
+            };
+            document.getElementById("try3").onclick = function (e) {
+                e.preventDefault(); //Prevent the default behavior 
+                alert('ELECTRICAL TEST FORM UNDER DEVELOPMENT!');
+            };
+            document.getElementById("try4").onclick = function (e) {
+                e.preventDefault(); //Prevent the default behavior 
+                alert('QUERY PAGE FORM UNDER DEVELOPMENT!');
+            };
+        </script>
     </body>
 </html>
