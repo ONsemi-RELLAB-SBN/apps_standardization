@@ -29,6 +29,23 @@ include '../template/form.php';
             #toggle_4:checked ~ dialog {
                 display: block;
             }
+            
+            #listBtn {
+                display: block;
+                position: fixed;
+                bottom: 40px;
+                right: 40px;
+                z-index: 99;
+                font-size: 18px;
+                border: none;
+                outline: none;
+                cursor: pointer;
+            }
+
+            #listBtn:hover {
+                background-color: orange;
+                color: white;
+            }
         </style>
         
         <script type="text/javascript">
@@ -365,8 +382,9 @@ include '../template/form.php';
                 <div class="one columns"><label for="no_output_channel" style="text-align: left"><b>V</b></label></div>
             </div>
 
-            <button onclick="location.href = 'list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+            <!--<button onclick="location.href = 'list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>-->
             <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> SAVE</button>
+            <button onclick="location.href = 'list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
         </form>
         <script>
             $(".button").click(function () {

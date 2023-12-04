@@ -88,17 +88,13 @@ include '../template/form.php';
             #listBtn {
                 display: block;
                 position: fixed;
-                bottom: 20px;
-                right: 30px;
+                bottom: 40px;
+                right: 40px;
                 z-index: 99;
                 font-size: 18px;
                 border: none;
                 outline: none;
-                /*background-color: gray;*/
-                /*color: white;*/
                 cursor: pointer;
-                /*padding: 15px;*/
-                /*border-radius: 4px;*/
             }
 
             #listBtn:hover {
@@ -1241,8 +1237,8 @@ include '../template/form.php';
                     </div>
                 </div>
 
-                <button onclick="location.href = '../equipment/list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
-                <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> SAVE</button>
+                <!--<button onclick="location.href = '../equipment/list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>-->
+                <button type="submit" id="myBtn" class="btn btn-primary u-pull-left"><i class='bx bx-send bx-fw' ></i> SAVE</button>
                 <button onclick="location.href = '../equipment/list.php'" type="button" id="listBtn" class="btn btn-primary"><i class='bx bx-list-ol bx-fw' ></i>List</button>
             </div>
         </form>
