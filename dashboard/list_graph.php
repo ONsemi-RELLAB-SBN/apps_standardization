@@ -30,7 +30,7 @@ include '../template/form.php';
                 border: none;
                 outline: none;
                 cursor: pointer;
-                padding: 14px 16px;
+                padding: 5px 16px;
                 transition: 0.3s;
                 font-size: 17px;
             }
@@ -48,6 +48,7 @@ include '../template/form.php';
             /* Style the tab content */
             .tabcontent {
                 display: none;
+                position: relative;
                 padding: 6px 12px;
                 border: 1px solid #ccc;
                 border-top: none;
@@ -67,22 +68,22 @@ include '../template/form.php';
 
         <div id="001" class="tabcontent">
             <h5>Bar Chart</h5>
-            <iframe src="bar_chart.php" style="height:440px;width:100%;" title="Equipment List"></iframe>
+            <iframe src="bar_chart.php" style="height:440px;width:100%;" title="Bar Chart"></iframe>
         </div>
 
         <div id="002" class="tabcontent">
             <h5>Multiple</h5>
-            <iframe src="bar_multiple.php" style="height:800px;width:100%;" title="Equipment List"></iframe>
+            <iframe src="bar_multiple.php" style="height:800px;width:100%;" title="Multiple Item"></iframe>
         </div>
 
         <div id="003" class="tabcontent">
             <h5>Stack</h5>
-            <iframe src="bar_stack.php" style="height:800px;width:100%;" title="Equipment List"></iframe>
+            <iframe src="bar_stack.php" style="height:800px;width:100%;" title="Stack"></iframe>
         </div>
 
         <div id="004" class="tabcontent">
             <h5>Stack Item</h5>
-            <iframe src="bar_stack_item.php" style="height:400px;width:100%;" title="Equipment List"></iframe>
+            <iframe src="bar_stack_item.php" style="height:400px;width:100%;" title="Stack Item"></iframe>
         </div>
 
         <div id="005" class="tabcontent">

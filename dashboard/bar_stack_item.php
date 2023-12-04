@@ -13,80 +13,83 @@ $data_ds = array();
 $data_pc = array();
 $data_et = array();
 
-$result = mysqli_query($con, "SELECT a.name as product, COUNT(CASE WHEN eqpt.id IS NOT NULL THEN 1 END) AS total
-                                FROM gest_parameter_detail a
-                                LEFT JOIN gest_form_eqpt eqpt ON a.code = eqpt.lab_location
-                                WHERE a.master_code = '002'
-                                GROUP BY a.CODE, a.name");
+$result = mysqli_query($con, "SELECT pd.name AS product,
+                                COUNT(CASE WHEN eq.id IS NOT NULL AND eq.flag = '1' THEN 1 END) AS total
+                                FROM gest_parameter_detail pd
+                                LEFT JOIN gest_form_eqpt eq ON pd.code = eq.lab_location
+                                WHERE pd.master_code = '002'
+                                GROUP BY pd.CODE, pd.name");
 while ($row = mysqli_fetch_array($result)) {
     $point = array('label' => $row['product'], "y" => $row['total']);
     array_push($data_eqpt, $point);
 }
 
-$result2 = mysqli_query($con, "SELECT a.name as product, COUNT(CASE WHEN hw.id IS NOT NULL THEN 1 END) AS total
-                                FROM gest_parameter_detail a
-                                LEFT JOIN gest_form_hw hw ON a.code = hw.lab_location
-                                WHERE a.master_code = '002'
-                                GROUP BY a.CODE, a.name");
+$result2 = mysqli_query($con, "SELECT pd.name AS product,
+                                COUNT(CASE WHEN hw.id IS NOT NULL AND hw.flag = '1' THEN 1 END) AS total
+                                FROM gest_parameter_detail pd
+                                LEFT JOIN gest_form_hw hw ON pd.code = hw.lab_location
+                                WHERE pd.master_code = '002'
+                                GROUP BY pd.CODE, pd.name");
 while ($row = mysqli_fetch_array($result2)) {
     $point = array('label' => $row['product'], "y" => $row['total']);
     array_push($data_hw, $point);
 }
 
-$result3 = mysqli_query($con, "SELECT a.name as product, COUNT(CASE WHEN daq.id IS NOT NULL THEN 1 END) AS total
-                                FROM gest_parameter_detail a
-                                LEFT JOIN gest_form_daq daq ON a.code = daq.lab_location
-                                WHERE a.master_code = '002' 
-                                GROUP BY a.CODE, a.name");
+$result3 = mysqli_query($con, "SELECT pd.name AS product,
+                                COUNT(CASE WHEN daq.id IS NOT NULL AND daq.flag = '1' THEN 1 END) AS total
+                                FROM gest_parameter_detail pd
+                                LEFT JOIN gest_form_daq daq ON pd.code = daq.lab_location
+                                WHERE pd.master_code = '002'
+                                GROUP BY pd.CODE, pd.name");
 while ($row = mysqli_fetch_array($result3)) {
     $point = array('label' => $row['product'], "y" => $row['total']);
     array_push($data_daq, $point);
 }
 
-$result4 = mysqli_query($con, "SELECT a.name as product, COUNT(CASE WHEN ps.id IS NOT NULL THEN 1 END) AS total
-                                FROM gest_parameter_detail a
-                                LEFT JOIN gest_form_ps ps ON a.code = ps.lab_location
-                                WHERE a.master_code = '002' 
-                                GROUP BY a.CODE, a.name");
+$result4 = mysqli_query($con, "SELECT pd.name AS product,
+                                COUNT(CASE WHEN ps.id IS NOT NULL AND ps.flag = '1' THEN 1 END) AS total
+                                FROM gest_parameter_detail pd
+                                LEFT JOIN gest_form_ps ps ON pd.code = ps.lab_location
+                                WHERE pd.master_code = '002'
+                                GROUP BY pd.CODE, pd.name");
 while ($row = mysqli_fetch_array($result4)) {
     $point = array('label' => $row['product'], "y" => $row['total']);
     array_push($data_ps, $point);
 }
 
-$result5 = mysqli_query($con, "SELECT a.name as product, COUNT(CASE WHEN hw.id IS NOT NULL THEN 1 END) AS total
-                                FROM gest_parameter_detail a
-                                LEFT JOIN gest_form_hw hw ON a.code = hw.lab_location
-                                WHERE a.master_code = '002'
-                                GROUP BY a.CODE, a.name");
+$result5 = mysqli_query($con, "SELECT pd.name AS product,
+                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag = '1' THEN 1 END) AS total
+                                FROM gest_parameter_detail pd
+                                LEFT JOIN gest_form_design et ON pd.code = et.lab_location
+                                WHERE pd.master_code = '002'
+                                GROUP BY pd.CODE, pd.name");
 while ($row = mysqli_fetch_array($result5)) {
     $point = array('label' => $row['product'], "y" => $row['total']);
     array_push($data_ds, $point);
 }
 
-$result6 = mysqli_query($con, "SELECT a.name as product, COUNT(CASE WHEN hw.id IS NOT NULL THEN 1 END) AS total
-                                FROM gest_parameter_detail a
-                                LEFT JOIN gest_form_hw hw ON a.code = hw.lab_location
-                                WHERE a.master_code = '002'
-                                GROUP BY a.CODE, a.name");
+$result6 = mysqli_query($con, "SELECT pd.name AS product,
+                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag = '1' THEN 1 END) AS total
+                                FROM gest_parameter_detail pd
+                                LEFT JOIN gest_form_process et ON pd.code = et.lab_location
+                                WHERE pd.master_code = '002'
+                                GROUP BY pd.CODE, pd.name");
 while ($row = mysqli_fetch_array($result6)) {
     $point = array('label' => $row['product'], "y" => $row['total']);
     array_push($data_pc, $point);
 }
 
-$result7 = mysqli_query($con, "SELECT a.name as product, COUNT(CASE WHEN hw.id IS NOT NULL THEN 1 END) AS total
-                                FROM gest_parameter_detail a
-                                LEFT JOIN gest_form_hw hw ON a.code = hw.lab_location
-                                WHERE a.master_code = '002'
-                                GROUP BY a.CODE, a.name");
+$result7 = mysqli_query($con, "SELECT pd.name AS product,
+                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag = '1' THEN 1 END) AS total
+                                FROM gest_parameter_detail pd
+                                LEFT JOIN gest_form_et et ON pd.code = et.lab_location
+                                WHERE pd.master_code = '002'
+                                GROUP BY pd.CODE, pd.name");
 while ($row = mysqli_fetch_array($result7)) {
     $point = array('label' => $row['product'], "y" => $row['total']);
     array_push($data_et, $point);
 }
 
-
-
-echo 'ada value';
-echo json_encode($data_eqpt, JSON_NUMERIC_CHECK);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -151,13 +154,7 @@ echo json_encode($data_eqpt, JSON_NUMERIC_CHECK);
                             name: "Design",
                             axisYType: "secondary",
                             color: "yellow",
-                            dataPoints: [
-                                {label: "SBN", y: 0},
-                                {label: "CEBU", y: 0},
-                                {label: "OSPI", y: 0},
-                                {label: "SUZHOU", y: 0},
-                                {label: "OSV", y: 0}
-                            ]
+                            dataPoints: <?php echo json_encode($data_ds, JSON_NUMERIC_CHECK); ?>
                         },
                         {
                             type: "stackedBar",
@@ -165,13 +162,7 @@ echo json_encode($data_eqpt, JSON_NUMERIC_CHECK);
                             name: "Process",
                             axisYType: "secondary",
                             color: "red",
-                            dataPoints: [
-                                {label: "SBN", y: 0},
-                                {label: "CEBU", y: 0},
-                                {label: "OSPI", y: 0},
-                                {label: "SUZHOU", y: 0},
-                                {label: "OSV", y: 0}
-                            ]
+                            dataPoints: <?php echo json_encode($data_pc, JSON_NUMERIC_CHECK); ?>
                         },
                         {
                             type: "stackedBar",
@@ -181,13 +172,7 @@ echo json_encode($data_eqpt, JSON_NUMERIC_CHECK);
                             color: "brown",
                             indexLabel: "\t#total",
                             indexLabelFontWeight: "bold",
-                            dataPoints: [
-                                {label: "SBN", y: 0},
-                                {label: "CEBU", y: 0},
-                                {label: "OSPI", y: 0},
-                                {label: "SUZHOU", y: 0},
-                                {label: "OSV", y: 0}
-                            ]
+                            dataPoints: <?php echo json_encode($data_et, JSON_NUMERIC_CHECK); ?>
                         }
                     ]
                 };
