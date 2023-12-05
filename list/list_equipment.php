@@ -31,7 +31,7 @@ include '../template/form.php';
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
-        
+
         <link rel="stylesheet" href="https://cdn.datatables.net/select/1.7.0/css/select.dataTables.min.css"/>
 
         <script src="https://cdn.datatables.net/select/1.7.0/js/dataTables.select.min.js"></script>
@@ -42,7 +42,7 @@ include '../template/form.php';
                 font-size: .7rem;
             }
             .table_list{
-                position: relative; 
+                position: relative;
                 width: 100%;
                 margin: 0 auto;
                 padding: 0 20px;
@@ -70,6 +70,29 @@ include '../template/form.php';
                         'colvis'
                     ],
                     lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                    columnDefs: [
+                        {targets: 86,
+                            render: function (data, type, row, meta) {
+                                return '<a href="../equipment/view.php?view='+ row[85] +'" title="View Record" data-toggle="tooltip"><i class=\'bx bx-search-alt bx-fw\'></i> VIEW </a>\n\
+                                        <a href="../equipment/edit.php?edit='+ row[85] +'" title="Update Record" data-toggle="tooltip"><i class=\'bx bxs-pencil bx-fw\' ></i> EDIT </a>\n\
+                                        <a href="../equipment/delete.php?delete='+ row[85] +'" title="Delete Record" data-toggle="tooltip" onclick="return confirm(\'Are You Sure ?\')"><i class=\'bx bxs-trash bx-fw\' ></i> DELETE </a>\n\
+                                        <a href="../equipment/copy.php?edit='+ row[85] +'" title="Replicate Record" data-toggle="tooltip"><i class=\'bx bx-copy bx-fw\'></i></i> COPY </a>';
+                            }
+                        }
+                    ]
+                });
+
+                $('#example tbody').on('click', '.name', function () {
+                    var id = $(this).attr("id").match(/\d+/)[0];
+                    var data = $('#example').DataTable().row(id).data();
+                    console.log(data[0]);
+                });
+
+                $('#example tbody').on('click', '.salary', function () {
+                    var id = $(this).attr("id").match(/\d+/)[0];
+                    var data = $('#example').DataTable().row(id).data();
+                    console.log(data[85]);
+                    console.log("id >>>> " + id);
                 });
             });
         </script>
@@ -191,42 +214,9 @@ include '../template/form.php';
                         <th><b>External Configuration</b></th>
                         <th><b>Interface Voltage Rating</b></th>
                         <th><b>Interface Current Rating</b></th>
-                        <!--<th style="text-align:center"><b>Action</b></th>-->
-<!--                        <th>Dedicate Usage</th>     
-                        <th>Equipment ID</th>
-                        <th>Lab Location</th>
-                        <th>Product Group</th>
-                        <th>Category</th>
-                        <th>Champion</th>
-                        <th>Dedicate Usage</th>
-                        <th>Rel Test</th>
-                        <th>Zone</th>
-                        <th>Manufacturer</th>
-                        <th>Model</th>
-                        <th>Manufacturing Date</th>
-                        <th>Asset Number</th>
-                        <th>New / Transfer ?</th>
-                        <th>Location</th>
-                    </tr>
+
+                        <th>Action</th>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>Equipment ID</th>
-                        <th>Lab Location</th>
-                        <th>Product Group</th>
-                        <th>Category</th>
-                        <th>Lab Manager</th>
-                        <th>Dedicate Usage</th>
-                        <th>Rel Test</th>
-                        <th>Zone</th>
-                        <th>Manufacturer</th>
-                        <th>Model</th>
-                        <th>Manufacturing Date</th>
-                        <th>Asset Number</th>
-                        <th>New / Transfer ?</th>
-                        <th>Location</th>
-                    </tr>
-                </tfoot>
             </table>
         </div>
     </body>

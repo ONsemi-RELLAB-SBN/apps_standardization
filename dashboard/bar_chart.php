@@ -79,7 +79,7 @@
                                 {y: 0, label: "Electrical Test"},
                                 {y: 0, label: "Process"},
                                 {y: 0, label: "Design"},
-                                {y: 4, label: "Power Supply"},
+                                {y: 0, label: "Power Supply"},
                                 {y: 0, label: "DAQ"},
                                 {y: 0, label: "Hardware"},
                                 {y: 22, label: "Equipment"}
