@@ -15,27 +15,24 @@ include '../template/form.php';
 
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css"/>
         <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css"/>
-        <link rel="stylesheet" id="font-awesome-style-css" href="http://phpflow.com/code/css/bootstrap3.min.css" type="text/css" media="all">
-        <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+        <link rel="stylesheet" href="http://phpflow.com/code/css/bootstrap3.min.css" id="font-awesome-style-css" type="text/css" media="all">
+        <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" type="text/css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/select/1.7.0/css/select.dataTables.min.css"/>
 
-        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
         <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 
-        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
+        <script src="../js/jquery-3.7.0.js" ></script>
+        <script src="../js/jquery.dataTables.min.js"></script>
+        <script src="../js/dataTables.buttons.min.js"></script>
+        <script src="../js/jszip.min.js"></script>
+        <script src="../js/pdfmake.min.js"></script>
+        <script src="../js/vfs_fonts.js"></script>
+        <script src="../js/buttons.html5.min.js"></script>
+        <script src="../js/buttons.colVis.min.js"></script>
 
-        <link rel="stylesheet" href="https://cdn.datatables.net/select/1.7.0/css/select.dataTables.min.css"/>
-
-        <script src="https://cdn.datatables.net/select/1.7.0/js/dataTables.select.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+        <script src="../js/dataTables.select.min.js"></script>
+        <script src="../js/buttons.print.min.js"></script>
 
         <style>
             .body {
@@ -54,20 +51,40 @@ include '../template/form.php';
             jQuery(document).ready(function ($) {
 
                 var table = new DataTable('#example', {
-                    ajax: 'dao_equipment.php',
                     processing: true,
                     serverSide: true,
                     dom: 'Blfrtip',
+                    ajax: { 
+                        url: 'dao_equipment.php',
+                        type: 'POST'
+                    },
                     pageLength: 25,
+//                    buttons: [
+//                        {
+//                            extend: 'copyHtml5',
+//                            split: ['csvHtml5', 'pdfHtml5', 'excelHtml5'],
+//                            exportOptions: {
+//                                columns: ':visible',
+//                            }
+//                        },
+//                        'colvis'
+//                    ],
                     buttons: [
                         {
-                            extend: 'copyHtml5',
-                            split: ['csvHtml5', 'pdfHtml5', 'excelHtml5'],
-                            exportOptions: {
-                                columns: ':visible'
-                            }
-                        },
-                        'colvis'
+                            extend: 'collection',
+                            text: 'Download',
+                            className: 'custom-html-collection',
+                            buttons: [
+                                '<h4>Export</h4>',
+                                'copyHtml5',
+                                'csvHtml5',
+                                'pdfHtml5',
+                                'excelHtml5',
+                                '<h4 class="not-top-heading">Column View</h4>',
+                                'colvis',
+//                                hide: '85,86'
+                            ]
+                        }
                     ],
                     lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
                     columnDefs: [
@@ -80,19 +97,6 @@ include '../template/form.php';
                             }
                         }
                     ]
-                });
-
-                $('#example tbody').on('click', '.name', function () {
-                    var id = $(this).attr("id").match(/\d+/)[0];
-                    var data = $('#example').DataTable().row(id).data();
-                    console.log(data[0]);
-                });
-
-                $('#example tbody').on('click', '.salary', function () {
-                    var id = $(this).attr("id").match(/\d+/)[0];
-                    var data = $('#example').DataTable().row(id).data();
-                    console.log(data[85]);
-                    console.log("id >>>> " + id);
                 });
             });
         </script>
@@ -127,12 +131,10 @@ include '../template/form.php';
             <table id="example" class="u-full-width" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <!--<th style="text-align:center"><b>No</b></th>-->
                         <th><b>Equipment</b></th>
                         <th><b>Location</b></th>
                         <th><b>Product Group</b></th>
                         <th><b>Category</b></th>
-                        <th>Action</th>
                         <th><b>Lab Manager</b></th>
                         <th><b>Usage</b></th>
                         <th><b>Rel Test</b></th>
@@ -214,7 +216,7 @@ include '../template/form.php';
                         <th><b>External Configuration</b></th>
                         <th><b>Interface Voltage Rating</b></th>
                         <th><b>Interface Current Rating</b></th>
-
+                        <th style="text-align:center"><b>ID</b></th>
                         <th>Action</th>
                 </thead>
             </table>

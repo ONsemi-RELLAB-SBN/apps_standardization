@@ -6,7 +6,7 @@
  */
 
 // DB table to use
-$table = 'data_equipment_name';
+$table = 'data_equipment';
 
 // Table's primary key
 $primaryKey = 'id';
@@ -125,7 +125,6 @@ $sql_details = array(
     'user' => $user,
     'pass' => $pass,
     'db' => $db,
-    'port' => '3308',
     'host' => $host,
     'charset' => 'utf8' // Depending on your PHP and MySQL config, you may need this
 );
@@ -138,5 +137,5 @@ $sql_details = array(
 require('ssp.class.php');
 
 echo json_encode(
-    SSP::simple($_GET, $sql_details, $table, $primaryKey, $columns)
+    SSP::simple( $_POST, $sql_details, $table, $primaryKey, $columns )
 );
