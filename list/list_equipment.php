@@ -4,6 +4,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 include '../template/list.php';
+include '../template/form.php';
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +31,11 @@ include '../template/list.php';
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
+        
+        <link rel="stylesheet" href="https://cdn.datatables.net/select/1.7.0/css/select.dataTables.min.css"/>
+
+        <script src="https://cdn.datatables.net/select/1.7.0/js/dataTables.select.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
 
         <style>
             .body {
@@ -57,31 +63,13 @@ include '../template/list.php';
                         {
                             extend: 'copyHtml5',
                             split: ['csvHtml5', 'pdfHtml5', 'excelHtml5'],
-//                            exportOptions: {
-//                                columns: ':visible'
-//                            }
+                            exportOptions: {
+                                columns: ':visible'
+                            }
                         },
-//                        {
-//                            extend: 'excelHtml5',
-//                            exportOptions: {
-//                                columns: ':visible'
-////                                columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84]
-//                            }
-//                        },
-//                        {
-//                            extend: 'csvHtml5',
-//                            exportOptions: {
-//                                columns: ':visible'
-//                            }
-//                        },
-//                        {
-//                            extend: 'pdfHtml5',
-//                            exportOptions: {
-//                                columns: ':visible'
-//                            }
-//                        },
                         'colvis'
-                    ]
+                    ],
+                    lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 });
             });
         </script>
@@ -121,6 +109,7 @@ include '../template/list.php';
                         <th><b>Location</b></th>
                         <th><b>Product Group</b></th>
                         <th><b>Category</b></th>
+                        <th>Action</th>
                         <th><b>Lab Manager</b></th>
                         <th><b>Usage</b></th>
                         <th><b>Rel Test</b></th>
@@ -154,7 +143,7 @@ include '../template/list.php';
                         <th><b>Internal Dimension (D)</b></th>
                         <th><b>Internal Dimension (H)</b></th>
                         <th><b>Diameter</b></th>
-<!--                        <th><b>No of Interior Zone</b></th>
+                        <th><b>No of Interior Zone</b></th>
                         <th><b>Rack Dimension (W)</b></th>
                         <th><b>Rack Dimension (D)</b></th>
                         <th><b>Rack Dimension (H)</b></th>
@@ -201,7 +190,7 @@ include '../template/list.php';
                         <th><b>Wire Temperature Rating</b></th>
                         <th><b>External Configuration</b></th>
                         <th><b>Interface Voltage Rating</b></th>
-                        <th><b>Interface Current Rating</b></th>-->
+                        <th><b>Interface Current Rating</b></th>
                         <!--<th style="text-align:center"><b>Action</b></th>-->
 <!--                        <th>Dedicate Usage</th>     
                         <th>Equipment ID</th>

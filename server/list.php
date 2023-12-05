@@ -67,9 +67,9 @@
             jQuery(document).ready(function ($) {
 
                 var table = new DataTable('#example', {
+                    ajax: 'get_equipment.php',
                     processing: true,
                     serverSide: true,
-                    ajax: 'get_equipment.php',
                     dom: 'Blfrtip',
                     pageLength: 25,
                     buttons: [
@@ -77,7 +77,7 @@
                             extend: 'copyHtml5',
                             split: ['csvHtml5', 'pdfHtml5', 'excelHtml5']
                         },
-                        'colvis',
+                        'colvis'
                     ],
                     select: true
 //                    "columnDefs": [

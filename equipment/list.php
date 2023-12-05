@@ -53,7 +53,7 @@ include '../class/get_parameter.php';
 //                                columns: ':visible'
 //                            }
 //                        },
-                        'colvis'
+//                        'colvis'
                     ]
 //                    columnDefs: [
 //                        { "visible": false, "targets": 5 },
@@ -170,8 +170,8 @@ include '../class/get_parameter.php';
                         <!--<th><b>Usage</b></th>-->
                         <th><b>Rel Test</b></th>
                         <!--<th><b>Zone</b></th>-->
-                        <th><b>Manufacturer</b></th>
-                        <th><b>Model</b></th>
+<!--                        <th><b>Manufacturer</b></th>
+                        <th><b>Model</b></th>-->
                         <!--<th><b>Mfg Date</b></th>-->
                         <th><b>Asset No</b></th>
 <!--                        <th><b>New/Transfer?</b></th>
@@ -252,7 +252,7 @@ include '../class/get_parameter.php';
                 </thead>
                 <tbody>
                     <?php
-                    $get_slides = "SELECT * FROM gest_form_eqpt WHERE flag = '1' ORDER BY id ASC";
+                    $get_slides = "SELECT id, eqpt_id, lab_location, strategy, champion, rel_test, eqpt_asset_no FROM gest_form_eqpt WHERE flag = '1' ORDER BY id ASC";
                     $run_slides = mysqli_query($con, $get_slides);
                     $t = 0;
                     while ($row_slides = mysqli_fetch_array($run_slides)):
@@ -267,8 +267,8 @@ include '../class/get_parameter.php';
                             <!--<td><?php // echo getParameterValues($row_slides['dedicate_usage']); ?></td>-->
                             <td><?php echo getParameterValues($row_slides['rel_test']); ?></td>
                             <!--<td><?php // echo $row_slides['zone']; ?></td>-->
-                            <td><?php echo getParameterValue($row_slides['manufacturer']); ?></td>
-                            <td><?php echo getParameterValue($row_slides['eqpt_model']); ?></td>
+<!--                            <td><?php echo getParameterValue($row_slides['manufacturer']); ?></td>
+                            <td><?php echo getParameterValue($row_slides['eqpt_model']); ?></td>-->
                             <!--<td><?php // echo $row_slides['eqpt_mfg_date']; ?></td>-->
                             <td><?php echo $row_slides['eqpt_asset_no']; ?></td>
                             <!--<td><?php // echo getParameterValue($row_slides['new_transfer_eqpt']); ?></td>-->
