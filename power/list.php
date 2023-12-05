@@ -28,31 +28,31 @@ include '../class/get_parameter.php';
                 var table = $('#myTable').DataTable( {
                     dom: 'Blfrtip',
                     buttons: [
-                        {
-                            extend: 'copyHtml5',
-                            exportOptions: {
-                                columns: ':visible'
+//                        {
+//                            extend: 'copyHtml5',
+//                            exportOptions: {
+//                                columns: ':visible'
+////                                columns: [ 0, 1, 2, 3, 4, 5, 6]
+//                            }
+//                        },
+//                        {
+//                            extend: 'excelHtml5',
+//                            exportOptions: {
 //                                columns: [ 0, 1, 2, 3, 4, 5, 6]
-                            }
-                        },
-                        {
-                            extend: 'excelHtml5',
-                            exportOptions: {
-                                columns: [ 0, 1, 2, 3, 4, 5, 6]
-                            }
-                        },
-                        {
-                            extend: 'csvHtml5',
-                            exportOptions: {
-                                columns: [ 0, 1, 2, 3, 4, 5, 6]
-                            }
-                        },
-                        {
-                            extend: 'pdfHtml5',
-                            exportOptions: {
-                                columns: [ 0, 1, 2, 3, 4, 5, 6]
-                            }
-                        },
+//                            }
+//                        },
+//                        {
+//                            extend: 'csvHtml5',
+//                            exportOptions: {
+//                                columns: [ 0, 1, 2, 3, 4, 5, 6]
+//                            }
+//                        },
+//                        {
+//                            extend: 'pdfHtml5',
+//                            exportOptions: {
+//                                columns: [ 0, 1, 2, 3, 4, 5, 6]
+//                            }
+//                        },
                         'colvis'
                     ]
                 } );
@@ -117,6 +117,7 @@ include '../class/get_parameter.php';
             <button onclick="location.href = '../power/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Power Supply</button>
             <button onclick="location.href = '../xlsm/upload_powersupply.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
             <button onclick="location.href = '../template/template_power_supply.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
+            <button onclick="location.href = '../list/list_power.php'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Export</button>
         </div>
     </body>
 </html>
