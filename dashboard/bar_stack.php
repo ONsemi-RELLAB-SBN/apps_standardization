@@ -34,9 +34,9 @@
                             name: "Equipment",
                             color: "#E7823A",
                             dataPoints: [
-                                {y: 8, label: "SBN"},
+                                {y: 39, label: "SBN"},
                                 {y: 92, label: "CEBU"},
-                                {y: 63, label: "OSPI"},
+                                {y: 56, label: "OSPI"},
                                 {y: 22, label: "SUZHOU"},
                                 {y: 1, label: "OSV"}
                             ]
@@ -73,10 +73,10 @@
                             name: "Power Supply",
                             color: "green",
                             dataPoints: [
-                                {y: 4, label: "SBN"},
+                                {y: 3, label: "SBN"},
                                 {y: 0, label: "CEBU"},
                                 {y: 0, label: "OSPI"},
-                                {y: 3, label: "SUZHOU"},
+                                {y: 4, label: "SUZHOU"},
                                 {y: 0, label: "OSV"}
                             ]
                         },
@@ -99,7 +99,7 @@
                             name: "Process",
                             color: "orange",
                             dataPoints: [
-                                {y: 2, label: "SBN"},
+                                {y: 0, label: "SBN"},
                                 {y: 0, label: "CEBU"},
                                 {y: 0, label: "OSPI"},
                                 {y: 0, label: "SUZHOU"},
@@ -112,7 +112,7 @@
                             name: "Electrical Test",
                             color: "#A57164",
                             dataPoints: [
-                                {y: 2, label: "SBN"},
+                                {y: 0, label: "SBN"},
                                 {y: 0, label: "CEBU"},
                                 {y: 0, label: "OSPI"},
                                 {y: 0, label: "SUZHOU"},

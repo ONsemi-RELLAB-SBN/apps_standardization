@@ -34,10 +34,10 @@
                                 {y: 0, label: "Electrical Test"},
                                 {y: 0, label: "Process"},
                                 {y: 0, label: "Design"},
-                                {y: 4, label: "Power Supply"},
+                                {y: 3, label: "Power Supply"},
                                 {y: 3, label: "DAQ"},
                                 {y: 2, label: "Hardware"},
-                                {y: 8, label: "Equipment"}
+                                {y: 39, label: "Equipment"}
                             ]
                         },
                         {
@@ -67,7 +67,7 @@
                                 {y: 0, label: "Power Supply"},
                                 {y: 0, label: "DAQ"},
                                 {y: 0, label: "Hardware"},
-                                {y: 63, label: "Equipment"}
+                                {y: 56, label: "Equipment"}
                             ]
                         },
                         {
@@ -79,7 +79,7 @@
                                 {y: 0, label: "Electrical Test"},
                                 {y: 0, label: "Process"},
                                 {y: 0, label: "Design"},
-                                {y: 0, label: "Power Supply"},
+                                {y: 4, label: "Power Supply"},
                                 {y: 0, label: "DAQ"},
                                 {y: 0, label: "Hardware"},
                                 {y: 22, label: "Equipment"}

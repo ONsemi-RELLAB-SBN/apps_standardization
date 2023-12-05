@@ -36,9 +36,9 @@
                             legendText: "Equipment",
                             showInLegend: true,
                             dataPoints: [
-                                {label: "SBN", y: 8},
+                                {label: "SBN", y: 39},
                                 {label: "CEBU", y: 92},
-                                {label: "OSPI", y: 63},
+                                {label: "OSPI", y: 56},
                                 {label: "SUZHOU", y: 22},
                                 {label: "OSV", y: 1}
                             ]
@@ -75,10 +75,10 @@
                             legendText: "Power Supply",
                             showInLegend: true,
                             dataPoints: [
-                                {label: "SBN", y: 4},
+                                {label: "SBN", y: 3},
                                 {label: "CEBU", y: 0},
                                 {label: "OSPI", y: 0},
-                                {label: "SUZHOU", y: 3},
+                                {label: "SUZHOU", y: 4},
                                 {label: "OSV", y: 0}
                             ]
                         },
