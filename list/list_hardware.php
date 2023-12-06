@@ -4,37 +4,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-include '../template/list.php';
-include '../template/form.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Equipment List</title>
+        <title>Hardware List</title>
 
-        <link rel="stylesheet" href="../css/jquery.dataTables.min.css"/>
-        <link rel="stylesheet" href="../css/buttons.dataTables.min.css"/>
-        <link rel="stylesheet" href="../css/bootstrap3.min.css" id="font-awesome-style-css" type="text/css" media="all">
-        <link rel="stylesheet" href="../css/jquery.dataTables.css">
-        <link rel="stylesheet" href="../css/jquery.dataTables.min.css"/>
-        <link rel="stylesheet" href="../css/select.dataTables.min.css"/>
-
-        <script src="../js/jquery-1.8.2.min.js" type="text/javascript" charset="utf8" ></script>
-        <script src="../js/jquery.dataTables.min.js" type="text/javascript" charset="utf8" ></script>
-        
-        <script src="../js/jquery-3.7.0.js" ></script>
-        <script src="../js/jquery.dataTables.min.js"></script>
-        <script src="../js/dataTables.buttons.min.js"></script>
-        <script src="../js/jszip.min.js"></script>
-        <script src="../js/pdfmake.min.js"></script>
-        <script src="../js/vfs_fonts.js"></script>
-        <script src="../js/buttons.html5.min.js"></script>
-        <script src="../js/buttons.colVis.min.js"></script>
-
-        <script src="../js/dataTables.select.min.js"></script>
-        <script src="../js/buttons.print.min.js"></script>
+        <?php 
+        include '../template/list.php';
+        include '../template/form.php';
+        ?>
 
         <style>
             .body {
@@ -56,11 +37,11 @@ include '../template/form.php';
                     processing: true,
                     serverSide: true,
                     dom: 'Blfrtip',
+                    select:true,
                     ajax: { 
                         url: 'dao_hardware.php',
                         type: 'POST'
                     },
-                    pageLength: 25,
                     buttons: [
                         {
                             extend: 'copyHtml5',
@@ -69,9 +50,26 @@ include '../template/form.php';
                                 columns: ':visible'
                             }
                         },
-                        'colvis'
+                        {
+                            extend: 'colvis',
+                            action: function ( e, dt, node, config ) {
+                                $.fn.dataTable.ext.buttons.collection.action.call(this, e, dt, node, config);
+                            },
+                            prefixButtons: [
+                                {
+                                    extend: 'colvisGroup',
+                                    text: 'Show all',
+                                    show: ':hidden'
+                                },
+                                {
+                                    extend: 'colvisGroup',
+                                    text: 'Hide All',
+                                    hide: ':visible'
+                                }  
+                            ]
+                        }
                     ],
-                    select:true,
+                    pageLength: 25,
                     lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
                     columnDefs: [
                         {targets: 37,
@@ -126,7 +124,7 @@ include '../template/form.php';
             <div class="row">&nbsp;</div>
             <div class="row">&nbsp;</div>
             <div class="row">
-                <h2 class="u-pull-left" style="border-left:none">Hardware List</h2>
+                <h5 class="u-pull-left" style="border-left:none">Hardware List</h5>
             </div>
             <table id="example" class="u-full-width" width="100%" cellspacing="0">
                 <thead>

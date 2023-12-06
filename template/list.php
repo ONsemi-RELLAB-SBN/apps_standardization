@@ -18,21 +18,27 @@
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="../image/logo/onsemi_logo.ico">
 
+        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
         <link rel="stylesheet" type="text/css" href="../css/w3.css">
         <link rel="stylesheet" type="text/css" href="../css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-        
         <link rel='stylesheet' type="text/css" href='../css/jquery.dataTables.min.css'>
         <link rel='stylesheet' type="text/css" href='../css/buttons.dataTables.min.css'>
+        <link rel="stylesheet" href="../css/bootstrap3.min.css" id="font-awesome-style-css" type="text/css" media="all">
+        <link rel="stylesheet" href="../css/jquery.dataTables.css">
+        <link rel="stylesheet" href="../css/select.dataTables.min.css"/>
         
+        <script src="../js/jquery-1.8.2.min.js" type="text/javascript" charset="utf8" ></script>
         <script src="../js/jquery-3.7.0.js"></script>
-        <script src="../js/jquery.dataTables.min.js"></script>
-        <script src="../js/dataTables.buttons.min.js"></script>
         <script src="../js/jszip.min.js"></script>
         <script src="../js/pdfmake.min.js"></script>
         <script src="../js/vfs_fonts.js"></script>
+        <!--<script src="../js/buttons.print.min.js"></script>-->
+        
+        <script src="../js/jquery.dataTables.min.js"></script>
+        <script src="../js/dataTables.buttons.min.js"></script>
         <script src="../js/buttons.html5.min.js"></script>
         <script src="../js/buttons.colVis.min.js"></script>
+        <script src="../js/dataTables.select.min.js"></script>
     </head>
     <body>
         
