@@ -13,15 +13,16 @@ include '../template/form.php';
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Equipment List</title>
 
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css"/>
-        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css"/>
-        <link rel="stylesheet" href="http://phpflow.com/code/css/bootstrap3.min.css" id="font-awesome-style-css" type="text/css" media="all">
-        <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" type="text/css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/select/1.7.0/css/select.dataTables.min.css"/>
+        <link rel="stylesheet" href="../css/jquery.dataTables.min.css"/>
+        <link rel="stylesheet" href="../css/buttons.dataTables.min.css"/>
+        <link rel="stylesheet" href="../css/bootstrap3.min.css" id="font-awesome-style-css" type="text/css" media="all">
+        <link rel="stylesheet" href="../css/jquery.dataTables.css">
+        <link rel="stylesheet" href="../css/jquery.dataTables.min.css"/>
+        <link rel="stylesheet" href="../css/select.dataTables.min.css"/>
 
-        <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-        <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-
+        <script src="../js/jquery-1.8.2.min.js" type="text/javascript" charset="utf8" ></script>
+        <script src="../js/jquery.dataTables.min.js" type="text/javascript" charset="utf8" ></script>
+        
         <script src="../js/jquery-3.7.0.js" ></script>
         <script src="../js/jquery.dataTables.min.js"></script>
         <script src="../js/dataTables.buttons.min.js"></script>
@@ -59,33 +60,17 @@ include '../template/form.php';
                         type: 'POST'
                     },
                     pageLength: 25,
-//                    buttons: [
-//                        {
-//                            extend: 'copyHtml5',
-//                            split: ['csvHtml5', 'pdfHtml5', 'excelHtml5'],
-//                            exportOptions: {
-//                                columns: ':visible',
-//                            }
-//                        },
-//                        'colvis'
-//                    ],
                     buttons: [
                         {
-                            extend: 'collection',
-                            text: 'Download',
-                            className: 'custom-html-collection',
-                            buttons: [
-                                '<h4>Export</h4>',
-                                'copyHtml5',
-                                'csvHtml5',
-                                'pdfHtml5',
-                                'excelHtml5',
-                                '<h4 class="not-top-heading">Column View</h4>',
-                                'colvis',
-//                                hide: '85,86'
-                            ]
-                        }
+                            extend: 'copyHtml5',
+                            split: ['csvHtml5', 'pdfHtml5', 'excelHtml5'],
+                            exportOptions: {
+                                columns: ':visible'
+                            }
+                        },
+                        'colvis'
                     ],
+                    select:true,
                     lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
                     columnDefs: [
                         {targets: 86,

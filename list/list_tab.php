@@ -66,22 +66,22 @@
 
         <div id="eq" class="tabcontent">
             <h3>Equipment List</h3>
-            <iframe src="list_equipment.php" style="height:700px;width:100%;" title="Equipment List"></iframe>
+            <iframe src="list_equipment.php" style="height:700px;width:100%;border:none;" title="Equipment List"></iframe>
         </div>
 
         <div id="hw" class="tabcontent">
             <h3>Hardware</h3>
-            <p>Paris is the capital of France.</p> 
+            <iframe src="list_hardware.php" style="height:700px;width:100%;" title="Hardware List"></iframe>
         </div>
 
         <div id="dq" class="tabcontent">
             <h3>DAQ</h3>
-            <p>Tokyo is the capital of Japan.</p>
+            <iframe src="list_daq.php" style="height:700px;width:100%;" title="DAQ List"></iframe>
         </div>
 
         <div id="ps" class="tabcontent">
             <h3>Power Supply</h3>
-            <p>Tokyo is the capital of Japan.</p>
+            <iframe src="list_power_supply.php" style="height:700px;width:100%;" title="Power Supply List"></iframe>
         </div>
 
         <div id="ds" class="tabcontent">
