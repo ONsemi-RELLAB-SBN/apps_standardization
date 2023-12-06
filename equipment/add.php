@@ -1239,7 +1239,7 @@ include '../template/form.php';
 
                 <!--<button onclick="location.href = '../equipment/list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>-->
                 <button type="submit" id="myBtn" class="btn btn-primary u-pull-left"><i class='bx bx-send bx-fw' ></i> SAVE</button>
-                <button onclick="location.href = '../equipment/list.php'" type="button" id="listBtn" class="btn btn-primary"><i class='bx bx-list-ol bx-fw' ></i>List</button>
+                <button onclick="location.href = '../list/list_equipment.php'" type="button" id="listBtn" class="btn btn-primary"><i class='bx bx-list-ol bx-fw' ></i>List</button>
             </div>
         </form>
         <script src="../js/jquery-3.7.0.js"></script>

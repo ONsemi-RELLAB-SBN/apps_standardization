@@ -93,7 +93,7 @@ include '../template/form.php';
             <div class="row">&nbsp;</div>
             <div class="row">&nbsp;</div>
             <div class="row">
-                <h2 class="u-pull-left" style="border-left:none">Hardware List</h2>
+                <h2 class="u-pull-left" style="border-left:none">DAQ List</h2>
             </div>
             <table id="example" class="u-full-width" width="100%" cellspacing="0">
                 <thead>

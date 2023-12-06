@@ -509,7 +509,7 @@ include '../template/form.php';
 
             <!--<button onclick="location.href = '../hardware/list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>-->
             <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> SAVE</button>
-            <button onclick="location.href = '../hardware/list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+            <button onclick="location.href = '../list/list_hardware.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
         </form>
         <script>
             $(".button").click(function () {
