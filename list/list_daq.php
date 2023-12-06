@@ -64,7 +64,7 @@ include '../template/form.php';
                     buttons: [
                         {
                             extend: 'copyHtml5',
-                            split: ['csvHtml5', 'pdfHtml5', 'excelHtml5'],
+                            split: ['csvHtml5', 'excelHtml5'],
                             exportOptions: {
                                 columns: ':visible'
                             }
@@ -81,7 +81,39 @@ include '../template/form.php';
                                         <a href="../daq/delete.php?delete='+ row[35] +'" title="Delete Record" data-toggle="tooltip" onclick="return confirm(\'Are You Sure ?\')"><i class=\'bx bxs-trash bx-fw\' ></i> DELETE </a>\n\
                                         <a href="../daq/copy.php?edit='+ row[35] +'" title="Replicate Record" data-toggle="tooltip"><i class=\'bx bx-copy bx-fw\'></i></i> COPY </a>';
                             }
-                        }
+                        },
+                        {"visible": false, "targets": 2 },
+                        {"visible": false, "targets": 7 },
+                        {"visible": false, "targets": 8 },
+                        {"visible": false, "targets": 9 },
+                        {"visible": false, "targets": 10 },
+                        {"visible": false, "targets": 11 },
+                        {"visible": false, "targets": 12 },
+                        {"visible": false, "targets": 13 },
+                        {"visible": false, "targets": 14 },
+                        {"visible": false, "targets": 15 },
+                        {"visible": false, "targets": 16 },
+                        {"visible": false, "targets": 17 },
+                        {"visible": false, "targets": 18 },
+                        {"visible": false, "targets": 19 },
+                        {"visible": false, "targets": 20 },
+                        {"visible": false, "targets": 21 },
+                        {"visible": false, "targets": 22 },
+                        {"visible": false, "targets": 23 },
+                        {"visible": false, "targets": 24 },
+                        {"visible": false, "targets": 23 },
+                        {"visible": false, "targets": 24 },
+                        {"visible": false, "targets": 25 },
+                        {"visible": false, "targets": 26 },
+                        {"visible": false, "targets": 27 },
+                        {"visible": false, "targets": 28 },
+                        {"visible": false, "targets": 29 },
+                        {"visible": false, "targets": 30 },
+                        {"visible": false, "targets": 31 },
+                        {"visible": false, "targets": 32 },
+                        {"visible": false, "targets": 33 },
+                        {"visible": false, "targets": 34 },
+                        {"visible": false, "targets": 35 }
                     ]
                 });
             });
