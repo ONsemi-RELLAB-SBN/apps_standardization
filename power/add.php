@@ -322,6 +322,7 @@ include '../template/form.php';
                         <?php endwhile; ?>
                     </select>
                 </div>
+                <div class="one columns">&nbsp;</div>
                 <div class="two columns">
                     <label for="gpib_interface">GPIB interface *</label>
                     <label for="toggle_4" class="view-image">Image</label>
@@ -398,6 +399,6 @@ include '../template/form.php';
                 $("body").removeClass("modal-active");
             });
         </script>
-        <script src="js/multiselect-dropdown.js" ></script>
+        <script src="../js/multiselect-dropdown.js" ></script>
     </body>
 </html>

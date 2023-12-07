@@ -48,7 +48,9 @@
                             split: ['csvHtml5', 'excelHtml5'],
                             exportOptions: {
                                 columns: ':visible'
-                            }
+                            },
+                            title: 'DAQ Listing from Standardization Platform',
+                            sheetName: 'DAQ'
                         },
                         {
                             extend: 'colvis',
@@ -66,7 +68,12 @@
                                     text: 'Hide All',
                                     hide: ':visible'
                                 }  
-                            ]
+                            ],
+                            collectionLayout: 'fixed columns',
+                            collectionTitle: 'Column Visibility Control',
+                            columnText: function ( dt, idx, title ) {
+                                return (idx+1)+': '+title;
+                            }
                         }
                     ],
                     pageLength: 25,
