@@ -56,6 +56,7 @@ $upload = mysqli_query($con, $newinsert);
 ?>
 <script>
     alert('New Power Supply Added Successfully');
-    window.location.href = '../power/list.php';
+//    window.location.href = '../power/list.php';
+    window.location.href = '../list/list_power_supply.php';
 </script>
 <?php mysql_close($handle);

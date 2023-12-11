@@ -98,3 +98,35 @@ function getParameterValues($string) {
 
     return implode(', ', $values);
 }
+
+function getCode($value, $code, $username) {
+    
+    $latestCode = '';
+    if ($value == '') {
+        $code = '';
+    } else {
+        include 'db.php';
+
+        $qry = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' AND name = '$value'";
+        $result = $con->query($qry);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while ($row = $result->fetch_assoc()) {
+                $latestCode = $row['code'];
+            }
+        } else {
+            $slt = "SELECT LPAD(MAX(CODE)+1, 6, 0) as data FROM gest_parameter_detail WHERE master_code = '$code'";
+            $result = $con->query($slt);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $latestCode = $row['data'];
+                }
+            }
+            $qeyAdd = "INSERT INTO gest_parameter_detail (master_code, code, name, remark, created_date, created_by, flag) VALUES ('$code', '$latestCode', '$value', NULL, NOW(), '$username', 1)";
+            $upload = mysqli_query($con, $qeyAdd);
+        }
+        $con->close();
+    }
+    return $latestCode;
+}

@@ -66,6 +66,7 @@ $upload = mysqli_query($con, $insert);
 ?>
 <script>
     alert('New Hardware Added Successfully');
-    window.location.href = '../hardware/list.php';
+//    window.location.href = '../hardware/list.php';
+    window.location.href = '../list/list_hardware.php';
 </script>
 <?php mysql_close($handle);

@@ -70,6 +70,7 @@ $upload = mysqli_query($con, $newinsert);
 ?>
 <script>
     alert('New DAQ Added Successfully');
-    window.location.href = '../daq/list.php';
+//    window.location.href = '../daq/list.php';
+    window.location.href = '../list/list_daq.php';
 </script>
 <?php mysql_close($handle);
