@@ -253,7 +253,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['dedicate_usage']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -262,44 +262,26 @@ $id = $_GET['edit'];
                         <div class="row">
                             <div class="two columns"><label for="manufacturer">Equipment Manufacturer *</label></div>
                             <div class="three columns">
-    <!--                            <select id="manufacturer" name="manufacturer" style="width: 100%" required>
-                                    <option value="" selected=""></option>
-                                    <?php 
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
-                                </select>-->
-                                <input type="text" list="manufacturer_list" autocomplete="off" id="manufacturer" name="manufacturer">
+                                <input type="text" list="manufacturer_list" autocomplete="off" id="manufacturer" name="manufacturer" value="<?php echo getParameterValue($rowForm['manufacturer']); ?>">
                                 <datalist id="manufacturer_list">
                                     <?php 
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
                                     $result = mysqli_query($con, $sqlDdSite);
-                                    while($row = mysqli_fetch_array($result)) { ?>
-                                        <option value="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></option>
+                                    while($rowSite = mysqli_fetch_array($result)) { ?>
+                                        <option value="<?php echo $rowSite['name']; ?>" <?php if ($rowSite['name'] === getParameterValue($rowForm['manufacturer'])) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php } ?>
                                 </datalist>
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="model">Equipment Model *</label></div>
                             <div class="three columns">
-    <!--                            <select id="model" name="model" style="width: 100%" required>
-                                    <option value="" selected=""></option>
-                                    <?php 
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '010' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
-                                </select>-->
-                                <input type="text" list="model_list" autocomplete="off" id="model" name="model">
+                                <input type="text" list="model_list" autocomplete="off" id="model" name="model" value="<?php echo getParameterValue($rowForm['eqpt_model']); ?>">
                                 <datalist id="model_list">
                                     <?php 
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '010' ORDER BY code ASC";
                                     $result = mysqli_query($con, $sqlDdSite);
-                                    while($row = mysqli_fetch_array($result)) { ?>
-                                        <option value="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></option>
+                                    while($rowSite = mysqli_fetch_array($result)) { ?>
+                                        <option value="<?php echo $rowSite['name']; ?>" <?php if ($rowSite['name'] === getParameterValue($rowForm['eqpt_model'])) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php } ?>
                                 </datalist>
                             </div>
@@ -307,10 +289,10 @@ $id = $_GET['edit'];
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="mfg_date">Equipment Mfg Date *</label></div>
-                            <div class="three columns"><input type="date" id="mfg_date" name="mfg_date" value="" style="width:55%" ></div>
+                            <div class="three columns"><input type="date" id="mfg_date" name="mfg_date" value="<?php echo date('Y-m-d', strtotime($rowForm['eqpt_mfg_date'])); ?>" style="width:55%" ></div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="asset_no">Equipment Asset No *</label></div>
-                            <div class="three columns"><input type="text" id="asset_no" name="asset_no" placeholder="Asset Number" value="" required> </div>
+                            <div class="three columns"><input type="text" id="asset_no" name="asset_no" placeholder="Asset Number" value="<?php echo $rowForm['eqpt_asset_no']; ?>" required> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
@@ -322,7 +304,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '013' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['new_transfer_eqpt']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                 </select>
                             </div>
@@ -335,7 +317,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '014' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['transfer_eqpt_location']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -349,7 +331,7 @@ $id = $_GET['edit'];
                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
                                 $resSite = mysqli_query($con, $sqlDdSite);
                                 while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <option value="<?php echo $rowSite['code']; ?>" <?php if (strpos($rowForm['rel_test'], $rowSite['code']) !== false) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                 <?php endwhile; ?>
                                 </select>
                             </div>
@@ -402,69 +384,68 @@ $id = $_GET['edit'];
                     <div class="tab-content" id="tabCpbl">
                         <div class="row">
                             <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="<?php echo $rowForm['eqpt_volt_rating']; ?>" > </div>
                             <div class="one columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="volt_control">Voltage Control Accuracy *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="<?php echo $rowForm['volt_control_accuracy']; ?>" > </div>
                             <div class="one columns"><label for="volt_control" style="text-align: left"><b>%</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="<?php echo $rowForm['current_rating']; ?>" > </div>
                             <div class="one columns"><label for="curr_rating" style="text-align: left"><b>A</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="power_rating">Power Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="<?php echo $rowForm['power_rating']; ?>" > </div>
                             <div class="one columns"><label for="power_rating" style="text-align: left"><b>W</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="min_time">Min. Timer Setting *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="min_time" name="min_time" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="min_time" name="min_time" value="<?php echo $rowForm['min_time_setting']; ?>" > </div>
                             <div class="one columns"><label for="min_time" style="text-align: left"><b>s</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="max_time">Max. Timer Setting *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_time" name="max_time" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="max_time" name="max_time" value="<?php echo $rowForm['max_time_setting']; ?>" > </div>
                             <div class="one columns"><label for="max_time" style="text-align: left"><b>s</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="<?php echo $rowForm['min_temp']; ?>" > </div>
                             <div class="one columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="<?php echo $rowForm['max_temp']; ?>" > </div>
                             <div class="one columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="minRh">Min. RH *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="minRh" name="minRh" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="minRh" name="minRh" value="<?php echo $rowForm['min_rh']; ?>" > </div>
                             <div class="one columns"><label for="minRh" style="text-align: left"><b>%</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="maxRh">Max. RH *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="<?php echo $rowForm['max_rh']; ?>" > </div>
                             <div class="one columns"><label for="maxRh" style="text-align: left"><b>%</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="min_pressure">Minimum Pressure *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="<?php echo $rowForm['min_pressure']; ?>" > </div>
                             <div class="one columns"><label for="min_pressure" style="text-align: left"><b>psi</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="max_pressure">Maximum Pressure *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="<?php echo $rowForm['max_pressure']; ?>" > </div>
                             <div class="one columns"><label for="max_pressure" style="text-align: left"><b>psi</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
-                            <div class="two columns"><input type="text" id="heat_dissipation" name="heat_dissipation" value="" > </div>
+                            <div class="two columns"><input type="text" id="heat_dissipation" name="heat_dissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" > </div>
                             <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
-                            <!--<div class="two columns">&nbsp;</div>-->
                             <div class="two columns">
                                 <label for="temp_fluctuation">Temperature Fluctuation *</label>
                                 <label for="toggle_01" class="view-image">Image</label>
@@ -475,7 +456,7 @@ $id = $_GET['edit'];
                                 </dialog>
                             </div>
                             <div class="one columns">
-                                <input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" >
+                                <input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="<?php echo $rowForm['temp_fluctuation']; ?>" >
                                 </div>
                             <div class="one columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
                             <div class="two columns">&nbsp;</div>
@@ -490,7 +471,7 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
+                            <div class="one columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="<?php echo $rowForm['temp_uniformity']; ?>" ></div>
                             <div class="one columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns">
@@ -502,7 +483,7 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="<?php echo $rowForm['humid_fluctuation']; ?>" > </div>
                             <div class="one columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
@@ -519,7 +500,7 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="<?php echo $rowForm['no_interior_zone']; ?>" > </div>
                             <div class="one columns"><label for="no_interior" style="text-align: left"><b>Zone</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns">
@@ -531,7 +512,7 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="ext_dimension_w" name="ext_dimension_w" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="ext_dimension_w" name="ext_dimension_w" value="<?php echo $rowForm['ext_dimension_w']; ?>" > </div>
                             <div class="one columns"><label for="ext_dimension_w" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
@@ -545,11 +526,11 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="<?php echo $rowForm['int_vol']; ?>" > </div>
                             <div class="one columns"><label for="int_volume" style="text-align: left"><b>L</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="ext_dimension_d">(D) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="ext_dimension_d" name="ext_dimension_d" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="ext_dimension_d" name="ext_dimension_d" value="<?php echo $rowForm['ext_dimension_d']; ?>" > </div>
                             <div class="one columns"><label for="ext_dimension_d" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
@@ -570,13 +551,13 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['board_orientation']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="ext_dimension_h">(H) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="ext_dimension_h" name="ext_dimension_h" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="ext_dimension_h" name="ext_dimension_h" value="<?php echo $rowForm['ext_dimension_h']; ?>" > </div>
                             <div class="one columns"><label for="ext_dimension_h" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
@@ -589,7 +570,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '016' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['rack_material']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -603,7 +584,7 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="<?php echo $rowForm['int_dimension_w']; ?>" > </div>
                             <div class="one columns"><label for="int_dimension_w" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
@@ -617,11 +598,11 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="" ></div>
+                            <div class="one columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="<?php echo $rowForm['rack_slot_pitch']; ?>" ></div>
                             <div class="one columns"><label for="rack_slot_pitch" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="int_dimension_d">(D) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="int_dimension_d" name="int_dimension_d" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="int_dimension_d" name="int_dimension_d" value="<?php echo $rowForm['int_dimension_d']; ?>" > </div>
                             <div class="one columns"><label for="int_dimension_d" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
@@ -635,17 +616,17 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/011.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="<?php echo $rowForm['rack_slot_width']; ?>" > </div>
                             <div class="one columns"><label for="rack_slot_width" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="int_dimension_h">(H) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="int_dimension_h" name="int_dimension_h" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="int_dimension_h" name="int_dimension_h" value="<?php echo $rowForm['int_dimension_h']; ?>" > </div>
                             <div class="one columns"><label for="int_dimension_h" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="eqpt_weight">Equipment Weight *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="eqpt_weight" name="eqpt_weight" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="eqpt_weight" name="eqpt_weight" value="<?php echo $rowForm['eqpt_weight']; ?>" > </div>
                             <div class="one columns"><label for="eqpt_weight" style="text-align: left"><b>Kg</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns">
@@ -657,7 +638,7 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="<?php echo $rowForm['rack_dimension_w']; ?>" > </div>
                             <div class="one columns"><label for="rack_dimension_w" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
@@ -671,11 +652,11 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/012.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="" ></div>
+                            <div class="one columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="<?php echo $rowForm['no_mb_slot']; ?>" ></div>
                             <div class="one columns"><label for="no_mb_slot" style="text-align: left"><b>Slot</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="rack_dimension_d">(D) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_dimension_d" name="rack_dimension_d" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="rack_dimension_d" name="rack_dimension_d" value="<?php echo $rowForm['rack_dimension_d']; ?>" > </div>
                             <div class="one columns"><label for="rack_dimension_d" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
@@ -689,11 +670,11 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/013.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="<?php echo $rowForm['max_ps_slot']; ?>" > </div>
                             <div class="one columns"><label for="max_ps_bs" style="text-align: left"><b>Slot</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="rack_dimension_h">(H) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="<?php echo $rowForm['rack_dimension_h']; ?>" > </div>
                             <div class="one columns"><label for="rack_dimension_h" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
@@ -707,11 +688,11 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/014.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="<?php echo $rowForm['max_ps_eqpt']; ?>" > </div>
                             <div class="one columns"><label for="max_ps" style="text-align: left"><b>Unit</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="diameter">Diameter *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="diameter" name="diameter" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="diameter" name="diameter" value="<?php echo $rowForm['diameter']; ?>" > </div>
                             <div class="one columns"><label for="diameter" style="text-align: left"><b>mm</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
@@ -732,7 +713,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '017' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['airflow']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -749,7 +730,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['temp_protection_1']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -762,7 +743,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['temp_protection_2']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -777,7 +758,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['temp_protection_3']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -790,7 +771,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['smoke_alarm']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -805,7 +786,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['pressure_switch']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -818,7 +799,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['safety_valve']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -833,7 +814,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['emo_btn']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -843,17 +824,17 @@ $id = $_GET['edit'];
                     <div class="tab-content" id="tabUtlt">
                         <div class="row">
                             <div class="two columns"><label for="voltage">Voltage *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="voltage" name="voltage" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="voltage" name="voltage" value="<?php echo $rowForm['voltage']; ?>" > </div>
                             <div class="one columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="current">Current *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="current" name="current" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="current" name="current" value="<?php echo $rowForm['phase']; ?>" > </div>
                             <div class="one columns"><label for="current" style="text-align: left"><b>A</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="phase">Phase *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="phase" name="phase" value="" > </div>
+                            <div class="one columns"><input type="number" step="0.001" id="phase" name="phase" value="<?php echo $rowForm['current']; ?>" > </div>
                             <div class="one columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
                             <div class="two columns">&nbsp;</div>
                             <div class="two columns"><label for="exhaust">Exhaust *</label></div>
@@ -864,7 +845,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['exhaust']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -879,7 +860,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['liquid_nitrogen']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -892,7 +873,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['chilled_water']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -908,7 +889,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['cda']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -921,7 +902,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['lan']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -935,7 +916,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['n2_gas']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -948,7 +929,7 @@ $id = $_GET['edit'];
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['oxygen_level_detector']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
                                 </div>
@@ -963,7 +944,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['di_water']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -976,7 +957,7 @@ $id = $_GET['edit'];
                                         $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
                                         $resSite = mysqli_query($con, $sqlDdSite);
                                         while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['water_topup_system']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                         <?php endwhile; ?>
                                     </select>
                                 </div>
@@ -1029,7 +1010,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['water_topup_system']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -1054,7 +1035,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '031' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['internal_config_type']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -1064,7 +1045,7 @@ $id = $_GET['edit'];
                         <div id="BananaDiv" name="BananaDiv" style="display: none;">
                             <div class="row">
                                 <div class="two columns"><label for="banana_jack_hole">No. Banana Jack Holes *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" > </div>
                                 <div class="one columns"><label for="banana_jack_hole" style="text-align: left"><b>Pins</b></label></div>
                                 <div class="two columns">
                                     <label for="toggle_17" class="view-image">Image</label>
@@ -1075,17 +1056,17 @@ $id = $_GET['edit'];
                                     </dialog>
                                 </div>
                                 <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
                                 <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
                                 <div class="two columns">&nbsp;</div>
                             </div>
                             <div class="row">
                                 <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
                                 <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
                                 <div class="two columns">&nbsp;</div>
                                 <div class="two columns"><label for="conn_temp_rating">Connector Temp Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > </div>
                                 <div class="one columns"><label for="conn_temp_rating" style="text-align: left"><b>`C</b></label></div>
                                 <div class="two columns">&nbsp;</div>
                             </div>
@@ -1094,7 +1075,7 @@ $id = $_GET['edit'];
                         <div id="EdgeDiv" name="EdgeDiv" style="display: none;">
                             <div class="row">
                                 <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
                                 <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
                                 <div class="two columns">
                                     <label for="toggle_18" class="view-image">Image</label>
@@ -1105,23 +1086,23 @@ $id = $_GET['edit'];
                                     </dialog>
                                 </div>
                                 <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
                                 <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
                                 <div class="two columns">&nbsp;</div>
                             </div>
                             <div class="row">
                                 <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
                                 <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
                                 <div class="two columns">&nbsp;</div>
                                 <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
                                 <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
                                 <div class="two columns">&nbsp;</div>
                             </div>
                             <div class="row">
                                 <div class="two columns"><label for="conn_temp_rating">Connector Temp Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > </div>
                                 <div class="one columns"><label for="conn_temp_rating" style="text-align: left"><b>`C</b></label></div>
                             </div>
                         </div>
@@ -1129,7 +1110,7 @@ $id = $_GET['edit'];
                         <div id="WinchestorDiv" name="WinchestorDiv" style="display: none;">
                             <div class="row">
                                 <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
                                 <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
                                 <div class="two columns">
                                     <label for="toggle_19" class="view-image">Image</label>
@@ -1140,23 +1121,23 @@ $id = $_GET['edit'];
                                     </dialog>
                                 </div>
                                 <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
                                 <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
                                 <div class="two columns">&nbsp;</div>
                             </div>
                             <div class="row">
                                 <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
                                 <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
                                 <div class="two columns">&nbsp;</div>
                                 <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
                                 <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
                                 <div class="two columns">&nbsp;</div>
                             </div>
                             <div class="row">
                                 <div class="two columns"><label for="conn_rack">No. Wires Connected to Rack *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_rack" name="conn_rack" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="conn_rack" name="conn_rack" value="<?php echo $rowForm['no_wire_conn_rack']; ?>" > </div>
                                 <div class="one columns"><label for="conn_rack" style="text-align: left"><b>`C</b></label></div>
                             </div>
                         </div>
@@ -1164,17 +1145,17 @@ $id = $_GET['edit'];
                         <div class="row" id="WireDiv" name="WireDiv"" style="display: none;">
                             <div class="row">
                                 <div class="two columns"><label for="wire_volt_rating">Wire Voltage Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="wire_volt_rating" name="wire_volt_rating" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="wire_volt_rating" name="wire_volt_rating" value="<?php echo $rowForm['wire_volt_rating']; ?>" > </div>
                                 <div class="one columns"><label for="wire_volt_rating" style="text-align: left"><b>V</b></label></div>
                                 <div class="two columns">&nbsp;</div>
                                 <div class="two columns"><label for="wire_curr_rating">Wire Current Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="wire_curr_rating" name="wire_curr_rating" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="wire_curr_rating" name="wire_curr_rating" value="<?php echo $rowForm['wire_curr_rating']; ?>" > </div>
                                 <div class="one columns"><label for="wire_curr_rating" style="text-align: left"><b>A</b></label></div>
                                 <div class="two columns">&nbsp;</div>
                             </div>
                             <div class="row">
                                 <div class="two columns"><label for="wire_temp_rating">Wire Temp Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value="<?php echo $rowForm['wire_temp_rating']; ?>" > </div>
                                 <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>`C</b></label></div>
                             </div>
                         </div>
@@ -1247,7 +1228,7 @@ $id = $_GET['edit'];
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '032' ORDER BY code ASC";
                                     $resSite = mysqli_query($con, $sqlDdSite);
                                     while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['ext_config_type']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
                                     <?php endwhile; ?>
                                 </select>
                             </div>
@@ -1255,11 +1236,11 @@ $id = $_GET['edit'];
                         <div class="row" id="viewExternalDiv" name="viewExternalDiv" style="display: none;">
                             <div class="row">
                                 <div class="two columns"><label for="interface_volt_rating">Interface Voltage Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="interface_volt_rating" name="interface_volt_rating" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="interface_volt_rating" name="interface_volt_rating" value="<?php echo $rowForm['interface_volt_rating']; ?>" > </div>
                                 <div class="one columns"><label for="interface_volt_rating" style="text-align: left"><b>V</b></label></div>
                                 <div class="two columns">&nbsp;</div>
                                 <div class="two columns"><label for="interface_curr_rating">Interface Current Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="interface_curr_rating" name="interface_curr_rating" value="" > </div>
+                                <div class="one columns"><input type="number" step="0.001" id="interface_curr_rating" name="interface_curr_rating" value="<?php echo $rowForm['interface_current_rating']; ?>" > </div>
                                 <div class="one columns"><label for="interface_curr_rating" style="text-align: left"><b>A</b></label></div>
                                 <div class="two columns">&nbsp;</div>
                             </div>

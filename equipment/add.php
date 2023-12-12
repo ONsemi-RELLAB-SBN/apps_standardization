@@ -143,7 +143,7 @@ include '../template/form.php';
     </head>
 
     <body>
-        <form id="add_equipment_form" action="../crud/crud_add_equipment_new.php" method="get">
+        <form id="add_equipment_form" action="../crud/crud_add_equipment_new.php" method="get" class="row g-3">
             
             <div id="main-page">
                 <div class="twelve columns">&nbsp;</div>
@@ -214,23 +214,14 @@ include '../template/form.php';
                     <li data-tab="tabSafe">Safety</li>
                     <li data-tab="tabUtlt">Utilities</li>
                     <li data-tab="tabDaq">DAQ</li>
-                    <li data-tab="tabInt">Internal Chamber Configuration</li>
-                    <li data-tab="tabExt">External Chamber Configuration</li>
+                    <li data-tab="tabInt" id="tb07">Internal Chamber Configuration</li>
+                    <li data-tab="tabExt" id="tb08">External Chamber Configuration</li>
                 </ul>
 
                 <div class="tab-content active" id="tabIdtt">
                     <div class="row">
                         <div class="two columns"><label for="eqpt_id">Equipment ID *</label></div>
                         <div class="three columns">
-<!--                            <select id="eqpt_id" name="eqpt_id" style="width: 100%" required>
-                                <option value="" selected=""></option>
-                                <?php 
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
-                            </select>-->
                             <input type="text" list="eqpt_id_list" autocomplete="off" id="eqpt_id" name="eqpt_id">
                             <datalist id="eqpt_id_list">
                                 <?php 
@@ -259,15 +250,6 @@ include '../template/form.php';
                     <div class="row">
                         <div class="two columns"><label for="manufacturer">Equipment Manufacturer *</label></div>
                         <div class="three columns">
-<!--                            <select id="manufacturer" name="manufacturer" style="width: 100%" required>
-                                <option value="" selected=""></option>
-                                <?php 
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
-                            </select>-->
                             <input type="text" list="manufacturer_list" autocomplete="off" id="manufacturer" name="manufacturer">
                             <datalist id="manufacturer_list">
                                 <?php 
@@ -281,15 +263,6 @@ include '../template/form.php';
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="model">Equipment Model *</label></div>
                         <div class="three columns">
-<!--                            <select id="model" name="model" style="width: 100%" required>
-                                <option value="" selected=""></option>
-                                <?php 
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '010' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
-                            </select>-->
                             <input type="text" list="model_list" autocomplete="off" id="model" name="model">
                             <datalist id="model_list">
                                 <?php 
@@ -326,7 +299,7 @@ include '../template/form.php';
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="from" id="fromLabel">From? *</label></div>
                         <div class="three columns">
-                            <select id="from" name="from" style="width: 100%" readonly required>
+                            <select id="from" name="from" style="width: 100%">
                                 <option value="" selected=""></option>
                                 <?php
                                 $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '014' ORDER BY code ASC";
@@ -377,9 +350,32 @@ include '../template/form.php';
                         }
                         
                         function updateRelTest() {
+                            console.log("masuk ke update rel test");
                             var newreltest = document.getElementById('relTest');
-                            var zoneF = document.getElementById('zoneField');
-                            var zone = document.getElementById('zone');
+                            
+                            var tab7 = document.getElementById('tb07');
+                            var tab8 = document.getElementById('tb08');
+                            
+                            var cpbl   = document.getElementById('divCpblAll');
+                            var cpbl01 = document.getElementById('divCpbl001');
+                            var cpbl02 = document.getElementById('divCpbl002');
+                            var cpbl03 = document.getElementById('divCpbl003');
+                            var cpbl04 = document.getElementById('divCpbl004');
+                            var cpbl05 = document.getElementById('divCpbl0506');
+                            var cpbl07 = document.getElementById('divCpbl007');
+                            var cpbl08 = document.getElementById('divCpbl0809');
+                            var cpbl10 = document.getElementById('divCpbl1012');
+                            var cpbl13 = document.getElementById('divCpbl1316');
+                            
+                            var util   = document.getElementById('divUtltAll');
+                            var util01 = document.getElementById('divUtlt001');
+                            var util02 = document.getElementById('divUtlt002');
+                            var util03 = document.getElementById('divUtlt003');
+                            var util04 = document.getElementById('divUtlt004');
+                            var util05 = document.getElementById('divUtlt005');
+                            var util06 = document.getElementById('divUtlt006');
+                            var util07 = document.getElementById('divUtlt007');
+                            
                             var selected = [...newreltest.selectedOptions].map(option => option.value);
 
 //                            if (selected.includes("008019") || selected.includes("008021")) {
@@ -392,116 +388,1007 @@ include '../template/form.php';
 //                                zone.required = false;
 //                                zoneF.style.display = 'none';
 //                            }
+
+                            if (selected.includes("008016")) {
+                                tab7.style.display = 'block';
+                                tab8.style.display = 'block';
+                                
+                                cpbl01.style.display = 'block';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'none';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'none';
+                                util03.style.display = 'block';
+                                util04.style.display = 'none';
+                                util05.style.display = 'none';
+                                util06.style.display = 'none';
+                                util07.style.display = 'none';
+                            } else if (selected.includes("008012")) {
+                                tab7.style.display = 'block';
+                                tab8.style.display = 'block';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'block';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'none';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'none';
+                                util03.style.display = 'none';
+                                util04.style.display = 'none';
+                                util05.style.display = 'none';
+                                util06.style.display = 'none';
+                                util07.style.display = 'block';
+                            } else if (selected.includes("008005")) {
+                                tab7.style.display = 'block';
+                                tab8.style.display = 'block';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'block';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'none';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'none';
+                                util03.style.display = 'none';
+                                util04.style.display = 'none';
+                                util05.style.display = 'none';
+                                util06.style.display = 'block';
+                                util07.style.display = 'none';
+                            } else if (selected.includes("008003") || selected.includes("008004") || selected.includes("008020")) {
+                                tab7.style.display = 'block';
+                                tab8.style.display = 'block';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'block';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'none';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'none';
+                                util03.style.display = 'none';
+                                util04.style.display = 'none';
+                                util05.style.display = 'none';
+                                util06.style.display = 'block';
+                                util07.style.display = 'none';
+                            } else if (selected.includes("008002") || selected.includes("008006") || selected.includes("008007") || selected.includes("008008") || selected.includes("008010")) {
+                                tab7.style.display = 'block';
+                                tab8.style.display = 'block';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'block';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'none';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'none';
+                                util03.style.display = 'none';
+                                util04.style.display = 'none';
+                                util05.style.display = 'block';
+                                util06.style.display = 'none';
+                                util07.style.display = 'none';
+                            } else if (selected.includes("008013")) {
+                                tab7.style.display = 'block';
+                                tab8.style.display = 'block';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'block';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'none';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'block';
+                                util03.style.display = 'none';
+                                util04.style.display = 'none';
+                                util05.style.display = 'none';
+                                util06.style.display = 'none';
+                                util07.style.display = 'none';
+                            } else if (selected.includes("008018")) {
+                                tab7.style.display = 'block';
+                                tab8.style.display = 'block';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'block';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'none';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'none';
+                                util03.style.display = 'none';
+                                util04.style.display = 'none';
+                                util05.style.display = 'none';
+                                util06.style.display = 'none';
+                                util07.style.display = 'block';
+                            } else if (selected.includes("008001") || selected.includes("008023")) {
+                                tab7.style.display = 'none';
+                                tab8.style.display = 'none';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'block';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'none';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'none';
+                                util03.style.display = 'none';
+                                util04.style.display = 'none';
+                                util05.style.display = 'none';
+                                util06.style.display = 'block';
+                                util07.style.display = 'none';
+                            } else if (selected.includes("008022")) {
+                                tab7.style.display = 'none';
+                                tab8.style.display = 'none';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'block';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'none';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'none';
+                                util03.style.display = 'none';
+                                util04.style.display = 'block';
+                                util05.style.display = 'none';
+                                util06.style.display = 'none';
+                                util07.style.display = 'none';
+                            } else if (selected.includes("008015")) {
+                                tab7.style.display = 'none';
+                                tab8.style.display = 'none';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'block';
+                                cpbl13.style.display = 'none';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'none';
+                                util03.style.display = 'none';
+                                util04.style.display = 'none';
+                                util05.style.display = 'none';
+                                util06.style.display = 'block';
+                                util07.style.display = 'none';
+                            } else if (selected.includes("008017")) {
+                                tab7.style.display = 'none';
+                                tab8.style.display = 'none';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'block';
+                                cpbl13.style.display = 'none';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'none';
+                                util03.style.display = 'none';
+                                util04.style.display = 'block';
+                                util05.style.display = 'none';
+                                util06.style.display = 'none';
+                                util07.style.display = 'none';
+                            } else if (selected.includes("008021")) {
+                                tab7.style.display = 'none';
+                                tab8.style.display = 'none';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'block';
+                                cpbl13.style.display = 'none';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'block';
+                                util03.style.display = 'none';
+                                util04.style.display = 'none';
+                                util05.style.display = 'none';
+                                util06.style.display = 'none';
+                                util07.style.display = 'none';
+                            } else if (selected.includes("008009")) {
+                                tab7.style.display = 'none';
+                                tab8.style.display = 'none';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'block';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'none';
+                                util03.style.display = 'none';
+                                util04.style.display = 'block';
+                                util05.style.display = 'none';
+                                util06.style.display = 'none';
+                                util07.style.display = 'none';
+                            } else if (selected.includes("008011")) {
+                                tab7.style.display = 'none';
+                                tab8.style.display = 'none';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'block';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'none';
+                                util03.style.display = 'none';
+                                util04.style.display = 'none';
+                                util05.style.display = 'block';
+                                util06.style.display = 'none';
+                                util07.style.display = 'none';
+                            } else if (selected.includes("008014")) {
+                                tab7.style.display = 'none';
+                                tab8.style.display = 'none';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'block';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'none';
+                                util02.style.display = 'block';
+                                util03.style.display = 'none';
+                                util04.style.display = 'none';
+                                util05.style.display = 'none';
+                                util06.style.display = 'none';
+                                util07.style.display = 'none';
+                            } else if (selected.includes("008019")) {
+                                tab7.style.display = 'none';
+                                tab8.style.display = 'none';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'block';
+                                cpbl.style.display = 'none';
+                                
+                                util.style.display = 'none';
+                                util01.style.display = 'block';
+                                util02.style.display = 'none';
+                                util03.style.display = 'none';
+                                util04.style.display = 'none';
+                                util05.style.display = 'none';
+                                util06.style.display = 'none';
+                                util07.style.display = 'none';
+                            } else {
+                                console.log("ok all");
+                                tab7.style.display = 'block';
+                                tab8.style.display = 'block';
+                                
+                                cpbl01.style.display = 'none';
+                                cpbl02.style.display = 'none';
+                                cpbl03.style.display = 'none';
+                                cpbl04.style.display = 'none';
+                                cpbl05.style.display = 'none';
+                                cpbl07.style.display = 'none';
+                                cpbl08.style.display = 'none';
+                                cpbl10.style.display = 'none';
+                                cpbl13.style.display = 'none';
+                                cpbl.style.display = 'block';
+                                
+                                util.style.display = 'block';
+                                util01.style.display = 'none';
+                                util02.style.display = 'none';
+                                util03.style.display = 'none';
+                                util04.style.display = 'none';
+                                util05.style.display = 'none';
+                                util06.style.display = 'none';
+                                util07.style.display = 'none';
+                            }
                         }
                     </script>
                 </div>
 
                 <div class="tab-content" id="tabCpbl">
-                    <div class="row">
-                        <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" > </div>
-                        <div class="one columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="volt_control">Voltage Control Accuracy *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="" > </div>
-                        <div class="one columns"><label for="volt_control" style="text-align: left"><b>%</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" > </div>
-                        <div class="one columns"><label for="curr_rating" style="text-align: left"><b>A</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="power_rating">Power Rating *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="" > </div>
-                        <div class="one columns"><label for="power_rating" style="text-align: left"><b>W</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="min_time">Min. Timer Setting *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="min_time" name="min_time" value="" > </div>
-                        <div class="one columns"><label for="min_time" style="text-align: left"><b>s</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="max_time">Max. Timer Setting *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="max_time" name="max_time" value="" > </div>
-                        <div class="one columns"><label for="max_time" style="text-align: left"><b>s</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" > </div>
-                        <div class="one columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" > </div>
-                        <div class="one columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="minRh">Min. RH *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="minRh" name="minRh" value="" > </div>
-                        <div class="one columns"><label for="minRh" style="text-align: left"><b>%</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="maxRh">Max. RH *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="" > </div>
-                        <div class="one columns"><label for="maxRh" style="text-align: left"><b>%</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="min_pressure">Minimum Pressure *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="" > </div>
-                        <div class="one columns"><label for="min_pressure" style="text-align: left"><b>psi</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="max_pressure">Maximum Pressure *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="" > </div>
-                        <div class="one columns"><label for="max_pressure" style="text-align: left"><b>psi</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
-                        <div class="two columns"><input type="text" id="heat_dissipation" name="heat_dissipation" value="" > </div>
-                        <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
-                        <!--<div class="two columns">&nbsp;</div>-->
-                        <div class="two columns">
-                            <label for="temp_fluctuation">Temperature Fluctuation *</label>
-                            <label for="toggle_01" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_01">
-                            <dialog>
-                                <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
+                    <div id="divCpblAll">
+                        <div class="row">
+                            <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" > </div>
+                            <div class="two columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="volt_control">Voltage Control Accuracy *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="" > </div>
+                            <div class="two columns"><label for="volt_control" style="text-align: left"><b>%</b></label></div>
                         </div>
-                        <div class="one columns">
-                            <input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" >
+                        <div class="row">
+                            <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" > </div>
+                            <div class="two columns"><label for="curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns"><label for="power_rating">Power Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="" > </div>
+                            <div class="two columns"><label for="power_rating" style="text-align: left"><b>W</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="min_time">Min. Timer Setting *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_time" name="min_time" value="" > </div>
+                            <div class="two columns"><label for="min_time" style="text-align: left"><b>s</b></label></div>
+                            <div class="two columns"><label for="max_time">Max. Timer Setting *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_time" name="max_time" value="" > </div>
+                            <div class="two columns"><label for="max_time" style="text-align: left"><b>s</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" > </div>
+                            <div class="two columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" > </div>
+                            <div class="two columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="minRh">Min. RH *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="minRh" name="minRh" value="" > </div>
+                            <div class="two columns"><label for="minRh" style="text-align: left"><b>%</b></label></div>
+                            <div class="two columns"><label for="maxRh">Max. RH *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="" > </div>
+                            <div class="two columns"><label for="maxRh" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="min_pressure">Minimum Pressure *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="" > </div>
+                            <div class="two columns"><label for="min_pressure" style="text-align: left"><b>psi</b></label></div>
+                            <div class="two columns"><label for="max_pressure">Maximum Pressure *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="" > </div>
+                            <div class="two columns"><label for="max_pressure" style="text-align: left"><b>psi</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
+                            <div class="two columns"><input type="text" step="0.001" id="heat_dissipation" name="heat_dissipation" value="" > </div>
+                            <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
+                            <div class="two columns">
+                                <label for="temp_fluctuation">Temperature Fluctuation *</label>
+                                <label for="toggle_01" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_01">
+                                <dialog>
+                                    <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
                             </div>
-                        <div class="one columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" ></div>
+                            <div class="two columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns">
+                                <label for="temp_uniform">Temperature Uniformity *</label>
+                                <label for="toggle_02" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_02">
+                                <dialog>
+                                    <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
+                            <div class="two columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns">
+                                <label for="humid_fluctuation">Humidity Fluctuation *</label>
+                                <label for="toggle_03" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_03">
+                                <dialog>
+                                    <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="" > </div>
+                            <div class="two columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
+                        </div>
                     </div>
-                    <div class="row">
-                        <div class="two columns">
-                            <label for="temp_uniform">Temperature Uniformity *</label>
-                            <label for="toggle_02" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_02">
-                            <dialog>
-                                <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
+                    <div id="divCpbl001" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" > </div>
+                            <div class="two columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="volt_control">Voltage Control Accuracy *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="" > </div>
+                            <div class="two columns"><label for="volt_control" style="text-align: left"><b>%</b></label></div>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
-                        <div class="one columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                        <div class="two columns">
-                            <label for="humid_fluctuation">Humidity Fluctuation *</label>
-                            <label for="toggle_03" class="view-image">Image</label>
-                            <input type="checkbox" id="toggle_03">
-                            <dialog>
-                                <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                <img id="myImg" src="../image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                            </dialog>
+                        <div class="row">
+                            <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" > </div>
+                            <div class="two columns"><label for="curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns"><label for="power_rating">Power Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="" > </div>
+                            <div class="two columns"><label for="power_rating" style="text-align: left"><b>W</b></label></div>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="" > </div>
-                        <div class="one columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="row">
+                            <div class="two columns"><label for="min_time">Min. Timer Setting *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_time" name="min_time" value="" > </div>
+                            <div class="two columns"><label for="min_time" style="text-align: left"><b>s</b></label></div>
+                            <div class="two columns"><label for="max_time">Max. Timer Setting *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_time" name="max_time" value="" > </div>
+                            <div class="two columns"><label for="max_time" style="text-align: left"><b>s</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" > </div>
+                            <div class="two columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" > </div>
+                            <div class="two columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
+                            <div class="two columns"><input type="text" step="0.001" id="heat_dissipation" name="heat_dissipation" value="" > </div>
+                            <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
+                            <div class="two columns">
+                                <label for="temp_fluctuation">Temperature Fluctuation *</label>
+                                <label for="toggle_01" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_01">
+                                <dialog>
+                                    <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" ></div>
+                            <div class="two columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns">
+                                <label for="temp_uniform">Temperature Uniformity *</label>
+                                <label for="toggle_02" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_02">
+                                <dialog>
+                                    <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
+                            <div class="two columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                    </div>
+                    <div id="divCpbl002" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" > </div>
+                            <div class="two columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="volt_control">Voltage Control Accuracy *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="" > </div>
+                            <div class="two columns"><label for="volt_control" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" > </div>
+                            <div class="two columns"><label for="curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns"><label for="power_rating">Power Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="" > </div>
+                            <div class="two columns"><label for="power_rating" style="text-align: left"><b>W</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="min_time">Min. Timer Setting *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_time" name="min_time" value="" > </div>
+                            <div class="two columns"><label for="min_time" style="text-align: left"><b>s</b></label></div>
+                            <div class="two columns"><label for="max_time">Max. Timer Setting *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_time" name="max_time" value="" > </div>
+                            <div class="two columns"><label for="max_time" style="text-align: left"><b>s</b></label></div>
+                        </div>
+                    </div>
+                    <div id="divCpbl003" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" > </div>
+                            <div class="two columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="volt_control">Voltage Control Accuracy *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="" > </div>
+                            <div class="two columns"><label for="volt_control" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" > </div>
+                            <div class="two columns"><label for="curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns"><label for="power_rating">Power Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="" > </div>
+                            <div class="two columns"><label for="power_rating" style="text-align: left"><b>W</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" > </div>
+                            <div class="two columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" > </div>
+                            <div class="two columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="minRh">Min. RH *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="minRh" name="minRh" value="" > </div>
+                            <div class="two columns"><label for="minRh" style="text-align: left"><b>%</b></label></div>
+                            <div class="two columns"><label for="maxRh">Max. RH *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="" > </div>
+                            <div class="two columns"><label for="maxRh" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="min_pressure">Minimum Pressure *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="" > </div>
+                            <div class="two columns"><label for="min_pressure" style="text-align: left"><b>psi</b></label></div>
+                            <div class="two columns"><label for="max_pressure">Maximum Pressure *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="" > </div>
+                            <div class="two columns"><label for="max_pressure" style="text-align: left"><b>psi</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
+                            <div class="two columns"><input type="text" step="0.001" id="heat_dissipation" name="heat_dissipation" value="" > </div>
+                            <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
+                            <div class="two columns">
+                                <label for="temp_fluctuation">Temperature Fluctuation *</label>
+                                <label for="toggle_01" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_01">
+                                <dialog>
+                                    <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" ></div>
+                            <div class="two columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns">
+                                <label for="temp_uniform">Temperature Uniformity *</label>
+                                <label for="toggle_02" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_02">
+                                <dialog>
+                                    <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
+                            <div class="two columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns">
+                                <label for="humid_fluctuation">Humidity Fluctuation *</label>
+                                <label for="toggle_03" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_03">
+                                <dialog>
+                                    <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="" > </div>
+                            <div class="two columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                    </div>
+                    <div id="divCpbl004" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" > </div>
+                            <div class="two columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="volt_control">Voltage Control Accuracy *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="" > </div>
+                            <div class="two columns"><label for="volt_control" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" > </div>
+                            <div class="two columns"><label for="curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns"><label for="power_rating">Power Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="" > </div>
+                            <div class="two columns"><label for="power_rating" style="text-align: left"><b>W</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" > </div>
+                            <div class="two columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" > </div>
+                            <div class="two columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="minRh">Min. RH *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="minRh" name="minRh" value="" > </div>
+                            <div class="two columns"><label for="minRh" style="text-align: left"><b>%</b></label></div>
+                            <div class="two columns"><label for="maxRh">Max. RH *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="" > </div>
+                            <div class="two columns"><label for="maxRh" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
+                            <div class="two columns"><input type="text" step="0.001" id="heat_dissipation" name="heat_dissipation" value="" > </div>
+                            <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
+                            <div class="two columns">
+                                <label for="temp_fluctuation">Temperature Fluctuation *</label>
+                                <label for="toggle_01" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_01">
+                                <dialog>
+                                    <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" ></div>
+                            <div class="two columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns">
+                                <label for="temp_uniform">Temperature Uniformity *</label>
+                                <label for="toggle_02" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_02">
+                                <dialog>
+                                    <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
+                            <div class="two columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns">
+                                <label for="humid_fluctuation">Humidity Fluctuation *</label>
+                                <label for="toggle_03" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_03">
+                                <dialog>
+                                    <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="" > </div>
+                            <div class="two columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                    </div>
+                    <div id="divCpbl0506" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" > </div>
+                            <div class="two columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="volt_control">Voltage Control Accuracy *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="" > </div>
+                            <div class="two columns"><label for="volt_control" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" > </div>
+                            <div class="two columns"><label for="curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns"><label for="power_rating">Power Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="" > </div>
+                            <div class="two columns"><label for="power_rating" style="text-align: left"><b>W</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" > </div>
+                            <div class="two columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" > </div>
+                            <div class="two columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
+                            <div class="two columns"><input type="text" step="0.001" id="heat_dissipation" name="heat_dissipation" value="" > </div>
+                            <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
+                            <div class="two columns">
+                                <label for="temp_fluctuation">Temperature Fluctuation *</label>
+                                <label for="toggle_01" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_01">
+                                <dialog>
+                                    <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" ></div>
+                            <div class="two columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns">
+                                <label for="temp_uniform">Temperature Uniformity *</label>
+                                <label for="toggle_02" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_02">
+                                <dialog>
+                                    <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
+                            <div class="two columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                    </div>
+                    <div id="divCpbl007" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" > </div>
+                            <div class="two columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="volt_control">Voltage Control Accuracy *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="" > </div>
+                            <div class="two columns"><label for="volt_control" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" > </div>
+                            <div class="two columns"><label for="curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns"><label for="power_rating">Power Rating *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="" > </div>
+                            <div class="two columns"><label for="power_rating" style="text-align: left"><b>W</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" > </div>
+                            <div class="two columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" > </div>
+                            <div class="two columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns">
+                                <label for="temp_fluctuation">Temperature Fluctuation *</label>
+                                <label for="toggle_01" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_01">
+                                <dialog>
+                                    <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" ></div>
+                            <div class="two columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns">
+                                <label for="temp_uniform">Temperature Uniformity *</label>
+                                <label for="toggle_02" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_02">
+                                <dialog>
+                                    <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
+                            <div class="two columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                    </div>
+                    <div id="divCpbl0809" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" > </div>
+                            <div class="two columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" > </div>
+                            <div class="two columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="minRh">Min. RH *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="minRh" name="minRh" value="" > </div>
+                            <div class="two columns"><label for="minRh" style="text-align: left"><b>%</b></label></div>
+                            <div class="two columns"><label for="maxRh">Max. RH *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="" > </div>
+                            <div class="two columns"><label for="maxRh" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="min_pressure">Minimum Pressure *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="" > </div>
+                            <div class="two columns"><label for="min_pressure" style="text-align: left"><b>psi</b></label></div>
+                            <div class="two columns"><label for="max_pressure">Maximum Pressure *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="" > </div>
+                            <div class="two columns"><label for="max_pressure" style="text-align: left"><b>psi</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
+                            <div class="two columns"><input type="text" step="0.001" id="heat_dissipation" name="heat_dissipation" value="" > </div>
+                            <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
+                            <div class="two columns">
+                                <label for="temp_fluctuation">Temperature Fluctuation *</label>
+                                <label for="toggle_01" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_01">
+                                <dialog>
+                                    <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" ></div>
+                            <div class="two columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns">
+                                <label for="temp_uniform">Temperature Uniformity *</label>
+                                <label for="toggle_02" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_02">
+                                <dialog>
+                                    <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
+                            <div class="two columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns">
+                                <label for="humid_fluctuation">Humidity Fluctuation *</label>
+                                <label for="toggle_03" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_03">
+                                <dialog>
+                                    <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="" > </div>
+                            <div class="two columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                    </div>
+                    <div id="divCpbl1012" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" > </div>
+                            <div class="two columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" > </div>
+                            <div class="two columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="minRh">Min. RH *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="minRh" name="minRh" value="" > </div>
+                            <div class="two columns"><label for="minRh" style="text-align: left"><b>%</b></label></div>
+                            <div class="two columns"><label for="maxRh">Max. RH *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="" > </div>
+                            <div class="two columns"><label for="maxRh" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
+                            <div class="two columns"><input type="text" step="0.001" id="heat_dissipation" name="heat_dissipation" value="" > </div>
+                            <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
+                            <div class="two columns">
+                                <label for="temp_fluctuation">Temperature Fluctuation *</label>
+                                <label for="toggle_01" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_01">
+                                <dialog>
+                                    <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" ></div>
+                            <div class="two columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns">
+                                <label for="temp_uniform">Temperature Uniformity *</label>
+                                <label for="toggle_02" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_02">
+                                <dialog>
+                                    <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
+                            <div class="two columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns">
+                                <label for="humid_fluctuation">Humidity Fluctuation *</label>
+                                <label for="toggle_03" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_03">
+                                <dialog>
+                                    <label for="toggle_03" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="" > </div>
+                            <div class="two columns"><label for="humid_fluctuation" style="text-align: left"><b>%</b></label></div>
+                        </div>
+                    </div>
+                    <div id="divCpbl1316" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="min_temp">Min. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" > </div>
+                            <div class="two columns"><label for="min_temp" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns"><label for="max_temp">Max. Temperature *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" > </div>
+                            <div class="two columns"><label for="max_temp" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="heat_dissipation">Heat Dissipation *</label></div>
+                            <div class="two columns"><input type="text" step="0.001" id="heat_dissipation" name="heat_dissipation" value="" > </div>
+                            <div class="two columns"><label for="heat_dissipation" style="text-align: left"><b>Watt</b></label></div>
+                            <div class="two columns">
+                                <label for="temp_fluctuation">Temperature Fluctuation *</label>
+                                <label for="toggle_01" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_01">
+                                <dialog>
+                                    <label for="toggle_01" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" ></div>
+                            <div class="two columns"><label for="temp_fluctuation" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns">
+                                <label for="temp_uniform">Temperature Uniformity *</label>
+                                <label for="toggle_02" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_02">
+                                <dialog>
+                                    <label for="toggle_02" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
+                            <div class="two columns"><label for="temp_uniform" style="text-align: left"><b>`C</b></label></div>
+                        </div>
                     </div>
                 </div>
 
@@ -516,9 +1403,8 @@ include '../template/form.php';
                                 <img id="myImg" src="../image/equipment/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="" > </div>
-                        <div class="one columns"><label for="no_interior" style="text-align: left"><b>Zone</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="" > </div>
+                        <div class="two columns"><label for="no_interior" style="text-align: left"><b>Zone</b></label></div>
                         <div class="two columns">
                             <label for="ext_dimension_w">External Dimension (W) *</label>
                             <label for="toggle_04" class="view-image">Image</label>
@@ -528,9 +1414,8 @@ include '../template/form.php';
                                 <img id="myImg" src="../image/equipment/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="ext_dimension_w" name="ext_dimension_w" value="" > </div>
-                        <div class="one columns"><label for="ext_dimension_w" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="ext_dimension_w" name="ext_dimension_w" value="" > </div>
+                        <div class="two columns"><label for="ext_dimension_w" style="text-align: left"><b>mm</b></label></div>
                     </div>
                     <div class="row">
                         <div class="two columns">
@@ -542,13 +1427,11 @@ include '../template/form.php';
                                 <img id="myImg" src="../image/equipment/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="" > </div>
-                        <div class="one columns"><label for="int_volume" style="text-align: left"><b>L</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="" > </div>
+                        <div class="two columns"><label for="int_volume" style="text-align: left"><b>L</b></label></div>
                         <div class="two columns"><label for="ext_dimension_d">(D) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="ext_dimension_d" name="ext_dimension_d" value="" > </div>
-                        <div class="one columns"><label for="ext_dimension_d" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="ext_dimension_d" name="ext_dimension_d" value="" > </div>
+                        <div class="two columns"><label for="ext_dimension_d" style="text-align: left"><b>mm</b></label></div>
                     </div>
                     <div class="row">
                         <div class="two columns">
@@ -573,9 +1456,8 @@ include '../template/form.php';
                         </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="ext_dimension_h">(H) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="ext_dimension_h" name="ext_dimension_h" value="" > </div>
-                        <div class="one columns"><label for="ext_dimension_h" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="ext_dimension_h" name="ext_dimension_h" value="" > </div>
+                        <div class="two columns"><label for="ext_dimension_h" style="text-align: left"><b>mm</b></label></div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="rack_material">Rack Material *</label></div>
@@ -600,9 +1482,8 @@ include '../template/form.php';
                                 <img id="myImg" src="../image/equipment/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="" > </div>
-                        <div class="one columns"><label for="int_dimension_w" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="" > </div>
+                        <div class="two columns"><label for="int_dimension_w" style="text-align: left"><b>mm</b></label></div>
                     </div>
                     <div class="row">
                         <div class="two columns">
@@ -614,13 +1495,11 @@ include '../template/form.php';
                                 <img id="myImg" src="../image/equipment/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="" ></div>
-                        <div class="one columns"><label for="rack_slot_pitch" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="" ></div>
+                        <div class="two columns"><label for="rack_slot_pitch" style="text-align: left"><b>mm</b></label></div>
                         <div class="two columns"><label for="int_dimension_d">(D) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="int_dimension_d" name="int_dimension_d" value="" > </div>
-                        <div class="one columns"><label for="int_dimension_d" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="int_dimension_d" name="int_dimension_d" value="" > </div>
+                        <div class="two columns"><label for="int_dimension_d" style="text-align: left"><b>mm</b></label></div>
                     </div>
                     <div class="row">
                         <div class="two columns">
@@ -632,19 +1511,16 @@ include '../template/form.php';
                                 <img id="myImg" src="../image/equipment/011.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="" > </div>
-                        <div class="one columns"><label for="rack_slot_width" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="" > </div>
+                        <div class="two columns"><label for="rack_slot_width" style="text-align: left"><b>mm</b></label></div>
                         <div class="two columns"><label for="int_dimension_h">(H) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="int_dimension_h" name="int_dimension_h" value="" > </div>
-                        <div class="one columns"><label for="int_dimension_h" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="int_dimension_h" name="int_dimension_h" value="" > </div>
+                        <div class="two columns"><label for="int_dimension_h" style="text-align: left"><b>mm</b></label></div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="eqpt_weight">Equipment Weight *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="eqpt_weight" name="eqpt_weight" value="" > </div>
-                        <div class="one columns"><label for="eqpt_weight" style="text-align: left"><b>Kg</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="eqpt_weight" name="eqpt_weight" value="" > </div>
+                        <div class="two columns"><label for="eqpt_weight" style="text-align: left"><b>Kg</b></label></div>
                         <div class="two columns">
                             <label for="rack_dimension_w">Rack Dimension (W) *</label>
                             <label for="toggle_07" class="view-image">Image</label>
@@ -654,9 +1530,8 @@ include '../template/form.php';
                                 <img id="myImg" src="../image/equipment/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="" > </div>
-                        <div class="one columns"><label for="rack_dimension_w" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="" > </div>
+                        <div class="two columns"><label for="rack_dimension_w" style="text-align: left"><b>mm</b></label></div>
                     </div>
                     <div class="row">
                         <div class="two columns">
@@ -668,13 +1543,11 @@ include '../template/form.php';
                                 <img id="myImg" src="../image/equipment/012.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="" ></div>
-                        <div class="one columns"><label for="no_mb_slot" style="text-align: left"><b>Slot</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="" ></div>
+                        <div class="two columns"><label for="no_mb_slot" style="text-align: left"><b>Slot</b></label></div>
                         <div class="two columns"><label for="rack_dimension_d">(D) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="rack_dimension_d" name="rack_dimension_d" value="" > </div>
-                        <div class="one columns"><label for="rack_dimension_d" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="rack_dimension_d" name="rack_dimension_d" value="" > </div>
+                        <div class="two columns"><label for="rack_dimension_d" style="text-align: left"><b>mm</b></label></div>
                     </div>
                     <div class="row">
                         <div class="two columns">
@@ -686,13 +1559,11 @@ include '../template/form.php';
                                 <img id="myImg" src="../image/equipment/013.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="" > </div>
-                        <div class="one columns"><label for="max_ps_bs" style="text-align: left"><b>Slot</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="" > </div>
+                        <div class="two columns"><label for="max_ps_bs" style="text-align: left"><b>Slot</b></label></div>
                         <div class="two columns"><label for="rack_dimension_h">(H) *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="" > </div>
-                        <div class="one columns"><label for="rack_dimension_h" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="" > </div>
+                        <div class="two columns"><label for="rack_dimension_h" style="text-align: left"><b>mm</b></label></div>
                     </div>
                     <div class="row">
                         <div class="two columns">
@@ -704,13 +1575,11 @@ include '../template/form.php';
                                 <img id="myImg" src="../image/equipment/014.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="" > </div>
-                        <div class="one columns"><label for="max_ps" style="text-align: left"><b>Unit</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="" > </div>
+                        <div class="two columns"><label for="max_ps" style="text-align: left"><b>Unit</b></label></div>
                         <div class="two columns"><label for="diameter">Diameter *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="diameter" name="diameter" value="" > </div>
-                        <div class="one columns"><label for="diameter" style="text-align: left"><b>mm</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="two columns"><input type="number" step="0.001" id="diameter" name="diameter" value="" > </div>
+                        <div class="two columns"><label for="diameter" style="text-align: left"><b>mm</b></label></div>
                     </div>
                     <div class="row">
                         <div class="two columns">
@@ -838,106 +1707,103 @@ include '../template/form.php';
                 </div>
                 
                 <div class="tab-content" id="tabUtlt">
-                    <div class="row">
-                        <div class="two columns"><label for="voltage">Voltage *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="voltage" name="voltage" value="" > </div>
-                        <div class="one columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="current">Current *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="current" name="current" value="" > </div>
-                        <div class="one columns"><label for="current" style="text-align: left"><b>A</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="phase">Phase *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="phase" name="phase" value="" > </div>
-                        <div class="one columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
-                        <div class="two columns">&nbsp;</div>
-                        <div class="two columns"><label for="exhaust">Exhaust *</label></div>
-                        <div class="three columns">
-                            <select id="exhaust" name="exhaust" style="width: 100%" >
-                                <option value="" selected=""></option>
-                                <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
-                            </select>
+                    <div id="divUtltAll">
+                        <div class="row">
+                            <div class="two columns"><label for="voltage">Voltage *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="voltage" name="voltage" value="" > </div>
+                            <div class="two columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="current">Current *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="current" name="current" value="" > </div>
+                            <div class="two columns"><label for="current" style="text-align: left"><b>A</b></label></div>
                         </div>
-                        <div class="one columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="liquid_nitrogen">Liquid Nitrogen *</label></div>
-                        <div class="three columns">
-                            <select id="liquid_nitrogen" name="liquid_nitrogen" style="width: 100%" >
-                                <option value="" selected=""></option>
-                                <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
-                            </select>
+                        <div class="row">
+                            <div class="two columns"><label for="phase">Phase *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="" > </div>
+                            <div class="two columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
+                            <div class="two columns"><label for="exhaust">Exhaust *</label></div>
+                            <div class="three columns">
+                                <select id="exhaust" name="exhaust" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="chilled_water">Chilled Water *</label></div>
-                        <div class="three columns">
-                            <select id="chilled_water" name="chilled_water" style="width: 100%">
-                                <option value="" selected=""></option>
-                                <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
-                            </select>
+                        <div class="row">
+                            <div class="two columns"><label for="liquid_nitrogen">Liquid Nitrogen *</label></div>
+                            <div class="three columns">
+                                <select id="liquid_nitrogen" name="liquid_nitrogen" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
+                            <div class="two columns"><label for="chilled_water">Chilled Water *</label></div>
+                            <div class="three columns">
+                                <select id="chilled_water" name="chilled_water" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
-                        <div class="one columns">&nbsp;</div>
-                    </div>
-
-                    <div class="row">
-                        <div class="two columns"><label for="cda">CDA *</label></div>
-                        <div class="three columns">
-                            <select id="cda" name="cda" style="width: 100%" >
-                                <option value="" selected=""></option>
-                                <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
-                            </select>
+                        <div class="row">
+                            <div class="two columns"><label for="cda">CDA *</label></div>
+                            <div class="three columns">
+                                <select id="cda" name="cda" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="lan">LAN *</label></div>
+                            <div class="three columns">
+                                <select id="lan" name="lan" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
                         </div>
-                        <div class="one columns" >&nbsp;</div>
-                        <div class="two columns"><label for="lan">LAN *</label></div>
-                        <div class="three columns">
-                            <select id="lan" name="lan" style="width: 100%">
-                                <option value="" selected=""></option>
-                                <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="n2gas">N2 Gas *</label></div>
-                        <div class="three columns">
-                            <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()">
-                                <option value="" selected=""></option>
-                                <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
-                            </select>
-                        </div>
-                        <div class="six columns" id="oxygen" style="display: none;">
-                            <div class="three columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
+                        <div class="row">
+                            <div class="two columns"><label for="n2gas">N2 Gas *</label></div>
+                            <div class="three columns">
+                                <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
                             <div class="three columns">
                                 <select id="oxygen_level" name="oxygen_level" style="width: 100%">
                                     <option value="" selected=""></option>
@@ -949,23 +1815,23 @@ include '../template/form.php';
                                     <?php endwhile; ?>
                                 </select>
                             </div>
+                            <div class="one columns" >&nbsp;</div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="di_water">DI Water *</label></div>
-                        <div class="three columns">
-                            <select id="di_water" name="di_water" style="width: 100%" onchange="updateToFieldWater()">
-                                <option value="" selected=""></option>
-                                <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
-                            </select>
-                        </div>
-                        <div class="six columns" id="topup" style="display: none;">
-                            <div class="three columns"><label for="water_topup">Water Top-up System *</label></div>
+                        <div class="row">
+                            <div class="two columns"><label for="di_water">DI Water *</label></div>
+                            <div class="three columns">
+                                <select id="di_water" name="di_water" style="width: 100%" onchange="updateToFieldWater()">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="water_topup">Water Top-up System *</label></div>
                             <div class="three columns">
                                 <select id="water_topup" name="water_topup" style="width: 100%">
                                     <option value="" selected=""></option>
@@ -977,6 +1843,662 @@ include '../template/form.php';
                                     <?php endwhile; ?>
                                 </select>
                             </div>
+                            <div class="one columns" >&nbsp;</div>
+                        </div>
+                    </div>
+                    <div id="divUtlt001" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="voltage">Voltage *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="voltage" name="voltage" value="" > </div>
+                            <div class="two columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="current">Current *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="current" name="current" value="" > </div>
+                            <div class="two columns"><label for="current" style="text-align: left"><b>A</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="phase">Phase *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="" > </div>
+                            <div class="two columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
+                            <div class="two columns"><label for="exhaust">Exhaust *</label></div>
+                            <div class="three columns">
+                                <select id="exhaust" name="exhaust" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="liquid_nitrogen">Liquid Nitrogen *</label></div>
+                            <div class="three columns">
+                                <select id="liquid_nitrogen" name="liquid_nitrogen" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
+                            <div class="two columns"><label for="chilled_water">Chilled Water *</label></div>
+                            <div class="three columns">
+                                <select id="chilled_water" name="chilled_water" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="cda">CDA *</label></div>
+                            <div class="three columns">
+                                <select id="cda" name="cda" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="lan">LAN *</label></div>
+                            <div class="three columns">
+                                <select id="lan" name="lan" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="n2gas">N2 Gas *</label></div>
+                            <div class="three columns">
+                                <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
+                            <div class="three columns">
+                                <select id="oxygen_level" name="oxygen_level" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                        </div>
+                    </div>
+                    <div id="divUtlt002" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="voltage">Voltage *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="voltage" name="voltage" value="" > </div>
+                            <div class="two columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="current">Current *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="current" name="current" value="" > </div>
+                            <div class="two columns"><label for="current" style="text-align: left"><b>A</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="phase">Phase *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="" > </div>
+                            <div class="two columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
+                            <div class="two columns"><label for="exhaust">Exhaust *</label></div>
+                            <div class="three columns">
+                                <select id="exhaust" name="exhaust" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="chilled_water">Chilled Water *</label></div>
+                            <div class="three columns">
+                                <select id="chilled_water" name="chilled_water" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="cda">CDA *</label></div>
+                            <div class="three columns">
+                                <select id="cda" name="cda" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="lan">LAN *</label></div>
+                            <div class="three columns">
+                                <select id="lan" name="lan" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="n2gas">N2 Gas *</label></div>
+                            <div class="three columns">
+                                <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
+                            <div class="three columns">
+                                <select id="oxygen_level" name="oxygen_level" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="di_water">DI Water *</label></div>
+                            <div class="three columns">
+                                <select id="di_water" name="di_water" style="width: 100%" onchange="updateToFieldWater()">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="water_topup">Water Top-up System *</label></div>
+                            <div class="three columns">
+                                <select id="water_topup" name="water_topup" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                        </div>
+                    </div>
+                    <div id="divUtlt003" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="voltage">Voltage *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="voltage" name="voltage" value="" > </div>
+                            <div class="two columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="current">Current *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="current" name="current" value="" > </div>
+                            <div class="two columns"><label for="current" style="text-align: left"><b>A</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="phase">Phase *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="" > </div>
+                            <div class="two columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
+                            <div class="two columns"><label for="exhaust">Exhaust *</label></div>
+                            <div class="three columns">
+                                <select id="exhaust" name="exhaust" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="chilled_water">Chilled Water *</label></div>
+                            <div class="three columns">
+                                <select id="chilled_water" name="chilled_water" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="cda">CDA *</label></div>
+                            <div class="three columns">
+                                <select id="cda" name="cda" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="lan">LAN *</label></div>
+                            <div class="three columns">
+                                <select id="lan" name="lan" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="n2gas">N2 Gas *</label></div>
+                            <div class="three columns">
+                                <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
+                            <div class="three columns">
+                                <select id="oxygen_level" name="oxygen_level" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                        </div>
+                    </div>
+                    <div id="divUtlt004" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="voltage">Voltage *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="voltage" name="voltage" value="" > </div>
+                            <div class="two columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="current">Current *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="current" name="current" value="" > </div>
+                            <div class="two columns"><label for="current" style="text-align: left"><b>A</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="phase">Phase *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="" > </div>
+                            <div class="two columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
+                            <div class="two columns"><label for="exhaust">Exhaust *</label></div>
+                            <div class="three columns">
+                                <select id="exhaust" name="exhaust" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="cda">CDA *</label></div>
+                            <div class="three columns">
+                                <select id="cda" name="cda" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="lan">LAN *</label></div>
+                            <div class="three columns">
+                                <select id="lan" name="lan" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="n2gas">N2 Gas *</label></div>
+                            <div class="three columns">
+                                <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
+                            <div class="three columns">
+                                <select id="oxygen_level" name="oxygen_level" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="di_water">DI Water *</label></div>
+                            <div class="three columns">
+                                <select id="di_water" name="di_water" style="width: 100%" onchange="updateToFieldWater()">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="water_topup">Water Top-up System *</label></div>
+                            <div class="three columns">
+                                <select id="water_topup" name="water_topup" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                        </div>
+                    </div>
+                    <div id="divUtlt005" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="voltage">Voltage *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="voltage" name="voltage" value="" > </div>
+                            <div class="two columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="current">Current *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="current" name="current" value="" > </div>
+                            <div class="two columns"><label for="current" style="text-align: left"><b>A</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="phase">Phase *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="" > </div>
+                            <div class="two columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
+                            <div class="two columns"><label for="exhaust">Exhaust *</label></div>
+                            <div class="three columns">
+                                <select id="exhaust" name="exhaust" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="cda">CDA *</label></div>
+                            <div class="three columns">
+                                <select id="cda" name="cda" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="lan">LAN *</label></div>
+                            <div class="three columns">
+                                <select id="lan" name="lan" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="n2gas">N2 Gas *</label></div>
+                            <div class="three columns">
+                                <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
+                            <div class="three columns">
+                                <select id="oxygen_level" name="oxygen_level" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                        </div>
+                    </div>
+                    <div id="divUtlt006" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="voltage">Voltage *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="voltage" name="voltage" value="" > </div>
+                            <div class="two columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="current">Current *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="current" name="current" value="" > </div>
+                            <div class="two columns"><label for="current" style="text-align: left"><b>A</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="phase">Phase *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="" > </div>
+                            <div class="two columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
+                            <div class="two columns"><label for="exhaust">Exhaust *</label></div>
+                            <div class="three columns">
+                                <select id="exhaust" name="exhaust" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="cda">CDA *</label></div>
+                            <div class="three columns">
+                                <select id="cda" name="cda" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="lan">LAN *</label></div>
+                            <div class="three columns">
+                                <select id="lan" name="lan" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="di_water">DI Water *</label></div>
+                            <div class="three columns">
+                                <select id="di_water" name="di_water" style="width: 100%" onchange="updateToFieldWater()">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="water_topup">Water Top-up System *</label></div>
+                            <div class="three columns">
+                                <select id="water_topup" name="water_topup" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                        </div>
+                    </div>
+                    <div id="divUtlt007" style="display: none;">
+                        <div class="row">
+                            <div class="two columns"><label for="voltage">Voltage *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="voltage" name="voltage" value="" > </div>
+                            <div class="two columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns"><label for="current">Current *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="current" name="current" value="" > </div>
+                            <div class="two columns"><label for="current" style="text-align: left"><b>A</b></label></div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="phase">Phase *</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="" > </div>
+                            <div class="two columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
+                            <div class="two columns"><label for="exhaust">Exhaust *</label></div>
+                            <div class="three columns">
+                                <select id="exhaust" name="exhaust" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="cda">CDA *</label></div>
+                            <div class="three columns">
+                                <select id="cda" name="cda" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
                         </div>
                     </div>
 
@@ -984,17 +2506,19 @@ include '../template/form.php';
                         function updateGas() {
                             var diWaterDropdown = document.getElementById('n2gas');
                             var oxyField = document.getElementById('oxygen_level');
-                            var oxyId = document.getElementById('oxygen');
+//                            var oxyId = document.getElementById('oxygen');
 
                             if (diWaterDropdown.value !== '022003') {
+                                console.log("7777");
                                 oxyField.readOnly = true;
                                 oxyField.required = false;
                                 $("#oxygen_level").val('');
-                                oxyId.style.display = 'none';
+                                oxyField.style.display = 'none';
                             } else {
+                                console.log("8888");
                                 oxyField.readOnly = false;
                                 oxyField.required = true;
-                                oxyId.style.display = 'block';
+                                oxyField.style.display = 'block';
                             }
                         }
                         function updateToFieldWater() {
@@ -1034,7 +2558,7 @@ include '../template/form.php';
                 </div>
                 
                 <div class="tab-content" id="tabInt">
-                    <div class="row">
+                    <div class="row" id="tab07">
                         <div class="two columns">
                             <label for="int_config_type">Configuration Type *</label>
                             <label for="toggle_16" class="view-image">Image</label>
@@ -1085,7 +2609,7 @@ include '../template/form.php';
                             <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="" > </div>
                             <div class="one columns"><label for="conn_temp_rating" style="text-align: left"><b>`C</b></label></div>
                             <div class="two columns">&nbsp;</div>
-                        </div>
+                    </div>
                     </div>
 
                     <div id="EdgeDiv" name="EdgeDiv" style="display: none;">
@@ -1223,11 +2747,29 @@ include '../template/form.php';
                                 wireDiv.style.display = 'none';
                             }
                         }
+                        
+                        function updateView() {
+                            var dd = document.getElementById('ext_config_type');
+                            var extDiv = document.getElementById('viewExternalDiv');
+                            var selectedValue = dd.value;
+
+                            $("#interface_volt_rating").val('');
+                            $("#interface_curr_rating").val('');
+
+                            // 032003 - NA
+                            // 032005 - Not Applicable
+                            // 032006 - Unknown
+                            if (selectedValue === '032003' || selectedValue === '032005' || selectedValue === '032006') {
+                                extDiv.style.display = 'none';
+                            } else {
+                                extDiv.style.display = 'block';
+                            }
+                        }
                     </script>
                 </div>
                 
                 <div class="tab-content" id="tabExt">
-                    <div class="row">
+                    <div class="row" id="tab08">
                         <div class="two columns">
                             <label for="ext_config_type">Configuration Type *</label>
                             <label for="toggle_20" class="view-image">Image</label>
@@ -1261,22 +2803,6 @@ include '../template/form.php';
                             <div class="two columns">&nbsp;</div>
                         </div>
                     </div>
-                    <script>
-                        function updateView() {
-                            var dd = document.getElementById('ext_config_type');
-                            var extDiv = document.getElementById('viewExternalDiv');
-                            var selectedValue = dd.value;
-
-                            $("#interface_volt_rating").val('');
-                            $("#interface_curr_rating").val('');
-
-                            if (selectedValue === '032003') {
-                                extDiv.style.display = 'none';
-                            } else {
-                                extDiv.style.display = 'block';
-                            }
-                        }
-                    </script>
                 </div>
             </div>
             
@@ -1293,7 +2819,6 @@ include '../template/form.php';
             const saveButton = document.getElementById('save-button');
             
             $( document ).ready(function() {
-                console.log( "ready!" );
                 draftButton.style.display = 'none';
                 saveButton.style.display = 'none';
             });
