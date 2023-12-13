@@ -566,7 +566,7 @@ $id = $_GET['view'];
                             </div>
                         </div>
                     <?php } endwhile; ?>
-                <button onclick="location.href = 'list.php'" type="button" id="backBtn"><i class='bx bxs-chevron-left bx-fw' ></i> Back</button>
+                <button onclick="location.href = '../list/list_equipment.php'" type="button" id="backBtn"><i class='bx bxs-chevron-left bx-fw' ></i> Back</button>
                 <button onclick="location.href = 'edit.php?edit=<?php echo $id; ?>'" type="button" id="editBtn"><i class='bx bxs-pencil bx-fw' ></i> Edit</button>
             </div>
         </form>

@@ -7,6 +7,7 @@
 
 include '../class/db.php';
 include '../class/ldap.php';
+include '../class/get_parameter.php';
 
 $id                 = $_GET['id'];
 $labLocation        = $_GET['lab_location'];
@@ -110,6 +111,10 @@ foreach ($_GET['relTest'] as $key => $value) {
     $dataRel = $dataRel . $inter . ",";
 }
 $dataRel = rtrim($dataRel, ", ");
+
+$eqptId = getCode($eqptId, '006', $username);
+$manufacturer = getCode($manufacturer, '009', $username);
+$model = getCode($model, '010', $username);
 
 $update = "UPDATE gest_form_eqpt SET "
         . "eqpt_id = '$eqptId', "

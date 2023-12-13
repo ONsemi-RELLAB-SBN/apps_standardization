@@ -1,5 +1,4 @@
 <?php
-
 /* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
@@ -147,12 +146,13 @@ $id = $_GET['edit'];
     </head>
 
     <body>
-        <form id="add_equipment_form" action="../crud/crud_add_equipment_new.php" method="get">
+        <form id="update_equipment_form" action="../crud/crud_update_equipment.php" method="get">
+<!--        <form id="add_equipment_form" action="../crud/crud_add_equipment_new.php" method="get">-->
             <?php
             $sqlFormData = "SELECT * FROM gest_form_eqpt WHERE id = '$id'";
             $resForm = mysqli_query($con, $sqlFormData);
             while ($rowForm = mysqli_fetch_array($resForm)): ?>
-                <input type="text" id="id" name="id" value="<?php echo $id; ?>">
+                <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
                 <div id="main-page">
                     <div class="twelve columns">&nbsp;</div>
                     <h5>General</h5>
@@ -311,7 +311,7 @@ $id = $_GET['edit'];
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="from" id="fromLabel">From? *</label></div>
                             <div class="three columns">
-                                <select id="from" name="from" style="width: 100%" readonly required>
+                                <select id="from" name="from" style="width: 100%">
                                     <option value="" selected=""></option>
                                     <?php
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '014' ORDER BY code ASC";
@@ -1273,7 +1273,7 @@ $id = $_GET['edit'];
         <script>
             const tabs = document.getElementById('tabs');
             const tabContents = document.querySelectorAll('.tab-content');
-            const form = document.getElementById('add_equipment_form');
+            const form = document.getElementById('update_equipment_form');
             const draftButton = document.getElementById('draft-button');
             const saveButton = document.getElementById('save-button');
             
