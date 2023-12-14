@@ -24,7 +24,7 @@ $mfgDate            = $_GET['mfg_date'];
 $assetNo            = $_GET['asset_no'];
 $newTransfer        = $_GET['new_transfer'];
 $from               = $_GET['from'];
-$zone               = $_GET['zon'];
+$zone               = $_GET['zone'];
 
 $voltRating         = $_GET['volt_rating'];
 $voltControl        = $_GET['volt_control'];

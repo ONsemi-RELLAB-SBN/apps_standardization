@@ -17,7 +17,7 @@ include '../class/ldap.php';
         <meta name="author" content="Ayep" />
         <link rel="shortcut icon" href="../image/logo/onsemi_logo.ico">
 
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
+        <link href="../css/font01/Varela-Round.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="../css/w3.css">
         <link rel="stylesheet" href="../css/menu.css"/>
         <link rel="stylesheet" type="text/css" href="../css/normalize.css">

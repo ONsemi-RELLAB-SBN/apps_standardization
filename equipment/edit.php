@@ -226,8 +226,8 @@ $id = $_GET['edit'];
                         <li data-tab="tabSafe">Safety</li>
                         <li data-tab="tabUtlt">Utilities</li>
                         <li data-tab="tabDaq">DAQ</li>
-                        <li data-tab="tabInt">Internal Chamber Configuration</li>
-                        <li data-tab="tabExt">External Chamber Configuration</li>
+                        <li data-tab="tabInt" id="tb07">Internal Chamber Configuration</li>
+                        <li data-tab="tabExt" id="tb08">External Chamber Configuration</li>
                     </ul>
 
                     <div class="tab-content active" id="tabIdtt">
@@ -363,8 +363,8 @@ $id = $_GET['edit'];
 
                             function updateRelTest() {
                                 var newreltest = document.getElementById('relTest');
-                                var zoneF = document.getElementById('zoneField');
-                                var zone = document.getElementById('zone');
+//                                var zoneF = document.getElementById('zoneField');
+//                                var zone = document.getElementById('zone');
                                 var selected = [...newreltest.selectedOptions].map(option => option.value);
 
     //                            if (selected.includes("008019") || selected.includes("008021")) {
@@ -377,6 +377,9 @@ $id = $_GET['edit'];
     //                                zone.required = false;
     //                                zoneF.style.display = 'none';
     //                            }
+                                
+                                var tab7 = document.getElementById('tb07');
+                                var tab8 = document.getElementById('tb08');
                                 
                                 var cp_vr1 = document.getElementById('labelvoltrating1');
                                 var cp_vr2 = document.getElementById('labelvoltrating2');
@@ -427,6 +430,34 @@ $id = $_GET['edit'];
                                 var cp_hu2 = document.getElementById('labelhumid2');
                                 var cp_hu3 = document.getElementById('humid_fluctuation');
                                 
+                                var ut_v1 = document.getElementById('labelvoltage1');
+                                var ut_v2 = document.getElementById('labelvoltage2');
+                                var ut_v3 = document.getElementById('voltage');
+                                var ut_c1 = document.getElementById('labelcurrent1');
+                                var ut_c2 = document.getElementById('labelcurrent2');
+                                var ut_c3 = document.getElementById('current');
+                                var ut_p1 = document.getElementById('labelphase1');
+                                var ut_p2 = document.getElementById('labelphase2');
+                                var ut_p3 = document.getElementById('phase');
+                                var ut_x1 = document.getElementById('labelexhaust');
+                                var ut_x2 = document.getElementById('exhaust');
+                                var ut_q1 = document.getElementById('labelliquid');
+                                var ut_q2 = document.getElementById('liquid_nitrogen');
+                                var ut_cw1 = document.getElementById('labelchill');
+                                var ut_cw2 = document.getElementById('chilled_water');
+                                var ut_cda1 = document.getElementById('labelcda');
+                                var ut_cda2 = document.getElementById('cda');
+                                var ut_l1 = document.getElementById('labellan');
+                                var ut_l2 = document.getElementById('lan');
+                                var ut_g1 = document.getElementById('labelgas');
+                                var ut_g2 = document.getElementById('n2gas');
+                                var ut_xx1 = document.getElementById('labelexygen');
+                                var ut_xx2 = document.getElementById('oxygen_level');
+                                var ut_d1 = document.getElementById('labeldiwater');
+                                var ut_d2 = document.getElementById('di_water');
+                                var ut_t1 = document.getElementById('labeltopup');
+                                var ut_t2 = document.getElementById('water_topup');
+                                
                                 if (transfer.value === '013001') {
                                     inputfrom.style.display = 'none';
                                     labelfrom.style.display = 'none';
@@ -436,6 +467,9 @@ $id = $_GET['edit'];
                                 }
 
                                 if (reltest.value === '008016') {                               // PTC
+                                    tab7.style.display = 'block';
+                                    tab8.style.display = 'block';
+                                
                                     cp_vr1.style.display = 'block';
                                     cp_vr2.style.display = 'block';
                                     cp_vr3.style.display = 'block';
@@ -484,7 +518,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'none';
                                     cp_hu2.style.display = 'none';
                                     cp_hu3.style.display = 'none';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'block';
+                                    ut_g2.style.display = 'block';
+                                    ut_xx1.style.display = 'block';
+                                    ut_xx2.style.display = 'block';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'block';
+                                    ut_cw2.style.display = 'block';
+                                    ut_d1.style.display = 'none';
+                                    ut_d2.style.display = 'none';
+                                    ut_t1.style.display = 'none';
+                                    ut_t2.style.display = 'none';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008012') {                        // IOL
+                                    tab7.style.display = 'block';
+                                    tab8.style.display = 'block';
+                                    
                                     cp_vr1.style.display = 'block';
                                     cp_vr2.style.display = 'block';
                                     cp_vr3.style.display = 'block';
@@ -533,7 +598,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'none';
                                     cp_hu2.style.display = 'none';
                                     cp_hu3.style.display = 'none';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'none';
+                                    ut_g2.style.display = 'none';
+                                    ut_xx1.style.display = 'none';
+                                    ut_xx2.style.display = 'none';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'none';
+                                    ut_cw2.style.display = 'none';
+                                    ut_d1.style.display = 'none';
+                                    ut_d2.style.display = 'none';
+                                    ut_t1.style.display = 'none';
+                                    ut_t2.style.display = 'none';
+                                    ut_cda1.style.display = 'none';
+                                    ut_cda2.style.display = 'none';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008005') {                        // HAST
+                                    tab7.style.display = 'block';
+                                    tab8.style.display = 'block';
+                                    
                                     cp_vr1.style.display = 'block';
                                     cp_vr2.style.display = 'block';
                                     cp_vr3.style.display = 'block';
@@ -582,7 +678,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'block';
                                     cp_hu2.style.display = 'block';
                                     cp_hu3.style.display = 'block';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'none';
+                                    ut_g2.style.display = 'none';
+                                    ut_xx1.style.display = 'none';
+                                    ut_xx2.style.display = 'none';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'none';
+                                    ut_cw2.style.display = 'none';
+                                    ut_d1.style.display = 'block';
+                                    ut_d2.style.display = 'block';
+                                    ut_t1.style.display = 'block';
+                                    ut_t2.style.display = 'block';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008003' || reltest.value === '008004' || reltest.value === '008020') {            // H3T, H3TRB, THB
+                                    tab7.style.display = 'block';
+                                    tab8.style.display = 'block';
+                                    
                                     cp_vr1.style.display = 'block';
                                     cp_vr2.style.display = 'block';
                                     cp_vr3.style.display = 'block';
@@ -631,7 +758,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'block';
                                     cp_hu2.style.display = 'block';
                                     cp_hu3.style.display = 'block';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'none';
+                                    ut_g2.style.display = 'none';
+                                    ut_xx1.style.display = 'none';
+                                    ut_xx2.style.display = 'none';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'none';
+                                    ut_cw2.style.display = 'none';
+                                    ut_d1.style.display = 'block';
+                                    ut_d2.style.display = 'block';
+                                    ut_t1.style.display = 'block';
+                                    ut_t2.style.display = 'block';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008002' || reltest.value === '008006' || reltest.value === '008007' || reltest.value === '008008' || reltest.value === '008010') {            // ELFR, HTRB, HTGB, HTFB, HTOL
+                                    tab7.style.display = 'block';
+                                    tab8.style.display = 'block';
+                                    
                                     cp_vr1.style.display = 'block';
                                     cp_vr2.style.display = 'block';
                                     cp_vr3.style.display = 'block';
@@ -680,7 +838,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'none';
                                     cp_hu2.style.display = 'none';
                                     cp_hu3.style.display = 'none';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'block';
+                                    ut_g2.style.display = 'block';
+                                    ut_xx1.style.display = 'block';
+                                    ut_xx2.style.display = 'block';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'none';
+                                    ut_cw2.style.display = 'none';
+                                    ut_d1.style.display = 'none';
+                                    ut_d2.style.display = 'none';
+                                    ut_t1.style.display = 'none';
+                                    ut_t2.style.display = 'none';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008013') {                        // LTOL
+                                    tab7.style.display = 'block';
+                                    tab8.style.display = 'block';
+                                    
                                     cp_vr1.style.display = 'block';
                                     cp_vr2.style.display = 'block';
                                     cp_vr3.style.display = 'block';
@@ -729,7 +918,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'none';
                                     cp_hu2.style.display = 'none';
                                     cp_hu3.style.display = 'none';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'block';
+                                    ut_g2.style.display = 'block';
+                                    ut_xx1.style.display = 'block';
+                                    ut_xx2.style.display = 'block';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'block';
+                                    ut_cw2.style.display = 'block';
+                                    ut_d1.style.display = 'block';
+                                    ut_d2.style.display = 'block';
+                                    ut_t1.style.display = 'block';
+                                    ut_t2.style.display = 'block';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008018') {                        // SSOL
+                                    tab7.style.display = 'block';
+                                    tab8.style.display = 'block';
+                                    
                                     cp_vr1.style.display = 'block';
                                     cp_vr2.style.display = 'block';
                                     cp_vr3.style.display = 'block';
@@ -778,7 +998,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'none';
                                     cp_hu2.style.display = 'none';
                                     cp_hu3.style.display = 'none';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'none';
+                                    ut_g2.style.display = 'none';
+                                    ut_xx1.style.display = 'none';
+                                    ut_xx2.style.display = 'none';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'none';
+                                    ut_cw2.style.display = 'none';
+                                    ut_d1.style.display = 'none';
+                                    ut_d2.style.display = 'none';
+                                    ut_t1.style.display = 'none';
+                                    ut_t2.style.display = 'none';
+                                    ut_cda1.style.display = 'none';
+                                    ut_cda2.style.display = 'none';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008001' || reltest.value === '008023') {          // AC, UHAST
+                                    tab7.style.display = 'none';
+                                    tab8.style.display = 'none';
+                                    
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
                                     cp_vr3.style.display = 'none';
@@ -827,7 +1078,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'block';
                                     cp_hu2.style.display = 'block';
                                     cp_hu3.style.display = 'block';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'none';
+                                    ut_g2.style.display = 'none';
+                                    ut_xx1.style.display = 'none';
+                                    ut_xx2.style.display = 'none';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'none';
+                                    ut_cw2.style.display = 'none';
+                                    ut_d1.style.display = 'block';
+                                    ut_d2.style.display = 'block';
+                                    ut_t1.style.display = 'block';
+                                    ut_t2.style.display = 'block';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008022') {                        // THU
+                                    tab7.style.display = 'none';
+                                    tab8.style.display = 'none';
+                                    
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
                                     cp_vr3.style.display = 'none';
@@ -876,7 +1158,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'block';
                                     cp_hu2.style.display = 'block';
                                     cp_hu3.style.display = 'block';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'block';
+                                    ut_g2.style.display = 'block';
+                                    ut_xx1.style.display = 'block';
+                                    ut_xx2.style.display = 'block';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'none';
+                                    ut_cw2.style.display = 'none';
+                                    ut_d1.style.display = 'block';
+                                    ut_d2.style.display = 'block';
+                                    ut_t1.style.display = 'block';
+                                    ut_t2.style.display = 'block';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008015') {                        // MSL
+                                    tab7.style.display = 'none';
+                                    tab8.style.display = 'none';
+                                    
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
                                     cp_vr3.style.display = 'none';
@@ -925,7 +1238,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'block';
                                     cp_hu2.style.display = 'block';
                                     cp_hu3.style.display = 'block';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'none';
+                                    ut_g2.style.display = 'none';
+                                    ut_xx1.style.display = 'none';
+                                    ut_xx2.style.display = 'none';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'none';
+                                    ut_cw2.style.display = 'none';
+                                    ut_d1.style.display = 'block';
+                                    ut_d2.style.display = 'block';
+                                    ut_t1.style.display = 'block';
+                                    ut_t2.style.display = 'block';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008017') {                        // RTHS
+                                    tab7.style.display = 'none';
+                                    tab8.style.display = 'none';
+                                    
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
                                     cp_vr3.style.display = 'none';
@@ -974,7 +1318,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'block';
                                     cp_hu2.style.display = 'block';
                                     cp_hu3.style.display = 'block';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'block';
+                                    ut_g2.style.display = 'block';
+                                    ut_xx1.style.display = 'block';
+                                    ut_xx2.style.display = 'block';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'none';
+                                    ut_cw2.style.display = 'none';
+                                    ut_d1.style.display = 'block';
+                                    ut_d2.style.display = 'block';
+                                    ut_t1.style.display = 'block';
+                                    ut_t2.style.display = 'block';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008021') {                        // THS
+                                    tab7.style.display = 'none';
+                                    tab8.style.display = 'none';
+                                    
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
                                     cp_vr3.style.display = 'none';
@@ -1023,7 +1398,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'block';
                                     cp_hu2.style.display = 'block';
                                     cp_hu3.style.display = 'block';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'block';
+                                    ut_g2.style.display = 'block';
+                                    ut_xx1.style.display = 'block';
+                                    ut_xx2.style.display = 'block';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'block';
+                                    ut_cw2.style.display = 'block';
+                                    ut_d1.style.display = 'block';
+                                    ut_d2.style.display = 'block';
+                                    ut_t1.style.display = 'block';
+                                    ut_t2.style.display = 'block';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008009') {                        // HTHS
+                                    tab7.style.display = 'none';
+                                    tab8.style.display = 'none';
+                                    
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
                                     cp_vr3.style.display = 'none';
@@ -1072,7 +1478,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'none';
                                     cp_hu2.style.display = 'none';
                                     cp_hu3.style.display = 'none';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'block';
+                                    ut_g2.style.display = 'block';
+                                    ut_xx1.style.display = 'block';
+                                    ut_xx2.style.display = 'block';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'none';
+                                    ut_cw2.style.display = 'none';
+                                    ut_d1.style.display = 'block';
+                                    ut_d2.style.display = 'block';
+                                    ut_t1.style.display = 'block';
+                                    ut_t2.style.display = 'block';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008011') {                        // HTSL
+                                    tab7.style.display = 'none';
+                                    tab8.style.display = 'none';
+                                    
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
                                     cp_vr3.style.display = 'none';
@@ -1121,7 +1558,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'none';
                                     cp_hu2.style.display = 'none';
                                     cp_hu3.style.display = 'none';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'block';
+                                    ut_g2.style.display = 'block';
+                                    ut_xx1.style.display = 'block';
+                                    ut_xx2.style.display = 'block';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'none';
+                                    ut_cw2.style.display = 'none';
+                                    ut_d1.style.display = 'none';
+                                    ut_d2.style.display = 'none';
+                                    ut_t1.style.display = 'none';
+                                    ut_t2.style.display = 'none';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008014') {                        // LTSL
+                                    tab7.style.display = 'none';
+                                    tab8.style.display = 'none';
+                                    
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
                                     cp_vr3.style.display = 'none';
@@ -1170,7 +1638,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'none';
                                     cp_hu2.style.display = 'none';
                                     cp_hu3.style.display = 'none';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'block';
+                                    ut_g2.style.display = 'block';
+                                    ut_xx1.style.display = 'block';
+                                    ut_xx2.style.display = 'block';
+                                    ut_q1.style.display = 'none';
+                                    ut_q2.style.display = 'none';
+                                    ut_cw1.style.display = 'block';
+                                    ut_cw2.style.display = 'block';
+                                    ut_d1.style.display = 'block';
+                                    ut_d2.style.display = 'block';
+                                    ut_t1.style.display = 'block';
+                                    ut_t2.style.display = 'block';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else if (reltest.value === '008019') {                        // TC
+                                    tab7.style.display = 'none';
+                                    tab8.style.display = 'none';
+                                    
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
                                     cp_vr3.style.display = 'none';
@@ -1219,7 +1718,38 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'none';
                                     cp_hu2.style.display = 'none';
                                     cp_hu3.style.display = 'none';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'block';
+                                    ut_g2.style.display = 'block';
+                                    ut_xx1.style.display = 'block';
+                                    ut_xx2.style.display = 'block';
+                                    ut_q1.style.display = 'block';
+                                    ut_q2.style.display = 'block';
+                                    ut_cw1.style.display = 'block';
+                                    ut_cw2.style.display = 'block';
+                                    ut_d1.style.display = 'none';
+                                    ut_d2.style.display = 'none';
+                                    ut_t1.style.display = 'none';
+                                    ut_t2.style.display = 'none';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 } else {
+                                    tab7.style.display = 'block';
+                                    tab8.style.display = 'block';
+                                    
                                     cp_vr1.style.display = 'block';
                                     cp_vr2.style.display = 'block';
                                     cp_vr3.style.display = 'block';
@@ -1268,6 +1798,34 @@ $id = $_GET['edit'];
                                     cp_hu1.style.display = 'block';
                                     cp_hu2.style.display = 'block';
                                     cp_hu3.style.display = 'block';
+                                    
+                                    ut_v1.style.display = 'block';
+                                    ut_v2.style.display = 'block';
+                                    ut_v3.style.display = 'block';
+                                    ut_c1.style.display = 'block';
+                                    ut_c2.style.display = 'block';
+                                    ut_c3.style.display = 'block';
+                                    ut_p1.style.display = 'block';
+                                    ut_p2.style.display = 'block';
+                                    ut_p3.style.display = 'block';
+                                    ut_x1.style.display = 'block';
+                                    ut_x2.style.display = 'block';
+                                    ut_g1.style.display = 'block';
+                                    ut_g2.style.display = 'block';
+                                    ut_xx1.style.display = 'block';
+                                    ut_xx2.style.display = 'block';
+                                    ut_q1.style.display = 'block';
+                                    ut_q2.style.display = 'block';
+                                    ut_cw1.style.display = 'block';
+                                    ut_cw2.style.display = 'block';
+                                    ut_d1.style.display = 'block';
+                                    ut_d2.style.display = 'block';
+                                    ut_t1.style.display = 'block';
+                                    ut_t2.style.display = 'block';
+                                    ut_cda1.style.display = 'block';
+                                    ut_cda2.style.display = 'block';
+                                    ut_l1.style.display = 'block';
+                                    ut_l2.style.display = 'block';
                                 }
                             }
                         </script>
@@ -1715,21 +2273,21 @@ $id = $_GET['edit'];
 
                     <div class="tab-content" id="tabUtlt">
                         <div class="row">
-                            <div class="two columns"><label for="voltage" id="labelvoltage">Voltage *</label></div>
+                            <div class="two columns"><label for="voltage" id="labelvoltage1">Voltage *</label></div>
                             <div class="one columns"><input type="number" step="0.001" id="voltage" name="voltage" value="<?php echo $rowForm['voltage']; ?>" > </div>
-                            <div class="one columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
+                            <div class="one columns"><label for="voltage" id="labelvoltage2" style="text-align: left"><b>V</b></label></div>
                             <div class="two columns">&nbsp;</div>
-                            <div class="two columns"><label for="current">Current *</label></div>
+                            <div class="two columns"><label for="current" id="labelcurrent1">Current *</label></div>
                             <div class="one columns"><input type="number" step="0.001" id="current" name="current" value="<?php echo $rowForm['phase']; ?>" > </div>
-                            <div class="one columns"><label for="current" style="text-align: left"><b>A</b></label></div>
+                            <div class="one columns"><label for="current" id="labelcurrent2" style="text-align: left"><b>A</b></label></div>
                             <div class="two columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="phase">Phase *</label></div>
+                            <div class="two columns"><label for="phase" id="labelphase1">Phase *</label></div>
                             <div class="one columns"><input type="number" step="0.001" id="phase" name="phase" value="<?php echo $rowForm['current']; ?>" > </div>
-                            <div class="one columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
+                            <div class="one columns"><label for="phase" id="labelphase2" style="text-align: left"><b>Phase</b></label></div>
                             <div class="two columns">&nbsp;</div>
-                            <div class="two columns"><label for="exhaust">Exhaust *</label></div>
+                            <div class="two columns"><label for="exhaust" id="labelexhaust">Exhaust *</label></div>
                             <div class="three columns">
                                 <select id="exhaust" name="exhaust" style="width: 100%" >
                                     <option value="" selected=""></option>
@@ -1744,20 +2302,7 @@ $id = $_GET['edit'];
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="liquid_nitrogen">Liquid Nitrogen *</label></div>
-                            <div class="three columns">
-                                <select id="liquid_nitrogen" name="liquid_nitrogen" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['liquid_nitrogen']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
-                                </select>
-                            </div>
-                            <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="chilled_water">Chilled Water *</label></div>
+                            <div class="two columns"><label for="chilled_water" id="labelchill">Chilled Water *</label></div>
                             <div class="three columns">
                                 <select id="chilled_water" name="chilled_water" style="width: 100%">
                                     <option value="" selected=""></option>
@@ -1770,10 +2315,35 @@ $id = $_GET['edit'];
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
+                            <div class="two columns"><label for="liquid_nitrogen" id="labelliquid">Liquid Nitrogen *</label></div>
+                            <div class="three columns">
+                                <select id="liquid_nitrogen" name="liquid_nitrogen" style="width: 100%" >
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['liquid_nitrogen']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
-
                         <div class="row">
-                            <div class="two columns"><label for="cda">CDA *</label></div>
+                            <div class="two columns"><label for="lan" id="labellan">LAN *</label></div>
+                            <div class="three columns">
+                                <select id="lan" name="lan" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['lan']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="cda" id="labelcda">CDA *</label></div>
                             <div class="three columns">
                                 <select id="cda" name="cda" style="width: 100%" >
                                     <option value="" selected=""></option>
@@ -1786,21 +2356,9 @@ $id = $_GET['edit'];
                                 </select>
                             </div>
                             <div class="one columns" >&nbsp;</div>
-                            <div class="two columns"><label for="lan">LAN *</label></div>
-                            <div class="three columns">
-                                <select id="lan" name="lan" style="width: 100%">
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['lan']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
-                                </select>
-                            </div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="n2gas">N2 Gas *</label></div>
+                            <div class="two columns"><label for="n2gas" id="labelgas">N2 Gas *</label></div>
                             <div class="three columns">
                                 <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()">
                                     <option value="" selected=""></option>
@@ -1812,23 +2370,22 @@ $id = $_GET['edit'];
                                     <?php endwhile; ?>
                                 </select>
                             </div>
-                            <div class="six columns" id="oxygen" style="display: none;">
-                                <div class="three columns"><label for="oxygen_level">Oxygen Level Detector *</label></div>
-                                <div class="three columns">
-                                    <select id="oxygen_level" name="oxygen_level" style="width: 100%">
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['oxygen_level_detector']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
+                            <div class="one columns" >&nbsp;</div>
+                            <div class="two columns"><label for="oxygen_level" id="labelexygen">Oxygen Level Detector *</label></div>
+                            <div class="three columns">
+                                <select id="oxygen_level" name="oxygen_level" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['oxygen_level_detector']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="di_water">DI Water *</label></div>
+                            <div class="two columns"><label for="di_water" id="labeldiwater">DI Water *</label></div>
                             <div class="three columns">
                                 <select id="di_water" name="di_water" style="width: 100%" onchange="updateToFieldWater()">
                                     <option value="" selected=""></option>
@@ -1841,20 +2398,18 @@ $id = $_GET['edit'];
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="six columns" id="topup" style="display: none;">
-                                <div class="four columns"><label for="water_topup">Water Top-up System *</label></div>
-                                <div class="six columns">
-                                    <select id="water_topup" name="water_topup" style="width: 100%">
-                                        <option value="" selected=""></option>
-                                        <?php
-                                        $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
-                                        $resSite = mysqli_query($con, $sqlDdSite);
-                                        while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                            <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['water_topup_system']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
-                                    </select>
-                                </div>
-                                <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><label for="water_topup" id="labeltopup">Water Top-up System *</label></div>
+                            <div class="three columns">
+                                <select id="water_topup" name="water_topup" style="width: 100%">
+                                    <option value="" selected=""></option>
+                                    <?php
+                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
+                                    $resSite = mysqli_query($con, $sqlDdSite);
+                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['water_topup_system']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
                             </div>
                         </div>
 
@@ -1862,32 +2417,36 @@ $id = $_GET['edit'];
                             function updateGas() {
                                 var diWaterDropdown = document.getElementById('n2gas');
                                 var oxyField = document.getElementById('oxygen_level');
-                                var oxyId = document.getElementById('oxygen');
+                                var oxylabel = document.getElementById('labelexygen');
 
                                 if (diWaterDropdown.value !== '022003') {
                                     oxyField.readOnly = true;
                                     oxyField.required = false;
                                     $("#oxygen_level").val('');
-                                    oxyId.style.display = 'none';
+                                    oxylabel.style.display = 'none';
+                                    oxyField.style.display = 'none';
                                 } else {
                                     oxyField.readOnly = false;
                                     oxyField.required = true;
-                                    oxyId.style.display = 'block';
+                                    oxylabel.style.display = 'block';
+                                    oxyField.style.display = 'block';
                                 }
                             }
                             function updateToFieldWater() {
                                 var diWaterDropdown = document.getElementById('di_water');
                                 var waterField = document.getElementById('water_topup');
-                                var topapField = document.getElementById('topup');
+                                var topapField = document.getElementById('labeltopup');
 
                                 if (diWaterDropdown.value !== '022003') {
                                     waterField.readOnly = true;
                                     waterField.required = false;
+                                    waterField.style.display = 'none';
                                     topapField.style.display = 'none';
                                     $("#water_topup").val('');
                                 } else {
                                     waterField.readOnly = false;
                                     waterField.required = true;
+                                    waterField.style.display = 'block';
                                     topapField.style.display = 'block';
                                 }
                             }
@@ -1934,9 +2493,75 @@ $id = $_GET['edit'];
                                 </select>
                             </div>
                         </div>
+                        
+                        <div class="row" id="divvoltcurrent">
+                            <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
+                            <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
+                            <div class="two columns">
+                                <label for="toggle_17" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_17">
+                                <dialog>
+                                    <label for="toggle_17" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/017.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
+                            <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="conn_temp_rating" id="labelconntemprate1">Connector Temp Rating *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > </div>
+                            <div class="one columns"><label for="conn_temp_rating" id="labelconntemprate2" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><label for="banana_jack_hole" id="labelbananajack1">No. Banana Jack Holes *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" > </div>
+                            <div class="one columns"><label for="banana_jack_hole" id="labelbananajack2" style="text-align: left"><b>Pins</b></label></div>
+                        </div>
+                        <div class="row" id="divPin">
+                            <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
+                            <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
+                            <div class="two columns">
+                                <label for="toggle_18" class="view-image">Image</label>
+                                <input type="checkbox" id="toggle_18">
+                                <dialog>
+                                    <label for="toggle_18" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
+                                    <img id="myImg" src="../image/equipment/018.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
+                                </dialog>
+                            </div>
+                            <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
+                            <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
+                            <div class="two columns">&nbsp;</div>
+                        </div>
+                        <div class="row" id="divconrack">
+                            <div class="two columns"><label for="conn_rack">No. Wires Connected to Rack *</label></div>
+                            <div class="one columns"><input type="number" step="0.001" id="conn_rack" name="conn_rack" value="<?php echo $rowForm['no_wire_conn_rack']; ?>" > </div>
+                            <div class="one columns"><label for="conn_rack" style="text-align: left"><b>`C</b></label></div>
+                        </div>
+                        <div class="row" id="WireDiv" name="WireDiv"" style="display: none;">
+                            <div class="row">
+                                <div class="two columns"><label for="wire_volt_rating">Wire Voltage Rating *</label></div>
+                                <div class="one columns"><input type="number" step="0.001" id="wire_volt_rating" name="wire_volt_rating" value="<?php echo $rowForm['wire_volt_rating']; ?>" > </div>
+                                <div class="one columns"><label for="wire_volt_rating" style="text-align: left"><b>V</b></label></div>
+                                <div class="two columns">&nbsp;</div>
+                                <div class="two columns"><label for="wire_curr_rating">Wire Current Rating *</label></div>
+                                <div class="one columns"><input type="number" step="0.001" id="wire_curr_rating" name="wire_curr_rating" value="<?php echo $rowForm['wire_curr_rating']; ?>" > </div>
+                                <div class="one columns"><label for="wire_curr_rating" style="text-align: left"><b>A</b></label></div>
+                                <div class="two columns">&nbsp;</div>
+                            </div>
+                            <div class="row">
+                                <div class="two columns"><label for="wire_temp_rating">Wire Temp Rating *</label></div>
+                                <div class="one columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value="<?php echo $rowForm['wire_temp_rating']; ?>" > </div>
+                                <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>`C</b></label></div>
+                            </div>
+                        </div>
 
                         <!--TODO - please reassign semua data dekat bawah, set bagi data tu satu persatu, sbb duplicate data dia tak bole reset the second value-->
-                        <div id="BananaDiv" name="BananaDiv" style="display: none;">
+<!--                        <div id="BananaDiv" name="BananaDiv" style="display: none;">
                             <div class="row">
                                 <div class="two columns"><label for="banana_jack_hole">No. Banana Jack Holes *</label></div>
                                 <div class="one columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" > </div>
@@ -2052,21 +2677,33 @@ $id = $_GET['edit'];
                                 <div class="one columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value="<?php echo $rowForm['wire_temp_rating']; ?>" > </div>
                                 <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>`C</b></label></div>
                             </div>
-                        </div>
+                        </div>-->
 
                         <script>
                             function updateDiv() {
                                 var dropdown = document.getElementById('int_config_type');
-                                var bananaDiv = document.getElementById('BananaDiv');
-                                var edgeDiv = document.getElementById('EdgeDiv');
-                                var winDiv = document.getElementById('WinchestorDiv');
-                                var wireDiv = document.getElementById('WireDiv');
                                 var selectedValue = dropdown.value;
+                                
+//                                var bananaDiv = document.getElementById('BananaDiv');
+//                                var edgeDiv = document.getElementById('EdgeDiv');
+//                                var winDiv = document.getElementById('WinchestorDiv');
+//                                var wireDiv = document.getElementById('WireDiv');
+                                
+                                var div01 = document.getElementById('divvoltcurrent');
+                                var ic_t1 = document.getElementById('labelconntemprate1');
+                                var ic_t2 = document.getElementById('labelconntemprate2');
+                                var ic_t3 = document.getElementById('conn_temp_rating');
+                                var ic_j1 = document.getElementById('labelbananajack1');
+                                var ic_j2 = document.getElementById('labelbananajack2');
+                                var ic_j3 = document.getElementById('banana_jack_hole');
+                                var div03 = document.getElementById('divPin');
+                                var div04 = document.getElementById('divconrack');
+                                var div05 = document.getElementById('WireDiv');
 
-                                $("#banana_jack_hole").val('');
                                 $("#conn_volt_rating").val('');
                                 $("#conn_curr_rating").val('');
                                 $("#conn_temp_rating").val('');
+                                $("#banana_jack_hole").val('');
                                 $("#no_pins").val('');
                                 $("#pin_pitch").val('');
                                 $("#conn_rack").val('');
@@ -2074,31 +2711,61 @@ $id = $_GET['edit'];
                                 $("#wire_curr_rating").val('');
                                 $("#wire_temp_rating").val('');
 
-                                if (selectedValue === '031001') {
-                                    bananaDiv.style.display = 'block';
-                                    edgeDiv.style.display = 'none';
-                                    winDiv.style.display = 'none';
-                                    wireDiv.style.display = 'none';
-                                } else if (selectedValue === '031002') {
-                                    bananaDiv.style.display = 'none';
-                                    edgeDiv.style.display = 'block';
-                                    winDiv.style.display = 'none';
-                                    wireDiv.style.display = 'none';
-                                } else if (selectedValue === '031003') {
-                                    bananaDiv.style.display = 'none';
-                                    edgeDiv.style.display = 'none';
-                                    winDiv.style.display = 'block';
-                                    wireDiv.style.display = 'none';
-                                } else if (selectedValue === '031004') {
-                                    bananaDiv.style.display = 'none';
-                                    edgeDiv.style.display = 'none';
-                                    winDiv.style.display = 'none';
-                                    wireDiv.style.display = 'block';
+                                if (selectedValue === '031001') {               // Banana
+                                    div01.style.display = 'block';
+                                    ic_t1.style.display = 'block';
+                                    ic_t2.style.display = 'block';
+                                    ic_t3.style.display = 'block';
+                                    ic_j1.style.display = 'block';
+                                    ic_j2.style.display = 'block';
+                                    ic_j3.style.display = 'block';
+                                    div03.style.display = 'none';
+                                    div04.style.display = 'none';
+                                    div05.style.display = 'none';
+                                } else if (selectedValue === '031002') {        // Edge
+                                    div01.style.display = 'block';
+                                    ic_t1.style.display = 'block';
+                                    ic_t2.style.display = 'block';
+                                    ic_t3.style.display = 'block';
+                                    ic_j1.style.display = 'none';
+                                    ic_j2.style.display = 'none';
+                                    ic_j3.style.display = 'none';
+                                    div03.style.display = 'block';
+                                    div04.style.display = 'none';
+                                    div05.style.display = 'none';
+                                } else if (selectedValue === '031003') {        // Winchester
+                                    div01.style.display = 'block';
+                                    ic_t1.style.display = 'none';
+                                    ic_t2.style.display = 'none';
+                                    ic_t3.style.display = 'none';
+                                    ic_j1.style.display = 'none';
+                                    ic_j2.style.display = 'none';
+                                    ic_j3.style.display = 'none';
+                                    div03.style.display = 'block';
+                                    div04.style.display = 'block';
+                                    div05.style.display = 'none';
+                                } else if (selectedValue === '031004') {        // Wire
+                                    div01.style.display = 'none';
+                                    ic_t1.style.display = 'none';
+                                    ic_t2.style.display = 'none';
+                                    ic_t3.style.display = 'none';
+                                    ic_j1.style.display = 'none';
+                                    ic_j2.style.display = 'none';
+                                    ic_j3.style.display = 'none';
+                                    div03.style.display = 'none';
+                                    div04.style.display = 'none';
+                                    div05.style.display = 'block';
                                 } else {
-                                    bananaDiv.style.display = 'none';
-                                    edgeDiv.style.display = 'none';
-                                    winDiv.style.display = 'none';
-                                    wireDiv.style.display = 'none';
+                                    div01.style.display = 'none';
+                                    ic_t1.style.display = 'none';
+                                    ic_t2.style.display = 'none';
+                                    ic_t3.style.display = 'none';
+                                    ic_j1.style.display = 'none';
+                                    ic_j2.style.display = 'none';
+                                    ic_j3.style.display = 'none';
+                                    div03.style.display = 'none';
+                                    div04.style.display = 'none';
+                                    div05.style.display = 'none';
                                 }
                             }
                         </script>
@@ -2148,7 +2815,10 @@ $id = $_GET['edit'];
                                 $("#interface_volt_rating").val('');
                                 $("#interface_curr_rating").val('');
 
-                                if (selectedValue === '032003') {
+                                // 032003 - NA
+                                // 032005 - Not Applicable
+                                // 032006 - Unknown
+                                if (selectedValue === '032003' || selectedValue === '032005' || selectedValue === '032006') {
                                     extDiv.style.display = 'none';
                                 } else {
                                     extDiv.style.display = 'block';
@@ -2175,6 +2845,9 @@ $id = $_GET['edit'];
             var reltest = document.getElementById('relTest');
             var inputfrom = document.getElementById('from');
             var labelfrom = document.getElementById('fromLabel');
+            
+            var tab7 = document.getElementById('tb07');
+            var tab8 = document.getElementById('tb08');
             
             var cp_vr1 = document.getElementById('labelvoltrating1');
             var cp_vr2 = document.getElementById('labelvoltrating2');
@@ -2225,10 +2898,33 @@ $id = $_GET['edit'];
             var cp_hu2 = document.getElementById('labelhumid2');
             var cp_hu3 = document.getElementById('humid_fluctuation');
             
-            var xxxxx = document.getElementById('xxxxx');
-            
-            console.log("value apa sini :: " + transfer.value);
-            console.log("value apa sini :: " + inputfrom.value);
+            var ut_v1 = document.getElementById('labelvoltage1');
+            var ut_v2 = document.getElementById('labelvoltage2');
+            var ut_v3 = document.getElementById('voltage');
+            var ut_c1 = document.getElementById('labelcurrent1');
+            var ut_c2 = document.getElementById('labelcurrent2');
+            var ut_c3 = document.getElementById('current');
+            var ut_p1 = document.getElementById('labelphase1');
+            var ut_p2 = document.getElementById('labelphase2');
+            var ut_p3 = document.getElementById('phase');
+            var ut_x1 = document.getElementById('labelexhaust');
+            var ut_x2 = document.getElementById('exhaust');
+            var ut_q1 = document.getElementById('labelliquid');
+            var ut_q2 = document.getElementById('liquid_nitrogen');
+            var ut_cw1 = document.getElementById('labelchill');
+            var ut_cw2 = document.getElementById('chilled_water');
+            var ut_cda1 = document.getElementById('labelcda');
+            var ut_cda2 = document.getElementById('cda');
+            var ut_l1 = document.getElementById('labellan');
+            var ut_l2 = document.getElementById('lan');
+            var ut_g1 = document.getElementById('labelgas');
+            var ut_g2 = document.getElementById('n2gas');
+            var ut_xx1 = document.getElementById('labelexygen');
+            var ut_xx2 = document.getElementById('oxygen_level');
+            var ut_d1 = document.getElementById('labeldiwater');
+            var ut_d2 = document.getElementById('di_water');
+            var ut_t1 = document.getElementById('labeltopup');
+            var ut_t2 = document.getElementById('water_topup');
             
             $( document ).ready(function() {
                 console.log( "ready!" );
@@ -2245,6 +2941,9 @@ $id = $_GET['edit'];
                 }
                 
                 if (reltest.value === '008016') {                               // PTC
+                    tab7.style.display = 'block';
+                    tab8.style.display = 'block';
+                                    
                     cp_vr1.style.display = 'block';
                     cp_vr2.style.display = 'block';
                     cp_vr3.style.display = 'block';
@@ -2293,7 +2992,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'none';
                     cp_hu2.style.display = 'none';
                     cp_hu3.style.display = 'none';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'block';
+                    ut_g2.style.display = 'block';
+                    ut_xx1.style.display = 'block';
+                    ut_xx2.style.display = 'block';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'block';
+                    ut_cw2.style.display = 'block';
+                    ut_d1.style.display = 'none';
+                    ut_d2.style.display = 'none';
+                    ut_t1.style.display = 'none';
+                    ut_t2.style.display = 'none';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2l.style.display = 'block';
                 } else if (reltest.value === '008012') {                        // IOL
+                    tab7.style.display = 'block';
+                    tab8.style.display = 'block';
+                    
                     cp_vr1.style.display = 'block';
                     cp_vr2.style.display = 'block';
                     cp_vr3.style.display = 'block';
@@ -2342,7 +3072,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'none';
                     cp_hu2.style.display = 'none';
                     cp_hu3.style.display = 'none';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'none';
+                    ut_g2.style.display = 'none';
+                    ut_xx1.style.display = 'none';
+                    ut_xx2.style.display = 'none';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'none';
+                    ut_cw2.style.display = 'none';
+                    ut_d1.style.display = 'none';
+                    ut_d2.style.display = 'none';
+                    ut_t1.style.display = 'none';
+                    ut_t2.style.display = 'none';
+                    ut_cda1.style.display = 'none';
+                    ut_cda2.style.display = 'none';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008005') {                        // HAST
+                    tab7.style.display = 'block';
+                    tab8.style.display = 'block';
+                    
                     cp_vr1.style.display = 'block';
                     cp_vr2.style.display = 'block';
                     cp_vr3.style.display = 'block';
@@ -2391,7 +3152,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'block';
                     cp_hu2.style.display = 'block';
                     cp_hu3.style.display = 'block';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'none';
+                    ut_g2.style.display = 'none';
+                    ut_xx1.style.display = 'none';
+                    ut_xx2.style.display = 'none';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'none';
+                    ut_cw2.style.display = 'none';
+                    ut_d1.style.display = 'block';
+                    ut_d2.style.display = 'block';
+                    ut_t1.style.display = 'block';
+                    ut_t2.style.display = 'block';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008003' || reltest.value === '008004' || reltest.value === '008020') {            // H3T, H3TRB, THB
+                    tab7.style.display = 'block';
+                    tab8.style.display = 'block';
+                    
                     cp_vr1.style.display = 'block';
                     cp_vr2.style.display = 'block';
                     cp_vr3.style.display = 'block';
@@ -2440,7 +3232,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'block';
                     cp_hu2.style.display = 'block';
                     cp_hu3.style.display = 'block';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'none';
+                    ut_g2.style.display = 'none';
+                    ut_xx1.style.display = 'none';
+                    ut_xx2.style.display = 'none';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'none';
+                    ut_cw2.style.display = 'none';
+                    ut_d1.style.display = 'block';
+                    ut_d2.style.display = 'block';
+                    ut_t1.style.display = 'block';
+                    ut_t2.style.display = 'block';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008002' || reltest.value === '008006' || reltest.value === '008007' || reltest.value === '008008' || reltest.value === '008010') {            // ELFR, HTRB, HTGB, HTFB, HTOL
+                    tab7.style.display = 'block';
+                    tab8.style.display = 'block';
+                    
                     cp_vr1.style.display = 'block';
                     cp_vr2.style.display = 'block';
                     cp_vr3.style.display = 'block';
@@ -2489,7 +3312,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'none';
                     cp_hu2.style.display = 'none';
                     cp_hu3.style.display = 'none';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'block';
+                    ut_g2.style.display = 'block';
+                    ut_xx1.style.display = 'block';
+                    ut_xx2.style.display = 'block';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'none';
+                    ut_cw2.style.display = 'none';
+                    ut_d1.style.display = 'none';
+                    ut_d2.style.display = 'none';
+                    ut_t1.style.display = 'none';
+                    ut_t2.style.display = 'none';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008013') {                        // LTOL
+                    tab7.style.display = 'block';
+                    tab8.style.display = 'block';
+                    
                     cp_vr1.style.display = 'block';
                     cp_vr2.style.display = 'block';
                     cp_vr3.style.display = 'block';
@@ -2538,7 +3392,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'none';
                     cp_hu2.style.display = 'none';
                     cp_hu3.style.display = 'none';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'block';
+                    ut_g2.style.display = 'block';
+                    ut_xx1.style.display = 'block';
+                    ut_xx2.style.display = 'block';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'block';
+                    ut_cw2.style.display = 'block';
+                    ut_d1.style.display = 'block';
+                    ut_d2.style.display = 'block';
+                    ut_t1.style.display = 'block';
+                    ut_t2.style.display = 'block';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008018') {                        // SSOL
+                    tab7.style.display = 'block';
+                    tab8.style.display = 'block';
+                    
                     cp_vr1.style.display = 'block';
                     cp_vr2.style.display = 'block';
                     cp_vr3.style.display = 'block';
@@ -2587,7 +3472,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'none';
                     cp_hu2.style.display = 'none';
                     cp_hu3.style.display = 'none';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'none';
+                    ut_g2.style.display = 'none';
+                    ut_xx1.style.display = 'none';
+                    ut_xx2.style.display = 'none';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'none';
+                    ut_cw2.style.display = 'none';
+                    ut_d1.style.display = 'none';
+                    ut_d2.style.display = 'none';
+                    ut_t1.style.display = 'none';
+                    ut_t2.style.display = 'none';
+                    ut_cda1.style.display = 'none';
+                    ut_cda2.style.display = 'none';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008001' || reltest.value === '008023') {          // AC, UHAST
+                    tab7.style.display = 'none';
+                    tab8.style.display = 'none';
+                    
                     cp_vr1.style.display = 'none';
                     cp_vr2.style.display = 'none';
                     cp_vr3.style.display = 'none';
@@ -2636,7 +3552,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'block';
                     cp_hu2.style.display = 'block';
                     cp_hu3.style.display = 'block';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'none';
+                    ut_g2.style.display = 'none';
+                    ut_xx1.style.display = 'none';
+                    ut_xx2.style.display = 'none';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'none';
+                    ut_cw2.style.display = 'none';
+                    ut_d1.style.display = 'block';
+                    ut_d2.style.display = 'block';
+                    ut_t1.style.display = 'block';
+                    ut_t2.style.display = 'block';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008022') {                        // THU
+                    tab7.style.display = 'none';
+                    tab8.style.display = 'none';
+                    
                     cp_vr1.style.display = 'none';
                     cp_vr2.style.display = 'none';
                     cp_vr3.style.display = 'none';
@@ -2685,7 +3632,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'block';
                     cp_hu2.style.display = 'block';
                     cp_hu3.style.display = 'block';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'block';
+                    ut_g2.style.display = 'block';
+                    ut_xx1.style.display = 'block';
+                    ut_xx2.style.display = 'block';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'none';
+                    ut_cw2.style.display = 'none';
+                    ut_d1.style.display = 'block';
+                    ut_d2.style.display = 'block';
+                    ut_t1.style.display = 'block';
+                    ut_t2.style.display = 'block';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008015') {                        // MSL
+                    tab7.style.display = 'none';
+                    tab8.style.display = 'none';
+                    
                     cp_vr1.style.display = 'none';
                     cp_vr2.style.display = 'none';
                     cp_vr3.style.display = 'none';
@@ -2734,7 +3712,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'block';
                     cp_hu2.style.display = 'block';
                     cp_hu3.style.display = 'block';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'none';
+                    ut_g2.style.display = 'none';
+                    ut_xx1.style.display = 'none';
+                    ut_xx2.style.display = 'none';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'none';
+                    ut_cw2.style.display = 'none';
+                    ut_d1.style.display = 'block';
+                    ut_d2.style.display = 'block';
+                    ut_t1.style.display = 'block';
+                    ut_t2.style.display = 'block';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008017') {                        // RTHS
+                    tab7.style.display = 'none';
+                    tab8.style.display = 'none';
+                    
                     cp_vr1.style.display = 'none';
                     cp_vr2.style.display = 'none';
                     cp_vr3.style.display = 'none';
@@ -2783,7 +3792,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'block';
                     cp_hu2.style.display = 'block';
                     cp_hu3.style.display = 'block';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'block';
+                    ut_g2.style.display = 'block';
+                    ut_xx1.style.display = 'block';
+                    ut_xx2.style.display = 'block';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'none';
+                    ut_cw2.style.display = 'none';
+                    ut_d1.style.display = 'block';
+                    ut_d2.style.display = 'block';
+                    ut_t1.style.display = 'block';
+                    ut_t2.style.display = 'block';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008021') {                        // THS
+                    tab7.style.display = 'none';
+                    tab8.style.display = 'none';
+                    
                     cp_vr1.style.display = 'none';
                     cp_vr2.style.display = 'none';
                     cp_vr3.style.display = 'none';
@@ -2832,7 +3872,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'block';
                     cp_hu2.style.display = 'block';
                     cp_hu3.style.display = 'block';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'block';
+                    ut_g2.style.display = 'block';
+                    ut_xx1.style.display = 'block';
+                    ut_xx2.style.display = 'block';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'block';
+                    ut_cw2.style.display = 'block';
+                    ut_d1.style.display = 'block';
+                    ut_d2.style.display = 'block';
+                    ut_t1.style.display = 'block';
+                    ut_t2.style.display = 'block';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008009') {                        // HTHS
+                    tab7.style.display = 'none';
+                    tab8.style.display = 'none';
+                    
                     cp_vr1.style.display = 'none';
                     cp_vr2.style.display = 'none';
                     cp_vr3.style.display = 'none';
@@ -2881,7 +3952,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'none';
                     cp_hu2.style.display = 'none';
                     cp_hu3.style.display = 'none';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'block';
+                    ut_g2.style.display = 'block';
+                    ut_xx1.style.display = 'block';
+                    ut_xx2.style.display = 'block';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'none';
+                    ut_cw2.style.display = 'none';
+                    ut_d1.style.display = 'block';
+                    ut_d2.style.display = 'block';
+                    ut_t1.style.display = 'block';
+                    ut_t2.style.display = 'block';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008011') {                        // HTSL
+                    tab7.style.display = 'none';
+                    tab8.style.display = 'none';
+                    
                     cp_vr1.style.display = 'none';
                     cp_vr2.style.display = 'none';
                     cp_vr3.style.display = 'none';
@@ -2930,7 +4032,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'none';
                     cp_hu2.style.display = 'none';
                     cp_hu3.style.display = 'none';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'block';
+                    ut_g2.style.display = 'block';
+                    ut_xx1.style.display = 'block';
+                    ut_xx2.style.display = 'block';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'none';
+                    ut_cw2.style.display = 'none';
+                    ut_d1.style.display = 'none';
+                    ut_d2.style.display = 'none';
+                    ut_t1.style.display = 'none';
+                    ut_t2.style.display = 'none';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008014') {                        // LTSL
+                    tab7.style.display = 'none';
+                    tab8.style.display = 'none';
+                    
                     cp_vr1.style.display = 'none';
                     cp_vr2.style.display = 'none';
                     cp_vr3.style.display = 'none';
@@ -2979,7 +4112,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'none';
                     cp_hu2.style.display = 'none';
                     cp_hu3.style.display = 'none';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'block';
+                    ut_g2.style.display = 'block';
+                    ut_xx1.style.display = 'block';
+                    ut_xx2.style.display = 'block';
+                    ut_q1.style.display = 'none';
+                    ut_q2.style.display = 'none';
+                    ut_cw1.style.display = 'block';
+                    ut_cw2.style.display = 'block';
+                    ut_d1.style.display = 'block';
+                    ut_d2.style.display = 'block';
+                    ut_t1.style.display = 'block';
+                    ut_t2.style.display = 'block';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else if (reltest.value === '008019') {                        // TC
+                    tab7.style.display = 'none';
+                    tab8.style.display = 'none';
+                    
                     cp_vr1.style.display = 'none';
                     cp_vr2.style.display = 'none';
                     cp_vr3.style.display = 'none';
@@ -3028,7 +4192,38 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'none';
                     cp_hu2.style.display = 'none';
                     cp_hu3.style.display = 'none';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'block';
+                    ut_g2.style.display = 'block';
+                    ut_xx1.style.display = 'block';
+                    ut_xx2.style.display = 'block';
+                    ut_q1.style.display = 'block';
+                    ut_q2.style.display = 'block';
+                    ut_cw1.style.display = 'block';
+                    ut_cw2.style.display = 'block';
+                    ut_d1.style.display = 'none';
+                    ut_d2.style.display = 'none';
+                    ut_t1.style.display = 'none';
+                    ut_t2.style.display = 'none';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 } else {
+                    tab7.style.display = 'block';
+                    tab8.style.display = 'block';
+                    
                     cp_vr1.style.display = 'block';
                     cp_vr2.style.display = 'block';
                     cp_vr3.style.display = 'block';
@@ -3077,6 +4272,34 @@ $id = $_GET['edit'];
                     cp_hu1.style.display = 'block';
                     cp_hu2.style.display = 'block';
                     cp_hu3.style.display = 'block';
+                    
+                    ut_v1.style.display = 'block';
+                    ut_v2.style.display = 'block';
+                    ut_v3.style.display = 'block';
+                    ut_c1.style.display = 'block';
+                    ut_c2.style.display = 'block';
+                    ut_c3.style.display = 'block';
+                    ut_p1.style.display = 'block';
+                    ut_p2.style.display = 'block';
+                    ut_p3.style.display = 'block';
+                    ut_x1.style.display = 'block';
+                    ut_x2.style.display = 'block';
+                    ut_g1.style.display = 'block';
+                    ut_g2.style.display = 'block';
+                    ut_xx1.style.display = 'block';
+                    ut_xx2.style.display = 'block';
+                    ut_q1.style.display = 'block';
+                    ut_q2.style.display = 'block';
+                    ut_cw1.style.display = 'block';
+                    ut_cw2.style.display = 'block';
+                    ut_d1.style.display = 'block';
+                    ut_d2.style.display = 'block';
+                    ut_t1.style.display = 'block';
+                    ut_t2.style.display = 'block';
+                    ut_cda1.style.display = 'block';
+                    ut_cda2.style.display = 'block';
+                    ut_l1.style.display = 'block';
+                    ut_l2.style.display = 'block';
                 }
                 // ABOVE TO COVER THE HIDE SHOW VALUE FROM THE EXISTING DATA - END
             });
