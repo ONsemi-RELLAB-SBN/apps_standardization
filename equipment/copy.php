@@ -1828,68 +1828,68 @@ $id = $_GET['edit'];
                     <div class="tab-content" id="tabCpbl">
                         <div class="row">
                             <div class="two columns"><label for="volt_rating" id="labelvoltrating1">Voltage Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="<?php echo $rowForm['eqpt_volt_rating']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="<?php echo $rowForm['eqpt_volt_rating']; ?>" > </div>
                             <div class="one columns"><label for="volt_rating" id="labelvoltrating2" style="text-align: left"><b>V</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="volt_control" id="labelcoltcontrol1">Voltage Control Accuracy *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="<?php echo $rowForm['volt_control_accuracy']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="<?php echo $rowForm['volt_control_accuracy']; ?>" > </div>
                             <div class="one columns"><label for="volt_control" id="labelcoltcontrol2" style="text-align: left"><b>%</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="curr_rating" id="labelcurrrating1">Current Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="<?php echo $rowForm['current_rating']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="<?php echo $rowForm['current_rating']; ?>" > </div>
                             <div class="one columns"><label for="curr_rating" id="labelcurrrating2" style="text-align: left"><b>A</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="power_rating" id="labelpowerrating1">Power Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="<?php echo $rowForm['power_rating']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="<?php echo $rowForm['power_rating']; ?>" > </div>
                             <div class="one columns"><label for="power_rating" id="labelpowerrating2" style="text-align: left"><b>W</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="min_time" id="labelmintimer1">Min. Timer Setting *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="min_time" name="min_time" value="<?php echo $rowForm['min_time_setting']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_time" name="min_time" value="<?php echo $rowForm['min_time_setting']; ?>" > </div>
                             <div class="one columns"><label for="min_time" id="labelmintimer2" style="text-align: left"><b>s</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="max_time" id="labelmaxtimer1">Max. Timer Setting *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_time" name="max_time" value="<?php echo $rowForm['max_time_setting']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_time" name="max_time" value="<?php echo $rowForm['max_time_setting']; ?>" > </div>
                             <div class="one columns"><label for="max_time" id="labelmaxtimer2" style="text-align: left"><b>s</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="min_temp" id="labelmintemp1">Min. Temperature *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="<?php echo $rowForm['min_temp']; ?>" > </div>
-                            <div class="one columns"><label for="min_temp" id="labelmintemp2" style="text-align: left"><b>`C</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="<?php echo $rowForm['min_temp']; ?>" > </div>
+                            <div class="one columns"><label for="min_temp" id="labelmintemp2" style="text-align: left"><b>&#176;C</b></label></div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="max_temp" id="labelmaxtemp1">Max. Temperature *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="<?php echo $rowForm['max_temp']; ?>" > </div>
-                            <div class="one columns"><label for="max_temp" id="labelmaxtemp2" style="text-align: left"><b>`C</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="<?php echo $rowForm['max_temp']; ?>" > </div>
+                            <div class="one columns"><label for="max_temp" id="labelmaxtemp2" style="text-align: left"><b>&#176;C</b></label></div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="minRh" id="labelminrh1">Min. RH *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="minRh" name="minRh" value="<?php echo $rowForm['min_rh']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="minRh" name="minRh" value="<?php echo $rowForm['min_rh']; ?>" > </div>
                             <div class="one columns"><label for="minRh" id="labelminrh2" style="text-align: left"><b>%</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="maxRh" id="labelmaxrh1">Max. RH *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="<?php echo $rowForm['max_rh']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="<?php echo $rowForm['max_rh']; ?>" > </div>
                             <div class="one columns"><label for="maxRh" id="labelmaxrh2" style="text-align: left"><b>%</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="min_pressure" id="labelminpressure1">Minimum Pressure *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="<?php echo $rowForm['min_pressure']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="<?php echo $rowForm['min_pressure']; ?>" > </div>
                             <div class="one columns"><label for="min_pressure" id="labelminpressure2" style="text-align: left"><b>psi</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="max_pressure" id="labelmaxpressure1">Maximum Pressure *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="<?php echo $rowForm['max_pressure']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="<?php echo $rowForm['max_pressure']; ?>" > </div>
                             <div class="one columns"><label for="max_pressure" id="labelmaxpressure2" style="text-align: left"><b>psi</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="heat_dissipation" id="labelheat1">Heat Dissipation *</label></div>
                             <div class="two columns"><input type="text" id="heat_dissipation" name="heat_dissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" > </div>
-                            <div class="two columns"><label for="heat_dissipation" id="labelheat2" style="text-align: left"><b>Watt</b></label></div>
+                            <div class="two columns"><label for="heat_dissipation" id="labelheat2" style="text-align: left"><b>W</b></label></div>
                             <div class="two columns" id="labeltempfluc1">
                                 <label for="temp_fluctuation">Temperature Fluctuation *</label>
                                 <label for="toggle_01" class="view-image">Image</label>
@@ -1899,11 +1899,11 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns">
+                            <div class="two columns">
                                 <input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="<?php echo $rowForm['temp_fluctuation']; ?>" >
                                 </div>
-                            <div class="one columns"><label for="temp_fluctuation" id="labeltempfluc2" style="text-align: left"><b>`C</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns"><label for="temp_fluctuation" id="labeltempfluc2" style="text-align: left"><b>&#176;C</b></label></div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns" id="labeltempuniform1">
@@ -1915,9 +1915,9 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="<?php echo $rowForm['temp_uniformity']; ?>" ></div>
-                            <div class="one columns"><label for="temp_uniform" id="labeltempuniform2" style="text-align: left"><b>`C</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="<?php echo $rowForm['temp_uniformity']; ?>" ></div>
+                            <div class="one columns"><label for="temp_uniform" id="labeltempuniform2" style="text-align: left"><b>&#176;C</b></label></div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns" id="labelhumid1">
                                 <label for="humid_fluctuation">Humidity Fluctuation *</label>
                                 <label for="toggle_03" class="view-image">Image</label>
@@ -1927,9 +1927,9 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="<?php echo $rowForm['humid_fluctuation']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="<?php echo $rowForm['humid_fluctuation']; ?>" > </div>
                             <div class="one columns"><label for="humid_fluctuation" id="labelhumid2" style="text-align: left"><b>%</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                     </div>
 
@@ -1944,9 +1944,9 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="<?php echo $rowForm['no_interior_zone']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="<?php echo $rowForm['no_interior_zone']; ?>" > </div>
                             <div class="one columns"><label for="no_interior" style="text-align: left"><b>Zone</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns">
                                 <label for="ext_dimension_w">External Dimension (W) *</label>
                                 <label for="toggle_04" class="view-image">Image</label>
@@ -1956,9 +1956,9 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="ext_dimension_w" name="ext_dimension_w" value="<?php echo $rowForm['ext_dimension_w']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="ext_dimension_w" name="ext_dimension_w" value="<?php echo $rowForm['ext_dimension_w']; ?>" > </div>
                             <div class="one columns"><label for="ext_dimension_w" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -1970,13 +1970,13 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="<?php echo $rowForm['int_vol']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="<?php echo $rowForm['int_vol']; ?>" > </div>
                             <div class="one columns"><label for="int_volume" style="text-align: left"><b>L</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="ext_dimension_d">(D) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="ext_dimension_d" name="ext_dimension_d" value="<?php echo $rowForm['ext_dimension_d']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="ext_dimension_d" name="ext_dimension_d" value="<?php echo $rowForm['ext_dimension_d']; ?>" > </div>
                             <div class="one columns"><label for="ext_dimension_d" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -2001,9 +2001,9 @@ $id = $_GET['edit'];
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="ext_dimension_h">(H) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="ext_dimension_h" name="ext_dimension_h" value="<?php echo $rowForm['ext_dimension_h']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="ext_dimension_h" name="ext_dimension_h" value="<?php echo $rowForm['ext_dimension_h']; ?>" > </div>
                             <div class="one columns"><label for="ext_dimension_h" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="rack_material">Rack Material *</label></div>
@@ -2028,9 +2028,9 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="<?php echo $rowForm['int_dimension_w']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="<?php echo $rowForm['int_dimension_w']; ?>" > </div>
                             <div class="one columns"><label for="int_dimension_w" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -2042,13 +2042,13 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="<?php echo $rowForm['rack_slot_pitch']; ?>" ></div>
+                            <div class="two columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="<?php echo $rowForm['rack_slot_pitch']; ?>" ></div>
                             <div class="one columns"><label for="rack_slot_pitch" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="int_dimension_d">(D) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="int_dimension_d" name="int_dimension_d" value="<?php echo $rowForm['int_dimension_d']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="int_dimension_d" name="int_dimension_d" value="<?php echo $rowForm['int_dimension_d']; ?>" > </div>
                             <div class="one columns"><label for="int_dimension_d" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -2060,19 +2060,19 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/011.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="<?php echo $rowForm['rack_slot_width']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="<?php echo $rowForm['rack_slot_width']; ?>" > </div>
                             <div class="one columns"><label for="rack_slot_width" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="int_dimension_h">(H) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="int_dimension_h" name="int_dimension_h" value="<?php echo $rowForm['int_dimension_h']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="int_dimension_h" name="int_dimension_h" value="<?php echo $rowForm['int_dimension_h']; ?>" > </div>
                             <div class="one columns"><label for="int_dimension_h" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="eqpt_weight">Equipment Weight *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="eqpt_weight" name="eqpt_weight" value="<?php echo $rowForm['eqpt_weight']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="eqpt_weight" name="eqpt_weight" value="<?php echo $rowForm['eqpt_weight']; ?>" > </div>
                             <div class="one columns"><label for="eqpt_weight" style="text-align: left"><b>Kg</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns">
                                 <label for="rack_dimension_w">Rack Dimension (W) *</label>
                                 <label for="toggle_07" class="view-image">Image</label>
@@ -2082,9 +2082,9 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="<?php echo $rowForm['rack_dimension_w']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="<?php echo $rowForm['rack_dimension_w']; ?>" > </div>
                             <div class="one columns"><label for="rack_dimension_w" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -2096,13 +2096,13 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/012.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="<?php echo $rowForm['no_mb_slot']; ?>" ></div>
+                            <div class="two columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="<?php echo $rowForm['no_mb_slot']; ?>" ></div>
                             <div class="one columns"><label for="no_mb_slot" style="text-align: left"><b>Slot</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="rack_dimension_d">(D) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_dimension_d" name="rack_dimension_d" value="<?php echo $rowForm['rack_dimension_d']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="rack_dimension_d" name="rack_dimension_d" value="<?php echo $rowForm['rack_dimension_d']; ?>" > </div>
                             <div class="one columns"><label for="rack_dimension_d" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -2114,13 +2114,13 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/013.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="<?php echo $rowForm['max_ps_slot']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="<?php echo $rowForm['max_ps_slot']; ?>" > </div>
                             <div class="one columns"><label for="max_ps_bs" style="text-align: left"><b>Slot</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="rack_dimension_h">(H) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="<?php echo $rowForm['rack_dimension_h']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="<?php echo $rowForm['rack_dimension_h']; ?>" > </div>
                             <div class="one columns"><label for="rack_dimension_h" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -2132,13 +2132,13 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/014.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="<?php echo $rowForm['max_ps_eqpt']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="<?php echo $rowForm['max_ps_eqpt']; ?>" > </div>
                             <div class="one columns"><label for="max_ps" style="text-align: left"><b>Unit</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="diameter">Diameter *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="diameter" name="diameter" value="<?php echo $rowForm['diameter']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="diameter" name="diameter" value="<?php echo $rowForm['diameter']; ?>" > </div>
                             <div class="one columns"><label for="diameter" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -2268,19 +2268,19 @@ $id = $_GET['edit'];
                     <div class="tab-content" id="tabUtlt">
                         <div class="row">
                             <div class="two columns"><label for="voltage" id="labelvoltage1">Voltage *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="voltage" name="voltage" value="<?php echo $rowForm['voltage']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="voltage" name="voltage" value="<?php echo $rowForm['voltage']; ?>" > </div>
                             <div class="one columns"><label for="voltage" id="labelvoltage2" style="text-align: left"><b>V</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="current" id="labelcurrent1">Current *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="current" name="current" value="<?php echo $rowForm['phase']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="current" name="current" value="<?php echo $rowForm['phase']; ?>" > </div>
                             <div class="one columns"><label for="current" id="labelcurrent2" style="text-align: left"><b>A</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="phase" id="labelphase1">Phase *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="phase" name="phase" value="<?php echo $rowForm['current']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="<?php echo $rowForm['current']; ?>" > </div>
                             <div class="one columns"><label for="phase" id="labelphase2" style="text-align: left"><b>Phase</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="exhaust" id="labelexhaust">Exhaust *</label></div>
                             <div class="three columns">
                                 <select id="exhaust" name="exhaust" style="width: 100%" >
@@ -2490,9 +2490,9 @@ $id = $_GET['edit'];
                         
                         <div class="row" id="divvoltcurrent">
                             <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
-                            <div class="two columns">
+                            <div class="one columns">
                                 <label for="toggle_17" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_17">
                                 <dialog>
@@ -2501,24 +2501,24 @@ $id = $_GET['edit'];
                                 </dialog>
                             </div>
                             <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="conn_temp_rating" id="labelconntemprate1">Connector Temp Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > </div>
-                            <div class="one columns"><label for="conn_temp_rating" id="labelconntemprate2" style="text-align: left"><b>`C</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > </div>
+                            <div class="one columns"><label for="conn_temp_rating" id="labelconntemprate2" style="text-align: left"><b>&#176;C</b></label></div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="banana_jack_hole" id="labelbananajack1">No. Banana Jack Holes *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" > </div>
                             <div class="one columns"><label for="banana_jack_hole" id="labelbananajack2" style="text-align: left"><b>Pins</b></label></div>
                         </div>
                         <div class="row" id="divPin">
                             <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
                             <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
-                            <div class="two columns">
+                            <div class="one columns">
                                 <label for="toggle_18" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_18">
                                 <dialog>
@@ -2527,161 +2527,37 @@ $id = $_GET['edit'];
                                 </dialog>
                             </div>
                             <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
                             <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row" id="divconrack">
                             <div class="two columns"><label for="conn_rack">No. Wires Connected to Rack *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_rack" name="conn_rack" value="<?php echo $rowForm['no_wire_conn_rack']; ?>" > </div>
-                            <div class="one columns"><label for="conn_rack" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="conn_rack" name="conn_rack" value="<?php echo $rowForm['no_wire_conn_rack']; ?>" > </div>
+                            <div class="one columns"><label for="conn_rack" style="text-align: left"><b>&#176;C</b></label></div>
                         </div>
                         <div class="row" id="WireDiv" name="WireDiv"" style="display: none;">
                             <div class="row">
                                 <div class="two columns"><label for="wire_volt_rating">Wire Voltage Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="wire_volt_rating" name="wire_volt_rating" value="<?php echo $rowForm['wire_volt_rating']; ?>" > </div>
+                                <div class="two columns"><input type="number" step="0.001" id="wire_volt_rating" name="wire_volt_rating" value="<?php echo $rowForm['wire_volt_rating']; ?>" > </div>
                                 <div class="one columns"><label for="wire_volt_rating" style="text-align: left"><b>V</b></label></div>
-                                <div class="two columns">&nbsp;</div>
+                                <div class="one columns">&nbsp;</div>
                                 <div class="two columns"><label for="wire_curr_rating">Wire Current Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="wire_curr_rating" name="wire_curr_rating" value="<?php echo $rowForm['wire_curr_rating']; ?>" > </div>
+                                <div class="two columns"><input type="number" step="0.001" id="wire_curr_rating" name="wire_curr_rating" value="<?php echo $rowForm['wire_curr_rating']; ?>" > </div>
                                 <div class="one columns"><label for="wire_curr_rating" style="text-align: left"><b>A</b></label></div>
-                                <div class="two columns">&nbsp;</div>
+                                <div class="one columns">&nbsp;</div>
                             </div>
                             <div class="row">
                                 <div class="two columns"><label for="wire_temp_rating">Wire Temp Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value="<?php echo $rowForm['wire_temp_rating']; ?>" > </div>
-                                <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>`C</b></label></div>
+                                <div class="two columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value="<?php echo $rowForm['wire_temp_rating']; ?>" > </div>
+                                <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>&#176;C</b></label></div>
                             </div>
                         </div>
-
-                        <!--TODO - please reassign semua data dekat bawah, set bagi data tu satu persatu, sbb duplicate data dia tak bole reset the second value-->
-<!--                        <div id="BananaDiv" name="BananaDiv" style="display: none;">
-                            <div class="row">
-                                <div class="two columns"><label for="banana_jack_hole">No. Banana Jack Holes *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" > </div>
-                                <div class="one columns"><label for="banana_jack_hole" style="text-align: left"><b>Pins</b></label></div>
-                                <div class="two columns">
-                                    <label for="toggle_17" class="view-image">Image</label>
-                                    <input type="checkbox" id="toggle_17">
-                                    <dialog>
-                                        <label for="toggle_17" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                        <img id="myImg" src="../image/equipment/017.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                                    </dialog>
-                                </div>
-                                <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
-                                <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
-                                <div class="two columns">&nbsp;</div>
-                            </div>
-                            <div class="row">
-                                <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
-                                <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
-                                <div class="two columns">&nbsp;</div>
-                                <div class="two columns"><label for="conn_temp_rating">Connector Temp Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > </div>
-                                <div class="one columns"><label for="conn_temp_rating" style="text-align: left"><b>`C</b></label></div>
-                                <div class="two columns">&nbsp;</div>
-                            </div>
-                        </div>
-
-                        <div id="EdgeDiv" name="EdgeDiv" style="display: none;">
-                            <div class="row">
-                                <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
-                                <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
-                                <div class="two columns">
-                                    <label for="toggle_18" class="view-image">Image</label>
-                                    <input type="checkbox" id="toggle_18">
-                                    <dialog>
-                                        <label for="toggle_18" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                        <img id="myImg" src="../image/equipment/018.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                                    </dialog>
-                                </div>
-                                <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
-                                <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
-                                <div class="two columns">&nbsp;</div>
-                            </div>
-                            <div class="row">
-                                <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
-                                <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
-                                <div class="two columns">&nbsp;</div>
-                                <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
-                                <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
-                                <div class="two columns">&nbsp;</div>
-                            </div>
-                            <div class="row">
-                                <div class="two columns"><label for="conn_temp_rating">Connector Temp Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > </div>
-                                <div class="one columns"><label for="conn_temp_rating" style="text-align: left"><b>`C</b></label></div>
-                            </div>
-                        </div>
-
-                        <div id="WinchestorDiv" name="WinchestorDiv" style="display: none;">
-                            <div class="row">
-                                <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
-                                <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
-                                <div class="two columns">
-                                    <label for="toggle_19" class="view-image">Image</label>
-                                    <input type="checkbox" id="toggle_19">
-                                    <dialog>
-                                        <label for="toggle_19" style="color:red"><i class='bx bx-x bx-fw'></i> CLOSE</label>
-                                        <img id="myImg" src="../image/equipment/019.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
-                                    </dialog>
-                                </div>
-                                <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
-                                <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
-                                <div class="two columns">&nbsp;</div>
-                            </div>
-                            <div class="row">
-                                <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
-                                <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
-                                <div class="two columns">&nbsp;</div>
-                                <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
-                                <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
-                                <div class="two columns">&nbsp;</div>
-                            </div>
-                            <div class="row">
-                                <div class="two columns"><label for="conn_rack">No. Wires Connected to Rack *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="conn_rack" name="conn_rack" value="<?php echo $rowForm['no_wire_conn_rack']; ?>" > </div>
-                                <div class="one columns"><label for="conn_rack" style="text-align: left"><b>`C</b></label></div>
-                            </div>
-                        </div>
-
-                        <div class="row" id="WireDiv" name="WireDiv"" style="display: none;">
-                            <div class="row">
-                                <div class="two columns"><label for="wire_volt_rating">Wire Voltage Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="wire_volt_rating" name="wire_volt_rating" value="<?php echo $rowForm['wire_volt_rating']; ?>" > </div>
-                                <div class="one columns"><label for="wire_volt_rating" style="text-align: left"><b>V</b></label></div>
-                                <div class="two columns">&nbsp;</div>
-                                <div class="two columns"><label for="wire_curr_rating">Wire Current Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="wire_curr_rating" name="wire_curr_rating" value="<?php echo $rowForm['wire_curr_rating']; ?>" > </div>
-                                <div class="one columns"><label for="wire_curr_rating" style="text-align: left"><b>A</b></label></div>
-                                <div class="two columns">&nbsp;</div>
-                            </div>
-                            <div class="row">
-                                <div class="two columns"><label for="wire_temp_rating">Wire Temp Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value="<?php echo $rowForm['wire_temp_rating']; ?>" > </div>
-                                <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>`C</b></label></div>
-                            </div>
-                        </div>-->
 
                         <script>
                             function updateDiv() {
                                 var dropdown = document.getElementById('int_config_type');
                                 var selectedValue = dropdown.value;
-                                
-//                                var bananaDiv = document.getElementById('BananaDiv');
-//                                var edgeDiv = document.getElementById('EdgeDiv');
-//                                var winDiv = document.getElementById('WinchestorDiv');
-//                                var wireDiv = document.getElementById('WireDiv');
                                 
                                 var div01 = document.getElementById('divvoltcurrent');
                                 var ic_t1 = document.getElementById('labelconntemprate1');
@@ -2791,13 +2667,13 @@ $id = $_GET['edit'];
                         <div class="row" id="viewExternalDiv" name="viewExternalDiv" style="display: none;">
                             <div class="row">
                                 <div class="two columns"><label for="interface_volt_rating">Interface Voltage Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="interface_volt_rating" name="interface_volt_rating" value="<?php echo $rowForm['interface_volt_rating']; ?>" > </div>
+                                <div class="two columns"><input type="number" step="0.001" id="interface_volt_rating" name="interface_volt_rating" value="<?php echo $rowForm['interface_volt_rating']; ?>" > </div>
                                 <div class="one columns"><label for="interface_volt_rating" style="text-align: left"><b>V</b></label></div>
-                                <div class="two columns">&nbsp;</div>
+                                <div class="one columns">&nbsp;</div>
                                 <div class="two columns"><label for="interface_curr_rating">Interface Current Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="interface_curr_rating" name="interface_curr_rating" value="<?php echo $rowForm['interface_current_rating']; ?>" > </div>
+                                <div class="two columns"><input type="number" step="0.001" id="interface_curr_rating" name="interface_curr_rating" value="<?php echo $rowForm['interface_current_rating']; ?>" > </div>
                                 <div class="one columns"><label for="interface_curr_rating" style="text-align: left"><b>A</b></label></div>
-                                <div class="two columns">&nbsp;</div>
+                                <div class="one columns">&nbsp;</div>
                             </div>
                         </div>
                         <script>
@@ -2920,8 +2796,24 @@ $id = $_GET['edit'];
             var ut_t1 = document.getElementById('labeltopup');
             var ut_t2 = document.getElementById('water_topup');
             
+            var dd = document.getElementById('ext_config_type');
+            var extDiv = document.getElementById('viewExternalDiv');
+            var selectedValue = dd.value;
+            
+            var dropdown = document.getElementById('int_config_type');
+            var selectedValueInt = dropdown.value;
+            var div01 = document.getElementById('divvoltcurrent');
+            var ic_t1 = document.getElementById('labelconntemprate1');
+            var ic_t2 = document.getElementById('labelconntemprate2');
+            var ic_t3 = document.getElementById('conn_temp_rating');
+            var ic_j1 = document.getElementById('labelbananajack1');
+            var ic_j2 = document.getElementById('labelbananajack2');
+            var ic_j3 = document.getElementById('banana_jack_hole');
+            var div03 = document.getElementById('divPin');
+            var div04 = document.getElementById('divconrack');
+            var div05 = document.getElementById('WireDiv');
+            
             $( document ).ready(function() {
-                console.log( "ready!" );
                 draftButton.style.display = 'none';
                 saveButton.style.display = 'none';
                 
@@ -2932,6 +2824,69 @@ $id = $_GET['edit'];
                 } else {
                     inputfrom.style.display = 'block';
                     labelfrom.style.display = 'block';
+                }
+                
+                if (selectedValue === '032003' || selectedValue === '032005' || selectedValue === '032006') {
+                    extDiv.style.display = 'none';
+                } else {
+                    extDiv.style.display = 'block';
+                }
+                
+                if (selectedValueInt === '031001') {               // Banana
+                    div01.style.display = 'block';
+                    ic_t1.style.display = 'block';
+                    ic_t2.style.display = 'block';
+                    ic_t3.style.display = 'block';
+                    ic_j1.style.display = 'block';
+                    ic_j2.style.display = 'block';
+                    ic_j3.style.display = 'block';
+                    div03.style.display = 'none';
+                    div04.style.display = 'none';
+                    div05.style.display = 'none';
+                } else if (selectedValueInt === '031002') {        // Edge
+                    div01.style.display = 'block';
+                    ic_t1.style.display = 'block';
+                    ic_t2.style.display = 'block';
+                    ic_t3.style.display = 'block';
+                    ic_j1.style.display = 'none';
+                    ic_j2.style.display = 'none';
+                    ic_j3.style.display = 'none';
+                    div03.style.display = 'block';
+                    div04.style.display = 'none';
+                    div05.style.display = 'none';
+                } else if (selectedValueInt === '031003') {        // Winchester
+                    div01.style.display = 'block';
+                    ic_t1.style.display = 'none';
+                    ic_t2.style.display = 'none';
+                    ic_t3.style.display = 'none';
+                    ic_j1.style.display = 'none';
+                    ic_j2.style.display = 'none';
+                    ic_j3.style.display = 'none';
+                    div03.style.display = 'block';
+                    div04.style.display = 'block';
+                    div05.style.display = 'none';
+                } else if (selectedValueInt === '031004') {        // Wire
+                    div01.style.display = 'none';
+                    ic_t1.style.display = 'none';
+                    ic_t2.style.display = 'none';
+                    ic_t3.style.display = 'none';
+                    ic_j1.style.display = 'none';
+                    ic_j2.style.display = 'none';
+                    ic_j3.style.display = 'none';
+                    div03.style.display = 'none';
+                    div04.style.display = 'none';
+                    div05.style.display = 'block';
+                } else {
+                    div01.style.display = 'none';
+                    ic_t1.style.display = 'none';
+                    ic_t2.style.display = 'none';
+                    ic_t3.style.display = 'none';
+                    ic_j1.style.display = 'none';
+                    ic_j2.style.display = 'none';
+                    ic_j3.style.display = 'none';
+                    div03.style.display = 'none';
+                    div04.style.display = 'none';
+                    div05.style.display = 'none';
                 }
                 
                 if (reltest.value === '008016') {                               // PTC

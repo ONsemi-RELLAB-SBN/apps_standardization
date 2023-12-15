@@ -1822,68 +1822,68 @@ include '../template/form.php';
                     <div class="tab-content" id="tabCpbl">
                         <div class="row">
                             <div class="two columns"><label for="volt_rating" id="labelvoltrating1">Voltage Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" > </div>
                             <div class="one columns"><label for="volt_rating" id="labelvoltrating2" style="text-align: left"><b>V</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="volt_control" id="labelcoltcontrol1">Voltage Control Accuracy *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="" > </div>
                             <div class="one columns"><label for="volt_control" id="labelcoltcontrol2" style="text-align: left"><b>%</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="curr_rating" id="labelcurrrating1">Current Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" > </div>
                             <div class="one columns"><label for="curr_rating" id="labelcurrrating2" style="text-align: left"><b>A</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="power_rating" id="labelpowerrating1">Power Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="" > </div>
                             <div class="one columns"><label for="power_rating" id="labelpowerrating2" style="text-align: left"><b>W</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="min_time" id="labelmintimer1">Min. Timer Setting *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="min_time" name="min_time" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_time" name="min_time" value="" > </div>
                             <div class="one columns"><label for="min_time" id="labelmintimer2" style="text-align: left"><b>s</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="max_time" id="labelmaxtimer1">Max. Timer Setting *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_time" name="max_time" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_time" name="max_time" value="" > </div>
                             <div class="one columns"><label for="max_time" id="labelmaxtimer2" style="text-align: left"><b>s</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="min_temp" id="labelmintemp1">Min. Temperature *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" > </div>
-                            <div class="one columns"><label for="min_temp" id="labelmintemp2" style="text-align: left"><b>`C</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="" > </div>
+                            <div class="one columns"><label for="min_temp" id="labelmintemp2" style="text-align: left"><b>&#176;C</b></label></div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="max_temp" id="labelmaxtemp1">Max. Temperature *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" > </div>
-                            <div class="one columns"><label for="max_temp" id="labelmaxtemp2" style="text-align: left"><b>`C</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="" > </div>
+                            <div class="one columns"><label for="max_temp" id="labelmaxtemp2" style="text-align: left"><b>&#176;C</b></label></div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="minRh" id="labelminrh1">Min. RH *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="minRh" name="minRh" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="minRh" name="minRh" value="" > </div>
                             <div class="one columns"><label for="minRh" id="labelminrh2" style="text-align: left"><b>%</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="maxRh" id="labelmaxrh1">Max. RH *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="" > </div>
                             <div class="one columns"><label for="maxRh" id="labelmaxrh2" style="text-align: left"><b>%</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="min_pressure" id="labelminpressure1">Minimum Pressure *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="" > </div>
                             <div class="one columns"><label for="min_pressure" id="labelminpressure2" style="text-align: left"><b>psi</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="max_pressure" id="labelmaxpressure1">Maximum Pressure *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="" > </div>
                             <div class="one columns"><label for="max_pressure" id="labelmaxpressure2" style="text-align: left"><b>psi</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="heat_dissipation" id="labelheat1">Heat Dissipation *</label></div>
                             <div class="two columns"><input type="text" id="heat_dissipation" name="heat_dissipation" value="" > </div>
-                            <div class="two columns"><label for="heat_dissipation" id="labelheat2" style="text-align: left"><b>Watt</b></label></div>
+                            <div class="two columns"><label for="heat_dissipation" id="labelheat2" style="text-align: left"><b>W</b></label></div>
                             <div class="two columns" id="labeltempfluc1">
                                 <label for="temp_fluctuation">Temperature Fluctuation *</label>
                                 <label for="toggle_01" class="view-image">Image</label>
@@ -1893,11 +1893,11 @@ include '../template/form.php';
                                     <img id="myImg" src="../image/equipment/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns">
+                            <div class="two columns">
                                 <input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" >
                                 </div>
-                            <div class="one columns"><label for="temp_fluctuation" id="labeltempfluc2" style="text-align: left"><b>`C</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns"><label for="temp_fluctuation" id="labeltempfluc2" style="text-align: left"><b>&#176;C</b></label></div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns" id="labeltempuniform1">
@@ -1909,9 +1909,9 @@ include '../template/form.php';
                                     <img id="myImg" src="../image/equipment/002.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
-                            <div class="one columns"><label for="temp_uniform" id="labeltempuniform2" style="text-align: left"><b>`C</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_uniform" name="temp_uniform" value="" ></div>
+                            <div class="one columns"><label for="temp_uniform" id="labeltempuniform2" style="text-align: left"><b>&#176;C</b></label></div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns" id="labelhumid1">
                                 <label for="humid_fluctuation">Humidity Fluctuation *</label>
                                 <label for="toggle_03" class="view-image">Image</label>
@@ -1921,9 +1921,9 @@ include '../template/form.php';
                                     <img id="myImg" src="../image/equipment/003.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="humid_fluctuation" name="humid_fluctuation" value="" > </div>
                             <div class="one columns"><label for="humid_fluctuation" id="labelhumid2" style="text-align: left"><b>%</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                     </div>
 
@@ -1938,9 +1938,9 @@ include '../template/form.php';
                                     <img id="myImg" src="../image/equipment/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="no_interior" name="no_interior" value="" > </div>
                             <div class="one columns"><label for="no_interior" style="text-align: left"><b>Zone</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns">
                                 <label for="ext_dimension_w">External Dimension (W) *</label>
                                 <label for="toggle_04" class="view-image">Image</label>
@@ -1950,9 +1950,9 @@ include '../template/form.php';
                                     <img id="myImg" src="../image/equipment/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="ext_dimension_w" name="ext_dimension_w" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="ext_dimension_w" name="ext_dimension_w" value="" > </div>
                             <div class="one columns"><label for="ext_dimension_w" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -1964,13 +1964,13 @@ include '../template/form.php';
                                     <img id="myImg" src="../image/equipment/008.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="" > </div>
                             <div class="one columns"><label for="int_volume" style="text-align: left"><b>L</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="ext_dimension_d">(D) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="ext_dimension_d" name="ext_dimension_d" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="ext_dimension_d" name="ext_dimension_d" value="" > </div>
                             <div class="one columns"><label for="ext_dimension_d" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -1995,9 +1995,9 @@ include '../template/form.php';
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="ext_dimension_h">(H) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="ext_dimension_h" name="ext_dimension_h" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="ext_dimension_h" name="ext_dimension_h" value="" > </div>
                             <div class="one columns"><label for="ext_dimension_h" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="rack_material">Rack Material *</label></div>
@@ -2022,9 +2022,9 @@ include '../template/form.php';
                                     <img id="myImg" src="../image/equipment/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="int_dimension_w" name="int_dimension_w" value="" > </div>
                             <div class="one columns"><label for="int_dimension_w" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -2036,13 +2036,13 @@ include '../template/form.php';
                                     <img id="myImg" src="../image/equipment/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="" ></div>
+                            <div class="two columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="" ></div>
                             <div class="one columns"><label for="rack_slot_pitch" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="int_dimension_d">(D) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="int_dimension_d" name="int_dimension_d" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="int_dimension_d" name="int_dimension_d" value="" > </div>
                             <div class="one columns"><label for="int_dimension_d" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -2054,19 +2054,19 @@ include '../template/form.php';
                                     <img id="myImg" src="../image/equipment/011.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="" > </div>
                             <div class="one columns"><label for="rack_slot_width" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="int_dimension_h">(H) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="int_dimension_h" name="int_dimension_h" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="int_dimension_h" name="int_dimension_h" value="" > </div>
                             <div class="one columns"><label for="int_dimension_h" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="eqpt_weight">Equipment Weight *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="eqpt_weight" name="eqpt_weight" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="eqpt_weight" name="eqpt_weight" value="" > </div>
                             <div class="one columns"><label for="eqpt_weight" style="text-align: left"><b>Kg</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns">
                                 <label for="rack_dimension_w">Rack Dimension (W) *</label>
                                 <label for="toggle_07" class="view-image">Image</label>
@@ -2076,9 +2076,9 @@ include '../template/form.php';
                                     <img id="myImg" src="../image/equipment/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="rack_dimension_w" name="rack_dimension_w" value="" > </div>
                             <div class="one columns"><label for="rack_dimension_w" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -2090,13 +2090,13 @@ include '../template/form.php';
                                     <img id="myImg" src="../image/equipment/012.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="" ></div>
+                            <div class="two columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="" ></div>
                             <div class="one columns"><label for="no_mb_slot" style="text-align: left"><b>Slot</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="rack_dimension_d">(D) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_dimension_d" name="rack_dimension_d" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="rack_dimension_d" name="rack_dimension_d" value="" > </div>
                             <div class="one columns"><label for="rack_dimension_d" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -2108,13 +2108,13 @@ include '../template/form.php';
                                     <img id="myImg" src="../image/equipment/013.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="" > </div>
                             <div class="one columns"><label for="max_ps_bs" style="text-align: left"><b>Slot</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="rack_dimension_h">(H) *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="" > </div>
                             <div class="one columns"><label for="rack_dimension_h" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -2126,13 +2126,13 @@ include '../template/form.php';
                                     <img id="myImg" src="../image/equipment/014.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="one columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="" > </div>
                             <div class="one columns"><label for="max_ps" style="text-align: left"><b>Unit</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="diameter">Diameter *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="diameter" name="diameter" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="diameter" name="diameter" value="" > </div>
                             <div class="one columns"><label for="diameter" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
@@ -2262,19 +2262,19 @@ include '../template/form.php';
                     <div class="tab-content" id="tabUtlt">
                         <div class="row">
                             <div class="two columns"><label for="voltage" id="labelvoltage1">Voltage *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="voltage" name="voltage" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="voltage" name="voltage" value="" > </div>
                             <div class="one columns"><label for="voltage" id="labelvoltage2" style="text-align: left"><b>V</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="current" id="labelcurrent1">Current *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="current" name="current" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="current" name="current" value="" > </div>
                             <div class="one columns"><label for="current" id="labelcurrent2" style="text-align: left"><b>A</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="phase" id="labelphase1">Phase *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="phase" name="phase" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="" > </div>
                             <div class="one columns"><label for="phase" id="labelphase2" style="text-align: left"><b>Phase</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="exhaust" id="labelexhaust">Exhaust *</label></div>
                             <div class="three columns">
                                 <select id="exhaust" name="exhaust" style="width: 100%" >
@@ -2484,9 +2484,9 @@ include '../template/form.php';
                         
                         <div class="row" id="divvoltcurrent">
                             <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="" > </div>
                             <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
-                            <div class="two columns">
+                            <div class="one columns">
                                 <label for="toggle_17" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_17">
                                 <dialog>
@@ -2495,24 +2495,24 @@ include '../template/form.php';
                                 </dialog>
                             </div>
                             <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="" > </div>
                             <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="conn_temp_rating" id="labelconntemprate1">Connector Temp Rating *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="" > </div>
-                            <div class="one columns"><label for="conn_temp_rating" id="labelconntemprate2" style="text-align: left"><b>`C</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="two columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="" > </div>
+                            <div class="one columns"><label for="conn_temp_rating" id="labelconntemprate2" style="text-align: left"><b>&#176;C</b></label></div>
+                            <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="banana_jack_hole" id="labelbananajack1">No. Banana Jack Holes *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="" > </div>
                             <div class="one columns"><label for="banana_jack_hole" id="labelbananajack2" style="text-align: left"><b>Pins</b></label></div>
                         </div>
                         <div class="row" id="divPin">
                             <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="" > </div>
                             <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
-                            <div class="two columns">
+                            <div class="one columns">
                                 <label for="toggle_18" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_18">
                                 <dialog>
@@ -2521,30 +2521,30 @@ include '../template/form.php';
                                 </dialog>
                             </div>
                             <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="" > </div>
+                            <div class="two columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="" > </div>
                             <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
-                            <div class="two columns">&nbsp;</div>
+                            <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row" id="divconrack">
                             <div class="two columns"><label for="conn_rack">No. Wires Connected to Rack *</label></div>
-                            <div class="one columns"><input type="number" step="0.001" id="conn_rack" name="conn_rack" value="" > </div>
-                            <div class="one columns"><label for="conn_rack" style="text-align: left"><b>`C</b></label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="conn_rack" name="conn_rack" value="" > </div>
+                            <div class="one columns"><label for="conn_rack" style="text-align: left"><b>&#176;C</b></label></div>
                         </div>
                         <div class="row" id="WireDiv" name="WireDiv"" style="display: none;">
                             <div class="row">
                                 <div class="two columns"><label for="wire_volt_rating">Wire Voltage Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="wire_volt_rating" name="wire_volt_rating" value="" > </div>
+                                <div class="two columns"><input type="number" step="0.001" id="wire_volt_rating" name="wire_volt_rating" value="" > </div>
                                 <div class="one columns"><label for="wire_volt_rating" style="text-align: left"><b>V</b></label></div>
-                                <div class="two columns">&nbsp;</div>
+                                <div class="one columns">&nbsp;</div>
                                 <div class="two columns"><label for="wire_curr_rating">Wire Current Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="wire_curr_rating" name="wire_curr_rating" value="" > </div>
+                                <div class="two columns"><input type="number" step="0.001" id="wire_curr_rating" name="wire_curr_rating" value="" > </div>
                                 <div class="one columns"><label for="wire_curr_rating" style="text-align: left"><b>A</b></label></div>
-                                <div class="two columns">&nbsp;</div>
+                                <div class="one columns">&nbsp;</div>
                             </div>
                             <div class="row">
                                 <div class="two columns"><label for="wire_temp_rating">Wire Temp Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value=""> </div>
-                                <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>`C</b></label></div>
+                                <div class="two columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value=""> </div>
+                                <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>&#176;C</b></label></div>
                             </div>
                         </div>
 
@@ -2666,13 +2666,13 @@ include '../template/form.php';
                         <div class="row" id="viewExternalDiv" name="viewExternalDiv" style="display: none;">
                             <div class="row">
                                 <div class="two columns"><label for="interface_volt_rating">Interface Voltage Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="interface_volt_rating" name="interface_volt_rating" value="" > </div>
+                                <div class="two columns"><input type="number" step="0.001" id="interface_volt_rating" name="interface_volt_rating" value="" > </div>
                                 <div class="one columns"><label for="interface_volt_rating" style="text-align: left"><b>V</b></label></div>
-                                <div class="two columns">&nbsp;</div>
+                                <div class="one columns">&nbsp;</div>
                                 <div class="two columns"><label for="interface_curr_rating">Interface Current Rating *</label></div>
-                                <div class="one columns"><input type="number" step="0.001" id="interface_curr_rating" name="interface_curr_rating" value="" > </div>
+                                <div class="two columns"><input type="number" step="0.001" id="interface_curr_rating" name="interface_curr_rating" value="" > </div>
                                 <div class="one columns"><label for="interface_curr_rating" style="text-align: left"><b>A</b></label></div>
-                                <div class="two columns">&nbsp;</div>
+                                <div class="one columns">&nbsp;</div>
                             </div>
                         </div>
                         <script>
@@ -2709,1467 +2709,9 @@ include '../template/form.php';
             const draftButton = document.getElementById('draft-button');
             const saveButton = document.getElementById('save-button');
             
-            var transfer = document.getElementById('new_transfer');
-            var reltest = document.getElementById('relTest');
-            var inputfrom = document.getElementById('from');
-            var labelfrom = document.getElementById('fromLabel');
-            
-            var tab7 = document.getElementById('tb07');
-            var tab8 = document.getElementById('tb08');
-            
-            var cp_vr1 = document.getElementById('labelvoltrating1');
-            var cp_vr2 = document.getElementById('labelvoltrating2');
-            var cp_vr3 = document.getElementById('volt_rating');
-            var cp_ct1 = document.getElementById('labelcoltcontrol1');
-            var cp_ct2 = document.getElementById('labelcoltcontrol2');
-            var cp_ct3 = document.getElementById('volt_control');
-            var cp_cr1 = document.getElementById('labelcurrrating1');
-            var cp_cr2 = document.getElementById('labelcurrrating2');
-            var cp_cr3 = document.getElementById('curr_rating');
-            var cp_pw1 = document.getElementById('labelpowerrating1');
-            var cp_pw2 = document.getElementById('labelpowerrating2');
-            var cp_pw3 = document.getElementById('power_rating');
-            var cp_mt1 = document.getElementById('labelmintimer1');
-            var cp_mt2 = document.getElementById('labelmintimer2');
-            var cp_mt3 = document.getElementById('min_time');
-            var cp_mt4 = document.getElementById('labelmaxtimer1');
-            var cp_mt5 = document.getElementById('labelmaxtimer2');
-            var cp_mt6 = document.getElementById('max_time');
-            var cp_mtp1 = document.getElementById('labelmintemp1');
-            var cp_mtp2 = document.getElementById('labelmintemp2');
-            var cp_mtp3 = document.getElementById('min_temp');
-            var cp_mtp4 = document.getElementById('labelmaxtemp1');
-            var cp_mtp5 = document.getElementById('labelmaxtemp2');
-            var cp_mtp6 = document.getElementById('max_temp');
-            var cp_rh1 = document.getElementById('labelminrh1');
-            var cp_rh2 = document.getElementById('labelminrh2');
-            var cp_rh3 = document.getElementById('minRh');
-            var cp_rh4 = document.getElementById('labelmaxrh1');
-            var cp_rh5 = document.getElementById('labelmaxrh2');
-            var cp_rh6 = document.getElementById('maxRh');
-            var cp_ps1 = document.getElementById('labelminpressure1');
-            var cp_ps2 = document.getElementById('labelminpressure2');
-            var cp_ps3 = document.getElementById('min_pressure');
-            var cp_ps4 = document.getElementById('labelmaxpressure1');
-            var cp_ps5 = document.getElementById('labelmaxpressure2');
-            var cp_ps6 = document.getElementById('max_pressure');
-            var cp_ht1 = document.getElementById('labelheat1');
-            var cp_ht2 = document.getElementById('labelheat2');
-            var cp_ht3 = document.getElementById('heat_dissipation');
-            var cp_tf1 = document.getElementById('labeltempfluc1');
-            var cp_tf2 = document.getElementById('labeltempfluc2');
-            var cp_tf3 = document.getElementById('temp_fluctuation');
-            var cp_tu1 = document.getElementById('labeltempuniform1');
-            var cp_tu2 = document.getElementById('labeltempuniform2');
-            var cp_tu3 = document.getElementById('temp_uniform');
-            var cp_hu1 = document.getElementById('labelhumid1');
-            var cp_hu2 = document.getElementById('labelhumid2');
-            var cp_hu3 = document.getElementById('humid_fluctuation');
-            
-            var ut_v1 = document.getElementById('labelvoltage1');
-            var ut_v2 = document.getElementById('labelvoltage2');
-            var ut_v3 = document.getElementById('voltage');
-            var ut_c1 = document.getElementById('labelcurrent1');
-            var ut_c2 = document.getElementById('labelcurrent2');
-            var ut_c3 = document.getElementById('current');
-            var ut_p1 = document.getElementById('labelphase1');
-            var ut_p2 = document.getElementById('labelphase2');
-            var ut_p3 = document.getElementById('phase');
-            var ut_x1 = document.getElementById('labelexhaust');
-            var ut_x2 = document.getElementById('exhaust');
-            var ut_q1 = document.getElementById('labelliquid');
-            var ut_q2 = document.getElementById('liquid_nitrogen');
-            var ut_cw1 = document.getElementById('labelchill');
-            var ut_cw2 = document.getElementById('chilled_water');
-            var ut_cda1 = document.getElementById('labelcda');
-            var ut_cda2 = document.getElementById('cda');
-            var ut_l1 = document.getElementById('labellan');
-            var ut_l2 = document.getElementById('lan');
-            var ut_g1 = document.getElementById('labelgas');
-            var ut_g2 = document.getElementById('n2gas');
-            var ut_xx1 = document.getElementById('labelexygen');
-            var ut_xx2 = document.getElementById('oxygen_level');
-            var ut_d1 = document.getElementById('labeldiwater');
-            var ut_d2 = document.getElementById('di_water');
-            var ut_t1 = document.getElementById('labeltopup');
-            var ut_t2 = document.getElementById('water_topup');
-            
             $( document ).ready(function() {
-                console.log( "ready!" );
                 draftButton.style.display = 'none';
                 saveButton.style.display = 'none';
-                
-                // BELOW TO COVER THE HIDE SHOW VALUE FROM THE EXISTING DATA - START
-                if (transfer.value === '013001') {
-                    inputfrom.style.display = 'none';
-                    labelfrom.style.display = 'none';
-                } else {
-                    inputfrom.style.display = 'block';
-                    labelfrom.style.display = 'block';
-                }
-                
-                if (reltest.value === '008016') {                               // PTC
-                    tab7.style.display = 'block';
-                    tab8.style.display = 'block';
-                                    
-                    cp_vr1.style.display = 'block';
-                    cp_vr2.style.display = 'block';
-                    cp_vr3.style.display = 'block';
-                    cp_ct1.style.display = 'block';
-                    cp_ct2.style.display = 'block';
-                    cp_ct3.style.display = 'block';
-                    cp_cr1.style.display = 'block';
-                    cp_cr2.style.display = 'block';
-                    cp_cr3.style.display = 'block';
-                    cp_pw1.style.display = 'block';
-                    cp_pw2.style.display = 'block';
-                    cp_pw3.style.display = 'block';
-                    cp_mt1.style.display = 'block';
-                    cp_mt2.style.display = 'block';
-                    cp_mt3.style.display = 'block';
-                    cp_mt4.style.display = 'block';
-                    cp_mt5.style.display = 'block';
-                    cp_mt6.style.display = 'block';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'none';
-                    cp_rh2.style.display = 'none';
-                    cp_rh3.style.display = 'none';
-                    cp_rh4.style.display = 'none';
-                    cp_rh5.style.display = 'none';
-                    cp_rh6.style.display = 'none';
-                    cp_ps1.style.display = 'none';
-                    cp_ps2.style.display = 'none';
-                    cp_ps3.style.display = 'none';
-                    cp_ps4.style.display = 'none';
-                    cp_ps5.style.display = 'none';
-                    cp_ps6.style.display = 'none';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'none';
-                    cp_hu2.style.display = 'none';
-                    cp_hu3.style.display = 'none';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'block';
-                    ut_g2.style.display = 'block';
-                    ut_xx1.style.display = 'block';
-                    ut_xx2.style.display = 'block';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'block';
-                    ut_cw2.style.display = 'block';
-                    ut_d1.style.display = 'none';
-                    ut_d2.style.display = 'none';
-                    ut_t1.style.display = 'none';
-                    ut_t2.style.display = 'none';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2l.style.display = 'block';
-                } else if (reltest.value === '008012') {                        // IOL
-                    tab7.style.display = 'block';
-                    tab8.style.display = 'block';
-                    
-                    cp_vr1.style.display = 'block';
-                    cp_vr2.style.display = 'block';
-                    cp_vr3.style.display = 'block';
-                    cp_ct1.style.display = 'block';
-                    cp_ct2.style.display = 'block';
-                    cp_ct3.style.display = 'block';
-                    cp_cr1.style.display = 'block';
-                    cp_cr2.style.display = 'block';
-                    cp_cr3.style.display = 'block';
-                    cp_pw1.style.display = 'block';
-                    cp_pw2.style.display = 'block';
-                    cp_pw3.style.display = 'block';
-                    cp_mt1.style.display = 'block';
-                    cp_mt2.style.display = 'block';
-                    cp_mt3.style.display = 'block';
-                    cp_mt4.style.display = 'block';
-                    cp_mt5.style.display = 'block';
-                    cp_mt6.style.display = 'block';
-                    cp_mtp1.style.display = 'none';
-                    cp_mtp2.style.display = 'none';
-                    cp_mtp3.style.display = 'none';
-                    cp_mtp4.style.display = 'none';
-                    cp_mtp5.style.display = 'none';
-                    cp_mtp6.style.display = 'none';
-                    cp_rh1.style.display = 'none';
-                    cp_rh2.style.display = 'none';
-                    cp_rh3.style.display = 'none';
-                    cp_rh4.style.display = 'none';
-                    cp_rh5.style.display = 'none';
-                    cp_rh6.style.display = 'none';
-                    cp_ps1.style.display = 'none';
-                    cp_ps2.style.display = 'none';
-                    cp_ps3.style.display = 'none';
-                    cp_ps4.style.display = 'none';
-                    cp_ps5.style.display = 'none';
-                    cp_ps6.style.display = 'none';
-                    cp_ht1.style.display = 'none';
-                    cp_ht2.style.display = 'none';
-                    cp_ht3.style.display = 'none';
-                    cp_tf1.style.display = 'none';
-                    cp_tf2.style.display = 'none';
-                    cp_tf3.style.display = 'none';
-                    cp_tu1.style.display = 'none';
-                    cp_tu2.style.display = 'none';
-                    cp_tu3.style.display = 'none';
-                    cp_hu1.style.display = 'none';
-                    cp_hu2.style.display = 'none';
-                    cp_hu3.style.display = 'none';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'none';
-                    ut_g2.style.display = 'none';
-                    ut_xx1.style.display = 'none';
-                    ut_xx2.style.display = 'none';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'none';
-                    ut_cw2.style.display = 'none';
-                    ut_d1.style.display = 'none';
-                    ut_d2.style.display = 'none';
-                    ut_t1.style.display = 'none';
-                    ut_t2.style.display = 'none';
-                    ut_cda1.style.display = 'none';
-                    ut_cda2.style.display = 'none';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008005') {                        // HAST
-                    tab7.style.display = 'block';
-                    tab8.style.display = 'block';
-                    
-                    cp_vr1.style.display = 'block';
-                    cp_vr2.style.display = 'block';
-                    cp_vr3.style.display = 'block';
-                    cp_ct1.style.display = 'block';
-                    cp_ct2.style.display = 'block';
-                    cp_ct3.style.display = 'block';
-                    cp_cr1.style.display = 'block';
-                    cp_cr2.style.display = 'block';
-                    cp_cr3.style.display = 'block';
-                    cp_pw1.style.display = 'block';
-                    cp_pw2.style.display = 'block';
-                    cp_pw3.style.display = 'block';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'block';
-                    cp_rh2.style.display = 'block';
-                    cp_rh3.style.display = 'block';
-                    cp_rh4.style.display = 'block';
-                    cp_rh5.style.display = 'block';
-                    cp_rh6.style.display = 'block';
-                    cp_ps1.style.display = 'block';
-                    cp_ps2.style.display = 'block';
-                    cp_ps3.style.display = 'block';
-                    cp_ps4.style.display = 'block';
-                    cp_ps5.style.display = 'block';
-                    cp_ps6.style.display = 'block';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'block';
-                    cp_hu2.style.display = 'block';
-                    cp_hu3.style.display = 'block';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'none';
-                    ut_g2.style.display = 'none';
-                    ut_xx1.style.display = 'none';
-                    ut_xx2.style.display = 'none';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'none';
-                    ut_cw2.style.display = 'none';
-                    ut_d1.style.display = 'block';
-                    ut_d2.style.display = 'block';
-                    ut_t1.style.display = 'block';
-                    ut_t2.style.display = 'block';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008003' || reltest.value === '008004' || reltest.value === '008020') {            // H3T, H3TRB, THB
-                    tab7.style.display = 'block';
-                    tab8.style.display = 'block';
-                    
-                    cp_vr1.style.display = 'block';
-                    cp_vr2.style.display = 'block';
-                    cp_vr3.style.display = 'block';
-                    cp_ct1.style.display = 'block';
-                    cp_ct2.style.display = 'block';
-                    cp_ct3.style.display = 'block';
-                    cp_cr1.style.display = 'block';
-                    cp_cr2.style.display = 'block';
-                    cp_cr3.style.display = 'block';
-                    cp_pw1.style.display = 'block';
-                    cp_pw2.style.display = 'block';
-                    cp_pw3.style.display = 'block';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'block';
-                    cp_rh2.style.display = 'block';
-                    cp_rh3.style.display = 'block';
-                    cp_rh4.style.display = 'block';
-                    cp_rh5.style.display = 'block';
-                    cp_rh6.style.display = 'block';
-                    cp_ps1.style.display = 'none';
-                    cp_ps2.style.display = 'none';
-                    cp_ps3.style.display = 'none';
-                    cp_ps4.style.display = 'none';
-                    cp_ps5.style.display = 'none';
-                    cp_ps6.style.display = 'none';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'block';
-                    cp_hu2.style.display = 'block';
-                    cp_hu3.style.display = 'block';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'none';
-                    ut_g2.style.display = 'none';
-                    ut_xx1.style.display = 'none';
-                    ut_xx2.style.display = 'none';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'none';
-                    ut_cw2.style.display = 'none';
-                    ut_d1.style.display = 'block';
-                    ut_d2.style.display = 'block';
-                    ut_t1.style.display = 'block';
-                    ut_t2.style.display = 'block';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008002' || reltest.value === '008006' || reltest.value === '008007' || reltest.value === '008008' || reltest.value === '008010') {            // ELFR, HTRB, HTGB, HTFB, HTOL
-                    tab7.style.display = 'block';
-                    tab8.style.display = 'block';
-                    
-                    cp_vr1.style.display = 'block';
-                    cp_vr2.style.display = 'block';
-                    cp_vr3.style.display = 'block';
-                    cp_ct1.style.display = 'block';
-                    cp_ct2.style.display = 'block';
-                    cp_ct3.style.display = 'block';
-                    cp_cr1.style.display = 'block';
-                    cp_cr2.style.display = 'block';
-                    cp_cr3.style.display = 'block';
-                    cp_pw1.style.display = 'block';
-                    cp_pw2.style.display = 'block';
-                    cp_pw3.style.display = 'block';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'none';
-                    cp_rh2.style.display = 'none';
-                    cp_rh3.style.display = 'none';
-                    cp_rh4.style.display = 'none';
-                    cp_rh5.style.display = 'none';
-                    cp_rh6.style.display = 'none';
-                    cp_ps1.style.display = 'none';
-                    cp_ps2.style.display = 'none';
-                    cp_ps3.style.display = 'none';
-                    cp_ps4.style.display = 'none';
-                    cp_ps5.style.display = 'none';
-                    cp_ps6.style.display = 'none';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'none';
-                    cp_hu2.style.display = 'none';
-                    cp_hu3.style.display = 'none';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'block';
-                    ut_g2.style.display = 'block';
-                    ut_xx1.style.display = 'block';
-                    ut_xx2.style.display = 'block';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'none';
-                    ut_cw2.style.display = 'none';
-                    ut_d1.style.display = 'none';
-                    ut_d2.style.display = 'none';
-                    ut_t1.style.display = 'none';
-                    ut_t2.style.display = 'none';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008013') {                        // LTOL
-                    tab7.style.display = 'block';
-                    tab8.style.display = 'block';
-                    
-                    cp_vr1.style.display = 'block';
-                    cp_vr2.style.display = 'block';
-                    cp_vr3.style.display = 'block';
-                    cp_ct1.style.display = 'block';
-                    cp_ct2.style.display = 'block';
-                    cp_ct3.style.display = 'block';
-                    cp_cr1.style.display = 'block';
-                    cp_cr2.style.display = 'block';
-                    cp_cr3.style.display = 'block';
-                    cp_pw1.style.display = 'block';
-                    cp_pw2.style.display = 'block';
-                    cp_pw3.style.display = 'block';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'none';
-                    cp_rh2.style.display = 'none';
-                    cp_rh3.style.display = 'none';
-                    cp_rh4.style.display = 'none';
-                    cp_rh5.style.display = 'none';
-                    cp_rh6.style.display = 'none';
-                    cp_ps1.style.display = 'none';
-                    cp_ps2.style.display = 'none';
-                    cp_ps3.style.display = 'none';
-                    cp_ps4.style.display = 'none';
-                    cp_ps5.style.display = 'none';
-                    cp_ps6.style.display = 'none';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'none';
-                    cp_hu2.style.display = 'none';
-                    cp_hu3.style.display = 'none';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'block';
-                    ut_g2.style.display = 'block';
-                    ut_xx1.style.display = 'block';
-                    ut_xx2.style.display = 'block';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'block';
-                    ut_cw2.style.display = 'block';
-                    ut_d1.style.display = 'block';
-                    ut_d2.style.display = 'block';
-                    ut_t1.style.display = 'block';
-                    ut_t2.style.display = 'block';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008018') {                        // SSOL
-                    tab7.style.display = 'block';
-                    tab8.style.display = 'block';
-                    
-                    cp_vr1.style.display = 'block';
-                    cp_vr2.style.display = 'block';
-                    cp_vr3.style.display = 'block';
-                    cp_ct1.style.display = 'block';
-                    cp_ct2.style.display = 'block';
-                    cp_ct3.style.display = 'block';
-                    cp_cr1.style.display = 'block';
-                    cp_cr2.style.display = 'block';
-                    cp_cr3.style.display = 'block';
-                    cp_pw1.style.display = 'block';
-                    cp_pw2.style.display = 'block';
-                    cp_pw3.style.display = 'block';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'none';
-                    cp_rh2.style.display = 'none';
-                    cp_rh3.style.display = 'none';
-                    cp_rh4.style.display = 'none';
-                    cp_rh5.style.display = 'none';
-                    cp_rh6.style.display = 'none';
-                    cp_ps1.style.display = 'none';
-                    cp_ps2.style.display = 'none';
-                    cp_ps3.style.display = 'none';
-                    cp_ps4.style.display = 'none';
-                    cp_ps5.style.display = 'none';
-                    cp_ps6.style.display = 'none';
-                    cp_ht1.style.display = 'none';
-                    cp_ht2.style.display = 'none';
-                    cp_ht3.style.display = 'none';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'none';
-                    cp_hu2.style.display = 'none';
-                    cp_hu3.style.display = 'none';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'none';
-                    ut_g2.style.display = 'none';
-                    ut_xx1.style.display = 'none';
-                    ut_xx2.style.display = 'none';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'none';
-                    ut_cw2.style.display = 'none';
-                    ut_d1.style.display = 'none';
-                    ut_d2.style.display = 'none';
-                    ut_t1.style.display = 'none';
-                    ut_t2.style.display = 'none';
-                    ut_cda1.style.display = 'none';
-                    ut_cda2.style.display = 'none';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008001' || reltest.value === '008023') {          // AC, UHAST
-                    tab7.style.display = 'none';
-                    tab8.style.display = 'none';
-                    
-                    cp_vr1.style.display = 'none';
-                    cp_vr2.style.display = 'none';
-                    cp_vr3.style.display = 'none';
-                    cp_ct1.style.display = 'none';
-                    cp_ct2.style.display = 'none';
-                    cp_ct3.style.display = 'none';
-                    cp_cr1.style.display = 'none';
-                    cp_cr2.style.display = 'none';
-                    cp_cr3.style.display = 'none';
-                    cp_pw1.style.display = 'none';
-                    cp_pw2.style.display = 'none';
-                    cp_pw3.style.display = 'none';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'block';
-                    cp_rh2.style.display = 'block';
-                    cp_rh3.style.display = 'block';
-                    cp_rh4.style.display = 'block';
-                    cp_rh5.style.display = 'block';
-                    cp_rh6.style.display = 'block';
-                    cp_ps1.style.display = 'block';
-                    cp_ps2.style.display = 'block';
-                    cp_ps3.style.display = 'block';
-                    cp_ps4.style.display = 'block';
-                    cp_ps5.style.display = 'block';
-                    cp_ps6.style.display = 'block';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'block';
-                    cp_hu2.style.display = 'block';
-                    cp_hu3.style.display = 'block';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'none';
-                    ut_g2.style.display = 'none';
-                    ut_xx1.style.display = 'none';
-                    ut_xx2.style.display = 'none';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'none';
-                    ut_cw2.style.display = 'none';
-                    ut_d1.style.display = 'block';
-                    ut_d2.style.display = 'block';
-                    ut_t1.style.display = 'block';
-                    ut_t2.style.display = 'block';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008022') {                        // THU
-                    tab7.style.display = 'none';
-                    tab8.style.display = 'none';
-                    
-                    cp_vr1.style.display = 'none';
-                    cp_vr2.style.display = 'none';
-                    cp_vr3.style.display = 'none';
-                    cp_ct1.style.display = 'none';
-                    cp_ct2.style.display = 'none';
-                    cp_ct3.style.display = 'none';
-                    cp_cr1.style.display = 'none';
-                    cp_cr2.style.display = 'none';
-                    cp_cr3.style.display = 'none';
-                    cp_pw1.style.display = 'none';
-                    cp_pw2.style.display = 'none';
-                    cp_pw3.style.display = 'none';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'block';
-                    cp_rh2.style.display = 'block';
-                    cp_rh3.style.display = 'block';
-                    cp_rh4.style.display = 'block';
-                    cp_rh5.style.display = 'block';
-                    cp_rh6.style.display = 'block';
-                    cp_ps1.style.display = 'block';
-                    cp_ps2.style.display = 'block';
-                    cp_ps3.style.display = 'block';
-                    cp_ps4.style.display = 'block';
-                    cp_ps5.style.display = 'block';
-                    cp_ps6.style.display = 'block';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'block';
-                    cp_hu2.style.display = 'block';
-                    cp_hu3.style.display = 'block';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'block';
-                    ut_g2.style.display = 'block';
-                    ut_xx1.style.display = 'block';
-                    ut_xx2.style.display = 'block';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'none';
-                    ut_cw2.style.display = 'none';
-                    ut_d1.style.display = 'block';
-                    ut_d2.style.display = 'block';
-                    ut_t1.style.display = 'block';
-                    ut_t2.style.display = 'block';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008015') {                        // MSL
-                    tab7.style.display = 'none';
-                    tab8.style.display = 'none';
-                    
-                    cp_vr1.style.display = 'none';
-                    cp_vr2.style.display = 'none';
-                    cp_vr3.style.display = 'none';
-                    cp_ct1.style.display = 'none';
-                    cp_ct2.style.display = 'none';
-                    cp_ct3.style.display = 'none';
-                    cp_cr1.style.display = 'none';
-                    cp_cr2.style.display = 'none';
-                    cp_cr3.style.display = 'none';
-                    cp_pw1.style.display = 'none';
-                    cp_pw2.style.display = 'none';
-                    cp_pw3.style.display = 'none';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'block';
-                    cp_rh2.style.display = 'block';
-                    cp_rh3.style.display = 'block';
-                    cp_rh4.style.display = 'block';
-                    cp_rh5.style.display = 'block';
-                    cp_rh6.style.display = 'block';
-                    cp_ps1.style.display = 'none';
-                    cp_ps2.style.display = 'none';
-                    cp_ps3.style.display = 'none';
-                    cp_ps4.style.display = 'none';
-                    cp_ps5.style.display = 'none';
-                    cp_ps6.style.display = 'none';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'block';
-                    cp_hu2.style.display = 'block';
-                    cp_hu3.style.display = 'block';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'none';
-                    ut_g2.style.display = 'none';
-                    ut_xx1.style.display = 'none';
-                    ut_xx2.style.display = 'none';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'none';
-                    ut_cw2.style.display = 'none';
-                    ut_d1.style.display = 'block';
-                    ut_d2.style.display = 'block';
-                    ut_t1.style.display = 'block';
-                    ut_t2.style.display = 'block';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008017') {                        // RTHS
-                    tab7.style.display = 'none';
-                    tab8.style.display = 'none';
-                    
-                    cp_vr1.style.display = 'none';
-                    cp_vr2.style.display = 'none';
-                    cp_vr3.style.display = 'none';
-                    cp_ct1.style.display = 'none';
-                    cp_ct2.style.display = 'none';
-                    cp_ct3.style.display = 'none';
-                    cp_cr1.style.display = 'none';
-                    cp_cr2.style.display = 'none';
-                    cp_cr3.style.display = 'none';
-                    cp_pw1.style.display = 'none';
-                    cp_pw2.style.display = 'none';
-                    cp_pw3.style.display = 'none';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'block';
-                    cp_rh2.style.display = 'block';
-                    cp_rh3.style.display = 'block';
-                    cp_rh4.style.display = 'block';
-                    cp_rh5.style.display = 'block';
-                    cp_rh6.style.display = 'block';
-                    cp_ps1.style.display = 'none';
-                    cp_ps2.style.display = 'none';
-                    cp_ps3.style.display = 'none';
-                    cp_ps4.style.display = 'none';
-                    cp_ps5.style.display = 'none';
-                    cp_ps6.style.display = 'none';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'block';
-                    cp_hu2.style.display = 'block';
-                    cp_hu3.style.display = 'block';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'block';
-                    ut_g2.style.display = 'block';
-                    ut_xx1.style.display = 'block';
-                    ut_xx2.style.display = 'block';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'none';
-                    ut_cw2.style.display = 'none';
-                    ut_d1.style.display = 'block';
-                    ut_d2.style.display = 'block';
-                    ut_t1.style.display = 'block';
-                    ut_t2.style.display = 'block';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008021') {                        // THS
-                    tab7.style.display = 'none';
-                    tab8.style.display = 'none';
-                    
-                    cp_vr1.style.display = 'none';
-                    cp_vr2.style.display = 'none';
-                    cp_vr3.style.display = 'none';
-                    cp_ct1.style.display = 'none';
-                    cp_ct2.style.display = 'none';
-                    cp_ct3.style.display = 'none';
-                    cp_cr1.style.display = 'none';
-                    cp_cr2.style.display = 'none';
-                    cp_cr3.style.display = 'none';
-                    cp_pw1.style.display = 'none';
-                    cp_pw2.style.display = 'none';
-                    cp_pw3.style.display = 'none';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'block';
-                    cp_rh2.style.display = 'block';
-                    cp_rh3.style.display = 'block';
-                    cp_rh4.style.display = 'block';
-                    cp_rh5.style.display = 'block';
-                    cp_rh6.style.display = 'block';
-                    cp_ps1.style.display = 'none';
-                    cp_ps2.style.display = 'none';
-                    cp_ps3.style.display = 'none';
-                    cp_ps4.style.display = 'none';
-                    cp_ps5.style.display = 'none';
-                    cp_ps6.style.display = 'none';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'block';
-                    cp_hu2.style.display = 'block';
-                    cp_hu3.style.display = 'block';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'block';
-                    ut_g2.style.display = 'block';
-                    ut_xx1.style.display = 'block';
-                    ut_xx2.style.display = 'block';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'block';
-                    ut_cw2.style.display = 'block';
-                    ut_d1.style.display = 'block';
-                    ut_d2.style.display = 'block';
-                    ut_t1.style.display = 'block';
-                    ut_t2.style.display = 'block';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008009') {                        // HTHS
-                    tab7.style.display = 'none';
-                    tab8.style.display = 'none';
-                    
-                    cp_vr1.style.display = 'none';
-                    cp_vr2.style.display = 'none';
-                    cp_vr3.style.display = 'none';
-                    cp_ct1.style.display = 'none';
-                    cp_ct2.style.display = 'none';
-                    cp_ct3.style.display = 'none';
-                    cp_cr1.style.display = 'none';
-                    cp_cr2.style.display = 'none';
-                    cp_cr3.style.display = 'none';
-                    cp_pw1.style.display = 'none';
-                    cp_pw2.style.display = 'none';
-                    cp_pw3.style.display = 'none';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'none';
-                    cp_rh2.style.display = 'none';
-                    cp_rh3.style.display = 'none';
-                    cp_rh4.style.display = 'none';
-                    cp_rh5.style.display = 'none';
-                    cp_rh6.style.display = 'none';
-                    cp_ps1.style.display = 'none';
-                    cp_ps2.style.display = 'none';
-                    cp_ps3.style.display = 'none';
-                    cp_ps4.style.display = 'none';
-                    cp_ps5.style.display = 'none';
-                    cp_ps6.style.display = 'none';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'none';
-                    cp_hu2.style.display = 'none';
-                    cp_hu3.style.display = 'none';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'block';
-                    ut_g2.style.display = 'block';
-                    ut_xx1.style.display = 'block';
-                    ut_xx2.style.display = 'block';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'none';
-                    ut_cw2.style.display = 'none';
-                    ut_d1.style.display = 'block';
-                    ut_d2.style.display = 'block';
-                    ut_t1.style.display = 'block';
-                    ut_t2.style.display = 'block';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008011') {                        // HTSL
-                    tab7.style.display = 'none';
-                    tab8.style.display = 'none';
-                    
-                    cp_vr1.style.display = 'none';
-                    cp_vr2.style.display = 'none';
-                    cp_vr3.style.display = 'none';
-                    cp_ct1.style.display = 'none';
-                    cp_ct2.style.display = 'none';
-                    cp_ct3.style.display = 'none';
-                    cp_cr1.style.display = 'none';
-                    cp_cr2.style.display = 'none';
-                    cp_cr3.style.display = 'none';
-                    cp_pw1.style.display = 'none';
-                    cp_pw2.style.display = 'none';
-                    cp_pw3.style.display = 'none';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'none';
-                    cp_rh2.style.display = 'none';
-                    cp_rh3.style.display = 'none';
-                    cp_rh4.style.display = 'none';
-                    cp_rh5.style.display = 'none';
-                    cp_rh6.style.display = 'none';
-                    cp_ps1.style.display = 'none';
-                    cp_ps2.style.display = 'none';
-                    cp_ps3.style.display = 'none';
-                    cp_ps4.style.display = 'none';
-                    cp_ps5.style.display = 'none';
-                    cp_ps6.style.display = 'none';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'none';
-                    cp_hu2.style.display = 'none';
-                    cp_hu3.style.display = 'none';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'block';
-                    ut_g2.style.display = 'block';
-                    ut_xx1.style.display = 'block';
-                    ut_xx2.style.display = 'block';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'none';
-                    ut_cw2.style.display = 'none';
-                    ut_d1.style.display = 'none';
-                    ut_d2.style.display = 'none';
-                    ut_t1.style.display = 'none';
-                    ut_t2.style.display = 'none';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008014') {                        // LTSL
-                    tab7.style.display = 'none';
-                    tab8.style.display = 'none';
-                    
-                    cp_vr1.style.display = 'none';
-                    cp_vr2.style.display = 'none';
-                    cp_vr3.style.display = 'none';
-                    cp_ct1.style.display = 'none';
-                    cp_ct2.style.display = 'none';
-                    cp_ct3.style.display = 'none';
-                    cp_cr1.style.display = 'none';
-                    cp_cr2.style.display = 'none';
-                    cp_cr3.style.display = 'none';
-                    cp_pw1.style.display = 'none';
-                    cp_pw2.style.display = 'none';
-                    cp_pw3.style.display = 'none';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'none';
-                    cp_rh2.style.display = 'none';
-                    cp_rh3.style.display = 'none';
-                    cp_rh4.style.display = 'none';
-                    cp_rh5.style.display = 'none';
-                    cp_rh6.style.display = 'none';
-                    cp_ps1.style.display = 'none';
-                    cp_ps2.style.display = 'none';
-                    cp_ps3.style.display = 'none';
-                    cp_ps4.style.display = 'none';
-                    cp_ps5.style.display = 'none';
-                    cp_ps6.style.display = 'none';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'none';
-                    cp_hu2.style.display = 'none';
-                    cp_hu3.style.display = 'none';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'block';
-                    ut_g2.style.display = 'block';
-                    ut_xx1.style.display = 'block';
-                    ut_xx2.style.display = 'block';
-                    ut_q1.style.display = 'none';
-                    ut_q2.style.display = 'none';
-                    ut_cw1.style.display = 'block';
-                    ut_cw2.style.display = 'block';
-                    ut_d1.style.display = 'block';
-                    ut_d2.style.display = 'block';
-                    ut_t1.style.display = 'block';
-                    ut_t2.style.display = 'block';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else if (reltest.value === '008019') {                        // TC
-                    tab7.style.display = 'none';
-                    tab8.style.display = 'none';
-                    
-                    cp_vr1.style.display = 'none';
-                    cp_vr2.style.display = 'none';
-                    cp_vr3.style.display = 'none';
-                    cp_ct1.style.display = 'none';
-                    cp_ct2.style.display = 'none';
-                    cp_ct3.style.display = 'none';
-                    cp_cr1.style.display = 'none';
-                    cp_cr2.style.display = 'none';
-                    cp_cr3.style.display = 'none';
-                    cp_pw1.style.display = 'none';
-                    cp_pw2.style.display = 'none';
-                    cp_pw3.style.display = 'none';
-                    cp_mt1.style.display = 'none';
-                    cp_mt2.style.display = 'none';
-                    cp_mt3.style.display = 'none';
-                    cp_mt4.style.display = 'none';
-                    cp_mt5.style.display = 'none';
-                    cp_mt6.style.display = 'none';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'none';
-                    cp_rh2.style.display = 'none';
-                    cp_rh3.style.display = 'none';
-                    cp_rh4.style.display = 'none';
-                    cp_rh5.style.display = 'none';
-                    cp_rh6.style.display = 'none';
-                    cp_ps1.style.display = 'none';
-                    cp_ps2.style.display = 'none';
-                    cp_ps3.style.display = 'none';
-                    cp_ps4.style.display = 'none';
-                    cp_ps5.style.display = 'none';
-                    cp_ps6.style.display = 'none';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'none';
-                    cp_hu2.style.display = 'none';
-                    cp_hu3.style.display = 'none';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'block';
-                    ut_g2.style.display = 'block';
-                    ut_xx1.style.display = 'block';
-                    ut_xx2.style.display = 'block';
-                    ut_q1.style.display = 'block';
-                    ut_q2.style.display = 'block';
-                    ut_cw1.style.display = 'block';
-                    ut_cw2.style.display = 'block';
-                    ut_d1.style.display = 'none';
-                    ut_d2.style.display = 'none';
-                    ut_t1.style.display = 'none';
-                    ut_t2.style.display = 'none';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                } else {
-                    tab7.style.display = 'block';
-                    tab8.style.display = 'block';
-                    
-                    cp_vr1.style.display = 'block';
-                    cp_vr2.style.display = 'block';
-                    cp_vr3.style.display = 'block';
-                    cp_ct1.style.display = 'block';
-                    cp_ct2.style.display = 'block';
-                    cp_ct3.style.display = 'block';
-                    cp_cr1.style.display = 'block';
-                    cp_cr2.style.display = 'block';
-                    cp_cr3.style.display = 'block';
-                    cp_pw1.style.display = 'block';
-                    cp_pw2.style.display = 'block';
-                    cp_pw3.style.display = 'block';
-                    cp_mt1.style.display = 'block';
-                    cp_mt2.style.display = 'block';
-                    cp_mt3.style.display = 'block';
-                    cp_mt4.style.display = 'block';
-                    cp_mt5.style.display = 'block';
-                    cp_mt6.style.display = 'block';
-                    cp_mtp1.style.display = 'block';
-                    cp_mtp2.style.display = 'block';
-                    cp_mtp3.style.display = 'block';
-                    cp_mtp4.style.display = 'block';
-                    cp_mtp5.style.display = 'block';
-                    cp_mtp6.style.display = 'block';
-                    cp_rh1.style.display = 'block';
-                    cp_rh2.style.display = 'block';
-                    cp_rh3.style.display = 'block';
-                    cp_rh4.style.display = 'block';
-                    cp_rh5.style.display = 'block';
-                    cp_rh6.style.display = 'block';
-                    cp_ps1.style.display = 'block';
-                    cp_ps2.style.display = 'block';
-                    cp_ps3.style.display = 'block';
-                    cp_ps4.style.display = 'block';
-                    cp_ps5.style.display = 'block';
-                    cp_ps6.style.display = 'block';
-                    cp_ht1.style.display = 'block';
-                    cp_ht2.style.display = 'block';
-                    cp_ht3.style.display = 'block';
-                    cp_tf1.style.display = 'block';
-                    cp_tf2.style.display = 'block';
-                    cp_tf3.style.display = 'block';
-                    cp_tu1.style.display = 'block';
-                    cp_tu2.style.display = 'block';
-                    cp_tu3.style.display = 'block';
-                    cp_hu1.style.display = 'block';
-                    cp_hu2.style.display = 'block';
-                    cp_hu3.style.display = 'block';
-                    
-                    ut_v1.style.display = 'block';
-                    ut_v2.style.display = 'block';
-                    ut_v3.style.display = 'block';
-                    ut_c1.style.display = 'block';
-                    ut_c2.style.display = 'block';
-                    ut_c3.style.display = 'block';
-                    ut_p1.style.display = 'block';
-                    ut_p2.style.display = 'block';
-                    ut_p3.style.display = 'block';
-                    ut_x1.style.display = 'block';
-                    ut_x2.style.display = 'block';
-                    ut_g1.style.display = 'block';
-                    ut_g2.style.display = 'block';
-                    ut_xx1.style.display = 'block';
-                    ut_xx2.style.display = 'block';
-                    ut_q1.style.display = 'block';
-                    ut_q2.style.display = 'block';
-                    ut_cw1.style.display = 'block';
-                    ut_cw2.style.display = 'block';
-                    ut_d1.style.display = 'block';
-                    ut_d2.style.display = 'block';
-                    ut_t1.style.display = 'block';
-                    ut_t2.style.display = 'block';
-                    ut_cda1.style.display = 'block';
-                    ut_cda2.style.display = 'block';
-                    ut_l1.style.display = 'block';
-                    ut_l2.style.display = 'block';
-                }
-                // ABOVE TO COVER THE HIDE SHOW VALUE FROM THE EXISTING DATA - END
             });
 
             tabs.addEventListener('click', (event) => {
