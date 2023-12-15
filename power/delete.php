@@ -20,5 +20,5 @@ $con->close();
 ?>
 <script>
     alert('Record Power Supply deleted successfully');
-    window.location.href = 'list.php';
+    window.location.href = '../list/list_power_supply.php';
 </script>
