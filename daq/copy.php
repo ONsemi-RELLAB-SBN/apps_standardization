@@ -199,51 +199,51 @@ $id = $_GET['edit'];
                     <h6 id="capacity">Capacity</h6>
                     <div class="row">
                         <div class="two columns"><label for="no_temp_channel">Number of temperature channels *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="no_temp_channel" name="no_temp_channel" value="<?php echo $rowForm['no_temp_channel']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="no_temp_channel" name="no_temp_channel" value="<?php echo $rowForm['no_temp_channel']; ?>" required> </div>
                         <div class="one columns"><label for="no_temp_channel" style="text-align: left"><b>&nbsp;</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="no_volt_channel">Number of voltage channels *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="no_volt_channel" name="no_volt_channel" value="<?php echo $rowForm['no_voltage_channel']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="no_volt_channel" name="no_volt_channel" value="<?php echo $rowForm['no_voltage_channel']; ?>" required> </div>
                         <div class="one columns"><label for="no_volt_channel" style="text-align: left"><b>&nbsp;</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="no_leakage_channel">Number of leakage channels *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="no_leakage_channel" name="no_leakage_channel" value="<?php echo $rowForm['no_leakage_channel']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="no_leakage_channel" name="no_leakage_channel" value="<?php echo $rowForm['no_leakage_channel']; ?>" required> </div>
                         <div class="one columns"><label for="no_leakage_channel" style="text-align: left"><b>&nbsp;</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
 
                     <h6 id="capability">Capability</h6>
                     <div class="row">
                         <div class="two columns"><label for="max_voltage">Max voltage measurement capability *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="max_voltage" name="max_voltage" value="<?php echo $rowForm['max_voltage_measure']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="max_voltage" name="max_voltage" value="<?php echo $rowForm['max_voltage_measure']; ?>" required> </div>
                         <div class="one columns"><label for="max_voltage" style="text-align: left"><b>V</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="min_voltage">Min voltage measurement capability *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="min_voltage" name="min_voltage" value="<?php echo $rowForm['min_voltage_measure']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="min_voltage" name="min_voltage" value="<?php echo $rowForm['min_voltage_measure']; ?>" required> </div>
                         <div class="one columns"><label for="min_voltage" style="text-align: left"><b>mV</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="max_leakage">Max leakage current measurement range *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="max_leakage" name="max_leakage" value="<?php echo $rowForm['max_leakage_measure']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="max_leakage" name="max_leakage" value="<?php echo $rowForm['max_leakage_measure']; ?>" required> </div>
                         <div class="one columns"><label for="max_leakage" style="text-align: left"><b>A</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="min_leakage">Min leakage current measurement range *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="min_leakage" name="min_leakage" value="<?php echo $rowForm['min_leakage_measure']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="min_leakage" name="min_leakage" value="<?php echo $rowForm['min_leakage_measure']; ?>" required> </div>
                         <div class="one columns"><label for="min_leakage" style="text-align: left"><b>&#181A</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="max_temp">Max temperature measurement capability *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="<?php echo $rowForm['max_temp_measure']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="<?php echo $rowForm['max_temp_measure']; ?>" required> </div>
                         <div class="one columns"><label for="max_temp" style="text-align: left"><b>&#8451;</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="min_temp">Min temperature measurement capability *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="<?php echo $rowForm['min_temp_measure']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="<?php echo $rowForm['min_temp_measure']; ?>" required> </div>
                         <div class="one columns"><label for="min_temp" style="text-align: left"><b>&#8451;</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="display_volt_drop">Display Rdaq Voltage Drop *</label></div>
@@ -293,19 +293,19 @@ $id = $_GET['edit'];
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="scan_time">Scan Time *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="scan_time" name="scan_time" value="<?php echo $rowForm['scan_time'] ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="scan_time" name="scan_time" value="<?php echo $rowForm['scan_time'] ?>" required> </div>
                         <div class="one columns"><label for="scan_time" style="text-align: left"><b>s</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="leakage_measure_reso">Leakage measurement resolution *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="leakage_measure_reso" name="leakage_measure_reso" value="<?php echo $rowForm['leakage_measure_resolution']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="leakage_measure_reso" name="leakage_measure_reso" value="<?php echo $rowForm['leakage_measure_resolution']; ?>" required> </div>
                         <div class="one columns"><label for="leakage_measure_reso" style="text-align: left"><b>A</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="leakage_measure_accuracy">Leakage measurement accuracy *</label></div>
-                        <div class="one columns"><input type="number" step="0.001" id="leakage_measure_accuracy" name="leakage_measure_accuracy" value="<?php echo $rowForm['leakage_measure_accuracy']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="leakage_measure_accuracy" name="leakage_measure_accuracy" value="<?php echo $rowForm['leakage_measure_accuracy']; ?>" required> </div>
                         <div class="one columns"><label for="leakage_measure_accuracy" style="text-align: left"><b>&nbsp;</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                         <div class="two columns">
                             <label for="volt_measure_reso">Voltage measurement resolution *</label>
                             <label for="toggle_01" class="view-image">Image</label>
@@ -315,7 +315,7 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="../image/daq/001.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="volt_measure_reso" name="volt_measure_reso" value="<?php echo $rowForm['voltage_measure_resolution']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="volt_measure_reso" name="volt_measure_reso" value="<?php echo $rowForm['voltage_measure_resolution']; ?>" required> </div>
                         <div class="one columns"><label for="volt_measure_reso" style="text-align: left"><b>&nbsp;</b></label></div>
                     </div>
                     <div class="row">
@@ -375,9 +375,9 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="../image/daq/004_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="analog_input_single" name="analog_input_single" value="<?php echo $rowForm['no_analog_input_single']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="analog_input_single" name="analog_input_single" value="<?php echo $rowForm['no_analog_input_single']; ?>" required> </div>
                         <div class="one columns"><label for="analog_input_single" style="text-align: left"><b>V</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                         <div class="two columns">
                             <label for="analog_input_diff">Number of analog inputs (differential) *</label>
                             <label for="toggle_041" class="view-image">Image</label>
@@ -387,9 +387,9 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="../image/daq/004_1.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="analog_input_diff" name="analog_input_diff" value="<?php echo $rowForm['no_analog_input_diff']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="analog_input_diff" name="analog_input_diff" value="<?php echo $rowForm['no_analog_input_diff']; ?>" required> </div>
                         <div class="one columns"><label for="analog_input_diff" style="text-align: left"><b>V</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns">
@@ -401,9 +401,9 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="../image/daq/004_2.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="resolution" name="resolution" value="<?php echo $rowForm['resolution']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="resolution" name="resolution" value="<?php echo $rowForm['resolution']; ?>" required> </div>
                         <div class="one columns"><label for="resolution" style="text-align: left"><b>&nbsp;</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                         <div class="two columns">
                             <label for="sampling_frequency">Sampling frequency *</label>
                             <label for="toggle_050" class="view-image">Image</label>
@@ -413,9 +413,9 @@ $id = $_GET['edit'];
                                 <img id="myImg" src="../image/daq/005_0.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                             </dialog>
                         </div>
-                        <div class="one columns"><input type="number" step="0.001" id="sampling_frequency" name="sampling_frequency" value="<?php echo $rowForm['sampling_freq']; ?>" required> </div>
+                        <div class="two columns"><input type="number" step="0.001" id="sampling_frequency" name="sampling_frequency" value="<?php echo $rowForm['sampling_freq']; ?>" required> </div>
                         <div class="one columns"><label for="sampling_frequency" style="text-align: left"><b>s</b></label></div>
-                        <div class="two columns">&nbsp;</div>
+                        <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns">
@@ -551,7 +551,7 @@ $id = $_GET['edit'];
                         <div class="one columns">&nbsp;</div>
                     </div>
                 <?php endwhile; ?>
-                <button onclick="location.href = 'list.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+                <button onclick="location.href = '../list/list_daq.php'" type="button" id="backBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
                 <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> COPY</button>
             </form>
         </div>

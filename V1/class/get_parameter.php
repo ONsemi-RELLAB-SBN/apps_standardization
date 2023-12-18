@@ -48,10 +48,10 @@ function getParameterValue($code) {
     $username = "ayep";
     $password = "mysql@2023";
     $dbname = "gest";
+    $data = "";
     
     if ($code == "") {
         echo "";
-        $data = "";
     } else {
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
