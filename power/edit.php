@@ -144,29 +144,29 @@ $id = $_GET['edit'];
                 <h6 id="capability">Capability</h6>
                 <div class="row">
                     <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="<?php echo $rowForm['voltage_rating']; ?>" required> </div>
+                    <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="<?php echo $rowForm['voltage_rating']; ?>" required> </div>
                     <div class="one columns"><b>V</b></div>
-                    <div class="two columns">&nbsp;</div>
+                    <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="<?php echo $rowForm['current_rating']; ?>" required> </div>
-                    <div class="one columns"><b>`C</b></div>
-                    <div class="two columns">&nbsp;</div>
+                    <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="<?php echo $rowForm['current_rating']; ?>" required> </div>
+                    <div class="one columns"><b>&#176;C</b></div>
+                    <div class="one columns">&nbsp;</div>
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="max_power">Max Power *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="max_power" name="max_power" value="<?php echo $rowForm['max_power']; ?>" required> </div>
-                    <div class="one columns"><b>Watt</b></div>
-                    <div class="two columns">&nbsp;</div>
+                    <div class="two columns"><input type="number" step="0.001" id="max_power" name="max_power" value="<?php echo $rowForm['max_power']; ?>" required> </div>
+                    <div class="one columns"><b>W</b></div>
+                    <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="volt_display_digit">Number of voltage display digits *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="volt_display_digit" name="volt_display_digit" value="<?php echo $rowForm['no_voltage_display']; ?>" required> </div>
+                    <div class="two columns"><input type="number" step="0.001" id="volt_display_digit" name="volt_display_digit" value="<?php echo $rowForm['no_voltage_display']; ?>" required> </div>
                     <div class="one columns"><b></b></div>
-                    <div class="two columns">&nbsp;</div>
+                    <div class="one columns">&nbsp;</div>
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="curr_display_digit">Number of current display digits *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="curr_display_digit" name="curr_display_digit" value="<?php echo $rowForm['no_current_display']; ?>" required> </div>
+                    <div class="two columns"><input type="number" step="0.001" id="curr_display_digit" name="curr_display_digit" value="<?php echo $rowForm['no_current_display']; ?>" required> </div>
                     <div class="one columns"><b>&nbsp;</b></div>
-                    <div class="two columns">&nbsp;</div>
+                    <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="volt_protection">Overvoltage protection *</label></div>
                     <div class="three columns">
                         <select id="volt_protection" name="volt_protection" style="width: 100%" required>
@@ -199,29 +199,29 @@ $id = $_GET['edit'];
                 <h6 id="characteristic">Characteristics</h6>
                 <div class="row">
                     <div class="two columns"><label for="dimension_w">Dimensions (W) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="dimension_w" name="dimension_w" value="<?php echo $rowForm['ps_dimension_w']; ?>" required> </div>
+                    <div class="two columns"><input type="number" step="0.001" id="dimension_w" name="dimension_w" value="<?php echo $rowForm['ps_dimension_w']; ?>" required> </div>
                     <div class="one columns"><label for="dimension_w" style="text-align: left"><b>mm</b></label></div>
-                    <div class="two columns">&nbsp;</div>
+                    <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="weight">Weight (kg) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="weight" name="weight" value="<?php echo $rowForm['weight']; ?>" required> </div>
+                    <div class="two columns"><input type="number" step="0.001" id="weight" name="weight" value="<?php echo $rowForm['weight']; ?>" required> </div>
                     <div class="one columns"><label for="weight" style="text-align: left"><b>Kg</b></label></div>
-                    <div class="two columns">&nbsp;</div>
+                    <div class="one columns">&nbsp;</div>
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="dimension_d">Dimensions (D) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="dimension_d" name="dimension_d" value="<?php echo $rowForm['ps_dimension_d']; ?>" required> </div>
+                    <div class="two columns"><input type="number" step="0.001" id="dimension_d" name="dimension_d" value="<?php echo $rowForm['ps_dimension_d']; ?>" required> </div>
                     <div class="one columns"><label for="maxTemp" style="text-align: left"><b>mm</b></label></div>
-                    <div class="two columns">&nbsp;</div>
+                    <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="input_volt">Input voltage (facilities) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="input_volt" name="input_volt" value="<?php echo $rowForm['input_voltage']; ?>" required> </div>
+                    <div class="two columns"><input type="number" step="0.001" id="input_volt" name="input_volt" value="<?php echo $rowForm['input_voltage']; ?>" required> </div>
                     <div class="one columns"><label for="minTemp" style="text-align: left"><b>V</b></label></div>
-                    <div class="two columns">&nbsp;</div>
+                    <div class="one columns">&nbsp;</div>
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="dimension_h">Dimensions (H) *</label></div>
-                    <div class="one columns"><input type="number" step="0.001" id="dimension_h" name="dimension_h" value="<?php echo $rowForm['ps_dimension_h']; ?>" required> </div>
+                    <div class="two columns"><input type="number" step="0.001" id="dimension_h" name="dimension_h" value="<?php echo $rowForm['ps_dimension_h']; ?>" required> </div>
                     <div class="one columns"><label for="minTemp" style="text-align: left"><b>mm</b></label></div>
-                    <div class="two columns">&nbsp;</div>
+                    <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="remote_operation_capability">Remote operation capability *</label></div>
                     <div class="three columns">
                         <select id="remote_operation_capability" name="remote_operation_capability" style="width: 100%" required>
@@ -355,7 +355,7 @@ $id = $_GET['edit'];
                             <img id="myImg" src="../image/powersupply/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                         </dialog>
                     </div>
-                    <div class="one columns"><input type="number" step="0.001" id="no_output_channel" name="no_output_channel" value="<?php echo $rowForm['no_output']; ?>" required> </div>
+                    <div class="two columns"><input type="number" step="0.001" id="no_output_channel" name="no_output_channel" value="<?php echo $rowForm['no_output']; ?>" required> </div>
                     <div class="one columns"><label for="no_output_channel" style="text-align: left"><b>V</b></label></div>
                 </div>
             <?php endwhile; ?>
@@ -374,6 +374,6 @@ $id = $_GET['edit'];
                 $("body").removeClass("modal-active");
             });
         </script>
-        <script src="js/multiselect-dropdown.js" ></script>
+        <script src="../js/multiselect-dropdown.js" ></script>
     </body>
 </html>

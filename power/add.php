@@ -162,13 +162,13 @@ include '../template/form.php';
                 <div class="one columns">&nbsp;</div>
                 <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
                 <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" required> </div>
-                <div class="one columns"><b>`C</b></div>
+                <div class="one columns"><b>&#176;C</b></div>
                 <div class="one columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="max_power">Max Power *</label></div>
                 <div class="two columns"><input type="number" step="0.001" id="max_power" name="max_power" value="" required> </div>
-                <div class="one columns"><b>Watt</b></div>
+                <div class="one columns"><b>W</b></div>
                 <div class="one columns">&nbsp;</div>
                 <div class="two columns"><label for="volt_display_digit">Number of voltage display digits *</label></div>
                 <div class="two columns"><input type="number" step="0.001" id="volt_display_digit" name="volt_display_digit" value="" required> </div>
