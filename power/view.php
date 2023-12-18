@@ -197,20 +197,8 @@ $id = $_GET['view'];
                     <div class="one columns">&nbsp;</div>
                 </div>
             <?php endwhile; ?>
-            <button onclick="location.href = 'list.php'" type="button" id="backBtn"><i class='bx bxs-chevron-left bx-fw' ></i> Back</button>
+            <button onclick="location.href = '../list/list_power_supply.php'" type="button" id="backBtn"><i class='bx bxs-chevron-left bx-fw' ></i> Back</button>
             <button onclick="location.href = 'edit.php?edit=<?php echo $id; ?>'" type="button" id="editBtn"><i class='bx bxs-pencil bx-fw' ></i> Edit</button>
         </form>
-        <script>
-            $(".button").click(function () {
-                var buttonId = $(this).attr("id");
-                $("#modal-container").removeAttr("class").addClass(buttonId);
-                $("body").addClass("modal-active");
-            });
-
-            $("#modal-container").click(function () {
-                $(this).addClass("out");
-                $("body").removeClass("modal-active");
-            });
-        </script>
     </body>
 </html>

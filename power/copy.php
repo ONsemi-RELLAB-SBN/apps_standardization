@@ -362,7 +362,7 @@ $id = $_GET['edit'];
                     <div class="one columns">&nbsp;</div>
                 </div>
             <?php endwhile; ?>
-            <button onclick="location.href = 'list.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
+            <button onclick="location.href = '../list/list_power_supply.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
             <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> COPY</button>
         </form>
         <script>

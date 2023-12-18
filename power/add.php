@@ -399,6 +399,7 @@ include '../template/form.php';
                 $("body").removeClass("modal-active");
             });
         </script>
+        <script src="../js/jquery-3.7.0.js"></script>
         <script src="../js/multiselect-dropdown.js" ></script>
     </body>
 </html>

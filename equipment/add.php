@@ -2759,16 +2759,13 @@ include '../template/form.php';
             form.addEventListener('input', () => {
                 if (hasAllRequiredFilled()) {
                     if (hasAllVisibleFilled()) {
-                        console.log("333");
                         saveButton.style.display = 'block';
                         draftButton.style.display = 'none';
                     } else {
-                        console.log("111");
                         draftButton.style.display = 'block';
                         saveButton.style.display = 'none';
                     }
                 } else {
-                    console.log("2222");
                     draftButton.style.display = 'none';
                     saveButton.style.display = 'none';
                 }
