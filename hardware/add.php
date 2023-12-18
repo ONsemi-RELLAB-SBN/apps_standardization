@@ -181,19 +181,19 @@ include '../template/form.php';
             <h6 id="capability">Capability</h6>
             <div class="row">
                 <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" required> </div>
                 <div class="one columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
                 <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="" required> </div>
                 <div class="one columns"><label for="curr_rating" style="text-align: left"><b>A</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="temp_rating">Temp Rating *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="temp_rating" name="temp_rating" value="" required> </div>
-                <div class="one columns"><label for="temp_rating" style="text-align: left"><b>`C</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="two columns"><input type="number" step="0.001" id="temp_rating" name="temp_rating" value="" required> </div>
+                <div class="one columns"><label for="temp_rating" style="text-align: left"><b>&#8451;</b></label></div>
+                <div class="one columns">&nbsp;</div>
                 <div class="two columns"><label for="support_stress">Supported Stresses *</label></div>
                 <div class="three columns">
                     <select id="support_stress" name="support_stress" style="width: 100%" required>
@@ -239,9 +239,9 @@ include '../template/form.php';
                 </div>
                 <div class="one columns">&nbsp;</div>
                 <div class="two columns"><label for="mb_dimension_l">Motherboard Dimension (L) *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="mb_dimension_l" name="mb_dimension_l" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="mb_dimension_l" name="mb_dimension_l" value="" required> </div>
                 <div class="one columns"><label for="mb_dimension_l" style="text-align: left"><b>mm</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="frame_material">Frame Material *</label></div>
@@ -258,9 +258,9 @@ include '../template/form.php';
                 </div>
                 <div class="one columns">&nbsp;</div>
                 <div class="two columns"><label for="mb_dimension_w">(W) *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="mb_dimension_w" name="mb_dimension_w" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="mb_dimension_w" name="mb_dimension_w" value="" required> </div>
                 <div class="one columns"><label for="mb_dimension_w" style="text-align: left"><b>mm</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="board_coat">Board Coating *</label></div>
@@ -277,13 +277,13 @@ include '../template/form.php';
                 </div>
                 <div class="one columns">&nbsp;</div>
                 <div class="two columns"><label for="mb_dimension_t">(T) *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="mb_dimension_t" name="mb_dimension_t" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="mb_dimension_t" name="mb_dimension_t" value="" required> </div>
                 <div class="one columns"><label for="mb_dimension_t" style="text-align: left"><b>mm</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="no_layers">Number of Layers *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="no_layers" name="no_layers" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="no_layers" name="no_layers" value="" required> </div>
                 <div class="one columns"><label for="no_layers" style="text-align: left"><b>layers</b></label></div>
             </div>
 
@@ -333,19 +333,19 @@ include '../template/form.php';
             </div>
             <div class="row">
                 <div class="two columns"><label for="socket_conn_qty">Socket/connector qty *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="socket_conn_qty" name="socket_conn_qty" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="socket_conn_qty" name="socket_conn_qty" value="" required> </div>
                 <div class="one columns"><label for="socket_conn_qty" style="text-align: left"><b>pcs</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
                 <div class="two columns"><label for="socket_conn_pin_qty">Socket/connector pin qty *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="socket_conn_pin_qty" name="socket_conn_pin_qty" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="socket_conn_pin_qty" name="socket_conn_pin_qty" value="" required> </div>
                 <div class="one columns"><label for="socket_conn_pin_qty" style="text-align: left"><b>pins</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns"><label for="socket_con_pin_pitch">Socket/connector pin pitch *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="socket_con_pin_pitch" name="socket_con_pin_pitch" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="socket_con_pin_pitch" name="socket_con_pin_pitch" value="" required> </div>
                 <div class="one columns"><label for="socket_con_pin_pitch" style="text-align: left"><b>mm</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
                 <div class="two columns">
                     <label for="support_package">Supported cards/packages *</label>
                     <label for="toggle_03" class="view-image">Image</label>
@@ -371,9 +371,9 @@ include '../template/form.php';
             <h7 style="color:orange">Load Cards</h7>
             <div class="row">
                 <div class="two columns"><label for="max_load_card_qty">Max load card qty *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="max_load_card_qty" name="max_load_card_qty" value="" required></div>
+                <div class="two columns"><input type="number" step="0.001" id="max_load_card_qty" name="max_load_card_qty" value="" required></div>
                 <div class="one columns"><label for="max_load_card_qty" style="text-align: left"><b>pcs</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
                 <div class="two columns">
                     <label for="load_card_pin_qty">Load card pin qty *</label>
                     <label for="toggle_04" class="view-image">Image</label>
@@ -383,9 +383,9 @@ include '../template/form.php';
                         <img id="myImg" src="../image/hardware/004.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
-                <div class="one columns"><input type="number" step="0.001" id="load_card_pin_qty" name="load_card_pin_qty" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="load_card_pin_qty" name="load_card_pin_qty" value="" required> </div>
                 <div class="one columns"><label for="load_card_pin_qty" style="text-align: left"><b>pins</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns">
@@ -397,17 +397,17 @@ include '../template/form.php';
                         <img id="myImg" src="../image/hardware/005.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
-                <div class="one columns"><input type="number" step="0.001" id="load_card_pin_pitch" name="load_card_pin_pitch" value="" required></div>
+                <div class="two columns"><input type="number" step="0.001" id="load_card_pin_pitch" name="load_card_pin_pitch" value="" required></div>
                 <div class="one columns"><label for="load_card_pin_pitch" style="text-align: left"><b>mm</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
             </div>
 
             <h7 style="color:orange">Program Cards</h7>
             <div class="row">
                 <div class="two columns"><label for="max_prog_card_qty">Max program card qty *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="max_prog_card_qty" name="max_prog_card_qty" value="" required></div>
+                <div class="two columns"><input type="number" step="0.001" id="max_prog_card_qty" name="max_prog_card_qty" value="" required></div>
                 <div class="one columns"><label for="max_prog_card_qty" style="text-align: left"><b>pcs</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
                 <div class="two columns">
                     <label for="prog_card_pin_qty">Program card pin qty *</label>
                     <label for="toggle_06" class="view-image">Image</label>
@@ -417,9 +417,9 @@ include '../template/form.php';
                         <img id="myImg" src="../image/hardware/006.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
-                <div class="one columns"><input type="number" step="0.001" id="prog_card_pin_qty" name="prog_card_pin_qty" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="prog_card_pin_qty" name="prog_card_pin_qty" value="" required> </div>
                 <div class="one columns"><label for="prog_card_pin_qty" style="text-align: left"><b>pins</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns">
@@ -431,7 +431,7 @@ include '../template/form.php';
                         <img id="myImg" src="../image/hardware/007.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
-                <div class="one columns"><input type="number" step="0.001" id="prog_card_pin_pitch" name="prog_card_pin_pitch" value="" required></div>
+                <div class="two columns"><input type="number" step="0.001" id="prog_card_pin_pitch" name="prog_card_pin_pitch" value="" required></div>
                 <div class="one columns"><label for="prog_card_pin_pitch" style="text-align: left"><b>mm</b></label></div>
             </div>
 
@@ -469,9 +469,9 @@ include '../template/form.php';
                         <img id="myImg" src="../image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
-                <div class="one columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="" required> </div>
                 <div class="one columns"><label for="no_pins" style="text-align: left"><b>pins</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
             </div>
             <div class="row">
                 <div class="two columns">
@@ -483,9 +483,9 @@ include '../template/form.php';
                         <img id="myImg" src="../image/hardware/009.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
-                <div class="one columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="" required> </div>
                 <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
                 <div class="two columns">
                     <label for="edge_thick">Edgefinger thickness *</label>
                     <label for="toggle_10" class="view-image">Image</label>
@@ -495,15 +495,15 @@ include '../template/form.php';
                         <img id="myImg" src="../image/hardware/010.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                     </dialog>
                 </div>
-                <div class="one columns"><input type="number" step="0.001" id="edge_thick" name="edge_thick" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="edge_thick" name="edge_thick" value="" required> </div>
                 <div class="one columns"><label for="edge_thick" style="text-align: left"><b>mm</b></label></div>
-                <div class="two columns">&nbsp;</div>
+                <div class="one columns">&nbsp;</div>
             </div>
 
             <h6 id="capacity">Capacity</h6>
             <div class="row">
                 <div class="two columns"><label for="max_dut_mb">Max DUT qty per motherboard *</label></div>
-                <div class="one columns"><input type="number" step="0.001" id="max_dut_mb" name="max_dut_mb" value="" required> </div>
+                <div class="two columns"><input type="number" step="0.001" id="max_dut_mb" name="max_dut_mb" value="" required> </div>
                 <div class="one columns"><label for="max_dut_mb" style="text-align: left"><b>DUTs</b></label></div>
             </div>
 
@@ -523,6 +523,6 @@ include '../template/form.php';
                 $("body").removeClass("modal-active");
             });
         </script>
-        <script src="js/multiselect-dropdown.js" ></script>
+        <script src="../js/multiselect-dropdown.js" ></script>
     </body>
 </html>

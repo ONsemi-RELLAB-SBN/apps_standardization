@@ -20,5 +20,5 @@ $con->close();
 ?>
 <script>
     alert('Record Hardware deleted successfully');
-    window.location.href = 'list.php';
+    window.location.href = '../list/list_hardware.php';
 </script>
