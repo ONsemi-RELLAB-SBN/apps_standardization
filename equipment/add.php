@@ -2705,7 +2705,7 @@ include '../template/form.php';
         <script>
             const tabs = document.getElementById('tabs');
             const tabContents = document.querySelectorAll('.tab-content');
-            const form = document.getElementById('replicate_equipment_form');
+            const form = document.getElementById('add_equipment_form');
             const draftButton = document.getElementById('draft-button');
             const saveButton = document.getElementById('save-button');
             

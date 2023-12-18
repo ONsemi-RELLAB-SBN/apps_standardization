@@ -7,19 +7,24 @@
 
 include 'db.php';
 
+echo '<br> 001 :: ' . $host;
+echo '<br> 002 :: ' . $user;
+echo '<br> 003 :: ' . $pass;
+echo '<br> 004 :: ' . $db;
+
 function getParameterDetail($code) {
     $getData = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' ORDER BY code ASC";
     $rData = mysqli_query($con, $getData);
-//    $rowMaklumat = mysqli_fetch_assoc($rData);
     while ($rowSite = mysqli_fetch_array($resSite)):
         $data = $row['name'];
     endwhile;
-    echo 'test query' . $data;
+//    echo 'test query' . $data;
     return $data;
 }
 
 function getMultipleParameter($string) {
-    $mysqli = new mysqli('localhost', 'ayep', 'mysql@2023', 'gest');
+//    $mysqli = new mysqli('localhost', 'ayep', 'mysql@2023', 'gest');
+    $mysqli = new mysqli($host, $user, $pass, $db);
     if ($mysqli->connect_errno) {
         echo 'Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error;
         exit;
@@ -44,16 +49,16 @@ function getMultipleParameter($string) {
 }
 
 function getParameterValue($code) {
-    $servername = "localhost";
-    $username = "ayep";
-    $password = "mysql@2023";
-    $dbname = "gest";
+//    $servername = "localhost";
+//    $username = "ayep";
+//    $password = "mysql@2023";
+//    $dbname = "gest";
     $data = "";
     
     if ($code == "") {
         echo "";
     } else {
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = new mysqli($host, $user, $pass, $db);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
@@ -75,7 +80,7 @@ function getParameterValue($code) {
 }
 
 function getParameterValues($string) {
-    $mysqli = new mysqli('localhost', 'ayep', 'mysql@2023', 'gest');
+    $mysqli = new mysqli($host, $user, $pass, $db);
     if ($mysqli->connect_errno) {
         echo 'Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error;
         exit;
@@ -129,4 +134,18 @@ function getCode($value, $code, $username) {
         $con->close();
     }
     return $latestCode;
+}
+
+function getDropdown($code) {
+    $getData = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' ORDER BY code ASC";
+    $rData = mysqli_query($con, $getData);
+    while ($rowSite = mysqli_fetch_array($resSite)):
+        $data = $row['name'];
+    endwhile;
+    echo 'test query' . $data;
+    return "";
+}
+
+function getDropdownValue($code, $value) {
+    return "";
 }
