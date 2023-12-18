@@ -1,6 +1,5 @@
 <?php
-
-/* 
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
@@ -12,81 +11,159 @@ include 'class/get_parameter.php';
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>LIST | DAQ List</title>
-        <meta name="description" content="Circular Navigation Styles - Building a Circular Navigation with CSS Transforms | Codrops " />
-        <meta name="keywords" content="css transforms, circular navigation, round navigation, circular menu, tutorial" />
-        <meta name="author" content="Ayep" />
-        <link rel="shortcut icon" href="image/logo/onsemi_logo.ico">
-
-        <link rel="stylesheet" type="text/css" href="css/w3.css">
-        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
-        <link rel='stylesheet' type="text/css" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-
+        <link rel='stylesheet' type="text/css" href='css/jquery.dataTables.min.css'>
+        <link rel='stylesheet' type="text/css" href='css/buttons.dataTables.min.css'>
+        <link rel="stylesheet" href="css/bootstrap3.min.css" id="font-awesome-style-css" type="text/css" media="all">
+        <link rel="stylesheet" href="css/jquery.dataTables.css">
+        <link rel="stylesheet" href="css/select.dataTables.min.css"/>
+        
+        <script src="js/jquery-1.8.2.min.js" type="text/javascript" charset="utf8" ></script>
+        <script src="js/jquery-3.7.0.js"></script>
+        <script src="js/jszip.min.js"></script>
+        <script src="js/pdfmake.min.js"></script>
+        <script src="js/vfs_fonts.js"></script>
+        
+        <script src="js/jquery.dataTables.min.js"></script>
+        <script src="js/dataTables.buttons.min.js"></script>
+        <script src="js/buttons.html5.min.js"></script>
+        <script src="js/buttons.colVis.min.js"></script>
+        <script src="js/dataTables.select.min.js"></script>
+        
         <style>
-            body {
-                font-size: 1em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
+            
         </style>
 
         <script type="text/javascript">
+            jQuery(document).ready(function ($) {
 
+                var table = new DataTable('#example', {
+                    processing: true,
+                    serverSide: true,
+                    dom: 'Blfrtip',
+                    select:true,
+                    ajax: { 
+                        url: 'list/dao_daq.php',
+                        type: 'POST'
+                    },
+                    buttons: [
+                        {
+                            extend: 'copyHtml5',
+                            title: 'DAQ Listing from Standardization Platform',
+                            sheetName: 'DAQ'
+                        },
+                        {
+                            extend: 'colvis',
+                            action: function ( e, dt, node, config ) {
+                                $.fn.dataTable.ext.buttons.collection.action.call(this, e, dt, node, config);
+                            },
+                            prefixButtons: [
+                                {
+                                    extend: 'colvisGroup',
+                                    text: 'Show all',
+                                    show: ':hidden'
+                                },
+                                {
+                                    extend: 'colvisGroup',
+                                    text: 'Hide All',
+                                    hide: ':visible'
+                                }  
+                            ],
+                            collectionLayout: 'fixed columns',
+                            collectionTitle: 'Column Visibility Control',
+                            columnText: function ( dt, idx, title ) {
+                                return (idx+1)+': '+title;
+                            }
+                        }
+                    ],
+                    pageLength: 25,
+                    lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                    columnDefs: [
+                        {"visible": false, "targets": 2 },
+                        {"visible": false, "targets": 7 },
+                        {"visible": false, "targets": 8 },
+                        {"visible": false, "targets": 9 },
+                        {"visible": false, "targets": 10 },
+                        {"visible": false, "targets": 11 },
+                        {"visible": false, "targets": 12 },
+                        {"visible": false, "targets": 13 },
+                        {"visible": false, "targets": 14 },
+                        {"visible": false, "targets": 15 },
+                        {"visible": false, "targets": 16 },
+                        {"visible": false, "targets": 17 },
+                        {"visible": false, "targets": 18 },
+                        {"visible": false, "targets": 19 },
+                        {"visible": false, "targets": 20 },
+                        {"visible": false, "targets": 21 },
+                        {"visible": false, "targets": 22 },
+                        {"visible": false, "targets": 23 },
+                        {"visible": false, "targets": 24 },
+                        {"visible": false, "targets": 23 },
+                        {"visible": false, "targets": 24 },
+                        {"visible": false, "targets": 25 },
+                        {"visible": false, "targets": 26 },
+                        {"visible": false, "targets": 27 },
+                        {"visible": false, "targets": 28 },
+                        {"visible": false, "targets": 29 },
+                        {"visible": false, "targets": 30 },
+                        {"visible": false, "targets": 31 },
+                        {"visible": false, "targets": 32 },
+                        {"visible": false, "targets": 33 },
+                        {"visible": false, "targets": 34 },
+                        {"visible": false, "targets": 35 }
+                    ]
+                });
+            });
         </script>
 
     </head>
     <body>
-        <?php
-        if (isset($message)) {
-            foreach ($message as $message) {
-                echo '<span class="message">' . $message . '</span>';
-            }
-        }
-        ?>
-        <div class="row">&nbsp;</div>
-        <div class="sample-form">
+        <div class="table_list" style="overflow-x:auto;">
             <div class="row">&nbsp;</div>
             <div class="row">&nbsp;</div>
             <div class="row">
-                <h2 class="pull-left" style="border-left:none">DAQ List</h2>
-                <button onClick="window.location.href = window.location.href" type="button" class="btn btn-default btn-lg u-pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
+                <h5 class="u-pull-left" style="border-left:none;padding-left:40px;">DAQ List</h5>
             </div>
-            <table class="u-full-width">
+            <table id="example" class="u-full-width" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th style="text-align:center"><b>No</b></th>
-                        <th><b>DAQ</b></th>
                         <th><b>Location</b></th>
-                        <th><b>Manufacturer</b></th>
+                        <th><b>Product Group</b></th>
+                        <th><b>Category</b></th>
                         <th><b>Lab Manager</b></th>
                         <th><b>Manufacturer</b></th>
                         <th><b>Model</b></th>
+                        <th><b>DAQ ID</b></th>
+                        <th><b>Temperature Channel</b></th>
+                        <th><b>Voltage Channel</b></th>
+                        <th><b>Leakage Channel</b></th>
+                        <th><b>Maximum Voltage Measurement</b></th>
+                        <th><b>Minimum Voltage Measurement</b></th>
+                        <th><b>Maximum Leakage Measurement</b></th>
+                        <th><b>Minimum Leakage Measurement</b></th>
+                        <th><b>Maximum Temperature Measurement</b></th>
+                        <th><b>Minimum Temperature Measurement</b></th>
+                        <th><b>Voltage Drop</b></th>
+                        <th><b>Board Insert Check</b></th>
+                        <th><b>Measurement Prior Start The Test</b></th>
+                        <th><b>Scan Time</b></th>
+                        <th><b>Leakage Measurement Resolution</b></th>
+                        <th><b>Leakage Measurement Accuracy</b></th>
+                        <th><b>Voltage Measurement Resolution</b></th>
+                        <th><b>Offline software to review historical data and plotting with data analysis</b></th>
+                        <th><b>Measurement type for hardware design</b></th>
+                        <th><b>Number of analog inputs (single ended)</b></th>
+                        <th><b>Number of analog inputs (differential)</b></th>
+                        <th><b>Resolution</b></th>
+                        <th><b>Sampling frequency</b></th>
+                        <th><b>Supported Equipment</b></th>
+                        <th><b>Hardware for resistance measu</b></th>
+                        <th><b>Hardware for voltage measurement</b></th>
+                        <th><b>Hardware for temperature measurement</b></th>
+                        <th><b>DAQ to Equipment Interface</b></th>
+                        <th><b>DAQ to Power Supply Interface</b></th>
+                        <th><b>DAQ ID</b></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <?php
-                    $get_slides = "SELECT * FROM gest_form_daq WHERE flag = '1' ORDER BY id ASC";
-                    $run_slides = mysqli_query($con, $get_slides);
-                    $t = 0;
-                    while ($row_slides = mysqli_fetch_array($run_slides)):
-                        $t += 1; ?>
-                        <tr>
-                            <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
-                            <td style="text-align:center"><?php echo $t; ?></td>
-                            <td><?php echo getParameterValue($row_slides['daq_id']); ?></td>
-                            <td><?php echo getParameterValue($row_slides['lab_location']); ?></td>
-                            <td><?php echo getParameterValue($row_slides['manufacturer']); ?></td>
-                            <td><?php echo getParameterValue($row_slides['champion']); ?></td>
-                            <td><?php echo getParameterValues($row_slides['manufacturer']); ?></td>
-                            <td><?php echo getParameterValues($row_slides['model']); ?></td>
-                        </tr>
-                    <?php endwhile; ?>
-                </tbody>
             </table>
         </div>
     </body>

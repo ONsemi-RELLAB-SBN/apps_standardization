@@ -32,16 +32,20 @@ include 'class/ldap.php';
         </label>
         <nav class="navigation">
             <ul>
-                <h7 class="h11"><li><a href="main_view.php">         <i class='bx bxs-home-alt-2 bx-fw' style='color:#ffffff' ></i> HOME</a></li></h7>
-                <h7 class="h11"><li><a href="form_view_equipment.php"><i class='bx bx-wrench bx-fw' style='color:#ffffff' ></i>Equipment</a></li></h7>
-                <h7 class="h11"><li><a href="form_view_hardware.php"><i class='bx bxl-steam bx-fw' style='color:#ffffff' ></i>Hardware</a></li></h7>
-                <h7 class="h11"><li><a href="form_view_daq.php">     <i class='bx bx-desktop bx-fw' style='color:#ffffff' ></i>DAQ</a></li></h7>
-                <h7 class="h11"><li><a href="form_view_power.php">   <i class='bx bxs-battery-charging bx-fw' style='color:#ffffff'></i>Power Supply</a></li></h7>
-                <h7 class="h11"><li><a href="form_view_design.php">  <i class='bx bxl-blender bx-fw' style='color:#ffffff'></i>Design</a></li></h7>
-                <h7 class="h11"><li><a href="form_view_process.php"> <i class='bx bx-git-compare bx-fw' style='color:#ffffff'></i>Process</a></li></h7>
-                <h7 class="h11"><li><a href="form_view_test.php">    <i class='bx bxl-messenger bx-fw' style='color:#ffffff'></i>Elec Test</a></li></h7>
-                <h7 class="h11"><li><a href="logout_click.php"> <i class='bx bx-log-out bx-fw' style='color:#ffffff' ></i>LOGOUT</a></li></h7>
+                <h7 class="h11"><li><a href="main_view.php">            <i class='bx bxs-home-alt-2 bx-fw' style='color:#ffffff' >      </i>HOME</a></li></h7>
+                <h7 class="h11"><li><a href="form_view_equipment.php">  <i class='bx bx-wrench bx-fw' style='color:#ffffff' >           </i>Equipment</a></li></h7>
+                <h7 class="h11"><li><a href="form_view_hardware.php">   <i class='bx bxl-steam bx-fw' style='color:#ffffff' >           </i>Hardware</a></li></h7>
+                <h7 class="h11"><li><a href="form_view_daq.php">        <i class='bx bx-desktop bx-fw' style='color:#ffffff' >          </i>DAQ</a></li></h7>
+                <h7 class="h11"><li><a href="form_view_power.php">      <i class='bx bxs-battery-charging bx-fw' style='color:#ffffff'> </i>Power Supply</a></li></h7>
+                <h7 class="h11"><li><a href="form_view_design.php">     <i class='bx bxl-blender bx-fw' style='color:#ffffff'>          </i>Design</a></li></h7>
+                <h7 class="h11"><li><a href="form_view_process.php">    <i class='bx bx-git-compare bx-fw' style='color:#ffffff'>       </i>Process</a></li></h7>
+                <h7 class="h11"><li><a href="form_view_test.php">       <i class='bx bxl-messenger bx-fw' style='color:#ffffff'>        </i>Elec Test</a></li></h7>
+                <h7 class="h11"><li><a href="logout_click.php">         <i class='bx bx-log-out bx-fw' style='color:#ffffff' >          </i>LOGOUT</a></li></h7>
             </ul>
         </nav>
+        <script src="js/jquery-3.7.0.js"></script>
+        <script>
+            
+        </script>
     </body>
 </html>
