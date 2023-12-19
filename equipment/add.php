@@ -62,6 +62,7 @@ include '../template/form.php';
 
             #tabs li.active {
                 background-color: orange;
+                border-radius: 5px;
             }
 
             .tab-content {
@@ -353,7 +354,7 @@ include '../template/form.php';
                                 var newreltest = document.getElementById('relTest');
 //                                var zoneF = document.getElementById('zoneField');
 //                                var zone = document.getElementById('zone');
-                                var selected = [...newreltest.selectedOptions].map(option => option.value);
+                                var reltest = [...newreltest.selectedOptions].map(option => option.value);
 
     //                            if (selected.includes("008019") || selected.includes("008021")) {
     //                                zone.readOnly = false;
@@ -446,13 +447,13 @@ include '../template/form.php';
                                 var ut_t1 = document.getElementById('labeltopup');
                                 var ut_t2 = document.getElementById('water_topup');
                                 
-                                if (transfer.value === '013001') {
-                                    inputfrom.style.display = 'none';
-                                    labelfrom.style.display = 'none';
-                                } else {
-                                    inputfrom.style.display = 'block';
-                                    labelfrom.style.display = 'block';
-                                }
+//                                if (transfer.value === '013001') {
+//                                    inputfrom.style.display = 'none';
+//                                    labelfrom.style.display = 'none';
+//                                } else {
+//                                    inputfrom.style.display = 'block';
+//                                    labelfrom.style.display = 'block';
+//                                }
 
                                 if (reltest.value === '008016') {                               // PTC
                                     tab7.style.display = 'block';

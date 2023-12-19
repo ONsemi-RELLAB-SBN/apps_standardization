@@ -1552,9 +1552,9 @@ dialog{
     transition: 0.4s;
 }
 
-.active, .accordion:hover {
+/*.active, .accordion:hover {
     background-color: #ccc;
-}
+}*/
 
 .accordion:after {
     content: '\002B';
