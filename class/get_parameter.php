@@ -5,13 +5,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-//include 'db.php';
-
-//echo '<br> 001 :: ' . $host;
-//echo '<br> 002 :: ' . $user;
-//echo '<br> 003 :: ' . $pass;
-//echo '<br> 004 :: ' . $db;
-
 function getParameterDetail($code) {
     include 'db.php';
     $getData = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' ORDER BY code ASC";
@@ -19,12 +12,10 @@ function getParameterDetail($code) {
     while ($rowSite = mysqli_fetch_array($resSite)):
         $data = $row['name'];
     endwhile;
-//    echo 'test query' . $data;
     return $data;
 }
 
 function getMultipleParameter($string) {
-//    $mysqli = new mysqli('localhost', 'ayep', 'mysql@2023', 'gest');
     include 'db.php';
     $mysqli = new mysqli($host, $user, $pass, $db);
     if ($mysqli->connect_errno) {
@@ -41,22 +32,15 @@ function getMultipleParameter($string) {
             echo 'Failed to execute query: (' . $mysqli->errno . ') ' . $mysqli->error;
             exit;
         }
-
         $row = $result->fetch_assoc();
         $values[] = $row['name'];
     }
     $mysqli->close();
-
     return implode(', ', $values);
 }
 
 function getParameterValue($code) {
-//    $servername = "localhost";
-//    $username = "ayep";
-//    $password = "mysql@2023";
-//    $dbname = "gest";
     $data = "";
-    
     if ($code == "") {
         echo "";
     } else {
@@ -76,7 +60,6 @@ function getParameterValue($code) {
         } else {
             echo "No data found";
         }
-
         $conn->close();
     }
     return $data;
@@ -99,17 +82,14 @@ function getParameterValues($string) {
             echo 'Failed to execute query: (' . $mysqli->errno . ') ' . $mysqli->error;
             exit;
         }
-
         $row = $result->fetch_assoc();
         $values[] = $row['name'];
     }
     $mysqli->close();
-
     return implode(', ', $values);
 }
 
 function getCode($value, $code, $username) {
-    
     $latestCode = '';
     if ($value == '') {
         $code = '';

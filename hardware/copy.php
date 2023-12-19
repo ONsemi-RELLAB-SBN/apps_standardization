@@ -28,34 +28,8 @@ $id = $_GET['edit'];
                 z-index: -1;
             }
             
-            #toggle_01:checked ~ dialog {
-                display: block;
-            }
-            #toggle_02:checked ~ dialog {
-                display: block;
-            }
-            #toggle_03:checked ~ dialog {
-                display: block;
-            }
-            #toggle_04:checked ~ dialog {
-                display: block;
-            }
-            #toggle_05:checked ~ dialog {
-                display: block;
-            }
-            #toggle_06:checked ~ dialog {
-                display: block;
-            }
-            #toggle_07:checked ~ dialog {
-                display: block;
-            }
-            #toggle_08:checked ~ dialog {
-                display: block;
-            }
-            #toggle_09:checked ~ dialog {
-                display: block;
-            }
-            #toggle_10:checked ~ dialog {
+            #toggle_01:checked ~ dialog, #toggle_02:checked ~ dialog, #toggle_03:checked ~ dialog, #toggle_04:checked ~ dialog, #toggle_05:checked ~ dialog, 
+            #toggle_06:checked ~ dialog, #toggle_07:checked ~ dialog, #toggle_08:checked ~ dialog, #toggle_09:checked ~ dialog, #toggle_10:checked ~ dialog {
                 display: block;
             }
         </style>
@@ -63,7 +37,6 @@ $id = $_GET['edit'];
         <script type="text/javascript">
         
         </script>
-        
     </head>
     <body>
         <?php include '../navigation/hardware.php';?>
@@ -488,6 +461,8 @@ $id = $_GET['edit'];
             <button onclick="location.href = '../list/list_hardware.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
             <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> COPY</button>
         </form>
+        <script src="../js/jquery-3.7.0.js" ></script>
+        <script src="../js/multiselect-dropdown.js" ></script>
         <script>
             $(".button").click(function () {
                 var buttonId = $(this).attr("id");
@@ -500,6 +475,5 @@ $id = $_GET['edit'];
                 $("body").removeClass("modal-active");
             });
         </script>
-        <script src="../js/multiselect-dropdown.js" ></script>
     </body>
 </html>

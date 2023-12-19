@@ -387,6 +387,8 @@ include '../template/form.php';
             <button type="submit" id="myBtn" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> SAVE</button>
             <button onclick="location.href = '../list/list_power_supply.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
         </form>
+        <script src="../js/jquery-3.7.0.js"></script>
+        <script src="../js/multiselect-dropdown.js" ></script>
         <script>
             $(".button").click(function () {
                 var buttonId = $(this).attr("id");
@@ -399,7 +401,5 @@ include '../template/form.php';
                 $("body").removeClass("modal-active");
             });
         </script>
-        <script src="../js/jquery-3.7.0.js"></script>
-        <script src="../js/multiselect-dropdown.js" ></script>
     </body>
 </html>
