@@ -7,10 +7,10 @@
 
 include 'db.php';
 
-echo '<br> 001 :: ' . $host;
-echo '<br> 002 :: ' . $user;
-echo '<br> 003 :: ' . $pass;
-echo '<br> 004 :: ' . $db;
+//echo '<br> 001 :: ' . $host;
+//echo '<br> 002 :: ' . $user;
+//echo '<br> 003 :: ' . $pass;
+//echo '<br> 004 :: ' . $db;
 
 function getParameterDetail($code) {
     $getData = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' ORDER BY code ASC";
