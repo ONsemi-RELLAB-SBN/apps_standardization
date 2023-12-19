@@ -5,7 +5,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-include 'db.php';
+//include 'db.php';
 
 //echo '<br> 001 :: ' . $host;
 //echo '<br> 002 :: ' . $user;
@@ -13,6 +13,7 @@ include 'db.php';
 //echo '<br> 004 :: ' . $db;
 
 function getParameterDetail($code) {
+    include 'db.php';
     $getData = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' ORDER BY code ASC";
     $rData = mysqli_query($con, $getData);
     while ($rowSite = mysqli_fetch_array($resSite)):
@@ -24,6 +25,7 @@ function getParameterDetail($code) {
 
 function getMultipleParameter($string) {
 //    $mysqli = new mysqli('localhost', 'ayep', 'mysql@2023', 'gest');
+    include 'db.php';
     $mysqli = new mysqli($host, $user, $pass, $db);
     if ($mysqli->connect_errno) {
         echo 'Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error;
@@ -58,6 +60,7 @@ function getParameterValue($code) {
     if ($code == "") {
         echo "";
     } else {
+        include 'db.php';
         $conn = new mysqli($host, $user, $pass, $db);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -80,6 +83,7 @@ function getParameterValue($code) {
 }
 
 function getParameterValues($string) {
+    include 'db.php';
     $mysqli = new mysqli($host, $user, $pass, $db);
     if ($mysqli->connect_errno) {
         echo 'Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error;
