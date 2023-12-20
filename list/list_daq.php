@@ -174,6 +174,11 @@
                         <th>Action</th>
                 </thead>
             </table>
+            <div class="row">&nbsp;</div>
+            <button onclick="location.href = '../daq/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New DAQ</button>
+            <button onclick="location.href = '../xlsm/upload_daq.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
+            <button onclick="location.href = '../template/template_daq.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
+            <button onclick="location.href = '../list/list_daq.php'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Export</button>
         </div>
     </body>
 </html>

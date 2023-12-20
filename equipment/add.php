@@ -5,6 +5,7 @@
  */
 
 include '../template/form.php';
+include '../class/get_parameter.php';
 ?>
 
 <!DOCTYPE html>
@@ -153,26 +154,14 @@ include '../template/form.php';
                         <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                         <div class="three columns">
                             <select id="lab_location" name="lab_location" style="width: 100%" required>
-                                <option value="" selected=""></option>
-                                <?php 
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '002' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
+                                <?php echo getDropdown('002', ''); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="strategy">Product Group *</label></div>
                         <div class="three columns">
                             <select id="strategy" name="strategy" style="width: 100%" required>
-                                <option value="" selected=""></option>
-                                <?php 
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '003' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>  
+                                <?php echo getDropdown('003', ''); ?>  
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
@@ -181,26 +170,14 @@ include '../template/form.php';
                         <div class="two columns"><label for="standardization">Standardization Category *</label></div>
                         <div class="three columns">
                             <select id="standardization" name="standardization" style="width: 100%" required>
-                                <option value="" selected=""></option>
-                                <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '004' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === "004001") { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
+                                <?php echo getDropdown('004', '004001'); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="champion">Lab Manager *</label></div>
                         <div class="three columns">
                             <select id="champion" name="champion" style="width: 100%" required>
-                                <option value="" selected=""></option>
-                                <?php 
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '005' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
+                                <?php echo getDropdown('005', ''); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
@@ -225,25 +202,14 @@ include '../template/form.php';
                             <div class="three columns">
                                 <input type="text" list="eqpt_id_list" autocomplete="off" id="eqpt_id" name="eqpt_id">
                                 <datalist id="eqpt_id_list">
-                                    <?php 
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
-                                    $result = mysqli_query($con, $sqlDdSite);
-                                    while($row = mysqli_fetch_array($result)) { ?>
-                                        <option value="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></option>
-                                    <?php } ?>
+                                    <?php echo getDataList('006', ''); ?>
                                 </datalist>
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="dedicated">Dedicated/Share *</label></div>
                             <div class="three columns">
                                 <select id="dedicated" name="dedicated" style="width: 100%" required>
-                                    <option value="" selected=""></option>
-                                    <?php 
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('007', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
@@ -253,12 +219,7 @@ include '../template/form.php';
                             <div class="three columns">
                                 <input type="text" list="manufacturer_list" autocomplete="off" id="manufacturer" name="manufacturer">
                                 <datalist id="manufacturer_list">
-                                    <?php 
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
-                                    $result = mysqli_query($con, $sqlDdSite);
-                                while($row = mysqli_fetch_array($result)) { ?>
-                                    <option value="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></option>
-                                    <?php } ?>
+                                    <?php echo getDataList('009', ''); ?>
                                 </datalist>
                             </div>
                             <div class="one columns">&nbsp;</div>
@@ -266,12 +227,7 @@ include '../template/form.php';
                             <div class="three columns">
                                 <input type="text" list="model_list" autocomplete="off" id="model" name="model">
                                 <datalist id="model_list">
-                                    <?php 
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '010' ORDER BY code ASC";
-                                    $result = mysqli_query($con, $sqlDdSite);
-                                while($row = mysqli_fetch_array($result)) { ?>
-                                    <option value="<?php echo $row['name']; ?>"><?php echo $row['name']; ?></option>
-                                    <?php } ?>
+                                    <?php echo getDataList('010', ''); ?>
                                 </datalist>
                             </div>
                             <div class="one columns">&nbsp;</div>
@@ -288,26 +244,14 @@ include '../template/form.php';
                             <div class="two columns"><label for="new_transfer">New/Transfer Equipment *</label></div>
                             <div class="three columns">
                                 <select id="new_transfer" name="new_transfer" style="width: 100%" onchange="updateToField()" required>
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '013' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                        <?php endwhile; ?>
+                                    <?php echo getDropdown('013', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="from" id="fromLabel">From? *</label></div>
                             <div class="three columns">
                                 <select id="from" name="from" style="width: 100%">
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '014' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                   <?php echo getDropdown('014', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
@@ -316,12 +260,7 @@ include '../template/form.php';
                             <div class="two columns"><label for="relTest">Rel Test (Multiselect) *</label></div>
                             <div class="three columns">
                                 <select name="relTest[]" id="relTest" multiple multiselect-search="true" multiselect-select-all="false" style="width:100%" onchange="updateRelTest()" required>
-                                <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
+                                <?php echo getDropdown02('008', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
@@ -352,20 +291,7 @@ include '../template/form.php';
 
                             function updateRelTest() {
                                 var newreltest = document.getElementById('relTest');
-//                                var zoneF = document.getElementById('zoneField');
-//                                var zone = document.getElementById('zone');
                                 var reltest = [...newreltest.selectedOptions].map(option => option.value);
-
-    //                            if (selected.includes("008019") || selected.includes("008021")) {
-    //                                zone.readOnly = false;
-    //                                zone.required = true;
-    //                                $("#zone").val('');
-    //                                zoneF.style.display = 'block';
-    //                            } else {
-    //                                zone.readOnly = true;
-    //                                zone.required = false;
-    //                                zoneF.style.display = 'none';
-    //                            }
                                 
                                 var tab7 = document.getElementById('tb07');
                                 var tab8 = document.getElementById('tb08');
@@ -447,15 +373,11 @@ include '../template/form.php';
                                 var ut_t1 = document.getElementById('labeltopup');
                                 var ut_t2 = document.getElementById('water_topup');
                                 
-//                                if (transfer.value === '013001') {
-//                                    inputfrom.style.display = 'none';
-//                                    labelfrom.style.display = 'none';
-//                                } else {
-//                                    inputfrom.style.display = 'block';
-//                                    labelfrom.style.display = 'block';
-//                                }
-
-                                if (reltest.value === '008016') {                               // PTC
+                                console.log("newreltest :: " + newreltest);
+                                console.log("reltest :: " + reltest);
+                                
+//                                if (reltest === '008016') {                               // PTC
+                                if (reltest.includes('008016')) {
                                     tab7.style.display = 'block';
                                     tab8.style.display = 'block';
                                 
@@ -535,7 +457,7 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'block';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008012') {                        // IOL
+                                } else if (reltest.includes('008012')) {                        // IOL
                                     tab7.style.display = 'block';
                                     tab8.style.display = 'block';
                                     
@@ -615,7 +537,8 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'none';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008005') {                        // HAST
+                                } else if (reltest.includes('008005')) {                        // HAST 008005
+                                    console.log("HAST");
                                     tab7.style.display = 'block';
                                     tab8.style.display = 'block';
                                     
@@ -695,7 +618,7 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'block';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008003' || reltest.value === '008004' || reltest.value === '008020') {            // H3T, H3TRB, THB
+                                } else if (reltest.includes('008003') || reltest.includes('008004') || reltest.includes('008020')) {            // H3T, H3TRB, THB
                                     tab7.style.display = 'block';
                                     tab8.style.display = 'block';
                                     
@@ -775,7 +698,8 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'block';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008002' || reltest.value === '008006' || reltest.value === '008007' || reltest.value === '008008' || reltest.value === '008010') {            // ELFR, HTRB, HTGB, HTFB, HTOL
+                                } else if (reltest.includes('008002') || reltest.includes('008006') || reltest.includes('008007') || reltest.includes('008008') || reltest.includes('008010')) {            // ELFR, HTRB, HTGB, HTFB, HTOL
+                                    console.log("ELFR, HTRB, HTGB, HTFB, HTOL");
                                     tab7.style.display = 'block';
                                     tab8.style.display = 'block';
                                     
@@ -855,7 +779,7 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'block';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008013') {                        // LTOL
+                                } else if (reltest.includes('008013')) {                        // LTOL
                                     tab7.style.display = 'block';
                                     tab8.style.display = 'block';
                                     
@@ -935,7 +859,8 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'block';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008018') {                        // SSOL
+                                } else if (reltest.includes('008018')) {                        // SSOL
+                                    console.log("SSOL");
                                     tab7.style.display = 'block';
                                     tab8.style.display = 'block';
                                     
@@ -1015,7 +940,7 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'none';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008001' || reltest.value === '008023') {          // AC, UHAST
+                                } else if (reltest.includes('008001') || reltest.includes('008023')) {          // AC, UHAST
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
                                     
@@ -1095,7 +1020,8 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'block';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008022') {                        // THU
+                                } else if (reltest.includes('008022')) {                        // THU
+                                    console.log("THU");
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
                                     
@@ -1175,7 +1101,7 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'block';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008015') {                        // MSL
+                                } else if (reltest.includes('008015')) {                        // MSL
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
                                     
@@ -1255,7 +1181,8 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'block';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008017') {                        // RTHS
+                                } else if (reltest.includes('008017')) {                        // RTHS
+                                    console.log("RTHS");
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
                                     
@@ -1335,7 +1262,7 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'block';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008021') {                        // THS
+                                } else if (reltest.includes('008021')) {                        // THS
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
                                     
@@ -1415,7 +1342,8 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'block';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008009') {                        // HTHS
+                                } else if (reltest.includes('008009')) {                        // HTHS
+                                    console.log("HTHS");
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
                                     
@@ -1495,7 +1423,7 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'block';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008011') {                        // HTSL
+                                } else if (reltest.includes('008011')) {                        // HTSL
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
                                     
@@ -1575,7 +1503,8 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'block';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008014') {                        // LTSL
+                                } else if (reltest.includes('008014')) {                        // LTSL
+                                    console.log("LTSL");
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
                                     
@@ -1655,7 +1584,7 @@ include '../template/form.php';
                                     ut_cda2.style.display = 'block';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
-                                } else if (reltest.value === '008019') {                        // TC
+                                } else if (reltest.includes('008019')) {                        // TC
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
                                     
@@ -1736,6 +1665,7 @@ include '../template/form.php';
                                     ut_l1.style.display = 'block';
                                     ut_l2.style.display = 'block';
                                 } else {
+                                    console.log("APPEAR ALL");
                                     tab7.style.display = 'block';
                                     tab8.style.display = 'block';
                                     
@@ -1985,13 +1915,7 @@ include '../template/form.php';
                             </div>
                             <div class="three columns">
                                 <select id="board_orientation" name="board_orientation" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '015' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" ><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('015', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
@@ -2004,13 +1928,7 @@ include '../template/form.php';
                             <div class="two columns"><label for="rack_material">Rack Material *</label></div>
                             <div class="three columns">
                                 <select id="rack_material" name="rack_material" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '016' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" ><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('016', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
@@ -2147,13 +2065,7 @@ include '../template/form.php';
                             </div>
                             <div class="three columns">
                                 <select id="airflow" name="airflow" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '017' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" ><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('017', ''); ?>
                                 </select>
                             </div>
                         </div>
@@ -2164,26 +2076,14 @@ include '../template/form.php';
                             <div class="two columns"><label for="tempProtection1">Temperature Protection 1 *</label></div>
                             <div class="three columns">
                                 <select id="tempProtection1" name="tempProtection1" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" ><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('022', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="tempProtection2">Temperature Protection 2 *</label></div>
                             <div class="three columns">
                                 <select id="tempProtection2" name="tempProtection2" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" ><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('022', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
@@ -2192,26 +2092,14 @@ include '../template/form.php';
                             <div class="two columns"><label for="tempThermostat3">Temperature Protection / Thermostat 3 *</label></div>
                             <div class="three columns">
                                 <select id="tempThermostat3" name="tempThermostat3" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" ><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('022', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="smoke_detector">Smoke Detector/Alarm *</label></div>
                             <div class="three columns">
                                 <select id="smoke_detector" name="smoke_detector" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" ><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('022', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
@@ -2220,26 +2108,14 @@ include '../template/form.php';
                             <div class="two columns"><label for="press_switch">Pressure Switch *</label></div>
                             <div class="three columns">
                                 <select id="press_switch" name="press_switch" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" ><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('022', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="safety_valve">Safety Valve *</label></div>
                             <div class="three columns">
                                 <select id="safety_valve" name="safety_valve" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" ><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('022', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
@@ -2248,13 +2124,7 @@ include '../template/form.php';
                             <div class="two columns"><label for="emo">EMO button *</label></div>
                             <div class="three columns">
                                 <select id="emo" name="emo" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" ><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('022', ''); ?>
                                 </select>
                             </div>
                         </div>
@@ -2279,13 +2149,7 @@ include '../template/form.php';
                             <div class="two columns"><label for="exhaust" id="labelexhaust">Exhaust *</label></div>
                             <div class="three columns">
                                 <select id="exhaust" name="exhaust" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '028' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('028', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
@@ -2294,26 +2158,14 @@ include '../template/form.php';
                             <div class="two columns"><label for="chilled_water" id="labelchill">Chilled Water *</label></div>
                             <div class="three columns">
                                 <select id="chilled_water" name="chilled_water" style="width: 100%">
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('022', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="liquid_nitrogen" id="labelliquid">Liquid Nitrogen *</label></div>
                             <div class="three columns">
                                 <select id="liquid_nitrogen" name="liquid_nitrogen" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('022', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
@@ -2322,26 +2174,14 @@ include '../template/form.php';
                             <div class="two columns"><label for="lan" id="labellan">LAN *</label></div>
                             <div class="three columns">
                                 <select id="lan" name="lan" style="width: 100%">
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" ><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('021', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns" >&nbsp;</div>
                             <div class="two columns"><label for="cda" id="labelcda">CDA *</label></div>
                             <div class="three columns">
                                 <select id="cda" name="cda" style="width: 100%" >
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('021', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns" >&nbsp;</div>
@@ -2350,26 +2190,14 @@ include '../template/form.php';
                             <div class="two columns"><label for="n2gas" id="labelgas">N2 Gas *</label></div>
                             <div class="three columns">
                                 <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()">
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('022', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns" >&nbsp;</div>
                             <div class="two columns"><label for="oxygen_level" id="labelexygen">Oxygen Level Detector *</label></div>
                             <div class="three columns">
                                 <select id="oxygen_level" name="oxygen_level" style="width: 100%">
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('022', ''); ?>
                                 </select>
                             </div>
                         </div>
@@ -2377,26 +2205,14 @@ include '../template/form.php';
                             <div class="two columns"><label for="di_water" id="labeldiwater">DI Water *</label></div>
                             <div class="three columns">
                                 <select id="di_water" name="di_water" style="width: 100%" onchange="updateToFieldWater()">
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('022', ''); ?>
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="water_topup" id="labeltopup">Water Top-up System *</label></div>
                             <div class="three columns">
                                 <select id="water_topup" name="water_topup" style="width: 100%">
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '030' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('030', ''); ?>
                                 </select>
                             </div>
                             </div>
@@ -2447,13 +2263,7 @@ include '../template/form.php';
                             <div class="two columns"><label for="daq">DAQ (Realtime Leakage Monitoring) *</label></div>
                             <div class="three columns">
                                 <select id="daq" name="daq" style="width: 100%">
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '021' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('021', ''); ?>
                                 </select>
                             </div>
                         </div>
@@ -2472,13 +2282,7 @@ include '../template/form.php';
                             </div>
                             <div class="three columns">
                                 <select id="int_config_type" name="int_config_type" style="width: 100%" onchange="updateDiv()">
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '031' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('031', ''); ?>
                                 </select>
                             </div>
                         </div>
@@ -2554,11 +2358,6 @@ include '../template/form.php';
                                 var dropdown = document.getElementById('int_config_type');
                                 var selectedValue = dropdown.value;
                                 
-//                                var bananaDiv = document.getElementById('BananaDiv');
-//                                var edgeDiv = document.getElementById('EdgeDiv');
-//                                var winDiv = document.getElementById('WinchestorDiv');
-//                                var wireDiv = document.getElementById('WireDiv');
-                                
                                 var div01 = document.getElementById('divvoltcurrent');
                                 var ic_t1 = document.getElementById('labelconntemprate1');
                                 var ic_t2 = document.getElementById('labelconntemprate2');
@@ -2580,7 +2379,7 @@ include '../template/form.php';
                                 $("#wire_volt_rating").val('');
                                 $("#wire_curr_rating").val('');
                                 $("#wire_temp_rating").val('');
-
+                                
                                 if (selectedValue === '031001') {               // Banana
                                     div01.style.display = 'block';
                                     ic_t1.style.display = 'block';
@@ -2654,13 +2453,7 @@ include '../template/form.php';
                             </div>
                             <div class="three columns">
                                 <select id="ext_config_type" name="ext_config_type" style="width: 100%" onchange="updateView()">
-                                    <option value="" selected=""></option>
-                                    <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '032' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>"><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+                                    <?php echo getDropdown('032', ''); ?>
                                 </select>
                             </div>
                         </div>
@@ -2711,6 +2504,7 @@ include '../template/form.php';
             const saveButton = document.getElementById('save-button');
             
             $( document ).ready(function() {
+                console.log("ready");
                 draftButton.style.display = 'none';
                 saveButton.style.display = 'none';
             });

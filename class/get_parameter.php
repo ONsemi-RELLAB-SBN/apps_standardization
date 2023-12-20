@@ -120,16 +120,80 @@ function getCode($value, $code, $username) {
     return $latestCode;
 }
 
-function getDropdown($code) {
+function getDropdown($code, $value) {
+    include 'db.php';
+    $conn = new mysqli($host, $user, $pass, $db);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    
+    $data = "<option value=\"\" selected=\"\"></option>";
     $getData = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' ORDER BY code ASC";
-    $rData = mysqli_query($con, $getData);
-    while ($rowSite = mysqli_fetch_array($resSite)):
-        $data = $row['name'];
-    endwhile;
-    echo 'test query' . $data;
-    return "";
+    $result = $conn->query($getData);
+    
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            if ($row['code'] == $value) {
+                $data .= '<option value="' . $row['code'] . '" selected>' . $row['name'] . '</option>';
+            } else {
+                $data .= '<option value="' . $row['code'] . '">' . $row['name'] . '</option>';
+            }
+        }
+    } else {
+        echo "No data found";
+    }
+    $conn->close();
+    return $data;
 }
 
-function getDropdownValue($code, $value) {
-    return "";
+function getDropdown02($code, $value) {
+    include 'db.php';
+    $conn = new mysqli($host, $user, $pass, $db);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    
+    $data = "";
+    $getData = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' ORDER BY code ASC";
+    $result = $conn->query($getData);
+    
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            if ($row['code'] == $value) {
+                $data .= '<option value="' . $row['code'] . '" selected>' . $row['name'] . '</option>';
+            } else {
+                $data .= '<option value="' . $row['code'] . '">' . $row['name'] . '</option>';
+            }
+        }
+    } else {
+        echo "No data found";
+    }
+    $conn->close();
+    return $data;
+}
+
+function getDataList($code, $value) {
+    include 'db.php';
+    $conn = new mysqli($host, $user, $pass, $db);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    
+    $data = "";
+    $getData = "SELECT * FROM gest_parameter_detail WHERE master_code = '$code' ORDER BY code ASC";
+    $result = $conn->query($getData);
+    
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            if ($row['code'] == $value) {
+                $data .= '<option value="' . $row['name'] . '" selected>' . $row['name'] . '</option>';
+            } else {
+                $data .= '<option value="' . $row['name'] . '">' . $row['name'] . '</option>';
+            }
+        }
+    } else {
+        echo "No data found";
+    }
+    $conn->close();
+    return $data;
 }

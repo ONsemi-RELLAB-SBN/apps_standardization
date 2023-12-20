@@ -127,21 +127,32 @@ $id = $_GET['view'];
                 <div class="row">
                     <div class="two columns"><label for="dimension_d">Dimensions (D) *</label></div>
                     <div class="two columns"><input type="number" step="0.001" id="dimension_d" name="dimension_d" value="<?php echo $rowForm['ps_dimension_d']; ?>" required readonly> </div>
-                    <div class="one columns"><label for="maxTemp" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><label for="dimension_d" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
-                    <div class="two columns"><label for="input_volt">Input voltage (facilities) *</label></div>
-                    <div class="two columns"><input type="number" step="0.001" id="input_volt" name="input_volt" value="<?php echo $rowForm['input_voltage']; ?>" required readonly> </div>
-                    <div class="one columns"><label for="minTemp" style="text-align: left"><b>V</b></label></div>
+                    <div class="two columns"><label for="min_volt">Input voltage (facilities) *</label></div>
+                    <div class="two columns"><input type="number" step="0.001" id="min_volt" name="min_volt" value="<?php echo $rowForm['input_voltage']; ?>" required readonly> </div>
+                    <div class="one columns"><label for="min_volt" style="text-align: left"><b>V</b></label></div>
                     <div class="one columns">&nbsp;</div>
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="dimension_h">Dimensions (H) *</label></div>
                     <div class="two columns"><input type="number" step="0.001" id="dimension_h" name="dimension_h" value="<?php echo $rowForm['ps_dimension_h']; ?>" required readonly> </div>
-                    <div class="one columns"><label for="minTemp" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><label for="dimension_h" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
+                    <div class="two columns"><label for="max_volt">Input voltage (facilities) *</label></div>
+                    <div class="two columns"><input type="number" step="0.001" id="max_volt" name="max_volt" value="<?php echo $rowForm['input_voltage']; ?>" required readonly> </div>
+                    <div class="one columns"><label for="max_volt" style="text-align: left"><b>V</b></label></div>
+                    <div class="one columns">&nbsp;</div>
+                </div>
+                <div class="row">
                     <div class="two columns"><label for="remote_operation_capability">Remote operation capability *</label></div>
                     <div class="three columns">
                         <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['remote_operation']); ?>" required readonly />
+                    </div>
+                    <div class="one columns">&nbsp;</div>
+                    <div class="two columns"><label for="pc_to_eqpt_interface">PS to eqpt interface *</label></div>
+                    <div class="three columns">
+                        <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['eqpt_interface']); ?>" required readonly />
                     </div>
                     <div class="one columns">&nbsp;</div>
                 </div>
@@ -158,19 +169,13 @@ $id = $_GET['view'];
                     <div class="one columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="pc_to_eqpt_interface">PS to eqpt interface *</label></div>
-                    <div class="three columns">
-                        <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['eqpt_interface']); ?>" required readonly />
-                    </div>
-                    <div class="one columns">&nbsp;</div>
                     <div class="two columns">
                         <label for="lan_port">LAN Port *</label>
                     </div>
                     <div class="three columns">
                         <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['lan_port']); ?>" required readonly />
                     </div>
-                </div>
-                <div class="row">
+                    <div class="one columns">&nbsp;</div>
                     <div class="two columns">
                         <label for="gpib_interface">GPIB interface *</label>
                     </div>
@@ -178,6 +183,8 @@ $id = $_GET['view'];
                         <input type="text" id="lab_location" name="lab_location" value="<?php echo getParameterValue($rowForm['gpib_interface']); ?>" required readonly />
                     </div>
                     <div class="one columns">&nbsp;</div>
+                </div>
+                <div class="row">
                     <div class="two columns">
                         <label for="other_interface_port">Other interface ports *</label>
                     </div>

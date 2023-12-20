@@ -1565,7 +1565,8 @@ dialog{
 }
 
 .active:after {
-    content: "\2212";
+    content: " ";
+    /*content: "\2212";*/
 }
 
 .panel {

@@ -120,7 +120,6 @@ $columns = array(
 
 // SQL server connection information
 include_once '../class/db.php';
-    
 $sql_details = array(
     'user' => $user,
     'pass' => $pass,

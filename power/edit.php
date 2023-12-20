@@ -210,11 +210,11 @@ $id = $_GET['edit'];
                 <div class="row">
                     <div class="two columns"><label for="dimension_d">Dimensions (D) *</label></div>
                     <div class="two columns"><input type="number" step="0.001" id="dimension_d" name="dimension_d" value="<?php echo $rowForm['ps_dimension_d']; ?>" required> </div>
-                    <div class="one columns"><label for="maxTemp" style="text-align: left"><b>mm</b></label></div>
+                    <div class="one columns"><label for="dimension_d" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
-                    <div class="two columns"><label for="input_volt">Input voltage (facilities) *</label></div>
-                    <div class="two columns"><input type="number" step="0.001" id="input_volt" name="input_volt" value="<?php echo $rowForm['input_voltage']; ?>" required> </div>
-                    <div class="one columns"><label for="minTemp" style="text-align: left"><b>V</b></label></div>
+                    <div class="two columns"><label for="min_volt">Input voltage (facilities) *</label></div>
+                    <div class="two columns"><input type="number" step="0.001" id="min_volt" name="min_volt" value="<?php echo $rowForm['input_voltage']; ?>" required> </div>
+                    <div class="one columns"><label for="min_volt" style="text-align: left"><b>V</b></label></div>
                     <div class="one columns">&nbsp;</div>
                 </div>
                 <div class="row">
@@ -222,16 +222,23 @@ $id = $_GET['edit'];
                     <div class="two columns"><input type="number" step="0.001" id="dimension_h" name="dimension_h" value="<?php echo $rowForm['ps_dimension_h']; ?>" required> </div>
                     <div class="one columns"><label for="minTemp" style="text-align: left"><b>mm</b></label></div>
                     <div class="one columns">&nbsp;</div>
+                    <div class="two columns"><label for="max_volt">Input voltage (facilities) *</label></div>
+                    <div class="two columns"><input type="number" step="0.001" id="max_volt" name="max_volt" value="<?php echo $rowForm['input_voltage']; ?>" required> </div>
+                    <div class="one columns"><label for="max_volt" style="text-align: left"><b>V</b></label></div>
+                    <div class="one columns">&nbsp;</div>
+                </div>
+                <div class="row">
                     <div class="two columns"><label for="remote_operation_capability">Remote operation capability *</label></div>
                     <div class="three columns">
                         <select id="remote_operation_capability" name="remote_operation_capability" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['remote_operation']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
+                            <?php echo getDropdown('022', $rowForm['remote_operation']); ?>
+                        </select>
+                    </div>
+                    <div class="one columns">&nbsp;</div>
+                    <div class="two columns"><label for="pc_to_eqpt_interface">PS to eqpt interface *</label></div>
+                    <div class="three columns">
+                        <select id="pc_to_eqpt_interface" name="pc_to_eqpt_interface" style="width: 100%" required>
+                            <?php echo getDropdown('027', $rowForm['eqpt_interface']); ?>
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
@@ -240,45 +247,19 @@ $id = $_GET['edit'];
                     <div class="two columns"><label for="output_voltage_monitor">Output voltage monitor *</label></div>
                     <div class="three columns">
                         <select id="output_voltage_monitor" name="output_voltage_monitor" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)):
-                                ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['voltage_monitor']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
+                            <?php echo getDropdown('022', $rowForm['voltage_monitor']); ?>
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="output_curr_monitor">Output current monitor  *</label></div>
                     <div class="three columns">
                         <select id="output_curr_monitor" name="output_curr_monitor" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['current_monitor']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
+                            <?php echo getDropdown('022', $rowForm['current_monitor']); ?>
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
                 </div>
                 <div class="row">
-                    <div class="two columns"><label for="pc_to_eqpt_interface">PS to eqpt interface *</label></div>
-                    <div class="three columns">
-                        <select id="pc_to_eqpt_interface" name="pc_to_eqpt_interface" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '027' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['eqpt_interface']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
-                        </select>
-                    </div>
-                    <div class="one columns">&nbsp;</div>
                     <div class="two columns">
                         <label for="lan_port">LAN Port *</label>
                         <label for="toggle_3" class="view-image">Image</label>
@@ -290,17 +271,10 @@ $id = $_GET['edit'];
                     </div>
                     <div class="three columns">
                         <select id="lan_port" name="lan_port" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['lan_port']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
+                            <?php echo getDropdown('022', $rowForm['lan_port']); ?>
                         </select>
                     </div>
-                </div>
-                <div class="row">
+                    <div class="one columns">&nbsp;</div>
                     <div class="two columns">
                         <label for="gpib_interface">GPIB interface *</label>
                         <label for="toggle_4" class="view-image">Image</label>
@@ -312,16 +286,12 @@ $id = $_GET['edit'];
                     </div>
                     <div class="three columns">
                         <select id="gpib_interface" name="gpib_interface" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['gpib_interface']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
+                            <?php echo getDropdown('022', $rowForm['gpib_interface']); ?>
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
+                </div>
+                <div class="row" >
                     <div class="two columns">
                         <label for="other_interface_port">Other interface ports *</label>
                         <label for="toggle_2" class="view-image">Image</label>
@@ -333,13 +303,7 @@ $id = $_GET['edit'];
                     </div>
                     <div class="three columns">
                         <select id="other_interface_port" name="other_interface_port" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '029' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['other_interface']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
+                            <?php echo getDropdown('029', $rowForm['other_interface']); ?>
                         </select>
                     </div>
                 </div>
