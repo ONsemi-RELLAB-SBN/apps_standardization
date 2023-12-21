@@ -58,26 +58,14 @@ $id = $_GET['edit'];
                     <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                     <div class="three columns">
                         <select id="lab_location" name="lab_location" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '002' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['lab_location']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
+                            <?php echo getDropdown('002', $rowForm['lab_location']); ?>
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns label"><label for="strategy">Product Group *</label></div>
                     <div class="three columns">
                         <select id="strategy" name="strategy" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '003' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['strategy']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>  
+                            <?php echo getDropdown('003', $rowForm['strategy']); ?>
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
@@ -86,26 +74,14 @@ $id = $_GET['edit'];
                     <div class="two columns"><label for="standardization">Standardization Category *</label></div>
                     <div class="three columns">
                         <select id="standardization" name="standardization" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '004' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['standard_category']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
+                            <?php echo getDropdown('004', $rowForm['standard_category']); ?>
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="champion">Lab Manager *</label></div>
                     <div class="three columns">
                         <select id="champion" name="champion" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '005' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['champion']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
+                            <?php echo getDropdown('005', $rowForm['champion']); ?>
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
@@ -116,26 +92,14 @@ $id = $_GET['edit'];
                     <div class="two columns"><label for="manufacturer">Manufacturer *</label></div>
                     <div class="three columns">
                         <select id="manufacturer" name="manufacturer" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '039' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['manufacturer']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
+                            <?php echo getDropdown('039', $rowForm['manufacturer']); ?>
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
                     <div class="two columns"><label for="model">Model *</label></div>
                     <div class="three columns">
                         <select id="model" name="model" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '040' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['model']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
+                            <?php echo getDropdown('040', $rowForm['model']); ?>
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
@@ -170,13 +134,7 @@ $id = $_GET['edit'];
                     <div class="two columns"><label for="volt_protection">Overvoltage protection *</label></div>
                     <div class="three columns">
                         <select id="volt_protection" name="volt_protection" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['ovp']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
+                            <?php echo getDropdown('022', $rowForm['ovp']); ?>
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
@@ -185,13 +143,7 @@ $id = $_GET['edit'];
                     <div class="two columns"><label for="curr_protection">Overcurrent protection *</label></div>
                     <div class="three columns">
                         <select id="curr_protection" name="curr_protection" style="width: 100%" required>
-                            <option value="" selected=""></option>
-                            <?php
-                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
-                            $resSite = mysqli_query($con, $sqlDdSite);
-                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['ocp']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                            <?php endwhile; ?>
+                            <?php echo getDropdown('022', $rowForm['ocp']); ?>
                         </select>
                     </div>
                 </div>

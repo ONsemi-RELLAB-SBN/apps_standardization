@@ -125,6 +125,7 @@
             <div class="row">&nbsp;</div>
             <div class="row">
                 <h5 class="u-pull-left" style="border-left:none">Power Supply List</h5>
+                <button onClick="window.location.href = window.location.href" type="button" class="btn btn-default btn-lg u-pull-right"> <i class='bx bx-refresh bx-fw' ></i> Reset Page</button>
             </div>
             <table id="example" class="u-full-width" width="100%" cellspacing="0">
                 <thead>
@@ -165,7 +166,7 @@
             <button onclick="location.href = '../power/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Power Supply</button>
             <button onclick="location.href = '../xlsm/upload_powersupply.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
             <button onclick="location.href = '../template/template_power_supply.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
-            <button onclick="location.href = '../list/list_power_supply.php'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Export</button>
+            <!--<button onclick="location.href = '../list/list_power_supply.php'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Export</button>-->
         </div>
     </body>
 </html>
