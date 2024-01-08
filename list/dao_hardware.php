@@ -53,7 +53,11 @@ $columns = array(
 
 // SQL server connection information
 include_once '../class/db.php';
+if ($port == '') {
     
+} else {
+    $host .= ':' . $port;
+}
 $sql_details = array(
     'user' => $user,
     'pass' => $pass,

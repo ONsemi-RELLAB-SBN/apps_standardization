@@ -5,7 +5,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
 
-$db_host = "localhost:3308";
+//$db_host = "localhost:3308";
+$db_host = "localhost";
 $db_name = "gest";
 $db_user = "ayep";
 $db_pass = "mysql@2023";

@@ -2,5 +2,4 @@
 nbproject/private/private.properties
 nbproject/private/private.xml
 *.properties
-*.properties
-*.properties
+class/db.php
