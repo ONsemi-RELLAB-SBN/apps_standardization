@@ -89,8 +89,8 @@ while ($row = mysqli_fetch_array($result7)) {
     $point = array('label' => $row['product'], "y" => $row['total']);
     array_push($data_et, $point);
 }
-
 ?>
+
 <!DOCTYPE HTML>
 <html>
     <head>

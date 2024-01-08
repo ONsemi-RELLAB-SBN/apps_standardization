@@ -57,7 +57,7 @@ include '../template/form.php';
     </head>
     <body>
         <div class="tab" style="align-items: flex-start;">
-            <button class="tablinks" onclick="openCategory(event, '001')">Bar Chart</button>
+            <!--<button class="tablinks" onclick="openCategory(event, '001')">Bar Chart</button>-->
             <button class="tablinks" onclick="openCategory(event, '002')">Multiple Item</button>
             <button class="tablinks" onclick="openCategory(event, '003')">Stack</button>
             <button class="tablinks" onclick="openCategory(event, '004')">Stack Item</button>
@@ -66,10 +66,10 @@ include '../template/form.php';
             <button class="tablinks" onclick="openCategory(event, '007')">Graph 07</button>-->
         </div>
 
-        <div id="001" class="tabcontent">
+<!--        <div id="001" class="tabcontent">
             <h5>Bar Chart</h5>
             <iframe src="bar_chart.php" style="height:440px;width:100%;" title="Bar Chart"></iframe>
-        </div>
+        </div>-->
 
         <div id="002" class="tabcontent">
             <h5>Multiple</h5>
