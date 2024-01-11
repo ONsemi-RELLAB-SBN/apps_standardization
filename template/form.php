@@ -45,7 +45,7 @@ include '../class/ldap.php';
                 <h7 class="h11"><li id="try1"><a href="../design/add.php">  <i class='bx bxl-blender bx-fw' style='color:#ffffff'></i>Design</a></li></h7>
                 <h7 class="h11"><li id="try2"><a href="../process/add.php"> <i class='bx bx-git-compare bx-fw' style='color:#ffffff'></i>Process</a></li></h7>
                 <h7 class="h11"><li id="try3"><a href="../test/add.php">    <i class='bx bxl-messenger bx-fw' style='color:#ffffff'></i>Elec Test</a></li></h7>
-                <h7 class="h11"><li id="try4"><a href="../query.php">       <i class='bx bx-search-alt bx-fw' style='color:#ffffff'></i></i>Query</a></li></h7>
+                <!--<h7 class="h11"><li id="try4"><a href="../query.php">       <i class='bx bx-search-alt bx-fw' style='color:#ffffff'></i></i>Query</a></li></h7>-->
                 <h7 class="h11"><li><a href="../dashboard/list_graph.php">  <i class='bx bxs-bar-chart-alt-2 bx-fw' style='color:#ffffff'></i>Summary</a></li></h7>
                 <h7 class="h11"><li><a href="../parameter/parameter.php">   <i class='bx bxs-cog bx-fw' style='color:#ffffff' ></i>Parameter</a></li></h7>
                 <h7 class="h11"><li><a href="../logout_click.php">          <i class='bx bx-log-out bx-fw' style='color:#ffffff' ></i>LOGOUT</a></li></h7>
@@ -64,10 +64,10 @@ include '../class/ldap.php';
                 e.preventDefault(); //Prevent the default behavior 
                 alert('ELECTRICAL TEST FORM UNDER DEVELOPMENT!');
             };
-            document.getElementById("try4").onclick = function (e) {
-                e.preventDefault(); //Prevent the default behavior 
-                alert('QUERY PAGE FORM UNDER DEVELOPMENT!');
-            };
+//            document.getElementById("try4").onclick = function (e) {
+//                e.preventDefault(); //Prevent the default behavior 
+//                alert('QUERY PAGE FORM UNDER DEVELOPMENT!');
+//            };
         </script>
     </body>
 </html>

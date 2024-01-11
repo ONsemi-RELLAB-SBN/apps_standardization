@@ -28,6 +28,16 @@
                 padding: 0 20px;
                 box-sizing: border-box;
             }
+            
+            thead input {
+                width: 100%;
+            }
+            
+            tfoot input {
+                width: 100%;
+                padding: 3px;
+                box-sizing: border-box;
+            }
         </style>
 
         <script type="text/javascript">
@@ -41,6 +51,26 @@
                     ajax: { 
                         url: 'dao_power_supply.php',
                         type: 'POST'
+                    },
+                    initComplete: function () {
+                    this.api()
+                        .columns()
+                        .every(function () {
+                            let column = this;
+                            let title = column.footer().textContent;
+
+                            // Create input element
+                            let input = document.createElement('input');
+                            input.placeholder = title;
+                            column.footer().replaceChildren(input);
+
+                            // Event listener for user input
+                            input.addEventListener('keyup', () => {
+                                if (column.search() !== this.value) {
+                                    column.search(input.value).draw();
+                                }
+                            });
+                        });
                     },
                     buttons: [
                         {
@@ -160,13 +190,45 @@
                         <th><b>Number of output channels</b></th>
                         <th><b>PS ID</b></th>
                         <th>Action</th>
+                    </tr>
                 </thead>
+                <tfoot>
+                    <tr>
+                        <th><b>Location</b></th>
+                        <th><b>Product Group</b></th>
+                        <th><b>Category</b></th>
+                        <th><b>Lab Manager</b></th>
+                        <th><b>Manufacturer</b></th>
+                        <th><b>Model</b></th>
+                        <th><b>Voltage Rating</b></th>
+                        <th><b>Current Rating</b></th>
+                        <th><b>Maximum Power</b></th>
+                        <th><b>Number of voltage display digits</b></th>
+                        <th><b>Number of current display digits</b></th>
+                        <th><b>Overvoltage protection</b></th>
+                        <th><b>Overcurrent protection</b></th>
+                        <th><b>Dimensions (W)</b></th>
+                        <th><b>Dimensions (D)</b></th>
+                        <th><b>Dimensions (H)</b></th>
+                        <th><b>Weight (kg)</b></th>
+                        <th><b>Minimum Voltage</b></th>
+                        <th><b>Maximum Voltage</b></th>
+                        <th><b>Remote Operation Capability</b></th>
+                        <th><b>Output voltage monitor</b></th>
+                        <th><b>Output current monitor </b></th>
+                        <th><b>Power Supply to Equipment Interface</b></th>
+                        <th><b>LAN port</b></th>
+                        <th><b>GPIB interface</b></th>
+                        <th><b>Other interface ports</b></th>
+                        <th><b>Input voltage (facilities)</b></th>
+                        <th><b>Number of output channels</b></th>
+                    </tr>
+                </tfoot>
             </table>
             <div class="row">&nbsp;</div>
             <button onclick="location.href = '../power/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Power Supply</button>
             <button onclick="location.href = '../xlsm/upload_powersupply.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
             <button onclick="location.href = '../template/template_power_supply.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
-            <!--<button onclick="location.href = '../list/list_power_supply.php'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Export</button>-->
         </div>
     </body>
 </html>

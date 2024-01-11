@@ -27,6 +27,16 @@
                 padding: 0 20px;
                 box-sizing: border-box;
             }
+            
+            thead input {
+                width: 100%;
+            }
+            
+            tfoot input {
+                width: 100%;
+                padding: 3px;
+                box-sizing: border-box;
+            }
         </style>
 
         <script type="text/javascript">
@@ -40,6 +50,26 @@
                     ajax: { 
                         url: 'dao_equipment.php',
                         type: 'POST'
+                    },
+                    initComplete: function () {
+                    this.api()
+                        .columns()
+                        .every(function () {
+                            let column = this;
+                            let title = column.footer().textContent;
+
+                            // Create input element
+                            let input = document.createElement('input');
+                            input.placeholder = title;
+                            column.footer().replaceChildren(input);
+
+                            // Event listener for user input
+                            input.addEventListener('keyup', () => {
+                                if (column.search() !== this.value) {
+                                    column.search(input.value).draw();
+                                }
+                            });
+                        });
                     },
                     buttons: [
                         {
@@ -290,13 +320,102 @@
                         <th><b>Interface Current Rating</b></th>
                         <th style="text-align:center"><b>ID</b></th>
                         <th>Action</th>
+                    </tr>
                 </thead>
+                <tfoot>
+                    <tr>
+                        <th><b>Equipment</b></th>
+                        <th><b>Location</b></th>
+                        <th><b>Product Group</b></th>
+                        <th><b>Category</b></th>
+                        <th><b>Lab Manager</b></th>
+                        <th><b>Usage</b></th>
+                        <th><b>Rel Test</b></th>
+                        <th><b>Zone</b></th>
+                        <th><b>Manufacturer</b></th>
+                        <th><b>Model</b></th>
+                        <th><b>Mfg Date</b></th>
+                        <th><b>Asset No</b></th>
+                        <th><b>New/Transfer?</b></th>
+                        <th><b>Location</b></th>
+                        <th><b>Voltage Rating</b></th>
+                        <th><b>Control Accuracy</b></th>
+                        <th><b>Current Rating</b></th>
+                        <th><b>Power Rating</b></th>
+                        <th><b>Min Timer Setting</b></th>
+                        <th><b>Max Timer Setting</b></th>
+                        <th><b>Min Temperature</b></th>
+                        <th><b>Max Temperature</b></th>
+                        <th><b>Minimum RH</b></th>
+                        <th><b>Maximum RH</b></th>
+                        <th><b>Minimum Pressure</b></th>
+                        <th><b>Maximum Pressure</b></th>
+                        <th><b>Heat Dissipation</b></th>
+                        <th><b>Temperature Fluctuation</b></th>
+                        <th><b>Temperature Uniformity</b></th>
+                        <th><b>Humid Fluctuation</b></th>
+                        <th><b>External Dimension (W)</b></th>
+                        <th><b>External Dimension (D)</b></th>
+                        <th><b>External Dimension (H)</b></th>
+                        <th><b>Internal Dimension (W)</b></th>
+                        <th><b>Internal Dimension (D)</b></th>
+                        <th><b>Internal Dimension (H)</b></th>
+                        <th><b>Diameter</b></th>
+                        <th><b>No of Interior Zone</b></th>
+                        <th><b>Rack Dimension (W)</b></th>
+                        <th><b>Rack Dimension (D)</b></th>
+                        <th><b>Rack Dimension (H)</b></th>
+                        <th><b>Internal Volume</b></th>
+                        <th><b>Board Orientation</b></th>
+                        <th><b>Rack Material</b></th>
+                        <th><b>Rack to Slot Pitch</b></th>
+                        <th><b>Rack to Slot Width</b></th>
+                        <th><b>Weight</b></th>
+                        <th><b>No of Motherboard Slot</b></th>
+                        <th><b>Max Power Supply per Slot</b></th>
+                        <th><b>Max Power Supply per Equipment</b></th>
+                        <th><b>Airflow</b></th>
+                        <th><b>Temperature Protection 1</b></th>
+                        <th><b>Temperature Protection 2</b></th>
+                        <th><b>Temperature Protection 3</b></th>
+                        <th><b>Pressure Switch</b></th>
+                        <th><b>Safety Valve</b></th>
+                        <th><b>Smoke Alarm</b></th>
+                        <th><b>EMO Button</b></th>
+                        <th><b>Voltage</b></th>
+                        <th><b>Current</b></th>
+                        <th><b>Phase</b></th>
+                        <th><b>Exhaust</b></th>
+                        <th><b>Nitrogen Gas</b></th>
+                        <th><b>Oxygen Level Detector</b></th>
+                        <th><b>Liquid Nitrogen</b></th>
+                        <th><b>Chilled Water</b></th>
+                        <th><b>Di Water</b></th>
+                        <th><b>Water Topup System</b></th>
+                        <th><b>CDA</b></th>
+                        <th><b>LAN</b></th>
+                        <th><b>DAQ</b></th>
+                        <th><b>Internal Configuration</b></th>
+                        <th><b>Banana Jack Hole</b></th>
+                        <th><b>Connector Voltage Rating</b></th>
+                        <th><b>Connector Current Rating</b></th>
+                        <th><b>Connector Temperature Rating</b></th>
+                        <th><b>No pins</b></th>
+                        <th><b>Pin pitch</b></th>
+                        <th><b>No Wire Connector Rack</b></th>
+                        <th><b>Wire Voltage Rating</b></th>
+                        <th><b>Wire Current Rating</b></th>
+                        <th><b>Wire Temperature Rating</b></th>
+                        <th><b>External Configuration</b></th>
+                        <th><b>Interface Voltage Rating</b></th>
+                        <th><b>Interface Current Rating</b></th>
+                    </tr>
+                </tfoot>
             </table>
             <div class="row">&nbsp;</div>
             <button onclick="location.href = '../equipment/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Equipment</button>
             <button onclick="location.href = '../xlsm/upload_equipment.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
             <button onclick="location.href = '../template/template_equipment.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
-            <!--<button onclick="location.href = '../list/list_equipment.php'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Export</button>-->
         </div>
     </body>
 </html>

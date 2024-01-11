@@ -28,11 +28,20 @@
                 padding: 0 20px;
                 box-sizing: border-box;
             }
+            
+            thead input {
+                width: 100%;
+            }
+            
+            tfoot input {
+                width: 100%;
+                padding: 3px;
+                box-sizing: border-box;
+            }
         </style>
-
+        
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
-
                 var table = new DataTable('#example', {
                     processing: true,
                     serverSide: true,
@@ -41,6 +50,26 @@
                     ajax: { 
                         url: 'dao_daq.php',
                         type: 'POST'
+                    },
+                    initComplete: function () {
+                    this.api()
+                        .columns()
+                        .every(function () {
+                            let column = this;
+                            let title = column.footer().textContent;
+
+                            // Create input element
+                            let input = document.createElement('input');
+                            input.placeholder = title;
+                            column.footer().replaceChildren(input);
+
+                            // Event listener for user input
+                            input.addEventListener('keyup', () => {
+                                if (column.search() !== this.value) {
+                                    column.search(input.value).draw();
+                                }
+                            });
+                        });
                     },
                     buttons: [
                         {
@@ -123,7 +152,6 @@
                 });
             });
         </script>
-
     </head>
     <body>
         <div class="table_list" style="overflow-x:auto;">
@@ -174,12 +202,50 @@
                         <th><b>DAQ ID</b></th>
                         <th>Action</th>
                 </thead>
+                <tfoot>
+                    <tr>
+                        <th><b>Location</b></th>
+                        <th><b>Product Group</b></th>
+                        <th><b>Category</b></th>
+                        <th><b>Lab Manager</b></th>
+                        <th><b>Manufacturer</b></th>
+                        <th><b>Model</b></th>
+                        <th><b>DAQ ID</b></th>
+                        <th><b>Temperature Channel</b></th>
+                        <th><b>Voltage Channel</b></th>
+                        <th><b>Leakage Channel</b></th>
+                        <th><b>Maximum Voltage Measurement</b></th>
+                        <th><b>Minimum Voltage Measurement</b></th>
+                        <th><b>Maximum Leakage Measurement</b></th>
+                        <th><b>Minimum Leakage Measurement</b></th>
+                        <th><b>Maximum Temperature Measurement</b></th>
+                        <th><b>Minimum Temperature Measurement</b></th>
+                        <th><b>Voltage Drop</b></th>
+                        <th><b>Board Insert Check</b></th>
+                        <th><b>Measurement Prior Start The Test</b></th>
+                        <th><b>Scan Time</b></th>
+                        <th><b>Leakage Measurement Resolution</b></th>
+                        <th><b>Leakage Measurement Accuracy</b></th>
+                        <th><b>Voltage Measurement Resolution</b></th>
+                        <th><b>Offline software to review historical data and plotting with data analysis</b></th>
+                        <th><b>Measurement type for hardware design</b></th>
+                        <th><b>Number of analog inputs (single ended)</b></th>
+                        <th><b>Number of analog inputs (differential)</b></th>
+                        <th><b>Resolution</b></th>
+                        <th><b>Sampling frequency</b></th>
+                        <th><b>Supported Equipment</b></th>
+                        <th><b>Hardware for resistance measu</b></th>
+                        <th><b>Hardware for voltage measurement</b></th>
+                        <th><b>Hardware for temperature measurement</b></th>
+                        <th><b>DAQ to Equipment Interface</b></th>
+                        <th><b>DAQ to Power Supply Interface</b></th>
+                    </tr>
+                </tfoot>
             </table>
             <div class="row">&nbsp;</div>
             <button onclick="location.href = '../daq/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New DAQ</button>
             <button onclick="location.href = '../xlsm/upload_daq.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
             <button onclick="location.href = '../template/template_daq.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
-            <!--<button onclick="location.href = '../list/list_daq.php'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Export</button>-->
         </div>
     </body>
 </html>

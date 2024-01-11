@@ -68,7 +68,6 @@ if (isset($_POST['cari'])) {
         <script>
 
         </script>
-
     </head>
     <body>
         <?php
@@ -79,11 +78,12 @@ if (isset($_POST['cari'])) {
         }
         ?>
         <div class="row" >
-            <h5 style="">Query Page</h5>
-            <button onClick="window.location.href = window.location.href" type="button" class="btn btn-default btn-lg u-pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button>
+            <h5 style="">Query Page <button onClick="window.location.href = window.location.href" type="button" class="btn btn-default btn-lg u-pull-right"> <i class='bx bx-refresh bx-fw' ></i> Refresh Page</button></h5>
         </div>
         <details>
-            <summary>Filter</summary>
+            <summary>
+            <h2 style="border-left: none;">Filter</h2>
+            </summary>
             <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
                 <!--<form id="form_query">-->
                 <div class="row">
@@ -159,19 +159,16 @@ if (isset($_POST['cari'])) {
                 <button class="button-primary" type="submit" value="Submit" name="cari"> Search </button>
             </form>
         </details>
-        
 
-        <?php if ($query == '') {
+        <?php
+        if ($query == '') {
 //            echo 'display nothing at first';
             ?>
             <details>
                 <summary></summary>
             </details>
-        <?php
-        } else {
-        ?>
-<!--        <details class="accordion-toggle">
-            <summary>Result Summary</summary>-->
+        <?php } else {
+            ?>
             <table class="u-full-width">
                 <h2 style="border-left: none;margin-top:50px">Result List</h2>
                 <thead>
@@ -183,24 +180,19 @@ if (isset($_POST['cari'])) {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-//                    echo 'dataykan query kat sini :: ' . $query;
-//                    $get_slides = "SELECT * FROM gest_parameter_master WHERE flag = '1' ORDER BY code ASC";
-                    $run_slides = mysqli_query($con, $query);
-                    while ($row_slides = mysqli_fetch_array($run_slides)):
-                        ?>
-                        <tr>
-                            <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
-                            <td><?php echo getParameterValue($row_slides['lab_location']); ?></td>
-                            <td><?php echo getParameterValue($row_slides['strategy']); ?></td>
-                            <td><?php echo getParameterValue($row_slides['standard_category']); ?></td>
-                            <td><?php echo getParameterValue($row_slides['champion']); ?></td>
-                        </tr>
-                    <?php endwhile; ?>
+                <?php
+                $run_slides = mysqli_query($con, $query);
+                while ($row_slides = mysqli_fetch_array($run_slides)): ?>
+                    <tr>
+                        <!-- FETCHING DATA FROM EACH ROW OF EVERY COLUMN -->
+                        <td><?php echo getParameterValue($row_slides['lab_location']); ?></td>
+                        <td><?php echo getParameterValue($row_slides['strategy']); ?></td>
+                        <td><?php echo getParameterValue($row_slides['standard_category']); ?></td>
+                        <td><?php echo getParameterValue($row_slides['champion']); ?></td>
+                    </tr>
+                 <?php endwhile; ?>
                 </tbody>
             </table>
-        <!--</details>-->
-            
         <?php } ?>
     </body>
 </html>

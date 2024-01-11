@@ -28,6 +28,16 @@
                 padding: 0 20px;
                 box-sizing: border-box;
             }
+            
+            thead input {
+                width: 100%;
+            }
+            
+            tfoot input {
+                width: 100%;
+                padding: 3px;
+                box-sizing: border-box;
+            }
         </style>
 
         <script type="text/javascript">
@@ -41,6 +51,26 @@
                     ajax: { 
                         url: 'dao_hardware.php',
                         type: 'POST'
+                    },
+                    initComplete: function () {
+                    this.api()
+                        .columns()
+                        .every(function () {
+                            let column = this;
+                            let title = column.footer().textContent;
+
+                            // Create input element
+                            let input = document.createElement('input');
+                            input.placeholder = title;
+                            column.footer().replaceChildren(input);
+
+                            // Event listener for user input
+                            input.addEventListener('keyup', () => {
+                                if (column.search() !== this.value) {
+                                    column.search(input.value).draw();
+                                }
+                            });
+                        });
                     },
                     buttons: [
                         {
@@ -175,13 +205,53 @@
                         <th><b>Maximum DUT Quantity per Motherboard</b></th>
                         <th><b>Hardware ID</b></th>
                         <th>Action</th>
+                    </tr>
                 </thead>
+                <tfoot>
+                    <tr>
+                        <th><b>Location</b></th>
+                        <th><b>Product Group</b></th>
+                        <th><b>Category</b></th>
+                        <th><b>Lab Manager</b></th>
+                        <th><b>Hardware Type</b></th>
+                        <th><b>Manufacturer</b></th>
+                        <th><b>Assembly Number</b></th>
+                        <th><b>Voltage Rating</b></th>
+                        <th><b>Current Rating</b></th>
+                        <th><b>Temperature Rating</b></th>
+                        <th><b>Support Stress</b></th>
+                        <th><b>DAQ Monitoring</b></th>
+                        <th><b>PCB Material</b></th>
+                        <th><b>Dimension L</b></th>
+                        <th><b>Dimension W</b></th>
+                        <th><b>Dimension T</b></th>
+                        <th><b>No Layer</b></th>
+                        <th><b>Frame Material</b></th>
+                        <th><b>Board Coating</b></th>
+                        <th><b>Universal / Dedicated</b></th>
+                        <th><b>Socket Type</b></th>
+                        <th><b>Motherboard Socket Quantity</b></th>
+                        <th><b>Motherboard Socket Pin Quantity</b></th>
+                        <th><b>Motherboard Socket Pin Pitch</b></th>
+                        <th><b>Supported Card</b></th>
+                        <th><b>Load Card Maximum Quantity</b></th>
+                        <th><b>Load Card Pin Quantity</b></th>
+                        <th><b>Load Card Pin Pitch</b></th>
+                        <th><b>Program Card Maximum Quantity</b></th>
+                        <th><b>Program Card Pin Quantity</b></th>
+                        <th><b>Program Card Pin Pitch</b></th>
+                        <th><b>Connector Type</b></th>
+                        <th><b>No Pin</b></th>
+                        <th><b>Pin Pitch</b></th>
+                        <th><b>Edgefinger Thickness</b></th>
+                        <th><b>Maximum DUT Quantity per Motherboard</b></th>
+                    </tr>
+                </tfoot>
             </table>
             <div class="row">&nbsp;</div>
             <button onclick="location.href = '../hardware/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Hardware</button>
             <button onclick="location.href = '../xlsm/upload_hardware.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
             <button onclick="location.href = '../template/template_hardware.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
-            <!--<button onclick="location.href = '../list/list_hardware.php'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Export</button>-->
         </div>
     </body>
 </html>
