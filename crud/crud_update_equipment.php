@@ -115,6 +115,7 @@ $dataRel = rtrim($dataRel, ", ");
 $eqptId = getCode($eqptId, '006', $username);
 $manufacturer = getCode($manufacturer, '009', $username);
 $model = getCode($model, '010', $username);
+$rackMaterial = getCode($rackMaterial, '016', $username);
 
 $update = "UPDATE gest_form_eqpt SET "
         . "eqpt_id = '$eqptId', "

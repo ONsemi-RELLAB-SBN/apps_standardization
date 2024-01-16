@@ -25,7 +25,7 @@ include '../class/get_parameter.php';
                 padding: 0;
                 height: 90vh;
             }
-
+d
             #main-page {
                 position: relative;
                 top: 0;
@@ -248,7 +248,7 @@ include '../class/get_parameter.php';
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="from" id="fromLabel">From? *</label></div>
+                            <div class="two columns"><label for="from" id="fromLabel">From </label></div>
                             <div class="three columns">
                                 <select id="from" name="from" style="width: 100%">
                                    <?php echo getDropdown('014', ''); ?>
@@ -1926,10 +1926,16 @@ include '../class/get_parameter.php';
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="rack_material">Rack Material *</label></div>
-                            <div class="three columns">
+<!--                            <div class="three columns">
                                 <select id="rack_material" name="rack_material" style="width: 100%" >
-                                    <?php echo getDropdown('016', ''); ?>
+                                    <?php // echo getDropdown('016', ''); ?>
                                 </select>
+                            </div>-->
+                            <div class="three columns">
+                                <input type="text" list="rack_list" autocomplete="off" id="rack_material" name="rack_material">
+                                <datalist id="rack_list">
+                                    <?php echo getDataList('016', ''); ?>
+                                </datalist>
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns">
@@ -2285,6 +2291,12 @@ include '../class/get_parameter.php';
                                     <?php echo getDropdown('031', ''); ?>
                                 </select>
                             </div>
+<!--                            <div class="three columns">
+                                <input type="text" list="internal_list" autocomplete="off" id="int_config_type" name="int_config_type" onchange="updateDiv()">
+                                <datalist id="internal_list">
+                                    <?php echo getDataList('031', ''); ?>
+                                </datalist>
+                            </div>-->
                         </div>
                         
                         <div class="row" id="divvoltcurrent">
@@ -2452,10 +2464,16 @@ include '../class/get_parameter.php';
                                 </dialog>
                             </div>
                             <div class="three columns">
-                                <select id="ext_config_type" name="ext_config_type" style="width: 100%" onchange="updateView()">
+                                <select id="ext_config_type" name="ext_config_type" style="width: 100%" ">
                                     <?php echo getDropdown('032', ''); ?>
                                 </select>
                             </div>
+<!--                            <div class="three columns">
+                                <input type="text" list="external_list" autocomplete="off" id="ext_config_type" name="ext_config_type" onchange="updateView()">
+                                <datalist id="external_list">
+                                    <?php echo getDataList('032', ''); ?>
+                                </datalist>
+                            </div>-->
                         </div>
                         <div class="row" id="viewExternalDiv" name="viewExternalDiv" style="display: none;">
                             <div class="row">

@@ -2013,16 +2013,22 @@ $id = $_GET['edit'];
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="rack_material">Rack Material *</label></div>
-                            <div class="three columns">
+<!--                            <div class="three columns">
                                 <select id="rack_material" name="rack_material" style="width: 100%" >
                                     <option value="" selected=""></option>
                                     <?php
-                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '016' ORDER BY code ASC";
-                                    $resSite = mysqli_query($con, $sqlDdSite);
-                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                        <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['rack_material']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                    <?php endwhile; ?>
+//                                    $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '016' ORDER BY code ASC";
+//                                    $resSite = mysqli_query($con, $sqlDdSite);
+//                                    while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                        <option value="<?php // echo $rowSite['code']; ?>" <?php // if ($rowSite['code'] === $rowForm['rack_material']) { ?>selected<?php // } ?>><?php echo $rowSite['name']; ?></option>
+                                    <?php // endwhile; ?>
                                 </select>
+                            </div>-->
+                            <div class="three columns">
+                                <input type="text" list="rack_list" autocomplete="off" id="rack_material" name="rack_material" value="<?php echo getParameterValue($rowForm['rack_material']);?>">
+                                <datalist id="rack_list">
+                                    <?php echo getDataList('016', $rowForm['v']) ?>
+                                </datalist>
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns">

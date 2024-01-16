@@ -113,6 +113,7 @@ $dataRel = rtrim($dataRel, ", ");
 $eqptId = getCode($eqptId, '006', $username);
 $manufacturer = getCode($manufacturer, '009', $username);
 $model = getCode($model, '010', $username);
+$rackMaterial = getCode($rackMaterial, '016', $username);
 
 $newinsert = "INSERT INTO gest_form_eqpt (eqpt_id, lab_location, strategy, standard_category, champion, dedicate_usage, rel_test, zone, manufacturer, eqpt_model, 
             eqpt_mfg_date, eqpt_asset_no, new_transfer_eqpt, transfer_eqpt_location, eqpt_volt_rating, volt_control_accuracy, current_rating, power_rating, min_time_setting, max_time_setting, min_temp, max_temp, min_rh, max_rh, heat_dissipation, min_pressure, max_pressure, 
