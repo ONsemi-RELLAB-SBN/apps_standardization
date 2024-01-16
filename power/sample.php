@@ -169,7 +169,7 @@ include '../class/get_parameter.php';
                     <div class="two columns"><label for="standardization">Standardization Category *</label></div>
                     <div class="three columns">
                         <select id="standardization" name="standardization" style="width: 100%" required>
-                            <?php echo getDropdown('004', ''); ?>
+                            <?php echo getDropdown('004', '004004'); ?>
                         </select>
                     </div>
                     <div class="one columns">&nbsp;</div>
@@ -195,16 +195,18 @@ include '../class/get_parameter.php';
                     <div class="row">
                         <div class="two columns"><label for="manufacturer">Manufacturer *</label></div>
                         <div class="three columns">
-                            <select id="manufacturer" name="manufacturer" style="width: 100%" required>
-                                <?php echo getDropdown('039', ''); ?>
-                            </select>
+                            <input type="text" list="manufacturer_list" autocomplete="off" id="manufacturer" name="manufacturer" required>
+                            <datalist id="manufacturer_list">
+                                <?php echo getDataList('039', ''); ?>
+                            </datalist>
                         </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="model">Model *</label></div>
                         <div class="three columns">
-                            <select id="model" name="model" style="width: 100%" required>
-                                <?php echo getDropdown('040', ''); ?>
-                            </select>
+                            <input type="text" list="model_list" autocomplete="off" id="model" name="model" required>
+                            <datalist id="model_list">
+                                <?php echo getDataList('040', ''); ?>
+                            </datalist>
                         </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
@@ -436,8 +438,9 @@ include '../class/get_parameter.php';
             });
             
             function hasAllVisibleFilled() {
+                const visibleInputs = form.querySelectorAll('input:not([hidden]):not([disabled])');
                 const visibleSelects = form.querySelectorAll('select:not([hidden]):not([disabled])');
-                return [...visibleSelects].every(input => input.value);
+                return [...visibleSelects, ...visibleInputs].every(input => input.value);
             }
 
             function hasAllRequiredFilled() {

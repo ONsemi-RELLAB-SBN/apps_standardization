@@ -237,13 +237,13 @@ include '../class/get_parameter.php';
                         <div class="three columns"><input type="date" id="mfg_date" name="mfg_date" value="" style="width:55%" ></div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="asset_no">Equipment Asset No *</label></div>
-                        <div class="three columns"><input type="text" id="asset_no" name="asset_no" placeholder="Asset Number" value="" required> </div>
+                        <div class="three columns"><input type="text" id="asset_no" name="asset_no" placeholder="Asset Number" value="" > </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="new_transfer">New/Transfer Equipment *</label></div>
                             <div class="three columns">
-                                <select id="new_transfer" name="new_transfer" style="width: 100%" onchange="updateToField()" required>
+                                <select id="new_transfer" name="new_transfer" style="width: 100%" onchange="updateToField()" >
                                     <?php echo getDropdown('013', ''); ?>
                                 </select>
                             </div>
@@ -259,7 +259,7 @@ include '../class/get_parameter.php';
                         <div class="row">
                             <div class="two columns"><label for="relTest">Rel Test (Multiselect) *</label></div>
                             <div class="three columns">
-                                <select name="relTest[]" id="relTest" multiple multiselect-search="true" multiselect-select-all="false" style="width:100%" onchange="updateRelTest()" required>
+                                <select name="relTest[]" id="relTest" multiple multiselect-search="true" multiselect-select-all="false" style="width:100%" onchange="updateRelTest()" >
                                 <?php echo getDropdown02('008', ''); ?>
                                 </select>
                             </div>
@@ -283,7 +283,7 @@ include '../class/get_parameter.php';
                                     toField.style.display = 'none';
                                 } else {
                                     toField.readOnly = false;
-                                    toField.required = true;
+//                                    toField.required = true;
                                     transField.style.display = 'block';
                                     toField.style.display = 'block';
                                 }
@@ -2232,7 +2232,7 @@ include '../class/get_parameter.php';
                                     oxyField.style.display = 'none';
                                 } else {
                                     oxyField.readOnly = false;
-                                    oxyField.required = true;
+//                                    oxyField.required = true;
                                     oxylabel.style.display = 'block';
                                     oxyField.style.display = 'block';
                                 }
@@ -2250,7 +2250,7 @@ include '../class/get_parameter.php';
                                     $("#water_topup").val('');
                                 } else {
                                     waterField.readOnly = false;
-                                    waterField.required = true;
+//                                    waterField.required = true;
                                     waterField.style.display = 'block';
                                     topapField.style.display = 'block';
                                 }
