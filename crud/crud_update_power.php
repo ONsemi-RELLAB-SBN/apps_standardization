@@ -7,6 +7,7 @@
 
 include '../class/db.php';
 include '../class/ldap.php';
+include '../class/get_parameter.php';
 
 $id                 = $_GET['id'];
 $labLocation        = $_GET['lab_location'];
@@ -40,6 +41,13 @@ $qpib       = $_GET['gpib_interface'];
 $other      = $_GET['other_interface_port'];
 
 $output     = $_GET['no_output_channel'];
+
+if ($username == '') {
+    $username = 'System';
+}
+
+$manufacturer = getCode($manufacturer, '039', $username);
+$model = getCode($model, '040', $username);
 
 $update = "UPDATE gest_form_ps SET "
         . "lab_location = '$labLocation', "
