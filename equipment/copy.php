@@ -82,7 +82,6 @@ $id = $_GET['edit'];
                 right: 40px;
                 z-index: 99;
                 font-size: 18px;
-                border: none;
                 outline: none;
                 cursor: pointer;
             }
@@ -99,7 +98,6 @@ $id = $_GET['edit'];
                 right: 160px;
                 z-index: 99;
                 font-size: 18px;
-                border: none;
                 outline: none;
                 cursor: pointer;
             }
@@ -116,7 +114,6 @@ $id = $_GET['edit'];
                 right: 160px;
                 z-index: 99;
                 font-size: 18px;
-                border: none;
                 outline: none;
                 cursor: pointer;
             }
@@ -210,6 +207,20 @@ $id = $_GET['edit'];
                         </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
+                    <div class="row">
+                        <div class="two columns"><label for="relTest">Rel Test *</label></div>
+                        <div class="three columns">
+                            <select name="relTest[]" id="relTest" multiple multiselect-search="true" multiselect-select-all="false" style="width:100%" onchange="updateRelTest()" required>
+                            <?php
+                            $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
+                            $resSite = mysqli_query($con, $sqlDdSite);
+                            while ($rowSite = mysqli_fetch_array($resSite)): ?>
+                                <option value="<?php echo $rowSite['code']; ?>" <?php if (strpos($rowForm['rel_test'], $rowSite['code']) !== false) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
+                            <?php endwhile; ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
                 </div>
 
                 <div id="content-page">
@@ -228,7 +239,7 @@ $id = $_GET['edit'];
                         <div class="row">
                             <div class="two columns"><label for="eqpt_id">Equipment ID *</label></div>
                             <div class="three columns">
-                                <input type="text" list="eqpt_id_list" autocomplete="off" id="eqpt_id" name="eqpt_id" value="<?php echo getParameterValue($rowForm['eqpt_id']);?>" multiselect>
+                                <input type="text" list="eqpt_id_list" autocomplete="off" id="eqpt_id" name="eqpt_id" value="<?php echo getParameterValue($rowForm['eqpt_id']);?>" required multiselect>
                                 <datalist id="eqpt_id_list">
                                     <?php 
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '006' ORDER BY code ASC";
@@ -239,9 +250,9 @@ $id = $_GET['edit'];
                                 </datalist>
                             </div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="dedicated">Dedicated/Share *</label></div>
+                            <div class="two columns"><label for="dedicated">Dedicated/Share</label></div>
                             <div class="three columns">
-                                <select id="dedicated" name="dedicated" style="width: 100%" required>
+                                <select id="dedicated" name="dedicated" style="width: 100%">
                                     <option value="" selected=""></option>
                                     <?php 
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '007' ORDER BY code ASC";
@@ -256,7 +267,7 @@ $id = $_GET['edit'];
                         <div class="row">
                             <div class="two columns"><label for="manufacturer">Equipment Manufacturer *</label></div>
                             <div class="three columns">
-                                <input type="text" list="manufacturer_list" autocomplete="off" id="manufacturer" name="manufacturer" value="<?php echo getParameterValue($rowForm['manufacturer']); ?>">
+                                <input type="text" list="manufacturer_list" autocomplete="off" id="manufacturer" name="manufacturer" value="<?php echo getParameterValue($rowForm['manufacturer']); ?>" required>
                                 <datalist id="manufacturer_list">
                                     <?php 
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '009' ORDER BY code ASC";
@@ -269,7 +280,7 @@ $id = $_GET['edit'];
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="model">Equipment Model *</label></div>
                             <div class="three columns">
-                                <input type="text" list="model_list" autocomplete="off" id="model" name="model" value="<?php echo getParameterValue($rowForm['eqpt_model']); ?>">
+                                <input type="text" list="model_list" autocomplete="off" id="model" name="model" value="<?php echo getParameterValue($rowForm['eqpt_model']); ?>" required>
                                 <datalist id="model_list">
                                     <?php 
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '010' ORDER BY code ASC";
@@ -282,17 +293,17 @@ $id = $_GET['edit'];
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="mfg_date">Equipment Mfg Date *</label></div>
+                            <div class="two columns"><label for="mfg_date">Equipment Mfg Date</label></div>
                             <div class="three columns"><input type="date" id="mfg_date" name="mfg_date" value="<?php echo date('Y-m-d', strtotime($rowForm['eqpt_mfg_date'])); ?>" style="width:55%" ></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="asset_no">Equipment Asset No *</label></div>
-                            <div class="three columns"><input type="text" id="asset_no" name="asset_no" placeholder="Asset Number" value="<?php echo $rowForm['eqpt_asset_no']; ?>" required> </div>
+                            <div class="two columns"><label for="asset_no">Equipment Asset No</label></div>
+                            <div class="three columns"><input type="text" id="asset_no" name="asset_no" placeholder="Asset Number" value="<?php echo $rowForm['eqpt_asset_no']; ?>"> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="new_transfer">New/Transfer Equipment *</label></div>
+                            <div class="two columns"><label for="new_transfer">New/Transfer Equipment</label></div>
                             <div class="three columns">
-                                <select id="new_transfer" name="new_transfer" style="width: 100%" onchange="updateToField()" required>
+                                <select id="new_transfer" name="new_transfer" style="width: 100%" onchange="updateToField()" >
                                     <option value="" selected=""></option>
                                     <?php
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '013' ORDER BY code ASC";
@@ -303,7 +314,7 @@ $id = $_GET['edit'];
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="from" id="fromLabel">From? *</label></div>
+                            <div class="two columns"><label for="from" id="fromLabel">From?</label></div>
                             <div class="three columns">
                                 <select id="from" name="from" style="width: 100%">
                                     <option value="" selected=""></option>
@@ -318,19 +329,7 @@ $id = $_GET['edit'];
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="relTest">Rel Test (Multiselect) *</label></div>
-                            <div class="three columns">
-                                <select name="relTest[]" id="relTest" multiple multiselect-search="true" multiselect-select-all="false" style="width:100%" onchange="updateRelTest()" required>
-                                <?php
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '008' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>" <?php if (strpos($rowForm['rel_test'], $rowSite['code']) !== false) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
-                                </select>
-                            </div>
-                            <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="zone">Zone *</label></div>
+                            <div class="two columns"><label for="zone">Zone</label></div>
                             <div class="three columns"><input type="number" step="0.001" id="zone" name="zone" value=""></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
@@ -349,7 +348,7 @@ $id = $_GET['edit'];
                                     toField.style.display = 'none';
                                 } else {
                                     toField.readOnly = false;
-                                    toField.required = true;
+//                                    toField.required = true;
                                     transField.style.display = 'block';
                                     toField.style.display = 'block';
                                 }
@@ -1827,71 +1826,71 @@ $id = $_GET['edit'];
 
                     <div class="tab-content" id="tabCpbl">
                         <div class="row">
-                            <div class="two columns"><label for="volt_rating" id="labelvoltrating1">Voltage Rating *</label></div>
+                            <div class="two columns"><label for="volt_rating" id="labelvoltrating1">Voltage Rating</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="<?php echo $rowForm['eqpt_volt_rating']; ?>" > </div>
                             <div class="one columns"><label for="volt_rating" id="labelvoltrating2" style="text-align: left"><b>V</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="volt_control" id="labelcoltcontrol1">Voltage Control Accuracy *</label></div>
+                            <div class="two columns"><label for="volt_control" id="labelcoltcontrol1">Voltage Control Accuracy</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="volt_control" name="volt_control" value="<?php echo $rowForm['volt_control_accuracy']; ?>" > </div>
                             <div class="one columns"><label for="volt_control" id="labelcoltcontrol2" style="text-align: left"><b>%</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="curr_rating" id="labelcurrrating1">Current Rating *</label></div>
+                            <div class="two columns"><label for="curr_rating" id="labelcurrrating1">Current Rating</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="<?php echo $rowForm['current_rating']; ?>" > </div>
                             <div class="one columns"><label for="curr_rating" id="labelcurrrating2" style="text-align: left"><b>A</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="power_rating" id="labelpowerrating1">Power Rating *</label></div>
+                            <div class="two columns"><label for="power_rating" id="labelpowerrating1">Power Rating</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="power_rating" name="power_rating" value="<?php echo $rowForm['power_rating']; ?>" > </div>
                             <div class="one columns"><label for="power_rating" id="labelpowerrating2" style="text-align: left"><b>W</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="min_time" id="labelmintimer1">Min. Timer Setting *</label></div>
+                            <div class="two columns"><label for="min_time" id="labelmintimer1">Min. Timer Setting</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="min_time" name="min_time" value="<?php echo $rowForm['min_time_setting']; ?>" > </div>
                             <div class="one columns"><label for="min_time" id="labelmintimer2" style="text-align: left"><b>s</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="max_time" id="labelmaxtimer1">Max. Timer Setting *</label></div>
+                            <div class="two columns"><label for="max_time" id="labelmaxtimer1">Max. Timer Setting</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="max_time" name="max_time" value="<?php echo $rowForm['max_time_setting']; ?>" > </div>
                             <div class="one columns"><label for="max_time" id="labelmaxtimer2" style="text-align: left"><b>s</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="min_temp" id="labelmintemp1">Min. Temperature *</label></div>
+                            <div class="two columns"><label for="min_temp" id="labelmintemp1">Min. Temperature</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="min_temp" name="min_temp" value="<?php echo $rowForm['min_temp']; ?>" > </div>
                             <div class="one columns"><label for="min_temp" id="labelmintemp2" style="text-align: left"><b>&#176;C</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="max_temp" id="labelmaxtemp1">Max. Temperature *</label></div>
+                            <div class="two columns"><label for="max_temp" id="labelmaxtemp1">Max. Temperature</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="max_temp" name="max_temp" value="<?php echo $rowForm['max_temp']; ?>" > </div>
                             <div class="one columns"><label for="max_temp" id="labelmaxtemp2" style="text-align: left"><b>&#176;C</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="minRh" id="labelminrh1">Min. RH *</label></div>
+                            <div class="two columns"><label for="minRh" id="labelminrh1">Min. RH</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="minRh" name="minRh" value="<?php echo $rowForm['min_rh']; ?>" > </div>
                             <div class="one columns"><label for="minRh" id="labelminrh2" style="text-align: left"><b>%</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="maxRh" id="labelmaxrh1">Max. RH *</label></div>
+                            <div class="two columns"><label for="maxRh" id="labelmaxrh1">Max. RH</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="maxRh" name="maxRh" value="<?php echo $rowForm['max_rh']; ?>" > </div>
                             <div class="one columns"><label for="maxRh" id="labelmaxrh2" style="text-align: left"><b>%</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="min_pressure" id="labelminpressure1">Minimum Pressure *</label></div>
+                            <div class="two columns"><label for="min_pressure" id="labelminpressure1">Minimum Pressure</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="min_pressure" name="min_pressure" value="<?php echo $rowForm['min_pressure']; ?>" > </div>
                             <div class="one columns"><label for="min_pressure" id="labelminpressure2" style="text-align: left"><b>psi</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="max_pressure" id="labelmaxpressure1">Maximum Pressure *</label></div>
+                            <div class="two columns"><label for="max_pressure" id="labelmaxpressure1">Maximum Pressure</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="max_pressure" name="max_pressure" value="<?php echo $rowForm['max_pressure']; ?>" > </div>
                             <div class="one columns"><label for="max_pressure" id="labelmaxpressure2" style="text-align: left"><b>psi</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="heat_dissipation" id="labelheat1">Heat Dissipation *</label></div>
+                            <div class="two columns"><label for="heat_dissipation" id="labelheat1">Heat Dissipation</label></div>
                             <div class="two columns"><input type="text" id="heat_dissipation" name="heat_dissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" > </div>
                             <div class="two columns"><label for="heat_dissipation" id="labelheat2" style="text-align: left"><b>W</b></label></div>
                             <div class="two columns" id="labeltempfluc1">
-                                <label for="temp_fluctuation">Temperature Fluctuation *</label>
+                                <label for="temp_fluctuation">Temperature Fluctuation</label>
                                 <label for="toggle_01" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_01">
                                 <dialog>
@@ -1907,7 +1906,7 @@ $id = $_GET['edit'];
                         </div>
                         <div class="row">
                             <div class="two columns" id="labeltempuniform1">
-                                <label for="temp_uniform">Temperature Uniformity *</label>
+                                <label for="temp_uniform">Temperature Uniformity</label>
                                 <label for="toggle_02" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_02">
                                 <dialog>
@@ -1919,7 +1918,7 @@ $id = $_GET['edit'];
                             <div class="one columns"><label for="temp_uniform" id="labeltempuniform2" style="text-align: left"><b>&#176;C</b></label></div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns" id="labelhumid1">
-                                <label for="humid_fluctuation">Humidity Fluctuation *</label>
+                                <label for="humid_fluctuation">Humidity Fluctuation</label>
                                 <label for="toggle_03" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_03">
                                 <dialog>
@@ -1936,7 +1935,7 @@ $id = $_GET['edit'];
                     <div class="tab-content" id="tabCrtr">
                         <div class="row">
                             <div class="two columns">
-                                <label for="no_interior">No. Interior Zones (doors) *</label>
+                                <label for="no_interior">No. Interior Zones (doors)</label>
                                 <label for="toggle_06" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_06">
                                 <dialog>
@@ -1948,7 +1947,7 @@ $id = $_GET['edit'];
                             <div class="one columns"><label for="no_interior" style="text-align: left"><b>Zone</b></label></div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns">
-                                <label for="ext_dimension_w">External Dimension (W) *</label>
+                                <label for="ext_dimension_w">External Dimension (W)</label>
                                 <label for="toggle_04" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_04">
                                 <dialog>
@@ -1962,7 +1961,7 @@ $id = $_GET['edit'];
                         </div>
                         <div class="row">
                             <div class="two columns">
-                                <label for="int_volume">Internal Volume *</label>
+                                <label for="int_volume">Internal Volume</label>
                                 <label for="toggle_08" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_08">
                                 <dialog>
@@ -1973,7 +1972,7 @@ $id = $_GET['edit'];
                             <div class="two columns"><input type="number" step="0.001" id="int_volume" name="int_volume" value="<?php echo $rowForm['int_vol']; ?>" > </div>
                             <div class="one columns"><label for="int_volume" style="text-align: left"><b>L</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="ext_dimension_d">(D) *</label></div>
+                            <div class="two columns"><label for="ext_dimension_d">(D)</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="ext_dimension_d" name="ext_dimension_d" value="<?php echo $rowForm['ext_dimension_d']; ?>" > </div>
                             <div class="one columns"><label for="ext_dimension_d" style="text-align: left"><b>mm</b></label></div>
                             <div class="one columns">&nbsp;</div>
@@ -2000,13 +1999,13 @@ $id = $_GET['edit'];
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="ext_dimension_h">(H) *</label></div>
+                            <div class="two columns"><label for="ext_dimension_h">(H)</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="ext_dimension_h" name="ext_dimension_h" value="<?php echo $rowForm['ext_dimension_h']; ?>" > </div>
                             <div class="one columns"><label for="ext_dimension_h" style="text-align: left"><b>mm</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="rack_material">Rack Material *</label></div>
+                            <div class="two columns"><label for="rack_material">Rack Material</label></div>
                             <div class="three columns">
                                 <select id="rack_material" name="rack_material" style="width: 100%" >
                                     <option value="" selected=""></option>
@@ -2020,7 +2019,7 @@ $id = $_GET['edit'];
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns">
-                                <label for="int_dimension_w">Internal Dimension (W) *</label>
+                                <label for="int_dimension_w">Internal Dimension (W)</label>
                                 <label for="toggle_05" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_05">
                                 <dialog>
@@ -2034,7 +2033,7 @@ $id = $_GET['edit'];
                         </div>
                         <div class="row">
                             <div class="two columns">
-                                <label for="rack_slot_pitch">Rack Slot-to-Slot Pitch *</label>
+                                <label for="rack_slot_pitch">Rack Slot-to-Slot Pitch</label>
                                 <label for="toggle_10" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_10">
                                 <dialog>
@@ -2045,14 +2044,14 @@ $id = $_GET['edit'];
                             <div class="two columns"><input type="number" step="0.001" id="rack_slot_pitch" name="rack_slot_pitch" value="<?php echo $rowForm['rack_slot_pitch']; ?>" ></div>
                             <div class="one columns"><label for="rack_slot_pitch" style="text-align: left"><b>mm</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="int_dimension_d">(D) *</label></div>
+                            <div class="two columns"><label for="int_dimension_d">(D)</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="int_dimension_d" name="int_dimension_d" value="<?php echo $rowForm['int_dimension_d']; ?>" > </div>
                             <div class="one columns"><label for="int_dimension_d" style="text-align: left"><b>mm</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
-                                <label for="rack_slot_width">Rack Slot Width *</label>
+                                <label for="rack_slot_width">Rack Slot Width</label>
                                 <label for="toggle_11" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_11">
                                 <dialog>
@@ -2063,18 +2062,18 @@ $id = $_GET['edit'];
                             <div class="two columns"><input type="number" step="0.001" id="rack_slot_width" name="rack_slot_width" value="<?php echo $rowForm['rack_slot_width']; ?>" > </div>
                             <div class="one columns"><label for="rack_slot_width" style="text-align: left"><b>mm</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="int_dimension_h">(H) *</label></div>
+                            <div class="two columns"><label for="int_dimension_h">(H)</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="int_dimension_h" name="int_dimension_h" value="<?php echo $rowForm['int_dimension_h']; ?>" > </div>
                             <div class="one columns"><label for="int_dimension_h" style="text-align: left"><b>mm</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="eqpt_weight">Equipment Weight *</label></div>
+                            <div class="two columns"><label for="eqpt_weight">Equipment Weight</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="eqpt_weight" name="eqpt_weight" value="<?php echo $rowForm['eqpt_weight']; ?>" > </div>
                             <div class="one columns"><label for="eqpt_weight" style="text-align: left"><b>Kg</b></label></div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns">
-                                <label for="rack_dimension_w">Rack Dimension (W) *</label>
+                                <label for="rack_dimension_w">Rack Dimension (W)</label>
                                 <label for="toggle_07" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_07">
                                 <dialog>
@@ -2088,7 +2087,7 @@ $id = $_GET['edit'];
                         </div>
                         <div class="row">
                             <div class="two columns">
-                                <label for="no_mb_slot">Number of motherboard slots *</label>
+                                <label for="no_mb_slot">Number of motherboard slots</label>
                                 <label for="toggle_12" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_12">
                                 <dialog>
@@ -2099,14 +2098,14 @@ $id = $_GET['edit'];
                             <div class="two columns"><input type="number" step="0.001" id="no_mb_slot" name="no_mb_slot" value="<?php echo $rowForm['no_mb_slot']; ?>" ></div>
                             <div class="one columns"><label for="no_mb_slot" style="text-align: left"><b>Slot</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="rack_dimension_d">(D) *</label></div>
+                            <div class="two columns"><label for="rack_dimension_d">(D)</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="rack_dimension_d" name="rack_dimension_d" value="<?php echo $rowForm['rack_dimension_d']; ?>" > </div>
                             <div class="one columns"><label for="rack_dimension_d" style="text-align: left"><b>mm</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
-                                <label for="max_ps_bs">Max number of power supplies per board slot *</label>
+                                <label for="max_ps_bs">Max number of power supplies per board slot</label>
                                 <label for="toggle_13" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_13">
                                 <dialog>
@@ -2117,14 +2116,14 @@ $id = $_GET['edit'];
                             <div class="two columns"><input type="number" step="0.001" id="max_ps_bs" name="max_ps_bs" value="<?php echo $rowForm['max_ps_slot']; ?>" > </div>
                             <div class="one columns"><label for="max_ps_bs" style="text-align: left"><b>Slot</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="rack_dimension_h">(H) *</label></div>
+                            <div class="two columns"><label for="rack_dimension_h">(H)</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="rack_dimension_h" name="rack_dimension_h" value="<?php echo $rowForm['rack_dimension_h']; ?>" > </div>
                             <div class="one columns"><label for="rack_dimension_h" style="text-align: left"><b>mm</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
-                                <label for="max_ps">Max number of power supplies for the entire Equipment *</label>
+                                <label for="max_ps">Max number of power supplies for the entire Equipment</label>
                                 <label for="toggle_14" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_14">
                                 <dialog>
@@ -2135,14 +2134,14 @@ $id = $_GET['edit'];
                             <div class="two columns"><input type="number" step="0.001" id="max_ps" name="max_ps" value="<?php echo $rowForm['max_ps_eqpt']; ?>" > </div>
                             <div class="one columns"><label for="max_ps" style="text-align: left"><b>Unit</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="diameter">Diameter *</label></div>
+                            <div class="two columns"><label for="diameter">Diameter</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="diameter" name="diameter" value="<?php echo $rowForm['diameter']; ?>" > </div>
                             <div class="one columns"><label for="diameter" style="text-align: left"><b>mm</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns">
-                                <label for="airflow">Airflow *</label>
+                                <label for="airflow">Airflow</label>
                                 <label for="toggle_15" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_15">
                                 <dialog>
@@ -2166,7 +2165,7 @@ $id = $_GET['edit'];
 
                     <div class="tab-content" id="tabSafe">
                         <div class="row">
-                            <div class="two columns"><label for="tempProtection1">Temperature Protection 1 *</label></div>
+                            <div class="two columns"><label for="tempProtection1">Temperature Protection 1</label></div>
                             <div class="three columns">
                                 <select id="tempProtection1" name="tempProtection1" style="width: 100%" >
                                     <option value="" selected=""></option>
@@ -2179,7 +2178,7 @@ $id = $_GET['edit'];
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="tempProtection2">Temperature Protection 2 *</label></div>
+                            <div class="two columns"><label for="tempProtection2">Temperature Protection 2</label></div>
                             <div class="three columns">
                                 <select id="tempProtection2" name="tempProtection2" style="width: 100%" >
                                     <option value="" selected=""></option>
@@ -2194,7 +2193,7 @@ $id = $_GET['edit'];
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="tempThermostat3">Temperature Protection / Thermostat 3 *</label></div>
+                            <div class="two columns"><label for="tempThermostat3">Temperature Protection / Thermostat 3</label></div>
                             <div class="three columns">
                                 <select id="tempThermostat3" name="tempThermostat3" style="width: 100%" >
                                     <option value="" selected=""></option>
@@ -2207,7 +2206,7 @@ $id = $_GET['edit'];
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="smoke_detector">Smoke Detector/Alarm *</label></div>
+                            <div class="two columns"><label for="smoke_detector">Smoke Detector/Alarm</label></div>
                             <div class="three columns">
                                 <select id="smoke_detector" name="smoke_detector" style="width: 100%" >
                                     <option value="" selected=""></option>
@@ -2222,7 +2221,7 @@ $id = $_GET['edit'];
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="press_switch">Pressure Switch *</label></div>
+                            <div class="two columns"><label for="press_switch">Pressure Switch</label></div>
                             <div class="three columns">
                                 <select id="press_switch" name="press_switch" style="width: 100%" >
                                     <option value="" selected=""></option>
@@ -2235,7 +2234,7 @@ $id = $_GET['edit'];
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="safety_valve">Safety Valve *</label></div>
+                            <div class="two columns"><label for="safety_valve">Safety Valve</label></div>
                             <div class="three columns">
                                 <select id="safety_valve" name="safety_valve" style="width: 100%" >
                                     <option value="" selected=""></option>
@@ -2250,7 +2249,7 @@ $id = $_GET['edit'];
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="emo">EMO button *</label></div>
+                            <div class="two columns"><label for="emo">EMO button</label></div>
                             <div class="three columns">
                                 <select id="emo" name="emo" style="width: 100%" >
                                     <option value="" selected=""></option>
@@ -2267,21 +2266,21 @@ $id = $_GET['edit'];
 
                     <div class="tab-content" id="tabUtlt">
                         <div class="row">
-                            <div class="two columns"><label for="voltage" id="labelvoltage1">Voltage *</label></div>
+                            <div class="two columns"><label for="voltage" id="labelvoltage1">Voltage</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="voltage" name="voltage" value="<?php echo $rowForm['voltage']; ?>" > </div>
                             <div class="one columns"><label for="voltage" id="labelvoltage2" style="text-align: left"><b>V</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="phase" id="labelphase1">Phase *</label></div>
+                            <div class="two columns"><label for="phase" id="labelphase1">Phase</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="<?php echo $rowForm['phase']; ?>" > </div>
                             <div class="one columns"><label for="phase" id="labelphase2" style="text-align: left"><b>Phase</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="current" id="labelcurrent1">Current *</label></div>
+                            <div class="two columns"><label for="current" id="labelcurrent1">Current</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="current" name="current" value="<?php echo $rowForm['current']; ?>" > </div>
                             <div class="one columns"><label for="current" id="labelcurrent2" style="text-align: left"><b>A</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="exhaust" id="labelexhaust">Exhaust *</label></div>
+                            <div class="two columns"><label for="exhaust" id="labelexhaust">Exhaust</label></div>
                             <div class="three columns">
                                 <select id="exhaust" name="exhaust" style="width: 100%" >
                                     <option value="" selected=""></option>
@@ -2296,7 +2295,7 @@ $id = $_GET['edit'];
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="chilled_water" id="labelchill">Chilled Water *</label></div>
+                            <div class="two columns"><label for="chilled_water" id="labelchill">Chilled Water</label></div>
                             <div class="three columns">
                                 <select id="chilled_water" name="chilled_water" style="width: 100%">
                                     <option value="" selected=""></option>
@@ -2309,7 +2308,7 @@ $id = $_GET['edit'];
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="liquid_nitrogen" id="labelliquid">Liquid Nitrogen *</label></div>
+                            <div class="two columns"><label for="liquid_nitrogen" id="labelliquid">Liquid Nitrogen</label></div>
                             <div class="three columns">
                                 <select id="liquid_nitrogen" name="liquid_nitrogen" style="width: 100%" >
                                     <option value="" selected=""></option>
@@ -2324,7 +2323,7 @@ $id = $_GET['edit'];
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="lan" id="labellan">LAN *</label></div>
+                            <div class="two columns"><label for="lan" id="labellan">LAN</label></div>
                             <div class="three columns">
                                 <select id="lan" name="lan" style="width: 100%">
                                     <option value="" selected=""></option>
@@ -2337,7 +2336,7 @@ $id = $_GET['edit'];
                                 </select>
                             </div>
                             <div class="one columns" >&nbsp;</div>
-                            <div class="two columns"><label for="cda" id="labelcda">CDA *</label></div>
+                            <div class="two columns"><label for="cda" id="labelcda">CDA</label></div>
                             <div class="three columns">
                                 <select id="cda" name="cda" style="width: 100%" >
                                     <option value="" selected=""></option>
@@ -2352,7 +2351,7 @@ $id = $_GET['edit'];
                             <div class="one columns" >&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="n2gas" id="labelgas">N2 Gas *</label></div>
+                            <div class="two columns"><label for="n2gas" id="labelgas">N2 Gas</label></div>
                             <div class="three columns">
                                 <select id="n2gas" name="n2gas" style="width: 100%" onchange="updateGas()">
                                     <option value="" selected=""></option>
@@ -2365,7 +2364,7 @@ $id = $_GET['edit'];
                                 </select>
                             </div>
                             <div class="one columns" >&nbsp;</div>
-                            <div class="two columns"><label for="oxygen_level" id="labelexygen">Oxygen Level Detector *</label></div>
+                            <div class="two columns"><label for="oxygen_level" id="labelexygen">Oxygen Level Detector</label></div>
                             <div class="three columns">
                                 <select id="oxygen_level" name="oxygen_level" style="width: 100%">
                                     <option value="" selected=""></option>
@@ -2379,7 +2378,7 @@ $id = $_GET['edit'];
                             </div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="di_water" id="labeldiwater">DI Water *</label></div>
+                            <div class="two columns"><label for="di_water" id="labeldiwater">DI Water</label></div>
                             <div class="three columns">
                                 <select id="di_water" name="di_water" style="width: 100%" onchange="updateToFieldWater()">
                                     <option value="" selected=""></option>
@@ -2392,7 +2391,7 @@ $id = $_GET['edit'];
                                 </select>
                             </div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="water_topup" id="labeltopup">Water Top-up System *</label></div>
+                            <div class="two columns"><label for="water_topup" id="labeltopup">Water Top-up System</label></div>
                             <div class="three columns">
                                 <select id="water_topup" name="water_topup" style="width: 100%">
                                     <option value="" selected=""></option>
@@ -2421,7 +2420,7 @@ $id = $_GET['edit'];
                                     oxyField.style.display = 'none';
                                 } else {
                                     oxyField.readOnly = false;
-                                    oxyField.required = true;
+//                                    oxyField.required = true;
                                     oxylabel.style.display = 'block';
                                     oxyField.style.display = 'block';
                                 }
@@ -2439,7 +2438,7 @@ $id = $_GET['edit'];
                                     $("#water_topup").val('');
                                 } else {
                                     waterField.readOnly = false;
-                                    waterField.required = true;
+//                                    waterField.required = true;
                                     waterField.style.display = 'block';
                                     topapField.style.display = 'block';
                                 }
@@ -2449,7 +2448,7 @@ $id = $_GET['edit'];
 
                     <div class="tab-content" id="tabDaq">
                         <div class="row">
-                            <div class="two columns"><label for="daq">DAQ (Realtime Leakage Monitoring) *</label></div>
+                            <div class="two columns"><label for="daq">DAQ (Realtime Leakage Monitoring)</label></div>
                             <div class="three columns">
                                 <select id="daq" name="daq" style="width: 100%">
                                     <option value="" selected=""></option>
@@ -2467,7 +2466,7 @@ $id = $_GET['edit'];
                     <div class="tab-content" id="tabInt">
                         <div class="row">
                             <div class="two columns">
-                                <label for="int_config_type">Configuration Type *</label>
+                                <label for="int_config_type">Configuration Type</label>
                                 <label for="toggle_16" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_16">
                                 <dialog>
@@ -2489,7 +2488,7 @@ $id = $_GET['edit'];
                         </div>
                         
                         <div class="row" id="divvoltcurrent">
-                            <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating *</label></div>
+                            <div class="two columns"><label for="conn_volt_rating">Connector Voltage Rating</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="conn_volt_rating" name="conn_volt_rating" value="<?php echo $rowForm['conn_volt_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_volt_rating" style="text-align: left"><b>V</b></label></div>
                             <div class="one columns">
@@ -2500,22 +2499,22 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/017.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="two columns"><label for="conn_curr_rating">Connector Current Rating *</label></div>
+                            <div class="two columns"><label for="conn_curr_rating">Connector Current Rating</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="conn_curr_rating" name="conn_curr_rating" value="<?php echo $rowForm['conn_current_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_curr_rating" style="text-align: left"><b>A</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="conn_temp_rating" id="labelconntemprate1">Connector Temp Rating *</label></div>
+                            <div class="two columns"><label for="conn_temp_rating" id="labelconntemprate1">Connector Temp Rating</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="conn_temp_rating" name="conn_temp_rating" value="<?php echo $rowForm['conn_temp_rating']; ?>" > </div>
                             <div class="one columns"><label for="conn_temp_rating" id="labelconntemprate2" style="text-align: left"><b>&#176;C</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="banana_jack_hole" id="labelbananajack1">No. Banana Jack Holes *</label></div>
+                            <div class="two columns"><label for="banana_jack_hole" id="labelbananajack1">No. Banana Jack Holes</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="banana_jack_hole" name="banana_jack_hole" value="<?php echo $rowForm['no_banana_jack_hole']; ?>" > </div>
                             <div class="one columns"><label for="banana_jack_hole" id="labelbananajack2" style="text-align: left"><b>Pins</b></label></div>
                         </div>
                         <div class="row" id="divPin">
-                            <div class="two columns"><label for="no_pins">No. of Pins *</label></div>
+                            <div class="two columns"><label for="no_pins">No. of Pins</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="no_pins" name="no_pins" value="<?php echo $rowForm['no_pin']; ?>" > </div>
                             <div class="one columns"><label for="no_pins" style="text-align: left"><b>Pins</b></label></div>
                             <div class="one columns">
@@ -2526,29 +2525,29 @@ $id = $_GET['edit'];
                                     <img id="myImg" src="../image/equipment/018.png" alt="image" style="width:100%" class="w3-modal-content w3-animate-zoom">
                                 </dialog>
                             </div>
-                            <div class="two columns"><label for="pin_pitch">Pin Pitch *</label></div>
+                            <div class="two columns"><label for="pin_pitch">Pin Pitch</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="pin_pitch" name="pin_pitch" value="<?php echo $rowForm['pin_pitch']; ?>" > </div>
                             <div class="one columns"><label for="pin_pitch" style="text-align: left"><b>mm</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row" id="divconrack">
-                            <div class="two columns"><label for="conn_rack">No. Wires Connected to Rack *</label></div>
+                            <div class="two columns"><label for="conn_rack">No. Wires Connected to Rack</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="conn_rack" name="conn_rack" value="<?php echo $rowForm['no_wire_conn_rack']; ?>" > </div>
                             <div class="one columns"><label for="conn_rack" style="text-align: left"><b>&#176;C</b></label></div>
                         </div>
                         <div class="row" id="WireDiv" name="WireDiv"" style="display: none;">
                             <div class="row">
-                                <div class="two columns"><label for="wire_volt_rating">Wire Voltage Rating *</label></div>
+                                <div class="two columns"><label for="wire_volt_rating">Wire Voltage Rating</label></div>
                                 <div class="two columns"><input type="number" step="0.001" id="wire_volt_rating" name="wire_volt_rating" value="<?php echo $rowForm['wire_volt_rating']; ?>" > </div>
                                 <div class="one columns"><label for="wire_volt_rating" style="text-align: left"><b>V</b></label></div>
                                 <div class="one columns">&nbsp;</div>
-                                <div class="two columns"><label for="wire_curr_rating">Wire Current Rating *</label></div>
+                                <div class="two columns"><label for="wire_curr_rating">Wire Current Rating</label></div>
                                 <div class="two columns"><input type="number" step="0.001" id="wire_curr_rating" name="wire_curr_rating" value="<?php echo $rowForm['wire_curr_rating']; ?>" > </div>
                                 <div class="one columns"><label for="wire_curr_rating" style="text-align: left"><b>A</b></label></div>
                                 <div class="one columns">&nbsp;</div>
                             </div>
                             <div class="row">
-                                <div class="two columns"><label for="wire_temp_rating">Wire Temp Rating *</label></div>
+                                <div class="two columns"><label for="wire_temp_rating">Wire Temp Rating</label></div>
                                 <div class="two columns"><input type="number" step="0.001" id="wire_temp_rating" name="wire_temp_rating" value="<?php echo $rowForm['wire_temp_rating']; ?>" > </div>
                                 <div class="one columns"><label for="wire_temp_rating" style="text-align: left"><b>&#176;C</b></label></div>
                             </div>
@@ -2644,7 +2643,7 @@ $id = $_GET['edit'];
                     <div class="tab-content" id="tabExt">
                         <div class="row">
                             <div class="two columns">
-                                <label for="ext_config_type">Configuration Type *</label>
+                                <label for="ext_config_type">Configuration Type</label>
                                 <label for="toggle_20" class="view-image">Image</label>
                                 <input type="checkbox" id="toggle_20">
                                 <dialog>
@@ -2666,11 +2665,11 @@ $id = $_GET['edit'];
                         </div>
                         <div class="row" id="viewExternalDiv" name="viewExternalDiv" style="display: none;">
                             <div class="row">
-                                <div class="two columns"><label for="interface_volt_rating">Interface Voltage Rating *</label></div>
+                                <div class="two columns"><label for="interface_volt_rating">Interface Voltage Rating</label></div>
                                 <div class="two columns"><input type="number" step="0.001" id="interface_volt_rating" name="interface_volt_rating" value="<?php echo $rowForm['interface_volt_rating']; ?>" > </div>
                                 <div class="one columns"><label for="interface_volt_rating" style="text-align: left"><b>V</b></label></div>
                                 <div class="one columns">&nbsp;</div>
-                                <div class="two columns"><label for="interface_curr_rating">Interface Current Rating *</label></div>
+                                <div class="two columns"><label for="interface_curr_rating">Interface Current Rating</label></div>
                                 <div class="two columns"><input type="number" step="0.001" id="interface_curr_rating" name="interface_curr_rating" value="<?php echo $rowForm['interface_current_rating']; ?>" > </div>
                                 <div class="one columns"><label for="interface_curr_rating" style="text-align: left"><b>A</b></label></div>
                                 <div class="one columns">&nbsp;</div>
@@ -4285,6 +4284,7 @@ $id = $_GET['edit'];
             });
 
             function hasAllVisibleFilled() {
+                const visibleInputs = form.querySelectorAll('input:not([hidden]):not([disabled])');
                 const visibleSelects = form.querySelectorAll('select:not([hidden]):not([disabled])');
                 return [...visibleSelects].every(input => input.value);
             }
@@ -4298,16 +4298,13 @@ $id = $_GET['edit'];
             form.addEventListener('input', () => {
                 if (hasAllRequiredFilled()) {
                     if (hasAllVisibleFilled()) {
-                        console.log("333");
                         saveButton.style.display = 'block';
                         draftButton.style.display = 'none';
                     } else {
-                        console.log("111");
                         draftButton.style.display = 'block';
                         saveButton.style.display = 'none';
                     }
                 } else {
-                    console.log("2222");
                     draftButton.style.display = 'none';
                     saveButton.style.display = 'none';
                 }
