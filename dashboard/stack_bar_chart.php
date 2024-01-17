@@ -3,6 +3,46 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
+
+$test = array(
+    array("label" => "Sachin Tendulkar", "y" => 51),
+    array("label" => "Ricky Ponting", "y" => 41),
+    array("label" => "Kumar Sangakkara", "y" => 38),
+    array("label" => "Jacques Kallis", "y" => 45),
+    array("label" => "Mahela Jayawardene", "y" => 34),
+    array("label" => "Hashim Amla", "y" => 28),
+    array("label" => "Brian Lara", "y" => 34),
+    array("label" => "Virat Kohli", "y" => 20),
+    array("label" => "Rahul Dravid", "y" => 36),
+    array("label" => "AB de Villiers", "y" => 21)
+);
+
+$odi = array(
+    array("label" => "Sachin Tendulkar", "y" => 49),
+    array("label" => "Ricky Ponting", "y" => 30),
+    array("label" => "Kumar Sangakkara", "y" => 25),
+    array("label" => "Jacques Kallis", "y" => 17),
+    array("label" => "Mahela Jayawardene", "y" => 19),
+    array("label" => "Hashim Amla", "y" => 26),
+    array("label" => "Brian Lara", "y" => 19),
+    array("label" => "Virat Kohli", "y" => 32),
+    array("label" => "Rahul Dravid", "y" => 12),
+    array("label" => "AB de Villiers", "y" => 25)
+);
+
+$t20 = array(
+    array("label" => "Sachin Tendulkar", "y" => 0),
+    array("label" => "Ricky Ponting", "y" => 0),
+    array("label" => "Kumar Sangakkara", "y" => 0),
+    array("label" => "Jacques Kallis", "y" => 0),
+    array("label" => "Mahela Jayawardene", "y" => 1),
+    array("label" => "Hashim Amla", "y" => 0),
+    array("label" => "Brian Lara", "y" => 0),
+    array("label" => "Virat Kohli", "y" => 0),
+    array("label" => "Rahul Dravid", "y" => 0),
+    array("label" => "AB de Villiers", "y" => 0)
+);
+
 include '../class/db.php';
 
 $data_eqpt = array();
@@ -89,101 +129,70 @@ while ($row = mysqli_fetch_array($result7)) {
     $point = array('label' => $row['product'], "y" => $row['total']);
     array_push($data_et, $point);
 }
-
 ?>
 <!DOCTYPE HTML>
 <html>
-    <head>
+    <head>  
         <script>
             window.onload = function () {
 
-                //Better to construct options first and then pass it as a parameter
-                var options = {
+                var chart = new CanvasJS.Chart("chartContainer", {
                     animationEnabled: true,
-                    theme: "light2",
+                    exportEnabled: true,
+                    theme: "light1", // "light1", "light2", "dark1", "dark2"
                     title: {
                         text: "Standardization Platform"
                     },
-                    axisY2: {
-                        prefix: "",
-                        lineThickness: 0
+                    axisX: {
+                        reversed: true
+                    },
+                    axisY: {
+                        includeZero: true
                     },
                     toolTip: {
                         shared: true
                     },
-                    legend: {
-                        verticalAlign: "top",
-                        horizontalAlign: "center"
-                    },
-                    data: [
-                        {
+                    data: [{
                             type: "stackedBar",
-                            showInLegend: true,
                             name: "Equipment",
-                            axisYType: "secondary",
-                            color: "darkorange",
                             dataPoints: <?php echo json_encode($data_eqpt, JSON_NUMERIC_CHECK); ?>
-                        },
-                        {
+                        }, {
                             type: "stackedBar",
-                            showInLegend: true,
                             name: "Hardware",
-                            axisYType: "secondary",
-                            color: "purple",
                             dataPoints: <?php echo json_encode($data_hw, JSON_NUMERIC_CHECK); ?>
-                        },
-                        {
+                        }, {
                             type: "stackedBar",
-                            showInLegend: true,
                             name: "DAQ",
-                            axisYType: "secondary",
-                            color: "blue",
                             dataPoints: <?php echo json_encode($data_daq, JSON_NUMERIC_CHECK); ?>
-                        },
-                        {
+                        }, {
                             type: "stackedBar",
-                            showInLegend: true,
                             name: "Power Supply",
-                            axisYType: "secondary",
-                            color: "green",
                             dataPoints: <?php echo json_encode($data_ps, JSON_NUMERIC_CHECK); ?>
-                        },
-                        {
+                        }, {
                             type: "stackedBar",
-                            showInLegend: true,
                             name: "Design",
-                            axisYType: "secondary",
-                            color: "yellow",
                             dataPoints: <?php echo json_encode($data_ds, JSON_NUMERIC_CHECK); ?>
-                        },
-                        {
+                        }, {
                             type: "stackedBar",
-                            showInLegend: true,
                             name: "Process",
-                            axisYType: "secondary",
-                            color: "red",
                             dataPoints: <?php echo json_encode($data_pc, JSON_NUMERIC_CHECK); ?>
-                        },
-                        {
+                        }, {
                             type: "stackedBar",
-                            showInLegend: true,
                             name: "Electrical Test",
-                            axisYType: "secondary",
-                            color: "brown",
-                            indexLabel: "\t#total",
+                            indexLabel: "#total",
+                            indexLabelPlacement: "outside",
+                            indexLabelFontSize: 15,
                             indexLabelFontWeight: "bold",
                             dataPoints: <?php echo json_encode($data_et, JSON_NUMERIC_CHECK); ?>
-                        }
-                    ]
-                };
-                $("#chartContainer").CanvasJSChart(options);
-            };
+                        }]
+                });
+                chart.render();
+            }
         </script>
     </head>
     <body>
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-        <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-        <!--<script type="text/javascript" src="../js/canvasjs-3.7.7.min.js"></script>-->
-        <script type="text/javascript" src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"></script>
+        <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+        <script src="../js/canvasjs-3.7.34.min.js"></script>
+        <!--<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>-->
     </body>
-</html>
+</html>   

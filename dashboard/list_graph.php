@@ -83,7 +83,7 @@ include '../template/form.php';
 
         <div id="004" class="tabcontent">
             <h5>Stack Item</h5>
-            <iframe src="bar_stack_item.php" style="height:400px;width:100%;" title="Stack Item"></iframe>
+            <iframe src="stack_bar_chart.php" style="height:420px;width:100%;" title="Stack Item"></iframe>
         </div>
 
         <div id="005" class="tabcontent">
