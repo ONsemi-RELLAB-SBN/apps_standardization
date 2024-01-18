@@ -7,6 +7,7 @@
 
 include '../class/db.php';
 include '../class/ldap.php';
+include '../class/get_parameter.php';
 
 $id                 = $_GET['id'];
 $lablocation    = $_GET['lab_location'];
@@ -48,6 +49,14 @@ $hwmeasureV     = $_GET['hw_volt_measure'];
 $hwmeasureT     = $_GET['hw_temp_measure'];
 $eqptint        = $_GET['daq_eqpt_interface'];
 $psint          = $_GET['daq_ps_interface'];
+
+if ($username == '') {
+    $username = 'System';
+}
+
+$manufacturer = getCode($manufacturer, '025', $username);
+$model = getCode($model, '026', $username);
+$daq = getCode($daq, '024', $username);
 
 $update = "UPDATE gest_form_daq SET "
         . "lab_location = '$lablocation', "

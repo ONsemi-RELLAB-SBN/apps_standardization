@@ -222,7 +222,7 @@ if (isset($_FILES['file'])) {
                                         break;
                                     case 35:
                                         $psint = $r[$i];
-                                        $psint = getCode($typehardware, '038', $username);
+                                        $psint = getCode($psint, '038', $username);
                                         break;
                                 }
                             }

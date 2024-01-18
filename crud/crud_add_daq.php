@@ -7,6 +7,7 @@
 
 include '../class/db.php';
 include '../class/ldap.php';
+include '../class/get_parameter.php';
 
 $lablocation    = $_GET['lab_location'];
 $productgroup   = $_GET['strategy'];
@@ -48,14 +49,13 @@ $hwmeasureT     = $_GET['hw_temp_measure'];
 $eqptint        = $_GET['daq_eqpt_interface'];
 $psint          = $_GET['daq_ps_interface'];
 
-//$newinsert = "INSERT INTO gest_form_daq (lab_location, strategy, standard_category, champion, manufacturer, model, daq_id, no_temp_channel, no_voltage_channel, no_leakage_channel, "
-//        . "voltage_measure_range, temp_measure_range, leakage_current_range, rdaq_voltage_drop, board_insert_check, rdaq_measure_start, monitoring_speed, leakage_measure_resolution, leakage_measure_accuracy, voltage_measure_resolution, "
-//        . "offline_software, measure_type_hw_design, no_analog_input_single, no_analog_input_diff, resolution, sampling_freq, supported_eqpt, hw_resistance_measure, hw_voltage_measure, hw_temp_measure, "
-//        . "daq_eqpt_interface, daq_ps_interface, created_by, created_date, status, flag) "
-//        . "VALUES ('$labLocation', '$strategy', '$standardization', '$champion', '$manufacturer', '$model', '$daq', '$tempChannel', '$voltChannel', '$leakageChannel', "
-//        . "'$voltMeasure', '$tempMeasure', '$currMeasure', '$voltDrop', '$boardCheck', '$startTest', '$speed', '$leakReso', '$leakAccuracy', '$voltReso', "
-//        . "'$dataPlot', '$typeHardware', '$anaSingle', '$anaDiff', '$reso', '$frequency', '$support', '$hwMeasureR', '$hwMeasureV', '$hwMeasureT', "
-//        . "'$eqptInt', '$psInt', '$username', NOW(), 'Active', '1')";
+if ($username == '') {
+    $username = 'System';
+}
+
+$manufacturer = getCode($manufacturer, '025', $username);
+$model = getCode($model, '026', $username);
+$daq = getCode($daq, '024', $username);
 
 $newinsert = "INSERT INTO gest_form_daq (lab_location, strategy, standard_category, champion, manufacturer, model, daq_id, no_temp_channel, no_voltage_channel, no_leakage_channel, "
                     . "max_voltage_measure, min_voltage_measure, max_leakage_measure, min_leakage_measure, max_temp_measure, min_temp_measure, rdaq_voltage_drop, board_insert_check, rdaq_measure_start, scan_time, "
