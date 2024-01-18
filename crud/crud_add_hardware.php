@@ -7,6 +7,7 @@
 
 include '../class/db.php';
 include '../class/ldap.php';
+include '../class/get_parameter.php';
 
 $labLctn    = $_GET['lab_location'];
 $strategy   = $_GET['strategy'];
@@ -52,6 +53,12 @@ $pinPitch   = $_GET['pin_pitch'];
 $edge       = $_GET['edge_thick'];
 
 $maxDut     = $_GET['max_dut_mb'];
+
+if ($username == '') {
+    $username = 'System';
+}
+
+$mnfctr = getCode($mnfctr, '018', $username);
 
 $insert = "INSERT INTO gest_form_hw (lab_location, strategy, standard_category, champion, hw_type, manufacturer, assembly_no, voltage_rating, current_rating, "
         . "temp_rating, support_stress, daq_monitoring, pcb_material, mb_dimension_l, mb_dimension_w, mb_dimension_t, no_layer, frame_material, board_coating, "

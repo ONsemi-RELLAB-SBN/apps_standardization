@@ -7,6 +7,7 @@
 
 include '../class/db.php';
 include '../class/ldap.php';
+include '../class/get_parameter.php';
 
 $id         = $_GET['id'];
 $labLctn    = $_GET['lab_location'];
@@ -53,6 +54,12 @@ $pinPitch   = $_GET['pin_pitch'];
 $edge       = $_GET['edge_thick'];
 
 $maxDut     = $_GET['max_dut_mb'];
+
+if ($username == '') {
+    $username = 'System';
+}
+
+$mnfctr = getCode($mnfctr, '018', $username);
 
 $update = "UPDATE gest_form_hw SET "
         . "lab_location = '$labLctn', "
