@@ -14,7 +14,7 @@ include '../class/get_parameter.php';
     <head>
         <link rel="stylesheet" href="accordian.css"/>
         <style>
-            h5, h6 {
+/*            h5, h6 {
                border-left: none; 
             }
             
@@ -55,7 +55,7 @@ include '../class/get_parameter.php';
             #tabs li {
                 margin-right: 10px;
                 padding: 10px;
-                /*border: 1px solid #ccc;*/
+                border: 1px solid #ccc;
                 cursor: pointer;
             }
 
@@ -80,7 +80,6 @@ include '../class/get_parameter.php';
                 right: 40px;
                 z-index: 99;
                 font-size: 18px;
-                border: none;
                 outline: none;
                 cursor: pointer;
             }
@@ -97,7 +96,6 @@ include '../class/get_parameter.php';
                 right: 160px;
                 z-index: 99;
                 font-size: 18px;
-                border: none;
                 outline: none;
                 cursor: pointer;
             }
@@ -114,7 +112,6 @@ include '../class/get_parameter.php';
                 right: 160px;
                 z-index: 99;
                 font-size: 18px;
-                border: none;
                 outline: none;
                 cursor: pointer;
             }
@@ -134,7 +131,7 @@ include '../class/get_parameter.php';
                 text-align: left;
                 display: flex;
                 flex-direction: column;
-            }
+            }*/
         </style>
 
         <script type="text/javascript">
@@ -470,7 +467,7 @@ include '../class/get_parameter.php';
                                         </dialog>
                                     </div>
                                     <div class="three columns">
-                                        <select id="socket_conn_type" name="socket_conn_type" style="width: 100%" >
+                                        <select id="conn_type" name="conn_type" style="width: 100%" >
                                             <?php echo getDropdown('046', ''); ?>
                                         </select>
                                     </div>

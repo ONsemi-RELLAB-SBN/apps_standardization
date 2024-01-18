@@ -176,6 +176,8 @@ body {
 #listBtn {
     display: block;
     position: fixed;
+    top: 20px;
+    right: 40px;
     z-index: 99;
     font-size: 18px;
     outline: none;
@@ -187,9 +189,27 @@ body {
     color: white;
 }
 
+#draft-button {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 200px;
+    z-index: 99;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+}
+
+#draft-button:hover {
+    background-color: orange;
+    color: white;
+}
+
 #save-button {
     display: block;
     position: fixed;
+    top: 20px;
+    right: 200px;
     z-index: 99;
     font-size: 18px;
     outline: none;
@@ -199,15 +219,6 @@ body {
 #save-button:hover {
     background-color: orange;
     color: white;
-}
-
-#draft-button {
-    display: block;
-    position: fixed;
-    z-index: 99;
-    font-size: 18px;
-    outline: none;
-    cursor: pointer;
 }
 
 #toggle_01, #toggle_02, #toggle_03, #toggle_04, #toggle_05, #toggle_06, #toggle_07, #toggle_08, #toggle_09, #toggle_10{
