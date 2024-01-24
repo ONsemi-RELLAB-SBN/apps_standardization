@@ -2141,15 +2141,15 @@ $id = $_GET['edit'];
                             <div class="two columns"><input type="number" step="0.001" id="voltage" name="voltage" value="<?php echo $rowForm['voltage']; ?>" > </div>
                             <div class="one columns"><label for="voltage" id="labelvoltage2" style="text-align: left"><b>V</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="phase" id="labelphase1">Phase</label></div>
-                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="<?php echo $rowForm['phase']; ?>" > </div>
-                            <div class="one columns"><label for="phase" id="labelphase2" style="text-align: left"><b>Phase</b></label></div>
-                            <div class="one columns">&nbsp;</div>
-                        </div>
-                        <div class="row">
                             <div class="two columns"><label for="current" id="labelcurrent1">Current</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="current" name="current" value="<?php echo $rowForm['current']; ?>" > </div>
                             <div class="one columns"><label for="current" id="labelcurrent2" style="text-align: left"><b>A</b></label></div>
+                            <div class="one columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="phase" id="labelphase1">Phase</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="<?php echo $rowForm['phase']; ?>" > </div>
+                            <div class="one columns"><label for="phase" id="labelphase2" style="text-align: left"><b>Phase</b></label></div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="exhaust" id="labelexhaust">Exhaust</label></div>
                             <div class="three columns">

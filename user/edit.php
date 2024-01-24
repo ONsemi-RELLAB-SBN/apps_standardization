@@ -9,7 +9,7 @@ if (isset($_POST["submit"])) {
     $email = $_POST['email'];
     $title = $_POST['title'];
     $site = $_POST['site'];
-    $sql = "UPDATE gset_user SET `oncid`='$oncid',`username`='$username', `name` = '$name',`email`='$email',`title`='$title', `site`='$site' WHERE id = $id";
+    $sql = "UPDATE gest_user SET `oncid`='$oncid',`username`='$username', `name` = '$name',`email`='$email',`title`='$title', `site`='$site' WHERE id = $id";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
@@ -30,6 +30,11 @@ if (isset($_POST["submit"])) {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>GEST USER</title>
+        <style>
+            select {
+                padding: 0.375rem 0.75rem;
+            }
+        </style>
     </head>
 
     <body>
@@ -52,11 +57,11 @@ if (isset($_POST["submit"])) {
                     <div class="row mb-3">
                         <div class="col">
                             <label class="form-label">ONCID:</label>
-                            <input type="text" class="form-control" name="oncid" value="<?php echo $row['oncid'] ?>">
+                            <input type="text" class="form-control" name="oncid" value="<?php echo $row['oncid'] ?>" maxlength="8">
                         </div>
                         <div class="col">
-                            <label class="form-label">Userame:</label>
-                            <input type="text" class="form-control" name="username" value="<?php echo $row['username'] ?>">
+                            <label class="form-label">Username:</label>
+                            <input type="text" class="form-control" name="username" value="<?php echo $row['username'] ?>" maxlength="6">
                         </div>
                     </div>
                     <div class="mb-3">
@@ -69,7 +74,7 @@ if (isset($_POST["submit"])) {
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Title:</label>
-                        <input type="email" class="form-control" name="title" value="<?php echo $row['title'] ?>">
+                        <input type="text" class="form-control" name="title" value="<?php echo $row['title'] ?>">
                     </div>
                     <div class="form-group mb-3">
                         <label>Site:</label>
@@ -86,6 +91,15 @@ if (isset($_POST["submit"])) {
         </div>
         <!-- Bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="../js/jquery-3.7.0.js"></script>
+        <script type="text/javascript">
+            $("input").on("keyup",function() {
+                var maxLength = $(this).attr("maxlength");
+                if(maxLength == $(this).val().length) {
+                    alert("You can't write more than " + maxLength +" chacters")
+                }
+            })
+        </script>
     </body>
 </html>
 

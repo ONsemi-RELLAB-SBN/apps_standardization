@@ -370,15 +370,15 @@ $id = $_GET['view'];
                             <div class="two columns"><input type="number" step="0.001" id="voltage" name="voltage" value="<?php echo $rowForm['voltage']; ?>" required readonly> </div>
                             <div class="one columns"><label for="voltage" style="text-align: left"><b>V</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="phase">Phase</label></div>
-                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="<?php echo $rowForm['phase']; ?>" required readonly> </div>
-                            <div class="one columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
-                            <div class="one columns">&nbsp;</div>
-                        </div>
-                        <div class="row">
                             <div class="two columns"><label for="current">Current</label></div>
                             <div class="two columns"><input type="number" step="0.001" id="current" name="current" value="<?php echo $rowForm['current']; ?>" required readonly> </div>
                             <div class="one columns"><label for="current" style="text-align: left"><b>A</b></label></div>
+                            <div class="one columns">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="two columns"><label for="phase">Phase</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="phase" name="phase" value="<?php echo $rowForm['phase']; ?>" required readonly> </div>
+                            <div class="one columns"><label for="phase" style="text-align: left"><b>Phase</b></label></div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="exhaust">Exhaust</label></div>
                             <div class="three columns">
