@@ -119,7 +119,7 @@ include '../class/get_parameter.php';
                             <div class="two columns"><label for="mfg_date">Equipment Mfg Date</label></div>
                         <div class="three columns"><input type="date" id="mfg_date" name="mfg_date" value="" style="width:55%" ></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="asset_no">Equipment Asset No *</label></div>
+                            <div class="two columns"><label for="asset_no">Equipment Asset No</label></div>
                         <div class="three columns"><input type="text" id="asset_no" name="asset_no" placeholder="Asset Number" value="" > </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
