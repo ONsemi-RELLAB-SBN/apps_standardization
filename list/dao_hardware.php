@@ -48,7 +48,8 @@ $columns = array(
     array('db' => 'pin_pitch', 'dt' => 33),
     array('db' => 'edgefinger_thickness', 'dt' => 34),
     array('db' => 'max_dut_qty_mb', 'dt' => 35),
-    array('db' => 'haidi', 'dt' => 36)
+    array('db' => 'status', 'dt' => 36),
+    array('db' => 'haidi', 'dt' => 37)
 );
 
 // SQL server connection information

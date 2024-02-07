@@ -12,8 +12,6 @@ $table = 'data_power_supply';
 $primaryKey = 'id';
 
 $columns = array(
-    
-    
     array('db' => 'lab_location', 'dt' => 0),
     array('db' => 'product_group', 'dt' => 1),
     array('db' => 'category', 'dt' => 2),
@@ -42,7 +40,8 @@ $columns = array(
     array('db' => 'other', 'dt' => 25),
     array('db' => 'input_voltage', 'dt' => 26),
     array('db' => 'no_output', 'dt' => 27),
-    array('db' => 'haidi', 'dt' => 28)
+    array('db' => 'status', 'dt' => 28),
+    array('db' => 'haidi', 'dt' => 29)
 );
 
 // SQL server connection information

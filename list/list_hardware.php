@@ -109,7 +109,7 @@
                     pageLength: 10,
                     lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
                     columnDefs: [
-                        {targets: 37,
+                        {targets: 38,
                             render: function (data, type, row, meta) {
                                 return '<a href="../hardware/view.php?view='+ row[36] +'" title="View Record" data-toggle="tooltip"><i class=\'bx bx-search-alt bx-fw\'></i> VIEW </a>\n\
                                         <a href="../hardware/edit.php?edit='+ row[36] +'" title="Update Record" data-toggle="tooltip"><i class=\'bx bxs-pencil bx-fw\' ></i> EDIT </a>\n\
@@ -149,7 +149,7 @@
                         {"visible": false, "targets": 33 },
                         {"visible": false, "targets": 34 },
                         {"visible": false, "targets": 35 },
-                        {"visible": false, "targets": 36 }  
+                        {"visible": false, "targets": 37 }  
                     ]
                 });
             });
@@ -203,6 +203,7 @@
                         <th><b>Pin Pitch</b></th>
                         <th><b>Edgefinger Thickness</b></th>
                         <th><b>Maximum DUT Quantity per Motherboard</b></th>
+                        <th>Status</th>
                         <th><b>Hardware ID</b></th>
                         <th>Action</th>
                     </tr>
@@ -245,6 +246,7 @@
                         <th><b>Pin Pitch</b></th>
                         <th><b>Edgefinger Thickness</b></th>
                         <th><b>Maximum DUT Quantity per Motherboard</b></th>
+                        <th>Status</th>
                     </tr>
                 </tfoot>
             </table>

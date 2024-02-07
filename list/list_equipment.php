@@ -108,7 +108,7 @@
                     pageLength: 10,
                     lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
                     columnDefs: [
-                        {targets: 86,
+                        {targets: 87,
                             render: function (data, type, row, meta) {
                                 return '<a href="../equipment/view.php?view='+ row[85] +'" title="View Record" data-toggle="tooltip"><i class=\'bx bx-search-alt bx-fw\'></i> VIEW </a>\n\
                                         <a href="../equipment/edit.php?edit='+ row[85] +'" title="Update Record" data-toggle="tooltip"><i class=\'bx bxs-pencil bx-fw\' ></i> EDIT </a>\n\
@@ -196,7 +196,7 @@
                         {"visible": false, "targets": 82 },
                         {"visible": false, "targets": 83 },
                         {"visible": false, "targets": 84 },
-                        {"visible": false, "targets": 85 }
+                        {"visible": false, "targets": 86 }
                     ]
                 });
             });
@@ -204,25 +204,6 @@
 
     </head>
     <body>
-        <!--        <div role="navigation" class="navbar navbar-default navbar-static-top">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a href="#" class="navbar-brand">Phpflow.com</a>
-                        </div>
-                        <div class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="#">Home</a></li>
-                            </ul>
-                        </div>/.nav-collapse 
-                    </div>
-                </div>-->
-
         <div class="table_list" style="overflow-x:auto;">
             <div class="row">&nbsp;</div>
             <div class="row">&nbsp;</div>
@@ -318,6 +299,7 @@
                         <th><b>External Configuration</b></th>
                         <th><b>Interface Voltage Rating</b></th>
                         <th><b>Interface Current Rating</b></th>
+                        <th>Status</th>
                         <th style="text-align:center"><b>ID</b></th>
                         <th>Action</th>
                     </tr>
@@ -409,6 +391,7 @@
                         <th><b>External Configuration</b></th>
                         <th><b>Interface Voltage Rating</b></th>
                         <th><b>Interface Current Rating</b></th>
+                        <th>Status</th>
                     </tr>
                 </tfoot>
             </table>

@@ -115,7 +115,8 @@ $columns = array(
     array('db' => 'ext_config_type', 'dt' => 82),
     array('db' => 'interface_volt_rating', 'dt' => 83),
     array('db' => 'interface_current_rating', 'dt' => 84),
-    array('db' => 'haidi', 'dt' => 85)
+    array('db' => 'status', 'dt' => 85),
+    array('db' => 'haidi', 'dt' => 86)
 );
 
 // SQL server connection information

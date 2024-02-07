@@ -109,7 +109,7 @@
                     pageLength: 10,
                     lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
                     columnDefs: [
-                        {targets: 29,
+                        {targets: 30,
                             render: function (data, type, row, meta) {
                                 return '<a href="../power/view.php?view='+ row[28] +'" title="View Record" data-toggle="tooltip"><i class=\'bx bx-search-alt bx-fw\'></i> VIEW </a>\n\
                                         <a href="../power/edit.php?edit='+ row[28] +'" title="Update Record" data-toggle="tooltip"><i class=\'bx bxs-pencil bx-fw\' ></i> EDIT </a>\n\
@@ -142,7 +142,7 @@
                             {"visible": false, "targets": 25 },
                             {"visible": false, "targets": 26 },
                             {"visible": false, "targets": 27 },
-                            {"visible": false, "targets": 28 }
+                            {"visible": false, "targets": 29 }
                     ]
                 });
             });
@@ -188,6 +188,7 @@
                         <th><b>Other interface ports</b></th>
                         <th><b>Input voltage (facilities)</b></th>
                         <th><b>Number of output channels</b></th>
+                        <th><b>Status</b></th>
                         <th><b>PS ID</b></th>
                         <th>Action</th>
                     </tr>
@@ -222,6 +223,7 @@
                         <th><b>Other interface ports</b></th>
                         <th><b>Input voltage (facilities)</b></th>
                         <th><b>Number of output channels</b></th>
+                        <th><b>Status</b></th>
                     </tr>
                 </tfoot>
             </table>

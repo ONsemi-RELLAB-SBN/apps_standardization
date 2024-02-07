@@ -47,7 +47,8 @@ $columns = array(
     array('db' => 'temp_measure', 'dt' => 32),
     array('db' => 'eqpt_interface', 'dt' => 33),
     array('db' => 'ps_interface', 'dt' => 34),
-    array('db' => 'haidi', 'dt' => 35)
+    array('db' => 'status', 'dt' => 35),
+    array('db' => 'haidi', 'dt' => 36)
 );
 
 // SQL server connection information
