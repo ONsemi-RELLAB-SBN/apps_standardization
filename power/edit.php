@@ -272,8 +272,8 @@ $id = $_GET['edit'];
                             <div class="two columns"><input type="number" step="0.001" id="dimension_d" name="dimension_d" value="<?php echo $rowForm['ps_dimension_d']; ?>" required> </div>
                             <div class="one columns"><label for="dimension_d" style="text-align: left"><b>mm</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="min_volt">Input voltage (facilities)</label></div>
-                            <div class="two columns"><input type="number" step="0.001" id="min_volt" name="min_volt" value="<?php echo $rowForm['input_voltage']; ?>" required> </div>
+                            <div class="two columns"><label for="min_volt">Min Input Voltage (Facilities)</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="min_volt" name="min_volt" value="<?php echo $rowForm['min_voltage']; ?>" required> </div>
                             <div class="one columns"><label for="min_volt" style="text-align: left"><b>V</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
@@ -282,8 +282,8 @@ $id = $_GET['edit'];
                             <div class="two columns"><input type="number" step="0.001" id="dimension_h" name="dimension_h" value="<?php echo $rowForm['ps_dimension_h']; ?>" required> </div>
                             <div class="one columns"><label for="minTemp" style="text-align: left"><b>mm</b></label></div>
                             <div class="one columns">&nbsp;</div>
-                            <div class="two columns"><label for="max_volt">Input voltage (facilities)</label></div>
-                            <div class="two columns"><input type="number" step="0.001" id="max_volt" name="max_volt" value="<?php echo $rowForm['input_voltage']; ?>" required> </div>
+                            <div class="two columns"><label for="max_volt">Max Input Voltage (Alternative)</label></div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_volt" name="max_volt" value="<?php echo $rowForm['max_voltage']; ?>" required> </div>
                             <div class="one columns"><label for="max_volt" style="text-align: left"><b>V</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
