@@ -110,10 +110,10 @@
                     columnDefs: [
                         {targets: 87,
                             render: function (data, type, row, meta) {
-                                return '<a href="../equipment/view.php?view='+ row[85] +'" title="View Record" data-toggle="tooltip"><i class=\'bx bx-search-alt bx-fw\'></i> VIEW </a>\n\
-                                        <a href="../equipment/edit.php?edit='+ row[85] +'" title="Update Record" data-toggle="tooltip"><i class=\'bx bxs-pencil bx-fw\' ></i> EDIT </a>\n\
-                                        <a href="../equipment/delete.php?delete='+ row[85] +'" title="Delete Record" data-toggle="tooltip" onclick="return confirm(\'Are You Sure ?\')"><i class=\'bx bxs-trash bx-fw\' ></i> DELETE </a>\n\
-                                        <a href="../equipment/copy.php?edit='+ row[85] +'" title="Replicate Record" data-toggle="tooltip"><i class=\'bx bx-copy bx-fw\'></i></i> COPY </a>';
+                                return '<a href="../equipment/view.php?view='+ row[86] +'" title="View Record" data-toggle="tooltip"><i class=\'bx bx-search-alt bx-fw\'></i> VIEW </a>\n\
+                                        <a href="../equipment/edit.php?edit='+ row[86] +'" title="Update Record" data-toggle="tooltip"><i class=\'bx bxs-pencil bx-fw\' ></i> EDIT </a>\n\
+                                        <a href="../equipment/delete.php?delete='+ row[86] +'" title="Delete Record" data-toggle="tooltip" onclick="return confirm(\'Are You Sure ?\')"><i class=\'bx bxs-trash bx-fw\' ></i> DELETE </a>\n\
+                                        <a href="../equipment/copy.php?edit='+ row[86] +'" title="Replicate Record" data-toggle="tooltip"><i class=\'bx bx-copy bx-fw\'></i></i> COPY </a>';
                             }
                         },
                         {"visible": false, "targets": 3 },

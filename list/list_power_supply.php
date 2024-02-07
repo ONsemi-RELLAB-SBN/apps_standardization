@@ -111,10 +111,10 @@
                     columnDefs: [
                         {targets: 30,
                             render: function (data, type, row, meta) {
-                                return '<a href="../power/view.php?view='+ row[28] +'" title="View Record" data-toggle="tooltip"><i class=\'bx bx-search-alt bx-fw\'></i> VIEW </a>\n\
-                                        <a href="../power/edit.php?edit='+ row[28] +'" title="Update Record" data-toggle="tooltip"><i class=\'bx bxs-pencil bx-fw\' ></i> EDIT </a>\n\
-                                        <a href="../power/delete.php?delete='+ row[28] +'" title="Delete Record" data-toggle="tooltip" onclick="return confirm(\'Are You Sure ?\')"><i class=\'bx bxs-trash bx-fw\' ></i> DELETE </a>\n\
-                                        <a href="../power/copy.php?edit='+ row[28] +'" title="Replicate Record" data-toggle="tooltip"><i class=\'bx bx-copy bx-fw\'></i></i> COPY </a>';
+                                return '<a href="../power/view.php?view='+ row[29] +'" title="View Record" data-toggle="tooltip"><i class=\'bx bx-search-alt bx-fw\'></i> VIEW </a>\n\
+                                        <a href="../power/edit.php?edit='+ row[29] +'" title="Update Record" data-toggle="tooltip"><i class=\'bx bxs-pencil bx-fw\' ></i> EDIT </a>\n\
+                                        <a href="../power/delete.php?delete='+ row[29] +'" title="Delete Record" data-toggle="tooltip" onclick="return confirm(\'Are You Sure ?\')"><i class=\'bx bxs-trash bx-fw\' ></i> DELETE </a>\n\
+                                        <a href="../power/copy.php?edit='+ row[29] +'" title="Replicate Record" data-toggle="tooltip"><i class=\'bx bx-copy bx-fw\'></i></i> COPY </a>';
                             }
                         },
                             {"visible": false, "targets": 2 },

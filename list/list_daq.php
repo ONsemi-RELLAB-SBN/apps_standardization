@@ -110,10 +110,10 @@
                     columnDefs: [
                         {targets: 37,
                             render: function (data, type, row, meta) {
-                                return '<a href="../daq/view.php?view='+ row[35] +'" title="View Record" data-toggle="tooltip"><i class=\'bx bx-search-alt bx-fw\'></i> VIEW </a>\n\
-                                        <a href="../daq/edit.php?edit='+ row[35] +'" title="Update Record" data-toggle="tooltip"><i class=\'bx bxs-pencil bx-fw\' ></i> EDIT </a>\n\
-                                        <a href="../daq/delete.php?delete='+ row[35] +'" title="Delete Record" data-toggle="tooltip" onclick="return confirm(\'Are You Sure ?\')"><i class=\'bx bxs-trash bx-fw\' ></i> DELETE </a>\n\
-                                        <a href="../daq/copy.php?edit='+ row[35] +'" title="Replicate Record" data-toggle="tooltip"><i class=\'bx bx-copy bx-fw\'></i></i> COPY </a>';
+                                return '<a href="../daq/view.php?view='+ row[36] +'" title="View Record" data-toggle="tooltip"><i class=\'bx bx-search-alt bx-fw\'></i> VIEW </a>\n\
+                                        <a href="../daq/edit.php?edit='+ row[36] +'" title="Update Record" data-toggle="tooltip"><i class=\'bx bxs-pencil bx-fw\' ></i> EDIT </a>\n\
+                                        <a href="../daq/delete.php?delete='+ row[36] +'" title="Delete Record" data-toggle="tooltip" onclick="return confirm(\'Are You Sure ?\')"><i class=\'bx bxs-trash bx-fw\' ></i> DELETE </a>\n\
+                                        <a href="../daq/copy.php?edit='+ row[36] +'" title="Replicate Record" data-toggle="tooltip"><i class=\'bx bx-copy bx-fw\'></i></i> COPY </a>';
                             }
                         },
                         {"visible": false, "targets": 2 },
