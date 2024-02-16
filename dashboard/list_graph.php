@@ -1,6 +1,5 @@
 <?php
-
-/* 
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
@@ -10,7 +9,12 @@ include '../template/form.php';
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>SUMMARY</title>
+        <meta name="author" content="Ayep" />
+        <link rel="shortcut icon" href="../image/logo/onsemi_logo.ico">
         <style>
             body {
                 font-family: Arial;
@@ -57,19 +61,11 @@ include '../template/form.php';
     </head>
     <body>
         <div class="tab" style="align-items: flex-start;">
-            <!--<button class="tablinks" onclick="openCategory(event, '001')">Bar Chart</button>-->
             <button class="tablinks" onclick="openCategory(event, '002')">Multiple Item</button>
             <button class="tablinks" onclick="openCategory(event, '003')">Stack</button>
             <button class="tablinks" onclick="openCategory(event, '004')">Stack Item</button>
-<!--            <button class="tablinks" onclick="openCategory(event, '005')">Graph 05</button>
-            <button class="tablinks" onclick="openCategory(event, '006')">Graph 06</button>
-            <button class="tablinks" onclick="openCategory(event, '007')">Graph 07</button>-->
+            <button class="tablinks" onclick="openCategory(event, '005')">Pie Chart</button>
         </div>
-
-<!--        <div id="001" class="tabcontent">
-            <h5>Bar Chart</h5>
-            <iframe src="bar_chart.php" style="height:440px;width:100%;" title="Bar Chart"></iframe>
-        </div>-->
 
         <div id="002" class="tabcontent">
             <h5>Multiple</h5>
@@ -87,8 +83,8 @@ include '../template/form.php';
         </div>
 
         <div id="005" class="tabcontent">
-            <h5>Design</h5>
-            <p>Tokyo is the capital of Japan.</p>
+            <h5>Pie Chart</h5>
+            <iframe src="pie_chart.php" style="height:550px;width:100%;" title="Pie Chart"></iframe>
         </div>
 
         <div id="006" class="tabcontent">
