@@ -98,6 +98,7 @@ while ($row = mysqli_fetch_array($result7)) {
             window.onload = function () {
 
                 var chart = new CanvasJS.Chart("chartContainer", {
+                    exportEnabled: true,
                     animationEnabled: true,
                     title: {
                         text: "Standardization Platform"

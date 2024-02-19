@@ -61,12 +61,17 @@ include '../template/form.php';
     </head>
     <body>
         <div class="tab" style="align-items: flex-start;">
+            <button class="tablinks" onclick="openCategory(event, '001')">Drilldown</button>
             <button class="tablinks" onclick="openCategory(event, '002')">Multiple Item</button>
             <button class="tablinks" onclick="openCategory(event, '003')">Stack</button>
             <button class="tablinks" onclick="openCategory(event, '004')">Stack Item</button>
             <button class="tablinks" onclick="openCategory(event, '005')">Pie Chart</button>
         </div>
 
+        <div id="001" class="tabcontent">
+            <h5>Drill Down</h5>
+            <iframe src="drilldown.php" style="height:800px;width:100%;" title="Drilldown Chart"></iframe>
+        </div>
         <div id="002" class="tabcontent">
             <h5>Multiple</h5>
             <iframe src="bar_multiple.php" style="height:800px;width:100%;" title="Multiple Item"></iframe>

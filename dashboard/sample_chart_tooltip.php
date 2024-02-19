@@ -41,11 +41,11 @@
                             type: "line", //change type to bar, line, area, pie, etc
                             markerSize: 0,
                             dataPoints: [
-                                {label: "SBN", y: 3},
-                                {label: "CEBU", y: 0},
-                                {label: "OSPI", y: 0},
-                                {label: "SUZHOU", y: 4},
-                                {label: "OSV", y: 0}
+                                {label: "SBN", y: 31},
+                                {label: "CEBU", y: 26},
+                                {label: "OSPI", y: 66},
+                                {label: "SUZHOU", y: 47},
+                                {label: "OSV", y: 99}
                             ]
                         }]
                 };
@@ -64,11 +64,11 @@
                             markerSize: 0,
                             yValueFormatString: "#.##%",
                             dataPoints: [
-                                {label: "SBN", y: 3},
-                                {label: "CEBU", y: 0},
-                                {label: "OSPI", y: 0},
-                                {label: "SUZHOU", y: 0},
-                                {label: "OSV", y: 0}
+                                {label: "SBN", y: 13},
+                                {label: "CEBU", y: 33},
+                                {label: "OSPI", y: 26},
+                                {label: "SUZHOU", y: 19},
+                                {label: "OSV", y: 42}
                             ]
                         }]
                 };
@@ -87,10 +87,10 @@
                             markerSize: 0,
                             dataPoints: [
                                 {label: "SBN", y: 2},
-                                {label: "CEBU", y: 0},
-                                {label: "OSPI", y: 0},
-                                {label: "SUZHOU", y: 0},
-                                {label: "OSV", y: 0}
+                                {label: "CEBU", y: 5},
+                                {label: "OSPI", y: 8},
+                                {label: "SUZHOU", y: 2},
+                                {label: "OSV", y: 6}
                             ]
                         }]
                 };
@@ -133,8 +133,8 @@
                                 {label: "SBN", y: 49},
                                 {label: "CEBU", y: 92},
                                 {label: "OSPI", y: 56},
-                                {label: "SUZHOU", y: 26},
-                                {label: "OSV", y: 1}
+                                {label: "SUZHOU", y: 66},
+                                {label: "OSV", y: 105}
                             ]
                         }]
                 };
