@@ -13,130 +13,6 @@ include '../class/get_parameter.php';
 <html lang="en" class="no-js">
     <head>
         <link rel="stylesheet" href="accordian.css"/>
-        <style>
-/*            h5, h6 {
-               border-left: none; 
-            }
-            
-            body {
-                margin: 0;
-                padding: 0;
-                height: 90vh;
-            }
-
-            #main-page {
-                position: relative;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 30%;
-                background-color: #f2f2f2;
-                padding: 20px;
-            }
-
-            #content-page {
-                position: relative;
-                top: 30%;
-                left: 0;
-                width: 100%;
-                max-height: 70%;
-                background-color: #fff;
-                padding: 20px;
-                overflow-x: visible;
-            }
-
-            #tabs {
-                display: flex;
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-
-            #tabs li {
-                margin-right: 10px;
-                padding: 10px;
-                border: 1px solid #ccc;
-                cursor: pointer;
-            }
-
-            #tabs li.active {
-                background-color: orange;
-                border-radius: 5px;
-            }
-
-            .tab-content {
-                display: none;
-                padding: 20px;
-            }
-
-            .tab-content.active {
-                display: block;
-            }
-            
-            #listBtn {
-                display: block;
-                position: fixed;
-                top: 20px;
-                right: 40px;
-                z-index: 99;
-                font-size: 18px;
-                outline: none;
-                cursor: pointer;
-            }
-
-            #listBtn:hover {
-                background-color: orange;
-                color: white;
-            }
-            
-            #save-button {
-                display: block;
-                position: fixed;
-                top: 20px;
-                right: 160px;
-                z-index: 99;
-                font-size: 18px;
-                outline: none;
-                cursor: pointer;
-            }
-
-            #save-button:hover {
-                background-color: orange;
-                color: white;
-            }
-            
-            #draft-button {
-                display: block;
-                position: fixed;
-                top: 20px;
-                right: 160px;
-                z-index: 99;
-                font-size: 18px;
-                outline: none;
-                cursor: pointer;
-            }
-            
-            #toggle_01, #toggle_02, #toggle_03, #toggle_04, #toggle_05, #toggle_06, #toggle_07, #toggle_08, #toggle_09, #toggle_10{
-                visibility: hidden;
-                opacity: 0;
-                position: relative;
-                z-index: -1;
-            }
-            
-            
-            #toggle_01:checked ~ dialog, #toggle_02:checked ~ dialog, #toggle_03:checked ~ dialog, #toggle_04:checked ~ dialog, #toggle_05:checked ~ dialog, #toggle_06:checked ~ dialog, #toggle_07:checked ~ dialog, #toggle_08:checked ~ dialog, #toggle_09:checked ~ dialog, #toggle_10:checked ~ dialog {
-                position: absolute;
-                top: 50%;
-                transform: translate(0, -50%);
-                text-align: left;
-                display: flex;
-                flex-direction: column;
-            }*/
-        </style>
-
-        <script type="text/javascript">
-
-        </script>
     </head>
     <body>
         <form id="add_hardware_form" role="form" action="../crud/crud_add_hardware.php" method="get">
@@ -187,6 +63,7 @@ include '../class/get_parameter.php';
                 </ul>
                 
                 <div class="tab-content active" id="tabIdentity">
+                    <p style="color:red; font-size: 11px;margin-bottom: 0.5rem;">* is mandatory field to enable draft saving.</p>
                     <div class="row">
                         <div class="two columns"><label for="hw_type">Hardware Type *</label></div>
                         <div class="three columns">

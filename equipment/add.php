@@ -19,7 +19,7 @@ include '../class/get_parameter.php';
     </head>
 
     <body>
-        <form id="add_equipment_form" action="../crud/crud_add_equipment_new.php" method="get">
+        <form id="add_equipment_form" action="../crud/crud_add_equipment.php" method="get">
             
                 <div id="main-page">
                     <div class="twelve columns">&nbsp;</div>
@@ -80,6 +80,7 @@ include '../class/get_parameter.php';
                     </ul>
 
                     <div class="tab-content active" id="tabIdtt">
+                        <p style="color:red; font-size: 11px;margin-bottom: 0.5rem;">* is mandatory field to enable draft saving.</p>
                         <div class="row">
                             <div class="two columns"><label for="eqpt_id">Equipment ID *</label></div>
                             <div class="three columns">

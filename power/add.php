@@ -189,6 +189,7 @@ include '../class/get_parameter.php';
                 </ul>
                 
                 <div class="tab-content active" id="tabIdentity">
+                    <p style="color:red; font-size: 11px;margin-bottom: 0.5rem;">* is mandatory field to enable draft saving.</p>
                     <div class="row">
                         <div class="two columns"><label for="manufacturer">Manufacturer *</label></div>
                         <div class="three columns">
