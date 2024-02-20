@@ -402,8 +402,8 @@ include '../class/get_parameter.php';
                 </div>
             </div>
             
-            <button type="submit" id="draft-button" class="btn"><i class='bx bx-send bx-fw' ></i> DRAFT</button>
-            <button type="submit" id="save-button" class="btn"><i class='bx bx-send bx-fw' ></i> SAVE</button>
+            <button type="submit" id="draft-button" name="draft-button" class="btn"><i class='bx bx-send bx-fw' ></i> DRAFT</button>
+            <button type="submit" id="save-button" name="save-button" class="btn"><i class='bx bx-send bx-fw' ></i> SAVE</button>
             <button onclick="location.href = '../list/list_hardware.php'" type="button" id="listBtn" class="btn"><i class='bx bx-list-ol bx-fw' ></i>List</button>
         </form>
         

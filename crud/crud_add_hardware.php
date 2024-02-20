@@ -58,7 +58,23 @@ if ($username == '') {
     $username = 'System';
 }
 
+$status = 'Active';
+$flag = '1';
+
 $mnfctr = getCode($mnfctr, '018', $username);
+
+if (isset($_GET['draft-button'])) {
+    $status = 'DRAFT';
+    $flag = '2';
+} else {
+    if (isset($_GET['save-button'])) {
+        $status = 'ACTIVE';
+        $flag = '1';
+    } else {
+        $status = 'UNKNOWN';
+        $flag = '0';
+    }
+}
 
 $insert = "INSERT INTO gest_form_hw (lab_location, strategy, standard_category, champion, hw_type, manufacturer, assembly_no, voltage_rating, current_rating, "
         . "temp_rating, support_stress, daq_monitoring, pcb_material, mb_dimension_l, mb_dimension_w, mb_dimension_t, no_layer, frame_material, board_coating, "
@@ -67,7 +83,7 @@ $insert = "INSERT INTO gest_form_hw (lab_location, strategy, standard_category, 
         . "VALUES ('$labLctn', '$strategy', '$category', '$champion', '$hwType', '$mnfctr', '$assembly', '$voltRate', '$currRate', "
         . "'$tempRate', '$stress', '$daq', '$pcb', '$mb_l', '$mb_w', '$mb_t', '$layer', '$frame', '$board', "
         . "'$universal', '$socType', '$socQty', '$socPin', '$socPitch', '$package', '$load_max', '$load_qty', '$load_pitch', '$proMax', "
-        . "'$progQty', '$progPitch', '$connType', '$noPins', '$pinPitch', '$edge', '$maxDut', '$username', NOW(), 'Active', '1')";
+        . "'$progQty', '$progPitch', '$connType', '$noPins', '$pinPitch', '$edge', '$maxDut', '$username', NOW(), '$status', '$flag')";
 $upload = mysqli_query($con, $insert);
 
 ?>

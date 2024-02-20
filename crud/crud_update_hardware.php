@@ -59,7 +59,23 @@ if ($username == '') {
     $username = 'System';
 }
 
+$status = 'Active';
+$flag = '1';
+
 $mnfctr = getCode($mnfctr, '018', $username);
+
+if (isset($_GET['draft-button'])) {
+    $status = 'DRAFT';
+    $flag = '2';
+} else {
+    if (isset($_GET['save-button'])) {
+        $status = 'ACTIVE';
+        $flag = '1';
+    } else {
+        $status = 'UNKNOWN';
+        $flag = '0';
+    }
+}
 
 $update = "UPDATE gest_form_hw SET "
         . "lab_location = '$labLctn', "
@@ -98,10 +114,11 @@ $update = "UPDATE gest_form_hw SET "
         . "pin_pitch = '$pinPitch', "
         . "edgefinger_thickness = '$edge', "
         . "updated_by = '$username', "
+        . "status = '$status', "
+        . "flag = '$flag', "
         . "update_date = NOW(), "
         . "max_dut_qty_mb = '$maxDut' "
-        . "WHERE id = '$id' "
-        . "AND status='Active' AND flag=1 LIMIT 1;";
+        . "WHERE id = '$id' LIMIT 1;";
 $uprun = mysqli_query($con, $update);
 ?>
 <script>

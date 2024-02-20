@@ -131,22 +131,22 @@ $id = $_GET['edit'];
                     <div class="tab-content" id="tabCapability">
                         <div class="row">
                             <div class="two columns"><label for="volt_rating">Voltage Rating *</label></div>
-                            <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="<?php echo $rowForm['voltage_rating']; ?>" required> </div>
+                            <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="<?php echo $rowForm['voltage_rating']; ?>" > </div>
                             <div class="one columns"><label for="volt_rating" style="text-align: left"><b>V</b></label></div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="curr_rating">Current Rating *</label></div>
-                            <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="<?php echo $rowForm['current_rating']; ?>" required> </div>
+                            <div class="two columns"><input type="number" step="0.001" id="curr_rating" name="curr_rating" value="<?php echo $rowForm['current_rating']; ?>" > </div>
                             <div class="one columns"><label for="curr_rating" style="text-align: left"><b>A</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="temp_rating">Temp Rating *</label></div>
-                            <div class="two columns"><input type="number" step="0.001" id="temp_rating" name="temp_rating" value="<?php echo $rowForm['temp_rating']; ?>" required> </div>
+                            <div class="two columns"><input type="number" step="0.001" id="temp_rating" name="temp_rating" value="<?php echo $rowForm['temp_rating']; ?>" > </div>
                             <div class="one columns"><label for="temp_rating" style="text-align: left"><b>&#8451;</b></label></div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="support_stress">Supported Stresses *</label></div>
                             <div class="three columns">
-                                <select id="support_stress" name="support_stress" style="width: 100%" required>
+                                <select id="support_stress" name="support_stress" style="width: 100%" >
                                     <option value="" selected=""></option>
                                     <?php
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '041' ORDER BY code ASC";
@@ -161,7 +161,7 @@ $id = $_GET['edit'];
                         <div class="row">
                             <div class="two columns"><label for="daq_capability">DAQ Monitoring Capability *</label></div>
                             <div class="three columns">
-                                <select id="daq_capability" name="daq_capability" style="width: 100%" required>
+                                <select id="daq_capability" name="daq_capability" style="width: 100%" >
                                     <option value="" selected=""></option>
                                     <?php
                                     $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '022' ORDER BY code ASC";
@@ -448,14 +448,15 @@ $id = $_GET['edit'];
                     <div class="tab-content" id="tabCapacity">
                         <div class="row">
                             <div class="two columns"><label for="max_dut_mb">Max DUT qty per motherboard *</label></div>
-                            <div class="two columns"><input type="number" step="0.001" id="max_dut_mb" name="max_dut_mb" value="<?php echo $rowForm['max_dut_qty_mb']; ?>" required> </div>
+                            <div class="two columns"><input type="number" step="0.001" id="max_dut_mb" name="max_dut_mb" value="<?php echo $rowForm['max_dut_qty_mb']; ?>" > </div>
                             <div class="one columns"><label for="max_dut_mb" style="text-align: left"><b>DUTs</b></label></div>
                         </div>
                     </div>
                 </div>
             <?php endwhile; ?>
             <button onclick="location.href = '../list/list_hardware.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
-            <button type="submit" id="save-button" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Update</button>
+            <button type="submit" id="draft-button" name="draft-button" class="btn"><i class='bx bx-send bx-fw' ></i> DRAFT</button>
+            <button type="submit" id="save-button" name="save-button" class="btn btn-primary"><i class='bx bx-send bx-fw' ></i> Update</button>
         </form>
         
         <script src="../js/jquery-3.7.0.js"></script>
@@ -464,6 +465,7 @@ $id = $_GET['edit'];
             const tabs = document.getElementById('tabs');
             const tabContents = document.querySelectorAll('.tab-content');
             const form = document.getElementById('update_hardware_form');
+            const draftButton = document.getElementById('draft-button');
             const saveButton = document.getElementById('save-button');
             
             $( document ).ready(function() {
@@ -518,13 +520,16 @@ $id = $_GET['edit'];
                 if (hasAllRequiredFilled()) {
                     if (hasAllVisibleFilled()) {
                         console.log("KAT SINI ADA SAVE BUTTON");
+                        draftButton.style.display = 'none';
                         saveButton.style.display = 'block';
                     } else {
                         console.log("SINI TAKDE GAK");
+                        draftButton.style.display = 'block';
                         saveButton.style.display = 'none';
                     }
                 } else {
                     console.log("SILA ISI MAKLUMAT");
+                    draftButton.style.display = 'none';
                     saveButton.style.display = 'none';
                 }
             });
