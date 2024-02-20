@@ -53,24 +53,39 @@ if ($username == '') {
     $username = 'System';
 }
 
+$status = 'Active';
+$flag = '1';
+
 $manufacturer = getCode($manufacturer, '025', $username);
 $model = getCode($model, '026', $username);
 $daq = getCode($daq, '024', $username);
 
+if (isset($_GET['draft-button'])) {
+    $status = 'DRAFT';
+    $flag = '2';
+} else {
+    if (isset($_GET['save-button'])) {
+        $status = 'ACTIVE';
+        $flag = '1';
+    } else {
+        $status = 'UNKNOWN';
+        $flag = '0';
+    }
+}
+
 $newinsert = "INSERT INTO gest_form_daq (lab_location, strategy, standard_category, champion, manufacturer, model, daq_id, no_temp_channel, no_voltage_channel, no_leakage_channel, "
-                    . "max_voltage_measure, min_voltage_measure, max_leakage_measure, min_leakage_measure, max_temp_measure, min_temp_measure, rdaq_voltage_drop, board_insert_check, rdaq_measure_start, scan_time, "
-                    . "leakage_measure_resolution, leakage_measure_accuracy, voltage_measure_resolution, data_plot, hw_design, no_analog_input_single, no_analog_input_diff, resolution, sampling_freq, supported_eqpt, "
-                    . "hw_resistance_measure, hw_voltage_measure, hw_temp_measure, daq_eqpt_interface, daq_ps_interface, created_by, created_date, status, flag) "
-                    . "VALUES ('$lablocation', '$productgroup', '$category', '$labmanager', '$manufacturer', '$model', '$daq', '$tempchannel', '$voltchannel', '$leakchannel', "
-                    . "'$maxvoltmeasure', '$minvoltmeasure', '$maxleakmeasure', '$minleakmeasure', '$maxtempmeasure', '$mintempmeasure', '$voltdrop', '$boardcheck', '$starttest', '$scantime', "
-                    . "'$leakreso', '$leakaccuracy', '$voltreso', '$dataplot', '$typehardware', '$analogsingle', '$analogdiff', '$reso', '$frequency', '$support', "
-                    . "'$hwmeasureR', '$hwmeasureV', '$hwmeasureT', '$eqptint', '$psint', '$username', NOW(), 'Active', '1')";
+            . "max_voltage_measure, min_voltage_measure, max_leakage_measure, min_leakage_measure, max_temp_measure, min_temp_measure, rdaq_voltage_drop, board_insert_check, rdaq_measure_start, scan_time, "
+            . "leakage_measure_resolution, leakage_measure_accuracy, voltage_measure_resolution, data_plot, hw_design, no_analog_input_single, no_analog_input_diff, resolution, sampling_freq, supported_eqpt, "
+            . "hw_resistance_measure, hw_voltage_measure, hw_temp_measure, daq_eqpt_interface, daq_ps_interface, created_by, created_date, status, flag) "
+            . "VALUES ('$lablocation', '$productgroup', '$category', '$labmanager', '$manufacturer', '$model', '$daq', '$tempchannel', '$voltchannel', '$leakchannel', "
+            . "'$maxvoltmeasure', '$minvoltmeasure', '$maxleakmeasure', '$minleakmeasure', '$maxtempmeasure', '$mintempmeasure', '$voltdrop', '$boardcheck', '$starttest', '$scantime', "
+            . "'$leakreso', '$leakaccuracy', '$voltreso', '$dataplot', '$typehardware', '$analogsingle', '$analogdiff', '$reso', '$frequency', '$support', "
+            . "'$hwmeasureR', '$hwmeasureV', '$hwmeasureT', '$eqptint', '$psint', '$username', NOW(), '$status', '$flag')";
 $upload = mysqli_query($con, $newinsert);
 
 ?>
 <script>
     alert('New DAQ Added Successfully');
-//    window.location.href = '../daq/list.php';
     window.location.href = '../list/list_daq.php';
 </script>
 <?php mysql_close($handle);

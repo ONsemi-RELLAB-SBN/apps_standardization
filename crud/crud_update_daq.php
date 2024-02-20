@@ -54,9 +54,25 @@ if ($username == '') {
     $username = 'System';
 }
 
+$status = 'Active';
+$flag = '1';
+
 $manufacturer = getCode($manufacturer, '025', $username);
 $model = getCode($model, '026', $username);
 $daq = getCode($daq, '024', $username);
+
+if (isset($_GET['draft-button'])) {
+    $status = 'DRAFT';
+    $flag = '2';
+} else {
+    if (isset($_GET['save-button'])) {
+        $status = 'ACTIVE';
+        $flag = '1';
+    } else {
+        $status = 'UNKNOWN';
+        $flag = '0';
+    }
+}
 
 $update = "UPDATE gest_form_daq SET "
         . "lab_location = '$lablocation', "
@@ -95,9 +111,10 @@ $update = "UPDATE gest_form_daq SET "
         . "daq_eqpt_interface = '$eqptint', "
         . "daq_ps_interface = '$psint', "
         . "updated_by = '$username', "
+        . "status = '$status', "
+        . "flag = '$flag', "
         . "update_date = NOW() "
-        . "WHERE id = '$id' "
-        . "AND status='Active' AND flag=1 LIMIT 1;";
+        . "WHERE id = '$id' LIMIT 1;";
 $uprun = mysqli_query($con, $update);
 ?>
 <script>

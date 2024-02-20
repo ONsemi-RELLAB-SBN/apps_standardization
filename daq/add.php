@@ -12,13 +12,6 @@ include '../class/get_parameter.php';
 <html lang="en" class="no-js">
     <head>
         <link rel="stylesheet" href="daq.css"/>
-        <style>
-
-        </style>
-
-        <script type="text/javascript">
-
-        </script>
     </head>
 
     <body>
@@ -70,6 +63,7 @@ include '../class/get_parameter.php';
                 </ul>
                 
                 <div class="tab-content active" id="tabIdentity">
+                    <p style="color:red; font-size: 11px;margin-bottom: 0.5rem;">* is mandatory field to enable draft saving.</p>
                     <div class="row">
                         <div class="two columns"><label for="manufacturer">Manufacturer *</label></div>
                         <div class="three columns">
@@ -390,8 +384,8 @@ include '../class/get_parameter.php';
                 
             </div>
 
-            <button type="submit" id="draft-button" class="btn"><i class='bx bx-send bx-fw' ></i> DRAFT</button>
-            <button type="submit" id="save-button" class="btn"><i class='bx bx-send bx-fw' ></i> SAVE</button>
+            <button type="submit" id="draft-button" name="draft-button" class="btn"><i class='bx bx-send bx-fw' ></i> DRAFT</button>
+            <button type="submit" id="save-button" name="save-button" class="btn"><i class='bx bx-send bx-fw' ></i> SAVE</button>
             <button onclick="location.href = '../list/list_daq.php'" type="button" id="listBtn"><i class='bx bx-list-ol bx-fw' ></i> List</button>
         </form>
 
