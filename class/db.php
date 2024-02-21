@@ -7,10 +7,10 @@
 
 //$hostport = "localhost:3308";
 $host = "localhost";
-$user = "ayep";
+$user = "apps";
 $pass = "mysql@2023";
 $db = "gest";
-$port = "";
+$port = "3306";
 $socket = "";
 
 $con = mysqli_connect($host, $user, $pass, $db);

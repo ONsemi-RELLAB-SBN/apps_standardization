@@ -46,8 +46,24 @@ if ($username == '') {
     $username = 'System';
 }
 
+$status = 'Active';
+$flag = '1';
+
 $manufacturer = getCode($manufacturer, '039', $username);
 $model = getCode($model, '040', $username);
+
+if (isset($_GET['draft-button'])) {
+    $status = 'DRAFT';
+    $flag = '2';
+} else {
+    if (isset($_GET['save-button'])) {
+        $status = 'ACTIVE';
+        $flag = '1';
+    } else {
+        $status = 'UNKNOWN';
+        $flag = '0';
+    }
+}
 
 $update = "UPDATE gest_form_ps SET "
         . "lab_location = '$labLocation', "
@@ -77,10 +93,11 @@ $update = "UPDATE gest_form_ps SET "
         . "gpib_interface = '$qpib', "
         . "other_interface = '$other', "
         . "updated_by = '$username', "
+        . "status = '$status', "
+        . "flag = '$flag', "
         . "update_date = NOW(), "
         . "no_output = '$output' "
-        . "WHERE id = '$id' "
-        . "AND status='Active' AND flag=1 LIMIT 1;";
+        . "WHERE id = '$id' LIMIT 1;";
 $uprun = mysqli_query($con, $update);
 ?>
 <script>

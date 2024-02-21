@@ -16,129 +16,7 @@ include '../class/get_parameter.php';
     <script src="../js/multiselect-dropdown.js" ></script>
     
     <head>
-        <style>
-            h5, h6 {
-               border-left: none; 
-            }
-            
-            body {
-                margin: 0;
-                padding: 0;
-                height: 90vh;
-            }
-
-            #main-page {
-                position: relative;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 30%;
-                background-color: #f2f2f2;
-                padding: 20px;
-            }
-
-            #content-page {
-                position: relative;
-                top: 30%;
-                left: 0;
-                width: 100%;
-                max-height: 70%;
-                background-color: #fff;
-                padding: 20px;
-                overflow-x: visible;
-            }
-
-            #tabs {
-                display: flex;
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-
-            #tabs li {
-                margin-right: 10px;
-                padding: 10px;
-                /*border: 1px solid #ccc;*/
-                cursor: pointer;
-            }
-
-            #tabs li.active {
-                background-color: orange;
-                border-radius: 5px;
-            }
-
-            .tab-content {
-                display: none;
-                padding: 20px;
-            }
-
-            .tab-content.active {
-                display: block;
-            }
-            
-            #listBtn {
-                display: block;
-                position: fixed;
-                top: 20px;
-                right: 40px;
-                z-index: 99;
-                font-size: 18px;
-                outline: none;
-                cursor: pointer;
-            }
-
-            #listBtn:hover {
-                background-color: orange;
-                color: white;
-            }
-            
-            #save-button {
-                display: block;
-                position: fixed;
-                top: 20px;
-                right: 180px;
-                z-index: 99;
-                font-size: 18px;
-                outline: none;
-                cursor: pointer;
-            }
-
-            #save-button:hover {
-                background-color: orange;
-                color: white;
-            }
-            
-            #draft-button {
-                display: block;
-                position: fixed;
-                top: 20px;
-                right: 180px;
-                z-index: 99;
-                font-size: 18px;
-                outline: none;
-                cursor: pointer;
-            }
-            
-            #toggle_1, #toggle_2, #toggle_3, #toggle_4{
-                visibility: hidden;
-                opacity: 0;
-                position: relative;
-                z-index: -1;
-            }
-
-            #toggle_1:checked ~ dialog, #toggle_2:checked ~ dialog, #toggle_3:checked ~ dialog, #toggle_4:checked ~ dialog {
-                position: absolute;
-                top: 50%;
-                transform: translate(0, -50%);
-                text-align: left;
-                display: flex;
-                flex-direction: column;
-            }
-        </style>
-
-        <script type="text/javascript">
-
-        </script>
+        <link rel="stylesheet" href="power.css"/>
     </head>
     <body>
         <form id="add_power_form" action="../crud/crud_add_power.php" method="get">
@@ -385,8 +263,8 @@ include '../class/get_parameter.php';
                 
             </div>
             
-            <button type="submit" id="draft-button" class="btn"><i class='bx bx-send bx-fw' ></i> DRAFT</button>
-            <button type="submit" id="save-button" class="btn"><i class='bx bx-send bx-fw' ></i> SAVE</button>
+            <button type="submit" id="draft-button" name="draft-button" class="btn"><i class='bx bx-send bx-fw' ></i> DRAFT</button>
+            <button type="submit" id="save-button" name="save-button" class="btn"><i class='bx bx-send bx-fw' ></i> SAVE</button>
             <button onclick="location.href = '../list/list_power_supply.php'" type="button" id="listBtn" class="btn"><i class='bx bx-list-ol bx-fw' ></i>List</button>
         </form>
         

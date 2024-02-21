@@ -1,0 +1,126 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Feb 20, 2024, 10:40:51 AM
+    Author     : zbqb9x
+*/
+
+h5, h6 {
+    border-left: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 90vh;
+}
+
+#main-page {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+#content-page {
+    position: relative;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    max-height: 70%;
+    background-color: #fff;
+    padding: 20px;
+    overflow-x: visible;
+}
+
+#tabs {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#tabs li {
+    margin-right: 10px;
+    padding: 10px;
+    /*border: 1px solid #ccc;*/
+    cursor: pointer;
+}
+
+#tabs li.active {
+    background-color: orange;
+    border-radius: 5px;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+#listBtn {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    z-index: 99;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+}
+
+#listBtn:hover {
+    background-color: orange;
+    color: white;
+}
+
+#save-button {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 180px;
+    z-index: 99;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+}
+
+#save-button:hover {
+    background-color: orange;
+    color: white;
+}
+
+#draft-button {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 180px;
+    z-index: 99;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+}
+
+#toggle_1, #toggle_2, #toggle_3, #toggle_4{
+    visibility: hidden;
+    opacity: 0;
+    position: relative;
+    z-index: -1;
+}
+
+#toggle_1:checked ~ dialog, #toggle_2:checked ~ dialog, #toggle_3:checked ~ dialog, #toggle_4:checked ~ dialog {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
