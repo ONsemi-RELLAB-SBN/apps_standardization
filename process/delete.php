@@ -9,7 +9,7 @@ include '../class/db.php';
 $id = $_GET['delete'];
 
 // sql to delete a record
-$sql = "UPDATE gest_form_process SET flag = '0', delete_by = '$username', delete_date = NOW() WHERE id = '$id'";
+$sql = "UPDATE gest_form_process SET flag = '0', delete_by = '$username', delete_date = NOW(), status = 'DELETED' WHERE id = '$id'";
 
 if ($con->query($sql) === TRUE) {
     echo "Record deleted successfully";
