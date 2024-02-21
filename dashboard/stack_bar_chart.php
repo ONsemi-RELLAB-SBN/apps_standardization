@@ -54,7 +54,7 @@ $data_pc = array();
 $data_et = array();
 
 $result = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN eq.id IS NOT NULL AND eq.flag = '1' THEN 1 END) AS total
+                                COUNT(CASE WHEN eq.id IS NOT NULL AND eq.flag IN ('1', '2') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_eqpt eq ON pd.code = eq.lab_location
                                 WHERE pd.master_code = '002'
@@ -65,7 +65,7 @@ while ($row = mysqli_fetch_array($result)) {
 }
 
 $result2 = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN hw.id IS NOT NULL AND hw.flag = '1' THEN 1 END) AS total
+                                COUNT(CASE WHEN hw.id IS NOT NULL AND hw.flag IN ('1', '2') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_hw hw ON pd.code = hw.lab_location
                                 WHERE pd.master_code = '002'
@@ -76,7 +76,7 @@ while ($row = mysqli_fetch_array($result2)) {
 }
 
 $result3 = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN daq.id IS NOT NULL AND daq.flag = '1' THEN 1 END) AS total
+                                COUNT(CASE WHEN daq.id IS NOT NULL AND daq.flag IN ('1', '2') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_daq daq ON pd.code = daq.lab_location
                                 WHERE pd.master_code = '002'
@@ -87,7 +87,7 @@ while ($row = mysqli_fetch_array($result3)) {
 }
 
 $result4 = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN ps.id IS NOT NULL AND ps.flag = '1' THEN 1 END) AS total
+                                COUNT(CASE WHEN ps.id IS NOT NULL AND ps.flag IN ('1', '2') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_ps ps ON pd.code = ps.lab_location
                                 WHERE pd.master_code = '002'
@@ -98,7 +98,7 @@ while ($row = mysqli_fetch_array($result4)) {
 }
 
 $result5 = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag = '1' THEN 1 END) AS total
+                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag IN ('1', '2') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_design et ON pd.code = et.lab_location
                                 WHERE pd.master_code = '002'
@@ -109,7 +109,7 @@ while ($row = mysqli_fetch_array($result5)) {
 }
 
 $result6 = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag = '1' THEN 1 END) AS total
+                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag IN ('1', '2') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_process et ON pd.code = et.lab_location
                                 WHERE pd.master_code = '002'
@@ -120,7 +120,7 @@ while ($row = mysqli_fetch_array($result6)) {
 }
 
 $result7 = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag = '1' THEN 1 END) AS total
+                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag IN ('1', '2') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_et et ON pd.code = et.lab_location
                                 WHERE pd.master_code = '002'
