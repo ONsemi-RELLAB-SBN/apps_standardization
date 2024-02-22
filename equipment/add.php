@@ -16,6 +16,17 @@ include '../class/get_parameter.php';
     
     <head>
         <link rel="stylesheet" href="equipment.css"/>
+        
+        <style>
+            ::placeholder {
+                color: orange;
+                opacity: 1;
+            }
+
+            ::-ms-input-placeholder {
+                color: red;
+            }
+        </style>
     </head>
 
     <body>
@@ -121,7 +132,7 @@ include '../class/get_parameter.php';
                         <div class="three columns"><input type="date" id="mfg_date" name="mfg_date" value="" style="width:55%" ></div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="asset_no">Equipment Asset No</label></div>
-                        <div class="three columns"><input type="text" id="asset_no" name="asset_no" placeholder="Asset Number" value="" > </div>
+                            <div class="three columns"><input type="text" id="asset_no" name="asset_no" placeholder="Asset Number" value="" > </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">

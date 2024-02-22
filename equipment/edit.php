@@ -18,6 +18,17 @@ $id = $_GET['edit'];
     
     <head>
         <link rel="stylesheet" href="equipment.css"/>
+        
+        <style>
+            ::placeholder {
+                color: orange;
+                opacity: 1;
+            }
+
+            ::-ms-input-placeholder {
+                color: red;
+            }
+        </style>
     </head>
 
     <body>
