@@ -12,46 +12,46 @@ $data_suz = array();
 $data_ospi = array();
 $data_osv = array();
 
-$result1 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SBN' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SBN' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SBN' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SBN' AND d.flag IN ('1', '2')");
+$result1 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SBN' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SBN' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SBN' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SBN' AND d.flag IN ('1')");
 while ($row = mysqli_fetch_array($result1)) {
     $point = array('label' => $row['item'], "y" => $row['bil']);
     array_push($data_sbn, $point);
 }
 
-$result2 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'CEBU' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'CEBU' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'CEBU' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'CEBU' AND d.flag IN ('1', '2')");
+$result2 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'CEBU' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'CEBU' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'CEBU' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'CEBU' AND d.flag IN ('1')");
 while ($row = mysqli_fetch_array($result2)) {
     $point = array('label' => $row['item'], "y" => $row['bil']);
     array_push($data_cebu, $point);
 }
 
-$result3 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SUZHOU' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SUZHOU' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SUZHOU' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SUZHOU' AND d.flag IN ('1', '2')");
+$result3 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SUZHOU' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SUZHOU' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SUZHOU' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SUZHOU' AND d.flag IN ('1')");
 while ($row = mysqli_fetch_array($result3)) {
     $point = array('label' => $row['item'], "y" => $row['bil']);
     array_push($data_suz, $point);
 }
 
-$result4 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSPI' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSPI' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSPI' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSPI' AND d.flag IN ('1', '2')");
+$result4 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSPI' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSPI' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSPI' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSPI' AND d.flag IN ('1')");
 while ($row = mysqli_fetch_array($result4)) {
     $point = array('label' => $row['item'], "y" => $row['bil']);
     array_push($data_ospi, $point);
 }
 
-$result5 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSV' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSV' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSV' AND d.flag IN ('1', '2') UNION
-                                SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSV' AND d.flag IN ('1', '2')");
+$result5 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSV' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSV' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSV' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSV' AND d.flag IN ('1')");
 while ($row = mysqli_fetch_array($result5)) {
     $point = array('label' => $row['item'], "y" => $row['bil']);
     array_push($data_osv, $point);
@@ -75,12 +75,12 @@ while ($row = mysqli_fetch_array($result5)) {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
-                padding: 20px;
+                padding: 10px;
             }
 
             .box {
-                width: 300px;
-                height: 400px;
+                width: 320px;
+                height: 370px;
                 margin: 10px 10px 50px;
                 border: 1px solid #ccc;
                 border-radius: 5px;
@@ -113,85 +113,100 @@ while ($row = mysqli_fetch_array($result5)) {
         <script>
             window.onload = function () {
                 var chart = new CanvasJS.Chart("chartContainer1", {
-                    theme: "light2",
+                    theme: "light",
                     exportEnabled: true,
                     animationEnabled: true,
+                    legend: {
+                        itemWidth: 150,
+                        horizontalAlign: "center",
+                        verticalAlign: "top"
+                    },
                     data: [{
                         type: "doughnut",
-                        innerRadius: 70,
-                        indexLabelFontSize: 18,
-                        indexLabelFontColor: "#36454F",
-                        indexLabel: "{y}",
+                        innerRadius: 65,
+                        radius:  "80%", 
                         showInLegend: true,
-                        legendText: "{label} - {y}",
+                        legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_sbn, JSON_NUMERIC_CHECK); ?>
                     }]
                 });
                 chart.render();
                 
                 var chart2 = new CanvasJS.Chart("chartContainer2", {
-                    theme: "light2",
+                    theme: "light",
                     exportEnabled: true,
                     animationEnabled: true,
+                    legend: {
+                        itemWidth: 150,
+                        horizontalAlign: "center",
+                        verticalAlign: "top"
+                    },
                     data: [{
                         type: "doughnut",
-                        innerRadius: 70,
-                        indexLabelFontSize: 18,
-                        indexLabelFontColor: "#36454F",
-                        indexLabel: "{y}",
+                        innerRadius: 65,
+                        radius:  "80%", 
                         showInLegend: true,
-                        legendText: "{label} - {y}",
+                        legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_cebu, JSON_NUMERIC_CHECK); ?>
                     }]
                 });
                 chart2.render();
                 
                 var chart3 = new CanvasJS.Chart("chartContainer3", {
-                    theme: "light2",
+                    theme: "light",
                     exportEnabled: true,
                     animationEnabled: true,
+                    legend: {
+                        itemWidth: 150,
+                        horizontalAlign: "center",
+                        verticalAlign: "top"
+                    },
                     data: [{
                         type: "doughnut",
-                        innerRadius: 70,
-                        indexLabelFontSize: 18,
-                        indexLabelFontColor: "#36454F",
-                        indexLabel: "{y}",
+                        innerRadius: 65,
+                        radius:  "80%", 
                         showInLegend: true,
-                        legendText: "{label} - {y}",
+                        legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_suz, JSON_NUMERIC_CHECK); ?>
                     }]
                 });
                 chart3.render();
                 
                 var chart4 = new CanvasJS.Chart("chartContainer4", {
-                    theme: "light2",
+                    theme: "light",
                     exportEnabled: true,
                     animationEnabled: true,
+                    legend: {
+                        itemWidth: 150,
+                        horizontalAlign: "center",
+                        verticalAlign: "top"
+                    },
                     data: [{
                         type: "doughnut",
-                        innerRadius: 70,
-                        indexLabelFontSize: 18,
-                        indexLabelFontColor: "#36454F",
-                        indexLabel: "{y}",
+                        innerRadius: 65,
+                        radius:  "80%", 
                         showInLegend: true,
-                        legendText: "{label} - {y}",
+                        legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_ospi, JSON_NUMERIC_CHECK); ?>
                     }]
                 });
                 chart4.render();
                 
                 var chart5 = new CanvasJS.Chart("chartContainer5", {
-                    theme: "light2",
+                    theme: "light",
                     exportEnabled: true,
                     animationEnabled: true,
+                    legend: {
+                        itemWidth: 150,
+                        horizontalAlign: "center",
+                        verticalAlign: "top"
+                    },
                     data: [{
                         type: "doughnut",
-                        innerRadius: 70,
-                        indexLabelFontSize: 18,
-                        indexLabelFontColor: "#36454F",
-                        indexLabel: "{y}",
+                        innerRadius: 65,
+                        radius:  "80%", 
                         showInLegend: true,
-                        legendText: "{label} - {y}",
+                        legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_osv, JSON_NUMERIC_CHECK); ?>
                     }]
                 });
@@ -203,23 +218,23 @@ while ($row = mysqli_fetch_array($result5)) {
         <div class="container">
             <div class="box">
                 <h3>SBN</h3>
-                <div id="chartContainer1" style="height: 370px; width: 300px;"></div>
+                <div id="chartContainer1" style="height: 350px; width: 350px;"></div>
             </div>
             <div class="box">
                 <h3>CEBU</h3>
-                <div id="chartContainer2" style="height: 370px; width: 300px;"></div>
+                <div id="chartContainer2" style="height: 350px; width: 350px;"></div>
             </div>
             <div class="box">
                 <h3>SUZHOU</h3>
-                <div id="chartContainer3" style="height: 370px; width: 300px;"></div>
+                <div id="chartContainer3" style="height: 350px; width: 350px;"></div>
             </div>
             <div class="box">
                 <h3>OSPI</h3>
-                <div id="chartContainer4" style="height: 370px; width: 300px;"></div>
+                <div id="chartContainer4" style="height: 350px; width: 350px;"></div>
             </div>
             <div class="box">
                 <h3>OSV</h3>
-                <div id="chartContainer5" style="height: 370px; width: 300px;"></div>
+                <div id="chartContainer5" style="height: 350px; width: 350px;"></div>
             </div>
         </div>
 

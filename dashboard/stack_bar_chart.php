@@ -3,46 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
-
-$test = array(
-    array("label" => "Sachin Tendulkar", "y" => 51),
-    array("label" => "Ricky Ponting", "y" => 41),
-    array("label" => "Kumar Sangakkara", "y" => 38),
-    array("label" => "Jacques Kallis", "y" => 45),
-    array("label" => "Mahela Jayawardene", "y" => 34),
-    array("label" => "Hashim Amla", "y" => 28),
-    array("label" => "Brian Lara", "y" => 34),
-    array("label" => "Virat Kohli", "y" => 20),
-    array("label" => "Rahul Dravid", "y" => 36),
-    array("label" => "AB de Villiers", "y" => 21)
-);
-
-$odi = array(
-    array("label" => "Sachin Tendulkar", "y" => 49),
-    array("label" => "Ricky Ponting", "y" => 30),
-    array("label" => "Kumar Sangakkara", "y" => 25),
-    array("label" => "Jacques Kallis", "y" => 17),
-    array("label" => "Mahela Jayawardene", "y" => 19),
-    array("label" => "Hashim Amla", "y" => 26),
-    array("label" => "Brian Lara", "y" => 19),
-    array("label" => "Virat Kohli", "y" => 32),
-    array("label" => "Rahul Dravid", "y" => 12),
-    array("label" => "AB de Villiers", "y" => 25)
-);
-
-$t20 = array(
-    array("label" => "Sachin Tendulkar", "y" => 0),
-    array("label" => "Ricky Ponting", "y" => 0),
-    array("label" => "Kumar Sangakkara", "y" => 0),
-    array("label" => "Jacques Kallis", "y" => 0),
-    array("label" => "Mahela Jayawardene", "y" => 1),
-    array("label" => "Hashim Amla", "y" => 0),
-    array("label" => "Brian Lara", "y" => 0),
-    array("label" => "Virat Kohli", "y" => 0),
-    array("label" => "Rahul Dravid", "y" => 0),
-    array("label" => "AB de Villiers", "y" => 0)
-);
-
 include '../class/db.php';
 
 $data_eqpt = array();
@@ -54,7 +14,7 @@ $data_pc = array();
 $data_et = array();
 
 $result = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN eq.id IS NOT NULL AND eq.flag IN ('1', '2') THEN 1 END) AS total
+                                COUNT(CASE WHEN eq.id IS NOT NULL AND eq.flag IN ('1') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_eqpt eq ON pd.code = eq.lab_location
                                 WHERE pd.master_code = '002'
@@ -65,7 +25,7 @@ while ($row = mysqli_fetch_array($result)) {
 }
 
 $result2 = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN hw.id IS NOT NULL AND hw.flag IN ('1', '2') THEN 1 END) AS total
+                                COUNT(CASE WHEN hw.id IS NOT NULL AND hw.flag IN ('1') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_hw hw ON pd.code = hw.lab_location
                                 WHERE pd.master_code = '002'
@@ -76,7 +36,7 @@ while ($row = mysqli_fetch_array($result2)) {
 }
 
 $result3 = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN daq.id IS NOT NULL AND daq.flag IN ('1', '2') THEN 1 END) AS total
+                                COUNT(CASE WHEN daq.id IS NOT NULL AND daq.flag IN ('1') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_daq daq ON pd.code = daq.lab_location
                                 WHERE pd.master_code = '002'
@@ -87,7 +47,7 @@ while ($row = mysqli_fetch_array($result3)) {
 }
 
 $result4 = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN ps.id IS NOT NULL AND ps.flag IN ('1', '2') THEN 1 END) AS total
+                                COUNT(CASE WHEN ps.id IS NOT NULL AND ps.flag IN ('1') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_ps ps ON pd.code = ps.lab_location
                                 WHERE pd.master_code = '002'
@@ -98,7 +58,7 @@ while ($row = mysqli_fetch_array($result4)) {
 }
 
 $result5 = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag IN ('1', '2') THEN 1 END) AS total
+                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag IN ('1') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_design et ON pd.code = et.lab_location
                                 WHERE pd.master_code = '002'
@@ -109,7 +69,7 @@ while ($row = mysqli_fetch_array($result5)) {
 }
 
 $result6 = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag IN ('1', '2') THEN 1 END) AS total
+                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag IN ('1') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_process et ON pd.code = et.lab_location
                                 WHERE pd.master_code = '002'
@@ -120,7 +80,7 @@ while ($row = mysqli_fetch_array($result6)) {
 }
 
 $result7 = mysqli_query($con, "SELECT pd.name AS product,
-                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag IN ('1', '2') THEN 1 END) AS total
+                                COUNT(CASE WHEN et.id IS NOT NULL AND et.flag IN ('1') THEN 1 END) AS total
                                 FROM gest_parameter_detail pd
                                 LEFT JOIN gest_form_et et ON pd.code = et.lab_location
                                 WHERE pd.master_code = '002'
@@ -152,6 +112,10 @@ while ($row = mysqli_fetch_array($result7)) {
                     toolTip: {
                         shared: true
                     },
+                    legend:{
+                        cursor: "pointer",
+                        itemclick: toggleDataSeries
+                    },
                     data: [{
                             type: "stackedBar",
                             name: "Equipment",
@@ -179,15 +143,22 @@ while ($row = mysqli_fetch_array($result7)) {
                         }, {
                             type: "stackedBar",
                             name: "Electrical Test",
-                            indexLabel: "#total",
-                            indexLabelPlacement: "outside",
-                            indexLabelFontSize: 15,
-                            indexLabelFontWeight: "bold",
                             dataPoints: <?php echo json_encode($data_et, JSON_NUMERIC_CHECK); ?>
                         }]
                 });
                 chart.render();
-            }
+                
+                function toggleDataSeries(e) {
+                    if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                        e.dataSeries.visible = false;
+                    }
+                    else {
+                        e.dataSeries.visible = true;
+                    }
+                    chart.render();
+                }
+
+            };
         </script>
     </head>
     <body>
