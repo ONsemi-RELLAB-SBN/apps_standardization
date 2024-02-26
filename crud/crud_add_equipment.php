@@ -32,6 +32,10 @@ $minTime            = $_GET['min_time'];
 $maxTime            = $_GET['max_time'];
 $minTemp            = $_GET['min_temp'];
 $maxTemp            = $_GET['max_temp'];
+$minTempHot         = $_GET['min_temp_hot'];
+$maxTempHot         = $_GET['max_temp_hot'];
+$minTempCold        = $_GET['min_temp_cold'];
+$maxTempCold        = $_GET['max_temp_cold'];
 $minRh              = $_GET['minRh'];
 $maxRh              = $_GET['maxRh'];
 $minPressure        = $_GET['min_pressure'];
@@ -113,6 +117,12 @@ foreach ($_GET['relTest'] as $key => $value) {
 }
 $dataRel = rtrim($dataRel, ", ");
 
+//if (preg_match('/008019/', $dataRel)) {       \\ this one used untuk contain, we use exact find here / below
+if ($dataRel == '008019') {
+    $minTemp = $minTempHot;
+    $maxTemp = $maxTempHot;
+}
+
 $eqptId = getCode($eqptId, '006', $username);
 $manufacturer = getCode($manufacturer, '009', $username);
 $model = getCode($model, '010', $username);
@@ -132,7 +142,8 @@ if (isset($_GET['draft-button'])) {
 }
 
 $newinsert = "INSERT INTO gest_form_eqpt (eqpt_id, lab_location, strategy, standard_category, champion, dedicate_usage, rel_test, zone, manufacturer, eqpt_model, 
-            eqpt_mfg_date, eqpt_asset_no, new_transfer_eqpt, transfer_eqpt_location, eqpt_volt_rating, volt_control_accuracy, current_rating, power_rating, min_time_setting, max_time_setting, min_temp, max_temp, min_rh, max_rh, heat_dissipation, min_pressure, max_pressure, 
+            eqpt_mfg_date, eqpt_asset_no, new_transfer_eqpt, transfer_eqpt_location, eqpt_volt_rating, volt_control_accuracy, current_rating, power_rating, min_time_setting, max_time_setting, 
+            min_temp, max_temp, min_temp_cold, max_temp_cold, min_rh, max_rh, heat_dissipation, min_pressure, max_pressure, 
             temp_fluctuation, temp_uniformity, humid_fluctuation, ext_dimension_w, ext_dimension_d, ext_dimension_h, int_dimension_w, int_dimension_d, int_dimension_h, no_interior_zone, diameter,
             rack_dimension_w, rack_dimension_d, rack_dimension_h, int_vol, board_orientation, rack_material, rack_slot_pitch, rack_slot_width, eqpt_weight, no_mb_slot, 
             max_ps_slot, max_ps_eqpt, airflow, temp_protection_1, temp_protection_2, temp_protection_3, smoke_alarm, emo_btn, voltage, current, phase, pressure_switch, safety_valve,
@@ -140,7 +151,7 @@ $newinsert = "INSERT INTO gest_form_eqpt (eqpt_id, lab_location, strategy, stand
             conn_volt_rating, conn_current_rating, conn_temp_rating, no_pin, pin_pitch, no_wire_conn_rack, wire_volt_rating, wire_curr_rating, wire_temp_rating, ext_config_type, 
             interface_volt_rating, interface_current_rating, created_by, created_date, status, flag) "
             . "VALUES ('$eqptId', '$labLocation', '$strategy', '$standardization', '$champion', '$dedicated', '$dataRel', '$zone', '$manufacturer', '$model', "
-            . "'$mfgDate', '$assetNo', '$newTransfer', '$from', '$voltRating', '$voltControl', '$currRating', '$powerRate', '$minTime', '$maxTime', '$minTemp', '$maxTemp', '$minRh', '$maxRh', '$heatDiss', '$minPressure', '$maxPressure', "
+            . "'$mfgDate', '$assetNo', '$newTransfer', '$from', '$voltRating', '$voltControl', '$currRating', '$powerRate', '$minTime', '$maxTime', '$minTemp', '$maxTemp', '$minTempCold', '$maxTempCold', '$minRh', '$maxRh', '$heatDiss', '$minPressure', '$maxPressure', "
             . "'$tempFluctuation', '$tempUniform', '$umidFluctuation', '$extDimensionW', '$extDimensionD', '$extDimensionH', '$intDimensionW', '$intDimensionD', '$intDimensionH', '$noInterior', '$diameter',"
             . "'$rackDimensionW', '$rackDimensionD', '$rackDimensionH', '$intVolume', '$boardOrientation', '$rackMaterial', '$rackSlotPitch', '$rackSLotWidth', '$eqptWeight', '$noMotherboardSlot', "
             . "'$maxPsBoardSLot', '$maxPsEqpt', '$airflow', '$tempProtection1', '$tempProtection2', '$tempProtection3', '$smokeDetector', '$emo', '$voltage', '$current', '$phase', '$switch', '$safety',"

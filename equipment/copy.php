@@ -44,26 +44,14 @@ $id = $_GET['edit'];
                         <div class="two columns"><label for="lab_location">Lab Location *</label></div>
                         <div class="three columns">
                             <select id="lab_location" name="lab_location" style="width: 100%" required>
-                                <option value="" selected=""></option>
-                                <?php 
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '002' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['lab_location']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>
+                                <?php echo getDropdown('002', $rowForm['lab_location']); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="strategy">Product Group *</label></div>
                         <div class="three columns">
                             <select id="strategy" name="strategy" style="width: 100%" required>
-                                <option value="" selected=""></option>
-                                <?php 
-                                $sqlDdSite = "SELECT * FROM gest_parameter_detail WHERE master_code = '003' ORDER BY code ASC";
-                                $resSite = mysqli_query($con, $sqlDdSite);
-                                while ($rowSite = mysqli_fetch_array($resSite)): ?>
-                                    <option value="<?php echo $rowSite['code']; ?>" <?php if ($rowSite['code'] === $rowForm['strategy']) { ?>selected<?php } ?>><?php echo $rowSite['name']; ?></option>
-                                <?php endwhile; ?>  
+                                <?php echo getDropdown('003', $rowForm['strategy']); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
