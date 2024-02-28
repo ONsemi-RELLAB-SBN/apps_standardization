@@ -245,7 +245,7 @@ $id = $_GET['edit'];
 
                             function updateRelTest() {
                                 var newreltest = document.getElementById('relTest');
-                                var selected = [...newreltest.selectedOptions].map(option => option.value);
+                                var reltest = [...newreltest.selectedOptions].map(option => option.value);
 
                                 var tab7 = document.getElementById('tb07');
                                 var tab8 = document.getElementById('tb08');
@@ -302,12 +302,12 @@ $id = $_GET['edit'];
                                 
                                 var cp_rh1 = document.getElementById('labelminrh1');
                                 var cp_rh2 = document.getElementById('labelminrh2');
-                                var cp_rh7 = document.getElementById('labelminrh3');
                                 var cp_rh3 = document.getElementById('minRh');
-                                var cp_rh4 = document.getElementById('labelmaxrh1');
-                                var cp_rh5 = document.getElementById('labelmaxrh2');
+                                var cp_rh4 = document.getElementById('labelminrh3');
+                                var cp_rh5 = document.getElementById('labelmaxrh1');
+                                var cp_rh6 = document.getElementById('labelmaxrh2');
+                                var cp_rh7 = document.getElementById('maxRh');
                                 var cp_rh8 = document.getElementById('labelmaxrh3');
-                                var cp_rh6 = document.getElementById('maxRh');
                                 var cp_ps1 = document.getElementById('labelminpressure1');
                                 var cp_ps2 = document.getElementById('labelminpressure2');
                                 var cp_ps7 = document.getElementById('labelminpressure3');
@@ -2310,7 +2310,7 @@ $id = $_GET['edit'];
                             </div>
                             <div class="two columns">
                                 <input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="<?php echo $rowForm['temp_fluctuation']; ?>" >
-                                </div>
+                            </div>
                             <div class="one columns"><label for="temp_fluctuation" id="labeltempfluc2" style="text-align: left"><b>&#176;C</b></label></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
@@ -3127,7 +3127,8 @@ $id = $_GET['edit'];
             const saveButton = document.getElementById('save-button');
             
             var transfer = document.getElementById('new_transfer');
-            var reltest = document.getElementById('relTest');
+            var checkrel = document.getElementById('relTest');
+            var reltest = [...checkrel.selectedOptions].map(option => option.value);
             var inputfrom = document.getElementById('from');
             var labelfrom = document.getElementById('fromLabel');
             
@@ -3186,12 +3187,12 @@ $id = $_GET['edit'];
 
             var cp_rh1 = document.getElementById('labelminrh1');
             var cp_rh2 = document.getElementById('labelminrh2');
-            var cp_rh7 = document.getElementById('labelminrh3');
             var cp_rh3 = document.getElementById('minRh');
-            var cp_rh4 = document.getElementById('labelmaxrh1');
-            var cp_rh5 = document.getElementById('labelmaxrh2');
+            var cp_rh4 = document.getElementById('labelminrh3');
+            var cp_rh5 = document.getElementById('labelmaxrh1');
+            var cp_rh6 = document.getElementById('labelmaxrh2');
+            var cp_rh7 = document.getElementById('maxRh');
             var cp_rh8 = document.getElementById('labelmaxrh3');
-            var cp_rh6 = document.getElementById('maxRh');
             var cp_ps1 = document.getElementById('labelminpressure1');
             var cp_ps2 = document.getElementById('labelminpressure2');
             var cp_ps7 = document.getElementById('labelminpressure3');
@@ -5179,7 +5180,6 @@ $id = $_GET['edit'];
                     ut_l1.style.display = 'block';
                     ut_l2.style.display = 'block';
                 }
-            }
                 // ABOVE TO COVER THE HIDE SHOW VALUE FROM THE EXISTING DATA - END
             });
 

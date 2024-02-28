@@ -163,8 +163,6 @@ include '../class/get_parameter.php';
                                 var toField = document.getElementById('from');
                                 var transField = document.getElementById('fromLabel');
                                 
-                                var 
-
                                 if (newTransferDropdown.value === '013001') {
                                     toField.readOnly = true;
                                     toField.required = false;

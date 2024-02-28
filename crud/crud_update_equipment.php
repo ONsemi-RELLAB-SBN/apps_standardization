@@ -116,6 +116,12 @@ foreach ($_GET['relTest'] as $key => $value) {
 }
 $dataRel = rtrim($dataRel, ", ");
 
+//if (preg_match('/008019/', $dataRel)) {       \\ this one used untuk contain, we use exact find here / below
+if ($dataRel == '008019') {
+    $minTemp = $minTempHot;
+    $maxTemp = $maxTempHot;
+}
+
 $eqptId = getCode($eqptId, '006', $username);
 $manufacturer = getCode($manufacturer, '009', $username);
 $model = getCode($model, '010', $username);
@@ -144,8 +150,6 @@ $update = "UPDATE gest_form_eqpt SET "
         . "max_time_setting = '$maxTime', "
         . "min_temp = '$minTemp', "
         . "max_temp = '$maxTemp', "
-        . "min_temp_hot = '$minTempHot', "
-        . "max_temp_hot = '$maxTempHot', "
         . "min_temp_cold = '$minTempCold', "
         . "max_temp_cold = '$maxTempCold', "
         . "min_rh = '$minRh', "

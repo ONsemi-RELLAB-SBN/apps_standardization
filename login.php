@@ -20,14 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($ldapConn) {
                 try {
                     $ldapbind = ldap_bind($ldapConn, $userldap, $password);
-//                    echo ' '.$username;
-//                    echo ' ',$password;
-//                    echo ' ',$userldap;
                     if ($ldapbind) {
                         echo "LDAP bind successful...";
                         header('location:main.php');
                         $_SESSION['username']= $username;
                         $_SESSION['password']= $password;
+                        
+                        include 'class/check_user.php';
+                        log_user($username);
                     } else {
                         $error_msg = ldap_error($ldapConn);
                     }
