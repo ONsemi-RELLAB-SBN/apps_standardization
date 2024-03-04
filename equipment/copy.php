@@ -207,7 +207,7 @@ $id = $_GET['edit'];
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="zone">Zone</label></div>
-                            <div class="three columns"><input type="number" step="0.001" id="zone" name="zone" value=""></div>
+                            <div class="three columns"><input type="number" step="0.1" id="zone" name="zone" value="<?php echo $rowForm['zone']; ?>"></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
 
@@ -2286,9 +2286,6 @@ $id = $_GET['edit'];
                             <div class="one columns" id="labelmaxpressure3">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="heat_dissipation" id="labelheat1">Heat Dissipation</label></div>
-                            <div class="two columns"><input type="text" id="heat_dissipation" name="heat_dissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" > </div>
-                            <div class="two columns"><label for="heat_dissipation" id="labelheat2" style="text-align: left"><b>W</b></label></div>
                             <div class="two columns" id="labeltempfluc1">
                                 <label for="temp_fluctuation">Temperature Fluctuation</label>
                                 <label for="toggle_01" class="view-image">Image</label>
@@ -2303,6 +2300,9 @@ $id = $_GET['edit'];
                                 </div>
                             <div class="one columns"><label for="temp_fluctuation" id="labeltempfluc2" style="text-align: left"><b>&#176;C</b></label></div>
                             <div class="one columns">&nbsp;</div>
+                            <div class="two columns"><label for="heat_dissipation" id="labelheat1">Heat Dissipation</label></div>
+                            <div class="two columns"><input type="text" id="heat_dissipation" name="heat_dissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" > </div>
+                            <div class="two columns"><label for="heat_dissipation" id="labelheat2" style="text-align: left"><b>W</b></label></div>
                         </div>
                         <div class="row">
                             <div class="two columns" id="labeltempuniform1">
@@ -5199,9 +5199,11 @@ $id = $_GET['edit'];
             });
 
             function hasAllVisibleFilled() {
+//                const visibleInputs = form.querySelectorAll('input:not([hidden]):not([disabled]):not([name="' + excludedFields.join('"], [name="') + '"])');
                 const visibleInputs = form.querySelectorAll('input:not([hidden]):not([disabled])');
                 const visibleSelects = form.querySelectorAll('select:not([hidden]):not([disabled])');
-                return [...visibleInputs,...visibleSelects].every(input => input.value);
+//                return [...visibleInputs, ...visibleSelects].every(input => input.value);
+                return [...visibleSelects].every(input => input.value);
             }
 
             function hasAllRequiredFilled() {
@@ -5211,6 +5213,8 @@ $id = $_GET['edit'];
             }
 
             form.addEventListener('input', () => {
+//                const canActivateButton = hasAllVisibleFilled(['field1', 'field2']); // Exclude field1 and field2
+                
                 if (hasAllRequiredFilled()) {
                     if (hasAllVisibleFilled()) {
                         console.log("DEKAT SINI SEMUA JADI SAVE");

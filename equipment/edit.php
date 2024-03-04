@@ -220,7 +220,7 @@ $id = $_GET['edit'];
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="zone">Zone</label></div>
-                            <div class="three columns"><input type="number" step="0.001" id="zone" name="zone" value=""></div>
+                            <div class="three columns"><input type="number" step="0.001" id="zone" name="zone" value="<?php echo $rowForm['zone']; ?>"></div>
                             <div class="one columns">&nbsp;</div>
                         </div>
 
@@ -233,7 +233,7 @@ $id = $_GET['edit'];
                                 if (newTransferDropdown.value === '013001') {
                                     toField.readOnly = true;
 //                                    toField.required = false;
-                                    $("#from").val('');
+                                    $("#from").val(' ');
                                     transField.style.display = 'none';
                                     toField.style.display = 'none';
                                 } else {
@@ -2296,9 +2296,6 @@ $id = $_GET['edit'];
                             <div class="one columns" id="labelmaxpressure3">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="heat_dissipation" id="labelheat1">Heat Dissipation</label></div>
-                            <div class="two columns"><input type="text" id="heat_dissipation" name="heat_dissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" > </div>
-                            <div class="two columns"><label for="heat_dissipation" id="labelheat2" style="text-align: left"><b>W</b></label></div>
                             <div class="two columns" id="labeltempfluc1">
                                 <label for="temp_fluctuation">Temperature Fluctuation</label>
                                 <label for="toggle_01" class="view-image">Image</label>
@@ -2313,6 +2310,9 @@ $id = $_GET['edit'];
                             </div>
                             <div class="one columns"><label for="temp_fluctuation" id="labeltempfluc2" style="text-align: left"><b>&#176;C</b></label></div>
                             <div class="one columns">&nbsp;</div>
+                            <div class="two columns"><label for="heat_dissipation" id="labelheat1">Heat Dissipation</label></div>
+                            <div class="two columns"><input type="text" id="heat_dissipation" name="heat_dissipation" value="<?php echo $rowForm['heat_dissipation']; ?>" > </div>
+                            <div class="two columns"><label for="heat_dissipation" id="labelheat2" style="text-align: left"><b>W</b></label></div>
                         </div>
                         <div class="row">
                             <div class="two columns" id="labeltempuniform1">
@@ -5217,6 +5217,7 @@ $id = $_GET['edit'];
             function hasAllVisibleFilled() {
                 const visibleInputs = form.querySelectorAll('input:not([hidden]):not([disabled])');
                 const visibleSelects = form.querySelectorAll('select:not([hidden]):not([disabled])');
+//                return [...visibleInputs,...visibleSelects].every(input => input.value);
                 return [...visibleSelects].every(input => input.value);
             }
 
@@ -5229,13 +5230,16 @@ $id = $_GET['edit'];
             form.addEventListener('input', () => {
                 if (hasAllRequiredFilled()) {
                     if (hasAllVisibleFilled()) {
+                        console.log("SAVE BUTTON");
                         saveButton.style.display = 'block';
                         draftButton.style.display = 'none';
                     } else {
+                        console.log("DRAFT BUTTON APPEAR");
                         draftButton.style.display = 'block';
                         saveButton.style.display = 'none';
                     }
                 } else {
+                    console.log("SINI TAKDE APA");
                     draftButton.style.display = 'none';
                     saveButton.style.display = 'none';
                 }

@@ -2226,9 +2226,6 @@ include '../class/get_parameter.php';
                             <div class="one columns" id="labelmaxpressure3">&nbsp;</div>
                         </div>
                         <div class="row">
-                            <div class="two columns"><label for="heat_dissipation" id="labelheat1">Heat Dissipation</label></div>
-                            <div class="two columns"><input type="text" id="heat_dissipation" name="heat_dissipation" value="" > </div>
-                            <div class="two columns"><label for="heat_dissipation" id="labelheat2" style="text-align: left"><b>W</b></label></div>
                             <div class="two columns" id="labeltempfluc1">
                                 <label for="temp_fluctuation">Temperature Fluctuation</label>
                                 <label for="toggle_01" class="view-image">Image</label>
@@ -2240,9 +2237,12 @@ include '../class/get_parameter.php';
                             </div>
                             <div class="two columns">
                                 <input type="number" step="0.001" id="temp_fluctuation" name="temp_fluctuation" value="" >
-                                </div>
+                            </div>
                             <div class="one columns"><label for="temp_fluctuation" id="labeltempfluc2" style="text-align: left"><b>&#176;C</b></label></div>
                             <div class="one columns">&nbsp;</div>
+                            <div class="two columns"><label for="heat_dissipation" id="labelheat1">Heat Dissipation</label></div>
+                            <div class="two columns"><input type="text" id="heat_dissipation" name="heat_dissipation" value="" > </div>
+                            <div class="two columns"><label for="heat_dissipation" id="labelheat2" style="text-align: left"><b>W</b></label></div>
                         </div>
                         <div class="row">
                             <div class="two columns" id="labeltempuniform1">
