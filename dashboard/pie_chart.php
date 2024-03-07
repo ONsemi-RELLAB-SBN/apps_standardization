@@ -118,12 +118,13 @@ while ($row = mysqli_fetch_array($result5)) {
                     "#1691FF",  // light blue
                     "#1fe074",  // light green
 //                    "#FF6716",  // orange
-//                    "#9400d3",  // dark violet
-                    "#A569BD", //purple
-                    "#ff0000",  // red
+                    "#9400d3",  // dark violet
+                    "#FF7F50",  // orange
+//                    "#A569BD", //purple
                     "#4169e1",
-                    "#ff4500",
-                    "#ff4500"
+                    "#ff0000",  // red
+                    "#ff4500",  // orangish
+                    "#ff66cc"   // pinkish
                 ]);
                 
                 CanvasJS.addColorSet("custom02",
