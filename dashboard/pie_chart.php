@@ -112,8 +112,34 @@ while ($row = mysqli_fetch_array($result5)) {
         
         <script>
             window.onload = function () {
+                CanvasJS.addColorSet("customColor",
+                [//colorSet Array
+//                    "#0045a5",  // dark bluw
+                    "#1691FF",  // light blue
+                    "#1fe074",  // light green
+//                    "#FF6716",  // orange
+//                    "#9400d3",  // dark violet
+                    "#A569BD", //purple
+                    "#ff0000",  // red
+                    "#4169e1",
+                    "#ff4500",
+                    "#ff4500"
+                ]);
+                
+                CanvasJS.addColorSet("custom02",
+                [
+                   "#c70039", 
+                   "#ff5733", 
+                   "#ffc300", 
+                   "#add45c", 
+                   "#00baad", 
+                   "#511849", 
+                   "#900c3f" 
+                ]);
+                
                 var chart = new CanvasJS.Chart("chartContainer1", {
                     theme: "light",
+                    colorSet: "customColor",
                     exportEnabled: true,
                     animationEnabled: true,
                     legend: {
@@ -123,8 +149,8 @@ while ($row = mysqli_fetch_array($result5)) {
                     },
                     data: [{
                         type: "doughnut",
-                        innerRadius: 65,
-                        radius:  "80%", 
+                        innerRadius: 60,
+                        radius:  "80%",
                         showInLegend: true,
                         legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_sbn, JSON_NUMERIC_CHECK); ?>
@@ -133,7 +159,8 @@ while ($row = mysqli_fetch_array($result5)) {
                 chart.render();
                 
                 var chart2 = new CanvasJS.Chart("chartContainer2", {
-                    theme: "light",
+//                    theme: "light",
+                    colorSet: "customColor",
                     exportEnabled: true,
                     animationEnabled: true,
                     legend: {
@@ -143,8 +170,8 @@ while ($row = mysqli_fetch_array($result5)) {
                     },
                     data: [{
                         type: "doughnut",
-                        innerRadius: 65,
-                        radius:  "80%", 
+                        innerRadius: 60,
+                        radius:  "80%",
                         showInLegend: true,
                         legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_cebu, JSON_NUMERIC_CHECK); ?>
@@ -154,6 +181,7 @@ while ($row = mysqli_fetch_array($result5)) {
                 
                 var chart3 = new CanvasJS.Chart("chartContainer3", {
                     theme: "light",
+                    colorSet: "customColor",
                     exportEnabled: true,
                     animationEnabled: true,
                     legend: {
@@ -163,8 +191,8 @@ while ($row = mysqli_fetch_array($result5)) {
                     },
                     data: [{
                         type: "doughnut",
-                        innerRadius: 65,
-                        radius:  "80%", 
+                        innerRadius: 60,
+                        radius:  "80%",
                         showInLegend: true,
                         legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_suz, JSON_NUMERIC_CHECK); ?>
@@ -174,6 +202,7 @@ while ($row = mysqli_fetch_array($result5)) {
                 
                 var chart4 = new CanvasJS.Chart("chartContainer4", {
                     theme: "light",
+                    colorSet: "customColor",
                     exportEnabled: true,
                     animationEnabled: true,
                     legend: {
@@ -183,8 +212,8 @@ while ($row = mysqli_fetch_array($result5)) {
                     },
                     data: [{
                         type: "doughnut",
-                        innerRadius: 65,
-                        radius:  "80%", 
+                        innerRadius: 60,
+                        radius:  "80%",
                         showInLegend: true,
                         legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_ospi, JSON_NUMERIC_CHECK); ?>
@@ -194,6 +223,7 @@ while ($row = mysqli_fetch_array($result5)) {
                 
                 var chart5 = new CanvasJS.Chart("chartContainer5", {
                     theme: "light",
+                    colorSet: "customColor",
                     exportEnabled: true,
                     animationEnabled: true,
                     legend: {
@@ -203,7 +233,7 @@ while ($row = mysqli_fetch_array($result5)) {
                     },
                     data: [{
                         type: "doughnut",
-                        innerRadius: 65,
+                        innerRadius: 60,
                         radius:  "80%", 
                         showInLegend: true,
                         legendText: "{label} [{y}]",
@@ -218,23 +248,23 @@ while ($row = mysqli_fetch_array($result5)) {
         <div class="container">
             <div class="box">
                 <h3>SBN</h3>
-                <div id="chartContainer1" style="height: 350px; width: 350px;"></div>
+                <div id="chartContainer1" style="height: 300px; width: 340px;"></div>
             </div>
             <div class="box">
                 <h3>CEBU</h3>
-                <div id="chartContainer2" style="height: 350px; width: 350px;"></div>
+                <div id="chartContainer2" style="height: 300px; width: 340px;"></div>
             </div>
             <div class="box">
                 <h3>SUZHOU</h3>
-                <div id="chartContainer3" style="height: 350px; width: 350px;"></div>
+                <div id="chartContainer3" style="height: 300px; width: 340px;"></div>
             </div>
             <div class="box">
                 <h3>OSPI</h3>
-                <div id="chartContainer4" style="height: 350px; width: 350px;"></div>
+                <div id="chartContainer4" style="height: 300px; width: 340px;"></div>
             </div>
             <div class="box">
                 <h3>OSV</h3>
-                <div id="chartContainer5" style="height: 350px; width: 350px;"></div>
+                <div id="chartContainer5" style="height: 300px; width: 340px;"></div>
             </div>
         </div>
 

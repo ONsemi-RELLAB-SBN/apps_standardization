@@ -2877,7 +2877,7 @@ include '../class/get_parameter.php';
                                 </dialog>
                             </div>
                             <div class="three columns">
-                                <select id="ext_config_type" name="ext_config_type" style="width: 100%" ">
+                                <select id="ext_config_type" name="ext_config_type" style="width: 100%" onchange="updateView()">
                                     <?php echo getDropdown('032', ''); ?>
                                 </select>
                             </div>

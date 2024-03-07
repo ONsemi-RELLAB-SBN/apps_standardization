@@ -89,7 +89,7 @@ include '../template/form.php';
 
         <div id="005" class="tabcontent">
             <h5>Pie Chart</h5>
-            <iframe src="pie_chart.php" style="height:550px;width:100%;" title="Pie Chart"></iframe>
+            <iframe src="pie_chart.php" style="height:500px;width:100%;" title="Pie Chart"></iframe>
         </div>
 
         <div id="006" class="tabcontent">
