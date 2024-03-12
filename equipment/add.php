@@ -2987,16 +2987,16 @@ include '../class/get_parameter.php';
             function hasAllVisibleFilled() {
                 const visibleInputs = form.querySelectorAll('input:not([hidden]):not([disabled])');
                 const visibleSelects = form.querySelectorAll('select:not([hidden]):not([disabled])');
-//                return [...visibleSelects].every(input => input.value);
+
                 // Combine both inputs and selects into a single array
                 const allVisibleFields = [...visibleSelects];
 
                 // Filter out elements with display: none style
                 const actuallyVisibleFields = allVisibleFields.filter(field => {
-                    const style = window.getComputedStyle(field);
-                    return style.display !== 'none';
+                  const style = window.getComputedStyle(field);
+                  return style.display !== 'none';
                 });
-                
+
                 // Check if all remaining fields have a value
                 return actuallyVisibleFields.every(field => field.value);
             }
