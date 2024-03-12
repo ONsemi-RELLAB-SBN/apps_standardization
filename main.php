@@ -71,6 +71,7 @@ checkUser($username, 'main_view.php');
                         <li style="background-color: gray" title="Under Development" id="try1" > <a href="#">Design</a></li>
                         <li style="background-color: gray" title="Under Development" id="try2" > <a href="#">Process</a></li>
                         <li style="background-color: gray" title="Under Development" id="try3" > <a href="#">Elec Test</a></li>
+                        <li style="background-color: blueviolet" title="Dashboard"><a href="dashboard/list_graph.php">Dashboard</a></li>
                         <li style="background-color: blueviolet" title="Parameter"><a href="parameter/parameter.php">Parameter</a></li>
 <!--                        <li style="background-color: green"><a href="equipment/add.php">Equipment</a></li>
                         <li style="background-color: green"><a href="hardware/add.php">Hardware</a></li>

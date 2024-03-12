@@ -79,7 +79,7 @@ while ($row = mysqli_fetch_array($result5)) {
             }
 
             .box {
-                width: 320px;
+                width: 310px;
                 height: 370px;
                 margin: 10px 10px 50px;
                 border: 1px solid #ccc;
