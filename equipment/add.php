@@ -1058,6 +1058,9 @@ include '../class/get_parameter.php';
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
                                     
+                                    $("#int_config_type").val('031005');
+                                    $("#ext_config_type").val('032003');
+                                    
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
                                     cp_vr3.style.display = 'none';
@@ -1166,6 +1169,8 @@ include '../class/get_parameter.php';
                                     console.log("THU");
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
+                                    $("#int_config_type").val('031005');
+                                    $("#ext_config_type").val('032003');
                                     
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
@@ -1274,6 +1279,8 @@ include '../class/get_parameter.php';
                                 } else if (reltest.includes('008015')) {                        // MSL
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
+                                    $("#int_config_type").val('031005');
+                                    $("#ext_config_type").val('032003');
                                     
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
@@ -1383,6 +1390,8 @@ include '../class/get_parameter.php';
                                     console.log("RTHS");
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
+                                    $("#int_config_type").val('031005');
+                                    $("#ext_config_type").val('032003');
                                     
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
@@ -1491,6 +1500,8 @@ include '../class/get_parameter.php';
                                 } else if (reltest.includes('008021')) {                        // THS
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
+                                    $("#int_config_type").val('031005');
+                                    $("#ext_config_type").val('032003');
                                     
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
@@ -1600,6 +1611,8 @@ include '../class/get_parameter.php';
                                     console.log("HTHS");
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
+                                    $("#int_config_type").val('031005');
+                                    $("#ext_config_type").val('032003');
                                     
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
@@ -1708,6 +1721,8 @@ include '../class/get_parameter.php';
                                 } else if (reltest.includes('008011')) {                        // HTSL
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
+                                    $("#int_config_type").val('031005');
+                                    $("#ext_config_type").val('032003');
                                     
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
@@ -1817,6 +1832,8 @@ include '../class/get_parameter.php';
                                     console.log("LTSL");
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
+                                    $("#int_config_type").val('031005');
+                                    $("#ext_config_type").val('032003');
                                     
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
@@ -1925,6 +1942,8 @@ include '../class/get_parameter.php';
                                 } else if (reltest.includes('008019')) {                        // TC
                                     tab7.style.display = 'none';
                                     tab8.style.display = 'none';
+                                    $("#int_config_type").val('031005');
+                                    $("#ext_config_type").val('032003');
                                     
                                     cp_vr1.style.display = 'none';
                                     cp_vr2.style.display = 'none';
@@ -2968,7 +2987,18 @@ include '../class/get_parameter.php';
             function hasAllVisibleFilled() {
                 const visibleInputs = form.querySelectorAll('input:not([hidden]):not([disabled])');
                 const visibleSelects = form.querySelectorAll('select:not([hidden]):not([disabled])');
-                return [...visibleSelects].every(input => input.value);
+//                return [...visibleSelects].every(input => input.value);
+                // Combine both inputs and selects into a single array
+                const allVisibleFields = [...visibleSelects];
+
+                // Filter out elements with display: none style
+                const actuallyVisibleFields = allVisibleFields.filter(field => {
+                    const style = window.getComputedStyle(field);
+                    return style.display !== 'none';
+                });
+                
+                // Check if all remaining fields have a value
+                return actuallyVisibleFields.every(field => field.value);
             }
 
             function hasAllRequiredFilled() {
