@@ -113,29 +113,15 @@ while ($row = mysqli_fetch_array($result5)) {
         <script>
             window.onload = function () {
                 CanvasJS.addColorSet("customColor",
-                [//colorSet Array
-//                    "#0045a5",  // dark bluw
+                [
                     "#1691FF",  // light blue
                     "#1fe074",  // light green
-//                    "#FF6716",  // orange
                     "#9400d3",  // dark violet
                     "#FF7F50",  // orange
-//                    "#A569BD", //purple
                     "#4169e1",
                     "#ff0000",  // red
                     "#ff4500",  // orangish
                     "#ff66cc"   // pinkish
-                ]);
-                
-                CanvasJS.addColorSet("custom02",
-                [
-                   "#c70039", 
-                   "#ff5733", 
-                   "#ffc300", 
-                   "#add45c", 
-                   "#00baad", 
-                   "#511849", 
-                   "#900c3f" 
                 ]);
                 
                 var chart = new CanvasJS.Chart("chartContainer1", {
@@ -151,7 +137,7 @@ while ($row = mysqli_fetch_array($result5)) {
                     data: [{
                         type: "doughnut",
                         innerRadius: 60,
-                        radius:  "80%",
+                        radius:  "90%",
                         showInLegend: true,
                         legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_sbn, JSON_NUMERIC_CHECK); ?>
@@ -172,7 +158,7 @@ while ($row = mysqli_fetch_array($result5)) {
                     data: [{
                         type: "doughnut",
                         innerRadius: 60,
-                        radius:  "80%",
+                        radius:  "90%",
                         showInLegend: true,
                         legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_cebu, JSON_NUMERIC_CHECK); ?>
@@ -193,7 +179,7 @@ while ($row = mysqli_fetch_array($result5)) {
                     data: [{
                         type: "doughnut",
                         innerRadius: 60,
-                        radius:  "80%",
+                        radius:  "90%",
                         showInLegend: true,
                         legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_suz, JSON_NUMERIC_CHECK); ?>
@@ -214,7 +200,7 @@ while ($row = mysqli_fetch_array($result5)) {
                     data: [{
                         type: "doughnut",
                         innerRadius: 60,
-                        radius:  "80%",
+                        radius:  "90%",
                         showInLegend: true,
                         legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_ospi, JSON_NUMERIC_CHECK); ?>
@@ -235,7 +221,7 @@ while ($row = mysqli_fetch_array($result5)) {
                     data: [{
                         type: "doughnut",
                         innerRadius: 60,
-                        radius:  "80%", 
+                        radius:  "90%", 
                         showInLegend: true,
                         legendText: "{label} [{y}]",
                         dataPoints: <?php echo json_encode($data_osv, JSON_NUMERIC_CHECK); ?>

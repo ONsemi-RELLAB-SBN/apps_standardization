@@ -97,7 +97,7 @@ while ($row = mysqli_fetch_array($result7)) {
         <script>
             window.onload = function () {
 
-                var totalVisitors = 599;
+                var totalVisitors = 807;
                 var visitorsData = {
                     "Standardization Platform": [{
                             click: visitorsChartDrilldownHandler,
@@ -111,10 +111,10 @@ while ($row = mysqli_fetch_array($result7)) {
                             startAngle: 90,
                             type: "doughnut",
                             dataPoints: [
-                                {y: 512, name: "Equipment", color: "#E7823A"},
-                                {y: 11, name: "Hardware", color: "purple"},
-                                {y: 3, name: "DAQ", color: "blue"},
-                                {y: 73, name: "Power Supply", color: "green"},
+                                {y: 571, name: "Equipment", color: "#E7823A"},
+                                {y: 377, name: "Hardware", color: "purple"},
+                                {y: 4, name: "DAQ", color: "blue"},
+                                {y: 148, name: "Power Supply", color: "green"},
                                 {y: 0, name: "Design", color: "yellow"},
                                 {y: 0, name: "Process", color: "silver"},
                                 {y: 0, name: "Electrical Test", color: "#546BC1"}
