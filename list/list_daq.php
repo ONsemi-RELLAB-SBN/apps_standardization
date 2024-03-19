@@ -15,6 +15,7 @@
         <?php 
         include '../template/list.php';
         include '../template/form.php';
+//        include '../template/menu.php';
         ?>
 
         <style>
