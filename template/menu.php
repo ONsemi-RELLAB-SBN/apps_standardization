@@ -50,32 +50,32 @@
                                 <li class="go-back"><a href="#0">Menu</a></li>
                                 <li class="see-all"><a href="http://codyhouse.co/?p=748">Browse Services</a></li>
                                 <li>
-                                    <a class="cd-dropdown-item item-1" href="http://codyhouse.co/?p=748">
-                                        <h3>Service #1</h3>
+                                    <a class="cd-dropdown-item menu_home" href="../main.php">
+                                        <h3>Home</h3>
                                         <p>This is the item description</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="cd-dropdown-item item-2" href="http://codyhouse.co/?p=748">
-                                        <h3>Service #2</h3>
+                                    <a class="cd-dropdown-item menu_eq" href="../list/list_equipment.php">
+                                        <h3>Equipment</h3>
                                         <p>This is the item description</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="cd-dropdown-item item-3" href="http://codyhouse.co/?p=748">
-                                        <h3>Service #3</h3>
+                                    <a class="cd-dropdown-item menu_hw" href="../list/list_hardware.php">
+                                        <h3>Hardware</h3>
                                         <p>This is the item description</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="cd-dropdown-item item-4" href="http://codyhouse.co/?p=748">
-                                        <h3>Service #4</h3>
+                                    <a class="cd-dropdown-item menu_daq" href="../list/list_daq.php">
+                                        <h3>DAQ</h3>
                                         <p>This is the item description</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="cd-dropdown-item item-5" href="http://codyhouse.co/?p=748">
-                                        <h3>Service #5</h3>
+                                    <a class="cd-dropdown-item menu_ps" href="../list/list_powersupply.php">
+                                        <h3>Power Supply</h3>
                                         <p>This is the item description</p>
                                     </a>
                                 </li>
@@ -127,6 +127,11 @@
                         <li class="cd-divider">&nbsp;</li>
 
                         <li><a href="http://codyhouse.co/?p=748">Page 1</a></li>
+                        <li><a href="../list/list_equipment.php">       <i class='bx bx-wrench bx-fw' style='color:#000000' ></i>Equipment</a></li>
+                        <li><a href="../list/list_hardware.php">        <i class='bx bxl-steam bx-fw' style='color:#000000' ></i>Hardware</a></li>
+                        <li><a href="../list/list_daq.php">             <i class='bx bx-desktop bx-fw' style='color:#000000' ></i>DAQ</a></li>
+                        <li><a href="../list/list_power_supply.php">    <i class='bx bxs-battery-charging bx-fw' style='color:#000000'></i>Power Supply</a></li>
+                        <li><a href="../design/add.php">      <i class='bx bxl-blender bx-fw' style='color:#000000'></i>Design</a></li>
                         <li><a href="http://codyhouse.co/?p=748">Page 2</a></li>
                         <li><a href="http://codyhouse.co/?p=748">Page 3</a></li>
                     </ul> <!-- .cd-dropdown-content -->
