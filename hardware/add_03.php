@@ -91,10 +91,6 @@ include '../class/get_parameter.php';
                     </div>
                 </div>
 
-                <script>
-                    
-                </script>
-
                 <div class="tab-content" id="tabRating">
                     <div class="row">
                         <div class="two columns"><label for="temperature">Temperature, °C</label></div>
@@ -171,7 +167,11 @@ include '../class/get_parameter.php';
                 <div class="tab-content" id="tabPth">
                     <div class="row">
                         <div class="two columns"><label for="traceInternal">Traces placed in internal layers only</label></div>
-                        <div class="three columns"><input type="text" id="traceInternal" name="traceInternal" value="" > </div>
+                        <div class="three columns">
+                            <select id="traceInternal" name="traceInternal" style="width: 100%">
+                                <?php echo getDropdown('020', ''); ?>
+                            </select>
+                        </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="finalThickness">Final Copper Thickness, oz.</label></div>
                         <div class="three columns"><input type="text" id="finalThickness" name="finalThickness" value="" > </div>
@@ -190,7 +190,11 @@ include '../class/get_parameter.php';
                         <div class="three columns"><input type="text" id="platedDrill" name="platedDrill" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="impedance">Impedance controlled traces?</label></div>
-                        <div class="three columns"><input type="text" id="impedance" name="impedance" value="" > </div>
+                        <div class="three columns">
+                            <select id="impedance" name="impedance" style="width: 100%">
+                                <?php echo getDropdown('020', ''); ?>
+                            </select>
+                        </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                 </div>
@@ -201,12 +205,20 @@ include '../class/get_parameter.php';
                         <div class="three columns"><input type="text" id="frameChasis" name="frameChasis" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="frameScrew">Board Frame/Chassis > No protruding screw tips</label></div>
-                        <div class="three columns"><input type="text" id="frameScrew" name="frameScrew" value="" > </div>
+                        <div class="three columns">
+                            <select id="frameScrew" name="frameScrew" style="width: 100%">
+                                <?php echo getDropdown('020', ''); ?>
+                            </select>
+                        </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="frameHandle">Board Frame/Chassis > Handle</label></div>
-                        <div class="three columns"><input type="text" id="frameHandle" name="frameHandle" value="" > </div>
+                        <div class="three columns">
+                            <select id="frameHandle" name="frameHandle" style="width: 100%">
+                                <?php echo getDropdown('020', ''); ?>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
@@ -458,13 +470,13 @@ include '../class/get_parameter.php';
                         <div class="eleven columns"><label for="r1" style="text-align: left">Verify if the total device current rating is lower than the hardware rating.</label></div>
                     </div>
                     <div class="row">
-                        <div class="four columns"><input type="text" id="r1" name="r1" value="" placeholder="Eg: TBD for the OPN to be run"> </div>
+                        <div class="seven columns"><input type="text" id="r1" name="r1" value="" placeholder="Eg: TBD for the OPN to be run"> </div>
                     </div>
                     <div class="row">
                         <div class="eleven columns"><label for="r2" style="text-align: left">Check components and interconnect wires in schematic vs actual hardware design.</label></div>
                     </div>
                     <div class="row">
-                        <div class="four columns"><input type="text" id="r2" name="r2" value="" placeholder="Eg: TBD for the OPN to be run" > </div>
+                        <div class="seven columns"><input type="text" id="r2" name="r2" value="" placeholder="Eg: TBD for the OPN to be run" > </div>
                     </div>
                     <div class="row">
                         <div class="eleven columns"><label for="r3" style="text-align: left">Check temperature rating (consider derating factor)
@@ -475,19 +487,19 @@ include '../class/get_parameter.php';
                         </div>
                     </div>
                     <div class="row">
-                        <div class="four columns"><input type="text" id="r3" name="r3" value="" placeholder="Eg: TBD for the OPN to be run" > </div>
+                        <div class="seven columns"><input type="text" id="r3" name="r3" value="" placeholder="Eg: TBD for the OPN to be run" > </div>
                     </div>
                     <div class="row">
                         <div class="eleven columns"><label for="r4" style="text-align: left">Check socket fit tightness after x hrs. Socket should not fall off.</label></div>
                     </div>
                     <div class="row">
-                        <div class="four columns"><input type="text" id="r4" name="r4" value="" placeholder="Eg: TBD for the OPN to be run" > </div>
+                        <div class="seven columns"><input type="text" id="r4" name="r4" value="" placeholder="Eg: TBD for the OPN to be run" > </div>
                     </div>
                     <div class="row">
                         <div class="eleven columns"><label for="r5" style="text-align: left">Socket selection. Socket should be open top so that ISG device won’t be damaged. Socket should consider fitting of the heatsink if required.</label></div>
                     </div>
                     <div class="row">
-                        <div class="four columns"><input type="text" id="r5" name="r5" value="" placeholder="Eg: TBD for the OPN to be run" > </div>
+                        <div class="seven columns"><input type="text" id="r5" name="r5" value="" placeholder="Eg: TBD for the OPN to be run" > </div>
                     </div>
                     <div class="row">
                         <div class="eleven columns"><label for="r6" style="text-align: left">If heatsink/load card/flexible wiring is required:
@@ -499,7 +511,7 @@ include '../class/get_parameter.php';
                         </div>
                     </div>
                     <div class="row">
-                        <div class="four columns"><input type="text" id="r6" name="r6" value="" placeholder="Eg: Review chamber slot to slot height " > </div>
+                        <div class="seven columns"><input type="text" id="r6" name="r6" value="" placeholder="Eg: Review chamber slot to slot height " > </div>
                     </div>
                 </div>
 
@@ -906,84 +918,83 @@ include '../class/get_parameter.php';
                     return [...requiredInputs, ...requiredSelects].every(input => input.value);
                 }
 
-                form.addEventListener('input', () => {
-                    if (hasAllRequiredFilled()) {
-                        if (hasAllVisibleFilled()) {
-                            console.log("KAT SINI ADA SAVE BUTTON");
-                            saveButton.style.display = 'block';
-                            draftButton.style.display = 'none';
-                        } else {
-                            console.log("SINI DAH DRAFT SAHAJA");
-                            draftButton.style.display = 'block';
-                            saveButton.style.display = 'none';
-                        }
-                    } else {
-                        console.log("SILA ISI MAKLUMAT");
-                        draftButton.style.display = 'none';
-                        saveButton.style.display = 'none';
-                    }
-                });
-                
+                /*
+                 form.addEventListener('input', () => {
+                 if (hasAllRequiredFilled()) {
+                 if (hasAllVisibleFilled()) {
+                 console.log("KAT SINI ADA SAVE BUTTON");
+                 saveButton.style.display = 'block';
+                 draftButton.style.display = 'none';
+                 } else {
+                 console.log("SINI DAH DRAFT SAHAJA");
+                 draftButton.style.display = 'block';
+                 saveButton.style.display = 'none';
+                 }
+                 } else {
+                 console.log("SILA ISI MAKLUMAT");
+                 draftButton.style.display = 'none';
+                 saveButton.style.display = 'none';
+                 }
+                 });
+                 */
+
                 function updateSubDropdown() {
-//                    var category = document.getElementById('category').value;
-//                    var subCategory = document.getElementById('sub_category');
-//                    subCategory.disabled = false; // Enable sub-dropdown initially
-//
-//                    subCategory.innerHTML = ""; // Clear existing options
-//
-//                    if (category === "Dedicated") {
-//                        var options = ["internal", "external"];
-//                    } else if (category === "Universal") {
-//                        var options = ["malaysia", "singapore", "indonesia"];
-//                    } else {
-//                        subCategory.disabled = true; // Disable sub-dropdown if no category selected
-//                        return;
-//                    }
-//
-//                    console.log("category >> " + category);
-//
-//                    for (var i = 0; i < options.length; i++) {
-//                        var option = document.createElement("option");
-//                        option.value = options[i];
-//                        option.text = options[i];
-//                        subCategory.appendChild(option);
-//                    }
-                    
-                    const categorySelect = document.getElementById('category');
-                    const subDropdownDiv = document.getElementById('sub_category');
+                    console.log("MASUK BAWAH");
+                    var newTransferDropdown = document.getElementById('category');
+                    var toField = document.getElementById('sub_category');
 
-                    categorySelect.addEventListener('change', function() {
-                        const selectedCategory = this.value;
-                        subDropdownDiv.innerHTML = ""; // Clear previous options
+                    toField.readOnly = true;
+                    toField.style.display = 'none';
 
-                        if (selectedCategory === "045001") {
-                            const options = ["Internal", "External"];
-                            createSubDropdown(options);
-                            console.log("masuk 1");
-                        } else if (selectedCategory === "045002") {
-                            const options = ["Malaysia", "Singapore", "Indonesia"];
-                            createSubDropdown(options);
-                            console.log("masuk 2");
-                        } else {
-                            const options = ["N/A"];
-                            console.log("masuk 44");
+                    // AJAX request to load data
+                    var selectedValue = newTransferDropdown.value;
+                    var targetCode = "";
+
+                    if (selectedValue === "045001") {
+                        targetCode = "021";
+                        console.log("045001 >> ");
+                        toField.readOnly = false;
+                        toField.style.display = 'block';
+                    } else if (selectedValue === "045002") {
+                        targetCode = "023";
+                        console.log("045002 +++ ");
+                        toField.readOnly = false;
+                        toField.style.display = 'block';
+                    } else {
+                        console.log("SINI MASUK YANG LAIN2 da 045 code");
+                    }
+
+                    // Use AJAX to fetch sub-category data based on targetCode
+                    var url = "../class/get_parameter.php"; // Replace with your script URL
+                    $.ajax({
+                        url: url,
+                        type: "POST",
+                        data: {targetCode: targetCode}, // Send target code to server script
+                        success: function (data) {
+                            // Clear existing options
+                            toField.innerHTML = "";
+
+                            // Parse the data (assuming JSON format)
+                            var options = JSON.parse(data);
+
+                            // Create and append new options
+                            options.forEach(function (option) {
+                                var optionElement = document.createElement("option");
+                                optionElement.value = option.value;
+                                optionElement.text = option.text;
+                                toField.appendChild(optionElement);
+                            });
+
+                            // Enable and show the sub-category dropdown
+                            toField.disabled = false;
+                            toField.style.display = 'block';
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            console.error("Error fetching data:", textStatus, errorThrown);
+                            // Handle errors (e.g., display an error message)
                         }
-                        console.log("selectedCategory >>> " + selectedCategory);
                     });
 
-                    function createSubDropdown(options) {
-                        const select = document.createElement('select');
-                        select.name = "sub_category";
-
-                        options.forEach(option => {
-                            const optionElement = document.createElement('option');
-                            optionElement.value = option;
-                            optionElement.text = option;
-                            select.appendChild(optionElement);
-                        });
-
-                        subDropdownDiv.appendChild(select);
-                    }
                 }
         </script>
     </body>
