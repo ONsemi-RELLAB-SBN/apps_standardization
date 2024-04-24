@@ -226,7 +226,7 @@ include '../class/get_parameter.php';
                     <div class="row">
                         <label for="component" style="text-align: left">List components vs part number vs ratings</label>
                         <textarea id="component" name="component" rows="7" cols="100" placeholder="Turret Terminal Pin: 6821-0-00-15-00-00-08-0
-                                  Temp rating: melting point 1000C"></textarea>
+Temp rating: melting point 1000C"></textarea>
                     </div>
                 </div>
 
@@ -948,52 +948,111 @@ include '../class/get_parameter.php';
 
                     // AJAX request to load data
                     var selectedValue = newTransferDropdown.value;
-                    var targetCode = "";
+//                    var targetCode = "";
 
                     if (selectedValue === "045001") {
-                        targetCode = "021";
+//                        targetCode = "021";
                         console.log("045001 >> ");
                         toField.readOnly = false;
                         toField.style.display = 'block';
                     } else if (selectedValue === "045002") {
-                        targetCode = "023";
+//                        targetCode = "023";
                         console.log("045002 +++ ");
                         toField.readOnly = false;
                         toField.style.display = 'block';
                     } else {
                         console.log("SINI MASUK YANG LAIN2 da 045 code");
                     }
+                    
+                    var subjectObject = {
+                        "Front-end": {
+                          "HTML": ["Links", "Images", "Tables", "Lists"],
+                          "CSS": ["Borders", "Margins", "Backgrounds", "Float"],
+                          "JavaScript": ["Variables", "Operators", "Functions", "Conditions"]    
+                        },
+                        "042001": {
+                          "HTML": [],
+                          "CSS": [],
+                          "JavaScript": []
+                        },
+                        "Back-end": {
+                          "PHP": ["Variables", "Strings", "Arrays"],
+                          "SQL": ["SELECT", "UPDATE", "DELETE"]
+                        }
+                    };
+                      
+                    window.onload = function() {
+                        var subjectSel = document.getElementById("subject");
+                        var topicSel = document.getElementById("topic");
+                        var chapterSel = document.getElementById("chapter");
+                        for (var x in subjectObject) {
+                          subjectSel.options[subjectSel.options.length] = new Option(x, x);
+                        }
+                        subjectSel.onchange = function() {
+                          //empty Chapters- and Topics- dropdowns
+                          chapterSel.length = 1;
+                          topicSel.length = 1;
+                          //display correct values
+                          for (var y in subjectObject[this.value]) {
+                            topicSel.options[topicSel.options.length] = new Option(y, y);
+                          }
+                        }
+                        topicSel.onchange = function() {
+                          //empty Chapters dropdown
+                          chapterSel.length = 1;
+                          //display correct values
+                          var z = subjectObject[subjectSel.value][this.value];
+                          for (var i = 0; i < z.length; i++) {
+                            chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+                          }
+                        }
+                    }
+                    
+//                    $('#category').on('change', function() {
+//                        var cat = this.value;
+//                        $.ajax({
+//                            url: "../class/get_parameter.php",
+//                            type: "POST",
+//                            data: {
+//                                cat: cat
+//                            },
+//                            cache: false,
+//                            success: function getDropdown(result){
+//                                $("#sub_category").html(result);
+//                            }
+//                        });
+//                    });
 
                     // Use AJAX to fetch sub-category data based on targetCode
-                    var url = "../class/get_parameter.php"; // Replace with your script URL
-                    $.ajax({
-                        url: url,
-                        type: "POST",
-                        data: {targetCode: targetCode}, // Send target code to server script
-                        success: function (data) {
-                            // Clear existing options
-                            toField.innerHTML = "";
-
-                            // Parse the data (assuming JSON format)
-                            var options = JSON.parse(data);
-
-                            // Create and append new options
-                            options.forEach(function (option) {
-                                var optionElement = document.createElement("option");
-                                optionElement.value = option.value;
-                                optionElement.text = option.text;
-                                toField.appendChild(optionElement);
-                            });
-
-                            // Enable and show the sub-category dropdown
-                            toField.disabled = false;
-                            toField.style.display = 'block';
-                        },
-                        error: function (jqXHR, textStatus, errorThrown) {
-                            console.error("Error fetching data:", textStatus, errorThrown);
-                            // Handle errors (e.g., display an error message)
-                        }
-                    });
+//                    var url = "../class/get_parameter.php"; // Replace with your script URL
+//                    $.ajax({
+//                        url: url,
+//                        type: "POST",
+//                        data: {targetCode: targetCode}, // Send target code to server script
+//                        success: function (data) {
+//                            // Clear existing options
+//                            toField.innerHTML = "";
+//
+//                            // Parse the data (assuming JSON format)
+//                            var options = JSON.parse(data);
+//
+//                            // Create and append new options
+//                            options.forEach(function (option) {
+//                                var optionElement = document.createElement("option");
+//                                optionElement.value = option.value;
+//                                optionElement.text = option.text;
+//                                toField.appendChild(optionElement);
+//                            });
+//
+//                            // Enable and show the sub-category dropdown
+//                            toField.disabled = false;
+//                            toField.style.display = 'block';
+//                        },
+//                        error: function (jqXHR, textStatus, errorThrown) {
+//                            console.error("Error fetching data:", textStatus, errorThrown);
+//                            // Handle errors (e.g., display an error message)
+//                        }
+//                    });
 
                 }
         </script>
