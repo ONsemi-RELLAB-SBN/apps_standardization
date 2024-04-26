@@ -123,6 +123,7 @@ function getCode($value, $code, $username) {
 function getDropdown($code, $value) {
     include 'db.php';
     $conn = new mysqli($host, $user, $pass, $db);
+    echo 'masuk dekat functoipn sini';
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
@@ -197,3 +198,91 @@ function getDataList($code, $value) {
     $conn->close();
     return $data;
 }
+
+/* GET DROPDOWN WITH SUB START */
+include "../class/db.php";
+
+if (isset($_POST['getSubCategory']) == "getSubCategory") {
+    $countryId = $_POST['catId'];
+    $common = new Common();
+    $states = $common->getSubCategory($con, $countryId);
+    $stateData = '<option value="">Please select categeory</option>';
+    if ($states->num_rows > 0) {
+        while ($state = $states->fetch_object()) {
+            $stateData .= '<option value="' . $state->name . '">' . $state->name . '</option>';
+        }
+    }
+    echo "test^" . $stateData;
+}
+if (isset($_POST['getStateByCountry']) == "getStateByCountry") {
+    $countryId = $_POST['countryId'];
+    $common = new Common();
+    $states = $common->getSubCategory($con, $countryId);
+    $stateData = '<option value="">State</option>';
+    if ($states->num_rows > 0) {
+        while ($state = $states->fetch_object()) {
+            $stateData .= '<option value="' . $state->code . '">' . $state->name . '</option>';
+        }
+    }
+    echo "test^" . $stateData;
+}
+if (isset($_POST['getStateByCountry']) == "getStateByCountry") {
+    $countryId = $_POST['countryId'];
+    $common = new Common();
+    $states = $common->getStateByCountry($con, $countryId);
+    $stateData = '<option value="">State</option>';
+    if ($states->num_rows > 0) {
+        while ($state = $states->fetch_object()) {
+            $stateData .= '<option value="' . $state->code . '">' . $state->name . '</option>';
+        }
+    }
+    echo "test^" . $stateData;
+}
+if (isset($_POST['getCityByState']) == "getCityByState") {
+    $stateId = $_POST['stateId'];
+    $common = new Common();
+    $cities = $common->getCityByState($con, $stateId);
+    $cityData = '<option value="">City</option>';
+    if ($cities->num_rows > 0) {
+        while ($city = $cities->fetch_object()) {
+            $cityData .= '<option value="' . $city->code . '">' . $city->name . '</option>';
+        }
+    }
+    echo "test^" . $cityData;
+}
+
+class Common {
+    
+    public function getSubCategory($con, $catId) {
+        $query = "";
+        if ($catId == "045001") {
+            $query = "SELECT * FROM gest_parameter_detail WHERE master_code = '048'";
+        } else if ($catId == "045002") {
+            $query = "SELECT * FROM gest_parameter_detail WHERE master_code = '049'";
+        } else {
+            $query = "SELECT * FROM gest_parameter_detail WHERE master_code = '1049'";
+        }
+        $result = $con->query($query) or die("Error in  Query" . $con->error);
+        return $result;
+    }
+
+    public function getCountry($con) {
+        $mainQuery = "SELECT * FROM gest_parameter_detail WHERE master_code = '045'";
+        $result1 = $con->query($mainQuery) or die("Error in main Query" . $con->error);
+        return $result1;
+    }
+
+    public function getStateByCountry($con, $countryId) {
+        $query = "SELECT * FROM gest_parameter_detail WHERE master_code = '020'";
+        $result = $con->query($query) or die("Error in  Query" . $con->error);
+        return $result;
+    }
+
+    public function getCityByState($con, $stateId) {
+        $query = "SELECT * FROM gest_parameter_detail WHERE master_code = '030'";
+        $result = $con->query($query) or die("Error in  Query" . $con->error);
+        return $result;
+    }
+
+}
+/* GET DROPDOWN WITH SUB END */

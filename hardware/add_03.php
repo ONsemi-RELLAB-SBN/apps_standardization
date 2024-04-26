@@ -12,6 +12,11 @@ include '../class/get_parameter.php';
 <html lang="en" class="no-js">
     <head>
         <link rel="stylesheet" href="accordian.css"/>
+        <style>
+            .cascade {
+                display: none;
+            }
+        </style>
     </head>
     <body>
         <form id="add_hardware_form" role="form" action="../crud/crud_add_hardware.php" method="get">
@@ -77,27 +82,34 @@ include '../class/get_parameter.php';
                     <div class="row">
                         <div class="two columns"><label for="category">Category</label></div>
                         <div class="three columns">
-                            <select id="category" name="category" style="width: 100%" required onchange="updateSubDropdown()">
+                            <select id="catId" name="category" style="width: 100%" onchange="getSubCategory();">
                                 <?php echo getDropdown('045', ''); ?>
                             </select>
                         </div>
-                        <div class="one columns">&nbsp;</div>
+                    </div> 
+                    <div class="row">
                         <div class="two columns"><label for="sub_category">&nbsp;</label></div>
-                        <div class="three columns" id="sub-dropdown">
-                            <select name="sub_category" id="sub_category" disabled>
-                                <option value="">Select Sub Category</option>
-                            </select></div>
-                        <div class="one columns">&nbsp;</div>
-                    </div>
+                        <div class="three columns">
+                            <select class="form-control" name="sub_category" id="subId">
+                                <option value="">Please select category</option>
+                            </select>
+<!--                            <input type="text" list="cat_list" autocomplete="off" id="subId" name="sub_category" required>
+                            <datalist id="cat_list">
+                                <option value="">Please select category</option>
+                            <?php // echo getDataList('026', ''); ?>
+                            </datalist>-->
+                        </div>
+                        <div class="one columns">&nbsp;</div>   
+                    </div> 
                 </div>
 
                 <div class="tab-content" id="tabRating">
                     <div class="row">
                         <div class="two columns"><label for="temperature">Temperature, °C</label></div>
-                        <div class="three columns"><input type="text" id="temperature" name="temperature" value="" > </div>
+                        <div class="three columns"><input type="text" id="temperature" name="temperature" value="" placeholder="200 &#8451;"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="humidity">Humidity, %</label></div>
-                        <div class="three columns"><input type="text" id="humidity" name="humidity" value="" > </div>
+                        <div class="three columns"><input type="text" id="humidity" name="humidity" value="" placeholder="85 &#37"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
@@ -918,141 +930,51 @@ Temp rating: melting point 1000C"></textarea>
                     return [...requiredInputs, ...requiredSelects].every(input => input.value);
                 }
 
-                /*
-                 form.addEventListener('input', () => {
-                 if (hasAllRequiredFilled()) {
-                 if (hasAllVisibleFilled()) {
-                 console.log("KAT SINI ADA SAVE BUTTON");
-                 saveButton.style.display = 'block';
-                 draftButton.style.display = 'none';
-                 } else {
-                 console.log("SINI DAH DRAFT SAHAJA");
-                 draftButton.style.display = 'block';
-                 saveButton.style.display = 'none';
-                 }
-                 } else {
-                 console.log("SILA ISI MAKLUMAT");
-                 draftButton.style.display = 'none';
-                 saveButton.style.display = 'none';
-                 }
-                 });
-                 */
+                form.addEventListener('input', () => {
+                    if (hasAllRequiredFilled()) {
+                        if (hasAllVisibleFilled()) {
+                            console.log("KAT SINI ADA SAVE BUTTON");
+                            saveButton.style.display = 'block';
+                            draftButton.style.display = 'none';
+                        } else {
+                            console.log("SINI DAH DRAFT SAHAJA");
+                            draftButton.style.display = 'block';
+                            saveButton.style.display = 'none';
+                        }
+                    } else {
+                        console.log("SILA ISI MAKLUMAT");
+                        draftButton.style.display = 'none';
+                        saveButton.style.display = 'none';
+                    }
+                });
+                
+                function getSubCategory() {
+                    var catId = $("#catId").val();
+                    $.post("../class/get_parameter.php", {getSubCategory: 'getSubCategory', catId: catId}, function (response) {
+                        var data = response.split('^');
+                        $("#subId").html(data[1]);
+                    });
 
-                function updateSubDropdown() {
-                    console.log("MASUK BAWAH");
-                    var newTransferDropdown = document.getElementById('category');
-                    var toField = document.getElementById('sub_category');
+                    var newTransferDropdown = document.getElementById('catId');
+                    var toField = document.getElementById('subId');
 
                     toField.readOnly = true;
                     toField.style.display = 'none';
 
                     // AJAX request to load data
                     var selectedValue = newTransferDropdown.value;
-//                    var targetCode = "";
 
                     if (selectedValue === "045001") {
-//                        targetCode = "021";
                         console.log("045001 >> ");
                         toField.readOnly = false;
                         toField.style.display = 'block';
                     } else if (selectedValue === "045002") {
-//                        targetCode = "023";
                         console.log("045002 +++ ");
                         toField.readOnly = false;
                         toField.style.display = 'block';
                     } else {
                         console.log("SINI MASUK YANG LAIN2 da 045 code");
                     }
-                    
-                    var subjectObject = {
-                        "Front-end": {
-                          "HTML": ["Links", "Images", "Tables", "Lists"],
-                          "CSS": ["Borders", "Margins", "Backgrounds", "Float"],
-                          "JavaScript": ["Variables", "Operators", "Functions", "Conditions"]    
-                        },
-                        "042001": {
-                          "HTML": [],
-                          "CSS": [],
-                          "JavaScript": []
-                        },
-                        "Back-end": {
-                          "PHP": ["Variables", "Strings", "Arrays"],
-                          "SQL": ["SELECT", "UPDATE", "DELETE"]
-                        }
-                    };
-                      
-                    window.onload = function() {
-                        var subjectSel = document.getElementById("subject");
-                        var topicSel = document.getElementById("topic");
-                        var chapterSel = document.getElementById("chapter");
-                        for (var x in subjectObject) {
-                          subjectSel.options[subjectSel.options.length] = new Option(x, x);
-                        }
-                        subjectSel.onchange = function() {
-                          //empty Chapters- and Topics- dropdowns
-                          chapterSel.length = 1;
-                          topicSel.length = 1;
-                          //display correct values
-                          for (var y in subjectObject[this.value]) {
-                            topicSel.options[topicSel.options.length] = new Option(y, y);
-                          }
-                        }
-                        topicSel.onchange = function() {
-                          //empty Chapters dropdown
-                          chapterSel.length = 1;
-                          //display correct values
-                          var z = subjectObject[subjectSel.value][this.value];
-                          for (var i = 0; i < z.length; i++) {
-                            chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-                          }
-                        }
-                    }
-                    
-//                    $('#category').on('change', function() {
-//                        var cat = this.value;
-//                        $.ajax({
-//                            url: "../class/get_parameter.php",
-//                            type: "POST",
-//                            data: {
-//                                cat: cat
-//                            },
-//                            cache: false,
-//                            success: function getDropdown(result){
-//                                $("#sub_category").html(result);
-//                            }
-//                        });
-//                    });
-
-                    // Use AJAX to fetch sub-category data based on targetCode
-//                    var url = "../class/get_parameter.php"; // Replace with your script URL
-//                    $.ajax({
-//                        url: url,
-//                        type: "POST",
-//                        data: {targetCode: targetCode}, // Send target code to server script
-//                        success: function (data) {
-//                            // Clear existing options
-//                            toField.innerHTML = "";
-//
-//                            // Parse the data (assuming JSON format)
-//                            var options = JSON.parse(data);
-//
-//                            // Create and append new options
-//                            options.forEach(function (option) {
-//                                var optionElement = document.createElement("option");
-//                                optionElement.value = option.value;
-//                                optionElement.text = option.text;
-//                                toField.appendChild(optionElement);
-//                            });
-//
-//                            // Enable and show the sub-category dropdown
-//                            toField.disabled = false;
-//                            toField.style.display = 'block';
-//                        },
-//                        error: function (jqXHR, textStatus, errorThrown) {
-//                            console.error("Error fetching data:", textStatus, errorThrown);
-//                            // Handle errors (e.g., display an error message)
-//                        }
-//                    });
 
                 }
         </script>
