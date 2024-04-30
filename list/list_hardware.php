@@ -253,6 +253,7 @@
             <div class="row">&nbsp;</div>
             <button onclick="location.href = '../hardware/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Hardware</button>
             <button onclick="location.href = '../xlsm/upload_hardware.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
+            <button onclick="location.href = '../hardware/add_03.php'" type="button" id="newModule" style="background-color: #e7e7e7"><i class='bx bx-universal-access'></i> New Module</button>
             <button onclick="location.href = '../template/template_hardware.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
         </div>
     </body>

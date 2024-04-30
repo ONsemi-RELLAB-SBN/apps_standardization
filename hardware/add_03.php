@@ -19,7 +19,7 @@ include '../class/get_parameter.php';
         </style>
     </head>
     <body>
-        <form id="add_hardware_form" role="form" action="../crud/crud_add_hardware.php" method="get">
+        <form id="add_hardware_form" role="form" action="../crud/crud_add_hardware_new.php" method="get">
 
             <div id="main-page">
                 <div class="twelve columns">&nbsp;</div>
@@ -93,11 +93,6 @@ include '../class/get_parameter.php';
                             <select class="form-control" name="sub_category" id="subId">
                                 <option value="">Please select category</option>
                             </select>
-<!--                            <input type="text" list="cat_list" autocomplete="off" id="subId" name="sub_category" required>
-                            <datalist id="cat_list">
-                                <option value="">Please select category</option>
-                            <?php // echo getDataList('026', ''); ?>
-                            </datalist>-->
                         </div>
                         <div class="one columns">&nbsp;</div>   
                     </div> 
@@ -124,82 +119,82 @@ include '../class/get_parameter.php';
 
                 <div class="tab-content" id="tabPcb">
                     <div class="row">
-                        <div class="two columns"><label for="pcbMaterial">PCB Material</label></div>
-                        <div class="three columns"><input type="text" id="pcbMaterial" name="pcbMaterial" value="" > </div>
+                        <div class="two columns"><label for="pcb_material">PCB Material</label></div>
+                        <div class="three columns"><input type="text" id="pcb_material" name="pcb_material" value="" > </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="pcbMaterial2">PCB Material Tg, °C</label></div>
-                        <div class="three columns"><input type="text" id="pcbMaterial2" name="pcbMaterial2" value="" > </div>
-                        <div class="one columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="pcbMoisture">PCB Material Moisture Absorption, %</label></div>
-                        <div class="three columns"><input type="text" id="pcbMoisture" name="pcbMoisture" value="" > </div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="edgeCopper">Edge-to nearest copper distance</label></div>
-                        <div class="three columns"><input type="text" id="edgeCopper" name="edgeCopper" value="" > </div>
+                        <div class="two columns"><label for="pcb_material2">PCB Material Tg, °C</label></div>
+                        <div class="three columns"><input type="text" id="pcb_material2" name="pcb_material2" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="pcbThickness">PCB thickness</label></div>
-                        <div class="three columns"><input type="text" id="pcbThickness" name="pcbThickness" value="" > </div>
+                        <div class="two columns"><label for="pcb_moisture">PCB Material Moisture Absorption, %</label></div>
+                        <div class="three columns"><input type="text" id="pcb_moisture" name="pcb_moisture" value="" > </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="edgeChamfered">Board Edges should be chamfered</label></div>
-                        <div class="three columns"><input type="text" id="edgeChamfered" name="edgeChamfered" value="" > </div>
+                        <div class="two columns"><label for="edge_copper">Edge-to nearest copper distance</label></div>
+                        <div class="three columns"><input type="text" id="edge_copper" name="edge_copper" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="surfaceCoat">Surface coating</label></div>
-                        <div class="three columns"><input type="text" id="surfaceCoat" name="surfaceCoat" value="" > </div>
+                        <div class="two columns"><label for="pcb_thickness">PCB thickness</label></div>
+                        <div class="three columns"><input type="text" id="pcb_thickness" name="pcb_thickness" value="" > </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="noLayer">Number of layers</label></div>
-                        <div class="three columns"><input type="text" id="noLayer" name="noLayer" value="" > </div>
+                        <div class="two columns"><label for="edge_chamfered">Board Edges should be chamfered</label></div>
+                        <div class="three columns"><input type="text" id="edge_chamfered" name="edge_chamfered" value="" > </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="surface_coat">Surface coating</label></div>
+                        <div class="three columns"><input type="text" id="surface_coat" name="surface_coat" value="" > </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="no_layer">Number of layers</label></div>
+                        <div class="three columns"><input type="text" id="no_layer" name="no_layer" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                 </div>
 
                 <div class="tab-content" id="tabEdge">
                     <div class="row">
-                        <div class="two columns"><label for="edgePitch">Edge Finger Pitch</label></div>
-                        <div class="three columns"><input type="text" id="edgePitch" name="edgePitch" value="" > </div>
+                        <div class="two columns"><label for="edge_pitch">Edge Finger Pitch</label></div>
+                        <div class="three columns"><input type="text" id="edge_pitch" name="edge_pitch" value="" > </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="copperThickness">Copper Thickness, oz.</label></div>
-                        <div class="three columns"><input type="text" id="copperThickness" name="copperThickness" value="" > </div>
+                        <div class="two columns"><label for="copper_thickness">Copper Thickness, oz.</label></div>
+                        <div class="three columns"><input type="text" id="copper_thickness" name="copper_thickness" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="traceWidth">Trace Width, mil</label></div>
-                        <div class="three columns"><input type="text" id="traceWidth" name="traceWidth" value="" > </div>
+                        <div class="two columns"><label for="trace_width">Trace Width, mil</label></div>
+                        <div class="three columns"><input type="text" id="trace_width" name="trace_width" value="" > </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="traceSpace">Trace Spacing, mil</label></div>
-                        <div class="three columns"><input type="text" id="traceSpace" name="traceSpace" value="" > </div>
+                        <div class="two columns"><label for="trace_space">Trace Spacing, mil</label></div>
+                        <div class="three columns"><input type="text" id="trace_space" name="trace_space" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                 </div>
 
                 <div class="tab-content" id="tabPth">
                     <div class="row">
-                        <div class="two columns"><label for="traceInternal">Traces placed in internal layers only</label></div>
+                        <div class="two columns"><label for="trace_internal">Traces placed in internal layers only</label></div>
                         <div class="three columns">
-                            <select id="traceInternal" name="traceInternal" style="width: 100%">
+                            <select id="trace_internal" name="trace_internal" style="width: 100%">
                                 <?php echo getDropdown('020', ''); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="finalThickness">Final Copper Thickness, oz.</label></div>
-                        <div class="three columns"><input type="text" id="finalThickness" name="finalThickness" value="" > </div>
+                        <div class="two columns"><label for="final_thickness">Final Copper Thickness, oz.</label></div>
+                        <div class="three columns"><input type="text" id="final_thickness" name="final_thickness" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="minTrace">Minimum Trace Width, mil</label></div>
-                        <div class="three columns"><input type="text" id="minTrace" name="minTrace" value="" > </div>
+                        <div class="two columns"><label for="min_trace">Minimum Trace Width, mil</label></div>
+                        <div class="three columns"><input type="text" id="min_trace" name="min_trace" value="" > </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="minSpace">Minimum Trace Spacing, mil</label></div>
-                        <div class="three columns"><input type="text" id="minSpace" name="minSpace" value="" > </div>
+                        <div class="two columns"><label for="min_space">Minimum Trace Spacing, mil</label></div>
+                        <div class="three columns"><input type="text" id="min_space" name="min_space" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="platedDrill">Plated Through Hole minimum drill size, mil</label></div>
-                        <div class="three columns"><input type="text" id="platedDrill" name="platedDrill" value="" > </div>
+                        <div class="two columns"><label for="plated_drill">Plated Through Hole minimum drill size, mil</label></div>
+                        <div class="three columns"><input type="text" id="plated_drill" name="plated_drill" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="impedance">Impedance controlled traces?</label></div>
                         <div class="three columns">
@@ -213,21 +208,21 @@ include '../class/get_parameter.php';
 
                 <div class="tab-content" id="tabBoard">
                     <div class="row">
-                        <div class="two columns"><label for="frameChasis">Board Frame/Chassis material</label></div>
-                        <div class="three columns"><input type="text" id="frameChasis" name="frameChasis" value="" > </div>
+                        <div class="two columns"><label for="frame_chasis">Board Frame/Chassis material</label></div>
+                        <div class="three columns"><input type="text" id="frame_chasis" name="frame_chasis" value="" > </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="frameScrew">Board Frame/Chassis > No protruding screw tips</label></div>
+                        <div class="two columns"><label for="frame_screw">Board Frame/Chassis > No protruding screw tips</label></div>
                         <div class="three columns">
-                            <select id="frameScrew" name="frameScrew" style="width: 100%">
+                            <select id="frame_screw" name="frame_screw" style="width: 100%">
                                 <?php echo getDropdown('020', ''); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="frameHandle">Board Frame/Chassis > Handle</label></div>
+                        <div class="two columns"><label for="frame_handle">Board Frame/Chassis > Handle</label></div>
                         <div class="three columns">
-                            <select id="frameHandle" name="frameHandle" style="width: 100%">
+                            <select id="frame_handle" name="frame_handle" style="width: 100%">
                                 <?php echo getDropdown('020', ''); ?>
                             </select>
                         </div>
@@ -244,120 +239,120 @@ Temp rating: melting point 1000C"></textarea>
 
                 <div class="tab-content" id="tabSocket">
                     <div class="row">
-                        <div class="two columns"><label for="socketPartNo">Socket part number</label></div>
-                        <div class="three columns"><input type="text" id="socketPartNo" name="socketPartNo" value="" > </div>
+                        <div class="two columns"><label for="socket_partno">Socket part number</label></div>
+                        <div class="three columns"><input type="text" id="socket_partno" name="socket_partno" value="" > </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="socketAvail">Socket availability</label></div>
-                        <div class="three columns"><input type="text" id="socketAvail" name="socketAvail" value="" > </div>
-                        <div class="one columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="socketQty">Socket qty</label></div>
-                        <div class="three columns"><input type="text" id="socketQty" name="socketQty" value="" > </div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="socketPinQty">Socket pin qty</label></div>
-                        <div class="three columns"><input type="text" id="socketPinQty" name="socketPinQty" value="" > </div>
+                        <div class="two columns"><label for="socket_avail">Socket availability</label></div>
+                        <div class="three columns"><input type="text" id="socket_avail" name="socket_avail" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="socketPinPitch">Socket pin pitch</label></div>
-                        <div class="three columns"><input type="text" id="socketPinPitch" name="socketPinPitch" value="" > </div>
+                        <div class="two columns"><label for="socket_qty">Socket qty</label></div>
+                        <div class="three columns"><input type="text" id="socket_qty" name="socket_qty" value="" > </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="socketBodyMaterial">Socket body material</label></div>
-                        <div class="three columns"><input type="text" id="socketBodyMaterial" name="socketBodyMaterial" value="" > </div>
-                        <div class="one columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="socketPinmaterial">Socket pin material</label></div>
-                        <div class="three columns"><input type="text" id="socketPinmaterial" name="socketPinmaterial" value="" > </div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="socketConfig">Socket configuration</label></div>
-                        <div class="three columns"><input type="text" id="socketConfig" name="socketConfig" value="" > </div>
+                        <div class="two columns"><label for="socket_pin_qty">Socket pin qty</label></div>
+                        <div class="three columns"><input type="text" id="socket_pin_qty" name="socket_pin_qty" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="socketVolRate">Socket voltage rating</label></div>
-                        <div class="three columns"><input type="text" id="socketVolRate" name="socketVolRate" value="" > </div>
+                        <div class="two columns"><label for="socket_pin_pitch">Socket pin pitch</label></div>
+                        <div class="three columns"><input type="text" id="socket_pin_pitch" name="socket_pin_pitch" value="" > </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="socketCurrRate">Socket current rating</label></div>
-                        <div class="three columns"><input type="text" id="socketCurrRate" name="socketCurrRate" value="" > </div>
+                        <div class="two columns"><label for="socket_body_material">Socket body material</label></div>
+                        <div class="three columns"><input type="text" id="socket_body_material" name="socket_body_material" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="socketTempRate">Socket temperature rating</label></div>
-                        <div class="three columns"><input type="text" id="socketTempRate" name="socketTempRate" value="" > </div>
+                        <div class="two columns"><label for="socket_pin_material">Socket pin material</label></div>
+                        <div class="three columns"><input type="text" id="socket_pin_material" name="socket_pin_material" value="" > </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="socket_config">Socket configuration</label></div>
+                        <div class="three columns"><input type="text" id="socket_config" name="socket_config" value="" > </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="socket_vol_rate">Socket voltage rating</label></div>
+                        <div class="three columns"><input type="text" id="socket_vol_rate" name="socket_vol_rate" value="" > </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="socket_curr_rate">Socket current rating</label></div>
+                        <div class="three columns"><input type="text" id="socket_curr_rate" name="socket_curr_rate" value="" > </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="socket_temp_rate">Socket temperature rating</label></div>
+                        <div class="three columns"><input type="text" id="socket_temp_rate" name="socket_temp_rate" value="" > </div>
                     </div>
                 </div>
 
                 <div class="tab-content" id="tabConnector">
                     <div class="row">
-                        <div class="two columns"><label for="connPart">Voltage rating label</label></div>
-                        <div class="three columns"><input type="text" id="connPart" name="connPart" value="" > </div>
+                        <div class="two columns"><label for="conn_part">Voltage rating label</label></div>
+                        <div class="three columns"><input type="text" id="conn_part" name="conn_part" value="" > </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="connAvail">Connector availability</label></div>
-                        <div class="three columns"><input type="text" id="connAvail" name="connAvail" value="" > </div>
-                        <div class="one columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="connPinQty">Connector pin qty</label></div>
-                        <div class="three columns"><input type="text" id="connPinQty" name="connPinQty" value="" > </div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="connPinPitch">Connector pin pitch</label></div>
-                        <div class="three columns"><input type="text" id="connPinPitch" name="connPinPitch" value="" > </div>
+                        <div class="two columns"><label for="conn_avail">Connector availability</label></div>
+                        <div class="three columns"><input type="text" id="conn_avail" name="conn_avail" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="connBodyMaterial">Connector body material</label></div>
-                        <div class="three columns"><input type="text" id="connBodyMaterial" name="connBodyMaterial" value="" > </div>
+                        <div class="two columns"><label for="conn_pin_qty">Connector pin qty</label></div>
+                        <div class="three columns"><input type="text" id="conn_pin_qty" name="conn_pin_qty" value="" > </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="connPinMaterial">Connector pin material</label></div>
-                        <div class="three columns"><input type="text" id="connPinMaterial" name="connPinMaterial" value="" > </div>
-                        <div class="one columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="rateBody">Connector > Stress Rating_Body Mold, <b>&#8451;</b> </label></div>
-                        <div class="three columns"><input type="text" id="rateBody" name="rateBody" value="" > </div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="rateContact">Connector > Stress Rating_Contact, <b>&#8451;</b></label></div>
-                        <div class="three columns"><input type="text" id="rateContact" name="rateContact" value="" > </div>
+                        <div class="two columns"><label for="conn_pin_pitch">Connector pin pitch</label></div>
+                        <div class="three columns"><input type="text" id="conn_pin_pitch" name="conn_pin_pitch" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="connVoltRate">Connector voltage rating</label></div>
-                        <div class="three columns"><input type="text" id="connVoltRate" name="connVoltRate" value="" > </div>
+                        <div class="two columns"><label for="conn_body_material">Connector body material</label></div>
+                        <div class="three columns"><input type="text" id="conn_body_material" name="conn_body_material" value="" > </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="connCurrRate">Connector current rating</label></div>
-                        <div class="three columns"><input type="text" id="connCurrRate" name="connCurrRate" value="" > </div>
+                        <div class="two columns"><label for="conn_pin_material">Connector pin material</label></div>
+                        <div class="three columns"><input type="text" id="conn_pin_material" name="conn_pin_material" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="connTempRate">Connector temperature rating</label></div>
-                        <div class="three columns"><input type="text" id="connTempRate" name="connTempRate" value="" > </div>
+                        <div class="two columns"><label for="rate_body">Connector > Stress Rating_Body Mold, <b>&#8451;</b> </label></div>
+                        <div class="three columns"><input type="text" id="rate_body" name="rate_body" value="" > </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="rate_contact">Connector > Stress Rating_Contact, <b>&#8451;</b></label></div>
+                        <div class="three columns"><input type="text" id="rate_contact" name="rate_contact" value="" > </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="conn_volt_rate">Connector voltage rating</label></div>
+                        <div class="three columns"><input type="text" id="conn_volt_rate" name="conn_volt_rate" value="" > </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="conn_curr_rate">Connector current rating</label></div>
+                        <div class="three columns"><input type="text" id="conn_curr_rate" name="conn_curr_rate" value="" > </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="conn_temp_rate">Connector temperature rating</label></div>
+                        <div class="three columns"><input type="text" id="conn_temp_rate" name="conn_temp_rate" value="" > </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                 </div>
 
                 <div class="tab-content" id="tabMarking">
                     <div class="row">
-                        <div class="two columns"><label for="voltRate">Voltage rating label</label></div>
+                        <div class="two columns"><label for="volt_rate">Voltage rating label</label></div>
                         <div class="three columns">
-                            <select id="voltRate" name="voltRate" style="width: 100%" >
+                            <select id="volt_rate" name="volt_rate" style="width: 100%" >
                                 <?php echo getDropdown('020', ''); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="currRate">Current rating label</label></div>
+                        <div class="two columns"><label for="curr_rate">Current rating label</label></div>
                         <div class="three columns">
-                            <select id="currRate" name="currRate" style="width: 100%" >
+                            <select id="curr_rate" name="curr_rate" style="width: 100%" >
                                 <?php echo getDropdown('020', ''); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="tempRate">Temperature rating label</label></div>
+                        <div class="two columns"><label for="temp_rate">Temperature rating label</label></div>
                         <div class="three columns">
-                            <select id="tempRate" name="tempRate" style="width: 100%" >
+                            <select id="temp_rate" name="temp_rate" style="width: 100%" >
                                 <?php echo getDropdown('020', ''); ?>
                             </select>
                         </div>
@@ -371,32 +366,32 @@ Temp rating: melting point 1000C"></textarea>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="assNo">Assembly number</label></div>
+                        <div class="two columns"><label for="ass_number">Assembly number</label></div>
                         <div class="three columns">
-                            <select id="assNo" name="assNo" style="width: 100%" >
+                            <select id="ass_number" name="ass_number" style="width: 100%" >
                                 <?php echo getDropdown('020', ''); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="stressTest">Stress Test Name</label></div>
+                        <div class="two columns"><label for="stress_test">Stress Test Name</label></div>
                         <div class="three columns">
-                            <select id="stressTest" name="stressTest" style="width: 100%" >
+                            <select id="stress_test" name="stress_test" style="width: 100%" >
                                 <?php echo getDropdown('020', ''); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="socketNumber">Socket Numbers</label></div>
+                        <div class="two columns"><label for="socket_number">Socket Numbers</label></div>
                         <div class="three columns">
-                            <select id="socketNumber" name="socketNumber" style="width: 100%" >
+                            <select id="socket_number" name="socket_number" style="width: 100%" >
                                 <?php echo getDropdown('020', ''); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="pinIndicator">Pin "1" Indicator</label></div>
+                        <div class="two columns"><label for="pin_indicator">Pin "1" Indicator</label></div>
                         <div class="three columns">
-                            <select id="pinIndicator" name="pinIndicator" style="width: 100%" >
+                            <select id="pin_indicator" name="pin_indicator" style="width: 100%" >
                                 <?php echo getDropdown('020', ''); ?>
                             </select>
                         </div>
@@ -435,41 +430,41 @@ Temp rating: melting point 1000C"></textarea>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="dutDensity">DUT Density</label></div>
+                        <div class="two columns"><label for="dut_density">DUT Density</label></div>
                         <div class="three columns">
-                            <select id="dutDensity" name="dutDensity" style="width: 100%" >
+                            <select id="dut_density" name="dut_density" style="width: 100%" >
                                 <?php echo getDropdown('020', ''); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="looseDut">Loose Component DUT Orientation</label></div>
+                        <div class="two columns"><label for="loose_dut">Loose Component DUT Orientation</label></div>
                         <div class="three columns">
-                            <select id="looseDut" name="looseDut" style="width: 100%" >
-                                <?php echo getDropdown('020', ''); ?>
-                            </select>
-                        </div>
-                        <div class="one columns">&nbsp;</div>
-                    </div>
-                    <div class="row">
-                        <div class="two columns"><label for="liveBug">Live bug/Dead Bug Orientation</label></div>
-                        <div class="three columns">
-                            <select id="liveBug" name="liveBug" style="width: 100%" >
-                                <?php echo getDropdown('020', ''); ?>
-                            </select>
-                        </div>
-                        <div class="one columns">&nbsp;</div>
-                        <div class="two columns"><label for="bibOri">Device and Socket to BIB Orientation</label></div>
-                        <div class="three columns">
-                            <select id="bibOri" name="bibOri" style="width: 100%" >
+                            <select id="loose_dut" name="loose_dut" style="width: 100%" >
                                 <?php echo getDropdown('020', ''); ?>
                             </select>
                         </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
-                        <div class="two columns"><label for="onsemiLogo">Onsemi Logo</label></div>
+                        <div class="two columns"><label for="live_bug">Live bug/Dead Bug Orientation</label></div>
                         <div class="three columns">
-                            <select id="onsemiLogo" name="onsemiLogo" style="width: 100%" >
+                            <select id="live_bug" name="live_bug" style="width: 100%" >
+                                <?php echo getDropdown('020', ''); ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                        <div class="two columns"><label for="bib_ori">Device and Socket to BIB Orientation</label></div>
+                        <div class="three columns">
+                            <select id="bib_ori" name="bib_ori" style="width: 100%" >
+                                <?php echo getDropdown('020', ''); ?>
+                            </select>
+                        </div>
+                        <div class="one columns">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="two columns"><label for="onsemi_logo">Onsemi Logo</label></div>
+                        <div class="three columns">
+                            <select id="onsemi_logo" name="onsemi_logo" style="width: 100%" >
                                 <?php echo getDropdown('020', ''); ?>
                             </select>
                         </div>
@@ -528,7 +523,7 @@ Temp rating: melting point 1000C"></textarea>
                 </div>
 
 
-                <div class="tab-content" id="tabCategory">
+<!--                <div class="tab-content" id="tabCategory">
                     <div class="row">
                         <div class="two columns"><label for="hw_type">Hardware Type *</label></div>
                         <div class="three columns">
@@ -550,9 +545,9 @@ Temp rating: melting point 1000C"></textarea>
                         <div class="two columns"><label for="assembly_no">Assembly Number *</label></div>
                         <div class="three columns"><input type="text" id="assembly_no" name="assembly_no" placeholder="Assembly Number" value="" required> </div>
                     </div>
-                </div>
+                </div>-->
 
-                <div class="tab-content" id="tabCapability">
+<!--                <div class="tab-content" id="tabCapability">
                     <div class="row">
                         <div class="two columns"><label for="volt_rating">Voltage Rating</label></div>
                         <div class="two columns"><input type="number" step="0.001" id="volt_rating" name="volt_rating" value="" > </div>
@@ -584,9 +579,9 @@ Temp rating: melting point 1000C"></textarea>
                             </select>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
-                <div class="tab-content" id="tabCharacter">
+<!--                <div class="tab-content" id="tabCharacter">
 
                     <div class="accordion">
                         <div class="accordion-item">
@@ -856,15 +851,15 @@ Temp rating: melting point 1000C"></textarea>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
-                <div class="tab-content" id="tabCapacity">
+<!--                <div class="tab-content" id="tabCapacity">
                     <div class="row">
                         <div class="two columns"><label for="max_dut_mb">Max DUT qty per motherboard</label></div>
                         <div class="two columns"><input type="number" step="0.001" id="max_dut_mb" name="max_dut_mb" value="" > </div>
                         <div class="one columns"><label for="max_dut_mb" style="text-align: left"><b>DUTs</b></label></div>
                     </div>
-                </div>
+                </div>-->
             </div>
 
             <button type="submit" id="draft-button" name="draft-button" class="btn"><i class='bx bx-send bx-fw' ></i> DRAFT</button>
@@ -942,7 +937,7 @@ Temp rating: melting point 1000C"></textarea>
                             saveButton.style.display = 'none';
                         }
                     } else {
-                        console.log("SILA ISI MAKLUMAT");
+                        console.log("MASIH TAK COMPLETE");
                         draftButton.style.display = 'none';
                         saveButton.style.display = 'none';
                     }

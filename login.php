@@ -104,6 +104,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 transform: scale(1, 1);
                 text-indent: 0;
             }
+            
+            .inner {
+                -moz-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+                -webkit-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+                -ms-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+                transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+                -moz-transition-delay: 0.25s;
+                -webkit-transition-delay: 0.25s;
+                -ms-transition-delay: 0.25s;
+                transition-delay: 0.25s;
+                padding: 3rem 2rem;
+                max-height: 40rem;
+                overflow: hidden;
+            }
         </style>
 
         <script type="text/javascript">
@@ -113,10 +127,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </head>
     <body>
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
+            <!--<div>GEST</div>-->
             <div class="container" onclick="onclick">
-                <div class="top"></div>
-                <div class="bottom"></div>
+<!--                <div class="top">
+                    <br/><br/>
+                    <br/><br/>
+                    <br/><br/>
+                    <br/><br/>
+                    <h1 style="color:black; text-align: center">GEST</h1>
+                    <h1 style="color:black; text-align: center">Global Equipment Standardization</h1>
+                </div>-->
+                <div class="top">
+                    <div class="inner">
+                        <br/><br/>
+                        <!--<br/><br/>-->
+                        <br/><br/>
+                        <h1 style="color:orange; text-align: center">GLOBAL EQUIPMENT STANDARDIZATION</h1>
+                        <p style="color:black; text-align: center; font-size: 48px; font-weight: bold;">GEST</p>    
+                    </div>
+                </div>
+                <div class="bottom">
+                    
+                </div>
                 <div class="center">
+                    <!--<img src="img_girl.jpg" alt="Girl in a jacket">-->
+                    <!--<h1 style="color:orange">Global Equipment Standardization</h1>-->
                     <h2 style="color:orange">Please Sign In</h2>
                     <input class="w3-input w3-border w3-animate-input" type="text" placeholder="Username" name="username"/>
                     <br>
