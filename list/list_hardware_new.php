@@ -328,15 +328,15 @@
                         <th><b>App - Tight</b></th>
                         <th><b>App - Select</b></th>
                         <th><b>App - Heatsink</b></th>
-                        <th>A1</th>
-                        <th>B1</th>
-                        <th>C1</th>
-                        <th>A2</th>
-                        <th>B2</th>
+                        <th style="visibility: collapse;">A1</th>
+                        <th style="visibility: collapse;">B1</th>
+                        <th style="visibility: collapse;">C1</th>
+                        <th style="visibility: collapse;">A2</th>
+                        <th style="visibility: collapse;">B2</th>
                         <th>Status</th>                                         
-                        <th>Flag</th>
-                        <th><b>Hardware ID</b></th>
-                        <th>Action</th>
+                        <th style="visibility: collapse;">Flag</th>
+                        <th style="visibility: collapse;"><b>Hardware ID</b></th>
+                        <th style="visibility: collapse;">Action</th>
                     </tr>
                 </tfoot>
             </table>

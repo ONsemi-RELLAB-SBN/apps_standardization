@@ -224,6 +224,8 @@
                         <th><b>Input voltage (facilities)</b></th>
                         <th><b>Number of output channels</b></th>
                         <th><b>Status</b></th>
+                        <th style="visibility: collapse;"><b>PS ID</b></th>
+                        <th style="visibility: collapse;">Action</th>
                     </tr>
                 </tfoot>
             </table>

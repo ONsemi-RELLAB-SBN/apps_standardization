@@ -242,6 +242,8 @@
                         <th><b>DAQ to Equipment Interface</b></th>
                         <th><b>DAQ to Power Supply Interface</b></th>
                         <th>Status</th>
+                        <th style="visibility: collapse;"><b>DAQ ID</b></th>
+                        <th style="visibility: collapse;">Action</th>
                     </tr>
                 </tfoot>
             </table>

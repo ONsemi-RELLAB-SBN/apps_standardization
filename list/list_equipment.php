@@ -392,6 +392,8 @@
                         <th><b>Interface Voltage Rating</b></th>
                         <th><b>Interface Current Rating</b></th>
                         <th>Status</th>
+                        <th style="text-align:center; visibility: collapse;"><b>ID</b></th>
+                        <th style="visibility: collapse;">Action</th>
                     </tr>
                 </tfoot>
             </table>

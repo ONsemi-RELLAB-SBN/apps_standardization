@@ -247,6 +247,8 @@
                         <th><b>Edgefinger Thickness</b></th>
                         <th><b>Maximum DUT Quantity per Motherboard</b></th>
                         <th>Status</th>
+                        <th style="visibility: collapse;"><b>Hardware ID</b></th>
+                        <th style="visibility: collapse;">Action</th>
                     </tr>
                 </tfoot>
             </table>
