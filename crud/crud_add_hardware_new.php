@@ -11,48 +11,9 @@ include '../class/get_parameter.php';
 
 $labLctn    = $_GET['lab_location'];
 $strategy   = $_GET['strategy'];
-$category   = $_GET['standardization'];
-$champion   = $_GET['champion'];
-
-//$hwType     = $_GET['hw_type'];
-//$mnfctr     = $_GET['manufacturer'];
+$standard   = $_GET['standardization'];
+$manager    = $_GET['champion'];
 $assembly   = $_GET['assembly_no'];
-
-//$voltRate   = $_GET['volt_rating'];
-//$currRate   = $_GET['curr_rating'];
-//$tempRate   = $_GET['temp_rating'];
-//$stress     = $_GET['support_stress'];
-//$daq        = $_GET['daq_capability'];
-
-//$pcb        = $_GET['pcb_material'];
-//$mb_l       = $_GET['mb_dimension_l'];
-//$mb_w       = $_GET['mb_dimension_w'];
-//$mb_t       = $_GET['mb_dimension_t'];
-//$frame      = $_GET['frame_material'];
-//$board      = $_GET['board_coat'];
-//$layer      = $_GET['no_layers'];
-
-//$universal  = $_GET['universal'];
-//$socType    = $_GET['socket_conn_type'];
-//$socQty     = $_GET['socket_conn_qty'];
-//$socPin     = $_GET['socket_conn_pin_qty'];
-//$socPitch   = $_GET['socket_con_pin_pitch'];
-//$package    = $_GET['support_package'];
-
-//$load_max   = $_GET['max_load_card_qty'];
-//$load_qty   = $_GET['load_card_pin_qty'];
-//$load_pitch = $_GET['load_card_pin_pitch'];
-
-//$proMax     = $_GET['max_prog_card_qty'];
-//$progQty    = $_GET['prog_card_pin_qty'];
-//$progPitch  = $_GET['prog_card_pin_pitch'];
-
-//$connType   = $_GET['conn_type'];
-//$noPins     = $_GET['no_pins'];
-//$pinPitch   = $_GET['pin_pitch'];
-//$edge       = $_GET['edge_thick'];
-
-//$maxDut     = $_GET['max_dut_mb'];
 
 $category = $_GET['category'];
 $sub_cat = $_GET['sub_category'];
@@ -92,7 +53,7 @@ $socket_partno = $_GET['socket_partno'];
 $socket_avail = $_GET['socket_avail'];
 $socket_qty = $_GET['socket_qty'];
 $socket_pin_qty = $_GET['socket_pin_qty'];
-$socket_pin_pitch = $_GET['socket_pin_pitch '];
+$socket_pin_pitch = $_GET['socket_pin_pitch'];
 $socket_body_material = $_GET['socket_body_material'];
 $socket_pin_material = $_GET['socket_pin_material'];
 $socket_config = $_GET['socket_config'];
@@ -137,8 +98,6 @@ $r4 = $_GET['r4'];
 $r5 = $_GET['r5'];
 $r6 = $_GET['r6'];
 
-echo '$pcb_material >>> ' + $pcb_material;
-
 if ($username == '') {
     $username = 'System';
 }
@@ -146,7 +105,7 @@ if ($username == '') {
 $status = 'Active';
 $flag = '1';
 
-$mnfctr = getCode($mnfctr, '018', $username);
+//$mnfctr = getCode($mnfctr, '018', $username);
 
 if (isset($_GET['draft-button'])) {
     $status = 'DRAFT';
@@ -161,22 +120,57 @@ if (isset($_GET['draft-button'])) {
     }
 }
 
-alert("PLEASE UPDATE DATABASE DESIGN FOLLOW NEW REQUIREMENT");
+//$insert = "INSERT INTO gest_form_hw (lab_location, strategy, standard_category, champion, hw_type, manufacturer, assembly_no, voltage_rating, current_rating, "
+//        . "temp_rating, support_stress, daq_monitoring, pcb_material, mb_dimension_l, mb_dimension_w, mb_dimension_t, no_layer, frame_material, board_coating, "
+//        . "mb_universal_dedicated, mb_socket_type, mb_socket_qty, mb_socket_pin_qty, mb_socket_pin_pitch, mb_support_card, lc_max_qty, lc_pin_qty, lc_pin_pitch, pc_max_qty, "
+//        . "pc_pin_qty, pc_pin_pitch, connector_type, no_pin, pin_pitch, edgefinger_thickness, max_dut_qty_mb, created_by, created_date, status, flag) "
+//        . "VALUES ('$labLctn', '$strategy', '$category', '$champion', '$hwType', '$mnfctr', '$assembly', '$voltRate', '$currRate', "
+//        . "'$tempRate', '$stress', '$daq', '$pcb', '$mb_l', '$mb_w', '$mb_t', '$layer', '$frame', '$board', "
+//        . "'$universal', '$socType', '$socQty', '$socPin', '$socPitch', '$package', '$load_max', '$load_qty', '$load_pitch', '$proMax', "
+//        . "'$progQty', '$progPitch', '$connType', '$noPins', '$pinPitch', '$edge', '$maxDut', '$username', NOW(), '$status', '$flag')";
+//$upload = mysqli_query($con, $insert);
 
-$insert = "INSERT INTO gest_form_hw (lab_location, strategy, standard_category, champion, hw_type, manufacturer, assembly_no, voltage_rating, current_rating, "
-        . "temp_rating, support_stress, daq_monitoring, pcb_material, mb_dimension_l, mb_dimension_w, mb_dimension_t, no_layer, frame_material, board_coating, "
-        . "mb_universal_dedicated, mb_socket_type, mb_socket_qty, mb_socket_pin_qty, mb_socket_pin_pitch, mb_support_card, lc_max_qty, lc_pin_qty, lc_pin_pitch, pc_max_qty, "
-        . "pc_pin_qty, pc_pin_pitch, connector_type, no_pin, pin_pitch, edgefinger_thickness, max_dut_qty_mb, created_by, created_date, status, flag) "
-        . "VALUES ('$labLctn', '$strategy', '$category', '$champion', '$hwType', '$mnfctr', '$assembly', '$voltRate', '$currRate', "
-        . "'$tempRate', '$stress', '$daq', '$pcb', '$mb_l', '$mb_w', '$mb_t', '$layer', '$frame', '$board', "
-        . "'$universal', '$socType', '$socQty', '$socPin', '$socPitch', '$package', '$load_max', '$load_qty', '$load_pitch', '$proMax', "
-        . "'$progQty', '$progPitch', '$connType', '$noPins', '$pinPitch', '$edge', '$maxDut', '$username', NOW(), '$status', '$flag')";
-$upload = mysqli_query($con, $insert);
+$query001 = "INSERT INTO gest_form_hw_new (lab_location, strategy, standard_category, champion, assembly_no, "
+            . "category, sub_category, temp_rating, humid_rating, voltage_rating, current_rating, "
+            . "created_by, updated_by, delete_by, created_date, update_date, delete_date, status, flag) "
+            . "VALUES ('$labLctn', '$strategy', '$standard', '$manager', '$assembly', "
+            . "'$category', '$sub_cat', '$temperature', '$humidity', '$voltage', '$current', "
+            . "'$username', NULL, NULL, NOW(), NULL, NULL, '$status', '$flag')";
+$insert01 = mysqli_query($con, $query001);
+$hardware_id = $con->insert_id;
+
+$query002 = "INSERT INTO gest_form_hw1 (hw_id, pcb_material, pcb_temp, pcb_moisture, pcb_copper, pcb_thick, pcb_edge, pcb_coating, pcb_layer, edge_pitch, "
+            . "edge_thick, edge_width, edge_spacing, trace_layer, trace_thick, trace_width, trace_spacing, trace_drill, trace_control, "
+            . "bf_material, bf_screw, bf_handle, component) "
+            . "VALUES ('$hardware_id', '$pcb_material', '$pcb_material2', '$pcb_moisture', '$edge_copper', '$pcb_thickness', '$edge_chamfered', '$surface_coat', '$no_layer', "
+            . "'$edge_pitch', '$copper_thickness', '$trace_width', '$trace_space', '$trace_internal', '$final_thickness', '$min_trace', '$min_space', '$plated_drill', '$impedance', "
+            . "'$frame_chasis', '$frame_screw', '$frame_handle', '$component')";
+$insert02 = mysqli_query($con, $query002);
+
+$query003 = "INSERT INTO gest_form_hw2 (hw_id, mb_socket_part, mb_socket_avail, mb_socket_qty, mb_socket_pin_qty, mb_socket_pin_pitch, "
+            . "mb_socket_body, mb_socket_pin, mb_socket_config, mb_socket_volt, mb_socket_curr, mb_socket_temp, "
+            . "conn_number, conn_avail, conn_pin_qty, conn_pin_pitch, conn_body, conn_pin, "
+            . "conn_mold, conn_contact, conn_volt, conn_curr, conn_temp) "
+            . "VALUES ('$hardware_id', '$socket_partno', '$socket_avail', '$socket_qty', '$socket_pin_qty', '$socket_pin_pitch', "
+            . "'$socket_body_material', '$socket_pin_material', '$socket_config', '$socket_vol_rate', '$socket_curr_rate', '$socket_temp_rate', "
+            . "'$conn_part', '$conn_avail', '$conn_pin_qty', '$conn_pin_pitch', '$conn_body_material', '$conn_pin_material', "
+            . "'$rate_body', '$rate_contact', '$conn_volt_rate', '$conn_curr_rate', '$conn_temp_rate')";
+$insert03 = mysqli_query($con, $query003);
+
+$query004 = "INSERT INTO gest_form_hw3 (hw_id, mark_volt, mark_curr, mark_temp, mark_board, mark_assembly, "
+            . "mark_stress, mark_socket, mark_pin, mark_vendor, mark_layer, mark_artwork, "
+            . "mark_cat, mark_dut, mark_loose, mark_bug, mark_bib, mark_logo, "
+            . "app_verify, app_component, app_temp, app_tight, app_select, app_heatsink) "
+            . "VALUES ('$hardware_id', '$volt_rate', '$curr_rate', '$temp_rate', '$board', '$ass_number', "
+            . "'$stress_test', '$socket_number', '$pin_indicator', '$vendor', '$stackup', '$artwork', "
+            . "'$unidedi', '$dut_density', '$loose_dut', '$live_bug', '$bib_ori', '$onsemi_logo', "
+            . "'$r1', '$r2', '$r3', '$r4', '$r5', '$r6')";
+$insert04 = mysqli_query($con, $query004);
 
 ?>
 <script>
     alert('New Hardware Added Successfully');
 //    window.location.href = '../hardware/list.php';
-    window.location.href = '../list/list_hardware.php';
+    window.location.href = '../list/list_hardware_new.php';
 </script>
 <?php mysql_close($handle);
