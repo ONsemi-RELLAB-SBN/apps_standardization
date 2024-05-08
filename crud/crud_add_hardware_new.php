@@ -152,7 +152,7 @@ $query003 = "INSERT INTO gest_form_hw2 (hw_id, mb_socket_part, mb_socket_avail, 
             . "conn_number, conn_avail, conn_pin_qty, conn_pin_pitch, conn_body, conn_pin, "
             . "conn_mold, conn_contact, conn_volt, conn_curr, conn_temp) "
             . "VALUES ('$hardware_id', '$socket_partno', '$socket_avail', '$socket_qty', '$socket_pin_qty', '$socket_pin_pitch', "
-            . "'$socket_body_material', '$socket_pin_material', '$socket_config', '$socket_vol_rate', '$socket_curr_rate', '$socket_temp_rate', "
+            . "'$socket_body_material', '$socket_pin_material', '$socket_con fig', '$socket_vol_rate', '$socket_curr_rate', '$socket_temp_rate', "
             . "'$conn_part', '$conn_avail', '$conn_pin_qty', '$conn_pin_pitch', '$conn_body_material', '$conn_pin_material', "
             . "'$rate_body', '$rate_contact', '$conn_volt_rate', '$conn_curr_rate', '$conn_temp_rate')";
 $insert03 = mysqli_query($con, $query003);
