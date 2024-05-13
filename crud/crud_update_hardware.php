@@ -121,7 +121,7 @@ if (isset($_GET['draft-button'])) {
     }
 }
 
-$updateMain = "UPDATE gest.gest_form_hw_new SET "
+$updateMain = "UPDATE gest.gest_form_hw0 SET "
             . "lab_location = '$labLctn', "
             . "strategy = '$strategy', "
             . "standard_category = '$standard', "
