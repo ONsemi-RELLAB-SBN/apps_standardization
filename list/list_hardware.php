@@ -1,6 +1,5 @@
 <?php
-
-/* 
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
  */
@@ -12,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Hardware List</title>
 
-        <?php 
+        <?php
         include '../template/list.php';
         include '../template/form.php';
         ?>
@@ -28,18 +27,76 @@
                 padding: 0 20px;
                 box-sizing: border-box;
             }
-            
+
             thead input {
                 width: 100%;
             }
-            
+
             tfoot input {
                 width: 100%;
                 padding: 3px;
                 box-sizing: border-box;
             }
+
+            .msg {
+                position: fixed;
+                top: 40px;
+                left: 50%;
+                padding: 10px 20px;
+                border-radius: 5px;
+                color: white;
+                font-size: 14px;
+                font-weight: 800;
+                box-shadow: 0 0 14px rgba(0, 0, 0, 0.05);
+            }
+
+            .msg-success {
+                background-color: #28a745;
+            }
+
+            .msg-warning {
+                color: #6d5200;
+                background-color: #ffc107;
+            }
+
+            .msg-danger {
+                background-color: #dc3545;
+            }
+
+            .msg-info {
+                background-color: #17a2b8;
+            }
+            
+            .msg-alert {
+                background-color: black;
+                color: orange;
+            }
+            
+            .btn-upload, .btn-download {
+                color: #66121a;
+                background-color: silver;
+            }
+
+            /*fade*/
+            .animate {
+                opacity: 0;
+                transition: all 1s;
+                -webkit-animation-duration: 1s;
+                animation-duration: 1s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+            }
+
+            .animate.active {
+                opacity: 1;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .slide-in-down {
+                transform: translateY(-100%) translateX(-50%);
+            }
         </style>
-        
+
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
 
@@ -47,30 +104,30 @@
                     processing: true,
                     serverSide: true,
                     dom: 'Blfrtip',
-                    select:true,
-                    ajax: { 
+                    select: true,
+                    ajax: {
                         url: 'dao_hardware.php',
                         type: 'POST'
                     },
                     initComplete: function () {
-                    this.api()
-                        .columns()
-                        .every(function () {
-                            let column = this;
-                            let title = column.footer().textContent;
+                        this.api()
+                                .columns()
+                                .every(function () {
+                                    let column = this;
+                                    let title = column.footer().textContent;
 
-                            // Create input element
-                            let input = document.createElement('input');
-                            input.placeholder = title;
-                            column.footer().replaceChildren(input);
+                                    // Create input element
+                                    let input = document.createElement('input');
+                                    input.placeholder = title;
+                                    column.footer().replaceChildren(input);
 
-                            // Event listener for user input
-                            input.addEventListener('keyup', () => {
-                                if (column.search() !== this.value) {
-                                    column.search(input.value).draw();
-                                }
-                            });
-                        });
+                                    // Event listener for user input
+                                    input.addEventListener('keyup', () => {
+                                        if (column.search() !== this.value) {
+                                            column.search(input.value).draw();
+                                        }
+                                    });
+                                });
                     },
                     buttons: [
                         {
@@ -84,7 +141,7 @@
                         },
                         {
                             extend: 'colvis',
-                            action: function ( e, dt, node, config ) {
+                            action: function (e, dt, node, config) {
                                 $.fn.dataTable.ext.buttons.collection.action.call(this, e, dt, node, config);
                             },
                             prefixButtons: [
@@ -97,12 +154,12 @@
                                     extend: 'colvisGroup',
                                     text: 'Hide All',
                                     hide: ':visible'
-                                }  
+                                }
                             ],
                             collectionLayout: 'fixed columns',
                             collectionTitle: 'Column Visibility Control',
-                            columnText: function ( dt, idx, title ) {
-                                return (idx+1)+': '+title;
+                            columnText: function (dt, idx, title) {
+                                return (idx + 1) + ': ' + title;
                             }
                         }
                     ],
@@ -111,76 +168,76 @@
                     columnDefs: [
                         {targets: 66,
                             render: function (data, type, row, meta) {
-                                return '<a href="../hardware/view.php?view='+ row[65] +'" title="View Record" data-toggle="tooltip"><i class=\'bx bx-search-alt bx-fw\'></i> VIEW </a>\n\
-                                        <a href="../hardware/edit.php?edit='+ row[65] +'" title="Update Record" data-toggle="tooltip"><i class=\'bx bxs-pencil bx-fw\' ></i> EDIT </a>\n\
-                                        <a href="../hardware/delete.php?delete='+ row[65] +'" title="Delete Record" data-toggle="tooltip" onclick="return confirm(\'Are You Sure ?\')"><i class=\'bx bxs-trash bx-fw\' ></i> DELETE </a>\n\
-                                        <a href="../hardware/copy.php?edit='+ row[65] +'" title="Replicate Record" data-toggle="tooltip"><i class=\'bx bx-copy bx-fw\'></i></i> COPY </a>';
+                                return '<a href="../hardware/view.php?view=' + row[65] + '" title="View Record" data-toggle="tooltip"><i class=\'bx bx-search-alt bx-fw\'></i> VIEW </a>\n\
+                                        <a href="../hardware/edit.php?edit=' + row[65] + '" title="Update Record" data-toggle="tooltip"><i class=\'bx bxs-pencil bx-fw\' ></i> EDIT </a>\n\
+                                        <a href="../hardware/delete.php?delete=' + row[65] + '" title="Delete Record" data-toggle="tooltip" onclick="return confirm(\'Are You Sure ?\')"><i class=\'bx bxs-trash bx-fw\' ></i> DELETE </a>\n\
+                                        <a href="../hardware/copy.php?edit=' + row[65] + '" title="Replicate Record" data-toggle="tooltip"><i class=\'bx bx-copy bx-fw\'></i></i> COPY </a>';
                             }
                         },
-                        {"visible": false, "targets": 2 },
+                        {"visible": false, "targets": 2},
 //                        {"visible": false, "targets": 5 },
-                        {"visible": false, "targets": 6 },
-                        {"visible": false, "targets": 7 },
-                        {"visible": false, "targets": 8 },
-                        {"visible": false, "targets": 9 },
-                        {"visible": false, "targets": 10 },
-                        {"visible": false, "targets": 11 },
-                        {"visible": false, "targets": 12 },
-                        {"visible": false, "targets": 13 },
-                        {"visible": false, "targets": 14 },
-                        {"visible": false, "targets": 15 },
-                        {"visible": false, "targets": 16 },
-                        {"visible": false, "targets": 17 },
-                        {"visible": false, "targets": 18 },
-                        {"visible": false, "targets": 19 },
-                        {"visible": false, "targets": 20 },
-                        {"visible": false, "targets": 21 },
-                        {"visible": false, "targets": 22 },
-                        {"visible": false, "targets": 23 },
-                        {"visible": false, "targets": 24 },
-                        {"visible": false, "targets": 23 },
-                        {"visible": false, "targets": 24 },
-                        {"visible": false, "targets": 25 },
-                        {"visible": false, "targets": 26 },
-                        {"visible": false, "targets": 27 },
-                        {"visible": false, "targets": 28 },
-                        {"visible": false, "targets": 29 },
-                        {"visible": false, "targets": 30 },
-                        {"visible": false, "targets": 31 },
-                        {"visible": false, "targets": 32 },
-                        {"visible": false, "targets": 33 },
-                        {"visible": false, "targets": 34 },
-                        {"visible": false, "targets": 35 },
-                        {"visible": false, "targets": 36 },
-                        {"visible": false, "targets": 37 },
-                        {"visible": false, "targets": 38 },
-                        {"visible": false, "targets": 39 },
-                        {"visible": false, "targets": 40 },
-                        {"visible": false, "targets": 41 },
-                        {"visible": false, "targets": 42 },
-                        {"visible": false, "targets": 43 },
-                        {"visible": false, "targets": 44 },
-                        {"visible": false, "targets": 45 },
-                        {"visible": false, "targets": 46 },
-                        {"visible": false, "targets": 47 },
-                        {"visible": false, "targets": 48 },
-                        {"visible": false, "targets": 49 },
-                        {"visible": false, "targets": 50 },
-                        {"visible": false, "targets": 51 },
-                        {"visible": false, "targets": 52 },
-                        {"visible": false, "targets": 53 },
-                        {"visible": false, "targets": 54 },
-                        {"visible": false, "targets": 55 },
-                        {"visible": false, "targets": 56 },
-                        {"visible": false, "targets": 57 },
-                        {"visible": false, "targets": 58 },
-                        {"visible": false, "targets": 59 },
-                        {"visible": false, "targets": 60 },
-                        {"visible": false, "targets": 61 },
-                        {"visible": false, "targets": 62 },
+                        {"visible": false, "targets": 6},
+                        {"visible": false, "targets": 7},
+                        {"visible": false, "targets": 8},
+                        {"visible": false, "targets": 9},
+                        {"visible": false, "targets": 10},
+                        {"visible": false, "targets": 11},
+                        {"visible": false, "targets": 12},
+                        {"visible": false, "targets": 13},
+                        {"visible": false, "targets": 14},
+                        {"visible": false, "targets": 15},
+                        {"visible": false, "targets": 16},
+                        {"visible": false, "targets": 17},
+                        {"visible": false, "targets": 18},
+                        {"visible": false, "targets": 19},
+                        {"visible": false, "targets": 20},
+                        {"visible": false, "targets": 21},
+                        {"visible": false, "targets": 22},
+                        {"visible": false, "targets": 23},
+                        {"visible": false, "targets": 24},
+                        {"visible": false, "targets": 23},
+                        {"visible": false, "targets": 24},
+                        {"visible": false, "targets": 25},
+                        {"visible": false, "targets": 26},
+                        {"visible": false, "targets": 27},
+                        {"visible": false, "targets": 28},
+                        {"visible": false, "targets": 29},
+                        {"visible": false, "targets": 30},
+                        {"visible": false, "targets": 31},
+                        {"visible": false, "targets": 32},
+                        {"visible": false, "targets": 33},
+                        {"visible": false, "targets": 34},
+                        {"visible": false, "targets": 35},
+                        {"visible": false, "targets": 36},
+                        {"visible": false, "targets": 37},
+                        {"visible": false, "targets": 38},
+                        {"visible": false, "targets": 39},
+                        {"visible": false, "targets": 40},
+                        {"visible": false, "targets": 41},
+                        {"visible": false, "targets": 42},
+                        {"visible": false, "targets": 43},
+                        {"visible": false, "targets": 44},
+                        {"visible": false, "targets": 45},
+                        {"visible": false, "targets": 46},
+                        {"visible": false, "targets": 47},
+                        {"visible": false, "targets": 48},
+                        {"visible": false, "targets": 49},
+                        {"visible": false, "targets": 50},
+                        {"visible": false, "targets": 51},
+                        {"visible": false, "targets": 52},
+                        {"visible": false, "targets": 53},
+                        {"visible": false, "targets": 54},
+                        {"visible": false, "targets": 55},
+                        {"visible": false, "targets": 56},
+                        {"visible": false, "targets": 57},
+                        {"visible": false, "targets": 58},
+                        {"visible": false, "targets": 59},
+                        {"visible": false, "targets": 60},
+                        {"visible": false, "targets": 61},
+                        {"visible": false, "targets": 62},
 //                        {"visible": false, "targets": 63 },
-                        {"visible": false, "targets": 64 },
-                        {"visible": false, "targets": 65 }
+                        {"visible": false, "targets": 64},
+                        {"visible": false, "targets": 65}
                     ]
                 });
             });
@@ -197,7 +254,7 @@
             </div>
             <table id="example" class="u-full-width" width="100%" cellspacing="0">
                 <thead>
-                    
+
                     <tr>
                         <th><b>Location</b></th>
                         <th><b>Product Group</b></th>
@@ -342,9 +399,96 @@
             </table>
             <div class="row">&nbsp;</div>
             <button onclick="location.href = '../hardware/add.php'" type="button" id="addBtn"><i class='bx bx-plus bx-fw'></i> Add New Hardware</button>
-            <button onclick="location.href = '../xlsm/upload_hardware.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
-            <!--<button onclick="location.href = '../hardware/add_03.php'" type="button" id="newModule" style="background-color: #e7e7e7"><i class='bx bx-universal-access'></i> New Module</button>-->
-            <button onclick="location.href = '../template/template_hardware.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
+            <button type="button" class="btn-upload"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>
+            <!--<button onclick="location.href = '../xlsm/upload_hardware.php'" type="button" id="upBtn"><i class='bx bx-cloud-upload bx-fw'></i> Batch Upload</button>-->
+            <!--<button onclick="location.href = '../hardware/add.php'" type="button" id="newModule" style="background-color: #e7e7e7"><i class='bx bx-universal-access'></i> New Module</button>-->
+            <!--<button onclick="location.href = '../template/template_hardware.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>-->
+            <button type="button" class="btn-download u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
+            
+            <div class="msg animate slide-in-down"></div>
         </div>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+        <script>
+                (function () {
+                    // data     
+                    var clear;
+                    var msgDuration = 2000; // 2 seconds
+                    var $msgDownload = 'UPLOAD FEATURE IN PROGRESS, PLEASE CONTACT ADMIN!';
+                    var $msgUpload = 'NEW TEMPLATE IN PROGRESS, PLEASE CONTACT ADMIN!';
+                    var $msgSuccess = 'Great job! Well done :)';
+                    var $msgDanger = 'Careful with that!';
+                    var $msgWarning = 'Try that again and see what happens';
+                    var $msgInfo = 'This is a friendly reminder';
+
+                    // cache DOM
+                    var $msg = $('.msg');
+                    var $btnSuccess = $('.btn-success');
+                    var $btnDanger = $('.btn-danger');
+                    var $btnWarning = $('.btn-warning');
+                    var $btnInfo = $('.btn-info');
+                    var $btnDownload = $('.btn-download');
+                    var $btnUpload = $('.btn-upload');
+
+                    // render message
+                    function render(message) {
+
+                        hide();
+
+                        switch (message) {
+                            case 'success':
+                                $msg.addClass('msg-success active').text($msgSuccess);
+                                break;
+                            case 'danger':
+                                $msg.addClass('msg-danger active').text($msgDanger);
+                                break;
+                            case 'warning':
+                                $msg.addClass('msg-warning active').text($msgWarning);
+                                break;
+                            case 'info':
+                                $msg.addClass('msg-info active').text($msgInfo);
+                                break;
+                            case 'upload':
+                                $msg.addClass('msg-alert active').text($msgUpload);
+                                break;
+                            case 'download':
+                                $msg.addClass('msg-alert active').text($msgDownload);
+                                break;
+                        }
+                    }
+
+                    function timer() {
+                        clearTimeout(clear);
+                        clear = setTimeout(function () { hide(); }, msgDuration);
+                    }
+
+                    function hide() {
+                        $msg.removeClass('msg-success msg-danger msg-warning msg-info msg-alert active');
+                    }
+
+                    // bind events
+                    $btnSuccess.on('click', function () {
+                        render('success');
+                    });
+                    $btnDanger.on('click', function () {
+                        render('danger');
+                    });
+                    $btnWarning.on('click', function () {
+                        render('warning');
+                    });
+                    $btnInfo.on('click', function () {
+                        render('info');
+                    });
+                    $btnUpload.on('click', function () {
+                        render('upload');
+                    });
+                    $btnDownload.on('click', function () {
+                        render('download');
+                    });
+                    $msg.on('transitionend', timer);
+
+                })();
+        </script>
     </body>
 </html>
