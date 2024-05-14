@@ -6,7 +6,7 @@
  */
 
 // DB table to use
-$table = 'contoh_hardware';
+$table = 'data_hardware';
 
 // Table's primary key
 $primaryKey = 'id';
