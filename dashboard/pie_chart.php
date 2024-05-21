@@ -13,7 +13,7 @@ $data_ospi = array();
 $data_osv = array();
 
 $result1 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SBN' AND d.flag IN ('1') UNION
-                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SBN' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw0 d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SBN' AND d.flag IN ('1') UNION
                                 SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SBN' AND d.flag IN ('1') UNION
                                 SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SBN' AND d.flag IN ('1')");
 while ($row = mysqli_fetch_array($result1)) {
@@ -22,7 +22,7 @@ while ($row = mysqli_fetch_array($result1)) {
 }
 
 $result2 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'CEBU' AND d.flag IN ('1') UNION
-                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'CEBU' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw0 d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'CEBU' AND d.flag IN ('1') UNION
                                 SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'CEBU' AND d.flag IN ('1') UNION
                                 SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'CEBU' AND d.flag IN ('1')");
 while ($row = mysqli_fetch_array($result2)) {
@@ -31,7 +31,7 @@ while ($row = mysqli_fetch_array($result2)) {
 }
 
 $result3 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SUZHOU' AND d.flag IN ('1') UNION
-                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SUZHOU' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw0 d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SUZHOU' AND d.flag IN ('1') UNION
                                 SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SUZHOU' AND d.flag IN ('1') UNION
                                 SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'SUZHOU' AND d.flag IN ('1')");
 while ($row = mysqli_fetch_array($result3)) {
@@ -40,7 +40,7 @@ while ($row = mysqli_fetch_array($result3)) {
 }
 
 $result4 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSPI' AND d.flag IN ('1') UNION
-                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSPI' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw0 d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSPI' AND d.flag IN ('1') UNION
                                 SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSPI' AND d.flag IN ('1') UNION
                                 SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSPI' AND d.flag IN ('1')");
 while ($row = mysqli_fetch_array($result4)) {
@@ -49,7 +49,7 @@ while ($row = mysqli_fetch_array($result4)) {
 }
 
 $result5 = mysqli_query($con, "SELECT CONCAT('Equipment') AS item, COUNT(*) AS bil FROM gest_form_eqpt d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSV' AND d.flag IN ('1') UNION
-                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSV' AND d.flag IN ('1') UNION
+                                SELECT CONCAT('Hardware') AS item, COUNT(*) AS bil FROM gest_form_hw0 d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSV' AND d.flag IN ('1') UNION
                                 SELECT CONCAT('DAQ') AS item, COUNT(*) AS bil FROM gest_form_daq d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSV' AND d.flag IN ('1') UNION
                                 SELECT CONCAT('Power Supply') AS item, COUNT(*) AS bil FROM gest_form_ps d INNER JOIN gest_parameter_detail pd ON lab_location = pd.code WHERE pd.name = 'OSV' AND d.flag IN ('1')");
 while ($row = mysqli_fetch_array($result5)) {
