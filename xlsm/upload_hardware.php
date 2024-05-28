@@ -14,7 +14,7 @@ ini_set('display_errors', true);
 require_once __DIR__ . '/../\template\SimpleXLSX.php';
 
 echo '<div class="twelve columns">&nbsp;</div><div class="twelve columns">&nbsp;</div>
-    <h4 style="border-left: none;">Upload Hardware</h4>
+    <h4 style="border-left: none;">Upload Hardware test</h4>
 <form method="post" enctype="multipart/form-data">
 *.XLSM <input type="file" name="file"  />&nbsp;&nbsp;<input type="submit" value="Load" />
 </form>';
@@ -25,42 +25,121 @@ if ($username == '') {
     $username = 'System';
 }
 
-$lablocation = '';
-$productgroup = '';
+//$lablocation = '';
+//$productgroup = '';
+//$category = '';
+//$labmanager = '';
+//$hwtype = '';
+//$manufacturer = '';
+//$assembly = '';
+//$voltrate = '';
+//$currrate = '';
+//$temprate = '';
+//$stress = '';
+//$daq = '';
+//$pcb = '';
+//$mbl = '';
+//$mbw = '';
+//$mbt = '';
+//$layer = '';
+//$frame = '';
+//$board = '';
+//$universal = '';
+//$soctype = '';
+//$socqty = '';
+//$socpin = '';
+//$socpitch = '';
+//$package = '';
+//$loadmax = '';
+//$loadqty = '';
+//$loadpitch = '';
+//$promax = '';
+//$progqty = '';
+//$progpitch = '';
+//$conntype = '';
+//$nopins = '';
+//$pinpitch = '';
+//$edge = '';
+//$maxdut = '';
+
+$site = '';
+$assembly_number = '';
 $category = '';
-$labmanager = '';
-$hwtype = '';
-$manufacturer = '';
-$assembly = '';
-$voltrate = '';
-$currrate = '';
-$temprate = '';
-$stress = '';
-$daq = '';
-$pcb = '';
-$mbl = '';
-$mbw = '';
-$mbt = '';
-$layer = '';
-$frame = '';
-$board = '';
-$universal = '';
-$soctype = '';
-$socqty = '';
-$socpin = '';
-$socpitch = '';
-$package = '';
-$loadmax = '';
-$loadqty = '';
-$loadpitch = '';
-$promax = '';
-$progqty = '';
-$progpitch = '';
-$conntype = '';
-$nopins = '';
-$pinpitch = '';
-$edge = '';
-$maxdut = '';
+$sub_category = '';
+$rate_temp = '';
+$rate_humid = '';
+$rate_volt = '';
+$rate_curr = '';
+$pcb_material = '';
+$pcb_temp = '';
+$pcb_moisture = '';
+$pcb_copper = '';
+$pcb_thick = '';
+$pcb_chamfered = '';
+$pcb_coat = '';
+$pcb_layer = '';
+$edge_pitch = '';
+$edge_thick = '';
+$edge_width = '';
+$edge_spacing = '';
+$trace_layer = '';
+$trace_thick = '';
+$trace_width = '';
+$trace_spacing = '';
+$trace_drill = '';
+$trace_impedance = '';
+$board_material = '';
+$board_screw = '';
+$board_handle = '';
+$component = '';
+$socket_part = '';
+$socket_avail = '';
+$socket_qty = '';
+$socket_pin_qty = '';
+$socket_pin_pitch = '';
+$socket_body = '';
+$socket_pin = '';
+$socket_config = '';
+$socket_volt = '';
+$socket_curr = '';
+$socket_temp = '';
+$conn_number = '';
+$conn_avail = '';
+$conn_pin_qty = '';
+$conn_pin_pitch = '';
+$conn_body = '';
+$conn_pin = '';
+$conn_mold = '';
+$conn_contact = '';
+$conn_volt = '';
+$conn_curr = '';
+$conn_temp = '';
+$mark_volt = '';
+$mark_curr = '';
+$mark_temp = '';
+$mark_board = '';
+$mark_assembly = '';
+$mark_stress = '';
+$mark_socket = '';
+$mark_pin = '';
+$mark_vendor = '';
+$mark_layer = '';
+$mark_artwork = '';
+$mark_cat = '';
+$mark_dut = '';
+$mark_loose = '';
+$mark_bug = '';
+$mark_bib = '';
+$mark_logo = '';
+$app_verify = '';
+$app_component = '';
+$app_temp = '';
+$app_tight = '';
+$app_select = '';
+$app_heatsink = '';
+
+$status = 'Active';
+$flag = '1';
 
 if (isset($_FILES['file'])) {
     if ($xlsx = SimpleXLSX::parse($_FILES['file']['tmp_name'])) {
@@ -76,172 +155,455 @@ if (isset($_FILES['file'])) {
             
             if ($num_cols == '37') {
             
-            echo '<h2>' . $xlsx->sheetName(0) . '</h2>';
-            echo '<table border=1 border-collapse=collapse>';
-            foreach ($xlsx->rows() as $k => $r) {
-                // SKIP first 3 column for the labelling
-                if ($k == 0)
-                    continue;
-                // THIS ONE NK BACA PER COLUMN
-                for ($j = 0; $j < $num_cols; $j++) {
-                    if ($j == 1) {
-                        if ($r[$j] == '') {
-                            if ($k == 3) {
-                                echo '<tr><td colspan=' . $num_cols . '>No Data</td></tr>';
-                            }
-                        } else {
-                            echo '<tr>';
-                            for ($i = 0; $i < $num_cols; $i++) {
-                                echo '<td>' . (!empty($r[$i]) ? $r[$i] : '&nbsp;' ) . '</td>';
-                                
-                                // THIS ONE NK SKIP HEADERS VALUE
-                                if ($k == 1)
-                                    continue;
-                                
-                                switch ($i) {
-                                    case 0:
-                                        $no = $r[$i];
-                                        break;
-                                    case 1:
-                                        $lablocation = $r[$i];
-                                        $lablocation = getCode($lablocation, '002', $username);
-                                        break;
-                                    case 2:
-                                        $productgroup = $r[$i];
-                                        $productgroup = getCode($productgroup, '003', $username);
-                                        break;
-                                    case 3:
-                                        $category = $r[$i];
-                                        $category = getCode($category, '004', $username);
-                                        break;
-                                    case 4:
-                                        $labmanager = $r[$i];
-                                        $labmanager = getCode($labmanager, '005', $username);
-                                        break;
-                                    case 5:
-                                        $hwtype = $r[$i];
-                                        $hwtype = getCode($hwtype, '019', $username);
-                                        break;
-                                    case 6:
-                                        $manufacturer = $r[$i];
-                                        $manufacturer = getCode($manufacturer, '018', $username);
-                                        break;
-                                    case 7:
-                                        $assembly = $r[$i];
-                                        break;
-                                    case 8:
-                                        $voltrate = $r[$i];
-                                        break;
-                                    case 9:
-                                        $currrate = $r[$i];
-                                        break;
-                                    case 10:
-                                        $temprate = $r[$i];
-                                        break;
-                                    case 11:
-                                        $stress = $r[$i];
-                                        $stress = getCode($stress, '041', $username);
-                                        break;
-                                    case 12:
-                                        $daq = $r[$i];
-                                        $daq = getCode($daq, '022', $username);
-                                        break;
-                                    case 13:
-                                        $mbl = $r[$i];
-                                        break;
-                                    case 14:
-                                        $mbw = $r[$i];
-                                        break;
-                                    case 15:
-                                        $mbt = $r[$i];
-                                        break;
-                                    case 16:
-                                        $pcb = $r[$i];
-                                        $pcb = getCode($pcb, '042', $username);
-                                        break;
-                                    case 17:
-                                        $frame = $r[$i];
-                                        $frame = getCode($frame, '043', $username);
-                                        break;
-                                    case 18:
-                                        $board = $r[$i];
-                                        $board = getCode($board, '044', $username);
-                                        break;
-                                    case 19:
-                                        $layer = $r[$i];
-                                        break;
-                                    case 20:
-                                        $universal = $r[$i];
-                                        $universal = getCode($universal, '045', $username);
-                                        break;
-                                    case 21:
-                                        $soctype = $r[$i];
-                                        $soctype = getCode($soctype, '046', $username);
-                                        break;
-                                    case 22:
-                                        $socqty = $r[$i];
-                                        break;
-                                    case 23:
-                                        $socpin = $r[$i];
-                                        break;
-                                    case 24:
-                                        $socpitch = $r[$i];
-                                        break;
-                                    case 25:
-                                        $package = $r[$i];
-                                        $package = getCode($package, '047', $username);
-                                        break;
-                                    case 26:
-                                        $loadmax = $r[$i];
-                                        break;
-                                    case 27:
-                                        $loadqty = $r[$i];
-                                        break;
-                                    case 28:
-                                        $loadpitch = $r[$i];
-                                        break;
-                                    case 29:
-                                        $promax = $r[$i];
-                                        break;
-                                    case 30:
-                                        $progqty = $r[$i];
-                                        break;
-                                    case 31:
-                                        $progpitch = $r[$i];
-                                        break;
-                                    case 32:
-                                        $conntype = $r[$i];
-                                        $conntype = getCode($conntype, '046', $username);
-                                        break;
-                                    case 33:
-                                        $nopins = $r[$i];
-                                        break;
-                                    case 34:
-                                        $pinpitch = $r[$i];
-                                        break;
-                                    case 35:
-                                        $edge = $r[$i];
-                                        break;
-                                    case 36:
-                                        $maxdut = $r[$i];
-                                        break;
+                echo '<h2>' . $xlsx->sheetName(0) . '</h2>';
+                echo '<table border=1 border-collapse=collapse>';
+                foreach ($xlsx->rows() as $k => $r) {
+                    // SKIP first 3 column for the labelling
+                    if ($k == 0)
+                        continue;
+                    // THIS ONE NK BACA PER COLUMN
+                    for ($j = 0; $j < $num_cols; $j++) {
+                        if ($j == 1) {
+                            if ($r[$j] == '') {
+                                if ($k == 3) {
+                                    echo '<tr><td colspan=' . $num_cols . '>No Data</td></tr>';
                                 }
+                            } else {
+                                echo '<tr>';
+                                for ($i = 0; $i < $num_cols; $i++) {
+                                    echo '<td>' . (!empty($r[$i]) ? $r[$i] : '&nbsp;' ) . '</td>';
+
+                                    // THIS ONE NK SKIP HEADERS VALUE
+                                    if ($k == 1)
+                                        continue;
+
+                                    switch ($i) {
+                                        case 0:
+                                            $no = $r[$i];
+                                            break;
+                                        case 1:
+                                            $lablocation0 = $r[$i];
+                                            $lablocation = getCode($lablocation0, '002', $username);
+                                            break;
+                                        case 2:
+                                            $productgroup0 = $r[$i];
+                                            $productgroup = getCode($productgroup0, '003', $username);
+                                            break;
+                                        case 3:
+                                            $category0 = $r[$i];
+                                            $category = getCode($category0, '004', $username);
+                                            break;
+                                        case 4:
+                                            $labmanager0 = $r[$i];
+                                            $labmanager = getCode($labmanager0, '005', $username);
+                                            break;
+                                        case 5:
+                                            $hwtype0 = $r[$i];
+                                            $hwtype = getCode($hwtype0, '019', $username);
+                                            break;
+                                        case 6:
+                                            $manufacturer0 = $r[$i];
+                                            $manufacturer = getCode($manufacturer0, '018', $username);
+                                            break;
+                                        case 7:
+                                            $assembly = $r[$i];
+                                            break;
+                                        case 8:
+                                            $voltrate = $r[$i];
+                                            break;
+                                        case 9:
+                                            $currrate = $r[$i];
+                                            break;
+                                        case 10:
+                                            $temprate = $r[$i];
+                                            break;
+                                        case 11:
+                                            $stress0 = $r[$i];
+                                            $stress = getCode($stress0, '041', $username);
+                                            break;
+                                        case 12:
+                                            $daq0 = $r[$i];
+                                            $daq = getCode($daq0, '022', $username);
+                                            break;
+                                        case 13:
+                                            $mbl = $r[$i];
+                                            break;
+                                        case 14:
+                                            $mbw = $r[$i];
+                                            break;
+                                        case 15:
+                                            $mbt = $r[$i];
+                                            break;
+                                        case 16:
+                                            $pcb0 = $r[$i];
+                                            $pcb = getCode($pcb0, '042', $username);
+                                            break;
+                                        case 17:
+                                            $frame0 = $r[$i];
+                                            $frame = getCode($frame0, '043', $username);
+                                            break;
+                                        case 18:
+                                            $board0 = $r[$i];
+                                            $board = getCode($board0, '044', $username);
+                                            break;
+                                        case 19:
+                                            $layer = $r[$i];
+                                            break;
+                                        case 20:
+                                            $universal0 = $r[$i];
+                                            $universal = getCode($universal0, '045', $username);
+                                            break;
+                                        case 21:
+                                            $soctype0 = $r[$i];
+                                            $soctype = getCode($soctype0, '046', $username);
+                                            break;
+                                        case 22:
+                                            $socqty = $r[$i];
+                                            break;
+                                        case 23:
+                                            $socpin = $r[$i];
+                                            break;
+                                        case 24:
+                                            $socpitch = $r[$i];
+                                            break;
+                                        case 25:
+                                            $package0 = $r[$i];
+                                            $package = getCode($package0, '047', $username);
+                                            break;
+                                        case 26:
+                                            $loadmax = $r[$i];
+                                            break;
+                                        case 27:
+                                            $loadqty = $r[$i];
+                                            break;
+                                        case 28:
+                                            $loadpitch = $r[$i];
+                                            break;
+                                        case 29:
+                                            $promax = $r[$i];
+                                            break;
+                                        case 30:
+                                            $progqty = $r[$i];
+                                            break;
+                                        case 31:
+                                            $progpitch = $r[$i];
+                                            break;
+                                        case 32:
+                                            $conntype0 = $r[$i];
+                                            $conntype = getCode($conntype0, '046', $username);
+                                            break;
+                                        case 33:
+                                            $nopins = $r[$i];
+                                            break;
+                                        case 34:
+                                            $pinpitch = $r[$i];
+                                            break;
+                                        case 35:
+                                            $edge = $r[$i];
+                                            break;
+                                        case 36:
+                                            $maxdut = $r[$i];
+                                            break;
+                                    }
+                                }
+                                echo '</tr>';
+                                inserttodatabase($k, $username,
+                                                    $lablocation, $productgroup, $category, $labmanager, $hwtype, $manufacturer, $assembly, $voltrate, $currrate, $temprate,
+                                                    $stress, $daq, $pcb, $mbl, $mbw, $mbt, $layer, $frame, $board, $universal,
+                                                    $soctype, $socqty, $socpin, $socpitch, $package, $loadmax, $loadqty, $loadpitch, $promax, $progqty,
+                                                    $progpitch, $conntype, $nopins, $pinpitch, $edge, $maxdut);
                             }
-                            echo '</tr>';
-                            inserttodatabase($k, $username,
-                                                $lablocation, $productgroup, $category, $labmanager, $hwtype, $manufacturer, $assembly, $voltrate, $currrate, $temprate,
-                                                $stress, $daq, $pcb, $mbl, $mbw, $mbt, $layer, $frame, $board, $universal,
-                                                $soctype, $socqty, $socpin, $socpitch, $package, $loadmax, $loadqty, $loadpitch, $promax, $progqty,
-                                                $progpitch, $conntype, $nopins, $pinpitch, $edge, $maxdut);
                         }
                     }
                 }
-            }
-            echo '</table>';
-            echo '</td></tr></table>';
+                echo '</table>';
+                echo '</td></tr></table>';
+            } else if ($num_cols == '76') {
+                echo '<h2>' . $xlsx->sheetName(0) . '</h2>';
+                echo '<table border=1 border-collapse=collapse>';
+                foreach ($xlsx->rows() as $k => $r) {
+                    // SKIP first 3 column for the labelling
+                    if ($k == 0)
+                        continue;
+                    // THIS ONE NK BACA PER COLUMN
+                    for ($j = 0; $j < $num_cols; $j++) {
+                        if ($j == 1) {
+                            if ($r[$j] == '') {
+                                if ($k == 3) {
+                                    echo '<tr><td colspan=' . $num_cols . '>No Data</td></tr>';
+                                }
+                            } else {
+                                echo '<tr>';
+                                for ($i = 0; $i < $num_cols; $i++) {
+                                    echo '<td>' . (!empty($r[$i]) ? $r[$i] : '&nbsp;' ) . '</td>';
+
+                                    // THIS ONE NK SKIP HEADERS VALUE
+                                    if ($k == 1)
+                                        continue;
+
+                                    switch ($i) {
+                                        case 0:
+                                            $no = $r[$i];
+                                            break;
+                                        case 1:
+                                            $site = $r[$i];
+                                            break;
+                                        case 2:
+                                            $assembly_number = $r[$i];
+                                            break;
+                                        case 3:
+                                            $category = $r[$i];
+                                            break;
+                                        case 4:
+                                            $sub_category = $r[$i];
+                                            break;
+                                        case 5:
+                                            $rate_temp = $r[$i];
+                                            break;
+                                        case 6:
+                                            $rate_humid = $r[$i];
+                                            break;
+                                        case 7:
+                                            $rate_volt = $r[$i];
+                                            break;
+                                        case 8:
+                                            $rate_curr = $r[$i];
+                                            break;
+                                        case 9:
+                                            $pcb_material = $r[$i];
+                                            break;
+                                        case 10:
+                                            $pcb_temp = $r[$i];
+                                            break;
+                                        case 11:
+                                            $pcb_moisture = $r[$i];
+                                            break;
+                                        case 12:
+                                            $pcb_copper = $r[$i];
+                                            break;
+                                        case 13:
+                                            $pcb_thick = $r[$i];
+                                            break;
+                                        case 14:
+                                            $pcb_chamfered = $r[$i];
+                                            break;
+                                        case 15:
+                                            $pcb_coat = $r[$i];
+                                            break;
+                                        case 16:
+                                            $pcb_layer = $r[$i];
+                                            break;
+                                        case 17:
+                                            $edge_pitch = $r[$i];
+                                            break;
+                                        case 18:
+                                            $edge_thick = $r[$i];
+                                            break;
+                                        case 19:
+                                            $edge_width = $r[$i];
+                                            break;
+                                        case 20:
+                                            $edge_spacing = $r[$i];
+                                            break;
+                                        case 21:
+                                            $trace_layer = $r[$i];
+                                            break;
+                                        case 22:
+                                            $trace_thick = $r[$i];
+                                            break;
+                                        case 23:
+                                            $trace_width = $r[$i];
+                                            break;
+                                        case 24:
+                                            $trace_spacing = $r[$i];
+                                            break;
+                                        case 25:
+                                            $trace_drill = $r[$i];
+                                            break;
+                                        case 26:
+                                            $trace_impedance = $r[$i];
+                                            break;
+                                        case 27:
+                                            $board_material = $r[$i];
+                                            break;
+                                        case 28:
+                                            $board_screw = $r[$i];
+                                            break;
+                                        case 29:
+                                            $board_handle = $r[$i];
+                                            break;
+                                        case 30:
+                                            $component = $r[$i];
+                                            break;
+                                        case 31:
+                                            $socket_part = $r[$i];
+                                            break;
+                                        case 32:
+                                            $socket_avail = $r[$i];
+                                            break;
+                                        case 33:
+                                            $socket_qty = $r[$i];
+                                            break;
+                                        case 34:
+                                            $socket_pin_qty = $r[$i];
+                                            break;
+                                        case 35:
+                                            $socket_pin_pitch = $r[$i];
+                                            break;
+                                        case 36:
+                                            $socket_body = $r[$i];
+                                            break;
+                                        case 37:
+                                            $socket_pin = $r[$i];
+                                            break;
+                                        case 38:
+                                            $socket_config = $r[$i];
+                                            break;
+                                        case 39:
+                                            $socket_volt = $r[$i];
+                                            break;
+                                        case 40:
+                                            $socket_curr = $r[$i];
+                                            break;
+                                        case 41:
+                                            $socket_temp = $r[$i];
+                                            break;
+                                        case 42:
+                                            $conn_number = $r[$i];
+                                            break;
+                                        case 43:
+                                            $conn_avail = $r[$i];
+                                            break;
+                                        case 44:
+                                            $conn_pin_qty = $r[$i];
+                                            break;
+                                        case 45:
+                                            $conn_pin_pitch = $r[$i];
+                                            break;
+                                        case 46:
+                                            $conn_body = $r[$i];
+                                            break;
+                                        case 47:
+                                            $conn_pin = $r[$i];
+                                            break;
+                                        case 48:
+                                            $conn_mold = $r[$i];
+                                            break;
+                                        case 49:
+                                            $conn_contact = $r[$i];
+                                            break;
+                                        case 50:
+                                            $conn_volt = $r[$i];
+                                            break;
+                                        case 51:
+                                            $conn_curr = $r[$i];
+                                            break;
+                                        case 52:
+                                            $conn_temp = $r[$i];
+                                            break;
+                                        case 53:
+                                            $mark_volt = $r[$i];
+                                            break;
+                                        case 54:
+                                            $mark_curr = $r[$i];
+                                            break;
+                                        case 55:
+                                            $mark_temp = $r[$i];
+                                            break;
+                                        case 56:
+                                            $mark_board = $r[$i];
+                                            break;
+                                        case 57:
+                                            $mark_assembly = $r[$i];
+                                            break;
+                                        case 58:
+                                            $mark_stress = $r[$i];
+                                            break;
+                                        case 59:
+                                            $mark_socket = $r[$i];
+                                            break;
+                                        case 60:
+                                            $mark_pin = $r[$i];
+                                            break;
+                                        case 61:
+                                            $mark_vendor = $r[$i];
+                                            break;
+                                        case 62:
+                                            $mark_layer = $r[$i];
+                                            break;
+                                        case 63:
+                                            $mark_artwork = $r[$i];
+                                            break;
+                                        case 64:
+                                            $mark_cat = $r[$i];
+                                            break;
+                                        case 65:
+                                            $mark_dut = $r[$i];
+                                            break;
+                                        case 66:
+                                            $mark_loose = $r[$i];
+                                            break;
+                                        case 67:
+                                            $mark_bug = $r[$i];
+                                            break;
+                                        case 68:
+                                            $mark_bib = $r[$i];
+                                            break;
+                                        case 69:
+                                            $mark_logo = $r[$i];
+                                            break;
+                                        case 70:
+                                            $app_verify = $r[$i];
+                                            break;
+                                        case 71:
+                                            $app_component = $r[$i];
+                                            break;
+                                        case 73:
+                                            $app_temp = $r[$i];
+                                            break;
+                                        case 74:
+                                            $app_tight = $r[$i];
+                                            break;
+                                        case 75:
+                                            $app_select = $r[$i];
+                                            break;
+                                        case 76:
+                                            $app_heatsink = $r[$i];
+                                            break;
+                                    }
+                                }
+                                echo '</tr>';
+                                inserttohwdatabase($k, $username,
+                                        $site, $assembly_number, $category, $sub_category, $rate_temp, $rate_humid, $rate_volt, $rate_curr, 
+                                        $pcb_material, $pcb_temp, $pcb_moisture, $pcb_copper, $pcb_thick, $pcb_chamfered, $pcb_coat, $pcb_layer,
+                                        $edge_pitch, $edge_thick, $edge_width, $edge_spacing, $trace_layer, $trace_thick, $trace_width, $trace_spacing, $trace_drill, $trace_impedance, 
+                                        $board_material, $board_screw, $board_handle, $component, $socket_part, $socket_avail, $socket_qty, $socket_pin_qty, $socket_pin_pitch, $socket_body, $socket_pin, $socket_config, $socket_volt, $socket_curr, $socket_temp,
+                                        $conn_number, $conn_avail, $conn_pin_qty, $conn_pin_pitch, $conn_body, $conn_pin, $conn_mold, $conn_contact, $conn_volt, $conn_curr, $conn_temp, 
+                                        $mark_volt, $mark_curr, $mark_temp, $mark_board, $mark_assembly, $mark_stress, $mark_socket, $mark_pin, $mark_vendor, $mark_layer, $mark_artwork, $mark_cat, $mark_dut, $mark_loose, $mark_bug, $mark_bib, $mark_logo, 
+                                        $app_verify, $app_component, $app_temp, $app_tight, $app_select, $app_heatsink);
+//                                inserttodatabase($k, $username,
+//                                                    $lablocation, $productgroup, $category, $labmanager, $hwtype, $manufacturer, $assembly, $voltrate, $currrate, $temprate,
+//                                                    $stress, $daq, $pcb, $mbl, $mbw, $mbt, $layer, $frame, $board, $universal,
+//                                                    $soctype, $socqty, $socpin, $socpitch, $package, $loadmax, $loadqty, $loadpitch, $promax, $progqty,
+//                                                    $progpitch, $conntype, $nopins, $pinpitch, $edge, $maxdut);
+                            }
+                        }
+                    }
+                }
+                echo '</table>';
+                echo '</td></tr></table>';
+            } else if ($num_cols == '74') {
+                echo 'salah upload 74';
+            } else if ($num_cols == '75') {
+                echo 'salah upload 75';
+            } else if ($num_cols == '77') {
+                echo 'salah upload 77';
+            } else if ($num_cols == '78') {
+                echo 'salah upload 78';
             } else {
                 echo 'You have uploaded an incorrect template. <br>This template is the old one [Check the columns]. <br>Please check the files before uploading.
                     <br><br>Severity: High
+                    <br> ada '.$num_cols.' ni
                     <br>Action: Please upload the correct template [Hardware].';
             }
         } else {
@@ -273,7 +635,62 @@ function inserttodatabase($k, $username, $lablocation, $productgroup, $category,
         if ($con->multi_query($insert) === TRUE) {
             
         } else {
-            echo "Error: " . $newinsert . "<br>" . $con->error;
+            echo "Error: " . $insert . "<br>" . $con->error;
+        }
+        $con->close();
+    }
+}
+
+function inserttohwdatabase($k, $username,
+                            $site, $assembly_number, $category, $sub_category, $rate_temp, $rate_humid, $rate_volt, $rate_curr, 
+                            $pcb_material, $pcb_temp, $pcb_moisture, $pcb_copper, $pcb_thick, $pcb_chamfered, $pcb_coat, $pcb_layer,
+                            $edge_pitch, $edge_thick, $edge_width, $edge_spacing, $trace_layer, $trace_thick, $trace_width, $trace_spacing, $trace_drill, $trace_impedance, 
+                            $board_material, $board_screw, $board_handle, $component, $socket_part, $socket_avail, $socket_qty, $socket_pin_qty, $socket_pin_pitch, $socket_body, $socket_pin, $socket_config, $socket_volt, $socket_curr, $socket_temp,
+                            $conn_number, $conn_avail, $conn_pin_qty, $conn_pin_pitch, $conn_body, $conn_pin, $conn_mold, $conn_contact, $conn_volt, $conn_curr, $conn_temp, 
+                            $mark_volt, $mark_curr, $mark_temp, $mark_board, $mark_assembly, $mark_stress, $mark_socket, $mark_pin, $mark_vendor, $mark_layer, $mark_artwork, $mark_cat, $mark_dut, $mark_loose, $mark_bug, $mark_bib, $mark_logo, 
+                            $app_verify, $app_component, $app_temp, $app_tight, $app_select, $app_heatsink) {
+    if ($k == 1) {
+        
+    } else {
+        include '../class/db.php';
+        $insert = "INSERT INTO gest_form_hw0 (lab_location, strategy, standard_category, champion, assembly_no, "
+                . "category, sub_category, temp_rating, humid_rating, voltage_rating, current_rating, "
+                . "created_by, updated_by, delete_by, created_date, update_date, delete_date, status, flag) "
+                . "VALUES ('$site', '$strategy', '$standard', '$manager', '$assembly_number', "
+                . "'$category', '$sub_category', '$rate_temp', '$rate_humid', '$rate_volt', '$rate_curr', "
+                . "'$username', NULL, NULL, NOW(), NULL, NULL, 'Active', '1')";
+                
+        if ($con->multi_query($insert) === TRUE) {
+            $hardware_id = $con->insert_id;
+            $query002 = "INSERT INTO gest_form_hw1 (hw_id, pcb_material, pcb_temp, pcb_moisture, pcb_copper, pcb_thick, pcb_edge, pcb_coating, pcb_layer, "
+                        . "edge_pitch, edge_thick, edge_width, edge_spacing, trace_layer, trace_thick, trace_width, trace_spacing, trace_drill, trace_control, "
+                        . "bf_material, bf_screw, bf_handle, component) "
+                        . "VALUES ('$hardware_id', '$pcb_material', '$pcb_temp', '$pcb_moisture', '$pcb_copper', '$pcb_thick', '$pcb_chamfered', '$pcb_coat', '$pcb_layer', "
+                        . "'$edge_pitch', '$edge_thick', '$edge_width', '$edge_spacing', '$trace_layer', '$trace_thick', '$trace_width', '$trace_spacing', '$trace_drill', '$trace_impedance', "
+                        . "'$board_material', '$board_screw', '$board_handle', '$component')";
+            $insert02 = mysqli_query($con, $query002);
+
+            $query003 = "INSERT INTO gest_form_hw2 (hw_id, mb_socket_part, mb_socket_avail, mb_socket_qty, mb_socket_pin_qty, mb_socket_pin_pitch, "
+                        . "mb_socket_body, mb_socket_pin, mb_socket_config, mb_socket_volt, mb_socket_curr, mb_socket_temp, "
+                        . "conn_number, conn_avail, conn_pin_qty, conn_pin_pitch, conn_body, conn_pin, "
+                        . "conn_mold, conn_contact, conn_volt, conn_curr, conn_temp) "
+                        . "VALUES ('$hardware_id', '$socket_part', '$socket_avail', '$socket_qty', '$socket_pin_qty', '$socket_pin_pitch', "
+                        . "'$socket_body', '$socket_pin', '$socket_config', '$socket_volt', '$socket_curr', '$socket_temp', "
+                        . "'$conn_number', '$conn_avail', '$conn_pin_qty', '$conn_pin_pitch', '$conn_body', '$conn_pin', "
+                        . "'$conn_mold', '$conn_contact', '$conn_volt', '$conn_curr', '$conn_temp')";
+            $insert03 = mysqli_query($con, $query003);
+
+            $query004 = "INSERT INTO gest_form_hw3 (hw_id, mark_volt, mark_curr, mark_temp, mark_board, mark_assembly, "
+                        . "mark_stress, mark_socket, mark_pin, mark_vendor, mark_layer, mark_artwork, "
+                        . "mark_cat, mark_dut, mark_loose, mark_bug, mark_bib, mark_logo, "
+                        . "app_verify, app_component, app_temp, app_tight, app_select, app_heatsink) "
+                        . "VALUES ('$hardware_id', '$mark_volt', '$mark_curr', '$mark_temp', '$mark_board', '$mark_assembly', "
+                        . "'$mark_stress', '$mark_socket', '$mark_pin', '$mark_vendor', '$mark_layer', '$mark_artwork', "
+                        . "'$mark_cat', '$mark_dut', '$mark_loose', '$mark_bug', '$mark_bib', '$mark_logo', "
+                        . "'$app_verify', '$app_component', '$app_temp', '$app_tight', '$app_select', '$app_heatsink')";
+            $insert04 = mysqli_query($con, $query004);
+        } else {
+            echo "Error: " . $insert . "<br>" . $con->error;
         }
         $con->close();
     }
