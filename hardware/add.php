@@ -19,6 +19,7 @@ include '../class/get_parameter.php';
             
             ::placeholder {
                 color: orange;
+                opacity: 0.3;
             }
         </style>
     </head>
@@ -62,7 +63,7 @@ include '../class/get_parameter.php';
                 </div>
                 <div class="row">
                     <div class="two columns"><label for="assembly_no">Assembly Number *</label></div>
-                    <div class="three columns"><input type="text" id="assembly_no" name="assembly_no" placeholder="Assembly Number" value="" required> </div>
+                    <div class="three columns"><input type="text" id="assembly_no" name="assembly_no" placeholder="Eg: Assembly Number" value="" required> </div>
                 </div>
             </div>
 
@@ -105,18 +106,18 @@ include '../class/get_parameter.php';
                 <div class="tab-content" id="tabRating">
                     <div class="row">
                         <div class="two columns"><label for="temperature">Temperature, &#8451;</label></div>
-                        <div class="three columns"><input type="text" id="temperature" name="temperature" value="" placeholder="200 &#8451;"> </div>
+                        <div class="three columns"><input type="text" id="temperature" name="temperature" value="" placeholder="Eg: 200 &#8451;"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="humidity">Humidity, &#37</label></div>
-                        <div class="three columns"><input type="text" id="humidity" name="humidity" value="" placeholder="85 &#37"> </div>
+                        <div class="three columns"><input type="text" id="humidity" name="humidity" value="" placeholder="Eg: 85 &#37"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="voltage">Voltage, V</label></div>
-                        <div class="three columns"><input type="text" id="voltage" name="voltage" value="" placeholder="200 V"> </div>
+                        <div class="three columns"><input type="text" id="voltage" name="voltage" value="" placeholder="Eg: 200 V"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="current">Overall Current, A</label></div>
-                        <div class="three columns"><input type="text" id="current" name="current" value="" placeholder="3 A"> </div>
+                        <div class="three columns"><input type="text" id="current" name="current" value="" placeholder="Eg: 3 A"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                 </div>
@@ -124,23 +125,23 @@ include '../class/get_parameter.php';
                 <div class="tab-content" id="tabPcb">
                     <div class="row">
                         <div class="two columns"><label for="pcb_material">PCB Material</label></div>
-                        <div class="three columns"><input type="text" id="pcb_material" name="pcb_material" value="" placeholder="Polyimide Arlon 85N"> </div>
+                        <div class="three columns"><input type="text" id="pcb_material" name="pcb_material" value="" placeholder="Eg: Polyimide Arlon 85N"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="pcb_material2">PCB Material Tg, &#8451;</label></div>
-                        <div class="three columns"><input type="text" id="pcb_material2" name="pcb_material2" value="" placeholder="25 &#8451;"> </div>
+                        <div class="three columns"><input type="text" id="pcb_material2" name="pcb_material2" value="" placeholder="Eg: 25 &#8451;"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="pcb_moisture">PCB Material Moisture Absorption, &#37</label></div>
-                        <div class="three columns"><input type="text" id="pcb_moisture" name="pcb_moisture" value="" placeholder="0.27 &#37"> </div>
+                        <div class="three columns"><input type="text" id="pcb_moisture" name="pcb_moisture" value="" placeholder="Eg: 0.27 &#37"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="edge_copper">Edge-to nearest copper distance</label></div>
-                        <div class="three columns"><input type="text" id="edge_copper" name="edge_copper" value="" placeholder="2.6"> </div>
+                        <div class="three columns"><input type="text" id="edge_copper" name="edge_copper" value="" placeholder="Eg: 2.6"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="pcb_thickness">PCB thickness, mm</label></div>
-                        <div class="three columns"><input type="text" id="pcb_thickness" name="pcb_thickness" value="" placeholder="1.56mm &#177 10%mm"> </div>
+                        <div class="three columns"><input type="text" id="pcb_thickness" name="pcb_thickness" value="" placeholder="Eg: 1.56mm &#177 10%mm"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="edge_chamfered">Board Edges should be chamfered</label></div>
                         <div class="three columns">
@@ -161,7 +162,7 @@ include '../class/get_parameter.php';
                         </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="no_layer">Number of layers</label></div>
-                        <div class="three columns"><input type="text" id="no_layer" name="no_layer" value="" placeholder="8"> </div>
+                        <div class="three columns"><input type="text" id="no_layer" name="no_layer" value="" placeholder="Eg: 8"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                 </div>
@@ -169,18 +170,18 @@ include '../class/get_parameter.php';
                 <div class="tab-content" id="tabEdge">
                     <div class="row">
                         <div class="two columns"><label for="edge_pitch">Edge Finger Pitch</label></div>
-                        <div class="three columns"><input type="text" id="edge_pitch" name="edge_pitch" value="" placeholder="0.156 &#x22;"> </div>
+                        <div class="three columns"><input type="text" id="edge_pitch" name="edge_pitch" value="" placeholder="Eg: 0.156 &#x22;"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="copper_thickness">Copper Thickness, oz.</label></div>
-                        <div class="three columns"><input type="text" id="copper_thickness" name="copper_thickness" value="" placeholder="2 oz"> </div>
+                        <div class="three columns"><input type="text" id="copper_thickness" name="copper_thickness" value="" placeholder="Eg: 2 oz"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="trace_width">Trace Width, mil</label></div>
-                        <div class="three columns"><input type="text" id="trace_width" name="trace_width" value="" placeholder="54 mil"> </div>
+                        <div class="three columns"><input type="text" id="trace_width" name="trace_width" value="" placeholder="Eg: 54 mil"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="trace_space">Trace Spacing, mil</label></div>
-                        <div class="three columns"><input type="text" id="trace_space" name="trace_space" value="" placeholder="116 mil"> </div>
+                        <div class="three columns"><input type="text" id="trace_space" name="trace_space" value="" placeholder="Eg: 116 mil"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                 </div>
@@ -195,20 +196,20 @@ include '../class/get_parameter.php';
                         </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="final_thickness">Final Copper Thickness, oz</label></div>
-                        <div class="three columns"><input type="text" id="final_thickness" name="final_thickness" value="" placeholder="2 oz"> </div>
+                        <div class="three columns"><input type="text" id="final_thickness" name="final_thickness" value="" placeholder="Eg: 2 oz"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="min_trace">Minimum Trace Width, mil</label></div>
-                        <div class="three columns"><input type="text" id="min_trace" name="min_trace" value="" placeholder="47 mil"> </div>
+                        <div class="three columns"><input type="text" id="min_trace" name="min_trace" value="" placeholder="Eg: 47 mil"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="min_space">Minimum Trace Spacing, mil</label></div>
-                        <div class="three columns"><input type="text" id="min_space" name="min_space" value="" placeholder="80 mil"> </div>
+                        <div class="three columns"><input type="text" id="min_space" name="min_space" value="" placeholder="Eg: 80 mil"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="plated_drill">Plated Through Hole minimum drill size, mil</label></div>
-                        <div class="three columns"><input type="text" id="plated_drill" name="plated_drill" value="" placeholder="20 mil"> </div>
+                        <div class="three columns"><input type="text" id="plated_drill" name="plated_drill" value="" placeholder="Eg: 20 mil"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="impedance">Impedance controlled traces?</label></div>
                         <div class="three columns">
@@ -223,7 +224,7 @@ include '../class/get_parameter.php';
                 <div class="tab-content" id="tabBoard">
                     <div class="row">
                         <div class="two columns"><label for="frame_chasis">Board Frame/Chassis material</label></div>
-                        <div class="three columns"><input type="text" id="frame_chasis" name="frame_chasis" value="" placeholder="SS316"> </div>
+                        <div class="three columns"><input type="text" id="frame_chasis" name="frame_chasis" value="" placeholder="Eg: SS316"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="frame_screw">Board Frame/Chassis > No protruding screw tips</label></div>
                         <div class="three columns">
@@ -246,7 +247,7 @@ include '../class/get_parameter.php';
                 <div class="tab-content" id="tabComponent">
                     <div class="row">
                         <label for="component" style="text-align: left">List components vs part number vs ratings</label>
-                        <textarea id="component" name="component" rows="7" cols="100" placeholder="Turret Terminal Pin: 6821-0-00-15-00-00-08-0
+                        <textarea id="component" name="component" rows="7" cols="100" placeholder="Eg: Turret Terminal Pin: 6821-0-00-15-00-00-08-0
 Temp rating: melting point 1000C"></textarea>
                     </div>
                 </div>
@@ -254,94 +255,94 @@ Temp rating: melting point 1000C"></textarea>
                 <div class="tab-content" id="tabSocket">
                     <div class="row">
                         <div class="two columns"><label for="socket_partno">Socket part number</label></div>
-                        <div class="three columns"><input type="text" id="socket_partno" name="socket_partno" value="" placeholder="T062-231015-D01-A450-R00"> </div>
+                        <div class="three columns"><input type="text" id="socket_partno" name="socket_partno" value="" placeholder="Eg: T062-231015-D01-A450-R00"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="socket_avail">Socket availability</label></div>
-                        <div class="three columns"><input type="text" id="socket_avail" name="socket_avail" value="" placeholder="Customized"> </div>
+                        <div class="three columns"><input type="text" id="socket_avail" name="socket_avail" value="" placeholder="Eg: Customized"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="socket_qty">Socket qty</label></div>
-                        <div class="three columns"><input type="text" id="socket_qty" name="socket_qty" value="" placeholder="6"> </div>
+                        <div class="three columns"><input type="text" id="socket_qty" name="socket_qty" value="" placeholder="Eg: 6"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="socket_pin_qty">Socket pin qty</label></div>
-                        <div class="three columns"><input type="text" id="socket_pin_qty" name="socket_pin_qty" value="" placeholder="96"> </div>
+                        <div class="three columns"><input type="text" id="socket_pin_qty" name="socket_pin_qty" value="" placeholder="Eg: 96"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="socket_pin_pitch">Socket pin pitch</label></div>
-                        <div class="three columns"><input type="text" id="socket_pin_pitch" name="socket_pin_pitch" value="" placeholder="8.30mm"> </div>
+                        <div class="three columns"><input type="text" id="socket_pin_pitch" name="socket_pin_pitch" value="" placeholder="Eg: 8.30mm"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="socket_body_material">Socket body material</label></div>
-                        <div class="three columns"><input type="text" id="socket_body_material" name="socket_body_material" value="" placeholder="Ketron Peek"> </div>
+                        <div class="three columns"><input type="text" id="socket_body_material" name="socket_body_material" value="" placeholder="Eg: Ketron Peek"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="socket_pin_material">Socket pin material</label></div>
-                        <div class="three columns"><input type="text" id="socket_pin_material" name="socket_pin_material" value="" placeholder="Berrylium Copper"> </div>
+                        <div class="three columns"><input type="text" id="socket_pin_material" name="socket_pin_material" value="" placeholder="Eg: Berrylium Copper"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="socket_config">Socket configuration</label></div>
-                        <div class="three columns"><input type="text" id="socket_config" name="socket_config" value="" placeholder="Open Top"> </div>
+                        <div class="three columns"><input type="text" id="socket_config" name="socket_config" value="" placeholder="Eg: Open Top"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="socket_vol_rate">Socket voltage rating, V</label></div>
-                        <div class="three columns"><input type="text" id="socket_vol_rate" name="socket_vol_rate" value="" placeholder="2000 V"> </div>
+                        <div class="three columns"><input type="text" id="socket_vol_rate" name="socket_vol_rate" value="" placeholder="Eg: 2000 V"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="socket_curr_rate">Socket current rating, A</label></div>
-                        <div class="three columns"><input type="text" id="socket_curr_rate" name="socket_curr_rate" value="" placeholder="3 A"> </div>
+                        <div class="three columns"><input type="text" id="socket_curr_rate" name="socket_curr_rate" value="" placeholder="Eg: 3 A"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="socket_temp_rate">Socket temperature rating, &#8451;</label></div>
-                        <div class="three columns"><input type="text" id="socket_temp_rate" name="socket_temp_rate" value="" placeholder="200 &#8451;"> </div>
+                        <div class="three columns"><input type="text" id="socket_temp_rate" name="socket_temp_rate" value="" placeholder="Eg: 200 &#8451;"> </div>
                     </div>
                 </div>
 
                 <div class="tab-content" id="tabConnector">
                     <div class="row">
                         <div class="two columns"><label for="conn_part">Voltage rating label</label></div>
-                        <div class="three columns"><input type="text" id="conn_part" name="conn_part" value="" placeholder="TMM15DRSD-S664"> </div>
+                        <div class="three columns"><input type="text" id="conn_part" name="conn_part" value="" placeholder="Eg: TMM15DRSD-S664"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="conn_avail">Connector availability</label></div>
-                        <div class="three columns"><input type="text" id="conn_avail" name="conn_avail" value="" placeholder="Yes"> </div>
+                        <div class="three columns"><input type="text" id="conn_avail" name="conn_avail" value="" placeholder="Eg: Yes"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="conn_pin_qty">Connector pin qty</label></div>
-                        <div class="three columns"><input type="text" id="conn_pin_qty" name="conn_pin_qty" value="" placeholder="14"> </div>
+                        <div class="three columns"><input type="text" id="conn_pin_qty" name="conn_pin_qty" value="" placeholder="Eg: 14"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="conn_pin_pitch">Connector pin pitch</label></div>
-                        <div class="three columns"><input type="text" id="conn_pin_pitch" name="conn_pin_pitch" value="" placeholder="15"> </div>
+                        <div class="three columns"><input type="text" id="conn_pin_pitch" name="conn_pin_pitch" value="" placeholder="Eg: 15"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="conn_body_material">Connector body material</label></div>
-                        <div class="three columns"><input type="text" id="conn_body_material" name="conn_body_material" value="" placeholder="0.156 &#x22;"> </div>
+                        <div class="three columns"><input type="text" id="conn_body_material" name="conn_body_material" value="" placeholder="Eg: 0.156 &#x22;"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="conn_pin_material">Connector pin material</label></div>
-                        <div class="three columns"><input type="text" id="conn_pin_material" name="conn_pin_material" value="" placeholder="PPS"> </div>
+                        <div class="three columns"><input type="text" id="conn_pin_material" name="conn_pin_material" value="" placeholder="Eg: PPS"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="rate_body">Connector > Stress Rating_Body Mold, <b>&#8451;</b> </label></div>
-                        <div class="three columns"><input type="text" id="rate_body" name="rate_body" value="" placeholder="Berrylium Copper"> </div>
+                        <div class="three columns"><input type="text" id="rate_body" name="rate_body" value="" placeholder="Eg: Berrylium Copper"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="rate_contact">Connector > Stress Rating_Contact, <b>&#8451;</b></label></div>
-                        <div class="three columns"><input type="text" id="rate_contact" name="rate_contact" value="" placeholder="Dual Row"> </div>
+                        <div class="three columns"><input type="text" id="rate_contact" name="rate_contact" value="" placeholder="Eg: Dual Row"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="conn_volt_rate">Connector voltage rating</label></div>
-                        <div class="three columns"><input type="text" id="conn_volt_rate" name="conn_volt_rate" value="" placeholder="950 VAC pitch to pitch"> </div>
+                        <div class="three columns"><input type="text" id="conn_volt_rate" name="conn_volt_rate" value="" placeholder="Eg: 950 VAC pitch to pitch"> </div>
                         <div class="one columns">&nbsp;</div>
                         <div class="two columns"><label for="conn_curr_rate">Connector current rating</label></div>
-                        <div class="three columns"><input type="text" id="conn_curr_rate" name="conn_curr_rate" value="" placeholder="3 A"> </div>
+                        <div class="three columns"><input type="text" id="conn_curr_rate" name="conn_curr_rate" value="" placeholder="Eg: 3 A"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="conn_temp_rate">Connector temperature rating</label></div>
-                        <div class="three columns"><input type="text" id="conn_temp_rate" name="conn_temp_rate" value="" placeholder="175"> </div>
+                        <div class="three columns"><input type="text" id="conn_temp_rate" name="conn_temp_rate" value="" placeholder="Eg: 175"> </div>
                         <div class="one columns">&nbsp;</div>
                     </div>
                 </div>

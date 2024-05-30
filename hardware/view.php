@@ -53,6 +53,7 @@ $id = $_GET['view'];
             
             ::placeholder {
                 color: orange;
+                opacity: 0.3;
             }
         </style>
         
@@ -100,7 +101,7 @@ $id = $_GET['view'];
                     </div>
                     <div class="row">
                         <div class="two columns"><label for="assembly_no">Assembly Number *</label></div>
-                        <div class="three columns"><input type="text" id="assembly_no" name="assembly_no" placeholder="Assembly Number" value="<?php echo $rowForm['assembly_no']; ?>" required readonly> </div>
+                        <div class="three columns"><input type="text" id="assembly_no" name="assembly_no" placeholder="Eg: Assembly Number" value="<?php echo $rowForm['assembly_no']; ?>" required readonly> </div>
                     </div>
                 </div>
 
@@ -124,13 +125,13 @@ $id = $_GET['view'];
                         <div class="row">
                             <div class="two columns"><label for="category">Category</label></div>
                             <div class="three columns">
-                                <input type="text" id="catId" name="category" value="<?php echo $rowForm['category']; ?>" placeholder="Universal / Dedicated" readonly />
+                                <input type="text" id="catId" name="category" value="<?php echo $rowForm['category']; ?>" placeholder="Eg: Universal / Dedicated" readonly />
                             </div>
                         </div> 
                         <div class="row">
                             <div class="two columns"><label for="sub_category">&nbsp;</label></div>
                             <div class="three columns">
-                                <input type="text" id="subId" name="sub_category" value="<?php echo $rowForm['sub_category']; ?>" placeholder="Eg: Motherboard with fixed socket" readonly />
+                                <input type="text" id="subId" name="sub_category" value="<?php echo $rowForm['sub_category']; ?>" placeholder="Eg: Eg: Motherboard with fixed socket" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>   
                         </div> 
@@ -139,18 +140,18 @@ $id = $_GET['view'];
                     <div class="tab-content" id="tabRating">
                         <div class="row">
                             <div class="two columns"><label for="temperature">Temperature, &#8451;</label></div>
-                            <div class="three columns"><input type="text" id="temperature" name="temperature" value="<?php echo $rowForm['temp_rating']; ?>" placeholder="200 &#8451;" readonly> </div>
+                            <div class="three columns"><input type="text" id="temperature" name="temperature" value="<?php echo $rowForm['temp_rating']; ?>" placeholder="Eg: 200 &#8451;" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="humidity">Humidity, &#37</label></div>
-                            <div class="three columns"><input type="text" id="humidity" name="humidity" value="<?php echo $rowForm['humid_rating']; ?>" placeholder="85 &#37" readonly> </div>
+                            <div class="three columns"><input type="text" id="humidity" name="humidity" value="<?php echo $rowForm['humid_rating']; ?>" placeholder="Eg: 85 &#37" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="voltage">Voltage, V</label></div>
-                            <div class="three columns"><input type="text" id="voltage" name="voltage" value="<?php echo $rowForm['voltage_rating']; ?>" placeholder="200 V" readonly> </div>
+                            <div class="three columns"><input type="text" id="voltage" name="voltage" value="<?php echo $rowForm['voltage_rating']; ?>" placeholder="Eg: 200 V" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="current">Overall Current, A</label></div>
-                            <div class="three columns"><input type="text" id="current" name="current" value="<?php echo $rowForm['current_rating']; ?>" placeholder="3 A" readonly> </div>
+                            <div class="three columns"><input type="text" id="current" name="current" value="<?php echo $rowForm['current_rating']; ?>" placeholder="Eg: 3 A" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                     </div>
@@ -158,38 +159,38 @@ $id = $_GET['view'];
                     <div class="tab-content" id="tabPcb">
                         <div class="row">
                             <div class="two columns"><label for="pcb_material">PCB Material</label></div>
-                            <div class="three columns"><input type="text" id="pcb_material" name="pcb_material" value="<?php echo $rowForm['pcb_material']; ?>" placeholder="Polyimide Arlon 85N" readonly> </div>
+                            <div class="three columns"><input type="text" id="pcb_material" name="pcb_material" value="<?php echo $rowForm['pcb_material']; ?>" placeholder="Eg: Polyimide Arlon 85N" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="pcb_material2">PCB Material Tg, &#8451;</label></div>
-                            <div class="three columns"><input type="text" id="pcb_material2" name="pcb_material2" value="<?php echo $rowForm['pcb_temp']; ?>" placeholder="25 &#8451;" readonly> </div>
+                            <div class="three columns"><input type="text" id="pcb_material2" name="pcb_material2" value="<?php echo $rowForm['pcb_temp']; ?>" placeholder="Eg: 25 &#8451;" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="pcb_moisture">PCB Material Moisture Absorption, &#37</label></div>
-                            <div class="three columns"><input type="text" id="pcb_moisture" name="pcb_moisture" value="<?php echo $rowForm['pcb_moisture']; ?>" placeholder="0.27 &#37" readonly> </div>
+                            <div class="three columns"><input type="text" id="pcb_moisture" name="pcb_moisture" value="<?php echo $rowForm['pcb_moisture']; ?>" placeholder="Eg: 0.27 &#37" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="edge_copper">Edge-to nearest copper distance</label></div>
-                            <div class="three columns"><input type="text" id="edge_copper" name="edge_copper" value="<?php echo $rowForm['pcb_copper']; ?>" placeholder="2.6" readonly> </div>
+                            <div class="three columns"><input type="text" id="edge_copper" name="edge_copper" value="<?php echo $rowForm['pcb_copper']; ?>" placeholder="Eg: 2.6" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="pcb_thickness">PCB thickness, mm</label></div>
-                            <div class="three columns"><input type="text" id="pcb_thickness" name="pcb_thickness" value="<?php echo $rowForm['pcb_thick']; ?>" placeholder="1.56mm &#177 10%mm" readonly> </div>
+                            <div class="three columns"><input type="text" id="pcb_thickness" name="pcb_thickness" value="<?php echo $rowForm['pcb_thick']; ?>" placeholder="Eg: 1.56mm &#177 10%mm" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="edge_chamfered">Board Edges should be chamfered</label></div>
                             <div class="three columns">
-                                <input type="text" id="edge_chamfered" name="edge_chamfered" value="<?php echo $rowForm['pcb_edge']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="edge_chamfered" name="edge_chamfered" value="<?php echo $rowForm['pcb_edge']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="surface_coat">Surface coating</label></div>
                             <div class="three columns">
-                                <input type="text" id="surface_coat" name="surface_coat" value="<?php echo $rowForm['pcb_coating']; ?>"  placeholder="Yes / No" readonly />
+                                <input type="text" id="surface_coat" name="surface_coat" value="<?php echo $rowForm['pcb_coating']; ?>"  placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="no_layer">Number of layers</label></div>
-                            <div class="three columns"><input type="text" id="no_layer" name="no_layer" value="<?php echo $rowForm['pcb_layer']; ?>" placeholder="8" readonly> </div>
+                            <div class="three columns"><input type="text" id="no_layer" name="no_layer" value="<?php echo $rowForm['pcb_layer']; ?>" placeholder="Eg: 8" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                     </div>
@@ -197,18 +198,18 @@ $id = $_GET['view'];
                     <div class="tab-content" id="tabEdge">
                         <div class="row">
                             <div class="two columns"><label for="edge_pitch">Edge Finger Pitch</label></div>
-                            <div class="three columns"><input type="text" id="edge_pitch" name="edge_pitch" value="<?php echo $rowForm['edge_pitch']; ?>" placeholder="0.156 &#x22;" readonly> </div>
+                            <div class="three columns"><input type="text" id="edge_pitch" name="edge_pitch" value="<?php echo $rowForm['edge_pitch']; ?>" placeholder="Eg: 0.156 &#x22;" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="copper_thickness">Copper Thickness, oz.</label></div>
-                            <div class="three columns"><input type="text" id="copper_thickness" name="copper_thickness" value="<?php echo $rowForm['edge_thick']; ?>" placeholder="2 oz" readonly> </div>
+                            <div class="three columns"><input type="text" id="copper_thickness" name="copper_thickness" value="<?php echo $rowForm['edge_thick']; ?>" placeholder="Eg: 2 oz" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="trace_width">Trace Width, mil</label></div>
-                            <div class="three columns"><input type="text" id="trace_width" name="trace_width" value="<?php echo $rowForm['edge_width']; ?>" placeholder="54 mil" readonly> </div>
+                            <div class="three columns"><input type="text" id="trace_width" name="trace_width" value="<?php echo $rowForm['edge_width']; ?>" placeholder="Eg: 54 mil" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="trace_space">Trace Spacing, mil</label></div>
-                            <div class="three columns"><input type="text" id="trace_space" name="trace_space" value="<?php echo $rowForm['edge_spacing']; ?>" placeholder="116 mil" readonly> </div>
+                            <div class="three columns"><input type="text" id="trace_space" name="trace_space" value="<?php echo $rowForm['edge_spacing']; ?>" placeholder="Eg: 116 mil" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                     </div>
@@ -217,28 +218,28 @@ $id = $_GET['view'];
                         <div class="row">
                             <div class="two columns"><label for="trace_internal">Traces placed in internal layers only</label></div>
                             <div class="three columns">
-                                <input type="text" id="trace_internal" name="trace_internal" value="<?php echo $rowForm['trace_layer']; ?>" placeholder="Yes / No" readonly>
+                                <input type="text" id="trace_internal" name="trace_internal" value="<?php echo $rowForm['trace_layer']; ?>" placeholder="Eg: Yes / No" readonly>
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="final_thickness">Final Copper Thickness, oz</label></div>
-                            <div class="three columns"><input type="text" id="final_thickness" name="final_thickness" value="<?php echo $rowForm['trace_thick']; ?>" placeholder="2 oz" readonly> </div>
+                            <div class="three columns"><input type="text" id="final_thickness" name="final_thickness" value="<?php echo $rowForm['trace_thick']; ?>" placeholder="Eg: 2 oz" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="min_trace">Minimum Trace Width, mil</label></div>
-                            <div class="three columns"><input type="text" id="min_trace" name="min_trace" value="<?php echo $rowForm['trace_width']; ?>" placeholder="47 mil" readonly> </div>
+                            <div class="three columns"><input type="text" id="min_trace" name="min_trace" value="<?php echo $rowForm['trace_width']; ?>" placeholder="Eg: 47 mil" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="min_space">Minimum Trace Spacing, mil</label></div>
-                            <div class="three columns"><input type="text" id="min_space" name="min_space" value="<?php echo $rowForm['trace_spacing']; ?>" placeholder="80 mil" readonly> </div>
+                            <div class="three columns"><input type="text" id="min_space" name="min_space" value="<?php echo $rowForm['trace_spacing']; ?>" placeholder="Eg: 80 mil" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="plated_drill">Plated Through Hole minimum drill size, mil</label></div>
-                            <div class="three columns"><input type="text" id="plated_drill" name="plated_drill" value="<?php echo $rowForm['trace_drill']; ?>" placeholder="20 mil" readonly> </div>
+                            <div class="three columns"><input type="text" id="plated_drill" name="plated_drill" value="<?php echo $rowForm['trace_drill']; ?>" placeholder="Eg: 20 mil" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="impedance">Impedance controlled traces?</label></div>
                             <div class="three columns">
-                                <input type="text" id="impedance" name="impedance" value="<?php echo $rowForm['trace_control']; ?>" placeholder="Yes / No" readonly>
+                                <input type="text" id="impedance" name="impedance" value="<?php echo $rowForm['trace_control']; ?>" placeholder="Eg: Yes / No" readonly>
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
@@ -247,18 +248,18 @@ $id = $_GET['view'];
                     <div class="tab-content" id="tabBoard">
                         <div class="row">
                             <div class="two columns"><label for="frame_chasis">Board Frame/Chassis material</label></div>
-                            <div class="three columns"><input type="text" id="frame_chasis" name="frame_chasis" value="<?php echo $rowForm['bf_material']; ?>" placeholder="SS316" readonly> </div>
+                            <div class="three columns"><input type="text" id="frame_chasis" name="frame_chasis" value="<?php echo $rowForm['bf_material']; ?>" placeholder="Eg: SS316" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="frame_screw">Board Frame/Chassis > No protruding screw tips</label></div>
                             <div class="three columns">
-                                <input type="text" id="frame_screw" name="frame_screw" value="<?php echo $rowForm['bf_screw']; ?>" placeholder="Yes / No" readonly>
+                                <input type="text" id="frame_screw" name="frame_screw" value="<?php echo $rowForm['bf_screw']; ?>" placeholder="Eg: Yes / No" readonly>
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="frame_handle">Board Frame/Chassis > Handle</label></div>
                             <div class="three columns">
-                                <input type="text" id="frame_handle" name="frame_handle" value="<?php echo $rowForm['bf_handle']; ?>" placeholder="Yes / No" readonly>
+                                <input type="text" id="frame_handle" name="frame_handle" value="<?php echo $rowForm['bf_handle']; ?>" placeholder="Eg: Yes / No" readonly>
                             </div>
                         </div>
                     </div>
@@ -266,7 +267,7 @@ $id = $_GET['view'];
                     <div class="tab-content" id="tabComponent">
                         <div class="row">
                             <label for="component" style="text-align: left">List components vs part number vs ratings</label>
-                            <textarea id="component" name="component" rows="7" cols="100" readonly placeholder="Turret Terminal Pin: 6821-0-00-15-00-00-08-0
+                            <textarea id="component" name="component" rows="7" cols="100" readonly placeholder="Eg: Turret Terminal Pin: 6821-0-00-15-00-00-08-0
 Temp rating: melting point 1000C"><?php echo $rowForm['component']; ?></textarea>
                         </div>
                     </div>
@@ -274,94 +275,94 @@ Temp rating: melting point 1000C"><?php echo $rowForm['component']; ?></textarea
                     <div class="tab-content" id="tabSocket">
                         <div class="row">
                             <div class="two columns"><label for="socket_partno">Socket part number</label></div>
-                            <div class="three columns"><input type="text" id="socket_partno" name="socket_partno" value="<?php echo $rowForm['mb_socket_part']; ?>" placeholder="T062-231015-D01-A450-R00" readonly> </div>
+                            <div class="three columns"><input type="text" id="socket_partno" name="socket_partno" value="<?php echo $rowForm['mb_socket_part']; ?>" placeholder="Eg: T062-231015-D01-A450-R00" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="socket_avail">Socket availability</label></div>
-                            <div class="three columns"><input type="text" id="socket_avail" name="socket_avail" value="<?php echo $rowForm['mb_socket_avail']; ?>" placeholder="Customized" readonly> </div>
+                            <div class="three columns"><input type="text" id="socket_avail" name="socket_avail" value="<?php echo $rowForm['mb_socket_avail']; ?>" placeholder="Eg: Customized" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="socket_qty">Socket qty</label></div>
-                            <div class="three columns"><input type="text" id="socket_qty" name="socket_qty" value="<?php echo $rowForm['mb_socket_qty']; ?>" placeholder="6" readonly> </div>
+                            <div class="three columns"><input type="text" id="socket_qty" name="socket_qty" value="<?php echo $rowForm['mb_socket_qty']; ?>" placeholder="Eg: 6" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="socket_pin_qty">Socket pin qty</label></div>
-                            <div class="three columns"><input type="text" id="socket_pin_qty" name="socket_pin_qty" value="<?php echo $rowForm['mb_socket_pin_qty']; ?>" placeholder="96" readonly> </div>
+                            <div class="three columns"><input type="text" id="socket_pin_qty" name="socket_pin_qty" value="<?php echo $rowForm['mb_socket_pin_qty']; ?>" placeholder="Eg: 96" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="socket_pin_pitch">Socket pin pitch</label></div>
-                            <div class="three columns"><input type="text" id="socket_pin_pitch" name="socket_pin_pitch" value="<?php echo $rowForm['mb_socket_pin_pitch']; ?>" placeholder="8.30mm" readonly> </div>
+                            <div class="three columns"><input type="text" id="socket_pin_pitch" name="socket_pin_pitch" value="<?php echo $rowForm['mb_socket_pin_pitch']; ?>" placeholder="Eg: 8.30mm" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="socket_body_material">Socket body material</label></div>
-                            <div class="three columns"><input type="text" id="socket_body_material" name="socket_body_material" value="<?php echo $rowForm['mb_socket_body']; ?>" placeholder="Ketron Peek" readonly> </div>
+                            <div class="three columns"><input type="text" id="socket_body_material" name="socket_body_material" value="<?php echo $rowForm['mb_socket_body']; ?>" placeholder="Eg: Ketron Peek" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="socket_pin_material">Socket pin material</label></div>
-                            <div class="three columns"><input type="text" id="socket_pin_material" name="socket_pin_material" value="<?php echo $rowForm['mb_socket_pin']; ?>" placeholder="Berrylium Copper" readonly> </div>
+                            <div class="three columns"><input type="text" id="socket_pin_material" name="socket_pin_material" value="<?php echo $rowForm['mb_socket_pin']; ?>" placeholder="Eg: Berrylium Copper" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="socket_config">Socket configuration</label></div>
-                            <div class="three columns"><input type="text" id="socket_config" name="socket_config" value="<?php echo $rowForm['mb_socket_config']; ?>" placeholder="Open Top" readonly> </div>
+                            <div class="three columns"><input type="text" id="socket_config" name="socket_config" value="<?php echo $rowForm['mb_socket_config']; ?>" placeholder="Eg: Open Top" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="socket_vol_rate">Socket voltage rating, V</label></div>
-                            <div class="three columns"><input type="text" id="socket_vol_rate" name="socket_vol_rate" value="<?php echo $rowForm['mb_socket_volt']; ?>" placeholder="2000 V" readonly> </div>
+                            <div class="three columns"><input type="text" id="socket_vol_rate" name="socket_vol_rate" value="<?php echo $rowForm['mb_socket_volt']; ?>" placeholder="Eg: 2000 V" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="socket_curr_rate">Socket current rating, A</label></div>
-                            <div class="three columns"><input type="text" id="socket_curr_rate" name="socket_curr_rate" value="<?php echo $rowForm['mb_socket_curr']; ?>" placeholder="3 A" readonly> </div>
+                            <div class="three columns"><input type="text" id="socket_curr_rate" name="socket_curr_rate" value="<?php echo $rowForm['mb_socket_curr']; ?>" placeholder="Eg: 3 A" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="socket_temp_rate">Socket temperature rating, &#8451;</label></div>
-                            <div class="three columns"><input type="text" id="socket_temp_rate" name="socket_temp_rate" value="<?php echo $rowForm['mb_socket_temp']; ?>" placeholder="200 &#8451;" readonly> </div>
+                            <div class="three columns"><input type="text" id="socket_temp_rate" name="socket_temp_rate" value="<?php echo $rowForm['mb_socket_temp']; ?>" placeholder="Eg: 200 &#8451;" readonly> </div>
                         </div>
                     </div>
 
                     <div class="tab-content" id="tabConnector">
                         <div class="row">
                             <div class="two columns"><label for="conn_part">Voltage rating label</label></div>
-                            <div class="three columns"><input type="text" id="conn_part" name="conn_part" value="<?php echo $rowForm['conn_number']; ?>" placeholder="TMM15DRSD-S664" readonly> </div>
+                            <div class="three columns"><input type="text" id="conn_part" name="conn_part" value="<?php echo $rowForm['conn_number']; ?>" placeholder="Eg: TMM15DRSD-S664" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="conn_avail">Connector availability</label></div>
-                            <div class="three columns"><input type="text" id="conn_avail" name="conn_avail" value="<?php echo $rowForm['conn_avail']; ?>" placeholder="Yes" readonly> </div>
+                            <div class="three columns"><input type="text" id="conn_avail" name="conn_avail" value="<?php echo $rowForm['conn_avail']; ?>" placeholder="Eg: Yes" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="conn_pin_qty">Connector pin qty</label></div>
-                            <div class="three columns"><input type="text" id="conn_pin_qty" name="conn_pin_qty" value="<?php echo $rowForm['conn_pin_qty']; ?>" placeholder="14" readonly> </div>
+                            <div class="three columns"><input type="text" id="conn_pin_qty" name="conn_pin_qty" value="<?php echo $rowForm['conn_pin_qty']; ?>" placeholder="Eg: 14" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="conn_pin_pitch">Connector pin pitch</label></div>
-                            <div class="three columns"><input type="text" id="conn_pin_pitch" name="conn_pin_pitch" value="<?php echo $rowForm['conn_pin_pitch']; ?>" placeholder="15" readonly> </div>
+                            <div class="three columns"><input type="text" id="conn_pin_pitch" name="conn_pin_pitch" value="<?php echo $rowForm['conn_pin_pitch']; ?>" placeholder="Eg: 15" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="conn_body_material">Connector body material</label></div>
-                            <div class="three columns"><input type="text" id="conn_body_material" name="conn_body_material" value="<?php echo $rowForm['conn_body']; ?>" placeholder="0.156 &#x22;" readonly> </div>
+                            <div class="three columns"><input type="text" id="conn_body_material" name="conn_body_material" value="<?php echo $rowForm['conn_body']; ?>" placeholder="Eg: 0.156 &#x22;" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="conn_pin_material">Connector pin material</label></div>
-                            <div class="three columns"><input type="text" id="conn_pin_material" name="conn_pin_material" value="<?php echo $rowForm['conn_pin']; ?>" placeholder="PPS" readonly> </div>
+                            <div class="three columns"><input type="text" id="conn_pin_material" name="conn_pin_material" value="<?php echo $rowForm['conn_pin']; ?>" placeholder="Eg: PPS" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="rate_body">Connector > Stress Rating_Body Mold, <b>&#8451;</b> </label></div>
-                            <div class="three columns"><input type="text" id="rate_body" name="rate_body" value="<?php echo $rowForm['conn_mold']; ?>" placeholder="Berrylium Copper" readonly> </div>
+                            <div class="three columns"><input type="text" id="rate_body" name="rate_body" value="<?php echo $rowForm['conn_mold']; ?>" placeholder="Eg: Berrylium Copper" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="rate_contact">Connector > Stress Rating_Contact, <b>&#8451;</b></label></div>
-                            <div class="three columns"><input type="text" id="rate_contact" name="rate_contact" value="<?php echo $rowForm['conn_contact']; ?>" placeholder="Dual Row" readonly> </div>
+                            <div class="three columns"><input type="text" id="rate_contact" name="rate_contact" value="<?php echo $rowForm['conn_contact']; ?>" placeholder="Eg: Dual Row" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="conn_volt_rate">Connector voltage rating</label></div>
-                            <div class="three columns"><input type="text" id="conn_volt_rate" name="conn_volt_rate" value="<?php echo $rowForm['conn_volt']; ?>" placeholder="950 VAC pitch to pitch" readonly> </div>
+                            <div class="three columns"><input type="text" id="conn_volt_rate" name="conn_volt_rate" value="<?php echo $rowForm['conn_volt']; ?>" placeholder="Eg: 950 VAC pitch to pitch" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="conn_curr_rate">Connector current rating</label></div>
-                            <div class="three columns"><input type="text" id="conn_curr_rate" name="conn_curr_rate" value="<?php echo $rowForm['conn_curr']; ?>" placeholder="3 A" readonly> </div>
+                            <div class="three columns"><input type="text" id="conn_curr_rate" name="conn_curr_rate" value="<?php echo $rowForm['conn_curr']; ?>" placeholder="Eg: 3 A" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="conn_temp_rate">Connector temperature rating</label></div>
-                            <div class="three columns"><input type="text" id="conn_temp_rate" name="conn_temp_rate" value="<?php echo $rowForm['conn_temp']; ?>" placeholder="175" readonly> </div>
+                            <div class="three columns"><input type="text" id="conn_temp_rate" name="conn_temp_rate" value="<?php echo $rowForm['conn_temp']; ?>" placeholder="Eg: 175" readonly> </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                     </div>
@@ -370,103 +371,103 @@ Temp rating: melting point 1000C"><?php echo $rowForm['component']; ?></textarea
                         <div class="row">
                             <div class="two columns"><label for="volt_rate">Voltage rating label</label></div>
                             <div class="three columns">
-                                <input type="text" id="volt_rate" name="volt_rate" value="<?php echo $rowForm['mark_volt']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="volt_rate" name="volt_rate" value="<?php echo $rowForm['mark_volt']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="curr_rate">Current rating label</label></div>
                             <div class="three columns">
-                                <input type="text" id="curr_rate" name="curr_rate" value="<?php echo $rowForm['mark_curr']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="curr_rate" name="curr_rate" value="<?php echo $rowForm['mark_curr']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="temp_rate">Temperature rating label</label></div>
                             <div class="three columns">
-                                <input type="text" id="temp_rate" name="temp_rate" value="<?php echo $rowForm['mark_temp']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="temp_rate" name="temp_rate" value="<?php echo $rowForm['mark_temp']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="board">Board name</label></div>
                             <div class="three columns">
-                                <input type="text" id="board" name="board" value="<?php echo $rowForm['mark_board']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="board" name="board" value="<?php echo $rowForm['mark_board']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="ass_number">Assembly number</label></div>
                             <div class="three columns">
-                                <input type="text" id="ass_number" name="ass_number" value="<?php echo $rowForm['mark_assembly']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="ass_number" name="ass_number" value="<?php echo $rowForm['mark_assembly']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="stress_test">Stress Test Name</label></div>
                             <div class="three columns">
-                                <input type="text" id="stress_test" name="stress_test" value="<?php echo $rowForm['mark_stress']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="stress_test" name="stress_test" value="<?php echo $rowForm['mark_stress']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="socket_number">Socket Numbers</label></div>
                             <div class="three columns">
-                                <input type="text" id="socket_number" name="socket_number" value="<?php echo $rowForm['mark_socket']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="socket_number" name="socket_number" value="<?php echo $rowForm['mark_socket']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="pin_indicator">Pin "1" Indicator</label></div>
                             <div class="three columns">
-                                <input type="text" id="pin_indicator" name="pin_indicator" value="<?php echo $rowForm['mark_pin']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="pin_indicator" name="pin_indicator" value="<?php echo $rowForm['mark_pin']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="vendor">Vendor Logo dimension</label></div>
                             <div class="three columns">
-                                <input type="text" id="vendor" name="vendor" value="<?php echo $rowForm['mark_vendor']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="vendor" name="vendor" value="<?php echo $rowForm['mark_vendor']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="stackup">Stack-up Layer</label></div>
                             <div class="three columns">
-                                <input type="text" id="stackup" name="stackup" value="<?php echo $rowForm['mark_layer']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="stackup" name="stackup" value="<?php echo $rowForm['mark_layer']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="artwork">Artwork Date</label></div>
                             <div class="three columns">
-                                <input type="text" id="artwork" name="artwork" value="<?php echo $rowForm['mark_artwork']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="artwork" name="artwork" value="<?php echo $rowForm['mark_artwork']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="unidedi">Universal or Dedicated</label></div>
                             <div class="three columns">
-                                <input type="text" id="unidedi" name="unidedi" value="<?php echo $rowForm['mark_cat']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="unidedi" name="unidedi" value="<?php echo $rowForm['mark_cat']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="dut_density">DUT Density</label></div>
                             <div class="three columns">
-                                <input type="text" id="dut_density" name="dut_density" value="<?php echo $rowForm['mark_dut']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="dut_density" name="dut_density" value="<?php echo $rowForm['mark_dut']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="loose_dut">Loose Component DUT Orientation</label></div>
                             <div class="three columns">
-                                <input type="text" id="loose_dut" name="loose_dut" value="<?php echo $rowForm['mark_loose']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="loose_dut" name="loose_dut" value="<?php echo $rowForm['mark_loose']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="live_bug">Live bug/Dead Bug Orientation</label></div>
                             <div class="three columns">
-                                <input type="text" id="live_bug" name="live_bug" value="<?php echo $rowForm['mark_bug']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="live_bug" name="live_bug" value="<?php echo $rowForm['mark_bug']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="bib_ori">Device and Socket to BIB Orientation</label></div>
                             <div class="three columns">
-                                <input type="text" id="bib_ori" name="bib_ori" value="<?php echo $rowForm['mark_bib']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="bib_ori" name="bib_ori" value="<?php echo $rowForm['mark_bib']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="onsemi_logo">Onsemi Logo</label></div>
                             <div class="three columns">
-                                <input type="text" id="onsemi_logo" name="onsemi_logo" value="<?php echo $rowForm['mark_logo']; ?>" placeholder="Yes / No" readonly />
+                                <input type="text" id="onsemi_logo" name="onsemi_logo" value="<?php echo $rowForm['mark_logo']; ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
