@@ -63,6 +63,9 @@ if ($username == '') {
 //$maxdut = '';
 
 $site = '';
+$strategy = '';
+$standard = '';
+$manager = '';
 $assembly_number = '';
 $category = '';
 $sub_category = '';
@@ -318,7 +321,7 @@ if (isset($_FILES['file'])) {
                 }
                 echo '</table>';
                 echo '</td></tr></table>';
-            } else if ($num_cols == '76') {
+            } else if ($num_cols == '79') {
                 echo '<h2>' . $xlsx->sheetName(0) . '</h2>';
                 echo '<table border=1 border-collapse=collapse>';
                 foreach ($xlsx->rows() as $k => $r) {
@@ -346,234 +349,282 @@ if (isset($_FILES['file'])) {
                                             $no = $r[$i];
                                             break;
                                         case 1:
-                                            $site = $r[$i];
+                                            $lablocation0 = $r[$i];
+                                            $site = getCode($lablocation0, '002', $username);
                                             break;
                                         case 2:
-                                            $assembly_number = $r[$i];
+                                            $productgroup0 = $r[$i];
+                                            $strategy = getCode($productgroup0, '003', $username);
                                             break;
                                         case 3:
-                                            $category = $r[$i];
+                                            $category0 = $r[$i];
+                                            $standard = getCode($category0, '004', $username);
                                             break;
                                         case 4:
-                                            $sub_category = $r[$i];
+                                            $labmanager0 = $r[$i];
+                                            $manager = getCode($labmanager0, '005', $username);
                                             break;
                                         case 5:
-                                            $rate_temp = $r[$i];
-                                            break;
+                                            $assembly_number = $r[$i];
+                                            break; 
                                         case 6:
-                                            $rate_humid = $r[$i];
+                                            $category0 = $r[$i];
+                                            $category = getCode($category0, '045', $username);
                                             break;
                                         case 7:
-                                            $rate_volt = $r[$i];
+                                            $sub = $r[$i];
+                                            // THIS ONE HARDCODED, plEASE MAKE SURE THE DATA IS TALLY
+                                            switch ($category) {
+                                                case '045001':
+                                                    $sub_category = getCode($sub, '048', $username);
+                                                    break;
+                                                case '045002':
+                                                    $sub_category = getCode($sub, '049', $username);
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
                                             break;
                                         case 8:
-                                            $rate_curr = $r[$i];
+                                            $rate_temp = $r[$i];
                                             break;
                                         case 9:
-                                            $pcb_material = $r[$i];
+                                            $rate_humid = $r[$i];
                                             break;
                                         case 10:
-                                            $pcb_temp = $r[$i];
+                                            $rate_volt = $r[$i];
                                             break;
                                         case 11:
-                                            $pcb_moisture = $r[$i];
+                                            $rate_curr = $r[$i];
                                             break;
                                         case 12:
-                                            $pcb_copper = $r[$i];
+                                            $pcb_material = $r[$i];
                                             break;
                                         case 13:
-                                            $pcb_thick = $r[$i];
+                                            $pcb_temp = $r[$i];
                                             break;
                                         case 14:
-                                            $pcb_chamfered = $r[$i];
+                                            $pcb_moisture = $r[$i];
                                             break;
                                         case 15:
-                                            $pcb_coat = $r[$i];
+                                            $pcb_copper = $r[$i];
                                             break;
                                         case 16:
-                                            $pcb_layer = $r[$i];
+                                            $pcb_thick = $r[$i];
                                             break;
                                         case 17:
-                                            $edge_pitch = $r[$i];
+                                            $pcb_chamfered0 = $r[$i];
+                                            $pcb_chamfered = getCode($pcb_chamfered0, '020', $username);
                                             break;
                                         case 18:
-                                            $edge_thick = $r[$i];
+                                            $pcb_coat0 = $r[$i];
+                                            $pcb_coat = getCode($pcb_coat0, '020', $username);
                                             break;
                                         case 19:
-                                            $edge_width = $r[$i];
+                                            $pcb_layer = $r[$i];
                                             break;
                                         case 20:
-                                            $edge_spacing = $r[$i];
+                                            $edge_pitch = $r[$i];
                                             break;
                                         case 21:
-                                            $trace_layer = $r[$i];
+                                            $edge_thick = $r[$i];
                                             break;
                                         case 22:
-                                            $trace_thick = $r[$i];
+                                            $edge_width = $r[$i];
                                             break;
                                         case 23:
-                                            $trace_width = $r[$i];
+                                            $edge_spacing = $r[$i];
                                             break;
                                         case 24:
-                                            $trace_spacing = $r[$i];
+                                            $trace_layer0 = $r[$i];
+                                            $trace_layer = getCode($trace_layer0, '020', $username);
                                             break;
                                         case 25:
-                                            $trace_drill = $r[$i];
+                                            $trace_thick = $r[$i];
                                             break;
                                         case 26:
-                                            $trace_impedance = $r[$i];
+                                            $trace_width = $r[$i];
                                             break;
                                         case 27:
-                                            $board_material = $r[$i];
+                                            $trace_spacing = $r[$i];
                                             break;
                                         case 28:
-                                            $board_screw = $r[$i];
+                                            $trace_drill = $r[$i];
                                             break;
                                         case 29:
-                                            $board_handle = $r[$i];
+                                            $trace_impedance0 = $r[$i];
+                                            $trace_impedance = getCode($trace_impedance0, '020', $username);
                                             break;
                                         case 30:
-                                            $component = $r[$i];
+                                            $board_material = $r[$i];
                                             break;
                                         case 31:
-                                            $socket_part = $r[$i];
+                                            $board_screw0 = $r[$i];
+                                            $board_screw = getCode($board_screw0, '050', $username);
                                             break;
                                         case 32:
-                                            $socket_avail = $r[$i];
+                                            $board_handle0 = $r[$i];
+                                            $board_handle = getCode($board_handle0, '020', $username);
                                             break;
                                         case 33:
-                                            $socket_qty = $r[$i];
+                                            $component = $r[$i];
                                             break;
                                         case 34:
-                                            $socket_pin_qty = $r[$i];
+                                            $socket_part = $r[$i];
                                             break;
                                         case 35:
-                                            $socket_pin_pitch = $r[$i];
+                                            $socket_avail = $r[$i];
                                             break;
                                         case 36:
-                                            $socket_body = $r[$i];
+                                            $socket_qty = $r[$i];
                                             break;
                                         case 37:
-                                            $socket_pin = $r[$i];
+                                            $socket_pin_qty = $r[$i];
                                             break;
                                         case 38:
-                                            $socket_config = $r[$i];
+                                            $socket_pin_pitch = $r[$i];
                                             break;
                                         case 39:
-                                            $socket_volt = $r[$i];
+                                            $socket_body = $r[$i];
                                             break;
                                         case 40:
-                                            $socket_curr = $r[$i];
+                                            $socket_pin = $r[$i];
                                             break;
                                         case 41:
-                                            $socket_temp = $r[$i];
+                                            $socket_config = $r[$i];
                                             break;
                                         case 42:
-                                            $conn_number = $r[$i];
+                                            $socket_volt = $r[$i];
                                             break;
                                         case 43:
-                                            $conn_avail = $r[$i];
+                                            $socket_curr = $r[$i];
                                             break;
                                         case 44:
-                                            $conn_pin_qty = $r[$i];
+                                            $socket_temp = $r[$i];
                                             break;
                                         case 45:
-                                            $conn_pin_pitch = $r[$i];
+                                            $conn_number = $r[$i];
                                             break;
                                         case 46:
-                                            $conn_body = $r[$i];
+                                            $conn_avail = $r[$i];
                                             break;
                                         case 47:
-                                            $conn_pin = $r[$i];
+                                            $conn_pin_qty = $r[$i];
                                             break;
                                         case 48:
-                                            $conn_mold = $r[$i];
+                                            $conn_pin_pitch = $r[$i];
                                             break;
                                         case 49:
-                                            $conn_contact = $r[$i];
+                                            $conn_body = $r[$i];
                                             break;
                                         case 50:
-                                            $conn_volt = $r[$i];
+                                            $conn_pin = $r[$i];
                                             break;
                                         case 51:
-                                            $conn_curr = $r[$i];
+                                            $conn_mold = $r[$i];
                                             break;
                                         case 52:
-                                            $conn_temp = $r[$i];
+                                            $conn_contact = $r[$i];
                                             break;
                                         case 53:
-                                            $mark_volt = $r[$i];
+                                            $conn_volt = $r[$i];
                                             break;
                                         case 54:
-                                            $mark_curr = $r[$i];
+                                            $conn_curr = $r[$i];
                                             break;
                                         case 55:
-                                            $mark_temp = $r[$i];
+                                            $conn_temp = $r[$i];
                                             break;
                                         case 56:
-                                            $mark_board = $r[$i];
+                                            $mark_volt0 = $r[$i];
+                                            $mark_volt = getCode($mark_volt0, '020', $username);
                                             break;
                                         case 57:
-                                            $mark_assembly = $r[$i];
+                                            $mark_curr0 = $r[$i];
+                                            $mark_curr = getCode($mark_curr0, '020', $username);
                                             break;
                                         case 58:
-                                            $mark_stress = $r[$i];
+                                            $mark_temp0 = $r[$i];
+                                            $mark_temp = getCode($mark_temp0, '020', $username);
                                             break;
                                         case 59:
-                                            $mark_socket = $r[$i];
+                                            $mark_board0 = $r[$i];
+                                            $mark_board = getCode($mark_board0, '020', $username);
                                             break;
                                         case 60:
-                                            $mark_pin = $r[$i];
+                                            $mark_assembly0 = $r[$i];
+                                            $mark_assembly = getCode($mark_assembly0, '020', $username);
                                             break;
                                         case 61:
-                                            $mark_vendor = $r[$i];
+                                            $mark_stress0 = $r[$i];
+                                            $mark_stress = getCode($mark_stress0, '020', $username);
                                             break;
                                         case 62:
-                                            $mark_layer = $r[$i];
+                                            $mark_socket0 = $r[$i];
+                                            $mark_socket = getCode($mark_socket0, '020', $username);
                                             break;
                                         case 63:
-                                            $mark_artwork = $r[$i];
+                                            $mark_pin0 = $r[$i];
+                                            $mark_pin = getCode($mark_pin0, '020', $username);
                                             break;
                                         case 64:
-                                            $mark_cat = $r[$i];
+                                            $mark_vendor0 = $r[$i];
+                                            $mark_vendor = getCode($mark_vendor0, '020', $username);
                                             break;
                                         case 65:
-                                            $mark_dut = $r[$i];
+                                            $mark_layer0 = $r[$i];
+                                            $mark_layer = getCode($mark_layer0, '020', $username);
                                             break;
                                         case 66:
-                                            $mark_loose = $r[$i];
+                                            $mark_artwork0 = $r[$i];
+                                            $mark_artwork = getCode($mark_artwork0, '020', $username);
                                             break;
                                         case 67:
-                                            $mark_bug = $r[$i];
+                                            $mark_cat0 = $r[$i];
+                                            $mark_cat = getCode($mark_cat0, '020', $username);
                                             break;
                                         case 68:
-                                            $mark_bib = $r[$i];
+                                            $mark_dut0 = $r[$i];
+                                            $mark_dut = getCode($mark_dut0, '020', $username);
                                             break;
                                         case 69:
-                                            $mark_logo = $r[$i];
+                                            $mark_loose0 = $r[$i];
+                                            $mark_loose = getCode($mark_loose0, '020', $username);
                                             break;
                                         case 70:
-                                            $app_verify = $r[$i];
+                                            $mark_bug0 = $r[$i];
+                                            $mark_bug = getCode($mark_bug0, '020', $username);
                                             break;
                                         case 71:
-                                            $app_component = $r[$i];
+                                            $mark_bib0 = $r[$i];
+                                            $mark_bib = getCode($mark_bib0, '020', $username);
+                                            break;
+                                        case 72:
+                                            $mark_logo0 = $r[$i];
+                                            $mark_logo = getCode($mark_logo0, '020', $username);
                                             break;
                                         case 73:
-                                            $app_temp = $r[$i];
+                                            $app_verify = $r[$i];
                                             break;
                                         case 74:
-                                            $app_tight = $r[$i];
+                                            $app_component = $r[$i];
                                             break;
                                         case 75:
-                                            $app_select = $r[$i];
+                                            $app_temp = $r[$i];
                                             break;
                                         case 76:
+                                            $app_tight = $r[$i];
+                                            break;
+                                        case 77:
+                                            $app_select = $r[$i];
+                                            break;
+                                        case 78:
                                             $app_heatsink = $r[$i];
                                             break;
                                     }
                                 }
                                 echo '</tr>';
-                                inserttohwdatabase($k, $username,
+                                inserttohwdatabase($k, $username, $strategy, $standard, $manager,
                                         $site, $assembly_number, $category, $sub_category, $rate_temp, $rate_humid, $rate_volt, $rate_curr, 
                                         $pcb_material, $pcb_temp, $pcb_moisture, $pcb_copper, $pcb_thick, $pcb_chamfered, $pcb_coat, $pcb_layer,
                                         $edge_pitch, $edge_thick, $edge_width, $edge_spacing, $trace_layer, $trace_thick, $trace_width, $trace_spacing, $trace_drill, $trace_impedance, 
@@ -641,7 +692,7 @@ function inserttodatabase($k, $username, $lablocation, $productgroup, $category,
     }
 }
 
-function inserttohwdatabase($k, $username,
+function inserttohwdatabase($k, $username, $strategy, $standard, $manager,
                             $site, $assembly_number, $category, $sub_category, $rate_temp, $rate_humid, $rate_volt, $rate_curr, 
                             $pcb_material, $pcb_temp, $pcb_moisture, $pcb_copper, $pcb_thick, $pcb_chamfered, $pcb_coat, $pcb_layer,
                             $edge_pitch, $edge_thick, $edge_width, $edge_spacing, $trace_layer, $trace_thick, $trace_width, $trace_spacing, $trace_drill, $trace_impedance, 
