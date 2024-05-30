@@ -14,7 +14,7 @@ ini_set('display_errors', true);
 require_once __DIR__ . '/../\template\SimpleXLSX.php';
 
 echo '<div class="twelve columns">&nbsp;</div><div class="twelve columns">&nbsp;</div>
-    <h4 style="border-left: none;">Upload Hardware test</h4>
+    <h4 style="border-left: none;">Upload Hardware</h4>
 <form method="post" enctype="multipart/form-data">
 *.XLSM <input type="file" name="file"  />&nbsp;&nbsp;<input type="submit" value="Load" />
 </form>';

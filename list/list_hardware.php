@@ -66,12 +66,12 @@
             .msg-info {
                 background-color: #17a2b8;
             }
-            
+
             .msg-alert {
                 background-color: black;
                 color: orange;
             }
-            
+
             .btn-upload, .btn-download {
                 color: #66121a;
                 background-color: silver;
@@ -404,7 +404,7 @@
             <!--<button onclick="location.href = '../hardware/add.php'" type="button" id="newModule" style="background-color: #e7e7e7"><i class='bx bx-universal-access'></i> New Module</button>-->
             <button onclick="location.href = '../template/template_hardware.xlsm'" type="button" id="dlBtn" class="u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>
             <!--<button type="button" class="btn-download u-pull-right"><i class='bx bx-cloud-download bx-fw'></i> Download Excel Template</button>-->
-            
+
             <div class="msg animate slide-in-down"></div>
         </div>
 
