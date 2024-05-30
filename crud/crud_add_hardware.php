@@ -171,6 +171,6 @@ $insert04 = mysqli_query($con, $query004);
 <script>
     alert('New Hardware Added Successfully');
 //    window.location.href = '../hardware/list.php';
-    window.location.href = '../list/list_hardware_new.php';
+    window.location.href = '../list/list_hardware.php';
 </script>
 <?php mysql_close($handle);

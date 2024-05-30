@@ -110,11 +110,22 @@ $id = $_GET['edit'];
                             <div class="two columns"><label for="sub_category">&nbsp;</label></div>
                             <div class="three columns">
                                 <select class="form-control" name="sub_category" id="subId">
-                                    <option value="">Please select category</option>
-                                    <?php // echo getDropdown('045', $rowForm['category']); ?>
+                                    <?php 
+                                    switch ($rowForm['category']) {
+                                        case '045001':
+                                            echo getDataList('048', $rowForm['sub_category']);
+                                            break;
+                                        case '045002':
+                                            echo getDataList('049', $rowForm['sub_category']);
+                                            break;
+                                        default:
+                                            ?><option value="">Please select category</option><?php
+                                            break;
+                                    }
+                                    ?>
                                 </select>
                             </div>
-                            <div class="one columns">&nbsp;</div>   
+                            <div class="one columns">&nbsp;</div>
                         </div> 
                     </div>
 

@@ -125,13 +125,13 @@ $id = $_GET['view'];
                         <div class="row">
                             <div class="two columns"><label for="category">Category</label></div>
                             <div class="three columns">
-                                <input type="text" id="catId" name="category" value="<?php echo $rowForm['category']; ?>" placeholder="Eg: Universal / Dedicated" readonly />
+                                <input type="text" id="catId" name="category" value="<?php echo getParameterValue($rowForm['category']); ?>" placeholder="Eg: Universal / Dedicated" readonly />
                             </div>
                         </div> 
                         <div class="row">
                             <div class="two columns"><label for="sub_category">&nbsp;</label></div>
                             <div class="three columns">
-                                <input type="text" id="subId" name="sub_category" value="<?php echo $rowForm['sub_category']; ?>" placeholder="Eg: Eg: Motherboard with fixed socket" readonly />
+                                <input type="text" id="subId" name="sub_category" value="<?php echo $rowForm['sub_category']; ?>" placeholder="Eg: Motherboard with fixed socket" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>   
                         </div> 
@@ -179,14 +179,14 @@ $id = $_GET['view'];
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="edge_chamfered">Board Edges should be chamfered</label></div>
                             <div class="three columns">
-                                <input type="text" id="edge_chamfered" name="edge_chamfered" value="<?php echo $rowForm['pcb_edge']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="edge_chamfered" name="edge_chamfered" value="<?php echo getParameterValue($rowForm['pcb_edge']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="surface_coat">Surface coating</label></div>
                             <div class="three columns">
-                                <input type="text" id="surface_coat" name="surface_coat" value="<?php echo $rowForm['pcb_coating']; ?>"  placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="surface_coat" name="surface_coat" value="<?php echo getParameterValue($rowForm['pcb_coating']); ?>"  placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="no_layer">Number of layers</label></div>
@@ -218,7 +218,7 @@ $id = $_GET['view'];
                         <div class="row">
                             <div class="two columns"><label for="trace_internal">Traces placed in internal layers only</label></div>
                             <div class="three columns">
-                                <input type="text" id="trace_internal" name="trace_internal" value="<?php echo $rowForm['trace_layer']; ?>" placeholder="Eg: Yes / No" readonly>
+                                <input type="text" id="trace_internal" name="trace_internal" value="<?php echo getParameterValue($rowForm['trace_layer']); ?>" placeholder="Eg: Yes / No" readonly>
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="final_thickness">Final Copper Thickness, oz</label></div>
@@ -239,7 +239,7 @@ $id = $_GET['view'];
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="impedance">Impedance controlled traces?</label></div>
                             <div class="three columns">
-                                <input type="text" id="impedance" name="impedance" value="<?php echo $rowForm['trace_control']; ?>" placeholder="Eg: Yes / No" readonly>
+                                <input type="text" id="impedance" name="impedance" value="<?php echo getParameterValue($rowForm['trace_control']); ?>" placeholder="Eg: Yes / No" readonly>
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
@@ -252,14 +252,14 @@ $id = $_GET['view'];
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="frame_screw">Board Frame/Chassis > No protruding screw tips</label></div>
                             <div class="three columns">
-                                <input type="text" id="frame_screw" name="frame_screw" value="<?php echo $rowForm['bf_screw']; ?>" placeholder="Eg: Yes / No" readonly>
+                                <input type="text" id="frame_screw" name="frame_screw" value="<?php echo getParameterValue($rowForm['bf_screw']); ?>" placeholder="Eg: Yes / No" readonly>
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="frame_handle">Board Frame/Chassis > Handle</label></div>
                             <div class="three columns">
-                                <input type="text" id="frame_handle" name="frame_handle" value="<?php echo $rowForm['bf_handle']; ?>" placeholder="Eg: Yes / No" readonly>
+                                <input type="text" id="frame_handle" name="frame_handle" value="<?php echo getParameterValue($rowForm['bf_handle']); ?>" placeholder="Eg: Yes / No" readonly>
                             </div>
                         </div>
                     </div>
@@ -371,103 +371,103 @@ Temp rating: melting point 1000C"><?php echo $rowForm['component']; ?></textarea
                         <div class="row">
                             <div class="two columns"><label for="volt_rate">Voltage rating label</label></div>
                             <div class="three columns">
-                                <input type="text" id="volt_rate" name="volt_rate" value="<?php echo $rowForm['mark_volt']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="volt_rate" name="volt_rate" value="<?php echo getParameterValue($rowForm['mark_volt']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="curr_rate">Current rating label</label></div>
                             <div class="three columns">
-                                <input type="text" id="curr_rate" name="curr_rate" value="<?php echo $rowForm['mark_curr']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="curr_rate" name="curr_rate" value="<?php echo getParameterValue($rowForm['mark_curr']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="temp_rate">Temperature rating label</label></div>
                             <div class="three columns">
-                                <input type="text" id="temp_rate" name="temp_rate" value="<?php echo $rowForm['mark_temp']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="temp_rate" name="temp_rate" value="<?php echo getParameterValue($rowForm['mark_temp']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="board">Board name</label></div>
                             <div class="three columns">
-                                <input type="text" id="board" name="board" value="<?php echo $rowForm['mark_board']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="board" name="board" value="<?php echo getParameterValue($rowForm['mark_board']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="ass_number">Assembly number</label></div>
                             <div class="three columns">
-                                <input type="text" id="ass_number" name="ass_number" value="<?php echo $rowForm['mark_assembly']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="ass_number" name="ass_number" value="<?php echo getParameterValue($rowForm['mark_assembly']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="stress_test">Stress Test Name</label></div>
                             <div class="three columns">
-                                <input type="text" id="stress_test" name="stress_test" value="<?php echo $rowForm['mark_stress']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="stress_test" name="stress_test" value="<?php echo getParameterValue($rowForm['mark_stress']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="socket_number">Socket Numbers</label></div>
                             <div class="three columns">
-                                <input type="text" id="socket_number" name="socket_number" value="<?php echo $rowForm['mark_socket']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="socket_number" name="socket_number" value="<?php echo getParameterValue($rowForm['mark_socket']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="pin_indicator">Pin "1" Indicator</label></div>
                             <div class="three columns">
-                                <input type="text" id="pin_indicator" name="pin_indicator" value="<?php echo $rowForm['mark_pin']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="pin_indicator" name="pin_indicator" value="<?php echo getParameterValue($rowForm['mark_pin']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="vendor">Vendor Logo dimension</label></div>
                             <div class="three columns">
-                                <input type="text" id="vendor" name="vendor" value="<?php echo $rowForm['mark_vendor']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="vendor" name="vendor" value="<?php echo getParameterValue($rowForm['mark_vendor']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="stackup">Stack-up Layer</label></div>
                             <div class="three columns">
-                                <input type="text" id="stackup" name="stackup" value="<?php echo $rowForm['mark_layer']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="stackup" name="stackup" value="<?php echo getParameterValue($rowForm['mark_layer']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="artwork">Artwork Date</label></div>
                             <div class="three columns">
-                                <input type="text" id="artwork" name="artwork" value="<?php echo $rowForm['mark_artwork']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="artwork" name="artwork" value="<?php echo getParameterValue($rowForm['mark_artwork']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="unidedi">Universal or Dedicated</label></div>
                             <div class="three columns">
-                                <input type="text" id="unidedi" name="unidedi" value="<?php echo $rowForm['mark_cat']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="unidedi" name="unidedi" value="<?php echo getParameterValue($rowForm['mark_cat']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="dut_density">DUT Density</label></div>
                             <div class="three columns">
-                                <input type="text" id="dut_density" name="dut_density" value="<?php echo $rowForm['mark_dut']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="dut_density" name="dut_density" value="<?php echo getParameterValue($rowForm['mark_dut']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="loose_dut">Loose Component DUT Orientation</label></div>
                             <div class="three columns">
-                                <input type="text" id="loose_dut" name="loose_dut" value="<?php echo $rowForm['mark_loose']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="loose_dut" name="loose_dut" value="<?php echo getParameterValue($rowForm['mark_loose']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="live_bug">Live bug/Dead Bug Orientation</label></div>
                             <div class="three columns">
-                                <input type="text" id="live_bug" name="live_bug" value="<?php echo $rowForm['mark_bug']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="live_bug" name="live_bug" value="<?php echo getParameterValue($rowForm['mark_bug']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                             <div class="two columns"><label for="bib_ori">Device and Socket to BIB Orientation</label></div>
                             <div class="three columns">
-                                <input type="text" id="bib_ori" name="bib_ori" value="<?php echo $rowForm['mark_bib']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="bib_ori" name="bib_ori" value="<?php echo getParameterValue($rowForm['mark_bib']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
                         <div class="row">
                             <div class="two columns"><label for="onsemi_logo">Onsemi Logo</label></div>
                             <div class="three columns">
-                                <input type="text" id="onsemi_logo" name="onsemi_logo" value="<?php echo $rowForm['mark_logo']; ?>" placeholder="Eg: Yes / No" readonly />
+                                <input type="text" id="onsemi_logo" name="onsemi_logo" value="<?php echo getParameterValue($rowForm['mark_logo']); ?>" placeholder="Eg: Yes / No" readonly />
                             </div>
                             <div class="one columns">&nbsp;</div>
                         </div>
